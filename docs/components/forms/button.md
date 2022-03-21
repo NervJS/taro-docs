@@ -5,7 +5,7 @@ sidebar_label: Button
 
 按钮
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/button.html)
 
@@ -213,45 +213,45 @@ export default {
 | onGetAuthorize | `CommonEventFunction` |  | 否 | 支付宝获取会员基础信息授权回调<br /><br />生效时机：`open-type="getAuthorize"` |
 | onContact | `CommonEventFunction<onContactEventDetail>` |  | 否 | 客服消息回调<br /><br />生效时机：`open-type="contact"` |
 | onGetPhoneNumber | `CommonEventFunction<onGetPhoneNumberEventDetail>` |  | 否 | 获取用户手机号回调<br /><br />生效时机：`open-type="getphonenumber"` |
-| onChooseAvatar | `CommonEventFunction<onChooseAvatarEventDetail>` |  | 否 | 获取头像信息<br /><br />生效时机：`open-type="chooseavatar"` |
-| onGetRealnameAuthInfo | `CommonEventFunction` |  | 否 | 获取用户实名<br /><br />生效时机：`open-type="getRealnameAuthInfo"` |
+| onGetRealNameAuthInfo | `CommonEventFunction` |  | 否 | 获取用户实名<br /><br />生效时机：`open-type="getRealnameAuthInfo"`<br />**不推荐使用** |
 | onError | `CommonEventFunction` |  | 否 | 当使用开放能力时，发生错误的回调<br /><br />生效时机：`open-type="launchApp"` |
 | onOpenSetting | `CommonEventFunction<onOpenSettingEventDetail>` |  | 否 | 在打开授权设置页后回调<br /><br />生效时机：`open-type="openSetting"` |
-| onLaunchapp | `CommonEventFunction` |  | 否 | 打开 APP 成功的回调<br /><br />生效时机：`open-type="launchApp"` |
+| onLaunchApp | `CommonEventFunction` |  | 否 | 打开 APP 成功的回调<br /><br />生效时机：`open-type="launchApp"` |
+| onChooseAvatar | `CommonEventFunction` |  | 否 | 获取用户头像回调<br /><br />生效时机：`open-type="chooseAvatar"` |
 
 ### API 支持度
 
-| API | 微信小程序 | 支付宝小程序 | QQ 小程序 | H5 | React Native |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| ButtonProps.size | ✔️ | ✔️ |  | ✔️ | ✔️ |
-| ButtonProps.type | ✔️ | ✔️ |  | ✔️ | ✔️ |
-| ButtonProps.plain | ✔️ | ✔️ |  | ✔️ | ✔️ |
-| ButtonProps.disabled | ✔️ | ✔️ |  | ✔️ | ✔️ |
-| ButtonProps.loading | ✔️ | ✔️ |  | ✔️ | ✔️ |
-| ButtonProps.formType | ✔️ | ✔️ |  |  |  |
-| ButtonProps.openType | ✔️ | ✔️ | ✔️ |  |  |
-| ButtonProps.hoverClass | ✔️ | ✔️ |  | ✔️ | (支持 hoverStyle 属性，但框架未支持 hoverClass) |
-| ButtonProps.hoverStyle |  |  |  |  | ✔️ |
-| ButtonProps.hoverStopPropagation | ✔️ | ✔️ |  |  |  |
-| ButtonProps.hoverStartTime | ✔️ | ✔️ |  | ✔️ | ✔️ |
-| ButtonProps.hoverStayTime | ✔️ | ✔️ |  | ✔️ | ✔️ |
-| ButtonProps.lang | ✔️ |  |  |  |  |
-| ButtonProps.sessionFrom | ✔️ |  |  |  |  |
-| ButtonProps.sendMessageTitle | ✔️ |  |  |  |  |
-| ButtonProps.sendMessagePath | ✔️ |  |  |  |  |
-| ButtonProps.sendMessageImg | ✔️ |  |  |  |  |
-| ButtonProps.appParameter | ✔️ |  | ✔️ |  |  |
-| ButtonProps.businessId | ✔️ |  |  |  |  |
-| ButtonProps.scope | ✔️ |  |  |  |  |
-| ButtonProps.onGetUserInfo | ✔️ |  |  |  |  |
-| ButtonProps.onChooseAvatar | ✔️ |  |  |  |  |
-| ButtonProps.onGetAuthorize |  | ✔️ |  |  |  |
-| ButtonProps.onContact | ✔️ |  |  |  |  |
-| ButtonProps.onGetPhoneNumber | ✔️ |  |  |  |  |
-| ButtonProps.onGetRealnameAuthInfo | ✔️ |  |  |  |  |
-| ButtonProps.onError | ✔️ |  |  |  |  |
-| ButtonProps.onOpenSetting | ✔️ |  |  |  |  |
-| ButtonProps.onLaunchapp | ✔️ |  |  |  |  |
+| API | 微信小程序 | 支付宝小程序 | QQ 小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| ButtonProps.size | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
+| ButtonProps.type | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
+| ButtonProps.plain | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
+| ButtonProps.disabled | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
+| ButtonProps.loading | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
+| ButtonProps.formType | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.openType | ✔️ | ✔️ | ✔️ |  |  |  |
+| ButtonProps.hoverClass | ✔️ | ✔️ |  | ✔️ | (支持 hoverStyle 属性，但框架未支持 hoverClass) |  |
+| ButtonProps.hoverStyle |  |  |  |  | ✔️ |  |
+| ButtonProps.hoverStopPropagation | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.hoverStartTime | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
+| ButtonProps.hoverStayTime | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
+| ButtonProps.lang | ✔️ |  |  |  |  |  |
+| ButtonProps.sessionFrom | ✔️ |  |  |  |  |  |
+| ButtonProps.sendMessageTitle | ✔️ |  |  |  |  |  |
+| ButtonProps.sendMessagePath | ✔️ |  |  |  |  |  |
+| ButtonProps.sendMessageImg | ✔️ |  |  |  |  |  |
+| ButtonProps.appParameter | ✔️ |  | ✔️ |  |  |  |
+| ButtonProps.businessId | ✔️ |  |  |  |  |  |
+| ButtonProps.scope | ✔️ |  |  |  |  |  |
+| ButtonProps.onGetUserInfo | ✔️ |  |  |  |  |  |
+| ButtonProps.onGetAuthorize |  | ✔️ |  |  |  |  |
+| ButtonProps.onContact | ✔️ |  |  |  |  |  |
+| ButtonProps.onGetPhoneNumber | ✔️ |  |  |  |  |  |
+| ButtonProps.onGetRealNameAuthInfo | ✔️ |  |  |  |  |  |
+| ButtonProps.onError | ✔️ |  |  |  |  |  |
+| ButtonProps.onOpenSetting | ✔️ |  |  |  |  |  |
+| ButtonProps.onLaunchApp | ✔️ |  |  |  |  |  |
+| ButtonProps.onChooseAvatar | ✔️ |  |  |  |  |  |
 
 ### Size
 
@@ -291,7 +291,7 @@ open-type 的合法值
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| weapp | `{ contact: any; share: any; getPhoneNumber: any; getUserInfo: any; chooseavatar: any; getRealnameAuthInfo: any; launchApp: any; openSetting: any; feedback: any; }` |  |
+| weapp | `{ contact: any; share: any; getPhoneNumber: any; getUserInfo: any; getRealNameAuthInfo: any; launchApp: any; openSetting: any; feedback: any; chooseAvatar: any; }` |  |
 | alipay | `{ share: any; getAuthorize: any; contactShare: any; lifestyle: any; }` | 支付宝小程序专属的 open-type 合法值<br />[参考地址](https://opendocs.alipay.com/mini/component/button) |
 | qq | `{ share: any; getUserInfo: any; launchApp: any; openSetting: any; feedback: any; openGroupProfile: any; addFriend: any; addColorSign: any; openPublicProfile: any; addGroupApp: any; shareMessageToFriend: any; }` | QQ 小程序专属的 open-type 合法值<br />[参考地址](https://q.qq.com/wiki/develop/miniprogram/component/form/button.html) |
 
@@ -337,11 +337,12 @@ lang 的合法值
 
 ### onGetPhoneNumberEventDetail
 
-| 参数 | 类型 | 说明 |
-| --- | --- | --- |
-| errMsg | `string` |  |
-| encryptedData | `string` | 包括敏感数据在内的完整用户信息的加密数据 |
-| iv | `string` | 加密算法的初始向量 |
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| errMsg | `string` | 是 |  |
+| encryptedData | `string` | 是 | 包括敏感数据在内的完整用户信息的加密数据 |
+| iv | `string` | 是 | 加密算法的初始向量 |
+| code | `string` | 否 | 动态令牌。可通过动态令牌换取用户手机号。<br />[参考地址](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html#%E4%BD%BF%E7%94%A8%E6%8C%87%E5%BC%95) |
 
 ### onOpenSettingEventDetail
 
@@ -349,9 +350,3 @@ lang 的合法值
 | --- | --- |
 | errMsg | `string` |
 | authSetting | `Record<string, boolean>` |
-
-### onChooseAvatarEventDetail
-
-| 参数      | 类型     | 说明               |
-| --------- | -------- | ------------------ |
-| avatarUrl | `string` | 用户头像的临时链接 |
