@@ -30,7 +30,7 @@ const siteConfigGithub = {
         docs: {
           // sidebars file relative to website dir.
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/nervjs/taro/edit/docs/',
+          editUrl: 'https://github.com/nervjs/taro-docs/edit/docs/',
           lastVersion: "3.x",
           versions: {
             current: {
@@ -41,7 +41,7 @@ const siteConfigGithub = {
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl: 'https://github.com/nervjs/taro/edit/blog/',
+          editUrl: 'https://github.com/nervjs/taro-docs/edit/blog/',
           blogSidebarCount: 'ALL',
           blogSidebarTitle: '全部'
         },
@@ -297,7 +297,7 @@ const siteConfigTaroZone = {
         docs: {
           // sidebars file relative to website dir.
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/nervjs/taro/edit/docs/',
+          editUrl: 'https://github.com/nervjs/taro-docs/edit/docs/',
           lastVersion: "3.x",
           versions: {
             current: {
@@ -308,7 +308,7 @@ const siteConfigTaroZone = {
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl: 'https://github.com/nervjs/taro/edit/blog/',
+          editUrl: 'https://github.com/nervjs/taro-docs/edit/blog/',
           blogSidebarCount: 'ALL',
           blogSidebarTitle: '全部'
         },
