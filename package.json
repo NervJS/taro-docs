@@ -2,17 +2,17 @@
   "name": "taro-docs",
   "private": true,
   "scripts": {
-    "start": "NODE_OPTIONS=--max-old-space-size=4096 BASE=taro docusaurus start",
-    "build:github": "NODE_OPTIONS=--max-old-space-size=5120 BASE=taro docusaurus build --out-dir build/taro-docs",
+    "start": "cross-env NODE_OPTIONS=--max-old-space-size=4096 BASE=taro docusaurus start",
+    "build:github": "cross-env NODE_OPTIONS=--max-old-space-size=5120 BASE=taro docusaurus build --out-dir build/taro-docs",
     "build": "npm run build:github",
     "build:independent": "NODE_OPTIONS=--max-old-space-size=5120 docusaurus build --out-dir dist",
-    "build:zone": "NODE_OPTIONS=--max-old-space-size=5120 BASE=zone docusaurus build --out-dir dist",
+    "build:zone": "cross-env NODE_OPTIONS=--max-old-space-size=5120 BASE=zone docusaurus build --out-dir dist",
     "build:docs-api": "ts-node --project ./scripts/tsconfig.json ./scripts/docs",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
-    "start:en": "NODE_OPTIONS=--max-old-space-size=5120 BASE=taro docusaurus start --locale en",
-    "write-translations:en": "cross-env BASE=zone docusaurus write-translations --locale en"
+    "start:en": "cross-env NODE_OPTIONS=--max-old-space-size=5120 BASE=taro docusaurus start --locale en",
+    "write-translations:en": "cross-env BASE=taro docusaurus write-translations --locale en"
   },
   "dependencies": {
     "@docusaurus/core": "2.0.0-beta.15",
