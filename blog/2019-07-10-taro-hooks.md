@@ -1,9 +1,7 @@
 ---
 slug: 2019-07-10-taro-hooks
 title: 使用 React Hooks 重构你的小程序 
-author: yuche
-author_url: https://github.com/yuche
-author_image_url: https://static.geekbang.org/ck/5cb53de0e50c0.jpeg?imageView2/0/w/800
+authors: yuche
 ---
 
 ![image](https://storage.360buyimg.com/taro-club-img/b42116392c909d0680788853011c70db)

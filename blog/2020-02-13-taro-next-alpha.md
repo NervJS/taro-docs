@@ -1,9 +1,7 @@
 ---
 slug: 2020-02-13-taro-next-alpha
 title: Taro Next 发布预览版：同时支持 React / Vue / Nerv 
-author: yuche
-author_url: https://github.com/yuche
-author_image_url: https://static.geekbang.org/ck/5cb53de0e50c0.jpeg?imageView2/0/w/800
+authors: yuche
 ---
 
 ![image](https://img14.360buyimg.com/ling/jfs/t1/103557/3/12087/1051626/5e44b357E4cab8765/d8c821c4a3e1060d.png)

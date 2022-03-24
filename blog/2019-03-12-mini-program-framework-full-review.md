@@ -1,9 +1,7 @@
 ---
 slug: 2019-03-12-mini-program-framework-full-review
 title: 小程序框架全面测评 
-author: yuche
-author_url: https://github.com/yuche
-author_image_url: https://static.geekbang.org/ck/5cb53de0e50c0.jpeg?imageView2/0/w/800
+authors: yuche
 ---
 
 ![image](https://storage.jd.com/taro-resource/review.jpg)

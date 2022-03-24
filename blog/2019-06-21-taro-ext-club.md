@@ -1,9 +1,7 @@
 ---
 slug: 2019-06-21-taro-ext-club
 title: Taro 「物料市场」及「交流社区」 惊喜上线
-author: honlyHuang
-author_url: https://github.com/honlyHuang
-author_image_url: https://avatars1.githubusercontent.com/u/3080820?s=460&v=4
+authors: honlyHuang
 ---
 
 我们不仅带来了焕然一新的 [Taro 官网](https://taro.jd.com)，还一次性推出了 [Taro 物料市场](https://taro-ext.jd.com) 和 [Taro 开发者社区](https://taro-club.jd.com)。帮助 Taro 实现从 **多端统一开发框架** 到 **多端统一开发解决方案** 的转型。

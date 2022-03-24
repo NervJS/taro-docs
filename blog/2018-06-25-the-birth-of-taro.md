@@ -1,9 +1,7 @@
 ---
 slug: 2018-06-25-the-birth-of-taro
 title: 为何我们要用 React 来写小程序 - Taro 诞生记
-author: luckyadam
-author_url: https://github.com/luckyadam
-author_image_url: https://avatars2.githubusercontent.com/u/1782542?s=400&u=d20514a52100ed1f82282bcfca6f49052793c889&v=4
+authors: luckyadam
 ---
 
 从去年微信小程序的诞生，到今年的逐渐火热，以及异军突起的轻应用、百度小程序等的出现，前端可以延伸的领域已经越来越广，当然也意味着业务在不断扩大。这时候，如何通过技术手段来提升开发效率，应对不断增长的业务，就是一个值得探索的话题。本文将对 Taro 诞生的故事，进行深入浅出地介绍，记录下这个忙碌的春夏之交发生的故事。

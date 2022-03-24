@@ -1,9 +1,7 @@
 ---
 slug: 2019-02-28-taro-h5-optimize
 title: 决战性能之巅 - Taro H5 转换与优化升级
-author: Littly
-author_url: https://github.com/Littly
-author_image_url: https://avatars0.githubusercontent.com/u/5780093?s=460&u=f92cbac202f03815a041541ff06397d5d0130232&v=4
+authors: Littly
 ---
 
 ![image](https://img10.360buyimg.com/img/jfs/t1/21860/12/8740/42390/5c790470E1d0bbce9/9f9bb78d01f7564b.png)

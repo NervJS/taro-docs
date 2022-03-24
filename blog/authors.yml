@@ -1,41 +1,233 @@
 luckyadam:
-  name: luckyadam
-  title: Taro 团队成员
+  name: 隔壁老李
+  title: Taro 技术委员会主席
   url: https://github.com/luckyadam
   image_url: https://avatars2.githubusercontent.com/u/1782542?s=400&u=d20514a52100ed1f82282bcfca6f49052793c889&v=4
 
 yuche:
   name: yuche
-  title: Taro 团队成员
+  title: Taro 荣誉技术委员会主席
   url: https://github.com/yuche
   image_url: https://static.geekbang.org/ck/5cb53de0e50c0.jpeg?imageView2/0/w/800
 
 JJ:
   name: JJ
-  title: Taro 团队成员
+  title: Taro 技术委员会成员、Taro Core 工作组 Owner
   url: https://github.com/Chen-jj
   image_url: https://storage.jd.com/cjj-pub-images/11807297.png
 
 TJ:
   name: TJ
-  title: Taro 团队成员
+  title: Taro 技术委员会成员、Taro Core 工作组
   url: https://github.com/ZakaryCode
   image_url: https://avatars.githubusercontent.com/u/24262362?v=4
 
-Jiaozi:
-  name: Jiaozi
-  title: Taro 团队成员
-  url: https://github.com/jiaozitang
-  image_url: https://avatars.githubusercontent.com/u/18493352?v=4
-
 zhiqingchen:
   name: zhiqingchen
-  title: 58 同城前端架构师、Taro-RN 核心开发者
+  title: 58 同城前端架构师、Taro 技术委员会成员、Taro-RN 工作组 Owner
   url: https://github.com/zhiqingchen
   image_url: https://avatars1.githubusercontent.com/u/1876158?s=88&u=0305430cab9f7a516c720e7fc7f8680df1c835b9&v=4
 
+iChengbo:
+  name: iChengbo
+  title: Taro 技术委员会成员
+  url: https://github.com/iChengbo
+  image_url: https://avatars.githubusercontent.com/u/38068220?v=4
+
+shinken008:
+  name: shinken008
+  title: Taro 技术委员会成员
+  url: https://github.com/shinken008
+  image_url: https://avatars.githubusercontent.com/u/14921035?v=4
+
+honlyHuang:
+  name: honlyHuang
+  title: Taro 技术委员会成员、Taro 社区组 Owner
+  url: https://github.com/honlyHuang
+  image_url: https://avatars.githubusercontent.com/u/3080820?v=4
+
+Simbachen:
+  name: Simbachen
+  title: Taro 荣誉技术委员成员
+  url: https://github.com/Simbachen
+  image_url: https://avatars.githubusercontent.com/u/1519030?v=4
+
+Pines-Cheng:
+  name: Pines-Cheng
+  title: Taro 荣誉技术委员成员
+  url: https://github.com/Pines-Cheng
+  image_url: https://avatars2.githubusercontent.com/u/9441951?s=460&u=b43f79c07aea1d3c330dd1fd38ae9e9baab58fee&v=4
+
+Littly:
+  name: Littly
+  title: Taro 荣誉技术委员成员
+  url: https://github.com/Littly
+  image_url: https://avatars0.githubusercontent.com/u/5780093?s=460&u=f92cbac202f03815a041541ff06397d5d0130232&v=4
+
+JinJinJin:
+  name: JinJinJin
+  title: Taro 荣誉技术委员成员
+  url: https://github.com/jinjinjin0731
+  image_url: https://avatars.githubusercontent.com/u/17409735?v=4
+
+soulhat:
+  name: soulhat
+  title: Taro 合作者
+  url: https://github.com/soulhat
+  image_url: https://avatars.githubusercontent.com/u/7219980?v=4
+
+Bin:
+  name: Bin
+  title: Taro 合作者
+  url: https://github.com/soulhat
+  image_url: https://avatars.githubusercontent.com/u/7219980?v=4
+
+Flame:
+  name: Flame
+  title: Taro 合作者
+  url: https://github.com/AdvancedCat
+  image_url: https://avatars.githubusercontent.com/u/7858761?v=4
+
+hawleyHuo:
+  name: hawleyHuo
+  title: Taro 合作者
+  url: https://github.com/huozhongyi123
+  image_url: https://avatars.githubusercontent.com/u/29476081?v=4
+
+evernoteHW:
+  name: evernoteHW
+  title: Taro 合作者
+  url: https://github.com/evernoteHW
+  image_url: https://avatars.githubusercontent.com/u/6000794?v=4
+
+troy:
+  name: shangxiaojian
+  title: Taro 合作者
+  url: https://github.com/troy-sxj
+  image_url: https://avatars.githubusercontent.com/u/16864132?v=4
+
+LuMeiling:
+  name: Krystal
+  title: Taro 合作者
+  url: https://github.com/LuMeiling
+  image_url: https://avatars.githubusercontent.com/u/10875475?v=4
+
+SyMind:
+  name: Cong-Cong Pan
+  title: Taro 合作者
+  url: https://github.com/SyMind
+  image_url: https://avatars.githubusercontent.com/u/19852293?v=4
+
+b2nil:
+  name: Ken Ho
+  title: Taro 合作者
+  url: https://github.com/b2nil
+  image_url: https://avatars.githubusercontent.com/u/16893585?v=4
+
+szg2008:
+  name: love_forever
+  title: Taro 生态合作者、NutUI 作者
+  url: https://github.com/szg2008
+  image_url: https://avatars.githubusercontent.com/u/8221688?v=4
+
+richard1015:
+  name: richard1015
+  title: Taro 生态合作者、NutUI 作者
+  url: https://github.com/richard1015
+  image_url: https://avatars.githubusercontent.com/u/13060263?v=4
+
+js-newbee:
+  name: jsNewbee
+  title: Taro 荣誉合作者
+  url: https://github.com/js-newbee
+  image_url: https://avatars.githubusercontent.com/u/20449400?v=4
+
+cncolder:
+  name: Yanlin Jiang
+  title: Taro 荣誉合作者
+  url: https://github.com/cncolder
+  image_url: https://avatars.githubusercontent.com/u/127009?v=4
+
+fjc0k:
+  name: Jay Fong
+  title: Taro 荣誉合作者
+  url: https://github.com/fjc0k
+  image_url: https://avatars.githubusercontent.com/u/13151189?v=4
+
+nanjingboy:
+  name: Tom Huang
+  title: Taro 荣誉合作者
+  url: https://github.com/nanjingboy
+  image_url: https://avatars.githubusercontent.com/u/1390888?v=4
+
+Qiyu8:
+  name: Chunlin
+  title: Taro 荣誉合作者
+  url: https://github.com/Qiyu8
+  image_url: https://avatars.githubusercontent.com/u/15245051?v=4
+
+zacksleo:
+  name: zacks
+  title: Taro 荣誉合作者
+  url: https://github.com/zacksleo
+  image_url: https://avatars.githubusercontent.com/u/3369169?v=4
+
+Bless-L:
+  name: 奥特曼1号
+  title: Taro 荣誉合作者
+  url: https://github.com/Bless-L
+  image_url: https://avatars.githubusercontent.com/u/14344266?v=4
+
+Garfield550:
+  name: Garfield
+  title: Taro 荣誉合作者
+  url: https://github.com/Garfield550
+  image_url: https://avatars.githubusercontent.com/u/3471836?v=4
+
+yechunxi:
+  name: yechunxi
+  title: Taro 荣誉合作者
+  url: https://github.com/yechunxi
+  image_url: https://avatars.githubusercontent.com/u/8535673?v=4
+
+Manjiz:
+  name: Manjiz
+  title: Taro 荣誉合作者
+  url: https://github.com/Manjiz
+  image_url: https://avatars.githubusercontent.com/u/13447336?v=4
+
 JSZ:
   name: JSZ
-  title: 京东鸿蒙共建小组成员
+  title: Taro 贡献者、京东鸿蒙共建小组成员
   url: https://github.com/JSZabc
   image_url: https://img11.360buyimg.com/imagetools/jfs/t1/159250/32/22645/93957/61b16ee5E9ed06399/e525bedd205b42a3.jpg
+
+Medivh:
+  name: Medivh
+  title: Taro 贡献者
+  url: https://github.com/crazyonebyone
+  image_url: https://avatars.githubusercontent.com/u/20769230?v=4
+
+baosiqing:
+  name: baosiqing
+  title: Taro 贡献者
+  url: https://github.com/baosiqing
+  image_url: https://avatars.githubusercontent.com/u/43429031?v=4
+
+xuanzebin:
+  name: xuanzebin
+  title: Taro 贡献者
+  url: https://github.com/xuanzebin
+  image_url: https://avatars.githubusercontent.com/u/38971117?v=4
+
+topeertoo:
+  name: topeertoo
+  title: Taro 贡献者
+  url: https://github.com/topeertoo
+  image_url: https://avatars.githubusercontent.com/u/24600936?v=4
+
+Jiaozi:
+  name: Jiaozi
+  title: Taro 贡献者
+  url: https://github.com/jiaozitang
+  image_url: https://avatars.githubusercontent.com/u/18493352?v=4

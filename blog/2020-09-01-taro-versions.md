@@ -1,9 +1,7 @@
 ---
 slug: 2020-09-01-taro-versions
 title: Taro 版本升级权威指南
-author: 隔壁老李
-author_url: https://github.com/luckyadam
-author_image_url: https://avatars2.githubusercontent.com/u/1782542?s=460&u=d20514a52100ed1f82282bcfca6f49052793c889&v=4
+authors: luckyadam
 tags: [v3]
 description: 你是否对 Taro 辣么多版本感到非常困惑？你是否对升级 Taro 感到束手无策？本篇文章将为你答疑解惑，全面解读 Taro 开发那些事儿。
 ---

@@ -19,21 +19,20 @@ Taro UI 是一款由凹凸实验室打造、基于 Taro 编写的多端 UI 组�
 
 **文档**：https://taro-ui.aotu.io/
 
-**H5 版本预览**： 
+**H5 版本预览**：
 
 ![image](https://user-images.githubusercontent.com/13499146/44632148-8a054080-a9a8-11e8-85a8-dfafd073dfdf.png)
-
 
 **微信小程序预览**：
 
 ![image](https://user-images.githubusercontent.com/13499146/44643836-8e5f4700-aa04-11e8-87bd-d930eb04e87c.png)
-
 
 第一版组件共有六个模块、三十三个组件，未来还将继续丰富组件，增加一些常用业务组件。
 
 ![image](https://user-images.githubusercontent.com/13499146/44502719-6d75b980-a6c5-11e8-8491-b6b47d87ee3d.png)
 
 ## 特性
+
 - **简单易用**：支持 npm 安装，自动处理 npm 资源之间的依赖关系
 - **框架支持**：基于 Taro 开发组件，与 Taro 无缝衔接
 - **多端适配**：一套组件可以在微信小程序/ H5 / ReactNative 等多端适配运行
@@ -45,6 +44,7 @@ Taro UI 是一款由凹凸实验室打造、基于 Taro 编写的多端 UI 组�
 ## 快速开始
 
 ### 安装 Taro
+
 安装 Taro 开发工具 @tarojs/cli
 
 使用 npm 或者 yarn 全局安装，或者直接使用 [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b)
@@ -57,9 +57,11 @@ $ yarn global add @tarojs/cli
 ### 初始化项目
 
 使用命令创建模板项目
+
 ```bash
 $ taro init myApp
 ```
+
 ### 安装 Taro UI
 
 ```bash
@@ -68,11 +70,13 @@ $ npm i taro-ui
 ```
 
 ### 使用
+
 在代码中 `import` 组件并按照文档说明进行使用
 
 `import { AtButton } from 'taro-ui'`
 
 ### 示例
+
 在 `/myApp/src/pages/index/index.jsx` 文件添加以下代码
 ```jsx
 import Taro, { Component, Config } from '@tarojs/taro'
