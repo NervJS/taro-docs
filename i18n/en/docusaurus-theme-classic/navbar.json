@@ -54,5 +54,9 @@
   "item.label.生态系统": {
     "message": "Ecosystem",
     "description": "Navbar item with label 生态系统"
+  },
+  "item.label.设计稿生成代码": {
+    "message": "设计稿生成代码",
+    "description": "Navbar item with label 设计稿生成代码"
   }
 }
