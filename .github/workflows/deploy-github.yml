@@ -23,11 +23,11 @@ jobs:
       - uses: pnpm/action-setup@v2.1.0
         with:
           version: 6.31.0
-          run_install: true
-      - name: build
-        run: |
-          pnpm install
-          pnpm run build:github
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+      - name: Build
+        run: pnpm run build:github
       - name: Deploy static to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
