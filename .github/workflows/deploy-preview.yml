@@ -3,13 +3,13 @@ name: Deploy to Netlify
 on:
   pull_request:
     branches:
-      - docs
+      - master
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: build
         run: |
           yarn

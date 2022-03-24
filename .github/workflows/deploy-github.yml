@@ -3,32 +3,23 @@ on:
   # When Release Pull Request is merged
   push:
     branches:
-      - docs
+      - master
 
 env:
   CI: true
 jobs:
   publish:
     name: Publish
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: build
         run: |
           yarn
           yarn build:github
-      - name: Deploy static to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+      - name: Deploy static to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build/taro # The folder the action should deploy.
-          CLEAN: true
-      # - name: Deploy static to Tencent CloudBase
-      #   id: deployStatic
-      #   uses: TencentCloudBase/cloudbase-action@v1.1.1
-      #   with:
-      #     secretId: ${{ secrets.TCB_SECRET_ID }}
-      #     secretKey: ${{ secrets.TCB_SECRET_KEY }}
-      #     envId: ${{ secrets.TCB_TARO_DOCS_ENV_ID }}
-      #     staticSrcPath: build
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build/taro # The folder the action should deploy.
+          clean: true
