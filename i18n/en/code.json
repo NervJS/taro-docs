@@ -95,14 +95,6 @@
     "message": "Collapse sidebar",
     "description": "The title attribute for collapse button of doc sidebar"
   },
-  "theme.docs.sidebar.responsiveCloseButtonLabel": {
-    "message": "Close menu",
-    "description": "The ARIA label for close button of mobile doc sidebar"
-  },
-  "theme.docs.sidebar.responsiveOpenButtonLabel": {
-    "message": "Open menu",
-    "description": "The ARIA label for open button of mobile doc sidebar"
-  },
   "theme.common.editThisPage": {
     "message": "Edit this page",
     "description": "The link label to edit the current page"
@@ -190,14 +182,6 @@
   "theme.SearchBar.label": {
     "message": "Search",
     "description": "The ARIA label and placeholder for search button"
-  },
-  "theme.Playground.result": {
-    "message": "Result",
-    "description": "The result label of the live codeblocks"
-  },
-  "theme.Playground.liveEditor": {
-    "message": "Live Editor",
-    "description": "The live editor label of the live codeblocks"
   },
   "相关资源": {
     "message": "Resources",

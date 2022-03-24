@@ -287,10 +287,6 @@
     "message": "Login",
     "description": "The label for category 登录 in sidebar API"
   },
-  "sidebar.API.category.小程序跳转": {
-    "message": "Mini Program Navigation",
-    "description": "The label for category 小程序跳转 in sidebar API"
-  },
   "sidebar.API.category.账户信息": {
     "message": "Account Information",
     "description": "The label for category 账户信息 in sidebar API"
@@ -298,10 +294,6 @@
   "sidebar.API.category.用户信息": {
     "message": "User Information",
     "description": "The label for category 用户信息 in sidebar API"
-  },
-  "sidebar.API.category.数据上报": {
-    "message": "Data Reporting",
-    "description": "The label for category 数据上报 in sidebar API"
   },
   "sidebar.API.category.数据分析": {
     "message": "Data Analysis",
@@ -347,10 +339,6 @@
     "message": "Device",
     "description": "The label for category 设备 in sidebar API"
   },
-  "sidebar.API.category.IBeacon": {
-    "message": "IBeacon",
-    "description": "The label for category IBeacon in sidebar API"
-  },
   "sidebar.API.category.Wi-Fi": {
     "message": "Wi-Fi",
     "description": "The label for category Wi-Fi in sidebar API"
@@ -358,14 +346,6 @@
   "sidebar.API.category.联系人": {
     "message": "Contact",
     "description": "The label for category 联系人 in sidebar API"
-  },
-  "sidebar.API.category.低功耗蓝牙": {
-    "message": "Low Power Bluetooth",
-    "description": "The label for category 低功耗蓝牙 in sidebar API"
-  },
-  "sidebar.API.category.蓝牙": {
-    "message": "Bluetooth",
-    "description": "The label for category 蓝牙 in sidebar API"
   },
   "sidebar.API.category.电量": {
     "message": "Bettery Level",
