@@ -1,4 +1,4 @@
-name: Publish build/taro to GitHub and TCB
+name: Publish Taro docs to GitHub
 on:
   # When Release Pull Request is merged
   push:
@@ -21,5 +21,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages # The branch the action should deploy to.
-          folder: build/taro # The folder the action should deploy.
+          folder: build/taro-docs # The folder the action should deploy.
           clean: true
