@@ -4,12 +4,12 @@ specifiers:
   '@docusaurus/core': 2.0.0-beta.15
   '@docusaurus/plugin-pwa': 2.0.0-beta.15
   '@docusaurus/preset-classic': 2.0.0-beta.15
-  '@mdx-js/react': ^1.6.21
+  '@mdx-js/react': ^2.1.0
   clsx: ^1.1.1
   cross-env: ^7.0.3
   prism-react-renderer: ^1.2.1
-  react: ^17.0.1
-  react-dom: ^17.0.1
+  react: ^17.0.2
+  react-dom: ^17.0.2
   ts-node: ^10.5.0
   typescript: ^4.5.5
 
@@ -17,12 +17,12 @@ dependencies:
   '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
   '@docusaurus/plugin-pwa': 2.0.0-beta.15_c6309244b0bd9ff05466805fd35f51cb
   '@docusaurus/preset-classic': registry.npmjs.org/@docusaurus/preset-classic/2.0.0-beta.15_c6309244b0bd9ff05466805fd35f51cb
-  '@mdx-js/react': registry.npmjs.org/@mdx-js/react/1.6.22_react@17.0.2
+  '@mdx-js/react': 2.1.0_react@17.0.2
   clsx: registry.npmjs.org/clsx/1.1.1
   cross-env: registry.npmjs.org/cross-env/7.0.3
   prism-react-renderer: registry.npmjs.org/prism-react-renderer/1.3.1_react@17.0.2
-  react: registry.npmjs.org/react/17.0.2
-  react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+  react: 17.0.2
+  react-dom: 17.0.2_react@17.0.2
   ts-node: registry.npmjs.org/ts-node/10.7.0_typescript@4.6.2
   typescript: registry.npmjs.org/typescript/4.6.2
 
@@ -2222,11 +2222,11 @@ packages:
       postcss: 8.4.12
       postcss-loader: 6.2.1_postcss@8.4.12+webpack@5.70.0
       prompts: 2.4.2
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
       react-dev-utils: 12.0.0_typescript@4.6.2+webpack@5.70.0
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react-dom: 17.0.2_react@17.0.2
       react-helmet: 6.1.0_react@17.0.2
-      react-loadable: registry.npmjs.org/@docusaurus/react-loadable/5.5.2_react@17.0.2
+      react-loadable: /@docusaurus/react-loadable/5.5.2_react@17.0.2
       react-loadable-ssr-addon-v5-slorber: 1.0.1_fc6fb9624e95c2b0f71335ab282dbb6a
       react-router: 5.2.1_react@17.0.2
       react-router-config: 5.1.1_react-router@5.2.1+react@17.0.2
@@ -2296,8 +2296,8 @@ packages:
       fs-extra: 10.0.1
       image-size: 1.0.1
       mdast-util-to-string: 2.0.0
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       remark-emoji: 2.2.0
       stringify-object: 3.3.0
       tslib: 2.3.1
@@ -2330,8 +2330,8 @@ packages:
       fs-extra: 10.0.1
       image-size: 1.0.1
       mdast-util-to-string: 2.0.0
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       remark-emoji: 2.2.0
       stringify-object: 3.3.0
       tslib: 2.3.1
@@ -2364,8 +2364,8 @@ packages:
       feed: 4.2.2
       fs-extra: 10.0.1
       lodash: 4.17.21
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       reading-time: 1.5.0
       remark-admonitions: 1.2.1
       tslib: 2.3.1
@@ -2405,8 +2405,8 @@ packages:
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       lodash: 4.17.21
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       remark-admonitions: 1.2.1
       shelljs: 0.8.5
       tslib: 2.3.1
@@ -2442,8 +2442,8 @@ packages:
       '@docusaurus/utils-validation': 2.0.0-beta.15_e4dc28a41fd7a40a687699adff1c938e
       fs-extra: 10.0.1
       globby: 11.1.0
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       remark-admonitions: 1.2.1
       tslib: 2.3.1
       webpack: 5.70.0
@@ -2482,8 +2482,8 @@ packages:
       babel-loader: 8.2.4_webpack@5.70.0
       clsx: 1.1.1
       core-js: 3.21.1
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       terser-webpack-plugin: 5.3.1_webpack@5.70.0
       tslib: 2.3.1
       webpack: 5.70.0
@@ -2516,7 +2516,7 @@ packages:
     dependencies:
       '@types/react': 17.0.42
       prop-types: 15.8.1
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
     dev: false
 
   /@docusaurus/theme-common/2.0.0-beta.15_c6309244b0bd9ff05466805fd35f51cb:
@@ -2533,8 +2533,8 @@ packages:
       clsx: 1.1.1
       parse-numeric-range: 1.3.0
       prism-react-renderer: registry.npmjs.org/prism-react-renderer/1.3.1_react@17.0.2
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       tslib: 2.3.1
       utility-types: 3.10.0
     transitivePeerDependencies:
@@ -2579,8 +2579,8 @@ packages:
       '@docusaurus/logger': 2.0.0-beta.15
       '@docusaurus/utils': 2.0.0-beta.15_a86373ef51290a2448142c1e68ff367a
       joi: 17.6.0
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       tslib: 2.3.1
     transitivePeerDependencies:
       - '@babel/core'
@@ -2598,8 +2598,8 @@ packages:
       '@docusaurus/logger': 2.0.0-beta.15
       '@docusaurus/utils': 2.0.0-beta.15_e4dc28a41fd7a40a687699adff1c938e
       joi: 17.6.0
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       tslib: 2.3.1
     transitivePeerDependencies:
       - '@babel/core'
@@ -2628,8 +2628,8 @@ packages:
       js-yaml: 4.1.0
       lodash: 4.17.21
       micromatch: 4.0.4
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       remark-mdx-remove-exports: 1.6.22
       remark-mdx-remove-imports: 1.6.22
       resolve-pathname: 3.0.0
@@ -2660,8 +2660,8 @@ packages:
       js-yaml: 4.1.0
       lodash: 4.17.21
       micromatch: 4.0.4
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       remark-mdx-remove-exports: 1.6.22
       remark-mdx-remove-imports: 1.6.22
       resolve-pathname: 3.0.0
@@ -2729,7 +2729,17 @@ packages:
     peerDependencies:
       react: ^16.13.1 || ^17.0.0
     dependencies:
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
+    dev: false
+
+  /@mdx-js/react/2.1.0_react@17.0.2:
+    resolution: {integrity: sha1-KspW09nW8bvunzxEvSaJAzFBmVM=, tarball: '@mdx-js/react/download/@mdx-js/react-2.1.0.tgz'}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      '@types/mdx': 2.0.1
+      '@types/react': 17.0.42
+      react: 17.0.2
     dev: false
 
   /@mdx-js/runtime/1.6.22_react@17.0.2:
@@ -2741,7 +2751,7 @@ packages:
       '@mdx-js/mdx': 1.6.22
       '@mdx-js/react': 1.6.22_react@17.0.2
       buble-jsx-only: 0.19.8
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -3118,6 +3128,10 @@ packages:
     resolution: {integrity: sha1-RyQkSoKkWYiEy76bz9c9/5J+6K8=, tarball: '@types/mdast/download/@types/mdast-3.0.10.tgz'}
     dependencies:
       '@types/unist': 2.0.6
+    dev: false
+
+  /@types/mdx/2.0.1:
+    resolution: {integrity: sha1-5MBdNV0JLXtY2xq/5GDlP0EQKsg=, tarball: '@types/mdx/download/@types/mdx-2.0.1.tgz'}
     dev: false
 
   /@types/mime/1.3.2:
@@ -3928,7 +3942,7 @@ packages:
       normalize-path: 3.0.0
       readdirp: 3.6.0
     optionalDependencies:
-      fsevents: registry.npmjs.org/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: false
 
   /chrome-trace-event/1.0.3:
@@ -5074,6 +5088,13 @@ packages:
     resolution: {integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=, tarball: fs.realpath/download/fs.realpath-1.0.0.tgz}
     dev: false
 
+  /fsevents/2.3.2:
+    resolution: {integrity: sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro=, tarball: fsevents/download/fsevents-2.3.2.tgz}
+    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
+    requiresBuild: true
+    dev: false
+    optional: true
+
   /function-bind/1.1.1:
     resolution: {integrity: sha1-pWiZ0+o8m6uHS7l3O3xe3pL0iV0=, tarball: function-bind/download/function-bind-1.1.1.tgz}
     dev: false
@@ -6016,7 +6037,7 @@ packages:
     dependencies:
       universalify: 2.0.0
     optionalDependencies:
-      graceful-fs: registry.npmjs.org/graceful-fs/4.2.9
+      graceful-fs: 4.2.9
     dev: false
 
   /jsonpointer/5.0.0:
@@ -6345,7 +6366,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.17.8
       prop-types: 15.8.1
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
       tiny-warning: 1.0.3
     dev: false
 
@@ -7358,6 +7379,17 @@ packages:
       - webpack
     dev: false
 
+  /react-dom/17.0.2_react@17.0.2:
+    resolution: {integrity: sha1-7P+2hF462Nv83EmPDQqTlzZQLCM=, tarball: react-dom/download/react-dom-17.0.2.tgz}
+    peerDependencies:
+      react: 17.0.2
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react: 17.0.2
+      scheduler: 0.20.2
+    dev: false
+
   /react-error-overlay/6.0.10:
     resolution: {integrity: sha1-D+JttPqF2du4YkcpWA6Q5xWaWaY=, tarball: react-error-overlay/download/react-error-overlay-6.0.10.tgz}
     dev: false
@@ -7373,7 +7405,7 @@ packages:
     dependencies:
       object-assign: 4.1.1
       prop-types: 15.8.1
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
       react-fast-compare: 3.2.0
       react-side-effect: 2.1.1_react@17.0.2
     dev: false
@@ -7390,7 +7422,7 @@ packages:
       webpack: '>=4.41.1 || 5.x'
     dependencies:
       '@babel/runtime': 7.17.8
-      react-loadable: registry.npmjs.org/@docusaurus/react-loadable/5.5.2_react@17.0.2
+      react-loadable: /@docusaurus/react-loadable/5.5.2_react@17.0.2
       webpack: 5.70.0
     dev: false
 
@@ -7401,7 +7433,7 @@ packages:
       react-router: '>=5'
     dependencies:
       '@babel/runtime': 7.17.8
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
       react-router: 5.2.1_react@17.0.2
     dev: false
 
@@ -7414,7 +7446,7 @@ packages:
       history: 4.10.1
       loose-envify: 1.4.0
       prop-types: 15.8.1
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
       react-router: 5.2.1_react@17.0.2
       tiny-invariant: 1.2.0
       tiny-warning: 1.0.3
@@ -7432,7 +7464,7 @@ packages:
       mini-create-react-context: 0.4.1_prop-types@15.8.1+react@17.0.2
       path-to-regexp: 1.8.0
       prop-types: 15.8.1
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
       react-is: 16.13.1
       tiny-invariant: 1.2.0
       tiny-warning: 1.0.3
@@ -7443,7 +7475,15 @@ packages:
     peerDependencies:
       react: ^16.3.0 || ^17.0.0
     dependencies:
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
+    dev: false
+
+  /react/17.0.2:
+    resolution: {integrity: sha1-0LXMUW0p6z7uOD91tihkz7aAADc=, tarball: react/download/react-17.0.2.tgz}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
     dev: false
 
   /readable-stream/2.3.7:
@@ -7761,7 +7801,7 @@ packages:
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
-      fsevents: registry.npmjs.org/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: false
 
   /rtl-detect/1.0.4:
@@ -7794,6 +7834,13 @@ packages:
 
   /sax/1.2.4:
     resolution: {integrity: sha1-KBYjTiN4vdxOU1T6tcqold9xANk=, tarball: sax/download/sax-1.2.4.tgz}
+    dev: false
+
+  /scheduler/0.20.2:
+    resolution: {integrity: sha1-S67jlDbjSqk7SHS93L8P6Li1DpE=, tarball: scheduler/download/scheduler-0.20.2.tgz}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
     dev: false
 
   /schema-utils/2.7.0:
@@ -11000,8 +11047,8 @@ packages:
       '@algolia/autocomplete-preset-algolia': registry.npmjs.org/@algolia/autocomplete-preset-algolia/1.5.2_algoliasearch@4.13.0
       '@docsearch/css': registry.npmjs.org/@docsearch/css/3.0.0
       algoliasearch: registry.npmjs.org/algoliasearch/4.13.0
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     transitivePeerDependencies:
       - '@algolia/client-search'
     dev: false
@@ -11066,11 +11113,11 @@ packages:
       postcss: registry.npmjs.org/postcss/8.4.12
       postcss-loader: registry.npmjs.org/postcss-loader/6.2.1_postcss@8.4.12+webpack@5.70.0
       prompts: registry.npmjs.org/prompts/2.4.2
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
       react-dev-utils: registry.npmjs.org/react-dev-utils/12.0.0_typescript@4.6.2+webpack@5.70.0
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react-dom: 17.0.2_react@17.0.2
       react-helmet: registry.npmjs.org/react-helmet/6.1.0_react@17.0.2
-      react-loadable: registry.npmjs.org/@docusaurus/react-loadable/5.5.2_react@17.0.2
+      react-loadable: /@docusaurus/react-loadable/5.5.2_react@17.0.2
       react-loadable-ssr-addon-v5-slorber: registry.npmjs.org/react-loadable-ssr-addon-v5-slorber/1.0.1_fc6fb9624e95c2b0f71335ab282dbb6a
       react-router: registry.npmjs.org/react-router/5.2.1_react@17.0.2
       react-router-config: registry.npmjs.org/react-router-config/5.1.1_react-router@5.2.1+react@17.0.2
@@ -11147,8 +11194,8 @@ packages:
       fs-extra: registry.npmjs.org/fs-extra/10.0.1
       image-size: registry.npmjs.org/image-size/1.0.1
       mdast-util-to-string: registry.npmjs.org/mdast-util-to-string/2.0.0
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       remark-emoji: registry.npmjs.org/remark-emoji/2.2.0
       stringify-object: registry.npmjs.org/stringify-object/3.3.0
       tslib: registry.npmjs.org/tslib/2.3.1
@@ -11184,8 +11231,8 @@ packages:
       fs-extra: registry.npmjs.org/fs-extra/10.0.1
       image-size: registry.npmjs.org/image-size/1.0.1
       mdast-util-to-string: registry.npmjs.org/mdast-util-to-string/2.0.0
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       remark-emoji: registry.npmjs.org/remark-emoji/2.2.0
       stringify-object: registry.npmjs.org/stringify-object/3.3.0
       tslib: registry.npmjs.org/tslib/2.3.1
@@ -11221,8 +11268,8 @@ packages:
       feed: registry.npmjs.org/feed/4.2.2
       fs-extra: registry.npmjs.org/fs-extra/10.0.1
       lodash: registry.npmjs.org/lodash/4.17.21
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       reading-time: registry.npmjs.org/reading-time/1.5.0
       remark-admonitions: registry.npmjs.org/remark-admonitions/1.2.1
       tslib: registry.npmjs.org/tslib/2.3.1
@@ -11265,8 +11312,8 @@ packages:
       import-fresh: registry.npmjs.org/import-fresh/3.3.0
       js-yaml: registry.npmjs.org/js-yaml/4.1.0
       lodash: registry.npmjs.org/lodash/4.17.21
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       remark-admonitions: registry.npmjs.org/remark-admonitions/1.2.1
       shelljs: registry.npmjs.org/shelljs/0.8.5
       tslib: registry.npmjs.org/tslib/2.3.1
@@ -11305,8 +11352,8 @@ packages:
       '@docusaurus/utils-validation': registry.npmjs.org/@docusaurus/utils-validation/2.0.0-beta.15_e4dc28a41fd7a40a687699adff1c938e
       fs-extra: registry.npmjs.org/fs-extra/10.0.1
       globby: registry.npmjs.org/globby/11.1.0
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       remark-admonitions: registry.npmjs.org/remark-admonitions/1.2.1
       tslib: registry.npmjs.org/tslib/2.3.1
       webpack: registry.npmjs.org/webpack/5.70.0
@@ -11340,8 +11387,8 @@ packages:
       '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
       '@docusaurus/utils': registry.npmjs.org/@docusaurus/utils/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
       fs-extra: registry.npmjs.org/fs-extra/10.0.1
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       react-json-view: registry.npmjs.org/react-json-view/1.21.3_react-dom@17.0.2+react@17.0.2
       tslib: registry.npmjs.org/tslib/2.3.1
     transitivePeerDependencies:
@@ -11376,8 +11423,8 @@ packages:
     dependencies:
       '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
       '@docusaurus/utils-validation': registry.npmjs.org/@docusaurus/utils-validation/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       tslib: registry.npmjs.org/tslib/2.3.1
     transitivePeerDependencies:
       - '@babel/core'
@@ -11409,8 +11456,8 @@ packages:
     dependencies:
       '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
       '@docusaurus/utils-validation': registry.npmjs.org/@docusaurus/utils-validation/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       tslib: registry.npmjs.org/tslib/2.3.1
     transitivePeerDependencies:
       - '@babel/core'
@@ -11445,8 +11492,8 @@ packages:
       '@docusaurus/utils-common': registry.npmjs.org/@docusaurus/utils-common/2.0.0-beta.15
       '@docusaurus/utils-validation': registry.npmjs.org/@docusaurus/utils-validation/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
       fs-extra: registry.npmjs.org/fs-extra/10.0.1
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       sitemap: registry.npmjs.org/sitemap/7.1.1
       tslib: registry.npmjs.org/tslib/2.3.1
     transitivePeerDependencies:
@@ -11488,8 +11535,8 @@ packages:
       '@docusaurus/theme-classic': registry.npmjs.org/@docusaurus/theme-classic/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
       '@docusaurus/theme-common': registry.npmjs.org/@docusaurus/theme-common/2.0.0-beta.15_c6309244b0bd9ff05466805fd35f51cb
       '@docusaurus/theme-search-algolia': registry.npmjs.org/@docusaurus/theme-search-algolia/2.0.0-beta.15_c6309244b0bd9ff05466805fd35f51cb
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     transitivePeerDependencies:
       - '@algolia/client-search'
       - '@babel/core'
@@ -11520,9 +11567,9 @@ packages:
     peerDependencies:
       react: '*'
     dependencies:
-      '@types/react': registry.npmjs.org/@types/react/17.0.42
+      '@types/react': 17.0.42
       prop-types: registry.npmjs.org/prop-types/15.8.1
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
     dev: false
 
   registry.npmjs.org/@docusaurus/theme-classic/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790:
@@ -11544,7 +11591,7 @@ packages:
       '@docusaurus/utils': registry.npmjs.org/@docusaurus/utils/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
       '@docusaurus/utils-common': registry.npmjs.org/@docusaurus/utils-common/2.0.0-beta.15
       '@docusaurus/utils-validation': registry.npmjs.org/@docusaurus/utils-validation/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
-      '@mdx-js/react': registry.npmjs.org/@mdx-js/react/1.6.22_react@17.0.2
+      '@mdx-js/react': 1.6.22_react@17.0.2
       clsx: registry.npmjs.org/clsx/1.1.1
       copy-text-to-clipboard: registry.npmjs.org/copy-text-to-clipboard/3.0.1
       infima: registry.npmjs.org/infima/0.2.0-alpha.37
@@ -11552,8 +11599,8 @@ packages:
       postcss: registry.npmjs.org/postcss/8.4.12
       prism-react-renderer: registry.npmjs.org/prism-react-renderer/1.3.1_react@17.0.2
       prismjs: registry.npmjs.org/prismjs/1.27.0
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       react-router-dom: registry.npmjs.org/react-router-dom/5.3.0_react@17.0.2
       rtlcss: registry.npmjs.org/rtlcss/3.5.0
     transitivePeerDependencies:
@@ -11591,8 +11638,8 @@ packages:
       clsx: registry.npmjs.org/clsx/1.1.1
       parse-numeric-range: registry.npmjs.org/parse-numeric-range/1.3.0
       prism-react-renderer: registry.npmjs.org/prism-react-renderer/1.3.1_react@17.0.2
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       tslib: registry.npmjs.org/tslib/2.3.1
       utility-types: registry.npmjs.org/utility-types/3.10.0
     transitivePeerDependencies:
@@ -11634,8 +11681,8 @@ packages:
       clsx: registry.npmjs.org/clsx/1.1.1
       eta: registry.npmjs.org/eta/1.12.3
       lodash: registry.npmjs.org/lodash/4.17.21
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       tslib: registry.npmjs.org/tslib/2.3.1
       utility-types: registry.npmjs.org/utility-types/3.10.0
     transitivePeerDependencies:
@@ -11691,8 +11738,8 @@ packages:
       '@docusaurus/logger': registry.npmjs.org/@docusaurus/logger/2.0.0-beta.15
       '@docusaurus/utils': registry.npmjs.org/@docusaurus/utils/2.0.0-beta.15_a86373ef51290a2448142c1e68ff367a
       joi: registry.npmjs.org/joi/17.6.0
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       tslib: registry.npmjs.org/tslib/2.3.1
     transitivePeerDependencies:
       - '@babel/core'
@@ -11713,8 +11760,8 @@ packages:
       '@docusaurus/logger': registry.npmjs.org/@docusaurus/logger/2.0.0-beta.15
       '@docusaurus/utils': registry.npmjs.org/@docusaurus/utils/2.0.0-beta.15_e4dc28a41fd7a40a687699adff1c938e
       joi: registry.npmjs.org/joi/17.6.0
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       tslib: registry.npmjs.org/tslib/2.3.1
     transitivePeerDependencies:
       - '@babel/core'
@@ -11735,8 +11782,8 @@ packages:
       '@docusaurus/logger': registry.npmjs.org/@docusaurus/logger/2.0.0-beta.15
       '@docusaurus/utils': registry.npmjs.org/@docusaurus/utils/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
       joi: registry.npmjs.org/joi/17.6.0
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       tslib: registry.npmjs.org/tslib/2.3.1
     transitivePeerDependencies:
       - '@babel/core'
@@ -11768,8 +11815,8 @@ packages:
       js-yaml: registry.npmjs.org/js-yaml/4.1.0
       lodash: registry.npmjs.org/lodash/4.17.21
       micromatch: registry.npmjs.org/micromatch/4.0.4
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       remark-mdx-remove-exports: registry.npmjs.org/remark-mdx-remove-exports/1.6.22
       remark-mdx-remove-imports: registry.npmjs.org/remark-mdx-remove-imports/1.6.22
       resolve-pathname: registry.npmjs.org/resolve-pathname/3.0.0
@@ -11803,8 +11850,8 @@ packages:
       js-yaml: registry.npmjs.org/js-yaml/4.1.0
       lodash: registry.npmjs.org/lodash/4.17.21
       micromatch: registry.npmjs.org/micromatch/4.0.4
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       remark-mdx-remove-exports: registry.npmjs.org/remark-mdx-remove-exports/1.6.22
       remark-mdx-remove-imports: registry.npmjs.org/remark-mdx-remove-imports/1.6.22
       resolve-pathname: registry.npmjs.org/resolve-pathname/3.0.0
@@ -11838,8 +11885,8 @@ packages:
       js-yaml: registry.npmjs.org/js-yaml/4.1.0
       lodash: registry.npmjs.org/lodash/4.17.21
       micromatch: registry.npmjs.org/micromatch/4.0.4
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
       remark-mdx-remove-exports: registry.npmjs.org/remark-mdx-remove-exports/1.6.22
       remark-mdx-remove-imports: registry.npmjs.org/remark-mdx-remove-imports/1.6.22
       resolve-pathname: registry.npmjs.org/resolve-pathname/3.0.0
@@ -11913,17 +11960,6 @@ packages:
       - supports-color
     dev: false
 
-  registry.npmjs.org/@mdx-js/react/1.6.22_react@17.0.2:
-    resolution: {integrity: sha512-TDoPum4SHdfPiGSAaRBw7ECyI8VaHpK8GJugbJIJuqyh6kzw9ZLJZW3HGL3NNrJGxcAixUvqROm+YuQOo5eXtg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@mdx-js/react/-/react-1.6.22.tgz}
-    id: registry.npmjs.org/@mdx-js/react/1.6.22
-    name: '@mdx-js/react'
-    version: 1.6.22
-    peerDependencies:
-      react: ^16.13.1 || ^17.0.0
-    dependencies:
-      react: registry.npmjs.org/react/17.0.2
-    dev: false
-
   registry.npmjs.org/@mdx-js/runtime/1.6.22_react@17.0.2:
     resolution: {integrity: sha512-p17spaO2+55VLCuxXA3LVHC4phRx60NR2XMdZ+qgVU1lKvEX4y88dmFNOzGDCPLJ03IZyKrJ/rPWWRiBrd9JrQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@mdx-js/runtime/-/runtime-1.6.22.tgz}
     id: registry.npmjs.org/@mdx-js/runtime/1.6.22
@@ -11934,9 +11970,9 @@ packages:
       react: ^16.13.1
     dependencies:
       '@mdx-js/mdx': registry.npmjs.org/@mdx-js/mdx/1.6.22
-      '@mdx-js/react': registry.npmjs.org/@mdx-js/react/1.6.22_react@17.0.2
+      '@mdx-js/react': 1.6.22_react@17.0.2
       buble-jsx-only: registry.npmjs.org/buble-jsx-only/0.19.8
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -12387,12 +12423,6 @@ packages:
     version: 5.0.3
     dev: false
 
-  registry.npmjs.org/@types/prop-types/15.7.4:
-    resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.4.tgz}
-    name: '@types/prop-types'
-    version: 15.7.4
-    dev: false
-
   registry.npmjs.org/@types/qs/6.9.7:
     resolution: {integrity: sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/qs/-/qs-6.9.7.tgz}
     name: '@types/qs'
@@ -12403,16 +12433,6 @@ packages:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/range-parser/-/range-parser-1.2.4.tgz}
     name: '@types/range-parser'
     version: 1.2.4
-    dev: false
-
-  registry.npmjs.org/@types/react/17.0.42:
-    resolution: {integrity: sha512-nuab3x3CpJ7VFeNA+3HTUuEkvClYHXqWtWd7Ud6AZYW7Z3NH9WKtgU+tFB0ZLcHq+niB/HnzLcaZPqMJ95+k5Q==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/react/-/react-17.0.42.tgz}
-    name: '@types/react'
-    version: 17.0.42
-    dependencies:
-      '@types/prop-types': registry.npmjs.org/@types/prop-types/15.7.4
-      '@types/scheduler': registry.npmjs.org/@types/scheduler/0.16.2
-      csstype: registry.npmjs.org/csstype/3.0.11
     dev: false
 
   registry.npmjs.org/@types/retry/0.12.1:
@@ -12427,12 +12447,6 @@ packages:
     version: 1.2.4
     dependencies:
       '@types/node': registry.npmjs.org/@types/node/17.0.23
-    dev: false
-
-  registry.npmjs.org/@types/scheduler/0.16.2:
-    resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.2.tgz}
-    name: '@types/scheduler'
-    version: 0.16.2
     dev: false
 
   registry.npmjs.org/@types/serve-index/1.9.1:
@@ -13405,7 +13419,7 @@ packages:
       normalize-path: registry.npmjs.org/normalize-path/3.0.0
       readdirp: registry.npmjs.org/readdirp/3.6.0
     optionalDependencies:
-      fsevents: registry.npmjs.org/fsevents/2.3.2
+      fsevents: 2.3.2
     dev: false
 
   registry.npmjs.org/chrome-trace-event/1.0.3:
@@ -14002,12 +14016,6 @@ packages:
       css-tree: registry.npmjs.org/css-tree/1.1.3
     dev: false
 
-  registry.npmjs.org/csstype/3.0.11:
-    resolution: {integrity: sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/csstype/-/csstype-3.0.11.tgz}
-    name: csstype
-    version: 3.0.11
-    dev: false
-
   registry.npmjs.org/debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/debug/-/debug-2.6.9.tgz}
     name: debug
@@ -14375,7 +14383,7 @@ packages:
     version: 5.9.2
     engines: {node: '>=10.13.0'}
     dependencies:
-      graceful-fs: registry.npmjs.org/graceful-fs/4.2.9
+      graceful-fs: 4.2.9
       tapable: registry.npmjs.org/tapable/2.2.1
     dev: false
 
@@ -14791,7 +14799,7 @@ packages:
     dependencies:
       fbemitter: registry.npmjs.org/fbemitter/3.0.0
       fbjs: registry.npmjs.org/fbjs/3.0.4
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
     transitivePeerDependencies:
       - encoding
     dev: false
@@ -14896,16 +14904,6 @@ packages:
     name: fs.realpath
     version: 1.0.0
     dev: false
-
-  registry.npmjs.org/fsevents/2.3.2:
-    resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz}
-    name: fsevents
-    version: 2.3.2
-    engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
-    os: [darwin]
-    requiresBuild: true
-    dev: false
-    optional: true
 
   registry.npmjs.org/function-bind/1.1.1:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz}
@@ -15915,12 +15913,6 @@ packages:
       '@sideway/pinpoint': registry.npmjs.org/@sideway/pinpoint/2.0.0
     dev: false
 
-  registry.npmjs.org/js-tokens/4.0.0:
-    resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz}
-    name: js-tokens
-    version: 4.0.0
-    dev: false
-
   registry.npmjs.org/js-yaml/3.14.1:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/js-yaml/-/js-yaml-3.14.1.tgz}
     name: js-yaml
@@ -16000,7 +15992,7 @@ packages:
     dependencies:
       universalify: registry.npmjs.org/universalify/2.0.0
     optionalDependencies:
-      graceful-fs: registry.npmjs.org/graceful-fs/4.2.9
+      graceful-fs: 4.2.9
     dev: false
 
   registry.npmjs.org/keyv/3.1.0:
@@ -16220,15 +16212,6 @@ packages:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz}
     name: lodash
     version: 4.17.21
-    dev: false
-
-  registry.npmjs.org/loose-envify/1.4.0:
-    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz}
-    name: loose-envify
-    version: 1.4.0
-    hasBin: true
-    dependencies:
-      js-tokens: registry.npmjs.org/js-tokens/4.0.0
     dev: false
 
   registry.npmjs.org/lower-case/2.0.2:
@@ -16457,7 +16440,7 @@ packages:
     dependencies:
       '@babel/runtime': registry.npmjs.org/@babel/runtime/7.17.8
       prop-types: registry.npmjs.org/prop-types/15.8.1
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
       tiny-warning: registry.npmjs.org/tiny-warning/1.0.3
     dev: false
 
@@ -16676,13 +16659,6 @@ packages:
     version: 2.0.1
     dependencies:
       boolbase: registry.npmjs.org/boolbase/1.0.0
-    dev: false
-
-  registry.npmjs.org/object-assign/4.1.1:
-    resolution: {integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz}
-    name: object-assign
-    version: 4.1.1
-    engines: {node: '>=0.10.0'}
     dev: false
 
   registry.npmjs.org/object-is/1.1.5:
@@ -17610,7 +17586,7 @@ packages:
     peerDependencies:
       react: '>=0.14.9'
     dependencies:
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
     dev: false
 
   registry.npmjs.org/prismjs/1.27.0:
@@ -17825,20 +17801,6 @@ packages:
       - webpack
     dev: false
 
-  registry.npmjs.org/react-dom/17.0.2_react@17.0.2:
-    resolution: {integrity: sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz}
-    id: registry.npmjs.org/react-dom/17.0.2
-    name: react-dom
-    version: 17.0.2
-    peerDependencies:
-      react: 17.0.2
-    dependencies:
-      loose-envify: registry.npmjs.org/loose-envify/1.4.0
-      object-assign: registry.npmjs.org/object-assign/4.1.1
-      react: registry.npmjs.org/react/17.0.2
-      scheduler: registry.npmjs.org/scheduler/0.20.2
-    dev: false
-
   registry.npmjs.org/react-error-overlay/6.0.10:
     resolution: {integrity: sha512-mKR90fX7Pm5seCOfz8q9F+66VCc1PGsWSBxKbITjfKVQHMNF2zudxHnMdJiB1fRCb+XsbQV9sO9DCkgsMQgBIA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.10.tgz}
     name: react-error-overlay
@@ -17859,9 +17821,9 @@ packages:
     peerDependencies:
       react: '>=16.3.0'
     dependencies:
-      object-assign: registry.npmjs.org/object-assign/4.1.1
+      object-assign: 4.1.1
       prop-types: registry.npmjs.org/prop-types/15.8.1
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
       react-fast-compare: registry.npmjs.org/react-fast-compare/3.2.0
       react-side-effect: registry.npmjs.org/react-side-effect/2.1.1_react@17.0.2
     dev: false
@@ -17882,9 +17844,9 @@ packages:
       react-dom: ^17.0.0 || ^16.3.0 || ^15.5.4
     dependencies:
       flux: registry.npmjs.org/flux/4.0.3_react@17.0.2
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
       react-base16-styling: registry.npmjs.org/react-base16-styling/0.6.0
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      react-dom: 17.0.2_react@17.0.2
       react-lifecycles-compat: registry.npmjs.org/react-lifecycles-compat/3.0.4
       react-textarea-autosize: registry.npmjs.org/react-textarea-autosize/8.3.3_react@17.0.2
     transitivePeerDependencies:
@@ -17909,7 +17871,7 @@ packages:
       webpack: '>=4.41.1 || 5.x'
     dependencies:
       '@babel/runtime': registry.npmjs.org/@babel/runtime/7.17.8
-      react-loadable: registry.npmjs.org/@docusaurus/react-loadable/5.5.2_react@17.0.2
+      react-loadable: /@docusaurus/react-loadable/5.5.2_react@17.0.2
       webpack: registry.npmjs.org/webpack/5.70.0
     dev: false
 
@@ -17923,7 +17885,7 @@ packages:
       react-router: '>=5'
     dependencies:
       '@babel/runtime': registry.npmjs.org/@babel/runtime/7.17.8
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
       react-router: registry.npmjs.org/react-router/5.2.1_react@17.0.2
     dev: false
 
@@ -17937,9 +17899,9 @@ packages:
     dependencies:
       '@babel/runtime': registry.npmjs.org/@babel/runtime/7.17.8
       history: registry.npmjs.org/history/4.10.1
-      loose-envify: registry.npmjs.org/loose-envify/1.4.0
+      loose-envify: 1.4.0
       prop-types: registry.npmjs.org/prop-types/15.8.1
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
       react-router: registry.npmjs.org/react-router/5.2.1_react@17.0.2
       tiny-invariant: registry.npmjs.org/tiny-invariant/1.2.0
       tiny-warning: registry.npmjs.org/tiny-warning/1.0.3
@@ -17956,11 +17918,11 @@ packages:
       '@babel/runtime': registry.npmjs.org/@babel/runtime/7.17.8
       history: registry.npmjs.org/history/4.10.1
       hoist-non-react-statics: registry.npmjs.org/hoist-non-react-statics/3.3.2
-      loose-envify: registry.npmjs.org/loose-envify/1.4.0
+      loose-envify: 1.4.0
       mini-create-react-context: registry.npmjs.org/mini-create-react-context/0.4.1_prop-types@15.8.1+react@17.0.2
       path-to-regexp: registry.npmjs.org/path-to-regexp/1.8.0
       prop-types: registry.npmjs.org/prop-types/15.8.1
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
       react-is: registry.npmjs.org/react-is/16.13.1
       tiny-invariant: registry.npmjs.org/tiny-invariant/1.2.0
       tiny-warning: registry.npmjs.org/tiny-warning/1.0.3
@@ -17974,7 +17936,7 @@ packages:
     peerDependencies:
       react: ^16.3.0 || ^17.0.0
     dependencies:
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
     dev: false
 
   registry.npmjs.org/react-textarea-autosize/8.3.3_react@17.0.2:
@@ -17987,21 +17949,11 @@ packages:
       react: ^16.8.0 || ^17.0.0
     dependencies:
       '@babel/runtime': registry.npmjs.org/@babel/runtime/7.17.8
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
       use-composed-ref: registry.npmjs.org/use-composed-ref/1.2.1_react@17.0.2
       use-latest: registry.npmjs.org/use-latest/1.2.0_react@17.0.2
     transitivePeerDependencies:
       - '@types/react'
-    dev: false
-
-  registry.npmjs.org/react/17.0.2:
-    resolution: {integrity: sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/react/-/react-17.0.2.tgz}
-    name: react
-    version: 17.0.2
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      loose-envify: registry.npmjs.org/loose-envify/1.4.0
-      object-assign: registry.npmjs.org/object-assign/4.1.1
     dev: false
 
   registry.npmjs.org/readable-stream/2.3.7:
@@ -18442,15 +18394,6 @@ packages:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/sax/-/sax-1.2.4.tgz}
     name: sax
     version: 1.2.4
-    dev: false
-
-  registry.npmjs.org/scheduler/0.20.2:
-    resolution: {integrity: sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/scheduler/-/scheduler-0.20.2.tgz}
-    name: scheduler
-    version: 0.20.2
-    dependencies:
-      loose-envify: registry.npmjs.org/loose-envify/1.4.0
-      object-assign: registry.npmjs.org/object-assign/4.1.1
     dev: false
 
   registry.npmjs.org/schema-utils/2.7.1:
@@ -19486,7 +19429,7 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0
     dependencies:
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
     dev: false
 
   registry.npmjs.org/use-isomorphic-layout-effect/1.1.1_react@17.0.2:
@@ -19501,7 +19444,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
     dev: false
 
   registry.npmjs.org/use-latest/1.2.0_react@17.0.2:
@@ -19516,7 +19459,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      react: registry.npmjs.org/react/17.0.2
+      react: 17.0.2
       use-isomorphic-layout-effect: registry.npmjs.org/use-isomorphic-layout-effect/1.1.1_react@17.0.2
     dev: false
 
@@ -19621,7 +19564,7 @@ packages:
     engines: {node: '>=10.13.0'}
     dependencies:
       glob-to-regexp: registry.npmjs.org/glob-to-regexp/0.4.1
-      graceful-fs: registry.npmjs.org/graceful-fs/4.2.9
+      graceful-fs: 4.2.9
     dev: false
 
   registry.npmjs.org/wbuf/1.7.3:
