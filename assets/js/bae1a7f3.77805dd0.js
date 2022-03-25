@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktaro_docs=self.webpackChunktaro_docs||[]).push([[66245],{72983:function(s){s.exports=JSON.parse('{"allTagsPath":"/taro-docs/blog/tags","slug":"/taro-docs/blog/tags/v-3","name":"v3","count":14,"permalink":"/taro-docs/blog/tags/v-3"}')}}]);
