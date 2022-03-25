@@ -4,8 +4,8 @@
   <ShortName>Taro 文档</ShortName>
   <Description>Search Taro 文档</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://nervjs.github.io/taro/./img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://nervjs.github.io/taro/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://nervjs.github.io/taro/opensearch.xml" />
-  <moz:SearchForm>https://nervjs.github.io/taro/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://nervjs.github.io/taro-docs/./img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://nervjs.github.io/taro-docs/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://nervjs.github.io/taro-docs/opensearch.xml" />
+  <moz:SearchForm>https://nervjs.github.io/taro-docs/</moz:SearchForm>
 </OpenSearchDescription>
