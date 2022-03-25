@@ -286,15 +286,23 @@ const siteConfig = {
       },
     ],
   ],
-  // webpack: {
-  //   jsLoader: (isServer) => ({
-  //     loader: require.resolve('esbuild-loader'),
-  //     options: {
-  //       loader: 'tsx',
-  //       target: isServer ? 'node12' : 'es2020',
-  //     },
-  //   }),
-  // },
+  webpack: {
+    jsLoader: (isServer) => ({
+      loader: require.resolve('swc-loader'),
+      options: {
+        jsc: {
+          parser: {
+            syntax: 'typescript',
+            tsx: true
+          },
+          target: 'es2017',
+        },
+        module: {
+          type: isServer ? 'commonjs' : 'es6',
+        }
+      },
+    }),
+  },
 }
 
 module.exports = siteConfig

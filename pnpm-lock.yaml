@@ -5,25 +5,29 @@ specifiers:
   '@docusaurus/plugin-pwa': 2.0.0-beta.15
   '@docusaurus/preset-classic': 2.0.0-beta.15
   '@mdx-js/react': ^2.1.0
+  '@swc/core': ^1.2.160
   clsx: ^1.1.1
   cross-env: ^7.0.3
   prism-react-renderer: ^1.2.1
   react: ^17.0.2
   react-dom: ^17.0.2
+  swc-loader: ^0.1.15
   ts-node: ^10.5.0
   typescript: ^4.5.5
 
 dependencies:
-  '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-  '@docusaurus/plugin-pwa': registry.npmjs.org/@docusaurus/plugin-pwa/2.0.0-beta.15_c6309244b0bd9ff05466805fd35f51cb
-  '@docusaurus/preset-classic': registry.npmjs.org/@docusaurus/preset-classic/2.0.0-beta.15_c6309244b0bd9ff05466805fd35f51cb
+  '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+  '@docusaurus/plugin-pwa': registry.npmjs.org/@docusaurus/plugin-pwa/2.0.0-beta.15_863936a782838f8806da85c92e539de3
+  '@docusaurus/preset-classic': registry.npmjs.org/@docusaurus/preset-classic/2.0.0-beta.15_863936a782838f8806da85c92e539de3
   '@mdx-js/react': registry.npmjs.org/@mdx-js/react/2.1.0_react@17.0.2
+  '@swc/core': registry.npmjs.org/@swc/core/1.2.160
   clsx: registry.npmjs.org/clsx/1.1.1
   cross-env: registry.npmjs.org/cross-env/7.0.3
   prism-react-renderer: registry.npmjs.org/prism-react-renderer/1.3.1_react@17.0.2
   react: registry.npmjs.org/react/17.0.2
   react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
-  ts-node: registry.npmjs.org/ts-node/10.7.0_typescript@4.6.2
+  swc-loader: registry.npmjs.org/swc-loader/0.1.15_@swc+core@1.2.160
+  ts-node: registry.npmjs.org/ts-node/10.7.0_e74c291532bb8c8c8e02ee8105653fd9
   typescript: registry.npmjs.org/typescript/4.6.2
 
 packages:
@@ -2821,7 +2825,7 @@ packages:
       - '@algolia/client-search'
     dev: false
 
-  registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790:
+  registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e:
     resolution: {integrity: sha512-zXhhD0fApMSvq/9Pkm9DQxa//hGOXVCq9yMHiXOkI5D1tLec7PxtnaC5cLfGHljkN9cKIfRDYUVcG1gHymVfpA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@docusaurus/core/-/core-2.0.0-beta.15.tgz}
     id: registry.npmjs.org/@docusaurus/core/2.0.0-beta.15
     name: '@docusaurus/core'
@@ -2844,7 +2848,7 @@ packages:
       '@babel/traverse': registry.npmjs.org/@babel/traverse/7.17.3
       '@docusaurus/cssnano-preset': registry.npmjs.org/@docusaurus/cssnano-preset/2.0.0-beta.15
       '@docusaurus/logger': registry.npmjs.org/@docusaurus/logger/2.0.0-beta.15
-      '@docusaurus/mdx-loader': registry.npmjs.org/@docusaurus/mdx-loader/2.0.0-beta.15_978f344c876a57c1143ffe356b90df31
+      '@docusaurus/mdx-loader': registry.npmjs.org/@docusaurus/mdx-loader/2.0.0-beta.15_968a49400b8dca746f8e3e0c53e9e52e
       '@docusaurus/react-loadable': registry.npmjs.org/@docusaurus/react-loadable/5.5.2_react@17.0.2
       '@docusaurus/utils': registry.npmjs.org/@docusaurus/utils/2.0.0-beta.15_a86373ef51290a2448142c1e68ff367a
       '@docusaurus/utils-common': registry.npmjs.org/@docusaurus/utils-common/2.0.0-beta.15
@@ -2896,12 +2900,12 @@ packages:
       serve-handler: registry.npmjs.org/serve-handler/6.1.3
       shelljs: registry.npmjs.org/shelljs/0.8.5
       strip-ansi: registry.npmjs.org/strip-ansi/6.0.1
-      terser-webpack-plugin: registry.npmjs.org/terser-webpack-plugin/5.3.1_webpack@5.70.0
+      terser-webpack-plugin: registry.npmjs.org/terser-webpack-plugin/5.3.1_@swc+core@1.2.160+webpack@5.70.0
       tslib: registry.npmjs.org/tslib/2.3.1
       update-notifier: registry.npmjs.org/update-notifier/5.1.0
       url-loader: registry.npmjs.org/url-loader/4.1.1_file-loader@6.2.0+webpack@5.70.0
       wait-on: registry.npmjs.org/wait-on/6.0.1
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
       webpack-bundle-analyzer: registry.npmjs.org/webpack-bundle-analyzer/4.5.0
       webpack-dev-server: registry.npmjs.org/webpack-dev-server/4.7.4_webpack@5.70.0
       webpack-merge: registry.npmjs.org/webpack-merge/5.8.0
@@ -2942,7 +2946,44 @@ packages:
       tslib: registry.npmjs.org/tslib/2.3.1
     dev: false
 
-  registry.npmjs.org/@docusaurus/mdx-loader/2.0.0-beta.15_978f344c876a57c1143ffe356b90df31:
+  registry.npmjs.org/@docusaurus/mdx-loader/2.0.0-beta.15_161b0f0376444b01e87c90ea1005bbfd:
+    resolution: {integrity: sha512-MVpytjDDao7hmPF1QSs9B5zoTgevZjiqjnX3FM1yjqdCv+chyUo0gnmYHjeG/4Gqu7jucp+dDdp6yQpzs4g09A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@docusaurus/mdx-loader/-/mdx-loader-2.0.0-beta.15.tgz}
+    id: registry.npmjs.org/@docusaurus/mdx-loader/2.0.0-beta.15
+    name: '@docusaurus/mdx-loader'
+    version: 2.0.0-beta.15
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: ^16.8.4 || ^17.0.0
+      react-dom: ^16.8.4 || ^17.0.0
+    dependencies:
+      '@babel/parser': registry.npmjs.org/@babel/parser/7.17.8
+      '@babel/traverse': registry.npmjs.org/@babel/traverse/7.17.3
+      '@docusaurus/logger': registry.npmjs.org/@docusaurus/logger/2.0.0-beta.15
+      '@docusaurus/utils': registry.npmjs.org/@docusaurus/utils/2.0.0-beta.15_e4dc28a41fd7a40a687699adff1c938e
+      '@mdx-js/mdx': registry.npmjs.org/@mdx-js/mdx/1.6.22
+      escape-html: registry.npmjs.org/escape-html/1.0.3
+      file-loader: registry.npmjs.org/file-loader/6.2.0_webpack@5.70.0
+      fs-extra: registry.npmjs.org/fs-extra/10.0.1
+      image-size: registry.npmjs.org/image-size/1.0.1
+      mdast-util-to-string: registry.npmjs.org/mdast-util-to-string/2.0.0
+      react: registry.npmjs.org/react/17.0.2
+      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
+      remark-emoji: registry.npmjs.org/remark-emoji/2.2.0
+      stringify-object: registry.npmjs.org/stringify-object/3.3.0
+      tslib: registry.npmjs.org/tslib/2.3.1
+      unist-util-visit: registry.npmjs.org/unist-util-visit/2.0.3
+      url-loader: registry.npmjs.org/url-loader/4.1.1_file-loader@6.2.0+webpack@5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@swc/core'
+      - esbuild
+      - supports-color
+      - uglify-js
+      - webpack-cli
+    dev: false
+
+  registry.npmjs.org/@docusaurus/mdx-loader/2.0.0-beta.15_968a49400b8dca746f8e3e0c53e9e52e:
     resolution: {integrity: sha512-MVpytjDDao7hmPF1QSs9B5zoTgevZjiqjnX3FM1yjqdCv+chyUo0gnmYHjeG/4Gqu7jucp+dDdp6yQpzs4g09A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@docusaurus/mdx-loader/-/mdx-loader-2.0.0-beta.15.tgz}
     id: registry.npmjs.org/@docusaurus/mdx-loader/2.0.0-beta.15
     name: '@docusaurus/mdx-loader'
@@ -2969,7 +3010,7 @@ packages:
       tslib: registry.npmjs.org/tslib/2.3.1
       unist-util-visit: registry.npmjs.org/unist-util-visit/2.0.3
       url-loader: registry.npmjs.org/url-loader/4.1.1_file-loader@6.2.0+webpack@5.70.0
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     transitivePeerDependencies:
       - '@babel/core'
       - '@swc/core'
@@ -2979,44 +3020,7 @@ packages:
       - webpack-cli
     dev: false
 
-  registry.npmjs.org/@docusaurus/mdx-loader/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-MVpytjDDao7hmPF1QSs9B5zoTgevZjiqjnX3FM1yjqdCv+chyUo0gnmYHjeG/4Gqu7jucp+dDdp6yQpzs4g09A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@docusaurus/mdx-loader/-/mdx-loader-2.0.0-beta.15.tgz}
-    id: registry.npmjs.org/@docusaurus/mdx-loader/2.0.0-beta.15
-    name: '@docusaurus/mdx-loader'
-    version: 2.0.0-beta.15
-    engines: {node: '>=14'}
-    peerDependencies:
-      react: ^16.8.4 || ^17.0.0
-      react-dom: ^16.8.4 || ^17.0.0
-    dependencies:
-      '@babel/parser': registry.npmjs.org/@babel/parser/7.17.8
-      '@babel/traverse': registry.npmjs.org/@babel/traverse/7.17.3
-      '@docusaurus/logger': registry.npmjs.org/@docusaurus/logger/2.0.0-beta.15
-      '@docusaurus/utils': registry.npmjs.org/@docusaurus/utils/2.0.0-beta.15_e4dc28a41fd7a40a687699adff1c938e
-      '@mdx-js/mdx': registry.npmjs.org/@mdx-js/mdx/1.6.22
-      escape-html: registry.npmjs.org/escape-html/1.0.3
-      file-loader: registry.npmjs.org/file-loader/6.2.0_webpack@5.70.0
-      fs-extra: registry.npmjs.org/fs-extra/10.0.1
-      image-size: registry.npmjs.org/image-size/1.0.1
-      mdast-util-to-string: registry.npmjs.org/mdast-util-to-string/2.0.0
-      react: registry.npmjs.org/react/17.0.2
-      react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
-      remark-emoji: registry.npmjs.org/remark-emoji/2.2.0
-      stringify-object: registry.npmjs.org/stringify-object/3.3.0
-      tslib: registry.npmjs.org/tslib/2.3.1
-      unist-util-visit: registry.npmjs.org/unist-util-visit/2.0.3
-      url-loader: registry.npmjs.org/url-loader/4.1.1_file-loader@6.2.0+webpack@5.70.0
-      webpack: registry.npmjs.org/webpack/5.70.0
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@swc/core'
-      - esbuild
-      - supports-color
-      - uglify-js
-      - webpack-cli
-    dev: false
-
-  registry.npmjs.org/@docusaurus/plugin-content-blog/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790:
+  registry.npmjs.org/@docusaurus/plugin-content-blog/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e:
     resolution: {integrity: sha512-VtEwkgkoNIS8JFPe+huBeBuJ8HG8Lq1JNYM/ItwQg/cwGAgP8EgwbEuKDn428oZKEI2PpgAuf5Gv4AzJWIes9A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@docusaurus/plugin-content-blog/-/plugin-content-blog-2.0.0-beta.15.tgz}
     id: registry.npmjs.org/@docusaurus/plugin-content-blog/2.0.0-beta.15
     name: '@docusaurus/plugin-content-blog'
@@ -3026,9 +3030,9 @@ packages:
       react: ^16.8.4 || ^17.0.0
       react-dom: ^16.8.4 || ^17.0.0
     dependencies:
-      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
+      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
       '@docusaurus/logger': registry.npmjs.org/@docusaurus/logger/2.0.0-beta.15
-      '@docusaurus/mdx-loader': registry.npmjs.org/@docusaurus/mdx-loader/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
+      '@docusaurus/mdx-loader': registry.npmjs.org/@docusaurus/mdx-loader/2.0.0-beta.15_161b0f0376444b01e87c90ea1005bbfd
       '@docusaurus/utils': registry.npmjs.org/@docusaurus/utils/2.0.0-beta.15_e4dc28a41fd7a40a687699adff1c938e
       '@docusaurus/utils-common': registry.npmjs.org/@docusaurus/utils-common/2.0.0-beta.15
       '@docusaurus/utils-validation': registry.npmjs.org/@docusaurus/utils-validation/2.0.0-beta.15_e4dc28a41fd7a40a687699adff1c938e
@@ -3042,7 +3046,7 @@ packages:
       remark-admonitions: registry.npmjs.org/remark-admonitions/1.2.1
       tslib: registry.npmjs.org/tslib/2.3.1
       utility-types: registry.npmjs.org/utility-types/3.10.0
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     transitivePeerDependencies:
       - '@babel/core'
       - '@parcel/css'
@@ -3060,7 +3064,7 @@ packages:
       - webpack-cli
     dev: false
 
-  registry.npmjs.org/@docusaurus/plugin-content-docs/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790:
+  registry.npmjs.org/@docusaurus/plugin-content-docs/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e:
     resolution: {integrity: sha512-HSwNZdUKz4rpJiGbFjl/OFhSleeZUSZ6E6lk98i4iL1A5u6fIm4CHsT53yp4UUOse+lFrePTFZsyqwMA4nZZYA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@docusaurus/plugin-content-docs/-/plugin-content-docs-2.0.0-beta.15.tgz}
     id: registry.npmjs.org/@docusaurus/plugin-content-docs/2.0.0-beta.15
     name: '@docusaurus/plugin-content-docs'
@@ -3070,9 +3074,9 @@ packages:
       react: ^16.8.4 || ^17.0.0
       react-dom: ^16.8.4 || ^17.0.0
     dependencies:
-      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
+      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
       '@docusaurus/logger': registry.npmjs.org/@docusaurus/logger/2.0.0-beta.15
-      '@docusaurus/mdx-loader': registry.npmjs.org/@docusaurus/mdx-loader/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
+      '@docusaurus/mdx-loader': registry.npmjs.org/@docusaurus/mdx-loader/2.0.0-beta.15_161b0f0376444b01e87c90ea1005bbfd
       '@docusaurus/utils': registry.npmjs.org/@docusaurus/utils/2.0.0-beta.15_e4dc28a41fd7a40a687699adff1c938e
       '@docusaurus/utils-validation': registry.npmjs.org/@docusaurus/utils-validation/2.0.0-beta.15_e4dc28a41fd7a40a687699adff1c938e
       combine-promises: registry.npmjs.org/combine-promises/1.1.0
@@ -3086,7 +3090,7 @@ packages:
       shelljs: registry.npmjs.org/shelljs/0.8.5
       tslib: registry.npmjs.org/tslib/2.3.1
       utility-types: registry.npmjs.org/utility-types/3.10.0
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     transitivePeerDependencies:
       - '@babel/core'
       - '@parcel/css'
@@ -3104,7 +3108,7 @@ packages:
       - webpack-cli
     dev: false
 
-  registry.npmjs.org/@docusaurus/plugin-content-pages/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790:
+  registry.npmjs.org/@docusaurus/plugin-content-pages/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e:
     resolution: {integrity: sha512-N7YhW5RiOY6J228z4lOoP//qX0Q48cRtxDONZ/Ohd9C5OI2vS6TD8iQuDqOIYHxH+BshjNSsKvbJ+SMIQDwysg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@docusaurus/plugin-content-pages/-/plugin-content-pages-2.0.0-beta.15.tgz}
     id: registry.npmjs.org/@docusaurus/plugin-content-pages/2.0.0-beta.15
     name: '@docusaurus/plugin-content-pages'
@@ -3114,8 +3118,8 @@ packages:
       react: ^16.8.4 || ^17.0.0
       react-dom: ^16.8.4 || ^17.0.0
     dependencies:
-      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/mdx-loader': registry.npmjs.org/@docusaurus/mdx-loader/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
+      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/mdx-loader': registry.npmjs.org/@docusaurus/mdx-loader/2.0.0-beta.15_161b0f0376444b01e87c90ea1005bbfd
       '@docusaurus/utils': registry.npmjs.org/@docusaurus/utils/2.0.0-beta.15_e4dc28a41fd7a40a687699adff1c938e
       '@docusaurus/utils-validation': registry.npmjs.org/@docusaurus/utils-validation/2.0.0-beta.15_e4dc28a41fd7a40a687699adff1c938e
       fs-extra: registry.npmjs.org/fs-extra/10.0.1
@@ -3124,7 +3128,7 @@ packages:
       react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
       remark-admonitions: registry.npmjs.org/remark-admonitions/1.2.1
       tslib: registry.npmjs.org/tslib/2.3.1
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     transitivePeerDependencies:
       - '@babel/core'
       - '@parcel/css'
@@ -3142,7 +3146,7 @@ packages:
       - webpack-cli
     dev: false
 
-  registry.npmjs.org/@docusaurus/plugin-debug/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790:
+  registry.npmjs.org/@docusaurus/plugin-debug/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e:
     resolution: {integrity: sha512-Jth11jB/rVqPwCGdkVKSUWeXZPAr/NyPn+yeknTBk2LgQKBJ3YU5dNG0uyt0Ay+UYT01TkousPJkXhLuy4Qrsw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@docusaurus/plugin-debug/-/plugin-debug-2.0.0-beta.15.tgz}
     id: registry.npmjs.org/@docusaurus/plugin-debug/2.0.0-beta.15
     name: '@docusaurus/plugin-debug'
@@ -3152,7 +3156,7 @@ packages:
       react: ^16.8.4 || ^17.0.0
       react-dom: ^16.8.4 || ^17.0.0
     dependencies:
-      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
+      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
       '@docusaurus/utils': registry.npmjs.org/@docusaurus/utils/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
       fs-extra: registry.npmjs.org/fs-extra/10.0.1
       react: registry.npmjs.org/react/17.0.2
@@ -3179,7 +3183,7 @@ packages:
       - webpack-cli
     dev: false
 
-  registry.npmjs.org/@docusaurus/plugin-google-analytics/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790:
+  registry.npmjs.org/@docusaurus/plugin-google-analytics/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e:
     resolution: {integrity: sha512-ELAnxNYiC2i7gfu/ViurNIdm1/DdnbEfVDmpffS9niQhOREM1U3jpxkz/ff1GIC6heOLyHTtini/CZBDoroVGw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@docusaurus/plugin-google-analytics/-/plugin-google-analytics-2.0.0-beta.15.tgz}
     id: registry.npmjs.org/@docusaurus/plugin-google-analytics/2.0.0-beta.15
     name: '@docusaurus/plugin-google-analytics'
@@ -3189,7 +3193,7 @@ packages:
       react: ^16.8.4 || ^17.0.0
       react-dom: ^16.8.4 || ^17.0.0
     dependencies:
-      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
+      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
       '@docusaurus/utils-validation': registry.npmjs.org/@docusaurus/utils-validation/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
       react: registry.npmjs.org/react/17.0.2
       react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
@@ -3212,7 +3216,7 @@ packages:
       - webpack-cli
     dev: false
 
-  registry.npmjs.org/@docusaurus/plugin-google-gtag/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790:
+  registry.npmjs.org/@docusaurus/plugin-google-gtag/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e:
     resolution: {integrity: sha512-E5Rm3+dN7i3A9V5uq5sl9xTNA3aXsLwTZEA2SpOkY571dCpd+sfVvz1lR+KRY9Fy6ZHk8PqrNImgCWfIerRuZQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@docusaurus/plugin-google-gtag/-/plugin-google-gtag-2.0.0-beta.15.tgz}
     id: registry.npmjs.org/@docusaurus/plugin-google-gtag/2.0.0-beta.15
     name: '@docusaurus/plugin-google-gtag'
@@ -3222,7 +3226,7 @@ packages:
       react: ^16.8.4 || ^17.0.0
       react-dom: ^16.8.4 || ^17.0.0
     dependencies:
-      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
+      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
       '@docusaurus/utils-validation': registry.npmjs.org/@docusaurus/utils-validation/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
       react: registry.npmjs.org/react/17.0.2
       react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
@@ -3245,7 +3249,7 @@ packages:
       - webpack-cli
     dev: false
 
-  registry.npmjs.org/@docusaurus/plugin-pwa/2.0.0-beta.15_c6309244b0bd9ff05466805fd35f51cb:
+  registry.npmjs.org/@docusaurus/plugin-pwa/2.0.0-beta.15_863936a782838f8806da85c92e539de3:
     resolution: {integrity: sha512-6DRmpoVbOde9UthErDsgJHqUoy5GCJBpODq0TJWiseV3bSTapwXOSh/AvkwXVPKZi4irAqU/UotfY2RAkaVafA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@docusaurus/plugin-pwa/-/plugin-pwa-2.0.0-beta.15.tgz}
     id: registry.npmjs.org/@docusaurus/plugin-pwa/2.0.0-beta.15
     name: '@docusaurus/plugin-pwa'
@@ -3258,8 +3262,8 @@ packages:
       '@babel/plugin-proposal-nullish-coalescing-operator': registry.npmjs.org/@babel/plugin-proposal-nullish-coalescing-operator/7.16.7
       '@babel/plugin-proposal-optional-chaining': registry.npmjs.org/@babel/plugin-proposal-optional-chaining/7.16.7
       '@babel/preset-env': registry.npmjs.org/@babel/preset-env/7.16.11
-      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/theme-common': registry.npmjs.org/@docusaurus/theme-common/2.0.0-beta.15_c6309244b0bd9ff05466805fd35f51cb
+      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/theme-common': registry.npmjs.org/@docusaurus/theme-common/2.0.0-beta.15_863936a782838f8806da85c92e539de3
       '@docusaurus/theme-translations': registry.npmjs.org/@docusaurus/theme-translations/2.0.0-beta.15
       '@docusaurus/utils': registry.npmjs.org/@docusaurus/utils/2.0.0-beta.15_e4dc28a41fd7a40a687699adff1c938e
       '@docusaurus/utils-validation': registry.npmjs.org/@docusaurus/utils-validation/2.0.0-beta.15_e4dc28a41fd7a40a687699adff1c938e
@@ -3268,9 +3272,9 @@ packages:
       core-js: registry.npmjs.org/core-js/3.21.1
       react: registry.npmjs.org/react/17.0.2
       react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
-      terser-webpack-plugin: registry.npmjs.org/terser-webpack-plugin/5.3.1_webpack@5.70.0
+      terser-webpack-plugin: registry.npmjs.org/terser-webpack-plugin/5.3.1_@swc+core@1.2.160+webpack@5.70.0
       tslib: registry.npmjs.org/tslib/2.3.1
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
       webpack-merge: registry.npmjs.org/webpack-merge/5.8.0
       workbox-build: registry.npmjs.org/workbox-build/6.5.1
       workbox-precaching: registry.npmjs.org/workbox-precaching/6.5.1
@@ -3293,7 +3297,7 @@ packages:
       - webpack-cli
     dev: false
 
-  registry.npmjs.org/@docusaurus/plugin-sitemap/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790:
+  registry.npmjs.org/@docusaurus/plugin-sitemap/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e:
     resolution: {integrity: sha512-PBjeQb2Qpe4uPdRefWL/eXCeYjrgNB/UArExYeUuP4wiY1dpw2unGNCvFUxv4hzJGmARoTLsnRkeYkUim809LQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@docusaurus/plugin-sitemap/-/plugin-sitemap-2.0.0-beta.15.tgz}
     id: registry.npmjs.org/@docusaurus/plugin-sitemap/2.0.0-beta.15
     name: '@docusaurus/plugin-sitemap'
@@ -3303,7 +3307,7 @@ packages:
       react: ^16.8.4 || ^17.0.0
       react-dom: ^16.8.4 || ^17.0.0
     dependencies:
-      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
+      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
       '@docusaurus/utils': registry.npmjs.org/@docusaurus/utils/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
       '@docusaurus/utils-common': registry.npmjs.org/@docusaurus/utils-common/2.0.0-beta.15
       '@docusaurus/utils-validation': registry.npmjs.org/@docusaurus/utils-validation/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
@@ -3330,7 +3334,7 @@ packages:
       - webpack-cli
     dev: false
 
-  registry.npmjs.org/@docusaurus/preset-classic/2.0.0-beta.15_c6309244b0bd9ff05466805fd35f51cb:
+  registry.npmjs.org/@docusaurus/preset-classic/2.0.0-beta.15_863936a782838f8806da85c92e539de3:
     resolution: {integrity: sha512-3NZIXWTAzk+kOgiB8uAbD+FZv3VFR1qkU6+TW24DRenjRnXof3CkRuldhI1QI0hILm1fuJ319QRkakV8FFtXyA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@docusaurus/preset-classic/-/preset-classic-2.0.0-beta.15.tgz}
     id: registry.npmjs.org/@docusaurus/preset-classic/2.0.0-beta.15
     name: '@docusaurus/preset-classic'
@@ -3340,17 +3344,17 @@ packages:
       react: ^16.8.4 || ^17.0.0
       react-dom: ^16.8.4 || ^17.0.0
     dependencies:
-      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/plugin-content-blog': registry.npmjs.org/@docusaurus/plugin-content-blog/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/plugin-content-docs': registry.npmjs.org/@docusaurus/plugin-content-docs/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/plugin-content-pages': registry.npmjs.org/@docusaurus/plugin-content-pages/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/plugin-debug': registry.npmjs.org/@docusaurus/plugin-debug/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/plugin-google-analytics': registry.npmjs.org/@docusaurus/plugin-google-analytics/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/plugin-google-gtag': registry.npmjs.org/@docusaurus/plugin-google-gtag/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/plugin-sitemap': registry.npmjs.org/@docusaurus/plugin-sitemap/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/theme-classic': registry.npmjs.org/@docusaurus/theme-classic/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/theme-common': registry.npmjs.org/@docusaurus/theme-common/2.0.0-beta.15_c6309244b0bd9ff05466805fd35f51cb
-      '@docusaurus/theme-search-algolia': registry.npmjs.org/@docusaurus/theme-search-algolia/2.0.0-beta.15_c6309244b0bd9ff05466805fd35f51cb
+      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/plugin-content-blog': registry.npmjs.org/@docusaurus/plugin-content-blog/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/plugin-content-docs': registry.npmjs.org/@docusaurus/plugin-content-docs/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/plugin-content-pages': registry.npmjs.org/@docusaurus/plugin-content-pages/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/plugin-debug': registry.npmjs.org/@docusaurus/plugin-debug/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/plugin-google-analytics': registry.npmjs.org/@docusaurus/plugin-google-analytics/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/plugin-google-gtag': registry.npmjs.org/@docusaurus/plugin-google-gtag/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/plugin-sitemap': registry.npmjs.org/@docusaurus/plugin-sitemap/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/theme-classic': registry.npmjs.org/@docusaurus/theme-classic/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/theme-common': registry.npmjs.org/@docusaurus/theme-common/2.0.0-beta.15_863936a782838f8806da85c92e539de3
+      '@docusaurus/theme-search-algolia': registry.npmjs.org/@docusaurus/theme-search-algolia/2.0.0-beta.15_863936a782838f8806da85c92e539de3
       react: registry.npmjs.org/react/17.0.2
       react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
     transitivePeerDependencies:
@@ -3388,7 +3392,7 @@ packages:
       react: registry.npmjs.org/react/17.0.2
     dev: false
 
-  registry.npmjs.org/@docusaurus/theme-classic/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790:
+  registry.npmjs.org/@docusaurus/theme-classic/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e:
     resolution: {integrity: sha512-WwNRcQvMtQ7KDhOEHFKFHxXCdoZwLg66hT3vhqNIFMfGQuPzOP91MX5LUSo1QWHhlrD3H3Og+r7Ik/fy2bf5lQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@docusaurus/theme-classic/-/theme-classic-2.0.0-beta.15.tgz}
     id: registry.npmjs.org/@docusaurus/theme-classic/2.0.0-beta.15
     name: '@docusaurus/theme-classic'
@@ -3398,11 +3402,11 @@ packages:
       react: ^16.8.4 || ^17.0.0
       react-dom: ^16.8.4 || ^17.0.0
     dependencies:
-      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/plugin-content-blog': registry.npmjs.org/@docusaurus/plugin-content-blog/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/plugin-content-docs': registry.npmjs.org/@docusaurus/plugin-content-docs/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/plugin-content-pages': registry.npmjs.org/@docusaurus/plugin-content-pages/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/theme-common': registry.npmjs.org/@docusaurus/theme-common/2.0.0-beta.15_c6309244b0bd9ff05466805fd35f51cb
+      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/plugin-content-blog': registry.npmjs.org/@docusaurus/plugin-content-blog/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/plugin-content-docs': registry.npmjs.org/@docusaurus/plugin-content-docs/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/plugin-content-pages': registry.npmjs.org/@docusaurus/plugin-content-pages/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/theme-common': registry.npmjs.org/@docusaurus/theme-common/2.0.0-beta.15_863936a782838f8806da85c92e539de3
       '@docusaurus/theme-translations': registry.npmjs.org/@docusaurus/theme-translations/2.0.0-beta.15
       '@docusaurus/utils': registry.npmjs.org/@docusaurus/utils/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
       '@docusaurus/utils-common': registry.npmjs.org/@docusaurus/utils-common/2.0.0-beta.15
@@ -3437,7 +3441,7 @@ packages:
       - webpack-cli
     dev: false
 
-  registry.npmjs.org/@docusaurus/theme-common/2.0.0-beta.15_c6309244b0bd9ff05466805fd35f51cb:
+  registry.npmjs.org/@docusaurus/theme-common/2.0.0-beta.15_863936a782838f8806da85c92e539de3:
     resolution: {integrity: sha512-+pvarmzcyECE4nWxw+dCMKRIoes0NegrRuM9+nRsUrS/E5ywsF539kpupKIEqaMjq6AuM0CJtDoHxHHPNe0KaQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@docusaurus/theme-common/-/theme-common-2.0.0-beta.15.tgz}
     id: registry.npmjs.org/@docusaurus/theme-common/2.0.0-beta.15
     name: '@docusaurus/theme-common'
@@ -3448,9 +3452,9 @@ packages:
       react: ^16.8.4 || ^17.0.0
       react-dom: ^16.8.4 || ^17.0.0
     dependencies:
-      '@docusaurus/plugin-content-blog': registry.npmjs.org/@docusaurus/plugin-content-blog/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/plugin-content-docs': registry.npmjs.org/@docusaurus/plugin-content-docs/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
-      '@docusaurus/plugin-content-pages': registry.npmjs.org/@docusaurus/plugin-content-pages/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
+      '@docusaurus/plugin-content-blog': registry.npmjs.org/@docusaurus/plugin-content-blog/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/plugin-content-docs': registry.npmjs.org/@docusaurus/plugin-content-docs/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
+      '@docusaurus/plugin-content-pages': registry.npmjs.org/@docusaurus/plugin-content-pages/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
       clsx: registry.npmjs.org/clsx/1.1.1
       parse-numeric-range: registry.npmjs.org/parse-numeric-range/1.3.0
       prism-react-renderer: registry.npmjs.org/prism-react-renderer/1.3.1_react@17.0.2
@@ -3475,7 +3479,7 @@ packages:
       - webpack-cli
     dev: false
 
-  registry.npmjs.org/@docusaurus/theme-search-algolia/2.0.0-beta.15_c6309244b0bd9ff05466805fd35f51cb:
+  registry.npmjs.org/@docusaurus/theme-search-algolia/2.0.0-beta.15_863936a782838f8806da85c92e539de3:
     resolution: {integrity: sha512-XrrQKyjOPzmEuOcdsaAn1tzNJkNMA3PC86PwPZUaah0cYPpBGptcJYDlIW4VHIrCBfkQvhvmg/B3qKF6bMMi8g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@docusaurus/theme-search-algolia/-/theme-search-algolia-2.0.0-beta.15.tgz}
     id: registry.npmjs.org/@docusaurus/theme-search-algolia/2.0.0-beta.15
     name: '@docusaurus/theme-search-algolia'
@@ -3486,9 +3490,9 @@ packages:
       react-dom: ^16.8.4 || ^17.0.0
     dependencies:
       '@docsearch/react': registry.npmjs.org/@docsearch/react/3.0.0_react-dom@17.0.2+react@17.0.2
-      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_aeaba09eb00f7665e5acdd7c57ed6790
+      '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.15_558f43dbf98152df12f633d82c90a76e
       '@docusaurus/logger': registry.npmjs.org/@docusaurus/logger/2.0.0-beta.15
-      '@docusaurus/theme-common': registry.npmjs.org/@docusaurus/theme-common/2.0.0-beta.15_c6309244b0bd9ff05466805fd35f51cb
+      '@docusaurus/theme-common': registry.npmjs.org/@docusaurus/theme-common/2.0.0-beta.15_863936a782838f8806da85c92e539de3
       '@docusaurus/theme-translations': registry.npmjs.org/@docusaurus/theme-translations/2.0.0-beta.15
       '@docusaurus/utils': registry.npmjs.org/@docusaurus/utils/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
       '@docusaurus/utils-validation': registry.npmjs.org/@docusaurus/utils-validation/2.0.0-beta.15_react-dom@17.0.2+react@17.0.2
@@ -3638,7 +3642,7 @@ packages:
       resolve-pathname: registry.npmjs.org/resolve-pathname/3.0.0
       tslib: registry.npmjs.org/tslib/2.3.1
       url-loader: registry.npmjs.org/url-loader/4.1.1_file-loader@6.2.0+webpack@5.70.0
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -3673,7 +3677,7 @@ packages:
       resolve-pathname: registry.npmjs.org/resolve-pathname/3.0.0
       tslib: registry.npmjs.org/tslib/2.3.1
       url-loader: registry.npmjs.org/url-loader/4.1.1_file-loader@6.2.0+webpack@5.70.0
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -4159,6 +4163,171 @@ packages:
       '@svgr/plugin-svgo': registry.npmjs.org/@svgr/plugin-svgo/6.2.0_@svgr+core@6.2.1
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  registry.npmjs.org/@swc/core-android-arm-eabi/1.2.160:
+    resolution: {integrity: sha512-VzFP7tYgvpkUhd8wgyNtERqvoPBBDretyMFxAxPe2SxClaBs9Ka95PdiPPZalRq+vFCb/dFxD8Vhz+XO16Kpjg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@swc/core-android-arm-eabi/-/core-android-arm-eabi-1.2.160.tgz}
+    name: '@swc/core-android-arm-eabi'
+    version: 1.2.160
+    engines: {node: '>=10'}
+    cpu: [arm]
+    os: [android]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmjs.org/@swc/core-android-arm64/1.2.160:
+    resolution: {integrity: sha512-m+xqQaa7TqW3Vm9MUvITtdU8OlAc/9yT+TgOS4l8WlfFI87IDnLLfinKKEp+xfKwzYDdIsh+sC+jdGdIBTMB+Q==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@swc/core-android-arm64/-/core-android-arm64-1.2.160.tgz}
+    name: '@swc/core-android-arm64'
+    version: 1.2.160
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [android]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmjs.org/@swc/core-darwin-arm64/1.2.160:
+    resolution: {integrity: sha512-9bG70KYKvjNf7tZtjOu1h4kDZPtoidZptIXPGSHuUgJ1BbSJYpfRR5xAmq4k37+GqOjIPJp4+lSGQPa2HfejpA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@swc/core-darwin-arm64/-/core-darwin-arm64-1.2.160.tgz}
+    name: '@swc/core-darwin-arm64'
+    version: 1.2.160
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmjs.org/@swc/core-darwin-x64/1.2.160:
+    resolution: {integrity: sha512-+b4HdKAVf/XPZ9DjgG2axGLbquPEuYwEP3zeWgbWn0s0FYQ7WTFxznf3YrTJE9MYadJeCOs3U80E2xVAtRRS9Q==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@swc/core-darwin-x64/-/core-darwin-x64-1.2.160.tgz}
+    name: '@swc/core-darwin-x64'
+    version: 1.2.160
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmjs.org/@swc/core-freebsd-x64/1.2.160:
+    resolution: {integrity: sha512-E5agJwv+RVMoZ8FQIPSO5wLPDQx6jqcMpV207EB3pPaxPWGe4n3DH3vcibHp80RACDNdiaqo5lBeBnGJI4ithw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@swc/core-freebsd-x64/-/core-freebsd-x64-1.2.160.tgz}
+    name: '@swc/core-freebsd-x64'
+    version: 1.2.160
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [freebsd]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmjs.org/@swc/core-linux-arm-gnueabihf/1.2.160:
+    resolution: {integrity: sha512-uCttZRNx+lWVhCYGC6/pGUej08g1SQc5am6R9NVFh111goytcdlPnC4jV8oWzq2QhDWkkKxLoP2CZOytzI4+0w==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@swc/core-linux-arm-gnueabihf/-/core-linux-arm-gnueabihf-1.2.160.tgz}
+    name: '@swc/core-linux-arm-gnueabihf'
+    version: 1.2.160
+    engines: {node: '>=10'}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmjs.org/@swc/core-linux-arm64-gnu/1.2.160:
+    resolution: {integrity: sha512-sB18roiv8m/zsY6tXLSrbUls0eKkSkxOEF0ennXVEtz97rMJ+WWnkOc8gI+rUpj3MHbVAIxyDNyyZU4cH5g1jQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@swc/core-linux-arm64-gnu/-/core-linux-arm64-gnu-1.2.160.tgz}
+    name: '@swc/core-linux-arm64-gnu'
+    version: 1.2.160
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmjs.org/@swc/core-linux-arm64-musl/1.2.160:
+    resolution: {integrity: sha512-PJ7Ukb+BRR3pGYcUag8qRWOB11eByc5YLx/xAMSc3bRmaYW/oj6s8k+1DYiR//BAuNQdf14MpMFzDuWiDEUh7A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@swc/core-linux-arm64-musl/-/core-linux-arm64-musl-1.2.160.tgz}
+    name: '@swc/core-linux-arm64-musl'
+    version: 1.2.160
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmjs.org/@swc/core-linux-x64-gnu/1.2.160:
+    resolution: {integrity: sha512-wVh8Q86xz3t0y5zoUryWQ64bFG/YxdcykBgaog8lU9xkFb1KSqVRE9ia7aKA12/ZtAfpJZLRBleZxBAcaCg9FQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@swc/core-linux-x64-gnu/-/core-linux-x64-gnu-1.2.160.tgz}
+    name: '@swc/core-linux-x64-gnu'
+    version: 1.2.160
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmjs.org/@swc/core-linux-x64-musl/1.2.160:
+    resolution: {integrity: sha512-AnWdarl9WWuDdbc2AX1w76W1jaekSCokxRrWdSGUgQytaZRtybKZEgThvJCQDrSlYQD4XDOhhVRCurTvy4JsfQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@swc/core-linux-x64-musl/-/core-linux-x64-musl-1.2.160.tgz}
+    name: '@swc/core-linux-x64-musl'
+    version: 1.2.160
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmjs.org/@swc/core-win32-arm64-msvc/1.2.160:
+    resolution: {integrity: sha512-ScL27mZRTwEIqBIv9RY34nQvyBvhosiM5Lus4dCFmS71flPcAEv7hJgy4GE3YUQV0ryGNK9NaO43H8sAyNwKVQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@swc/core-win32-arm64-msvc/-/core-win32-arm64-msvc-1.2.160.tgz}
+    name: '@swc/core-win32-arm64-msvc'
+    version: 1.2.160
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmjs.org/@swc/core-win32-ia32-msvc/1.2.160:
+    resolution: {integrity: sha512-e75zbWlhlyrd5HdrYzELa6OlZxgyaVpJj+c9xMD95HcdklVbmsyt1vuqRxMyqaZUDLyehwwCDRX/ZeDme//M/A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@swc/core-win32-ia32-msvc/-/core-win32-ia32-msvc-1.2.160.tgz}
+    name: '@swc/core-win32-ia32-msvc'
+    version: 1.2.160
+    engines: {node: '>=10'}
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmjs.org/@swc/core-win32-x64-msvc/1.2.160:
+    resolution: {integrity: sha512-GAYT+WzYQY4sr17S21yJh4flJp/sQ62mAs6RfN89p7jIWgm0Bl/SooRl6ocsftTlnZm7K7QC8zmQVeNCWDCLPw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@swc/core-win32-x64-msvc/-/core-win32-x64-msvc-1.2.160.tgz}
+    name: '@swc/core-win32-x64-msvc'
+    version: 1.2.160
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: false
+    optional: true
+
+  registry.npmjs.org/@swc/core/1.2.160:
+    resolution: {integrity: sha512-nXoC7HA+aY7AtBPsiqGXocoRLAzzA7MV+InWQtILN7Uru4hB9+rLnLCPc3zSdg7pgnxJLa1tHup1Rz7Vv6TcIQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@swc/core/-/core-1.2.160.tgz}
+    name: '@swc/core'
+    version: 1.2.160
+    engines: {node: '>=10'}
+    hasBin: true
+    optionalDependencies:
+      '@swc/core-android-arm-eabi': registry.npmjs.org/@swc/core-android-arm-eabi/1.2.160
+      '@swc/core-android-arm64': registry.npmjs.org/@swc/core-android-arm64/1.2.160
+      '@swc/core-darwin-arm64': registry.npmjs.org/@swc/core-darwin-arm64/1.2.160
+      '@swc/core-darwin-x64': registry.npmjs.org/@swc/core-darwin-x64/1.2.160
+      '@swc/core-freebsd-x64': registry.npmjs.org/@swc/core-freebsd-x64/1.2.160
+      '@swc/core-linux-arm-gnueabihf': registry.npmjs.org/@swc/core-linux-arm-gnueabihf/1.2.160
+      '@swc/core-linux-arm64-gnu': registry.npmjs.org/@swc/core-linux-arm64-gnu/1.2.160
+      '@swc/core-linux-arm64-musl': registry.npmjs.org/@swc/core-linux-arm64-musl/1.2.160
+      '@swc/core-linux-x64-gnu': registry.npmjs.org/@swc/core-linux-x64-gnu/1.2.160
+      '@swc/core-linux-x64-musl': registry.npmjs.org/@swc/core-linux-x64-musl/1.2.160
+      '@swc/core-win32-arm64-msvc': registry.npmjs.org/@swc/core-win32-arm64-msvc/1.2.160
+      '@swc/core-win32-ia32-msvc': registry.npmjs.org/@swc/core-win32-ia32-msvc/1.2.160
+      '@swc/core-win32-x64-msvc': registry.npmjs.org/@swc/core-win32-x64-msvc/1.2.160
     dev: false
 
   registry.npmjs.org/@szmarczak/http-timer/1.1.2:
@@ -4955,7 +5124,7 @@ packages:
       loader-utils: registry.npmjs.org/loader-utils/2.0.2
       make-dir: registry.npmjs.org/make-dir/3.1.0
       schema-utils: registry.npmjs.org/schema-utils/2.7.1
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     dev: false
 
   registry.npmjs.org/babel-loader/8.2.4_webpack@5.70.0:
@@ -4972,7 +5141,7 @@ packages:
       loader-utils: registry.npmjs.org/loader-utils/2.0.2
       make-dir: registry.npmjs.org/make-dir/3.1.0
       schema-utils: registry.npmjs.org/schema-utils/2.7.1
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     dev: false
 
   registry.npmjs.org/babel-plugin-apply-mdx-type-prop/1.6.22_@babel+core@7.12.9:
@@ -5741,7 +5910,7 @@ packages:
       normalize-path: registry.npmjs.org/normalize-path/3.0.0
       schema-utils: registry.npmjs.org/schema-utils/4.0.0
       serialize-javascript: registry.npmjs.org/serialize-javascript/6.0.0
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     dev: false
 
   registry.npmjs.org/core-js-compat/3.21.1:
@@ -5873,7 +6042,7 @@ packages:
       postcss-modules-values: registry.npmjs.org/postcss-modules-values/4.0.0_postcss@8.4.12
       postcss-value-parser: registry.npmjs.org/postcss-value-parser/4.2.0
       semver: registry.npmjs.org/semver/7.3.5
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     dev: false
 
   registry.npmjs.org/css-minimizer-webpack-plugin/3.4.1_clean-css@5.2.4+webpack@5.70.0:
@@ -5905,7 +6074,7 @@ packages:
       schema-utils: registry.npmjs.org/schema-utils/4.0.0
       serialize-javascript: registry.npmjs.org/serialize-javascript/6.0.0
       source-map: registry.npmjs.org/source-map/0.6.1
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     dev: false
 
   registry.npmjs.org/css-select/1.2.0:
@@ -6824,7 +6993,7 @@ packages:
     dependencies:
       loader-utils: registry.npmjs.org/loader-utils/2.0.2
       schema-utils: registry.npmjs.org/schema-utils/3.1.1
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     dev: false
 
   registry.npmjs.org/filelist/1.0.2:
@@ -6964,7 +7133,7 @@ packages:
       semver: registry.npmjs.org/semver/7.3.5
       tapable: registry.npmjs.org/tapable/1.1.3
       typescript: registry.npmjs.org/typescript/4.6.2
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     dev: false
 
   registry.npmjs.org/forwarded/0.2.0:
@@ -7492,7 +7661,7 @@ packages:
       lodash: registry.npmjs.org/lodash/4.17.21
       pretty-error: registry.npmjs.org/pretty-error/4.0.0
       tapable: registry.npmjs.org/tapable/2.2.1
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     dev: false
 
   registry.npmjs.org/htmlparser2/3.10.1:
@@ -8759,7 +8928,7 @@ packages:
     dependencies:
       loader-utils: registry.npmjs.org/loader-utils/2.0.2
       schema-utils: registry.npmjs.org/schema-utils/3.1.1
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
       webpack-sources: registry.npmjs.org/webpack-sources/1.4.3
     dev: false
 
@@ -9465,7 +9634,7 @@ packages:
       klona: registry.npmjs.org/klona/2.0.5
       postcss: registry.npmjs.org/postcss/8.4.12
       semver: registry.npmjs.org/semver/7.3.5
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     dev: false
 
   registry.npmjs.org/postcss-merge-idents/5.1.1_postcss@8.4.12:
@@ -10210,7 +10379,7 @@ packages:
     dependencies:
       '@babel/runtime': registry.npmjs.org/@babel/runtime/7.17.8
       react-loadable: registry.npmjs.org/@docusaurus/react-loadable/5.5.2_react@17.0.2
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     dev: false
 
   registry.npmjs.org/react-router-config/5.1.1_react-router@5.2.1+react@17.0.2:
@@ -11432,6 +11601,19 @@ packages:
       stable: registry.npmjs.org/stable/0.1.8
     dev: false
 
+  registry.npmjs.org/swc-loader/0.1.15_@swc+core@1.2.160:
+    resolution: {integrity: sha512-cn1WPIeQJvXM4bbo3OwdEIapsQ4uUGOfyFj0h2+2+brT0k76DCGnZXDE2KmcqTd2JSQ+b61z2NPMib7eEwMYYw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/swc-loader/-/swc-loader-0.1.15.tgz}
+    id: registry.npmjs.org/swc-loader/0.1.15
+    name: swc-loader
+    version: 0.1.15
+    peerDependencies:
+      '@swc/core': ^1.2.52
+      webpack: '>=2'
+    dependencies:
+      '@swc/core': registry.npmjs.org/@swc/core/1.2.160
+      loader-utils: registry.npmjs.org/loader-utils/2.0.2
+    dev: false
+
   registry.npmjs.org/tapable/1.1.3:
     resolution: {integrity: sha512-4WK/bYZmj8xLr+HUCODHGF1ZFzsYffasLUgEiMBY4fgtltdO6B4WJtlSbPaDTLpYTcGVwM2qLnFTICEcNxs3kA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/tapable/-/tapable-1.1.3.tgz}
     name: tapable
@@ -11465,7 +11647,7 @@ packages:
       unique-string: registry.npmjs.org/unique-string/2.0.0
     dev: false
 
-  registry.npmjs.org/terser-webpack-plugin/5.3.1_webpack@5.70.0:
+  registry.npmjs.org/terser-webpack-plugin/5.3.1_@swc+core@1.2.160+webpack@5.70.0:
     resolution: {integrity: sha512-GvlZdT6wPQKbDNW/GDQzZFg/j4vKU96yl2q6mcUkzKOgW4gwf1Z8cZToUCrz31XHlPWH8MVb1r2tFtdDtTGJ7g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/terser-webpack-plugin/-/terser-webpack-plugin-5.3.1.tgz}
     id: registry.npmjs.org/terser-webpack-plugin/5.3.1
     name: terser-webpack-plugin
@@ -11484,12 +11666,13 @@ packages:
       uglify-js:
         optional: true
     dependencies:
+      '@swc/core': registry.npmjs.org/@swc/core/1.2.160
       jest-worker: registry.npmjs.org/jest-worker/27.5.1
       schema-utils: registry.npmjs.org/schema-utils/3.1.1
       serialize-javascript: registry.npmjs.org/serialize-javascript/6.0.0
       source-map: registry.npmjs.org/source-map/0.6.1
       terser: registry.npmjs.org/terser/5.12.1
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     dev: false
 
   registry.npmjs.org/terser/5.12.1:
@@ -11604,7 +11787,7 @@ packages:
     version: 1.0.5
     dev: false
 
-  registry.npmjs.org/ts-node/10.7.0_typescript@4.6.2:
+  registry.npmjs.org/ts-node/10.7.0_e74c291532bb8c8c8e02ee8105653fd9:
     resolution: {integrity: sha512-TbIGS4xgJoX2i3do417KSaep1uRAW/Lu+WAL2doDHC0D6ummjirVOXU5/7aiZotbQ5p1Zp9tP7U6cYhA0O7M8A==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/ts-node/-/ts-node-10.7.0.tgz}
     id: registry.npmjs.org/ts-node/10.7.0
     name: ts-node
@@ -11622,6 +11805,7 @@ packages:
         optional: true
     dependencies:
       '@cspotcode/source-map-support': registry.npmjs.org/@cspotcode/source-map-support/0.7.0
+      '@swc/core': registry.npmjs.org/@swc/core/1.2.160
       '@tsconfig/node10': registry.npmjs.org/@tsconfig/node10/1.0.8
       '@tsconfig/node12': registry.npmjs.org/@tsconfig/node12/1.0.9
       '@tsconfig/node14': registry.npmjs.org/@tsconfig/node14/1.0.1
@@ -11936,7 +12120,7 @@ packages:
       loader-utils: registry.npmjs.org/loader-utils/2.0.2
       mime-types: registry.npmjs.org/mime-types/2.1.35
       schema-utils: registry.npmjs.org/schema-utils/3.1.1
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     dev: false
 
   registry.npmjs.org/url-parse-lax/3.0.0:
@@ -12155,7 +12339,7 @@ packages:
       mime-types: registry.npmjs.org/mime-types/2.1.35
       range-parser: registry.npmjs.org/range-parser/1.2.1
       schema-utils: registry.npmjs.org/schema-utils/4.0.0
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     dev: false
 
   registry.npmjs.org/webpack-dev-server/4.7.4_webpack@5.70.0:
@@ -12200,7 +12384,7 @@ packages:
       sockjs: registry.npmjs.org/sockjs/0.3.24
       spdy: registry.npmjs.org/spdy/4.0.2
       strip-ansi: registry.npmjs.org/strip-ansi/7.0.1
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
       webpack-dev-middleware: registry.npmjs.org/webpack-dev-middleware/5.3.1_webpack@5.70.0
       ws: registry.npmjs.org/ws/8.5.0
     transitivePeerDependencies:
@@ -12236,8 +12420,9 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: false
 
-  registry.npmjs.org/webpack/5.70.0:
+  registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160:
     resolution: {integrity: sha512-ZMWWy8CeuTTjCxbeaQI21xSswseF2oNOwc70QSKNePvmxE7XW36i7vpBMYZFAUHPwQiEbNGCEYIOOlyRbdGmxw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/webpack/-/webpack-5.70.0.tgz}
+    id: registry.npmjs.org/webpack/5.70.0
     name: webpack
     version: 5.70.0
     engines: {node: '>=10.13.0'}
@@ -12269,7 +12454,7 @@ packages:
       neo-async: registry.npmjs.org/neo-async/2.6.2
       schema-utils: registry.npmjs.org/schema-utils/3.1.1
       tapable: registry.npmjs.org/tapable/2.2.1
-      terser-webpack-plugin: registry.npmjs.org/terser-webpack-plugin/5.3.1_webpack@5.70.0
+      terser-webpack-plugin: registry.npmjs.org/terser-webpack-plugin/5.3.1_@swc+core@1.2.160+webpack@5.70.0
       watchpack: registry.npmjs.org/watchpack/2.3.1
       webpack-sources: registry.npmjs.org/webpack-sources/3.2.3
     transitivePeerDependencies:
@@ -12291,7 +12476,7 @@ packages:
       consola: registry.npmjs.org/consola/2.15.3
       pretty-time: registry.npmjs.org/pretty-time/1.1.0
       std-env: registry.npmjs.org/std-env/3.0.1
-      webpack: registry.npmjs.org/webpack/5.70.0
+      webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
     dev: false
 
   registry.npmjs.org/websocket-driver/0.7.4:
