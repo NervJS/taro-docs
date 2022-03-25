@@ -1,6 +1,6 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "3.x",
     "description": "The label for version current"
   },
   "sidebar.docs.category.关于Taro": {
@@ -19,9 +19,21 @@
     "message": "Configuration",
     "description": "The label for category 配置 in sidebar docs"
   },
+  "sidebar.docs.category.React": {
+    "message": "React",
+    "description": "The label for category React in sidebar docs"
+  },
+  "sidebar.docs.category.Vue": {
+    "message": "Vue",
+    "description": "The label for category Vue in sidebar docs"
+  },
   "sidebar.docs.category.多端开发": {
     "message": "Multi-End Develop",
     "description": "The label for category 多端开发 in sidebar docs"
+  },
+  "sidebar.docs.category.小程序": {
+    "message": "Mini App",
+    "description": "The label for category 小程序 in sidebar docs"
   },
   "sidebar.docs.category.React Native": {
     "message": "React Native",
@@ -50,6 +62,10 @@
   "sidebar.docs.category.社区生态": {
     "message": "Community",
     "description": "The label for category 社区生态 in sidebar docs"
+  },
+  "sidebar.docs.category.CONTRIBUTING": {
+    "message": "CONTRIBUTING",
+    "description": "The label for category CONTRIBUTING in sidebar docs"
   },
   "sidebar.components.category.关于组件库": {
     "message": "Components Library",
@@ -87,9 +103,17 @@
     "message": "Open Capabilities",
     "description": "The label for category 开放能力 in sidebar components"
   },
+  "sidebar.components.category.导航栏": {
+    "message": "Navigation bar",
+    "description": "The label for category 导航栏 in sidebar components"
+  },
   "sidebar.API.category.关于API": {
     "message": "About API",
     "description": "The label for category 关于API in sidebar API"
+  },
+  "sidebar.API.category.框架": {
+    "message": "Framework",
+    "description": "The label for category 框架 in sidebar API"
   },
   "sidebar.API.category.基础": {
     "message": "Basics",
@@ -119,13 +143,25 @@
     "message": "Debug",
     "description": "The label for category 调试 in sidebar API"
   },
+  "sidebar.API.category.性能": {
+    "message": "Performance",
+    "description": "The label for category 性能 in sidebar API"
+  },
+  "sidebar.API.category.加密": {
+    "message": "Encryption",
+    "description": "The label for category 加密 in sidebar API"
+  },
   "sidebar.API.category.路由": {
     "message": "Routing",
     "description": "The label for category 路由 in sidebar API"
   },
-  "sidebar.API.category.框架": {
-    "message": "Framework",
-    "description": "The label for category 框架 in sidebar API"
+  "sidebar.API.category.跳转": {
+    "message": "Redirection",
+    "description": "The label for category 跳转 in sidebar API"
+  },
+  "sidebar.API.category.转发": {
+    "message": "Forward",
+    "description": "The label for category 转发 in sidebar API"
   },
   "sidebar.API.category.界面": {
     "message": "Interface",
@@ -179,10 +215,6 @@
     "message": "Windows",
     "description": "The label for category 窗口 in sidebar API"
   },
-  "sidebar.API.category.键盘": {
-    "message": "Keyboard",
-    "description": "The label for category 键盘 in sidebar API"
-  },
   "sidebar.API.category.网络": {
     "message": "Network",
     "description": "The label for category 网络 in sidebar API"
@@ -207,9 +239,17 @@
     "message": "mDNS",
     "description": "The label for category mDNS in sidebar API"
   },
+  "sidebar.API.category.TCP 通信": {
+    "message": "TCP communications",
+    "description": "The label for category TCP 通信 in sidebar API"
+  },
   "sidebar.API.category.UDP 通信": {
-    "message": "UDP 通信",
+    "message": "UDP communications",
     "description": "The label for category UDP 通信 in sidebar API"
+  },
+  "sidebar.API.category.支付": {
+    "message": "Payment",
+    "description": "The label for category 支付 in sidebar API"
   },
   "sidebar.API.category.数据缓存": {
     "message": "Data Cache",
@@ -218,6 +258,14 @@
   "sidebar.API.category.周期性更新": {
     "message": "Periodic Update",
     "description": "The label for category 周期性更新 in sidebar API"
+  },
+  "sidebar.API.category.数据分析": {
+    "message": "Data analysis",
+    "description": "The label for category 数据分析 in sidebar API"
+  },
+  "sidebar.API.category.画布": {
+    "message": "Canvas",
+    "description": "The label for category 画布 in sidebar API"
   },
   "sidebar.API.category.媒体": {
     "message": "Media",
@@ -263,17 +311,21 @@
     "message": "Audio/Viedo Compose",
     "description": "The label for category 音视频合成 in sidebar API"
   },
+  "sidebar.API.category.实时语音": {
+    "message": "Real-time voice",
+    "description": "The label for category 实时语音 in sidebar API"
+  },
+  "sidebar.API.category.画面录制器": {
+    "message": "Screen recorder",
+    "description": "The label for category 画面录制器 in sidebar API"
+  },
+  "sidebar.API.category.视频解码器": {
+    "message": "Video decoder",
+    "description": "The label for category 视频解码器 in sidebar API"
+  },
   "sidebar.API.category.位置": {
     "message": "Location",
     "description": "The label for category 位置 in sidebar API"
-  },
-  "sidebar.API.category.转发": {
-    "message": "Forwarding",
-    "description": "The label for category 转发 in sidebar API"
-  },
-  "sidebar.API.category.画布": {
-    "message": "Canvas",
-    "description": "The label for category 画布 in sidebar API"
   },
   "sidebar.API.category.文件": {
     "message": "File",
@@ -294,14 +346,6 @@
   "sidebar.API.category.用户信息": {
     "message": "User Information",
     "description": "The label for category 用户信息 in sidebar API"
-  },
-  "sidebar.API.category.数据分析": {
-    "message": "Data Analysis",
-    "description": "The label for category 数据分析 in sidebar API"
-  },
-  "sidebar.API.category.支付": {
-    "message": "Payment",
-    "description": "The label for category 支付 in sidebar API"
   },
   "sidebar.API.category.授权": {
     "message": "Authorization",
@@ -335,17 +379,69 @@
     "message": "Subscribe News",
     "description": "The label for category 订阅消息 in sidebar API"
   },
+  "sidebar.API.category.微信红包": {
+    "message": "WeChat Red Packet",
+    "description": "The label for category 微信红包 in sidebar API"
+  },
+  "sidebar.API.category.收藏": {
+    "message": "Collection",
+    "description": "The label for category 收藏 in sidebar API"
+  },
+  "sidebar.API.category.车牌": {
+    "message": "License plate",
+    "description": "The label for category 车牌 in sidebar API"
+  },
+  "sidebar.API.category.视频号": {
+    "message": "WeChat Video Channel",
+    "description": "The label for category 视频号 in sidebar API"
+  },
+  "sidebar.API.category.微信群": {
+    "message": "WeChat group",
+    "description": "The label for category 微信群 in sidebar API"
+  },
+  "sidebar.API.category.微信客服": {
+    "message": "WeChat customer service",
+    "description": "The label for category 微信客服 in sidebar API"
+  },
   "sidebar.API.category.设备": {
     "message": "Device",
     "description": "The label for category 设备 in sidebar API"
+  },
+  "sidebar.API.category.蓝牙-通用": {
+    "message": "Bluetooth - general",
+    "description": "The label for category 蓝牙-通用 in sidebar API"
+  },
+  "sidebar.API.category.蓝牙-低功耗中心设备": {
+    "message": "Bluetooth - low power center equipment",
+    "description": "The label for category 蓝牙-低功耗中心设备 in sidebar API"
+  },
+  "sidebar.API.category.蓝牙-低功耗外围设备": {
+    "message": "Bluetooth - low power peripherals",
+    "description": "The label for category 蓝牙-低功耗外围设备 in sidebar API"
+  },
+  "sidebar.API.category.蓝牙-信标(Beacon)": {
+    "message": "Bluetooth Beacon",
+    "description": "The label for category 蓝牙-信标(Beacon) in sidebar API"
+  },
+  "sidebar.API.category.NFC": {
+    "message": "NFC",
+    "description": "The label for category NFC in sidebar API"
   },
   "sidebar.API.category.Wi-Fi": {
     "message": "Wi-Fi",
     "description": "The label for category Wi-Fi in sidebar API"
   },
+  "sidebar.API.category.日历": {
+    "message": "Calendar",
+    "description": "The label for category 日历 in sidebar API"
+  },
   "sidebar.API.category.联系人": {
     "message": "Contact",
     "description": "The label for category 联系人 in sidebar API"
+  },
+  "sidebar.API.category.无障碍": {
+    "message": "Accessibility",
+    "description": "The label for category 无障碍 in sidebar API"
   },
   "sidebar.API.category.电量": {
     "message": "Bettery Level",
@@ -355,13 +451,13 @@
     "message": "Clipboard",
     "description": "The label for category 剪贴板 in sidebar API"
   },
-  "sidebar.API.category.NFC": {
-    "message": "NFC",
-    "description": "The label for category NFC in sidebar API"
-  },
   "sidebar.API.category.屏幕": {
     "message": "Screen",
     "description": "The label for category 屏幕 in sidebar API"
+  },
+  "sidebar.API.category.键盘": {
+    "message": "keyboard",
+    "description": "The label for category 键盘 in sidebar API"
   },
   "sidebar.API.category.电话": {
     "message": "Phone Call",
@@ -383,37 +479,49 @@
     "message": "Gyroscope",
     "description": "The label for category 陀螺仪 in sidebar API"
   },
-  "sidebar.API.category.性能": {
-    "message": "Performance",
-    "description": "The label for category 性能 in sidebar API"
+  "sidebar.API.category.内存": {
+    "message": "Memory",
+    "description": "The label for category 内存 in sidebar API"
   },
   "sidebar.API.category.扫码": {
-    "message": "Code Scanning",
+    "message": "Scan",
     "description": "The label for category 扫码 in sidebar API"
   },
   "sidebar.API.category.震动": {
-    "message": "Virbration",
+    "message": "Vibration",
     "description": "The label for category 震动 in sidebar API"
+  },
+  "sidebar.API.category.AI": {
+    "message": "AI",
+    "description": "The label for category AI in sidebar API"
+  },
+  "sidebar.API.category.视觉算法": {
+    "message": "Vision algorithms",
+    "description": "The label for category 视觉算法 in sidebar API"
+  },
+  "sidebar.API.category.人脸识别": {
+    "message": "Face recognition",
+    "description": "The label for category 人脸识别 in sidebar API"
   },
   "sidebar.API.category.Worker": {
     "message": "Worker",
     "description": "The label for category Worker in sidebar API"
   },
-  "sidebar.API.category.第三方平台": {
-    "message": "Third-party platforms",
-    "description": "The label for category 第三方平台 in sidebar API"
-  },
-  "sidebar.API.category.云开发": {
-    "message": " Cloud Base ",
-    "description": "The label for category 云开发 in sidebar API"
-  },
   "sidebar.API.category.WXML": {
     "message": "WXML",
     "description": "The label for category WXML in sidebar API"
   },
+  "sidebar.API.category.第三方平台": {
+    "message": "The third party platform",
+    "description": "The label for category 第三方平台 in sidebar API"
+  },
   "sidebar.API.category.广告": {
-    "message": "Advertisement",
+    "message": "advertising",
     "description": "The label for category 广告 in sidebar API"
+  },
+  "sidebar.API.category.云开发": {
+    "message": "Cloud DE",
+    "description": "The label for category 云开发 in sidebar API"
   },
   "sidebar.API.category.Alipay": {
     "message": "Alipay",
@@ -422,113 +530,5 @@
   "sidebar.API.category.Swan": {
     "message": "Swan",
     "description": "The label for category Swan in sidebar API"
-  },
-  "sidebar.docs.category.React": {
-    "message": "React",
-    "description": "The label for category React in sidebar docs"
-  },
-  "sidebar.docs.category.Vue": {
-    "message": "Vue",
-    "description": "The label for category Vue in sidebar docs"
-  },
-  "sidebar.docs.category.CONTRIBUTING": {
-    "message": "CONTRIBUTING",
-    "description": "The label for category CONTRIBUTING in sidebar docs"
-  },
-  "sidebar.docs.category.小程序": {
-    "message": "小程序",
-    "description": "The label for category 小程序 in sidebar docs"
-  },
-  "sidebar.components.category.导航栏": {
-    "message": "导航栏",
-    "description": "The label for category 导航栏 in sidebar components"
-  },
-  "sidebar.API.category.加密": {
-    "message": "加密",
-    "description": "The label for category 加密 in sidebar API"
-  },
-  "sidebar.API.category.跳转": {
-    "message": "跳转",
-    "description": "The label for category 跳转 in sidebar API"
-  },
-  "sidebar.API.category.TCP 通信": {
-    "message": "TCP 通信",
-    "description": "The label for category TCP 通信 in sidebar API"
-  },
-  "sidebar.API.category.实时语音": {
-    "message": "实时语音",
-    "description": "The label for category 实时语音 in sidebar API"
-  },
-  "sidebar.API.category.画面录制器": {
-    "message": "画面录制器",
-    "description": "The label for category 画面录制器 in sidebar API"
-  },
-  "sidebar.API.category.视频解码器": {
-    "message": "视频解码器",
-    "description": "The label for category 视频解码器 in sidebar API"
-  },
-  "sidebar.API.category.微信红包": {
-    "message": "微信红包",
-    "description": "The label for category 微信红包 in sidebar API"
-  },
-  "sidebar.API.category.收藏": {
-    "message": "收藏",
-    "description": "The label for category 收藏 in sidebar API"
-  },
-  "sidebar.API.category.车牌": {
-    "message": "车牌",
-    "description": "The label for category 车牌 in sidebar API"
-  },
-  "sidebar.API.category.视频号": {
-    "message": "视频号",
-    "description": "The label for category 视频号 in sidebar API"
-  },
-  "sidebar.API.category.微信群": {
-    "message": "微信群",
-    "description": "The label for category 微信群 in sidebar API"
-  },
-  "sidebar.API.category.微信客服": {
-    "message": "微信客服",
-    "description": "The label for category 微信客服 in sidebar API"
-  },
-  "sidebar.API.category.蓝牙-通用": {
-    "message": "蓝牙-通用",
-    "description": "The label for category 蓝牙-通用 in sidebar API"
-  },
-  "sidebar.API.category.蓝牙-低功耗中心设备": {
-    "message": "蓝牙-低功耗中心设备",
-    "description": "The label for category 蓝牙-低功耗中心设备 in sidebar API"
-  },
-  "sidebar.API.category.蓝牙-低功耗外围设备": {
-    "message": "蓝牙-低功耗外围设备",
-    "description": "The label for category 蓝牙-低功耗外围设备 in sidebar API"
-  },
-  "sidebar.API.category.蓝牙-信标(Beacon)": {
-    "message": "蓝牙-信标(Beacon)",
-    "description": "The label for category 蓝牙-信标(Beacon) in sidebar API"
-  },
-  "sidebar.API.category.日历": {
-    "message": "日历",
-    "description": "The label for category 日历 in sidebar API"
-  },
-  "sidebar.API.category.无障碍": {
-    "message": "无障碍",
-    "description": "The label for category 无障碍 in sidebar API"
-  },
-  "sidebar.API.category.内存": {
-    "message": "内存",
-    "description": "The label for category 内存 in sidebar API"
-  },
-  "sidebar.API.category.AI": {
-    "message": "AI",
-    "description": "The label for category AI in sidebar API"
-  },
-  "sidebar.API.category.视觉算法": {
-    "message": "视觉算法",
-    "description": "The label for category 视觉算法 in sidebar API"
-  },
-  "sidebar.API.category.人脸识别": {
-    "message": "人脸识别",
-    "description": "The label for category 人脸识别 in sidebar API"
   }
 }
