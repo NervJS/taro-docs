@@ -24,10 +24,11 @@ const baseUrl = {
 const siteConfig = {
   title: 'Taro 文档' /* title for your website */,
   tagline: 'Taro 是一个开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv 等框架来开发微信/京东/百度/支付宝/字节跳动/ QQ 小程序/H5/React Native 等应用。',
-  url: url[process.env.BASE], /* your website url */
-  baseUrl: baseUrl[process.env.BASE], /* base url for your project */
+  url: url[process.env.BASE || 'taro'], /* your website url */
+  baseUrl: baseUrl[process.env.BASE || 'taro'], /* base url for your project */
   onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'log',
+  onDuplicateRoutes: 'log',
   favicon: './img/favicon.ico',
   organizationName: 'nervjs',
   projectName: 'taro',
@@ -76,8 +77,9 @@ const siteConfig = {
       respectPrefersColorScheme: true,
     },
     algolia: {
-      contextualSearch: true,
+      appId: 'D1NLIWLIYJ',
       apiKey: '3f32982103f4e75dadd86900d26a9315', /* (github.com)taro:57b9948bff42bc0dbc6c219556fbae35, (netlify)taro_new:820a8e12c97e870d4e0785d52858230c */
+      contextualSearch: true,
       indexName: 'taro-zone',
       searchParameters: {
         // facetFilters: [`version: ${versions[0]}`],
@@ -180,6 +182,7 @@ const siteConfig = {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
     },
+
     announcementBar: {
       id: 'support_us', // Any value that will identify this message.
       content:
@@ -190,10 +193,10 @@ const siteConfig = {
     }
   }),
 
-
   customFields: {
     versions
   },
+
   scripts: [
     {
       src: 'https://storage.jd.com/taro-resource/tongji.js',
@@ -208,6 +211,7 @@ const siteConfig = {
       async: true
     },
   ],
+
   i18n: {
     defaultLocale: 'zh-cn',
     locales: ['zh-cn', 'en'],
@@ -286,6 +290,7 @@ const siteConfig = {
       },
     ],
   ],
+
   webpack: {
     jsLoader: (isServer) => ({
       loader: require.resolve('swc-loader'),
