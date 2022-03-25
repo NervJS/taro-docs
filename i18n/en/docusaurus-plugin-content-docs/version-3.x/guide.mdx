@@ -7,7 +7,7 @@ title:  Progressive Introduction Tutorial
 We will develop a simple V2EX forum client in this tutorial and you will learn the basics, concepts and some optimization techniques of Taro in this section. Learning this knowledge does not require prior knowledge of Taro, mini program development or multi-site development. Once you have this knowledge, you should be able to develop multi-applications quickly and efficiently.
 
 :::tip Tips
-This tutorial is for developers who like to learn as they go or have no prior knowledge of mini program development at all, if you prefer to learn step by step, please include the entire contents of [documentation](./README) in its entirety. When you finish reading the [documentation](./README) you will see that this tutorial is an asymptotic index of the documentation.
+This tutorial is for developers who like to learn as they go or have no prior knowledge of mini program development at all, if you prefer to learn step by step, please include the entire contents of [documentation](./) in its entirety. When you finish reading the [documentation](./) you will see that this tutorial is an asymptotic index of the documentation.
 :::
 
 This tutorial will be divided into four chapters.
@@ -1026,7 +1026,7 @@ export default App
 ```
 
 
-Then in the post component we can set the current post via `connect` a `dispatch`: 
+Then in the post component we can set the current post via `connect` a `dispatch`:
 
 ```diff title="src/components/thread.jsx"
 - eventCenter.trigger(Thread_DETAIL_NAVIGATE, this.props)
@@ -1290,7 +1290,7 @@ class ThreadList extends React.Component {
         itemCount={threads.length} /*   Length of the rendering list */
         itemSize={100} /* The height of a single item in the list  */
       >
-        {Row} 
+        {Row}
       </VirtualList>
     )
 
@@ -1510,7 +1510,7 @@ const config = {
   ...
   mini: {
     prerender: {
-      include: ['pages/nodes/nodes'], // `pages/nodes/nodes` 
+      include: ['pages/nodes/nodes'], // `pages/nodes/nodes`
     }
   }
 };

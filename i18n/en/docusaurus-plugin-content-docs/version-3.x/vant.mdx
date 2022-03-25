@@ -14,9 +14,9 @@ Taro3 support development with [Vant Weapp](https://youzan.github.io/vant-weapp/
 
 ## How to use it?
 
-### Configure to ignore vant style size conversion 
+### Configure to ignore vant style size conversion
 
-If you use the vant component directly, you will find that the style is too small. This is because Taro converts the vant style size from **px** to **rpx** by default. You can configure [selectorblacklist](https://nervjs .github.io/taro/docs/size#selectorblacklist) to disable the conversion.
+If you use the vant component directly, you will find that the style is too small. This is because Taro converts the vant style size from **px** to **rpx** by default. You can configure [selectorblacklist](/docs/size#selectorblacklist) to disable the conversion.
 
 configuration：
 
@@ -39,7 +39,7 @@ const config = {
 
 ### Configure `copy` of some native files in mini-program.
 
-There are some dependencies on the native files of mini programs in vant component, but Taro has not analyzed these dependencies. 
+There are some dependencies on the native files of mini programs in vant component, but Taro has not analyzed these dependencies.
 Therefore, you need to configure `copy` to move these dependencies to the `dist` directory. For example, If you need to copy `wxs` and other style files, Part of the configuration is as follows:
 
 

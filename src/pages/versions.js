@@ -38,7 +38,7 @@ function Version() {
               <tr>
                 <th>{latestVersion}</th>
                 <td>
-                  <Link to={useBaseUrl('/docs/README')}>
+                  <Link to={useBaseUrl('/docs')}>
                     文档
                   </Link>
                 </td>
@@ -59,7 +59,7 @@ function Version() {
               <tr>
                 <th>Latest</th>
                 <td>
-                  <Link to={useBaseUrl('/docs/next/README')}>
+                  <Link to={useBaseUrl('/docs/next')}>
                     文档
                   </Link>
                 </td>
@@ -109,7 +109,7 @@ function Version() {
                   <tr key={version}>
                     <th>{version}</th>
                     <td>
-                      <Link to={useBaseUrl(`/docs/${version}/README`)}>
+                      <Link to={useBaseUrl(`/docs/${version}`)}>
                         文档
                       </Link>
                     </td>

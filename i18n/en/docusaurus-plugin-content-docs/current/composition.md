@@ -36,7 +36,7 @@ For more recent resources, please refer to.[NervJS/awesome-taro](https://github.
 ## Official Resources
 
 - [Taro Project Repositry](https://github.com/NervJS/taro)
-- [Taro Official Documentaion](https://nervjs.github.io/taro)
+- [Taro Official Documentaion](/docs)
 - [Taro UI Project Repositry](https://github.com/NervJS/taro-ui)
 - [Taro UI Official Documentaion](https://taro-ui.jd.com)
 
@@ -45,11 +45,11 @@ For more recent resources, please refer to.[NervJS/awesome-taro](https://github.
 - [Taro UI](https://taro-ui.jd.com)
 - [Taro UI Vue3](https://b2nil.github.io/taro-ui-vue3/)
 - [Taro UI Vue](https://github.com/psaren/taro-ui-vue)
-- [More](https://nervjs.github.io/taro/docs/redux)
+- [More](/docs/redux)
 
 ## Tutorial
 
-- [Official Blog](https://nervjs.github.io/taro/blog)
+- [Official Blog](/blog)
 - [Don't dare to read the npm package source code? Take a look at the philosophy behind taro init](https://juejin.im/post/5c21f4e5f265da61117a54a0)
 - [Building taro + dva applications from 0 to 1 for different ends (WeChat Mini program, H5, React-Native, etc.)](https://juejin.im/post/5bb1766d5188255c3272cdd0)
 - [[Mini program taro best practice] http request encapsulation (easy to use, add token, unified error logging and reporting)](https://segmentfault.com/a/1190000016533592)

@@ -397,7 +397,7 @@ Taro 也支持样式文件内的条件编译，语法如下：
 /* #endif */
 ```
 
-`%PLATFORM%` 的取值请参考 [Taro 内置环境变量](https://nervjs.github.io/taro/docs/envs.html "Taro 内置环境变量")
+`%PLATFORM%` 的取值请参考 [Taro 内置环境变量](/docs/envs "Taro 内置环境变量")
 
 以下为示例代码：
 

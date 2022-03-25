@@ -14,7 +14,7 @@ sidebar_label: common
 | hidden | `boolean` | 否 | 组件是否显示, 所有组件默认显示 |
 | animation | `{ actions: TaroGeneral.IAnyObject[]; }` | 否 | 动画属性 |
 | ref | `LegacyRef<T>` | 否 | 引用 |
-| dangerouslySetInnerHTML | `{ __html: string; }` | 否 | 渲染 HTML<br />[参考地址](https://taro-docs.jd.com/taro/docs/html) |
+| dangerouslySetInnerHTML | `{ __html: string; }` | 否 | 渲染 HTML<br />[参考地址](/docs/html) |
 
 ## FormItemProps
 

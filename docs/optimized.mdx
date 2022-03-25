@@ -38,7 +38,7 @@ component.setData({
 
 对于不支持模板递归的小程序（微信、QQ、京东小程序），在 DOM 层级达到一定数量后，Taro 会使用原生自定义组件协助递归。
 
-简单理解就是 DOM 结构超过 N 层后，会使用原生自定义组件进行渲染。N 默认是 16 层，可以通过修改配置项 [baseLevel](https://taro-docs.jd.com/taro/docs/next/config-detail#minibaselevel) 修改 N。
+简单理解就是 DOM 结构超过 N 层后，会使用原生自定义组件进行渲染。N 默认是 16 层，可以通过修改配置项 [baseLevel](/docs/next/config-detail#minibaselevel) 修改 N。
 
 把 `baseLevel` 设置为 `8` 甚至 `4` 层，能非常有效地提升更新时的性能。但是设置是全局性的，会带来若干问题：
 
@@ -293,4 +293,4 @@ Taro3 目前对节点的删除处理是有缺陷的。当 `isShowModal` 由 `tru
 
 ## 实战文章
 
-- [《Taro 助力京喜拼拼项目性能体验优化》](https://docs.taro.zone/blog/2021-02-08-taro-jxpp)
+- [《Taro 助力京喜拼拼项目性能体验优化》](/blog/2021-02-08-taro-jxpp)

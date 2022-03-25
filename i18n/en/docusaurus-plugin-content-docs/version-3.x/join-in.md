@@ -10,7 +10,7 @@ We can start by looking at a set of data.
 
 Taro has **5227** commits, **235** releases, **3908** issues opened, **3296** closed thanks to the efforts of the Taro team and community, and nearly **600** issues to be resolved. Taro is also opening around **50** new issues every week, and has collected **709** PRs, adding up to **656**.
 
-In addition, the number of posts on the [Taro Community](https://taro-club.jd.com/) has reached **3000** and is increasing at a rate of **200** per week, while the [Taro Official Documentation](https://docs.taro.zone/), a must-have resource for Taro beginners and developers, has reached **20w** per week.
+In addition, the number of posts on the [Taro Community](https://taro-club.jd.com/) has reached **3000** and is increasing at a rate of **200** per week, while the [Taro Official Documentation](/docs), a must-have resource for Taro beginners and developers, has reached **20w** per week.
 
 At the same time, Taro also has **20+** developer exchange WeChat groups of **500** people, and 10+ seminar groups with the official teams of various small programs and R&D teams of major companies, so the developers of Taro team are bombarded with massive information every day.
 

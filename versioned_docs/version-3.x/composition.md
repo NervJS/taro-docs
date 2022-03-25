@@ -35,7 +35,7 @@ title: 更多资源
 ## 官方资源
 
 - [Taro 项目仓库](https://github.com/NervJS/taro)
-- [Taro 官方文档](https://nervjs.github.io/taro)
+- [Taro 官方文档](/docs)
 - [Taro UI 项目仓库](https://github.com/NervJS/taro-ui)
 - [Taro UI 官方文档](https://taro-ui.jd.com)
 
@@ -44,11 +44,11 @@ title: 更多资源
 - [Taro UI](https://taro-ui.jd.com)
 - [Taro UI Vue3](https://b2nil.github.io/taro-ui-vue3/)
 - [Taro UI Vue](https://github.com/psaren/taro-ui-vue)
-- [更多](https://nervjs.github.io/taro/docs/redux)
+- [更多](/docs/redux)
 
 ## 文章教程
 
-- [官方博客](https://nervjs.github.io/taro/blog)
+- [官方博客](/blog)
 - [不敢阅读 npm 包源码？带你揭秘 taro init 背后的哲学](https://juejin.im/post/5c21f4e5f265da61117a54a0)
 - [从 0 到 1 构建适配不同端（微信小程序、H5、React-Native 等）的 taro + dva 应用](https://juejin.im/post/5bb1766d5188255c3272cdd0)
 - [【小程序 taro 最佳实践】http 请求封装（方便使用，增加 token，统一错误日志记录和上报）](https://segmentfault.com/a/1190000016533592)

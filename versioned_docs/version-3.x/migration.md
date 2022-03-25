@@ -223,18 +223,18 @@ class App extends Component {
 
 ## 样式
 
-在 Taro Next 中，没有 [组件的外部样式和全局样式](https://nervjs.github.io/taro/docs/component-style.html) 的概念，组件的配置（`config.js`）是无效的，页面和入口文件引入的 CSS 都会变成全局 CSS ，没有了 `externalClasses` 和 `addGlobalClass` 这两个概念。
+在 Taro Next 中，没有 [组件的外部样式和全局样式](/docs/component-style) 的概念，组件的配置（`config.js`）是无效的，页面和入口文件引入的 CSS 都会变成全局 CSS ，没有了 `externalClasses` 和 `addGlobalClass` 这两个概念。
 
 如果你需要带作用域的 CSS，可以考虑使用 [CSS Modules](https://github.com/css-modules/css-modules)。
 
 ## 编译配置
 
-* 需要添加 [framework 配置](https://nervjs.github.io/taro/docs/config)，取值为使用的框架（react, nerv, vue, vue3）
-* [jsxAttributeNameReplace](https://nervjs.github.io/taro/docs/1.x/config) 配置已被移除。因为我们不需要配置
+* 需要添加 [framework 配置](/docs/config)，取值为使用的框架（react, nerv, vue, vue3）
+* [jsxAttributeNameReplace](/docs/1.x/config) 配置已被移除。因为我们不需要配置
 
 ## 编译依赖库
 
-`Webpack` 升级到 `Webpack@4`，`Babel` 升级到 `babel@7`。Webpack 升级是在 `taro@2` 中完成的，如果你是从 `taro@1` 升级上来的话，或许需要去看看 [Taro 2 更改](https://github.com/NervJS/taro/blob/feat_mini_webpack/docs/config-detail.md) 查看使用 Webpack 编译后带来的变化。
+`Webpack` 升级到 `Webpack@4`，`Babel` 升级到 `babel@7`。Webpack 升级是在 `taro@2` 中完成的，如果你是从 `taro@1` 升级上来的话，或许需要去看看 [Taro 2 更改](https://github.com/NervJS/taro/blob/feat_mini_webpack/docs/config-detail) 查看使用 Webpack 编译后带来的变化。
 
 升级到 `babel@7` 意味着你的项目文件全部都会通过根目录的 `babel.config.js` 的配置进行编译。
 
@@ -261,7 +261,7 @@ function C () {
 }
 ```
 
-旧版本文档所提到的[最佳实践](https://nervjs.github.io/taro/docs/1.x/best-practice.html)也不必再遵循。也就是说，即便你不给组件设置 `defaultProps`，自定义事件名不以 `on` 开头（还有其它的旧版本代码风格最佳实践），你的代码也能运行。但值得注意的是，遵循这样的 **代码风格最佳实践** 可以让你的代码更健壮，你的应用也会因此而收益。而对于另外的一些由于旧版本 Taro 执行机制的 hack（例如 render 调用两次，state 和 props 无法重名，不要打印组件），这类最佳实践可以不必理会。
+旧版本文档所提到的[最佳实践](/docs/1.x/best-practice)也不必再遵循。也就是说，即便你不给组件设置 `defaultProps`，自定义事件名不以 `on` 开头（还有其它的旧版本代码风格最佳实践），你的代码也能运行。但值得注意的是，遵循这样的 **代码风格最佳实践** 可以让你的代码更健壮，你的应用也会因此而收益。而对于另外的一些由于旧版本 Taro 执行机制的 hack（例如 render 调用两次，state 和 props 无法重名，不要打印组件），这类最佳实践可以不必理会。
 
 ## Ref & DOM
 

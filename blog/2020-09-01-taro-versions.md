@@ -40,7 +40,7 @@ Taro 3 则可以大致理解为解释型架构（相对于 Taro 1/2 而言），
 
 从开发体验上看，Taro 3 明显是优于 Taro 1/2 的，受益于 Taro 3 架构的原理，我们可以在 Taro 3 中使用完整的 React、Vue 语法特性来进行开发，从而在开发体验上让多端开发无限接近于 Web 开发，这对深耕 Web 而初次接触小程序的开发者来说是非常友好的。而对 Taro 熟悉的朋友肯定知道 Taro 1/2 在开发时会有诸多限制，尤其是在 JSX 书写上，我们总会需要一些手段来绕过这些限制，这就导致开发体验小有不足。
 
-从性能上看，某些情况下 Taro 1/2 会优于 Taro 3，如果你的应用非常复杂，页面节点非常多，有非常多的大规模更新操作，对性能要求比较苛刻的话，Taro 1/2 会是不错的选择，而 Taro 1 和 2 我们更推荐使用 Taro 2。当然，根据我们的测试，对于大部分应用来说 Taro 1/2 和 Taro 3 的性能差异并不明显，我们后续会给出 benchmark 来印证这一点，而且，对于 Taro 3 本身在性能存在劣势的场景，Taro 官方团队已经给出了相应的解决方案来应对。比如，提升首次渲染速度，我们可以使用[预渲染](https://nervjs.github.io/taro/docs/prerender)；对于无限滚动加载的列表场景，我们提供了[虚拟列表组件](https://nervjs.github.io/taro/docs/virtual-list)。
+从性能上看，某些情况下 Taro 1/2 会优于 Taro 3，如果你的应用非常复杂，页面节点非常多，有非常多的大规模更新操作，对性能要求比较苛刻的话，Taro 1/2 会是不错的选择，而 Taro 1 和 2 我们更推荐使用 Taro 2。当然，根据我们的测试，对于大部分应用来说 Taro 1/2 和 Taro 3 的性能差异并不明显，我们后续会给出 benchmark 来印证这一点，而且，对于 Taro 3 本身在性能存在劣势的场景，Taro 官方团队已经给出了相应的解决方案来应对。比如，提升首次渲染速度，我们可以使用[预渲染](/docs/prerender)；对于无限滚动加载的列表场景，我们提供了[虚拟列表组件](/docs/virtual-list)。
 
 对于开发者来说，开发体验和性能往往是需要权衡来寻找平衡点的，缺一不可，所以现阶段，我们更加推荐使用 Taro 3 来开发多端应用。而且现阶段 Taro 团队的研发重心主要放在 Taro 3 上，新的特性会优先在 Taro 3 上进行尝试，所以，在未来 Taro 3 将更具有想象力，会有更多好玩的东西推出来。
 
@@ -48,39 +48,40 @@ Taro 3 则可以大致理解为解释型架构（相对于 Taro 1/2 而言），
 
 Taro 2 和 Taro 3 都有对应的迁移指南，根据迁移指南往往能规避大部分的问题。
 
-Taro 1 升级到 Taro 2 的[迁移指南](https://nervjs.github.io/taro/docs/2.x/migrate-to-2)。
+Taro 1 升级到 Taro 2 的[迁移指南](/docs/2.x/migrate-to-2)。
 
-Taro 1/2 升级到 Taro 3 的[迁移指南](https://nervjs.github.io/taro/docs/migration)。
+Taro 1/2 升级到 Taro 3 的[迁移指南](/docs/migration)。
 
 当然，迁移指南肯定无法覆盖到所有问题所有情况，我们在 Taro 交流群的日常交流中总是能观察到一些迁移的问题，所以在这里，我们将梳理一遍迁移指南，同时就一些常见的问题，再做一些说明补充，来解答开发者们的升级困惑。
 
 ### Taro 1 升级到 Taro 2
 
-Taro 1 升 Taro 2 所需要做的工作并不多，根据[迁移指南](https://nervjs.github.io/taro/docs/2.x/migrate-to-2)，主要是新增了一个 `@tarojs/mini-runner` 依赖，以及对编译配置的调整，而在这里容易出问题的往往是在编译配置调整中，所以我们总结了一下针对编译配置的调整内容。
+Taro 1 升 Taro 2 所需要做的工作并不多，根据[迁移指南](/docs/2.x/migrate-to-2)，主要是新增了一个 `@tarojs/mini-runner` 依赖，以及对编译配置的调整，而在这里容易出问题的往往是在编译配置调整中，所以我们总结了一下针对编译配置的调整内容。
 
-- `plugins` 配置调整，调整前是一个对象，调整后为一个数组，用来配置 [Taro 插件](https://nervjs.github.io/taro/docs/2.x/config-detail#plugins)，非常值得注意的是这个配置请与 `babel` 配置里的 `plugins` 区分开来，后者是用来配置 babel 插件的，这是一个非常常见的配置错误
+- `plugins` 配置调整，调整前是一个对象，调整后为一个数组，用来配置 [Taro 插件](/docs/2.x/config-detail#plugins)，非常值得注意的是这个配置请与 `babel` 配置里的 `plugins` 区分开来，后者是用来配置 babel 插件的，这是一个非常常见的配置错误
 - `babel`、`csso`、`uglify` 等配置从旧的 `plugins` 配置中移出来了，调整为与 `sourceRoot` 和 `outputRoot` 等同级的配置项
 - `weapp` 配置项改名为 `mini`
 - `postcss` 配置项下去掉 `module` 这一级配置，原 `module` 下的配置项直接置于 `postcss` 下
 
 #### 关于 async functions 的使用
 
-同时，从 Taro 2 开始，使用 async functions 不再需要安装 `@tarojs/async-await` 依赖了，而是通过安装 babel 插件 `babel-plugin-transform-runtime` 配合 `babel-runtime` 来实现支持，具体请查看文档[异步编程指南](https://nervjs.github.io/taro/docs/2.x/async-await)。
+同时，从 Taro 2 开始，使用 async functions 不再需要安装 `@tarojs/async-await` 依赖了，而是通过安装 babel 插件 `babel-plugin-transform-runtime` 配合 `babel-runtime` 来实现支持，具体请查看文档[异步编程指南](/docs/2.x/async-await)。
 
 而在 Taro 3 中则不再需要手动安装配置，Taro 的官方 babel 预设 `babel-preset-taro` 已经内置了相关配置。
 
 ### Taro 1/2 升级到 Taro 3
 
-Taro 1/2 升级到 Taro 3 则相对来说要麻烦许多，但是[迁移指南](https://nervjs.github.io/taro/docs/migration)中其实介绍得已经非常详细了，我们在这里总结一下需要调整的内容。
+Taro 1/2 升级到 Taro 3 则相对来说要麻烦许多，但是[迁移指南](/docs/migration)中其实介绍得已经非常详细了，我们在这里总结一下需要调整的内容。
 
 #### 文件调整
+
 文件调整主要如下：
-- **babel 配置**，在项目目录下新增了 [`babel.config.js`](https://github.com/NervJS/taro/blob/next/packages/babel-preset-taro/README.md) 配置文件来配置 babel，为此，请去掉编译配置（config/index.js）中的 `babel` 配置，[请参见说明](https://nervjs.github.io/taro/docs/migration/#%E7%BC%96%E8%AF%91%E4%BE%9D%E8%B5%96%E5%BA%93)
-- **项目/页面配置**，新增项目/页面同名的配置文件 `*.config.js`（或者 `*.config.ts`）, `*` 代表页面/项目文件的文件名，`config` 文件必须和页面/项目文件在同一文件夹，[请参见说明](https://nervjs.github.io/taro/docs/migration/#%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2%E9%85%8D%E7%BD%AE)
+- **babel 配置**，在项目目录下新增了 [`babel.config.js`](https://github.com/NervJS/taro/blob/next/packages/babel-preset-taro/README.md) 配置文件来配置 babel，为此，请去掉编译配置（config/index.js）中的 `babel` 配置，[请参见说明](/docs/migration/#%E7%BC%96%E8%AF%91%E4%BE%9D%E8%B5%96%E5%BA%93)
+- **项目/页面配置**，新增项目/页面同名的配置文件 `*.config.js`（或者 `*.config.ts`）, `*` 代表页面/项目文件的文件名，`config` 文件必须和页面/项目文件在同一文件夹，[请参见说明](/docs/migration/#%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2%E9%85%8D%E7%BD%AE)
 
 #### 编译配置调整
-主要参考上述 Taro 1 升级到 Taro 2 时的调整，新增 Taro 3 特有配置 framework 配置，取值为使用的框架（react, nerv, vue, vue3），[请参见说明](https://nervjs.github.io/taro/docs/migration/#%E7%BC%96%E8%AF%91%E9%85%8D%E7%BD%AE)
 
+主要参考上述 Taro 1 升级到 Taro 2 时的调整，新增 Taro 3 特有配置 framework 配置，取值为使用的框架（react, nerv, vue, vue3），[请参见说明](/docs/migration/#%E7%BC%96%E8%AF%91%E9%85%8D%E7%BD%AE)
 
 #### 项目依赖调整
 
@@ -110,9 +111,11 @@ Taro 1/2 升级到 Taro 3 则相对来说要麻烦许多，但是[迁移指南](
 | [`eslint-plugin-taro`](https://www.npmjs.com/package/eslint-plugin-taro)      |  Taro ESLint 插件  |
 
 #### 代码调整
+
 代码调整主要如下：
-- **API 引入**，前端框架（React/Nerv/Vue）自身的 API 直接从框架引入，与 Web 保持一致，只有 Taro 提供的相关 API，还是从 `@tarojs/taro` 引入，[请参见说明](https://nervjs.github.io/taro/docs/migration/#api)
+- **API 引入**，前端框架（React/Nerv/Vue）自身的 API 直接从框架引入，与 Web 保持一致，只有 Taro 提供的相关 API，还是从 `@tarojs/taro` 引入，[请参见说明](/docs/migration/#api)
 - **App 代码调整**，对于 React/Nerv 项目，项目入口 App 的 render 函数固定修改为返回 `this.props.children`，如下
+
 ```jsx
 import { Component } from 'react'
 import './app.scss'
@@ -124,14 +127,15 @@ class App extends Component {
 }
 export default App
 ```
-- **路由功能**，使用 `getCurrentInstance().router` 替代 `this.$router`，`getCurrentInstance` 作为新 API 从 `@tarojs/taro` 引入，[请参见说明](https://nervjs.github.io/taro/docs/migration/#%E8%B7%AF%E7%94%B1)
-- **生命周期**，主要是使用 React 后，带来的生命周期调整，[请参见说明](https://nervjs.github.io/taro/docs/migration/#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F)
-- **使用第三方 React 库**，对于 redux、mobx 等 React 生态库，可以直接像 Web 开发那样直接使用，[请参见说明](https://nervjs.github.io/taro/docs/migration/#%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9-react-%E5%BA%93)
-- **Ref & DOM**，[请参见说明](https://nervjs.github.io/taro/docs/migration/#ref--dom)
-- **不再需要传入 $scope**，在 Taro 1/2 时调用某些 API 需要传入 `this.$scope`，相当于传入组件对应的小程序原生对象，而 Taro 3 则不再需要，具体[请参见说明](https://nervjs.github.io/taro/docs/migration/#scope-%E5%92%8C-componenttype)
-- **样式调整**，组件直接受全局样式影响，不再需要设置 `addGlobalClasses`，[请参见说明](https://nervjs.github.io/taro/docs/migration/#%E6%A0%B7%E5%BC%8F)
 
-当然，迁移指南内容并不仅仅局限于版本迁移，由于 Taro 3 相对与 Taro 1/2 有很多 breaking changes，所以建议使用 Taro 3 的开发者都能在开发前阅读一遍[迁移指南](https://nervjs.github.io/taro/docs/migration)。
+- **路由功能**，使用 `getCurrentInstance().router` 替代 `this.$router`，`getCurrentInstance` 作为新 API 从 `@tarojs/taro` 引入，[请参见说明](/docs/migration/#%E8%B7%AF%E7%94%B1)
+- **生命周期**，主要是使用 React 后，带来的生命周期调整，[请参见说明](/docs/migration/#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F)
+- **使用第三方 React 库**，对于 redux、mobx 等 React 生态库，可以直接像 Web 开发那样直接使用，[请参见说明](/docs/migration/#%E4%BD%BF%E7%94%A8%E7%AC%AC%E4%B8%89%E6%96%B9-react-%E5%BA%93)
+- **Ref & DOM**，[请参见说明](/docs/migration/#ref--dom)
+- **不再需要传入 $scope**，在 Taro 1/2 时调用某些 API 需要传入 `this.$scope`，相当于传入组件对应的小程序原生对象，而 Taro 3 则不再需要，具体[请参见说明](/docs/migration/#scope-%E5%92%8C-componenttype)
+- **样式调整**，组件直接受全局样式影响，不再需要设置 `addGlobalClasses`，[请参见说明](/docs/migration/#%E6%A0%B7%E5%BC%8F)
+
+当然，迁移指南内容并不仅仅局限于版本迁移，由于 Taro 3 相对与 Taro 1/2 有很多 breaking changes，所以建议使用 Taro 3 的开发者都能在开发前阅读一遍[迁移指南](/docs/migration)。
 
 ## 不得不唠叨一下 Taro 3 的正确使用姿势
 
@@ -147,15 +151,16 @@ export default App
 - 如果是部分已有项目需要升级到 Taro 3，可以在这些项目本地安装相应版本的 Taro CLI，这样通过 `yarn` 或者 `npm` 执行命令的话就会直接使用本地安装的 Taro CLI，安装方式 `yarn add @tarojs/cli`
 
 ### 将 Taro CLI 版本与项目中 Taro 相关依赖的版本保持一致
+
 请时刻注意将 Taro CLI 版本与项目中 Taro 相关依赖的版本保持一致。
 
-CLI 与项目依赖版本不一致是导致很多问题出现的源头之一。例如，Taro CLI 版本为 3.0.8，那么 Taro 相关依赖的版本也必须是 3.0.8，Taro 相关包名可以从这个[列表](https://nervjs.github.io/taro/docs/CONTRIBUTING#taro-%E7%BB%84%E6%88%90)得知，具体依赖项版本可以使用 `taro info` 命令或者通过 `package.json` 就能知晓。
+CLI 与项目依赖版本不一致是导致很多问题出现的源头之一。例如，Taro CLI 版本为 3.0.8，那么 Taro 相关依赖的版本也必须是 3.0.8，Taro 相关包名可以从这个[列表](/docs/codebase-overview)得知，具体依赖项版本可以使用 `taro info` 命令或者通过 `package.json` 就能知晓。
 
 如果发现不一致的情况可以使用 Taro 升级命令 `taro update self [版本号]` 和 `taro update project [版本号]`来分别将 CLI 和项目依赖升级到指定版本；或者也可以手动安装相应版本 CLI，修改 `package.json` 依赖版本号，然后重装依赖来解决。
 
 ### 使用路由
 
-在 Taro 3 中使用路由在前文的版本迁移部分已有提及，同时需要了解更多内容可以前往[官方文档](https://nervjs.github.io/taro/docs/router)查看。
+在 Taro 3 中使用路由在前文的版本迁移部分已有提及，同时需要了解更多内容可以前往[官方文档](/docs/router)查看。
 
 非常值得注意的是，无论是获取项目传入参数还是页面入参，都是通过  `getCurrentInstance().router` 来获取的，具体使用如下。
 

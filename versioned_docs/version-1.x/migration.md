@@ -220,17 +220,17 @@ class App extends Component {
 
 ## 样式
 
-在 Taro Next 中，没有 [组件的外部样式和全局样式](https://nervjs.github.io/taro/docs/component-style.html) 的概念，组件的配置（`config.js`）是无效的，页面和入口文件引入的 CSS 都会变成全局 CSS ，没有了 `externalClasses` 和 `addGlobalClass` 这两个概念。
+在 Taro Next 中，没有 [组件的外部样式和全局样式](/docs/component-style) 的概念，组件的配置（`config.js`）是无效的，页面和入口文件引入的 CSS 都会变成全局 CSS ，没有了 `externalClasses` 和 `addGlobalClass` 这两个概念。
 
 如果你需要带作用域的 CSS，可以考虑使用 [CSS Modules](https://github.com/css-modules/css-modules)。
 
 ## 编译配置
 
-[jsxAttributeNameReplace](https://nervjs.github.io/taro/docs/1.x/config) 配置已被移除。因为我们不需要配置 `externalClasses`，这个属性也失去了它存在的意义。
+[jsxAttributeNameReplace](/docs/1.x/config) 配置已被移除。因为我们不需要配置 `externalClasses`，这个属性也失去了它存在的意义。
 
 ## 编译依赖库
 
-`Webpack` 升级到 `Webpack@4`，`Babel` 升级到 `babel@7`。Webpack 升级是在 `taro@2` 中完成的，如果你是从 `taro@1` 升级上来的话，或许需要去看看 [Taro 2 更改](https://github.com/NervJS/taro/blob/feat_mini_webpack/docs/config-detail.md) 查看使用 Webpack 编译后带来的变化。
+`Webpack` 升级到 `Webpack@4`，`Babel` 升级到 `babel@7`。Webpack 升级是在 `taro@2` 中完成的，如果你是从 `taro@1` 升级上来的话，或许需要去看看 [Taro 2 更改](https://github.com/NervJS/taro/blob/feat_mini_webpack/docs/config-detail) 查看使用 Webpack 编译后带来的变化。
 
 升级到 `babel@7` 意味着你的项目文件全部都会通过根目录的 `babel.config.js` 的配置进行编译。
 
@@ -307,7 +307,7 @@ class C extends Components {
 
 ## Hooks
 
-在 Taro Next，Taro 的[专有 Hooks](https://nervjs.github.io/taro/docs/1.3.25/hooks.html)（例如 `usePageScroll`, `useReachBottom`）从 `@tarojs/taro` 中引入，框架自己的 Hooks （例如 `useEffect`, `useState`）从对应的框架引入。
+在 Taro Next，Taro 的[专有 Hooks](/docs/1.x/hooks)（例如 `usePageScroll`, `useReachBottom`）从 `@tarojs/taro` 中引入，框架自己的 Hooks （例如 `useEffect`, `useState`）从对应的框架引入。
 
 另外，旧版本的 Taro 可以在 Class Component 中使用 Hooks，但 React 是不允许这样的行为的。
 

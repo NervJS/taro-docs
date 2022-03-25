@@ -188,7 +188,7 @@ $ yarn add -D babel-plugin-transform-runtime
 $ yarn add babel-runtime
 ```
 
-随后修改项目 [babel 配置](https://nervjs.github.io/taro/docs/config-detail.html#babel)，配置插件 `babel-plugin-transform-runtime`。
+随后修改项目 [babel 配置](/docs/2.x/config-detail#babel)，配置插件 `babel-plugin-transform-runtime`。
 
 ```js
 babel: {

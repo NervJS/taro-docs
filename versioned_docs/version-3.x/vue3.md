@@ -45,7 +45,6 @@ const config = {
 * VirtualList 组件需要实现一份 Vue3 版本（待实现）
 * 所有组件的 `id` 必须在整个应用中保持唯一（即使他们在不同的页面），否则可能导致事件不触发的问题，[#7317](https://github.com/NervJS/taro/issues/7317)
 
-
 ## 相关阅读
 
 Vue3 新特性可参阅 [Vue3 文档](https://v3.vuejs.org/guide/migration/introduction.html#notable-new-features)。

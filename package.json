@@ -17,9 +17,9 @@
     "trans:en": "docusaurus write-translations --locale en"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.17",
-    "@docusaurus/plugin-pwa": "2.0.0-beta.17",
-    "@docusaurus/preset-classic": "2.0.0-beta.17",
+    "@docusaurus/core": "2.0.0-beta.18",
+    "@docusaurus/plugin-pwa": "2.0.0-beta.18",
+    "@docusaurus/preset-classic": "2.0.0-beta.18",
     "@swc/core": "^1.2.160",
     "clsx": "^1.1.1",
     "prism-react-renderer": "^1.3.1",

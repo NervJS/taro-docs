@@ -259,7 +259,7 @@ sidebar_label: RewardedVideoAd
     <tr>
       <td>errCode</td>
       <td><code>1000 | 1001 | 1002 | 1003 | 1004 | 1005 | 1006 | 1007 | 1008</code></td>
-      <td>错误码<br /><a href="https://nervjs.github.io/taro/docs/apis/General#AdErrCode">参考地址</a></td>
+      <td>错误码<br /><a href="/docs/apis/General#aderrcode">参考地址</a></td>
     </tr>
     <tr>
       <td>errMsg</td>

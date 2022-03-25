@@ -18,13 +18,13 @@ npm info @tarojs/cli
 
 The main change in Taro 3.1 is to create an open architecture that supports compiling to any mini program platform in the form of a plugin.
 
-For more information, please refer to[《Taro officially released version 3.1》](https://docs.taro.zone/blog/2021-03-10-taro-3-1-lts)
+For more information, please refer to[《Taro officially released version 3.1》](/blog/2021-03-10-taro-3-1-lts)
 
 ### Taro 3.2
 
 Taro 3.2 adds support for ReactNative.
 
-For more information, please refer to [《Taro version 3.2 officially released: React Native support, the return of the king》](https://docs.taro.zone/blog/2021-04-08-taro-3.2)。
+For more information, please refer to [《Taro version 3.2 officially released: React Native support, the return of the king》](/blog/2021-04-08-taro-3.2)。
 
 If you want to use Taro 1/2, you can visit [document version](/versions) for help.
 

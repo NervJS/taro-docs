@@ -1,5 +1,5 @@
 ---
-slug: 2022-01-19-how-to-join-Taro.md
+slug: 2022-01-19-how-to-join-Taro
 title: 如何参与大型开源项目-Taro 共建
 authors: Jiaozi
 tags: [v3]
@@ -24,7 +24,7 @@ description: '本文讲述了参与大型开源项目-Taro 的流程，其中以
 
 ## 三、快速开始
 
-首先要了解、遵守开源项目的贡献规范，一般可以在官网找到贡献规范文档，如 [Taro 贡献指南](https://taro-docs.jd.com/taro/docs/CONTRIBUTING)。
+首先要了解、遵守开源项目的贡献规范，一般可以在官网找到贡献规范文档，如 [Taro 贡献指南](/docs/CONTRIBUTING)。
 
 ### 1. 确定贡献形式
 
@@ -70,7 +70,7 @@ $ yarn build
 
 查看该 issue 涉及哪些 package，为这些 package 设置 yarn link，并在本地编译，使得调试项目能够 link 到开发中的源码：
 
-> Taro package 说明见文档：[Taro 仓库概览](https://taro-docs.jd.com/taro/docs/codebase-overview)
+> Taro package 说明见文档：[Taro 仓库概览](/docs/codebase-overview)
 
 ```
 # yarn link

@@ -43,7 +43,7 @@ Taro chose to take advantage of the fact that mini program `<template>`s can ref
 
 ### Platfrom Plugin
 
-Taro internally supports 6 mini program platforms by default, since [Taro v3.1](https://docs.taro.zone/blog/2021-03-10-taro-3-1-lts#1-%E5%BC%80%E6%94%BE%E5%BC%8F%E6%9E%B6%E6%9E%84) support for each mini program platform is available as a Taro plugin.
+Taro internally supports 6 mini program platforms by default, since [Taro v3.1](/blog/2021-03-10-taro-3-1-lts#1-开放式架构) support for each mini program platform is available as a Taro plugin.
 
 - `@tarojs/plugin-platform-weapp`	Wechat mini program  plugin
 - `@tarojs/plugin-platform-alipay`	Alipay mini program  plugin

@@ -37,7 +37,7 @@ taro-init(1) does not exist, try --help
 
 此问题发生在页面或组件**更新**时。
 
-在调用小程序的 setData 方法前，Taro 会把 state 与 data 做一次 [diff](https://nervjs.github.io/taro/docs/best-practice.html#小程序数据-diff)。
+在调用小程序的 setData 方法前，Taro 会把 state 与 data 做一次 [diff](/docs/2.x/optimized-practice#小程序数据-diff)。
 
 如果 state 与 data 的某个属性值没有变化，很有可能就不会重新 setData 该属性，导致页面或组件没有正确更新。
 

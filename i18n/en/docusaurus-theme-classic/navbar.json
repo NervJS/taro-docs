@@ -24,7 +24,7 @@
     "description": "Navbar item with label 博客"
   },
   "item.label.问题反馈": {
-    "message": "问题反馈",
+    "message": "Report Problem",
     "description": "Navbar item with label 问题反馈"
   },
   "item.label.设计稿生成代码": {

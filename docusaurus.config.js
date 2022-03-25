@@ -26,10 +26,10 @@ const siteConfig = {
   tagline: 'Taro 是一个开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv 等框架来开发微信/京东/百度/支付宝/字节跳动/ QQ 小程序/H5/React Native 等应用。',
   url: url[process.env.BASE || 'taro'], /* your website url */
   baseUrl: baseUrl[process.env.BASE || 'taro'], /* base url for your project */
-  onBrokenLinks: 'log',
-  onBrokenMarkdownLinks: 'log',
-  onDuplicateRoutes: 'log',
-  favicon: './img/favicon.ico',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
+  onDuplicateRoutes: 'throw',
+  favicon: require.resolve('./static/img/favicon.ico'),
   organizationName: 'nervjs',
   projectName: 'taro',
 
@@ -170,7 +170,7 @@ const siteConfig = {
           items: [
             {
               label: '文档',
-              to: '/docs/README',
+              to: '/docs',
             },
           ],
         },

@@ -38,6 +38,6 @@ title: 沟通与反馈
 
 ### 为 Taro 贡献代码
 
-Taro 非常欢迎社区开发者为 Taro 贡献代码，在贡献之前请先阅读[贡献指南](https://nervjs.github.io/taro/docs/CONTRIBUTING.html)。
+Taro 非常欢迎社区开发者为 Taro 贡献代码，在贡献之前请先阅读[贡献指南](/docs/CONTRIBUTING)。
 
 如果你想为 Taro 实现一个重要功能，需要先撰写 RFC  文档，按照 Taro 的 [RFC 机制](https://github.com/NervJS/taro-rfcs)进行操作，在经过社区讨论完善后才可以进行代码的提交。

@@ -147,7 +147,7 @@ sidebar_label: RewardedVideoAd
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| errCode | string or number or symbol | 错误码<br />[参考地址](https://nervjs.github.io/taro/docs/apis/General#AdErrCode) |
+| errCode | string or number or symbol | 错误码<br />[参考地址](/docs/apis/General#aderrcode) |
 | errMsg | `string` | 错误信息 |
 
 ### OnCloseCallbackResult

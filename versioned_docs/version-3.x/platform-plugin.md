@@ -6,7 +6,7 @@ title: 概述
 
 自 `v3.1.0` 起，我们把对每个小程序平台的兼容逻辑抽取了出来，以 [Taro 插件](./plugin)的形式注入 Taro 框架，从而支持对应平台的编译。
 
-### Taro 内置的端平台插件：
+### Taro 内置的端平台插件
 
 | 插件 | 编译平台 |
 | :--- | :--- |
@@ -17,7 +17,7 @@ title: 概述
 | @tarojs/plugin-platform-qq | QQ 小程序 |
 | @tarojs/plugin-platform-jd | 京东小程序 |
 
-### 其它端平台插件：
+### 其它端平台插件
 
 | 插件 | 编译平台 |
 | :--- | :--- |
@@ -26,7 +26,7 @@ title: 概述
 | [@tarojs/plugin-platform-alipay-iot](https://github.com/NervJS/taro-plugin-platform-alipay-iot) | 支付宝 IOT 小程序 |
 | [@tarojs/plugin-platform-lark](https://github.com/NervJS/taro-plugin-platform-lark) | 飞书小程序 |
 
-### 端平台插件使用方法：
+### 端平台插件使用方法
 
 1. 配置插件
 

@@ -3,7 +3,7 @@ title: Taro.authorizeForMiniProgram(option)
 sidebar_label: authorizeForMiniProgram
 ---
 
-**仅小程序插件中能调用该接口**，用法同 [Taro.authorize](./authorize)。目前仅支持三种 scope
+**仅小程序插件中能调用该接口**，用法同 [Taro.authorize](../authorize)。目前仅支持三种 scope
 
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 

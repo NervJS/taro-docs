@@ -38,6 +38,6 @@ You can find some open source templates, components and projects in the examples
 
 ### Contribute code to Taro
 
-Taro welcomes community developers to contribute code to Taro, please read the following before contributing [Contribute Guides](https://nervjs.github.io/taro/docs/CONTRIBUTING.html)。
+Taro welcomes community developers to contribute code to Taro, please read the following before contributing [Contribute Guides](/docs/CONTRIBUTING)。
 
 If you want to implement an important feature for Taro, you need to write an RFC document first, Follow Taro's [RFC System](https://github.com/NervJS/taro-rfcs) and do not commit the code until it has been discussed and refined by the community.
