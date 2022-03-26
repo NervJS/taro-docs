@@ -41,7 +41,7 @@ const siteConfig = {
         docs: {
           // sidebars file relative to website dir.
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/nervjs/taro-docs/edit/master/docs/',
+          editUrl: 'https://github.com/nervjs/taro-docs/edit/master/',
           lastVersion: "3.x",
           versions: {
             current: {
@@ -52,7 +52,7 @@ const siteConfig = {
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl: 'https://github.com/nervjs/taro-docs/edit/master/docs/',
+          editUrl: 'https://github.com/nervjs/taro-docs/edit/master/',
           blogSidebarCount: 'ALL',
           blogSidebarTitle: '全部'
         },
