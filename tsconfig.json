@@ -3,6 +3,9 @@
   "compilerOptions": {
     "lib": ["DOM", "ESNext"],
     "baseUrl": ".",
+    "paths": {
+      "@site/static/*": ["./static/*"]
+    },
     "resolveJsonModule": true,
     "strict": true,
     "types": ["@types/jest"]

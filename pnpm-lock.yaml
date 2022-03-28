@@ -5,12 +5,14 @@ specifiers:
   '@docusaurus/core': 2.0.0-beta.18
   '@docusaurus/plugin-pwa': 2.0.0-beta.18
   '@docusaurus/preset-classic': 2.0.0-beta.18
+  '@notionhq/client': ^1.0.4
   '@swc/core': ^1.2.160
   '@tsconfig/docusaurus': ^1.0.5
   '@types/node': ^17.0.23
   '@types/react': ^17.0.43
   clsx: ^1.1.1
   cross-env: ^7.0.3
+  dotenv: ^16.0.0
   prism-react-renderer: ^1.3.1
   react: ^17.0.2
   react-dom: ^17.0.2
@@ -24,6 +26,7 @@ dependencies:
   '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.18_a28ab96cf604114ad06d891682e2f5b5
   '@docusaurus/plugin-pwa': registry.npmjs.org/@docusaurus/plugin-pwa/2.0.0-beta.18_a28ab96cf604114ad06d891682e2f5b5
   '@docusaurus/preset-classic': registry.npmjs.org/@docusaurus/preset-classic/2.0.0-beta.18_31a20ef55a109ef3a46e36a518fda969
+  '@notionhq/client': registry.npmjs.org/@notionhq/client/1.0.4
   '@swc/core': registry.npmjs.org/@swc/core/1.2.160
   clsx: registry.npmjs.org/clsx/1.1.1
   prism-react-renderer: registry.npmjs.org/prism-react-renderer/1.3.1_react@17.0.2
@@ -37,6 +40,7 @@ devDependencies:
   '@types/node': registry.npmjs.org/@types/node/17.0.23
   '@types/react': registry.npmjs.org/@types/react/17.0.43
   cross-env: registry.npmjs.org/cross-env/7.0.3
+  dotenv: registry.npmjs.org/dotenv/16.0.0
   rimraf: registry.npmjs.org/rimraf/3.0.2
   ts-node: registry.npmjs.org/ts-node/10.7.0_4cbcedbfe53db642e4662aab879bbe28
   typescript: registry.npmjs.org/typescript/4.6.3
@@ -2771,6 +2775,18 @@ packages:
       fastq: registry.npmjs.org/fastq/1.13.0
     dev: false
 
+  registry.npmjs.org/@notionhq/client/1.0.4:
+    resolution: {integrity: sha512-m7zZ5l3RUktayf1lRBV1XMb8HSKsmWTv/LZPqP7UGC1NMzOlc+bbTOPNQ4CP/c1P4cP61VWLb/zBq7a3c0nMaw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@notionhq/client/-/client-1.0.4.tgz}
+    name: '@notionhq/client'
+    version: 1.0.4
+    engines: {node: '>=12'}
+    dependencies:
+      '@types/node-fetch': registry.npmjs.org/@types/node-fetch/2.6.1
+      node-fetch: registry.npmjs.org/node-fetch/2.6.7
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
   registry.npmjs.org/@polka/url/1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@polka/url/-/url-1.0.0-next.21.tgz}
     name: '@polka/url'
@@ -3422,6 +3438,15 @@ packages:
     version: 1.3.2
     dev: false
 
+  registry.npmjs.org/@types/node-fetch/2.6.1:
+    resolution: {integrity: sha512-oMqjURCaxoSIsHSr1E47QHzbmzNR5rK8McHuNb11BOM9cHcIK3Avy0s/b2JlXHoQGTYS3NsvWzV1M0iK7l0wbA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/node-fetch/-/node-fetch-2.6.1.tgz}
+    name: '@types/node-fetch'
+    version: 2.6.1
+    dependencies:
+      '@types/node': registry.npmjs.org/@types/node/17.0.23
+      form-data: registry.npmjs.org/form-data/3.0.1
+    dev: false
+
   registry.npmjs.org/@types/node/17.0.23:
     resolution: {integrity: sha512-UxDxWn7dl97rKVeVS61vErvw086aCYhDLyvRQZ5Rk65rZKepaFdm53GeqXaKBuOhED4e9uWq34IC3TdSdJJ2Gw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/node/-/node-17.0.23.tgz}
     name: '@types/node'
@@ -3970,6 +3995,12 @@ packages:
     version: 2.6.3
     dependencies:
       lodash: registry.npmjs.org/lodash/4.17.21
+    dev: false
+
+  registry.npmjs.org/asynckit/0.4.0:
+    resolution: {integrity: sha1-x57Zf380y48robyXkLzDZkdLS3k=, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz}
+    name: asynckit
+    version: 0.4.0
     dev: false
 
   registry.npmjs.org/at-least-node/1.0.0:
@@ -4606,6 +4637,15 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
+  registry.npmjs.org/combined-stream/1.0.8:
+    resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz}
+    name: combined-stream
+    version: 1.0.8
+    engines: {node: '>= 0.8'}
+    dependencies:
+      delayed-stream: registry.npmjs.org/delayed-stream/1.0.0
+    dev: false
+
   registry.npmjs.org/comma-separated-tokens/1.0.8:
     resolution: {integrity: sha512-GHuDRO12Sypu2cV70d1dkA2EUmXHgntrzbpvOB+Qy+49ypNfGgFQIC2fhhXbnyrJRynDCAARsT7Ou0M6hirpfw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/comma-separated-tokens/-/comma-separated-tokens-1.0.8.tgz}
     name: comma-separated-tokens
@@ -5206,6 +5246,13 @@ packages:
       slash: registry.npmjs.org/slash/3.0.0
     dev: false
 
+  registry.npmjs.org/delayed-stream/1.0.0:
+    resolution: {integrity: sha1-3zrhmayt+31ECqrgsp4icrJOxhk=, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz}
+    name: delayed-stream
+    version: 1.0.0
+    engines: {node: '>=0.4.0'}
+    dev: false
+
   registry.npmjs.org/depd/1.1.2:
     resolution: {integrity: sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/depd/-/depd-1.1.2.tgz}
     name: depd
@@ -5395,6 +5442,13 @@ packages:
     dependencies:
       is-obj: registry.npmjs.org/is-obj/2.0.0
     dev: false
+
+  registry.npmjs.org/dotenv/16.0.0:
+    resolution: {integrity: sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/dotenv/-/dotenv-16.0.0.tgz}
+    name: dotenv
+    version: 16.0.0
+    engines: {node: '>=12'}
+    dev: true
 
   registry.npmjs.org/duplexer/0.1.2:
     resolution: {integrity: sha512-jtD6YG370ZCIi/9GTaJKQxWTZD045+4R4hTk/x1UyoqadyJ9x9CgSi1RlVDQF8U2sxLLSnFkCaMihqljHIWgMg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/duplexer/-/duplexer-0.1.2.tgz}
@@ -5985,6 +6039,17 @@ packages:
       tapable: registry.npmjs.org/tapable/1.1.3
       typescript: registry.npmjs.org/typescript/4.6.3
       webpack: registry.npmjs.org/webpack/5.70.0_@swc+core@1.2.160
+    dev: false
+
+  registry.npmjs.org/form-data/3.0.1:
+    resolution: {integrity: sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/form-data/-/form-data-3.0.1.tgz}
+    name: form-data
+    version: 3.0.1
+    engines: {node: '>= 6'}
+    dependencies:
+      asynckit: registry.npmjs.org/asynckit/0.4.0
+      combined-stream: registry.npmjs.org/combined-stream/1.0.8
+      mime-types: registry.npmjs.org/mime-types/2.1.35
     dev: false
 
   registry.npmjs.org/forwarded/0.2.0:

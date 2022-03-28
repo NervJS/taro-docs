@@ -1,17 +1,18 @@
-name: Publish root to TCB
+name: Update Taro contributor database
 on:
-  check_suite:
-    types: [completed]
   push:
     branches:
       - master
+  schedule:
+    - cron: '0 21 * * *'
 
 env:
   CI: true
+  NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
 jobs:
-  publish:
-    name: Publish
-    runs-on: ubuntu-18.04
+  Update:
+    name: Update
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with :
@@ -32,14 +33,11 @@ jobs:
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
 
-      - name: Build
-        run: pnpm run build:zone
+      - name: Fetch notion database
+        run: |
+          pnpm run notion
 
-      - name: Deploy static to Tencent CloudBase
-        id: deployStatic
-        uses: TencentCloudBase/cloudbase-action@v1.1.1
+      - name: Push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          secretId: ${{ secrets.TCB_SECRET_ID }}
-          secretKey: ${{ secrets.TCB_SECRET_KEY }}
-          envId: ${{ secrets.TCB_TARO_DOCS_ENV_ID }}
-          staticSrcPath: dist
+          commit_message: "chore(date): update contributor member-list"

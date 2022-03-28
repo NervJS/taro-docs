@@ -1,6 +1,7 @@
 name: Publish Taro docs to GitHub
 on:
-  # When Release Pull Request is merged
+  check_suite:
+    types: [completed]
   push:
     branches:
       - master
@@ -13,6 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with :
+          ref : ${{ github.head_ref }}
+
       - name: Cache pnpm modules
         uses: actions/cache@v2
         with:
@@ -20,14 +24,17 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
+
       - uses: pnpm/action-setup@v2.1.0
         with:
           version: 6.32.3
           run_install: |
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
+
       - name: Build
         run: pnpm run build:github
+
       - name: Deploy static to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:

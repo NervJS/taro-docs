@@ -43,30 +43,25 @@ Taro 会收集重要的 Feature Requests，在 [《来为 Taro 的 Feature Reque
 #### 1. 下载 Taro 仓库
 
 ```bash
-$ git clone git@github.com:NervJS/taro.git
+$ git clone git@github.com:NervJS/taro-docs.git
 ```
-#### 2. 切换到 docs 分支
-
-```bash
-$ git checkout docs
-```
-#### 3. 编译预览
+#### 2. 编译预览
 
 ```bash
 $ npm run start
 ```
 
-#### 4. 修改、新增对应文档
+#### 3. 修改、新增对应文档
 
 > 文档支持 `md` 和 `mdx` 后缀，语法详见 [Docusaurus 官网](https://docusaurus.io/docs/next/markdown-features)
 
-##### 4.1 修改文档
+##### 3.1 修改文档
 
 进入 `docs` 目录，找到对应的文件进行编辑。（必须，对应**下个版本**的相关文档）
 
 进入 `versioned_docs/version-3.x` 目录，找到对应的文件进行编辑。（可选，对应**3.x 版本**的相关文档。不修改则需要等待 Taro 团队更新文档版本后，才会同步到文档的 `3.x` 版本）
 
-##### 4.2 新增文档
+##### 3.2 新增文档
 
 新增文档和修改文档类似，首先分别到 `docs` 和 `versioned_docs/version-3.x` 目录新增一个文件。然后在 `sidebars.js` 和 `versioned_sidebars/version-3.x-sidebars.json` 文件中添加上述新增文件的路径。
 
