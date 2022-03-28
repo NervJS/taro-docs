@@ -3,7 +3,7 @@
     "object": "page",
     "id": "54c473d4-dde8-48ed-882f-433488b14dad",
     "created_time": "2022-03-21T10:10:00.000Z",
-    "last_edited_time": "2022-03-28T09:05:00.000Z",
+    "last_edited_time": "2022-03-28T10:45:00.000Z",
     "created_by": {
       "object": "user",
       "id": "b10a09b9-bc10-4cd0-8a45-d9ab8600f0e3"
@@ -43,7 +43,7 @@
           }
         ]
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -56,13 +56,26 @@
             "id": "d87eccaf-3815-4173-8dd5-2a287bb1fe9c",
             "name": "创新团队",
             "color": "yellow"
+          },
+          {
+            "id": "39205217-4a41-4524-bae5-0a6ff6adecf5",
+            "name": "UI 框架兴趣组",
+            "color": "yellow"
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:05:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -72,11 +85,6 @@
           "name": "生态合作者",
           "color": "green"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -115,7 +123,7 @@
     "object": "page",
     "id": "0241b2a3-883d-448d-b304-734e91f20e57",
     "created_time": "2022-03-21T10:09:00.000Z",
-    "last_edited_time": "2022-03-28T09:05:00.000Z",
+    "last_edited_time": "2022-03-28T10:45:00.000Z",
     "created_by": {
       "object": "user",
       "id": "b10a09b9-bc10-4cd0-8a45-d9ab8600f0e3"
@@ -155,7 +163,7 @@
           }
         ]
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": [
@@ -186,13 +194,26 @@
             "id": "d87eccaf-3815-4173-8dd5-2a287bb1fe9c",
             "name": "创新团队",
             "color": "yellow"
+          },
+          {
+            "id": "39205217-4a41-4524-bae5-0a6ff6adecf5",
+            "name": "UI 框架兴趣组",
+            "color": "yellow"
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:05:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -202,11 +223,6 @@
           "name": "生态合作者",
           "color": "green"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -267,7 +283,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -277,10 +293,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-21T03:28:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -290,11 +314,6 @@
           "name": "合作者",
           "color": "blue"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -353,7 +372,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -363,10 +382,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:02:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -376,11 +403,6 @@
           "name": "荣誉合作者",
           "color": "default"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": true
       },
       "GitHub": {
         "id": "ogpZ",
@@ -439,7 +461,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -449,10 +471,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-21T10:05:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -462,11 +492,6 @@
           "name": "个人贡献者",
           "color": "pink"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -525,7 +550,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -535,10 +560,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:02:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -548,11 +581,6 @@
           "name": "荣誉合作者",
           "color": "default"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": true
       },
       "GitHub": {
         "id": "ogpZ",
@@ -611,7 +639,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -621,10 +649,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:02:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -634,11 +670,6 @@
           "name": "荣誉合作者",
           "color": "default"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": true
       },
       "GitHub": {
         "id": "ogpZ",
@@ -697,7 +728,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -707,10 +738,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:02:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -720,11 +759,6 @@
           "name": "荣誉合作者",
           "color": "default"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": true
       },
       "GitHub": {
         "id": "ogpZ",
@@ -783,7 +817,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -793,10 +827,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:02:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -806,11 +848,6 @@
           "name": "荣誉合作者",
           "color": "default"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": true
       },
       "GitHub": {
         "id": "ogpZ",
@@ -869,7 +906,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -879,10 +916,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:02:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -892,11 +937,6 @@
           "name": "荣誉合作者",
           "color": "default"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": true
       },
       "GitHub": {
         "id": "ogpZ",
@@ -955,7 +995,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -965,10 +1005,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:02:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -978,11 +1026,6 @@
           "name": "荣誉合作者",
           "color": "default"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": true
       },
       "GitHub": {
         "id": "ogpZ",
@@ -1041,7 +1084,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -1051,10 +1094,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:02:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -1064,11 +1115,6 @@
           "name": "荣誉合作者",
           "color": "default"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": true
       },
       "GitHub": {
         "id": "ogpZ",
@@ -1127,7 +1173,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -1137,10 +1183,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:02:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -1150,11 +1204,6 @@
           "name": "荣誉合作者",
           "color": "default"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": true
       },
       "GitHub": {
         "id": "ogpZ",
@@ -1213,7 +1262,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -1223,10 +1272,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:02:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -1236,11 +1293,6 @@
           "name": "荣誉合作者",
           "color": "default"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": true
       },
       "GitHub": {
         "id": "ogpZ",
@@ -1299,7 +1351,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -1315,10 +1367,18 @@
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-21T09:53:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -1328,11 +1388,6 @@
           "name": "技术委员会成员",
           "color": "orange"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -1391,7 +1446,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -1407,10 +1462,18 @@
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-21T09:53:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -1420,11 +1483,6 @@
           "name": "技术委员会成员",
           "color": "orange"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -1483,7 +1541,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -1493,10 +1551,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:02:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -1506,11 +1572,6 @@
           "name": "荣誉技术委员成员",
           "color": "orange"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": true
       },
       "GitHub": {
         "id": "ogpZ",
@@ -1569,7 +1630,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -1579,10 +1640,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-21T03:12:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -1592,11 +1661,6 @@
           "name": "合作者",
           "color": "blue"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -1633,7 +1697,7 @@
     "object": "page",
     "id": "b1c0a4a4-d8cd-4b8f-aa6f-2e97a1cc96f6",
     "created_time": "2022-03-16T13:02:00.000Z",
-    "last_edited_time": "2022-03-28T09:03:00.000Z",
+    "last_edited_time": "2022-03-28T10:49:00.000Z",
     "created_by": {
       "object": "user",
       "id": "4382312d-e60a-49ca-8657-3b3cf7ddc61a"
@@ -1642,7 +1706,12 @@
       "object": "user",
       "id": "4382312d-e60a-49ca-8657-3b3cf7ddc61a"
     },
-    "cover": null,
+    "cover": {
+      "type": "external",
+      "external": {
+        "url": "https://www.notion.so/images/page-cover/solid_red.png"
+      }
+    },
     "icon": null,
     "parent": {
       "type": "database_id",
@@ -1673,7 +1742,7 @@
           }
         ]
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -1689,10 +1758,18 @@
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:03:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -1702,11 +1779,6 @@
           "name": "技术委员会成员",
           "color": "orange"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -1806,7 +1878,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -1822,10 +1894,18 @@
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:03:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -1835,11 +1915,6 @@
           "name": "技术委员会成员",
           "color": "orange"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -1957,7 +2032,7 @@
           }
         ]
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -1973,10 +2048,18 @@
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-24T07:39:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -1986,11 +2069,6 @@
           "name": "技术委员会成员",
           "color": "orange"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -2090,7 +2168,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -2100,10 +2178,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:02:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -2113,11 +2199,6 @@
           "name": "荣誉技术委员成员",
           "color": "orange"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": true
       },
       "GitHub": {
         "id": "ogpZ",
@@ -2176,7 +2257,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -2186,10 +2267,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:02:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -2199,11 +2288,6 @@
           "name": "荣誉技术委员成员",
           "color": "orange"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": true
       },
       "GitHub": {
         "id": "ogpZ",
@@ -2303,7 +2387,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -2313,10 +2397,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:02:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -2326,11 +2418,6 @@
           "name": "荣誉技术委员成员",
           "color": "orange"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": true
       },
       "GitHub": {
         "id": "ogpZ",
@@ -2367,7 +2454,7 @@
     "object": "page",
     "id": "c6c5e8fc-8431-422d-9e95-b80614080e9a",
     "created_time": "2022-03-16T12:41:00.000Z",
-    "last_edited_time": "2022-03-28T09:24:00.000Z",
+    "last_edited_time": "2022-03-28T10:44:00.000Z",
     "created_by": {
       "object": "user",
       "id": "4382312d-e60a-49ca-8657-3b3cf7ddc61a"
@@ -2394,7 +2481,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -2404,10 +2491,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:24:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -2417,11 +2512,6 @@
           "name": "荣誉技术委员主席",
           "color": "red"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": true
       },
       "GitHub": {
         "id": "ogpZ",
@@ -2480,7 +2570,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -2496,10 +2586,18 @@
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-21T10:07:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -2509,11 +2607,6 @@
           "name": "合作者",
           "color": "blue"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -2572,7 +2665,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -2588,10 +2681,18 @@
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:04:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -2601,11 +2702,6 @@
           "name": "合作者",
           "color": "blue"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -2664,7 +2760,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -2690,10 +2786,18 @@
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:05:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -2703,11 +2807,6 @@
           "name": "合作者",
           "color": "blue"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -2766,7 +2865,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -2787,10 +2886,18 @@
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:04:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -2800,11 +2907,6 @@
           "name": "合作者",
           "color": "blue"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -2863,7 +2965,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -2879,10 +2981,18 @@
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-21T10:06:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -2892,11 +3002,6 @@
           "name": "个人贡献者",
           "color": "pink"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -2955,7 +3060,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -2965,10 +3070,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-23T02:12:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -2978,11 +3091,6 @@
           "name": "个人贡献者",
           "color": "pink"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -3041,7 +3149,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -3067,10 +3175,18 @@
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:04:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -3080,11 +3196,6 @@
           "name": "合作者",
           "color": "blue"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -3143,7 +3254,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -3159,10 +3270,18 @@
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-23T02:13:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -3172,11 +3291,6 @@
           "name": "合作者",
           "color": "blue"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -3235,7 +3349,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -3256,10 +3370,18 @@
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-23T02:10:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -3269,11 +3391,6 @@
           "name": "个人贡献者",
           "color": "pink"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -3332,7 +3449,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -3348,10 +3465,18 @@
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-23T02:12:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -3361,11 +3486,6 @@
           "name": "个人贡献者",
           "color": "pink"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -3424,7 +3544,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -3440,10 +3560,18 @@
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-21T10:05:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -3453,11 +3581,6 @@
           "name": "个人贡献者",
           "color": "pink"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -3516,7 +3639,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -3526,10 +3649,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-23T02:12:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -3539,11 +3670,6 @@
           "name": "个人贡献者",
           "color": "pink"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -3580,7 +3706,7 @@
     "object": "page",
     "id": "32d52bcd-11e0-4256-8b41-2204cb234c21",
     "created_time": "2022-03-16T12:33:00.000Z",
-    "last_edited_time": "2022-03-28T09:03:00.000Z",
+    "last_edited_time": "2022-03-28T10:45:00.000Z",
     "created_by": {
       "object": "user",
       "id": "4382312d-e60a-49ca-8657-3b3cf7ddc61a"
@@ -3620,7 +3746,7 @@
           }
         ]
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -3633,13 +3759,26 @@
             "id": "b1b92940-6a16-43a3-b000-3e83e51eb25a",
             "name": "Core 团队",
             "color": "red"
+          },
+          {
+            "id": "3ce33a4b-36b0-40ff-8680-54be7d7c9a8f",
+            "name": "H5 工作组",
+            "color": "pink"
           }
         ]
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:03:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -3649,11 +3788,6 @@
           "name": "技术委员会成员",
           "color": "orange"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
@@ -3731,7 +3865,7 @@
     "object": "page",
     "id": "def3cc57-2733-4ee5-a9ad-4190febb3e82",
     "created_time": "2022-03-16T12:33:00.000Z",
-    "last_edited_time": "2022-03-28T09:24:00.000Z",
+    "last_edited_time": "2022-03-28T11:02:00.000Z",
     "created_by": {
       "object": "user",
       "id": "4382312d-e60a-49ca-8657-3b3cf7ddc61a"
@@ -3758,7 +3892,7 @@
         "type": "rich_text",
         "rich_text": []
       },
-      "wechat": {
+      "Wechat": {
         "id": "%5Bsy%7B",
         "type": "rich_text",
         "rich_text": []
@@ -3768,10 +3902,18 @@
         "type": "multi_select",
         "multi_select": []
       },
+      "Alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      },
       "Last Update": {
         "id": "l_xG",
-        "type": "last_edited_time",
-        "last_edited_time": "2022-03-28T09:24:00.000Z"
+        "type": "date",
+        "date": null
       },
       "Role": {
         "id": "m%3AAW",
@@ -3781,11 +3923,6 @@
           "name": "技术委员会主席",
           "color": "red"
         }
-      },
-      "Alumni": {
-        "id": "nLRt",
-        "type": "checkbox",
-        "checkbox": false
       },
       "GitHub": {
         "id": "ogpZ",
