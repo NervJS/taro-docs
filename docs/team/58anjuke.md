@@ -8,7 +8,7 @@ Taro 3 React Native 部分由 58 的团队开发。RN 相关的 RFC 可以关注
 
 ![](https://wos2.58cdn.com.cn/DeFazYxWvDti/frsupload/d84aad22aa5b1f140b9b186858c3bf81_7la5x-fcodr.gif)
 
-更多细节，请参考 [React Native 端开发教程](./react-native)。
+更多细节，请参考 [React Native 端开发教程](../react-native)。
 
 ## 团队介绍
 

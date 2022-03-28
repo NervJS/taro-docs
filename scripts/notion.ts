@@ -10,6 +10,22 @@ const databaseId = '1f9665bd-5f7b-4908-a752-8ec5861e7789'
 export async function fetchTechnicalCommittee(list: QueryDatabaseResponse['results'] = [], start_cursor?: string) {
   const response = await notion.databases.query({
     database_id: databaseId,
+    sorts: [{
+      "property": "role",
+      "direction": "ascending"
+    }, {
+      "property": "team",
+      "direction": "ascending"
+    }, {
+      "property": "group",
+      "direction": "ascending"
+    }, {
+      "property": "remarks",
+      "direction": "ascending"
+    }, {
+      "property": "github",
+      "direction": "ascending"
+    }],
     start_cursor
   })
   list = list.concat(response.results || [])

@@ -8,7 +8,8 @@
     },
     "resolveJsonModule": true,
     "strict": true,
-    "types": ["@types/jest"]
+    "types": ["@types/jest", "typings"]
   },
+  "include": ["blog", "docs", "i18n", "packages", "scripts", "src", "typings"],
   "exclude": ["src/sw.js"]
 }

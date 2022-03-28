@@ -2,133 +2,132 @@
 title: Taro 团队
 ---
 
-## 核心开发者
+import { TeamList } from './components'
+
+## 团队构成
 
 Taro 各个模块的核心开发者。设计并实现 Taro 的核心功能，把控模块的功能规划、特性引入和实现进度，当社区无法达成共识时做出最终决定。
 
-* **督导小组**
- 负责核心功能的监督把控，整体功能的规划设计，督导新功能的引入，制定开发计划，以及提交代码 Review
-* **编译小组**
- 负责代码文件编译到不同端的实现，微信小程序端 JSX 编译，快应用端 JSX 编译等，ESLint 插件维护
-* **开发工具小组**
- 负责 CLI 工具的开发与优化工作
-* **组件库小组**
- 负责标准组件库的规范制定、文档编写，标准组件库在不同端的实现，以及标准组件库官网建设
-* **运行框架小组**
- 负责不同端运行框架的实现
-* **端能力 API 小组**
- 负责端能力 API 的规范制定、文档编写，端能力 API 在不同端的实现
-* **UI 库小组**
- 负责 Taro UI 库的实现
-* **社区维护小组**
- 负责社区内答疑解惑，GitHub Issues 维护，问题搜集，社区项目发起与引导，第三方库适配与生态管理等
+![团队架构图](@site/static/img/team-structure.png)
+
+### [Core 团队](./team-core)
+
+- **Cli 工作组**
+  主要负责 Taro 命令行工具的开发和维护工作。
+- **Compile 工作组**
+  负责维护、优化小程序和 H5 的编译系统。
+- **Runtime 工作组**
+  负责维护小程序运行时系统。
+
+### [Plugin 团队](./team-plugin)
+
+负责维护各 Taro 插件，包括端平台插件，React、Vue DevTools 等。
+
+- **端平台插件工作组**
+  负责维护各端平台插件，包括对微信、支付宝、百度、字节跳动、QQ、京东、企业微信、飞书、快手、钉钉、小红书等厂商小程序的适配等。
+- **混合开发工作组**
+  负责维护 Taro 与原生小程序的相互调用功能、Taro 开发原生插件等。
+
+### [Platform 团队](./team-platform)
+
+负责 App、Web、Open Harmony 等跨平台开发。
+
+- **H5 工作组**
+  负责维护 H5 的各模块，包括路由、组件库、API 库等。
+- **React Native 工作组**
+  负责React Native适配核心、组件库、API 库等部分的开发。
+- **Open Harmony 工作组**
+  负责鸿蒙适配核心、组件库、API 库等部分的开发。
+- **快应用工作组**
+
+### [创新团队](./team-innovate)
+
+Taro 创新特新、新方向探索，如 wasm、rust、vite、flutter、electron 等。
+
+- **UI 框架兴趣组**
+  TaroUI、NutUI 等 UI 库和其他类型生态工具的研发与管理。
+
+### [社区团队](./team-community)
+
+负责 Taro 生态与运营，和 Taro 社区的运营推广工作。
 
 ## 战略合作伙伴（联合团队）
 
 共同参与 Taro 的研发和推广，监督 Taro 的发展流程，推动 Taro 在各领域真实业务场景中的落地和实践，促进 Taro 在业界的广泛应用。
 
-<a
-  href="//www.58.com"
-  target="_blank"
-  style={{display: "inline-block", margin: "0 10px 10px 0"}}
-  ><img src="//storage.jd.com/taro-jd-com/static/58.png" style={{height: "88px"}}
-/></a>
-<a
-  href="//www.anjuke.com"
-  target="_blank"
-  style={{display: "inline-block", margin: "0 10px 10px 0"}}
-  ><img src="//pic3.58cdn.com.cn/nowater/fangfe/n_v2bcd2cc376dc54a5e9b0ce864424394f9.png" style={{height: "88px"}}
-/></a>
+<TeamList
+  list={[{
+    href: '//www.58.com/',
+    image: '//storage.jd.com/taro-jd-com/static/58.png'
+  }, {
+    href: '//www.anjuke.com/',
+    image: '//pic3.58cdn.com.cn/nowater/fangfe/n_v2bcd2cc376dc54a5e9b0ce864424394f9.png'
+  }]}
+/>
 
 Taro 3 React Native 部分由 58 的团队开发。[RN 相关的 RFC 可以关注](https://github.com/NervJS/taro-rfcs/pull/8)
 
 58 同城技术委员会前端分会成立于 2016 年，由各个事业群、部门的前端团队联合组成，旨在促进公司内前端领域技术共享交流、协同共建、代码开源，统一技术标准和开发方案，提高公司整体前端基础建设水平，提升各团队之间沟通协作效率。58 也在积极参与开源社区建设，已对外开源 wwto、Umajs、Picasso 多个项目，更多开源请关注：[https://github.com/wuba](https://github.com/wuba)。
 
+<TeamList
+  list={[{
+    href: '//youshu.tencent.com/',
+    image: '//mp.zhls.qq.com/sdk/img/youshu-logo.jpeg'
+  }, {
+    href: '//cdc.tencent.com/',
+    image: '//storage.jd.com/taro-jd-com/static/cdc.png'
+  }, {
+    href: '//cdc.tencent.com/',
+    image: '//storage.jd.com/taro-jd-com/static/tencent.png'
+  }, {
+    href: '//www.quickapp.cn/',
+    image: '//storage.jd.com/taro-jd-com/static/quick.png'
+  }, {
+    href: '//smartprogram.baidu.com/developer/index.html',
+    image: '//storage.jd.com/taro-jd-com/static/baidu.png'
+  }, {
+    href: '//q.qq.com/',
+    image: '//storage.jd.com/taro-jd-com/static/qq.png'
+  }, {
+    href: '//open.alipay.com/channel/miniIndex.htm',
+    image: '//storage.jd.com/taro-jd-com/static/zfb.png'
+  }, {
+    href: '//www.midea.cn/',
+    image: '//storage.jd.com/taro-jd-com/static/midea.png'
+  }, {
+    href: '//www.sxl.cn/',
+    image: '//storage.jd.com/taro-jd-com/static/sxl.png'
+  }, {
+    image: '//storage.jd.com/taro-jd-com/static/yx.png'
+  }, {
+    href: '//www.16888.com/',
+    image: '//img12.360buyimg.com/ling/jfs/t1/150151/24/2373/15562/5f05ad52Ec372ce39/80b555a4d0a0a929.png'
+  }, {
+    href: '//www.ikandy.cn/',
+    image: '//storage.360buyimg.com/taro-resource/team/tx-tech.jpg'
+  }]}
+/>
 
-<a
-  href="https://youshu.tencent.com/"
-  target="_blank"
-  style={{display: "inline-block", margin: "0 10px 10px 0"}}
->
-  <img src="https://mp.zhls.qq.com/sdk/img/youshu-logo.jpeg" style={{height: "88px"}}
-/></a>
-<a
-  href="//cdc.tencent.com"
-  target="_blank"
-  style={{display: "inline-block", margin: "0 10px 10px 0"}}
->
-  <img src="https://storage.jd.com/taro-jd-com/static/cdc.png" style={{height: "100px"}}
-/></a>
-<a
-  href="//cloud.tencent.com"
-  target="_blank"
-  style={{display: "inline-block", margin: "0 10px 10px 0"}}
-  ><img src=" https://storage.jd.com/taro-jd-com/static/tencent.png" style={{height: "100px"}}
-/></a>
-<a
-  href="//www.quickapp.cn/"
-  target="_blank"
-  style={{display: "inline-block", margin: "0 10px 10px 0"}}
-  ><img src="https://storage.jd.com/taro-jd-com/static/quick.png" style={{height: "100px"}}
-/></a>
-<a
-  href="//smartprogram.baidu.com/developer/index.html"
-  target="_blank"
-  style={{display: "inline-block", margin: "0 10px 10px 0"}}
-  ><img src="https://storage.jd.com/taro-jd-com/static/baidu.png" style={{height: "100px"}}
-/></a>
-<a
-  href="//q.qq.com/"
-  target="_blank"
-  style={{display: "inline-block", margin: "0 10px 10px 0"}}
-  ><img src="https://storage.jd.com/taro-jd-com/static/qq.png" style={{height: "100px"}}
-/></a>
-<a
-  href="//open.alipay.com/channel/miniIndex.htm"
-  target="_blank"
-  style={{display: "inline-block", margin: "0 10px 10px 0"}}
-  ><img src="https://storage.jd.com/taro-jd-com/static/zfb.png" style={{height: "100px"}}
-/></a>
-<a
-  href="//www.midea.cn"
-  target="_blank"
-  style={{display: "inline-block", margin: "0 10px 10px 0"}}
-  ><img src="https://storage.jd.com/taro-jd-com/static/midea.png" style={{height: "100px"}}
-/></a>
-<a
-  href="//www.sxl.cn"
-  target="_blank"
-  style={{display: "inline-block", margin: "0 10px 10px 0"}}
-  ><img src="https://storage.jd.com/taro-jd-com/static/sxl.png" style={{height: "100px"}}
-/></a>
-<a
-  href="#"
-  target="_blank"
-  style={{display: "inline-block", margin: "0 10px 10px 0"}}
-  ><img src="https://storage.jd.com/taro-jd-com/static/yx.png" style={{height: "100px"}}
-/></a>
-<a
-  href="//www.16888.com"
-  target="_blank"
-  style={{display: "inline-block", margin: "0 10px 10px 0"}}
-  ><img src="//img12.360buyimg.com/ling/jfs/t1/150151/24/2373/15562/5f05ad52Ec372ce39/80b555a4d0a0a929.png" style={{height: "100px"}}
-/></a>
-<a
-  href="//www.ikandy.cn"
-  target="_blank"
-  style={{display: "inline-block", margin: "0 10px 10px 0"}}
-  ><img src="//storage.360buyimg.com/taro-resource/team/tx-tech.jpg" style={{height: "100px"}}
-/></a>
+## [技术委员会](./role-committee)
 
+负责技术方向、项目管理、项目发布、贡献政策、仓库托管、行为准则、维护合作者列表，定期参加 TSC 活动，主席（主持人）会在线上主持活动，并做好活动记录并公布。
 
-## 个人贡献者
+### [合作者 & 生态合作者](./role-collaborator)
 
-为 Taro 贡献过代码的个人。
+维护 taro 相关仓库，帮助用户和初级贡献者，参加具体工作组为当前项目贡献代码和文档，评审和评论 issues 和 pull requests。
 
-<a href="https://github.com/NervJS/taro/graphs/contributors"><img src="https://opencollective.com/taro/contributors.svg?width=890&button=false" /></a>
+<!-- ### [助手](./role-triage)
+
+负责 taro 相关仓库新 issues 的维护，负责给 issues 或 pull requests 打标签，以及负责评论、关闭和重新开启 issue 或 pull request，负责将 bug 或 feature 分流给具体工作组。 -->
+
+### [个人贡献者](./role-committer)
+
+感谢为 Taro 贡献过代码的每一位开发者。
+
+[![contributors](https://opencollective.com/taro/contributors.svg?width=890&button=false)](https://github.com/NervJS/taro/graphs/contributors)
 
 ## 特别鸣谢
 
 [![nanjingboy](https://avatars1.githubusercontent.com/u/1390888?s=100&v=4)](https://github.com/nanjingboy/) | [![jsNewbee](https://avatars3.githubusercontent.com/u/20449400?s=100&v=4)](https://github.com/js-newbee/) | [![Qiyu8](https://avatars2.githubusercontent.com/u/15245051?s=100&v=4)](https://github.com/Qiyu8/) | [![Garfield550](https://avatars2.githubusercontent.com/u/3471836?s=100&v=4)](https://github.com/Garfield550/) | [![zhiqingchen](https://avatars3.githubusercontent.com/u/1876158?s=100&v=4)](https://github.com/zhiqingchen)
-:---:|:---:|:---:|:---:|:---:
-[nanjingboy](https://github.com/nanjingboy/) | [jsNewbee](https://github.com/js-newbee/) |  [Qiyu8](https://github.com/Qiyu8/) |  [Garfield Lee](https://github.com/Garfield550/) |  [zhiqingchen](https://github.com/zhiqingchen)
+:---:|:---:|:---:|:---:|:---:|
+[nanjingboy](https://github.com/nanjingboy/) | [jsNewbee](https://github.com/js-newbee/) |  [Qiyu8](https://github.com/Qiyu8/) |  [Garfield Lee](https://github.com/Garfield550/) |  [zhiqingchen](https://github.com/zhiqingchen) |
