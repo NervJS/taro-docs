@@ -1,6 +1,15 @@
 module.exports = {
   docs: {
-    关于Taro: ['README', 'version', 'team/index', 'team/58anjuke', 'communicate'],
+    关于Taro: [
+      'README',
+      'version',
+      {
+        label: 'Taro 团队',
+        type: 'category',
+        items: ['team/index', 'team/role-committee', 'team/role-collaborator', 'team/role-committer', 'team/58anjuke'],
+      },
+      'communicate'
+    ],
     快速开始: ['GETTING-STARTED', 'composition'],
     基础教程: [
       'folder',
