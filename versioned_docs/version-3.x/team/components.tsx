@@ -60,7 +60,7 @@ export function ListPage ({ type = 'role', name = '', alumni = false, full = fal
             backgroundImage: `url(${cover[cover?.type]?.url || taro})`,
           }}
         />
-        <span>{title?.content || 'Taro 贡献者'}</span>
+        <span style={{ width: 88, textAlign: 'center', textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden' }}>{title?.content || 'Taro 贡献者'}</span>
       </a>
     })}
     {!full && <span style={{ margin: 44 }}>...</span>}
