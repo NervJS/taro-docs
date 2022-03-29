@@ -5,7 +5,7 @@ sidebar_label: Input
 
 输入框。该组件是原生组件，使用时请注意相关限制
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/input.html)
 
@@ -36,25 +36,24 @@ import TabItem from '@theme/TabItem'
 
 ```tsx
 class App extends Component {
-
   render () {
     return (
-        <View className='example-body'>
-          <Text>可以自动聚焦的 input</Text>
-            <Input type='text' placeholder='将会获取焦点' focus/>
-            <Text>控制最大输入长度的 input</Text>
-            <Input type='text' placeholder='最大输入长度为 10' maxlength='10'/>
-            <Text>数字输入的 input</Text>
-            <Input type='number' placeholder='这是一个数字输入框'/>
-            <Text>密码输入的 input</Text>
-            <Input type='password' password placeholder='这是一个密码输入框'/>
-            <Text>带小数点的 input</Text>
-            <Input type='digit' placeholder='带小数点的数字键盘'/>
-            <Text>身份证输入的 input</Text>
-            <Input type='idcard' placeholder='身份证输入键盘'/>
-            <Text>控制占位符颜色的 input</Text>
-            <Input type='text' placeholder='占位符字体是红色的' placeholderStyle='color:red'/>
-        </View>
+      <View className='example-body'>
+        <Text>可以自动聚焦的 input</Text>
+          <Input type='text' placeholder='将会获取焦点' focus/>
+          <Text>控制最大输入长度的 input</Text>
+          <Input type='text' placeholder='最大输入长度为 10' maxlength='10'/>
+          <Text>数字输入的 input</Text>
+          <Input type='number' placeholder='这是一个数字输入框'/>
+          <Text>密码输入的 input</Text>
+          <Input type='password' password placeholder='这是一个密码输入框'/>
+          <Text>带小数点的 input</Text>
+          <Input type='digit' placeholder='带小数点的数字键盘'/>
+          <Text>身份证输入的 input</Text>
+          <Input type='idcard' placeholder='身份证输入键盘'/>
+          <Text>控制占位符颜色的 input</Text>
+          <Input type='text' placeholder='占位符字体是红色的' placeholderStyle='color:red'/>
+      </View>
     )
   }
 }
@@ -125,41 +124,41 @@ class App extends Component {
 
 ### API 支持度
 
-| API | 微信小程序 | 支付宝小程序 | H5 | React Native |
-| :---: | :---: | :---: | :---: | :---: |
-| InputProps.value | ✔️ |  | ✔️ | ✔️ |
-| InputProps.type | ✔️ |  | ✔️ | ✔️(部分支持) |
-| InputProps.password | ✔️ |  | ✔️ | ✔️ |
-| InputProps.placeholder | ✔️ |  | ✔️ | ✔️ |
-| InputProps.placeholderStyle | ✔️ |  |  |  |
-| InputProps.placeholderClass | ✔️ |  |  |  |
-| InputProps.disabled | ✔️ |  | ✔️ | ✔️ |
-| InputProps.maxlength | ✔️ |  | ✔️ | ✔️ |
-| InputProps.cursorSpacing | ✔️ |  |  |  |
-| InputProps.autoFocus | ✔️ |  |  |  |
-| InputProps.focus | ✔️ |  | ✔️ | ✔️ |
-| InputProps.confirmType | ✔️ |  |  | ✔️ |
-| InputProps.confirmHold | ✔️ |  |  |  |
-| InputProps.cursor | ✔️ |  |  | ✔️ |
-| InputProps.selectionStart | ✔️ |  |  | ✔️ |
-| InputProps.selectionEnd | ✔️ |  |  | ✔️ |
-| InputProps.adjustPosition | ✔️ |  |  |  |
-| InputProps.holdKeyboard | ✔️ |  |  |  |
-| InputProps.alwaysEmbed | ✔️ |  |  |  |
-| InputProps.safePasswordCertPath | ✔️ |  |  |  |
-| InputProps.safePasswordLength | ✔️ |  |  |  |
-| InputProps.safePasswordTimeStamp | ✔️ |  |  |  |
-| InputProps.safePasswordNonce | ✔️ |  |  |  |
-| InputProps.safePasswordSalt | ✔️ |  |  |  |
-| InputProps.safePasswordCustomHash | ✔️ |  |  |  |
-| InputProps.randomNumber |  | ✔️ |  |  |
-| InputProps.controlled |  | ✔️ |  |  |
-| InputProps.onInput | ✔️ |  | ✔️ | ✔️ |
-| InputProps.onFocus | ✔️ |  | ✔️ | ✔️ |
-| InputProps.onBlur | ✔️ |  | ✔️ | ✔️ |
-| InputProps.onConfirm | ✔️ |  | (借用[Form 组件](./form)的`onSubmit`事件来替代) | ✔️ |
-| InputProps.onKeyboardHeightChange | ✔️ |  |  |  |
-| InputProps.nativeProps |  |  | ✔️ |  |
+| API | 微信小程序 | 支付宝小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| InputProps.value | ✔️ |  | ✔️ | ✔️ |  |
+| InputProps.type | ✔️ |  | ✔️ | ✔️(部分支持) |  |
+| InputProps.password | ✔️ |  | ✔️ | ✔️ |  |
+| InputProps.placeholder | ✔️ |  | ✔️ | ✔️ |  |
+| InputProps.placeholderStyle | ✔️ |  |  |  |  |
+| InputProps.placeholderClass | ✔️ |  |  |  |  |
+| InputProps.disabled | ✔️ |  | ✔️ | ✔️ |  |
+| InputProps.maxlength | ✔️ |  | ✔️ | ✔️ |  |
+| InputProps.cursorSpacing | ✔️ |  |  |  |  |
+| InputProps.autoFocus | ✔️ |  |  |  |  |
+| InputProps.focus | ✔️ |  | ✔️ | ✔️ |  |
+| InputProps.confirmType | ✔️ |  |  | ✔️ |  |
+| InputProps.confirmHold | ✔️ |  |  |  |  |
+| InputProps.cursor | ✔️ |  |  | ✔️ |  |
+| InputProps.selectionStart | ✔️ |  |  | ✔️ |  |
+| InputProps.selectionEnd | ✔️ |  |  | ✔️ |  |
+| InputProps.adjustPosition | ✔️ |  |  |  |  |
+| InputProps.holdKeyboard | ✔️ |  |  |  |  |
+| InputProps.alwaysEmbed | ✔️ |  |  |  |  |
+| InputProps.safePasswordCertPath | ✔️ |  |  |  |  |
+| InputProps.safePasswordLength | ✔️ |  |  |  |  |
+| InputProps.safePasswordTimeStamp | ✔️ |  |  |  |  |
+| InputProps.safePasswordNonce | ✔️ |  |  |  |  |
+| InputProps.safePasswordSalt | ✔️ |  |  |  |  |
+| InputProps.safePasswordCustomHash | ✔️ |  |  |  |  |
+| InputProps.randomNumber |  | ✔️ |  |  |  |
+| InputProps.controlled |  | ✔️ |  |  |  |
+| InputProps.onInput | ✔️ |  | ✔️ | ✔️ |  |
+| InputProps.onFocus | ✔️ |  | ✔️ | ✔️ |  |
+| InputProps.onBlur | ✔️ |  | ✔️ | ✔️ |  |
+| InputProps.onConfirm | ✔️ |  | (借用[Form 组件](./form)的`onSubmit`事件来替代) | ✔️ |  |
+| InputProps.onKeyboardHeightChange | ✔️ |  |  |  |  |
+| InputProps.nativeProps |  |  | ✔️ |  |  |
 
 ### inputEventDetail
 
