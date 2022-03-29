@@ -281,7 +281,6 @@ export default class Test extends React.Component {
 
 * 由于小程序不支持动态引入，因此小程序中无法使用 `React.lazy` API。
 * 不能在页面组件的 DOM 树之外插入元素，因此不支持 `<Portal>`。
-* 所有组件的 `id` 必须在整个应用中保持唯一（即使他们在不同的页面），否则可能导致事件不触发的问题，[#7317](https://github.com/NervJS/taro/issues/7317)
 
 ## 常见问题
 
