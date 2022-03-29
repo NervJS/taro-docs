@@ -103,7 +103,7 @@ interface PickerMultiSelectorProps extends PickerStandardProps {
    * 列改变时触发
    * @supported weapp, h5, rn
    */
-  onColumnChange?: CommonEventFunction<PickerMultiSelectorProps.ColumnChangeEvnetDetail>
+  onColumnChange?: CommonEventFunction<PickerMultiSelectorProps.ColumnChangeEventDetail>
 }
 
 declare namespace PickerMultiSelectorProps {
@@ -111,7 +111,7 @@ declare namespace PickerMultiSelectorProps {
     /** 表示变更值的下标 */
     value: number[]
   }
-  interface ColumnChangeEvnetDetail {
+  interface ColumnChangeEventDetail {
     /** 表示改变了第几列（下标从0开始） */
     column: number
     /** 表示变更值的下标 */
@@ -350,7 +350,7 @@ declare namespace PickerRegionProps {
  *     </view>
  *   </view>
  * </template>
- * 
+ *
  * <script>
  *   export default {
  *     data() {
@@ -365,11 +365,11 @@ declare namespace PickerRegionProps {
  *       onChange: function(e) {
  *         this.selectorChecked = this.selector[e.detail.value]
  *       },
- * 
+ *
  *       onTimeChange: function(e) {
  *         this.timeSel = e.detail.value
  *       },
- * 
+ *
  *       onDateChange: function(e) {
  *         this.dateSel = e.detail.value
  *       }
