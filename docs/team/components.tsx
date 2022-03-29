@@ -4,39 +4,6 @@ import o2logo from '@site/static/img/o2logo@2x.png'
 import taro from '@site/static/img/taroLogo180.png'
 import React from 'react'
 
-const list = {
-  RoleCommittee: members,
-  RoleCollaborator: members,
-  RoleTriage: members,
-  RoleCommitter: members,
-  // Team
-  TeamCore: members,
-  TeamPlugin: members,
-  TeamPlatform: members,
-  TeamInnovate: members,
-  TeamCommunity: members,
-  // Group
-  GroupCoreCli: '',
-  GroupCoreCompile: '',
-  GroupCoreRuntime: '',
-  GroupPluginPlatform: '',
-  GroupPluginHybrid: '',
-  GroupPlatformH5: '',
-  GroupPlatformRN: '',
-  GroupPlatformOH: '',
-  GroupPlatformQA: '',
-}
-
-export function Box () {
-  console.log('data', list)
-  return <div>1233</div>
-}
-
-export function List ({ count }) {
-  console.log('data', members)
-  return <div>1233</div>
-}
-
 interface ITeam {
   href?: string
   image?: string

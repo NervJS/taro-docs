@@ -1,11 +1,8 @@
-import { Client } from '@notionhq/client'
 import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints'
 import 'dotenv/config'
 
-import writeFile from './write'
-
-const notion = new Client({ auth: process.env.NOTION_API_KEY })
-const databaseId = '1f9665bd-5f7b-4908-a752-8ec5861e7789'
+import writeFile from '../write'
+import { databaseId, notion } from './common'
 
 export async function fetchTechnicalCommittee(list: QueryDatabaseResponse['results'] = [], start_cursor?: string) {
   const response = await notion.databases.query({
@@ -19,6 +16,9 @@ export async function fetchTechnicalCommittee(list: QueryDatabaseResponse['resul
     }, {
       "property": "group",
       "direction": "ascending"
+    }, {
+      "property": "contributions",
+      "direction": "descending"
     }, {
       "property": "remarks",
       "direction": "ascending"
