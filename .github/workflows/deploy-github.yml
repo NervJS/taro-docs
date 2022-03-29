@@ -5,9 +5,12 @@ on:
   push:
     branches:
       - master
+  schedule:
+    - cron: '0 21 * * *'
 
 env:
   CI: true
+  NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
 jobs:
   publish:
     name: Publish
@@ -31,6 +34,15 @@ jobs:
           run_install: |
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
+
+      - name: Fetch notion database
+        run: |
+          pnpm run notion
+
+      - name: Push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore(date): update contributor member-list"
 
       - name: Build
         run: pnpm run build:github

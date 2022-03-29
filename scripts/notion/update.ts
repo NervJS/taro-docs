@@ -124,11 +124,11 @@ export async function updateMember (item: IGithubContributor) {
       number: item.contributions
     }
     params.properties.role = {
-      type: 'select',
-      select: {
+      type: 'multi_select',
+      multi_select: [{
         id: '7c557d2c-e604-45a3-8680-05867408143c',
         name: '个人贡献者',
-      }
+      }]
     }
     // params.properties.last_update = {
     //   type: 'date',
