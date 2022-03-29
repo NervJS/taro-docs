@@ -2206,14 +2206,14 @@
     "object": "page",
     "id": "6ee5d66b-9c58-48a0-8f0e-44fb78765705",
     "created_time": "2022-03-16T12:40:00.000Z",
-    "last_edited_time": "2022-03-29T10:46:00.000Z",
+    "last_edited_time": "2022-03-29T13:34:00.000Z",
     "created_by": {
       "object": "user",
       "id": "4382312d-e60a-49ca-8657-3b3cf7ddc61a"
     },
     "last_edited_by": {
       "object": "user",
-      "id": "aacf4576-9a5b-4346-bb4f-1007b018d455"
+      "id": "4382312d-e60a-49ca-8657-3b3cf7ddc61a"
     },
     "cover": {
       "type": "external",
@@ -2236,6 +2236,11 @@
             "id": "f154527a-8950-4e92-8f3e-49ef5cd3e866",
             "name": "Plugin 团队",
             "color": "blue"
+          },
+          {
+            "id": "938a3f82-1e7e-4993-8d16-3ee2022706d1",
+            "name": "Platform 团队",
+            "color": "pink"
           }
         ]
       },
@@ -2252,7 +2257,18 @@
       "group": {
         "id": "%5ElK%3A",
         "type": "multi_select",
-        "multi_select": []
+        "multi_select": [
+          {
+            "id": "90a700e2-d57e-4d51-85b1-d0e9a3abac94",
+            "name": "Cli 工作组",
+            "color": "red"
+          },
+          {
+            "id": "3ce33a4b-36b0-40ff-8680-54be7d7c9a8f",
+            "name": "H5 工作组",
+            "color": "pink"
+          }
+        ]
       },
       "alumni": {
         "id": "dtGi",
