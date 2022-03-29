@@ -21,7 +21,7 @@ description: ''
 
 ### 个人贡献者&生态个人贡献者（Individual Committer）
 
-任何同意《 Taro 行为准则》的个人开发者，都可以基于[《贡献者指南》](https://github.com/NervJS/taro/blob/next/CONTRIBUTING.md)进行 pull request 提交， bug 反馈&修复、新特性提议或 PR 均可，会在 [Taro 官方文档](https://taro.zone/)中列为个人贡献者。当贡献者的有价值工作被其他合作者注意到后，可以被提名为合作者。
+任何同意《 Taro 行为准则》的个人开发者，都可以基于[《贡献者指南》](https://github.com/NervJS/taro/blob/next/CONTRIBUTING.md)进行 pull request 提交， bug 反馈 & 修复、新特性提议或 PR 均可，会在 [Taro 官方文档](/docs/team/)中列为个人贡献者。当贡献者的有价值工作被其他合作者注意到后，可以被提名为合作者。
 
 任何基于或围绕 Taro 生态进行的工具、插件、培训、教程等个人都会在 [Taro 官方文档](/docs/team/)中列为生态个人贡献者。
 
