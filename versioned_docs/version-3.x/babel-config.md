@@ -225,9 +225,7 @@ import "core-js/modules/es.string.pad-end";
 :::note
 可以去掉冗余代码，对于一些严格限制包体大小的场景（比如 PWA 等）有帮助，但这也会去掉页面和组件的懒加载，导致 app.js 过大。
 
-> 注意：该属性只在使用 **h5** 中生效，非 **h5** 平台默认开启。
+> 注意：**h5** 平台默认关闭，其他平台默认开启，小程序默认是不支持动态加载的，可以通过[dynamic-import 插件](https://github.com/JiyuShao/taro-dynamic-import-weapp/tree/master/packages/taro-plugin-dynamic-import-weapp)提供该能力。
 :::
-
-**默认值**：`false`
 
 **类型**：`boolean`
