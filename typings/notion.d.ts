@@ -81,7 +81,7 @@ declare module "notion" {
     type: "text" | "mention" | "equation"
     text?: {
       content: string
-      link: {
+      link?: {
         url: TextRequest
       } | null
     }
@@ -107,7 +107,7 @@ declare module "notion" {
     equation?: {
       expression: TextRequest
     }
-    annotations: {
+    annotations?: {
       bold: boolean
       italic: boolean
       strikethrough: boolean
@@ -134,8 +134,83 @@ declare module "notion" {
         | "pink_background"
         | "red_background"
     }
-    plain_text: string
-    href: string | null
+    plain_text?: string
+    href?: string | null
+  }
+
+  interface QueryDatabaseProperty {
+    id?: string
+    type:
+      | "number"
+      | "url"
+      | "select"
+      | "multi_select"
+      | "date"
+      | "email"
+      | "phone_number"
+      | "checkbox"
+      | "files"
+      | "created_by"
+      | "created_time"
+      | "last_edited_by"
+      | "last_edited_time"
+      | "formula"
+      | "title"
+      | "rich_text"
+      | "people"
+      | "relation"
+      | "rollup"
+    number?: number | null
+    url?: string | null
+    select?: SelectPropertyResponse | null
+    multi_select?: Array<SelectPropertyResponse>
+    date?: DateResponse | null
+    email?: string | null
+    phone_number?: string | null
+    checkbox?: boolean
+    files?: Array<{
+      file?: {
+        url: string
+        expiry_time: string
+      }
+      external?: {
+        url: TextRequest
+      }
+      name: StringRequest
+      type?: "file" | "external"
+    }>
+    created_by?: PartialUserObjectResponse
+    created_time?: string
+    last_edited_by?: PartialUserObjectResponse
+    last_edited_time?: string
+    formula?: {
+      type: "string" | "date" | "number" | "boolean"
+      string?: string | null
+      date?: DateResponse | null
+      number?: number | null
+      boolean?: boolean | null
+    }
+    title?: Array<RichTextItemResponse>
+    rich_text?: Array<RichTextItemResponse>
+    people?: Array<PartialUserObjectResponse>
+    relation?: Array<{
+      id: string
+    }>
+    rollup?: {
+      type: "number" | "date" | "array"
+      number?: number | null
+      date?: DateResponse | null
+      array?: Array<{
+        type: "title" | "rich_text" | "people" | "relation"
+        title?: Array<RichTextItemResponse>
+        rich_text?: Array<RichTextItemResponse>
+        people?: Array<PartialUserObjectResponse>
+        relation?: Array<{
+          id: string
+        }>
+      }>
+      function: RollupFunction
+    }
   }
 
   interface QueryDatabaseResult {
@@ -145,83 +220,7 @@ declare module "notion" {
       page_id?: IdRequest
       workspace?: true
     }
-    properties?: Record<
-      string,
-      {
-        id: string
-        type:
-          | "number"
-          | "url"
-          | "select"
-          | "multi_select"
-          | "date"
-          | "email"
-          | "phone_number"
-          | "checkbox"
-          | "files"
-          | "created_by"
-          | "created_time"
-          | "last_edited_by"
-          | "last_edited_time"
-          | "formula"
-          | "title"
-          | "rich_text"
-          | "people"
-          | "relation"
-          | "rollup"
-        number?: number | null
-        url?: string | null
-        select?: SelectPropertyResponse | null
-        multi_select?: Array<SelectPropertyResponse>
-        date?: DateResponse | null
-        email?: string | null
-        phone_number?: string | null
-        checkbox?: boolean
-        files?: Array<{
-          file?: {
-            url: string
-            expiry_time: string
-          }
-          external?: {
-            url: TextRequest
-          }
-          name: StringRequest
-          type?: "file" | "external"
-        }>
-        created_by?: PartialUserObjectResponse
-        created_time?: string
-        last_edited_by?: PartialUserObjectResponse
-        last_edited_time?: string
-        formula?: {
-          type: "string" | "date" | "number" | "boolean"
-          string?: string | null
-          date?: DateResponse | null
-          number?: number | null
-          boolean?: boolean | null
-        }
-        title?: Array<RichTextItemResponse>
-        rich_text?: Array<RichTextItemResponse>
-        people?: Array<PartialUserObjectResponse>
-        relation?: Array<{
-          id: string
-        }>
-        rollup?: {
-          type: "number" | "date" | "array"
-          number?: number | null
-          date?: DateResponse | null
-          array?: Array<{
-            type: "title" | "rich_text" | "people" | "relation"
-            title?: Array<RichTextItemResponse>
-            rich_text?: Array<RichTextItemResponse>
-            people?: Array<PartialUserObjectResponse>
-            relation?: Array<{
-              id: string
-            }>
-          }>
-          function: RollupFunction
-        }
-      }
-    >
+    properties?: Record<string, QueryDatabaseProperty>
     object: "page"
     id: string
     icon?: {

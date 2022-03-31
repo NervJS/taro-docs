@@ -1,8 +1,11 @@
 import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints'
 import 'dotenv/config'
+import { RichTextItemResponse, TextRequest } from 'notion'
 
 import writeFile from '../write'
-import { databaseId, notion } from './common'
+import { databaseId, getProperty, notion, sleep } from './common'
+import { fetchUser } from './github'
+import { updateMember } from './update-utils'
 
 export async function fetchTechnicalCommittee(list: QueryDatabaseResponse['results'] = [], start_cursor?: string) {
   const response = await notion.databases.query({
@@ -37,7 +40,28 @@ export async function fetchTechnicalCommittee(list: QueryDatabaseResponse['resul
 
 export async function updateTechnicalCommittee() {
   const list = await fetchTechnicalCommittee()
-  writeFile(`static/data/contributors.json`, JSON.stringify(list, undefined, 2))
+  const data = await list.reduce(async (p, member) => {
+    const members = await p
+    const cover = getProperty(member, 'cover') as { url: TextRequest } | null
+    const title = getProperty(member.properties, 'title') as Array<RichTextItemResponse>
+    const name = title?.[0]?.text?.content
+    if (!cover?.url && name) {
+      const user = await fetchUser(name)
+      try {
+        const member = await updateMember(user)
+        await sleep()
+        if (member) {
+          members.push(member)
+          return members
+        }
+      } catch (error) {
+        console.error(`Notion: update ${name} with error`, error)
+      }
+    }
+    members.push(member)
+    return members
+  }, [])
+  writeFile(`static/data/contributors.json`, JSON.stringify(data, undefined, 2))
 }
 
 updateTechnicalCommittee()

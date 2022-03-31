@@ -18,3 +18,11 @@ export function getPropertyTitle(properties: QueryDatabaseResult['properties'] =
   }
   return property[property.type]?.[0]
 }
+
+export const sleep = (ms = 500) => {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve()
+    }, ms)
+  })
+}
