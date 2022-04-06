@@ -313,3 +313,7 @@ imageUrlLoaderOption: {
 :::caution 请注意
 另外使用 svg-sprite-loader 依旧需要引入图片，避免被 tree shaking 抖动掉可以改用动态导入，参考 Issue [9569](https://github.com/NervJS/taro/issues/9569)。
 :::
+
+### NextJS
+
+社区 [@SyMind](https://github.com/SyMind) 大佬提供了编译 NextJS 应用的插件 [tarojs-plugin-platform-nextjs](https://github.com/SyMind/tarojs-plugin-platform-nextjs)，用于支持 Web 端支持 SSR 能力，可以根据项目需要自行选择。
