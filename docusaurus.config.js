@@ -77,7 +77,7 @@ const siteConfig = {
       respectPrefersColorScheme: true,
     },
     algolia: {
-      appId: 'D1NLIWLIYJ',
+      appId: 'BH4D9OD16A',
       apiKey: '3f32982103f4e75dadd86900d26a9315', /* (github.com)taro:57b9948bff42bc0dbc6c219556fbae35, (netlify)taro_new:820a8e12c97e870d4e0785d52858230c */
       contextualSearch: true,
       indexName: 'taro-zone',
