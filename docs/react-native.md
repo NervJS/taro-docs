@@ -51,6 +51,8 @@ React Native 我们将以最新版为主做兼容，并及时跟进社区发展�
 
 使用 `taro init` 命令进行初始，选择 `react-native` 模板。**完成后执行 `yarn upgradePeerdeps` 进行依赖初始化**。
 
+查看[演示视频](https://wos2.58cdn.com.cn/DeFazYxWvDti/frsupload/6820cfd5e0346eac050e7c3f0df78f65.mp4)。
+
 ### 常用命令
 
 ```shell
