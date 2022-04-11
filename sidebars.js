@@ -68,6 +68,7 @@ module.exports = {
       'html',
       'use-h5',
       'jquery-like',
+      'dynamic-import',
       'plugin',
       {
         label: '性能优化',
