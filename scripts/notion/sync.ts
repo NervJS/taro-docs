@@ -15,6 +15,9 @@ export async function fetchTechnicalCommittee(list: QueryDatabaseResponse['resul
       "property": "role",
       "direction": "ascending"
     }, {
+      "property": "alumni",
+      "direction": "ascending"
+    }, {
       "property": "team",
       "direction": "ascending"
     }, {

@@ -107,12 +107,12 @@ export async function updateMember (item: IGithubContributor, remarks?: QueryDat
           {
             type: 'text',
             text: {
-              content: item.login,
-              link: item.html_url ? {
-                url: item.html_url
-              } : null
+              content: item.login || '',
+              link: {
+                url: item.html_url || ''
+              }
             }
-          },
+          }
         ]
       }
     }
@@ -136,7 +136,10 @@ export async function updateMember (item: IGithubContributor, remarks?: QueryDat
       }]
     }
     if (remarks) {
-      params.properties.remarks = remarks
+      params.properties.remarks = {
+        type: 'rich_text',
+        rich_text: remarks
+      }
     }
     // params.properties.last_update = {
     //   type: 'date',
