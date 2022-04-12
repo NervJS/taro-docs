@@ -6,7 +6,7 @@ module.exports = {
       {
         label: 'Taro 团队',
         type: 'category',
-        items: ['team/index', 'team/role-committee', 'team/role-collaborator', 'team/role-committer', 'team/58anjuke'],
+        items: ['team/index', 'team/role-committee', 'team/role-collaborator', 'team/role-triage', 'team/role-committer', 'team/58anjuke'],
       },
       'communicate'
     ],
