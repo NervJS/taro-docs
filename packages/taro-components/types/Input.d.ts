@@ -25,7 +25,7 @@ interface InputProps extends StandardProps, FormItemProps {
   placeholder?: string
 
   /** 指定 placeholder 的样式
-   * @supported weapp
+   * @supported weapp, rn
    */
   placeholderStyle?: string
 
@@ -34,6 +34,11 @@ interface InputProps extends StandardProps, FormItemProps {
    * @supported weapp
    */
   placeholderClass?: string
+
+  /** 指定 placeholder 的文本颜色
+   * @supported rn
+   */
+  placeholderTextColor?: string
 
   /** 是否禁用
    * @supported weapp, h5, rn
