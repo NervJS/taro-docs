@@ -8,11 +8,13 @@ specifiers:
   '@notionhq/client': ^1.0.4
   '@swc/core': ^1.2.160
   '@tsconfig/docusaurus': ^1.0.5
+  '@types/lodash': ^4.14.181
   '@types/node': ^17.0.23
   '@types/react': ^17.0.43
   clsx: ^1.1.1
   cross-env: ^7.0.3
   dotenv: ^16.0.0
+  lodash: ^4.17.21
   node-fetch: '2'
   prism-react-renderer: ^1.3.1
   react: ^17.0.2
@@ -31,6 +33,7 @@ dependencies:
   '@notionhq/client': registry.npmjs.org/@notionhq/client/1.0.4
   '@swc/core': registry.npmjs.org/@swc/core/1.2.160
   clsx: registry.npmjs.org/clsx/1.1.1
+  lodash: registry.npmjs.org/lodash/4.17.21
   prism-react-renderer: registry.npmjs.org/prism-react-renderer/1.3.1_react@17.0.2
   react: registry.npmjs.org/react/17.0.2
   react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
@@ -40,6 +43,7 @@ dependencies:
 devDependencies:
   '@algolia/client-search': registry.npmjs.org/@algolia/client-search/4.13.0
   '@tsconfig/docusaurus': registry.npmjs.org/@tsconfig/docusaurus/1.0.5
+  '@types/lodash': registry.npmjs.org/@types/lodash/4.14.181
   '@types/node': registry.npmjs.org/@types/node/17.0.23
   '@types/react': registry.npmjs.org/@types/react/17.0.43
   cross-env: registry.npmjs.org/cross-env/7.0.3
@@ -3433,6 +3437,12 @@ packages:
     name: '@types/json5'
     version: 0.0.29
     dev: false
+
+  registry.npmjs.org/@types/lodash/4.14.181:
+    resolution: {integrity: sha512-n3tyKthHJbkiWhDZs3DkhkCzt2MexYHXlX0td5iMplyfwketaOeKboEVBqzceH7juqvEg3q5oUoBFxSLu7zFag==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/lodash/-/lodash-4.14.181.tgz}
+    name: '@types/lodash'
+    version: 4.14.181
+    dev: true
 
   registry.npmjs.org/@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/mdast/-/mdast-3.0.10.tgz}

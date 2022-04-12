@@ -1,6 +1,7 @@
 import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints'
 import 'dotenv/config'
 import { RichTextItemResponse, TextRequest } from 'notion'
+import { pick, set, unset, head } from 'lodash'
 
 import writeFile from '../write'
 import { databaseId, getProperty, notion, sleep } from './common'
@@ -61,7 +62,13 @@ export async function updateTechnicalCommittee() {
     members.push(member)
     return members
   }, [])
-  writeFile(`static/data/contributors.json`, JSON.stringify(data, undefined, 2))
+  writeFile(`static/data/contributors.json`, JSON.stringify(data.map(e => {
+    const title = head(e.properties.title?.title)
+    title && set(e, ['properties', 'title', 'title'], [title])
+    unset(e, ['properties', 'title', 'title', '0', 'annotations'])
+    e.properties = pick(e.properties, ['title', 'github', 'role', 'team', 'group', 'alumni'])
+    return pick(e, ['cover', 'properties'])
+  }), undefined, 2))
 }
 
 updateTechnicalCommittee()
