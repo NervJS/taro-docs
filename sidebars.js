@@ -76,8 +76,15 @@ module.exports = {
         items: [
           'optimized',
           'prerender',
-          'virtual-list',
-          'compile-optimized'
+          'virtual-list'
+        ]
+      },
+      {
+        label: '编译优化',
+        type: 'category',
+        items: [
+          'compile-optimized',
+          'mini-split-chunks-plugin'
         ]
       },
       {
