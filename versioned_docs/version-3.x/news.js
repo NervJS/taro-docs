@@ -15,6 +15,7 @@ function Index() {
   };
 
   useEffect(() => {
+    if (!window.LRT) return
     // 注册资源位
     window.LRT.register({
       zoneId: '1485579794201481218',  // 羚珑专区id
