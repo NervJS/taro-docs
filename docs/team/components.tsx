@@ -10,15 +10,17 @@ interface ITeam {
 }
 
 export function TeamList ({
-  list = []
+  list = [],
+  height = 88
 }) {
   return <div style={{ display: 'flex', flexFlow: 'row wrap', alignItems: 'center', justifyContent: 'center' }}>
-    {list.map((item: ITeam) => <a
+    {list.map((item: ITeam, index) => <a
+      key={index}
       href={item.href || '#'}
       target="_blank"
-      style={{ display: "inline-block", margin: "0 10px 10px 0" }}
+      style={{ display: 'inline-block', margin: '0 10px 10px 0' }}
     >
-      <img src={item.image || o2logo} style={{ height: 88 }} />
+      <img src={item.image || o2logo} style={{ height }} />
     </a>)}
   </div>
 }
@@ -30,15 +32,17 @@ export function ListPage ({ type = 'role', name = '', alumni = false, full = fal
     const alumniVal = properties?.alumni?.formula || {}
     const data = property?.[property.type]
     console.log('data', alumniVal)
-    if (alumni && !alumniVal[alumniVal.type]) return false
-    if (!alumni && alumniVal[alumniVal.type]) return false
+    if (alumni && !alumniVal[alumniVal.type])
+      return false
+    if (!alumni && alumniVal[alumniVal.type])
+      return false
     if (data instanceof Array) {
       return data.find(e => e.id === props[type] || (name && e.name.includes(name)))
     } else if (!!data) {
       return data.id === props[type] || data.name.includes(name)
     }
     return false
-  }) as QueryDatabaseResponse['results']
+  }) as unknown as QueryDatabaseResponse['results']
 
   return <div style={{ display: 'flex', flexFlow: 'row wrap' }}>
     {list.map((item: any, index) => {

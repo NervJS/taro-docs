@@ -2,13 +2,34 @@
 title: Communication and Feedback
 ---
 
+import ImageList from './mdx/image-list'
+
 ## Develop and Communicate
 
 Select the following corresponding groups, use WeChat to scan the code to add, you will receive the group QR code, then scan the group code to add.
 
-| Taro  | Taro Vue | Taro RN | Taro x NutUI |
-| ------ | ------ | ------ | ------ |
-| <img src="https://storage.360buyimg.com/taro-resource/Taro-Taro.png" width="220px" /> | <img src="https://storage.360buyimg.com/taro-resource/Taro-Vue.png" width="220px" /> | <img src="https://storage.360buyimg.com/taro-resource/Taro-RN.png" width="220px" /> | <img src="https://storage.360buyimg.com/taro-resource/NutUIxTaro.png" width="220px" /> |
+<ImageList
+  height={148}
+  list={[{
+    image: 'http://storage.360buyimg.com/taro-jd-com/static/contact_taro_qr.png',
+    label: 'Taro'
+  }, {
+    image: 'http://storage.360buyimg.com/taro-jd-com/static/contact_taro_vue_qr.png',
+    label: 'Taro Vue'
+  }, {
+    image: 'http://storage.360buyimg.com/taro-jd-com/static/contact_taro_rn_qr.png',
+    label: 'Taro RN'
+  }, {
+    image: 'http://storage.360buyimg.com/taro-jd-com/static/contact_taro_harmony_qr.png',
+    label: 'Taro x Harmony'
+  }, {
+    image: 'http://storage.360buyimg.com/taro-jd-com/static/contact_taro_lark_qr.png',
+    label: 'Taro Lark'
+  }, {
+    image: 'http://storage.360buyimg.com/taro-jd-com/static/contact_taro_nutui_qr.png',
+    label: 'Taro x NutUI'
+  }]}
+/>
 
 ## Feedback and suggestions
 

@@ -2,13 +2,34 @@
 title: 沟通与反馈
 ---
 
+import ImageList from './mdx/image-list'
+
 ## 开发交流
 
 选择下列对应的群，使用微信扫码添加，会收到入群二维码，再扫群码添加即可。
 
-| Taro  | Taro Vue | Taro RN | Taro x NutUI |
-| ------ | ------ | ------ | ------ |
-| <img src="https://storage.360buyimg.com/taro-resource/Taro-Taro.png" width="220px" /> | <img src="https://storage.360buyimg.com/taro-resource/Taro-Vue.png" width="220px" /> | <img src="https://storage.360buyimg.com/taro-resource/Taro-RN.png" width="220px" /> | <img src="https://storage.360buyimg.com/taro-resource/NutUIxTaro.png" width="220px" /> |
+<ImageList
+  height={148}
+  list={[{
+    image: 'http://storage.360buyimg.com/taro-jd-com/static/contact_taro_qr.png',
+    label: 'Taro'
+  }, {
+    image: 'http://storage.360buyimg.com/taro-jd-com/static/contact_taro_vue_qr.png',
+    label: 'Taro Vue'
+  }, {
+    image: 'http://storage.360buyimg.com/taro-jd-com/static/contact_taro_rn_qr.png',
+    label: 'Taro RN'
+  }, {
+    image: 'http://storage.360buyimg.com/taro-jd-com/static/contact_taro_harmony_qr.png',
+    label: 'Taro x Harmony'
+  }, {
+    image: 'http://storage.360buyimg.com/taro-jd-com/static/contact_taro_lark_qr.png',
+    label: 'Taro Lark'
+  }, {
+    image: 'http://storage.360buyimg.com/taro-jd-com/static/contact_taro_nutui_qr.png',
+    label: 'Taro x NutUI'
+  }]}
+/>
 
 ## 问题反馈与建议
 
