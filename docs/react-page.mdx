@@ -109,6 +109,16 @@ export default Index
 
 在此生命周期中通过访问 `options` 参数或调用 `getCurrentInstance().router`，可以访问到页面路由参数。
 
+### onUnload ()
+
+:::info
+Taro v3.4.7 开始支持。
+:::
+
+> 在小程序环境中对应页面的 `onUnload`。
+
+一般情况下建议使用 React 的 `componentWillUnmount` 生命周期处理页面卸载时的逻辑。当某些特殊情况需要在页面的 `onUnload` 的同一个事件循环中实现逻辑时才使用它（如对小程序的生命周期执行顺序有强依赖关系时）。
+
 ### onReady ()
 
 > 在小程序环境中对应页面的 `onReady`。
