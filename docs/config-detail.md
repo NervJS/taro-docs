@@ -259,7 +259,7 @@ module.exports = {
 ## jsMinimizer
 
 :::info
-Taro v3.6 开始支持。
+Taro v3.5 开始支持。
 :::
 
 `terser | esbuild`
@@ -305,7 +305,7 @@ module.exports = {
 ## esbuild
 
 :::info
-Taro v3.6 开始支持。
+Taro v3.5 开始支持。
 :::
 
 `object`
@@ -350,7 +350,7 @@ module.exports = {
 ## cssMinimizer
 
 :::info
-Taro v3.6 开始支持。
+Taro v3.5 开始支持。
 :::
 
 `csso | esbuild | parcelCss`
@@ -498,7 +498,7 @@ module.exports = {
 ## compiler
 
 :::info
-Taro v3.6 开始支持。
+Taro v3.5 开始支持。
 :::
 
 `string`
@@ -510,7 +510,7 @@ Taro v3.6 开始支持。
 ## cache
 
 :::info
-Taro v3.6 开始支持。
+Taro v3.5 开始支持。
 :::
 
 Webpack5 持久化缓存配置。具体配置请参考 [WebpackConfig.cache](https://webpack.js.org/configuration/cache/#cache)。
@@ -554,6 +554,30 @@ webpackConfig = {
 默认值 `process.env.NODE_ENV-process.env.TARO_ENV`。
 
 缓存子目录的名称。详情请参考 [WebpackConfig.cache.name](https://webpack.js.org/configuration/cache/#cachename)。
+
+## logger
+
+:::info
+Taro v3.5 开始支持。目前只在 Webpack5 compiler 中支持。
+:::
+
+控制 Taro 编译日志的输出方式。
+
+### quiet
+
+`boolean`
+
+默认值 `true`。
+
+是否简化输出日志。
+
+### stats
+
+`boolean`
+
+默认值 `false`。
+
+是否输出 Webpack Stats 信息。
 
 ## mini
 
