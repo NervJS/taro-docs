@@ -1,3 +1,4 @@
+import { isEmpty } from 'lodash'
 import * as path from 'path'
 import * as ts from 'typescript'
 import { get, isntTaroMethod, TaroMethod } from '.'
@@ -11,11 +12,11 @@ export async function writeDoc (routePath: string, doc: DocEntry[]) {
   const merge = await childrenMerge(doc, [])
   const Component = merge.find(e => e.name === _p.name) || {}
   const ComponentTags = Component.jsTags || []
-    
+
   const name = (_p.name && _p.name.split(/(?<!^)(?=[A-Z])/).join('-') || 'undefined').toLocaleLowerCase()
   const classification = ComponentTags.find(tag => tag.name === 'classification')?.text?.[0]?.text || ''
 
-  if (!ComponentTags.every(tag => tag.name !== 'ignore')) return
+  if (!ComponentTags.every(tag => tag.name !== 'ignore') || isEmpty(Component)) return
 
   const list = await Promise.all(merge.map(async e => {
     const name = e.name || 'undefined'
