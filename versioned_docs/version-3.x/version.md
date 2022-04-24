@@ -16,7 +16,7 @@ npm info @tarojs/cli
 
 ### Taro 3.4
 
-Taro 3.4 的主要改动是支持使用 支持 Preact 和 Vue3.2 进行开发。
+Taro 3.4 的主要改动是支持使用 Preact 和 Vue3.2 进行开发。
 
 详情请参考 [《Taro 正式发布 3.4 版本 —— 全面支持 Preact 和 Vue3.2》](/blog/2022-01-20-Taro-3.4)。
 
