@@ -17,3 +17,7 @@ outputRoot: `dist/${process.env.TARO_ENV}`
 编译出来的目录如下图，`dist` 目录下有 `weapp` 和 `alipay` 两个目录：
 
 ![同步调试编译结果](https://img20.360buyimg.com/ling/jfs/t1/74046/26/8491/148076/5d663baaEf2ed8064/33fbb1d365053d1c.png)
+
+## React Native 端调试
+
+参考[React Native 端开发流程](./react-native.md)
