@@ -2276,6 +2276,73 @@
     "cover": {
       "type": "external",
       "external": {
+        "url": "https://avatars.githubusercontent.com/u/6348297?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "shenghanqin",
+              "link": {
+                "url": "https://github.com/shenghanqin"
+              }
+            },
+            "plain_text": "shenghanqin",
+            "href": "https://github.com/shenghanqin"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/shenghanqin"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "`e;@",
+            "name": "生态合作者",
+            "color": "green"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "e3ff4b01-9ab6-482a-abfe-feb19a421e73",
+            "name": "社区团队",
+            "color": "brown"
+          }
+        ]
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
         "url": "https://avatars.githubusercontent.com/u/3471836?v=4"
       }
     },
