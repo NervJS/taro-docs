@@ -15,3 +15,5 @@ sidebar_label: PickerViewColumn
 ```tsx
 ComponentType<StandardProps>
 ```
+
+## PickerViewColumnProps

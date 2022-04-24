@@ -127,7 +127,7 @@ export interface IMiniAppConfig {
   }
 
   webpackChain?: (chain: any, webpack: any, PARSE_AST_TYPE: any) => void
-  entry?: webpack.Entry
+  entry?: webpack.EntryObject
   output?: webpack.Output
   postcss?: IPostcssOption
   cssLoaderOption?: IOption
@@ -357,6 +357,32 @@ export interface IManifestConfig extends ITaroManifestConfig {
 
 export type PluginItem = string | [string, object]
 
+interface ICache {
+  enable?: boolean
+  buildDependencies?: Record<string, any>
+  name?: string
+}
+
+type CompilerTypes = 'webpack4' | 'webpack5'
+interface IPrebundle {
+  enable?: boolean
+  timings?: boolean
+  cacheDir?: string
+  force?: boolean
+  include?: string[]
+  exclude?: string[]
+}
+interface ICompiler {
+  type: CompilerTypes
+  prebundle: IPrebundle
+}
+type Compiler = CompilerTypes | ICompiler
+
+interface ILogger {
+  quiet: boolean
+  stats: boolean
+}
+
 export interface IProjectBaseConfig {
   projectName?: string
   date?: string
@@ -369,14 +395,20 @@ export interface IProjectBaseConfig {
   alias?: IOption
   defineConstants?: IOption
   copy?: ICopyOptions
+  jsMinimizer?: 'terser' | 'esbuild'
+  cssMinimizer?: 'csso' | 'esbuild' | 'parcelCss'
   csso?: TogglableOptions
   terser?: TogglableOptions
+  esbuild?: Record<'minify', TogglableOptions>
   uglify?: TogglableOptions
   sass?: ISassOptions
   plugins?: PluginItem[]
   presets?: PluginItem[]
   baseLevel?: number
   framework?: string
+  compiler?: Compiler
+  cache?: ICache
+  logger?: ILogger
 }
 
 export interface IProjectConfig extends IProjectBaseConfig {
