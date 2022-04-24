@@ -501,11 +501,75 @@ module.exports = {
 Taro v3.5 开始支持。
 :::
 
-`string`
+`string | object`
 
 默认值：`'webpack4'`
 
 使用的编译工具。可选值：`webpack4`、`webpack5`。
+
+取值也可以是对象，此时可以对针对特定的编译器作额外的配置：
+
+### compiler.type
+
+`string`
+
+使用的编译工具。可选值：`webpack4`、`webpack5`。
+
+### compiler.prebundle
+
+`object`
+
+> 只有 Webpack5 支持
+
+是否开启依赖预编译功能。开启后首次编译 Taro 会把项目的 `node_modules` 依赖打包为模块联邦的 Remote 应用，二次编译时 Webpack 只需要编译项目源码，从而提升编译速度。
+
+#### compiler.prebundle.enable
+
+`boolean`
+
+默认值：生产环境为 `false`，开发环境为 `true`
+
+是否开启依赖预编译。因为使用了 esbuild 单独打包依赖，会使项目体积略微变大，所以生产模式下不建议开启。
+
+#### compiler.prebundle.cacheDir
+
+`string`
+
+默认值：`[项目路径]/node_modules/.taro`
+
+缓存目录的绝对路径。开发者可以自定义缓存目录的路径，并把该目录提交到 git，这样能提高多人协作时的编译速度。
+
+#### compiler.prebundle.force
+
+`boolean`
+
+默认值：`false`
+
+是否强行弃用缓存。
+
+#### compiler.prebundle.timings
+
+`boolean`
+
+默认值：`false`
+
+是否显示依赖预编译的测速信息。
+
+#### compiler.prebundle.include
+
+`string array`
+
+默认值：[]
+
+需要额外执行预编译的依赖。
+
+#### compiler.prebundle.exclude
+
+`string array`
+
+默认值：[]
+
+不需要执行预编译的依赖。
 
 ## cache
 
