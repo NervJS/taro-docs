@@ -191,6 +191,20 @@ Taro's default configuration is `const { defaultConfig } = require('@tarojs/rn-r
 
 ## FAQ
 
+### How can I tell if I'm successful when I start metro server via yarn start or yarn dev:rn?
+
+- After starting, you can see `React-Native Dev server is running on port: 8081` in the terminal
+- Type http://127.0.0.1:8081/status in your browser and you will see packager-status:running
+- Typing http://127.0.0.1:8081/index.bundle?platform=ios&dev=true in the browser will trigger the build, and you will see the following message in the terminal.
+
+BUNDLE  ./index ░░░░░░░░░░░░░░░░ 0.0% (0/173)
+
+If there are any errors during the process, you will be prompted in the terminal, and if there are no errors, you will see a green message:
+
+BUNDLE  ./index
+
+The above three steps are normal, which means that the metro server is started normally.
+
 ### yarn ios runs with error: main.jsbundle: No such file or directory
 
 ```
@@ -234,3 +248,9 @@ Check if the `config/index.js` file has changed the appName, the default is `tar
   }
 }
 ```
+
+### How to modify appName?
+
+0. modify `rn.appName` in `config/index.js`
+1. modify the return value of the `getMainComponentName` method in `MainActivity.java`
+2. modify `moduleName` of `RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"taroDemo" initialProperties:nil];` in  `AppDelegate.m`

@@ -191,6 +191,20 @@ Taro 的默认配置为 `const { defaultConfig } = require('@tarojs/rn-runner/di
 
 ## 常见问题
 
+### 通过 yarn start 或 yarn dev:rn 启动，如何判断是否成功？
+
+- 启动后在终端可以看到 `React-Native Dev server is running on port: 8081` 等信息
+- 在浏览器中输入 http://127.0.0.1:8081/status ，可以看到 packager-status:running
+- 在浏览器中输入 http://127.0.0.1:8081/index.bundle?platform=ios&dev=true 会触发构建，此时可以在终端看到以下信息：
+
+BUNDLE  ./index ░░░░░░░░░░░░░░░░ 0.0% (0/173)
+
+过程中如果有报错会在终端中提示，如无报错则显示绿色的信息：
+
+BUNDLE  ./index
+
+以上三步都正常，说明 metro server 启动正常。
+
 ### yarn ios 运行报错：main.jsbundle: No such file or directory
 
 ```
@@ -234,3 +248,9 @@ metro 缓存导致，尝试 `yarn dev:rn --reset-cache`
   }
 }
 ```
+
+### 如何修改 appName？
+
+0. 修改 `config/index.js` 中的 `rn.appName`
+1. 修改 `MainActivity.java` 中 `getMainComponentName` 方法的返回值
+2. 修改 `AppDelegate.m` 中 `RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"taroDemo" initialProperties:nil];` 的 `moduleName`
