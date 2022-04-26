@@ -51,26 +51,27 @@ export default {
 }
 ```
 
-## CompilerOptions
+## vueLoaderOption
 
 :::info
-Taro v3.4+ 开始支持
+Taro v3.4.8 开始支持
 :::
 
-传递给 VueLoader 的编译配置，编译配置细节请参阅 [Vue 文档](https://v3.vuejs.org/api/application-config.html#compileroptions)。
+传递给 VueLoader 的编译配置，编译配置细节请参阅 [vue-loader 文档](https://vue-loader.vuejs.org/options.html)。
 
-Taro 中可以通过修改 `@tarojs/plugin-frame-vue3` 的配置项去设置 CompilerOptions：
+Taro 中可以通过修改 `@tarojs/plugin-frame-vue3` 的配置项去设置 vueLoader 的配置项：
 
 ```js title="config/index.js"
 const config = {
   plugins: [
     ['@tarojs/plugin-framework-vue3', {
-      mini: {
+      vueLoaderOption: {
         compilerOptions: {
           isCustomElement: tag => tag.includes("ec-canvas"),
           whitespace: 'preserve'
           // ...
-        }
+        },
+        reactivityTransform: true  // 开启vue3响应性语法糖
       }
     }]
   ]
