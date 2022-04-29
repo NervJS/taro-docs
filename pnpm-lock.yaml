@@ -5,6 +5,7 @@ specifiers:
   '@docusaurus/core': 2.0.0-beta.18
   '@docusaurus/plugin-pwa': 2.0.0-beta.18
   '@docusaurus/preset-classic': 2.0.0-beta.18
+  '@mdx-js/react': ^2.1.1
   '@notionhq/client': ^1.0.4
   '@swc/core': ^1.2.160
   '@tsconfig/docusaurus': ^1.0.5
@@ -30,6 +31,7 @@ dependencies:
   '@docusaurus/core': registry.npmjs.org/@docusaurus/core/2.0.0-beta.18_a28ab96cf604114ad06d891682e2f5b5
   '@docusaurus/plugin-pwa': registry.npmjs.org/@docusaurus/plugin-pwa/2.0.0-beta.18_a28ab96cf604114ad06d891682e2f5b5
   '@docusaurus/preset-classic': registry.npmjs.org/@docusaurus/preset-classic/2.0.0-beta.18_31a20ef55a109ef3a46e36a518fda969
+  '@mdx-js/react': registry.npmjs.org/@mdx-js/react/2.1.1_react@17.0.2
   '@notionhq/client': registry.npmjs.org/@notionhq/client/1.0.4
   '@swc/core': registry.npmjs.org/@swc/core/1.2.160
   clsx: registry.npmjs.org/clsx/1.1.1
@@ -2750,6 +2752,19 @@ packages:
       react: registry.npmjs.org/react/17.0.2
     dev: false
 
+  registry.npmjs.org/@mdx-js/react/2.1.1_react@17.0.2:
+    resolution: {integrity: sha512-7zlZDf5xmWH8I0kFE4DG91COOkxjaW9DX5f1HWztZpFcVua2gJgMYfIkFaDpO/DH/tWi6Mz+OheW4194r15igg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@mdx-js/react/-/react-2.1.1.tgz}
+    id: registry.npmjs.org/@mdx-js/react/2.1.1
+    name: '@mdx-js/react'
+    version: 2.1.1
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      '@types/mdx': registry.npmjs.org/@types/mdx/2.0.1
+      '@types/react': registry.npmjs.org/@types/react/17.0.43
+      react: registry.npmjs.org/react/17.0.2
+    dev: false
+
   registry.npmjs.org/@mdx-js/util/1.6.22:
     resolution: {integrity: sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@mdx-js/util/-/util-1.6.22.tgz}
     name: '@mdx-js/util'
@@ -3450,6 +3465,12 @@ packages:
     version: 3.0.10
     dependencies:
       '@types/unist': registry.npmjs.org/@types/unist/2.0.6
+    dev: false
+
+  registry.npmjs.org/@types/mdx/2.0.1:
+    resolution: {integrity: sha512-JPEv4iAl0I+o7g8yVWDwk30es8mfVrjkvh5UeVR2sYPpZCK44vrAPsbJpIS+rJAUxLgaSAMKTEH5Vn5qd9XsrQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/mdx/-/mdx-2.0.1.tgz}
+    name: '@types/mdx'
+    version: 2.0.1
     dev: false
 
   registry.npmjs.org/@types/mime/1.3.2:
