@@ -31,7 +31,6 @@ export function ListPage ({ type = 'role', name = '', alumni = false, full = fal
     const property = properties[type] || {}
     const alumniVal = properties?.alumni?.formula || {}
     const data = property?.[property.type]
-    console.log('data', alumniVal)
     if (alumni && !alumniVal[alumniVal.type])
       return false
     if (!alumni && alumniVal[alumniVal.type])

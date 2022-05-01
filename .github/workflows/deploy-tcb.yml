@@ -40,6 +40,7 @@ jobs:
           pnpm run notion
 
       - name: Push changes
+        if: steps.auto-commit-action.outputs.changes_detected == 'true'
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "chore(date): update contributor member-list"
