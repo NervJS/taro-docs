@@ -21,6 +21,7 @@ title: Taro 仓库概览
 | `babel-preset-taro` | Babel preset |
 | `eslint-config-taro` | ESLint 规则 |
 | `postcss-pxtransform` | PostCSS 插件，转换 `px` 为各端的自适应尺寸单位 |
+| `postcss-html-transform` | PostCSS 插件，用于 HTML、小程序标签的类名相互转换 |
 
 ### 小程序
 
@@ -36,7 +37,6 @@ title: Taro 仓库概览
 | `@tarojs/plugin-platform-qq` | qq 小程序插件 |
 | `@tarojs/plugin-platform-jd` | 京东小程序插件 |
 | `@tarojs/plugin-html` | 支持使用 HTML 标签的插件 |
-| `postcss-html-transform` | PostCSS 插件，用于处理 HTML 标签的类名 |
 | `@tarojs/plugin-react-devtools` | 支持使用 React DevTools 的插件 |
 | `@tarojs/extend` | 类似 jQuery 的库 |
 

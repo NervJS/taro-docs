@@ -898,6 +898,29 @@ module.exports = {
 }
 ```
 
+#### h5.postcss.htmltransform
+
+`object`
+
+可以进行 `htmltransform` 的配置。例如：
+
+```js
+module.exports = {
+  // ...
+  mini: {
+    // ...
+    postcss: {
+      htmltransform: {
+        enable: false, // 小程序默认关闭该配置
+        config: {
+          removeCursorStyle: true // 默认为 true
+        }
+      }
+    }
+  }
+}
+```
+
 ### mini.commonChunks
 
 `array | function`
@@ -1529,6 +1552,31 @@ module.exports = {
   }
 }
 ```
+
+#### h5.postcss.htmltransform
+
+`object`
+
+可以进行 `htmltransform` 的配置。例如：
+
+```js
+module.exports = {
+  // ...
+  h5: {
+    // ...
+    postcss: {
+      htmltransform: {
+        enable: true, // H5 默认开启该配置
+        config: {
+          removeCursorStyle: false // 默认为 false
+        }
+      }
+    }
+  }
+}
+```
+
+> 需要 v3.5 以上版本
 
 #### h5.postcss.cssModules
 
