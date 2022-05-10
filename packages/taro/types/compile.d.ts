@@ -1,6 +1,6 @@
 export { Current } from '@tarojs/runtime'
-import * as webpack from 'webpack'
-import * as webpackDevServer from 'webpack-dev-server'
+import webpack from 'webpack'
+import webpackDevServer from 'webpack-dev-server'
 
 export const enum TEMPLATE_TYPES {
   WEAPP = '.wxml',
