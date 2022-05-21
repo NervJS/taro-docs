@@ -243,6 +243,44 @@ export default {
 </TabItem>
 </Tabs>
 
+### 处理 Vant 组件默认值失效的问题
+
+> v1.0.2+ 开始支持，且需要 Taro v3.4.10+
+
+在默认情况下，第三方自定义组件的属性会被编译为形如：`<van-empty image="{{i.image}}" />`。
+
+这时自定义组件声明的默认值会失效（详情请浏览 [#11575](https://github.com/NervJS/taro/issues/11575)）。
+
+```js
+Component({
+  props: {
+    image: {
+      type: String,
+      value: 'default'
+    }
+  }
+})
+```
+
+所以我们需要使用 [@tarojs/plugin-inject](https://github.com/NervJS/taro-plugin-inject/tree/v1.0.2#6-thirdpartycomponents) 为此属性增加默认值，把它编译为形如：`<van-empty image="{{i.image===undefined?'default':i.image}}" />`。
+
+用法：
+
+```js
+const config = {
+  plugins: [
+    ['@tarojs/plugin-inject', {
+      thirdPartyComponents: {
+        // 为 `van-empty` 组件的 image 属性设置默认值 'default'
+        'van-empty': {
+          'image': "'default'"
+        }
+      }
+    }]
+  ]
+}
+```
+
 ## 常见问题
 
 ### Vue3
