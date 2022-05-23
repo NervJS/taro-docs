@@ -1646,18 +1646,25 @@ export default {
 
 事实上通过 `mini.webpackChain` 这个配置我们可以几乎使用任何 Webpack 生态的插件和 `loader`，例如我们想使用 `CoffeeScript` 来进行开发：
 
-```js {4-7} title="config/index"
+```js {6-19} title="config/index"
 const config = {
   ...
   mini: {
     webpackChain (chain, webpack) {
+      // webpack-chain 详细语法请参考文档：https://github.com/neutrinojs/webpack-chain
       chain.merge({
-          module: {
-              rule: {
-                  test: /\.coffee$/,
-                  use: [ 'coffee-loader' ]
+        module: {
+          rule: {
+            coffeeScript: {
+              test: /\.coffee$/,
+              use: {
+                coffeeLoader: {
+                  loader: 'coffee-loader'
+                }
               }
+            }
           }
+        }
       })
     }
   }
