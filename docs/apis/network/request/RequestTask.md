@@ -15,7 +15,7 @@ sidebar_label: RequestTask
 
 中断请求任务
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/RequestTask.abort.html)
 
@@ -199,7 +199,7 @@ requestTask.abort()
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | RequestTask | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| RequestTask.abort | ✔️ |  |  |  |  |  |  |  |
+| RequestTask.abort | ✔️ |  |  | ✔️ |  |  |  |  |
 | RequestTask.onHeadersReceived | ✔️ |  |  |  |  |  |  |  |
 | RequestTask.offHeadersReceived | ✔️ |  |  |  |  |  |  |  |
 | RequestTask.onChunkReceived | ✔️ |  |  |  |  |  |  |  |

@@ -147,21 +147,21 @@ export default class PageView extends Component {
 | VideoProps.muted | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.initialTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.direction | ✔️ | ✔️ | ✔️ |  | (待定) |  |  |
-| VideoProps.showProgress | ✔️ | ✔️ |  |  | (待定) |  |  |
-| VideoProps.showFullscreenBtn | ✔️ | ✔️ | ✔️ |  | (待定) |  |  |
-| VideoProps.showPlayBtn | ✔️ | ✔️ | ✔️ |  | (待定) |  |  |
+| VideoProps.showProgress | ✔️ | ✔️ |  | ✔️ | (待定) |  |  |
+| VideoProps.showFullscreenBtn | ✔️ | ✔️ | ✔️ | ✔️ | (待定) |  |  |
+| VideoProps.showPlayBtn | ✔️ | ✔️ | ✔️ | ✔️ | (待定) |  |  |
 | VideoProps.showCenterPlayBtn | ✔️ | ✔️ | ✔️ |  | (待定) | ✔️ |  |
-| VideoProps.enableProgressGesture | ✔️ | ✔️ | ✔️ |  | (待定) |  |  |
-| VideoProps.objectFit | ✔️ | ✔️ | ✔️ |  | (待定) |  |  |
+| VideoProps.enableProgressGesture | ✔️ | ✔️ | ✔️ | ✔️ | (待定) |  |  |
+| VideoProps.objectFit | ✔️ | ✔️ | ✔️ | ✔️ | (待定) |  |  |
 | VideoProps.poster | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.showMuteBtn | ✔️ |  |  |  | (待定) |  |  |
+| VideoProps.showMuteBtn | ✔️ |  |  | ✔️ | (待定) |  |  |
 | VideoProps.title | ✔️ |  |  |  | (待定) |  |  |
-| VideoProps.playBtnPosition | ✔️ |  |  |  | (待定) |  |  |
-| VideoProps.enablePlayGesture | ✔️ |  |  |  | (待定) |  |  |
+| VideoProps.playBtnPosition | ✔️ |  |  | ✔️ | (待定) |  |  |
+| VideoProps.enablePlayGesture | ✔️ |  |  | ✔️ | (待定) |  |  |
 | VideoProps.autoPauseIfNavigate | ✔️ |  |  |  | (待定) |  |  |
 | VideoProps.autoPauseIfOpenNative | ✔️ |  |  |  | (待定) |  |  |
-| VideoProps.vslideGesture | ✔️ | ✔️ |  |  | (待定) |  |  |
-| VideoProps.vslideGestureInFullscreen | ✔️ |  |  |  | (待定) |  |  |
+| VideoProps.vslideGesture | ✔️ | ✔️ |  | ✔️ | (待定) |  |  |
+| VideoProps.vslideGestureInFullscreen | ✔️ |  |  | ✔️ | (待定) |  |  |
 | VideoProps.adUnitId | ✔️ |  |  |  |  |  |  |
 | VideoProps.posterForCrawler | ✔️ |  |  |  |  |  |  |
 | VideoProps.showCastingButton | ✔️ |  |  |  |  |  |  |
@@ -172,11 +172,11 @@ export default class PageView extends Component {
 | VideoProps.onPause | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.onEnded | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.onTimeUpdate | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.onFullscreenChange | ✔️ | ✔️ | ✔️ |  | (待定) | ✔️ |  |
-| VideoProps.onWaiting | ✔️ | ✔️ |  |  | (待定) |  |  |
+| VideoProps.onFullscreenChange | ✔️ | ✔️ | ✔️ | ✔️ | (待定) | ✔️ |  |
+| VideoProps.onWaiting | ✔️ | ✔️ |  | ✔️ | (待定) |  |  |
 | VideoProps.onError | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.onProgress | ✔️ |  | ✔️ |  | (待定) |  |  |
-| VideoProps.onLoadedMetaData | ✔️ |  |  |  |  | ✔️ |  |
+| VideoProps.onLoadedMetaData | ✔️ |  |  | ✔️ |  | ✔️ |  |
 | VideoProps.onControlsToggle | ✔️ |  |  |  |  |  |  |
 | VideoProps.onEnterPictureInPicture | ✔️ |  |  |  |  |  |  |
 | VideoProps.onLeavePictureInPicture | ✔️ |  |  |  |  |  |  |

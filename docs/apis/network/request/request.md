@@ -34,13 +34,13 @@ sidebar_label: request
 | url | `string` |  | 是 | 开发者服务器接口地址 |
 | data | `U` |  | 否 | 请求的参数 |
 | header | `TaroGeneral.IAnyObject` |  | 否 | 设置请求的 header，header 中不能设置 Referer。<br /><br />`content-type` 默认为 `application/json` |
-| timeout | `number` | `2000` | 否 | 超时时间，单位为毫秒<br />API 支持度: weapp, h5 |
+| timeout | `number` | `2000` | 否 | 超时时间，单位为毫秒<br />API 支持度: weapp, h5, tt |
 | method | `keyof Method` | `GET` | 否 | HTTP 请求方法 |
 | dataType | `string` |  | 否 | 返回的数据格式 |
 | responseType | `keyof ResponseType` |  | 否 | 响应的数据类型 |
 | enableHttp2 | `boolean` | `false` | 否 | 开启 http2<br />API 支持度: weapp |
 | enableQuic | `boolean` | `false` | 否 | 开启 quic<br />API 支持度: weapp |
-| enableCache | `boolean` | `false` | 否 | 开启 cache<br />API 支持度: weapp |
+| enableCache | `boolean` | `false` | 否 | 开启 cache<br />API 支持度: weapp, tt |
 | enableHttpDNS | `boolean` | `false` | 否 | 是否开启 HttpDNS 服务。如开启，需要同时填入 httpDNSServiceId 。 HttpDNS 用法详见 移动解析HttpDNS<br />API 支持度: weapp |
 | httpDNSServiceId | `string` |  | 否 | HttpDNS 服务商 Id。 HttpDNS 用法详见 移动解析HttpDNS<br />API 支持度: weapp |
 | enableChunked | `boolean` | `false` | 否 | 开启 transfer-encoding chunked。<br />API 支持度: weapp |

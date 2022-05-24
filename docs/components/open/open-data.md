@@ -3,9 +3,9 @@ title: OpenData
 sidebar_label: OpenData
 ---
 
-用于展示微信开放的数据
+用于展示平台开放的数据
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/open-data.html)
 
@@ -67,14 +67,14 @@ class App extends Component {
 
 ### API 支持度
 
-| API | 微信小程序 | H5 | React Native |
-| :---: | :---: | :---: | :---: |
-| OpenDataProps.type | ✔️ |  |  |
-| OpenDataProps.openGid | ✔️ |  |  |
-| OpenDataProps.lang | ✔️ |  |  |
-| OpenDataProps.defaultText | ✔️ |  |  |
-| OpenDataProps.defaultAvatar | ✔️ |  |  |
-| OpenDataProps.onError | ✔️ |  |  |
+| API | 微信小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| OpenDataProps.type | ✔️ | ✔️ |  |  |  |
+| OpenDataProps.openGid | ✔️ |  |  |  |  |
+| OpenDataProps.lang | ✔️ |  |  |  |  |
+| OpenDataProps.defaultText | ✔️ | ✔️ |  |  |  |
+| OpenDataProps.defaultAvatar | ✔️ | ✔️ |  |  |  |
+| OpenDataProps.onError | ✔️ | ✔️ |  |  |  |
 
 ### Type
 

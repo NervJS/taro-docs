@@ -170,11 +170,11 @@ export default {
 
 ### API 支持度
 
-| API | 微信小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: |
-| CheckboxProps.value | ✔️ |  | ✔️ |  |
-| CheckboxProps.disabled | ✔️ | ✔️ | ✔️ |  |
-| CheckboxProps.checked | ✔️ | ✔️ | ✔️ |  |
-| CheckboxProps.color | ✔️ | ✔️ | ✔️ |  |
-| CheckboxProps.onChange |  | ✔️ | ✔️ |  |
-| CheckboxProps.nativeProps |  | ✔️ |  |  |
+| API | 微信小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| CheckboxProps.value | ✔️ | ✔️ |  | ✔️ |  |
+| CheckboxProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| CheckboxProps.checked | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| CheckboxProps.color | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| CheckboxProps.onChange |  |  | ✔️ | ✔️ |  |
+| CheckboxProps.nativeProps |  |  | ✔️ |  |  |

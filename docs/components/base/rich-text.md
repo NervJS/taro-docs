@@ -104,7 +104,7 @@ export default {
 
 | API | 微信小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: |
-| RichTextProps.space | ✔️ |  |  |  |
+| RichTextProps.space | ✔️ |  | ✔️ |  |
 
 ### TSpace
 

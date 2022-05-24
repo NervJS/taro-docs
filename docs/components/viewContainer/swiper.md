@@ -128,15 +128,15 @@ class App extends Component {
 | SwiperProps.duration | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | SwiperProps.circular | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | SwiperProps.vertical | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| SwiperProps.previousMargin | ✔️ |  |  |  | ✔️ |  |  |
-| SwiperProps.nextMargin | ✔️ |  |  |  | ✔️ |  |  |
+| SwiperProps.previousMargin | ✔️ |  |  | ✔️ | ✔️ |  |  |
+| SwiperProps.nextMargin | ✔️ |  |  | ✔️ | ✔️ |  |  |
 | SwiperProps.snapToEdge | ✔️ |  |  |  |  |  |  |
 | SwiperProps.displayMultipleItems | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |
 | SwiperProps.skipHiddenItemLayout | ✔️ | ✔️ |  |  |  |  |  |
-| SwiperProps.easingFunction | ✔️ |  |  |  |  |  |  |
+| SwiperProps.easingFunction | ✔️ |  |  | ✔️ |  |  |  |
 | SwiperProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| SwiperProps.onTransition | ✔️ |  |  |  |  |  |  |
-| SwiperProps.onAnimationFinish | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |
+| SwiperProps.onTransition | ✔️ |  |  | ✔️ |  |  |  |
+| SwiperProps.onAnimationFinish | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
 | SwiperProps.disableTouch |  |  | ✔️ |  |  |  |  |
 
 ### TChangeSource

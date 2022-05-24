@@ -105,12 +105,12 @@ export default {
 
 ### API 支持度
 
-| API | 微信小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: |
-| FormProps.reportSubmit | ✔️ | ✔️ |  |  |
-| FormProps.reportSubmitTimeout | ✔️ |  |  |  |
-| FormProps.onSubmit | ✔️ |  | ✔️ |  |
-| FormProps.onReset | ✔️ | ✔️ | ✔️ |  |
+| API | 微信小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| FormProps.reportSubmit | ✔️ |  | ✔️ |  |  |
+| FormProps.reportSubmitTimeout | ✔️ |  |  |  |  |
+| FormProps.onSubmit | ✔️ | ✔️ |  | ✔️ |  |
+| FormProps.onReset | ✔️ | ✔️ | ✔️ | ✔️ |  |
 
 ### onSubmitEventDetail
 
