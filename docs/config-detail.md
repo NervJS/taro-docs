@@ -69,7 +69,7 @@ module.exports = {
 例如，使用相对路径书写文件引用如下：
 
 ```js
-import A from '../../componnets/A'
+import A from '../../components/A'
 import Utils from '../../utils'
 import packageJson from '../../package.json'
 import projectConfig from '../../project.config.json'
