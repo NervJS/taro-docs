@@ -119,7 +119,15 @@ module.exports = {
     ],
     社区生态: [
       'treasures',
-      'redux',
+      {
+        label: '状态管理',
+        type: 'category',
+        items: [
+          'redux',
+          'vuex',
+          'pinia'
+        ]
+      },
       'css-modules',
       'css-in-js',
       'nutui',
