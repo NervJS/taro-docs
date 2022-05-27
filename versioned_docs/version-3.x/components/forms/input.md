@@ -42,7 +42,7 @@ class App extends Component {
         <Text>可以自动聚焦的 input</Text>
           <Input type='text' placeholder='将会获取焦点' focus/>
           <Text>控制最大输入长度的 input</Text>
-          <Input type='text' placeholder='最大输入长度为 10' maxlength='10'/>
+          <Input type='text' placeholder='最大输入长度为 10' maxLength='10'/>
           <Text>数字输入的 input</Text>
           <Input type='number' placeholder='这是一个数字输入框'/>
           <Text>密码输入的 input</Text>
@@ -67,7 +67,7 @@ class App extends Component {
     <text>可以自动聚焦的 input</text>
     <input type="text" placeholder="将会获取焦点" :focus="true" />
     <text>控制最大输入长度的 input</text>
-    <input type="text" placeholder="最大输入长度为 10" maxlength="10"/>
+    <input type="text" placeholder="最大输入长度为 10" maxLength="10"/>
     <text>数字输入的 input</text>
     <input type="number" placeholder="这是一个数字输入框"/>
     <text>密码输入的 input</text>
@@ -94,6 +94,7 @@ class App extends Component {
 | placeholder | `string` |  | 否 | 输入框为空时占位符 |
 | placeholderStyle | `string` |  | 否 | 指定 placeholder 的样式 |
 | placeholderClass | `string` | `"input-placeholder"` | 否 | 指定 placeholder 的样式类 |
+| placeholderTextColor | `string` |  | 否 | 指定 placeholder 的文本颜色 |
 | disabled | `boolean` |  | 否 | 是否禁用 |
 | maxlength | `number` | `140` | 否 | 最大输入长度，设置为 -1 的时候不限制最大长度 |
 | cursorSpacing | `number` | `0` | 否 | 指定光标与键盘的距离，单位 px 。取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离 |
@@ -124,41 +125,42 @@ class App extends Component {
 
 ### API 支持度
 
-| API | 微信小程序 | 支付宝小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| InputProps.value | ✔️ |  | ✔️ | ✔️ |  |
-| InputProps.type | ✔️ |  | ✔️ | ✔️(部分支持) |  |
-| InputProps.password | ✔️ |  | ✔️ | ✔️ |  |
-| InputProps.placeholder | ✔️ |  | ✔️ | ✔️ |  |
-| InputProps.placeholderStyle | ✔️ |  |  |  |  |
-| InputProps.placeholderClass | ✔️ |  |  |  |  |
-| InputProps.disabled | ✔️ |  | ✔️ | ✔️ |  |
-| InputProps.maxlength | ✔️ |  | ✔️ | ✔️ |  |
-| InputProps.cursorSpacing | ✔️ |  |  |  |  |
-| InputProps.autoFocus | ✔️ |  |  |  |  |
-| InputProps.focus | ✔️ |  | ✔️ | ✔️ |  |
-| InputProps.confirmType | ✔️ |  |  | ✔️ |  |
-| InputProps.confirmHold | ✔️ |  |  |  |  |
-| InputProps.cursor | ✔️ |  |  | ✔️ |  |
-| InputProps.selectionStart | ✔️ |  |  | ✔️ |  |
-| InputProps.selectionEnd | ✔️ |  |  | ✔️ |  |
-| InputProps.adjustPosition | ✔️ |  |  |  |  |
-| InputProps.holdKeyboard | ✔️ |  |  |  |  |
-| InputProps.alwaysEmbed | ✔️ |  |  |  |  |
-| InputProps.safePasswordCertPath | ✔️ |  |  |  |  |
-| InputProps.safePasswordLength | ✔️ |  |  |  |  |
-| InputProps.safePasswordTimeStamp | ✔️ |  |  |  |  |
-| InputProps.safePasswordNonce | ✔️ |  |  |  |  |
-| InputProps.safePasswordSalt | ✔️ |  |  |  |  |
-| InputProps.safePasswordCustomHash | ✔️ |  |  |  |  |
-| InputProps.randomNumber |  | ✔️ |  |  |  |
-| InputProps.controlled |  | ✔️ |  |  |  |
-| InputProps.onInput | ✔️ |  | ✔️ | ✔️ |  |
-| InputProps.onFocus | ✔️ |  | ✔️ | ✔️ |  |
-| InputProps.onBlur | ✔️ |  | ✔️ | ✔️ |  |
-| InputProps.onConfirm | ✔️ |  | (借用[Form 组件](./form)的`onSubmit`事件来替代) | ✔️ |  |
-| InputProps.onKeyboardHeightChange | ✔️ |  |  |  |  |
-| InputProps.nativeProps |  |  | ✔️ |  |  |
+| API | 微信小程序 | 支付宝小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| InputProps.value | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
+| InputProps.type | ✔️ |  | ✔️ | ✔️ | ✔️(部分支持) |  |
+| InputProps.password | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
+| InputProps.placeholder | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
+| InputProps.placeholderStyle | ✔️ |  | ✔️ |  | ✔️ |  |
+| InputProps.placeholderClass | ✔️ |  | ✔️ |  |  |  |
+| InputProps.placeholderTextColor |  |  |  |  | ✔️ |  |
+| InputProps.disabled | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
+| InputProps.maxlength | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
+| InputProps.cursorSpacing | ✔️ |  | ✔️ |  |  |  |
+| InputProps.autoFocus | ✔️ |  |  |  |  |  |
+| InputProps.focus | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
+| InputProps.confirmType | ✔️ |  | ✔️ |  | ✔️ |  |
+| InputProps.confirmHold | ✔️ |  |  |  |  |  |
+| InputProps.cursor | ✔️ |  | ✔️ |  | ✔️ |  |
+| InputProps.selectionStart | ✔️ |  | ✔️ |  | ✔️ |  |
+| InputProps.selectionEnd | ✔️ |  | ✔️ |  | ✔️ |  |
+| InputProps.adjustPosition | ✔️ |  | ✔️ |  |  |  |
+| InputProps.holdKeyboard | ✔️ |  |  |  |  |  |
+| InputProps.alwaysEmbed | ✔️ |  |  |  |  |  |
+| InputProps.safePasswordCertPath | ✔️ |  |  |  |  |  |
+| InputProps.safePasswordLength | ✔️ |  |  |  |  |  |
+| InputProps.safePasswordTimeStamp | ✔️ |  |  |  |  |  |
+| InputProps.safePasswordNonce | ✔️ |  |  |  |  |  |
+| InputProps.safePasswordSalt | ✔️ |  |  |  |  |  |
+| InputProps.safePasswordCustomHash | ✔️ |  |  |  |  |  |
+| InputProps.randomNumber |  | ✔️ |  |  |  |  |
+| InputProps.controlled |  | ✔️ |  |  |  |  |
+| InputProps.onInput | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
+| InputProps.onFocus | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
+| InputProps.onBlur | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
+| InputProps.onConfirm | ✔️ |  | ✔️ | (借用[Form 组件](./form)的`onSubmit`事件来替代) | ✔️ |  |
+| InputProps.onKeyboardHeightChange | ✔️ |  |  |  |  |  |
+| InputProps.nativeProps |  |  |  | ✔️ |  |  |
 
 ### inputEventDetail
 

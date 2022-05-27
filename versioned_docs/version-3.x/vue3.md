@@ -51,6 +51,16 @@ export default {
 }
 ```
 
+使用 `ts` 用户可以在 `tsconfig.json` 中引入组件的类型提示：
+
+```json
+{
+  "compilerOptions": {
+     "types": ["@tarojs/components/vue3"]
+  }
+}
+```
+
 ## vueLoaderOption
 
 :::info

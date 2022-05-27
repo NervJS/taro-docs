@@ -10,6 +10,7 @@
           "team/index",
           "team/role-committee",
           "team/role-collaborator",
+          "team/role-triage",
           "team/role-committer",
           "team/58anjuke"
         ]
@@ -148,7 +149,15 @@
     ],
     "社区生态": [
       "treasures",
-      "redux",
+      {
+        "label": "状态管理",
+        "type": "category",
+        "items": [
+          "redux",
+          "vuex",
+          "pinia"
+        ]
+      },
       "css-modules",
       "css-in-js",
       "nutui",

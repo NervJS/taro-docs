@@ -5,7 +5,7 @@ sidebar_label: Textarea
 
 多行输入框。该组件是原生组件，使用时请注意相关限制
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/textarea.html)
 
@@ -100,33 +100,33 @@ export default class PageView extends Component {
 
 ### API 支持度
 
-| API | 微信小程序 | H5 | React Native |
-| :---: | :---: | :---: | :---: |
-| TextareaProps.value | ✔️ | ✔️ | ✔️ |
-| TextareaProps.placeholder | ✔️ | ✔️ | ✔️ |
-| TextareaProps.placeholderStyle | ✔️ |  |  |
-| TextareaProps.placeholderClass | ✔️ |  |  |
-| TextareaProps.disabled | ✔️ | ✔️ | ✔️ |
-| TextareaProps.maxlength | ✔️ | ✔️ | ✔️ |
-| TextareaProps.autoFocus | ✔️ | ✔️ |  |
-| TextareaProps.focus | ✔️ |  | ✔️ |
-| TextareaProps.autoHeight | ✔️ |  | ✔️ |
-| TextareaProps.fixed | ✔️ |  |  |
-| TextareaProps.cursorSpacing | ✔️ |  |  |
-| TextareaProps.cursor | ✔️ |  |  |
-| TextareaProps.showConfirmBar | ✔️ |  |  |
-| TextareaProps.selectionStart | ✔️ |  | ✔️ |
-| TextareaProps.selectionEnd | ✔️ |  | ✔️ |
-| TextareaProps.adjustPosition | ✔️ |  |  |
-| TextareaProps.holdKeyboard | ✔️ |  |  |
-| TextareaProps.disableDefaultPadding | ✔️ |  |  |
-| TextareaProps.onFocus | ✔️ | ✔️ | ✔️ |
-| TextareaProps.onBlur | ✔️ | ✔️ | ✔️ |
-| TextareaProps.onLineChange | ✔️ |  | ✔️ |
-| TextareaProps.onInput | ✔️ | ✔️ | ✔️ |
-| TextareaProps.onConfirm | ✔️ |  | ✔️ |
-| TextareaProps.onKeyboardHeightChange | ✔️ |  |  |
-| TextareaProps.nativeProps |  | ✔️ |  |
+| API | 微信小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| TextareaProps.value | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| TextareaProps.placeholder | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| TextareaProps.placeholderStyle | ✔️ | ✔️ |  |  |  |
+| TextareaProps.placeholderClass | ✔️ | ✔️ |  |  |  |
+| TextareaProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| TextareaProps.maxlength | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| TextareaProps.autoFocus | ✔️ |  | ✔️ |  |  |
+| TextareaProps.focus | ✔️ | ✔️ |  | ✔️ |  |
+| TextareaProps.autoHeight | ✔️ | ✔️ |  | ✔️ |  |
+| TextareaProps.fixed | ✔️ |  |  |  |  |
+| TextareaProps.cursorSpacing | ✔️ | ✔️ |  |  |  |
+| TextareaProps.cursor | ✔️ | ✔️ |  |  |  |
+| TextareaProps.showConfirmBar | ✔️ | ✔️ |  |  |  |
+| TextareaProps.selectionStart | ✔️ | ✔️ |  | ✔️ |  |
+| TextareaProps.selectionEnd | ✔️ | ✔️ |  | ✔️ |  |
+| TextareaProps.adjustPosition | ✔️ | ✔️ |  |  |  |
+| TextareaProps.holdKeyboard | ✔️ | ✔️ |  |  |  |
+| TextareaProps.disableDefaultPadding | ✔️ | ✔️ |  |  |  |
+| TextareaProps.onFocus | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| TextareaProps.onBlur | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| TextareaProps.onLineChange | ✔️ | ✔️ |  | ✔️ |  |
+| TextareaProps.onInput | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| TextareaProps.onConfirm | ✔️ | ✔️ |  | ✔️ |  |
+| TextareaProps.onKeyboardHeightChange | ✔️ |  |  |  |  |
+| TextareaProps.nativeProps |  |  | ✔️ |  |  |
 
 ### onFocusEventDetail
 
