@@ -31,6 +31,20 @@ import { useState, useEffect } from 'react' // 框架 Hooks （基础 Hooks）
 
 ## Taro Hooks
 
+### useLaunch
+
+:::info
+Taro v3.5.0+ 开始支持
+:::
+
+等同于 App 入口的 `onLaunch` 生命周期钩子。
+
+```jsx title="示例代码"
+useLaunch(() => {
+  console.log('onLaunch')
+})
+```
+
 ### useRouter
 
 等同于 Class Component 的 `getCurrentInstance().router`。
