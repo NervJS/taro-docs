@@ -398,6 +398,15 @@ Taro v3.4.7 开始支持。
 | index | String | 被点击 tabItem 的序号，从 0 开始 |
 | pagePath | String | 被点击 tabItem 的页面路径 |
 | text | String | 被点击 tabItem 的按钮文字 |
+### onSaveExitState
+
+:::info
+Taro v3.5.0+ 开始支持
+:::
+
+每当小程序可能被销毁之前，页面回调函数 `onSaveExitState` 会被调用，可以进行[退出状态](https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/operating-mechanism.html#_4-%E9%80%80%E5%87%BA%E7%8A%B6%E6%80%81)的保存。
+
+> 只有微信小程序支持，基础库 2.7.4 开始支持。
 
 ### onTitleClick ()
 

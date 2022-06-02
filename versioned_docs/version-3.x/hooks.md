@@ -40,6 +40,20 @@ import { useState, useEffect } from 'react' // 框架 Hooks （基础 Hooks）
 const router = useRouter()
 ```
 
+### useLoad
+
+:::info
+Taro v3.5.0+ 开始支持
+:::
+
+等同于页面的 `onLoad` 生命周期钩子。
+
+```jsx title="示例代码"
+useLoad(() => {
+  console.log('onLoad')
+})
+```
+
 ### useReady
 
 等同于页面的 `onReady` 生命周期钩子。
@@ -69,6 +83,20 @@ useDidShow(() => {
 ```jsx title="示例代码"
 useDidHide(() => {
   console.log('componentDidHide')
+})
+```
+
+### useUnload
+
+:::info
+Taro v3.5.0+ 开始支持
+:::
+
+等同于页面的 `onUnload` 生命周期钩子。
+
+```jsx title="示例代码"
+useUnload(() => {
+  console.log('onUnload')
 })
 ```
 
@@ -190,6 +218,26 @@ function Index () {
 export default {
   enableShareTimeline: true
 }
+```
+
+### useSaveExitState
+
+:::info
+Taro v3.5.0+ 开始支持
+:::
+
+每当小程序可能被销毁之前，页面回调函数 `onSaveExitState` 会被调用，可以进行[退出状态](https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/operating-mechanism.html#_4-%E9%80%80%E5%87%BA%E7%8A%B6%E6%80%81)的保存。
+
+> 只有微信小程序支持，基础库 2.7.4 开始支持。
+
+```jsx title="示例代码"
+useSaveExitState(() => {
+  const exitState = { myDataField: 'myData' } // 需要保存的数据
+  return {
+    data: exitState,
+    expireTimeStamp: Date.now() + 24 * 60 * 60 * 1000 // 超时时刻
+  }
+})
 ```
 
 ### useTitleClick
