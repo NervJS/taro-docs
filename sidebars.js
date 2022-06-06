@@ -27,6 +27,7 @@ module.exports = {
           'react-entry',
           'react-page',
           'hooks',
+          'react-error-handling',
           'react-devtools',
           'preact'
         ],
