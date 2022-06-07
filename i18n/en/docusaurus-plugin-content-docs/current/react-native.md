@@ -46,6 +46,7 @@ We will be compatible with the latest version React Native mainly, and keep up w
 | 0.66.x | >= 3.3.10 | [0.66.0](https://github.com/NervJS/taro-native-shell/tree/0.66.0) |
 | 0.67.x | >= 3.3.10, unimodules | [0.67.0](https://github.com/NervJS/taro-native-shell/tree/0.67.0) |
 | 0.67.x | >= 3.3.10, expo | [0.67.0-expo](https://github.com/NervJS/taro-native-shell/tree/0.67.0-expo) |
+| 0.68.x | >= 3.5.0 | [0.68.0](https://github.com/NervJS/taro-native-shell/tree/0.68.0) |
 
 ## Integration mode
 
@@ -162,7 +163,8 @@ The main steps include the following.
 
 1. `yarn`
 2. `yarn build:rn --platform android`
-3. `cd ./android && ./gradlew assembleRelease`
+3. `sudo apt install -y ruby-bundler`
+4. `cd android && bundle update && bundle exec fastlane assemble`
 
 ## Package and release to APP Store
 
@@ -174,7 +176,7 @@ The main steps include the following.
 2. `yarn`
 3. `yarn build:rn --platform ios`
 4. `npx pod-install`
-5. `echo "exit 0;">node_modules/react-native/scripts/react-native-xcode.sh`
+5. `export SKIP_BUNDLING=1`
 6. `cd ios && bundle update && bundle exec fastlane build_release`
 
 ## Advanced tutorials
