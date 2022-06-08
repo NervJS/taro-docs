@@ -67,6 +67,12 @@ Effective only when using **React**.
 
 `@babel/preset-react` [runtime](https://babeljs.io/docs/en/babel-preset-react#runtime) configuration items.
 
+### ts
+
+:::note
+Using Typescript
+:::
+
 ### hot
 
 :::note

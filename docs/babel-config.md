@@ -67,6 +67,12 @@ module.exports = {
 
 `@babel/preset-react` 的 [runtime](https://babeljs.io/docs/en/babel-preset-react#runtime) 配置项。
 
+### ts
+
+:::note
+使用 Typescript
+:::
+
 ### hot
 
 :::note
