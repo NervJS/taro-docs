@@ -85,7 +85,8 @@ module.exports = {
         type: 'category',
         items: [
           'compile-optimized',
-          'mini-split-chunks-plugin'
+          'mini-split-chunks-plugin',
+          'prebundle'
         ]
       },
       {
