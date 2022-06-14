@@ -367,6 +367,10 @@ interface IPrebundle {
   force?: boolean
   include?: string[]
   exclude?: string[]
+  esbuild?: Record<string, any>
+  webpack?: {
+    provide?: any[]
+  }
 }
 interface ICompiler {
   type: CompilerTypes

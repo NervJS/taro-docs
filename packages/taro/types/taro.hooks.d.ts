@@ -53,6 +53,40 @@ declare module './index' {
     useShareTimeline(callback: () => ShareTimelineReturnObject): void
 
     /**
+     * 页面销毁前保留状态回调
+     * **仅微信小程序支持。**
+     */
+    useSaveExitState(callback: () => {
+      data: Record<any, any>
+      expireTimeStamp?: number
+    }): void
+
+    /**
+     * 小程序初始化完成时的回调。
+     */
+    useLaunch(callback: (options: getLaunchOptionsSync.LaunchOptions) => void): void
+
+    /**
+     * 小程序发生脚本错误或 API 调用报错时触发的回调。
+     */
+    useError(callback: (error: string) => void): void
+
+    /**
+     * 小程序要打开的页面不存在时触发的回调。
+     */
+    usePageNotFound(callback: (res: { path: string, query: Record<any, any>, isEntryPage: boolean, [key: string]: any }) => void): void
+
+    /**
+     * 页面加载完成时的回调。
+     */
+    useLoad(callback: () => void): void
+
+    /**
+     * 页面卸载时的回调。
+     */
+    useUnload(callback: () => void): void
+
+    /**
      * 页面初次渲染完成的回调。
      * 此时页面已经准备妥当，可以和视图层进行交互。
      */

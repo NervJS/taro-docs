@@ -39,10 +39,10 @@ sidebar_label: getEnterOptionsSync
 
 来源信息
 
-| 参数 | 类型 | 说明 |
-| --- | --- | --- |
-| appId | `string` | 来源小程序、公众号或 App 的 appId |
-| extraData | `TaroGeneral.IAnyObject` | 来源小程序传过来的数据，scene=1037或1038时支持 |
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| appId | `string` | 否 | 来源小程序、公众号或 App 的 appId |
+| extraData | `TaroGeneral.IAnyObject` | 否 | 来源小程序传过来的数据，scene=1037或1038时支持 |
 
 #### ForwardMaterial
 
