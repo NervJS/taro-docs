@@ -5,5 +5,5 @@
 }
 
 .icon_platform--not-support {
-  filter: grayscale(100%);
+  filter: grayscale(100%) contrast(95%) opacity(50%) blur(1px);
 }
