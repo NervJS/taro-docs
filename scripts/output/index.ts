@@ -335,7 +335,7 @@ export default function docsAPI (
 
   if (diff) {
     const canges = spawn('git', ['status', '-z'])
-  
+
     canges.stdout.on('data', (data) => {
       const ss = data.toString().trim().split(/\u0000|\s+/ig)
       for (const s of ss) {
