@@ -69,7 +69,7 @@ Taro v3.4.8 开始支持
 
 传递给 VueLoader 的编译配置，编译配置细节请参阅 [vue-loader 文档](https://vue-loader.vuejs.org/options.html)。
 
-Taro 中可以通过修改 `@tarojs/plugin-frame-vue3` 的配置项去设置 vueLoader 的配置项：
+Taro 中可以通过修改 `@tarojs/plugin-framework-vue3` 的配置项去设置 vueLoader 的配置项：
 
 ```js title="config/index.js"
 const config = {
