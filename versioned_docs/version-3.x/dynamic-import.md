@@ -16,6 +16,10 @@ title: 动态 import
 
 借助 [@JiyuShao](https://github.com/JiyuShao) 同学贡献的插件 [taro-dynamic-import-weapp](https://github.com/JiyuShao/taro-dynamic-import-weapp) 可以在微信小程序中使用真正的动态 import 功能，实现动态加载 JS 代码。
 
+:::caution 请注意
+由于微信小程序官方社区[规范要求](https://developers.weixin.qq.com/community/minihome/doc/0000ae500e4fd0541f2ea33755b801)限制，该插件方案可能会导致代码审核环节驳回应用。
+:::
+
 例如动态加载 React 组件：
 
 ```jsx title="pages.jsx"
@@ -40,13 +44,13 @@ export default const Index = () => {
 
 ![](https://storage.jd.com/cjj-pub-images/taro-demo-dynamic.jpg)
 
-**注意：**
-
+:::info
 在 Taro `v3.4.4` 及之前的版本，需要使用 `babel-preset-taro-dynamic-import-weapp` 代替 `babel-preset-taro`，才能取消启用 `babel-plugin-dynamic-import-node` 插件。
 
 Taro `v3.4.5` 开始，`babel-preset-taro` 新增了 `dynamic-import-node` 配置，可以直接配置取消启用 `babel-plugin-dynamic-import-node` 插件。
+:::
 
-```js title="babel.config.js" {5,16,19}
+```js title="babel.config.js" {5,17,20}
 // Taro v3.4.4 及以下版本
 module.exports = {
   presets: [
