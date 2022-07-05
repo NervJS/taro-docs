@@ -88,7 +88,10 @@ config = {
           selectorBlackList: [],
           replace: true,
           mediaQuery: false,
-          minPixelValue: 0
+          minPixelValue: 0,
+          baseFontSize: 20,
+          maxRootSize: 40,
+          minRootSize: 20
         }
       }
     }
@@ -167,6 +170,18 @@ REM 单位允许的小数位。
   }
 }
 ```
+
+### `baseFontSize` (Number, H5 Only, Default: 20)
+
+H5 字体尺寸大小基准值，开发者可以自行调整单位换算的基准值。
+
+### `maxRootSize` (Number, H5 Only, Default: 40)
+
+H5 根节点 `font-size` 的最大值。
+
+### `minRootSize` (Number, H5 Only, Default: 20)
+
+H5 根节点 `font-size` 的最小值。
 
 ## CSS 编译时忽略（过滤）
 
