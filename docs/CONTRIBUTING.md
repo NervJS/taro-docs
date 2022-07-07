@@ -48,7 +48,8 @@ $ git clone git@github.com:NervJS/taro-docs.git
 #### 2. 编译预览
 
 ```bash
-$ npm run start
+$ pnpm install
+$ pnpm run start
 ```
 
 #### 3. 修改、新增对应文档
