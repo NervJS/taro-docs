@@ -762,6 +762,7 @@ module.exports = {
       "apis/location/offLocationChangeError",
       "apis/location/offLocationChange",
       "apis/location/getLocation",
+      "apis/location/getFuzzyLocation",
       "apis/location/choosePoi",
       "apis/location/chooseLocation",
     ],

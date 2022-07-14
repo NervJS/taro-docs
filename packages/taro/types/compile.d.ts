@@ -388,6 +388,8 @@ interface ILogger {
 }
 
 export interface IProjectBaseConfig {
+  isWatch?: boolean
+  port?: number
   projectName?: string
   date?: string
   designWidth?: number
@@ -410,9 +412,17 @@ export interface IProjectBaseConfig {
   presets?: PluginItem[]
   baseLevel?: number
   framework?: string
+  frameworkExts?: string[]
   compiler?: Compiler
   cache?: ICache
   logger?: ILogger
+  enableSourceMap?: boolean
+  /** hooks */
+  modifyWebpackChain?: HookModifyWebpackChain
+  modifyMiniConfigs?: (configMap) => Promise<any>
+  modifyBuildAssets?: (assets, plugin?) => Promise<any>
+  onWebpackChainReady?: (webpackChain: Chain) => Promise<any>
+  onBuildFinish?: (res: { error, stats, isWatch }) => Promise<any>
 }
 
 export interface IProjectConfig extends IProjectBaseConfig {
