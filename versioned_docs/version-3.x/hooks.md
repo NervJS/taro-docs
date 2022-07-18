@@ -45,6 +45,36 @@ useLaunch(() => {
 })
 ```
 
+### useError
+
+:::info
+Taro v3.5.0+ 开始支持
+:::
+
+等同于 App 入口的 `onError` 生命周期钩子。
+
+```jsx title="示例代码"
+useError((error) => {
+  console.log(error)
+})
+```
+
+### usePageNotFound
+
+:::info
+Taro v3.5.0+ 开始支持
+:::
+
+等同于 App 入口的 `onPageNotFound` 生命周期钩子。
+
+```jsx title="示例代码"
+usePageNotFound((res) => {
+  Taro.redirectTo({
+    url: 'pages/...'
+  }) // 如果是 tabbar 页面，请使用 Taro.switchTab
+})
+```
+
 ### useRouter
 
 等同于 Class Component 的 `getCurrentInstance().router`。
