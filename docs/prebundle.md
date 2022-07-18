@@ -76,3 +76,15 @@ webpack(chain.toConfig())
 ```
 
 通过 `webpack-chain` 传入 webpack 配置，就能自动扫描相关依赖并生成依赖预编译文件供团队协同开发使用，prebundle.run 参数与 Taro [compiler.prebundle](/docs/next/config-detail#compilerprebundle) 配置一致。
+
+:::note
+Web 端使用依赖预编译特性时，需要在最外层增加 bootstrap 动态引入入口文件，来确保所有依赖都能够被正确加载。在 Taro 中，在入口文件加载时调用虚拟模块插件，动态设置 `app.boot` 文件来加载入口，其他项目引用时也可以使用同样的方法设置入口：
+
+```ts
+import { VirtualModule } from '@tarojs/webpack5-prebundle/dist/h5'
+
+VirtualModule.writeModule(bootPath, 'import(\'./app\')')
+```
+
+当然手动更改入口文件引用的方法，可以跳过该操作，这样操作在普通项目中更为适用。
+:::
