@@ -105,8 +105,8 @@ $ npx taro build --type weapp --watch
 $ npx taro build --type weapp
 
 # watch 同时开启压缩
-$ set NODE_ENV=production && taro build --type weapp --watch # Windows
-$ NODE_ENV=production taro build --type weapp --watch # Mac
+$ set NODE_ENV=production && taro build --type weapp --watch # CMD
+$ NODE_ENV=production taro build --type weapp --watch # Bash
 ```
 
 #### 小程序开发者工具
@@ -140,8 +140,8 @@ $ npx taro build --type swan --watch
 $ npx taro build --type swan
 
 # watch 同时开启压缩
-$ set NODE_ENV=production && taro build --type swan --watch # Windows
-$ NODE_ENV=production taro build --type swan --watch # Mac
+$ set NODE_ENV=production && taro build --type swan --watch # CMD
+$ NODE_ENV=production taro build --type swan --watch # Bash
 ```
 
 #### 小程序开发者工具
@@ -175,8 +175,8 @@ $ npx taro build --type alipay --watch
 $ npx taro build --type alipay
 
 # watch 同时开启压缩
-$ set NODE_ENV=production && taro build --type alipay --watch # Windows
-$ NODE_ENV=production taro build --type alipay --watch # Mac
+$ set NODE_ENV=production && taro build --type alipay --watch # CMD
+$ NODE_ENV=production taro build --type alipay --watch # Bash
 ```
 
 #### 小程序开发者工具
@@ -210,8 +210,8 @@ $ npx taro build --type tt --watch
 $ npx taro build --type tt
 
 # watch 同时开启压缩
-$ set NODE_ENV=production && taro build --type tt --watch # Windows
-$ NODE_ENV=production taro build --type tt --watch # Mac
+$ set NODE_ENV=production && taro build --type tt --watch # CMD
+$ NODE_ENV=production taro build --type tt --watch # Bash
 ```
 
 #### 小程序开发者工具
@@ -245,8 +245,8 @@ $ npx taro build --type qq --watch
 $ npx taro build --type qq
 
 # watch 同时开启压缩
-$ set NODE_ENV=production && taro build --type qq --watch # Windows
-$ NODE_ENV=production taro build --type qq --watch # Mac
+$ set NODE_ENV=production && taro build --type qq --watch # CMD
+$ NODE_ENV=production taro build --type qq --watch # Bash
 ```
 
 #### 小程序开发者工具
@@ -280,8 +280,8 @@ $ npx taro build --type jd --watch
 $ npx taro build --type jd
 
 # watch 同时开启压缩
-$ set NODE_ENV=production && taro build --type jd --watch # Windows
-$ NODE_ENV=production taro build --type jd --watch # Mac
+$ set NODE_ENV=production && taro build --type jd --watch # CMD
+$ NODE_ENV=production taro build --type jd --watch # Bash
 ```
 
 #### 小程序开发者工具
@@ -343,8 +343,8 @@ $ npx taro build --type qywx --watch
 $ npx taro build --type qywx
 
 # watch 同时开启压缩
-$ set NODE_ENV=production && taro build --type qywx --watch # Windows
-$ NODE_ENV=production taro build --type qywx --watch # Mac
+$ set NODE_ENV=production && taro build --type qywx --watch # CMD
+$ NODE_ENV=production taro build --type qywx --watch # Bash
 ```
 
 #### 小程序开发者工具
@@ -402,8 +402,8 @@ $ npx taro build --type dd --watch
 $ npx taro build --type dd
 
 # watch 同时开启压缩
-$ set NODE_ENV=production && taro build --type dd --watch # Windows
-$ NODE_ENV=production taro build --type dd --watch # Mac
+$ set NODE_ENV=production && taro build --type dd --watch # CMD
+$ NODE_ENV=production taro build --type dd --watch # Bash
 ```
 
 #### 小程序开发者工具
@@ -455,8 +455,8 @@ $ npx taro build --type iot --watch
 $ npx taro build --type iot
 
 # watch 同时开启压缩
-$ set NODE_ENV=production && taro build --type iot --watch # Windows
-$ NODE_ENV=production taro build --type iot --watch # Mac
+$ set NODE_ENV=production && taro build --type iot --watch # CMD
+$ NODE_ENV=production taro build --type iot --watch # Bash
 ```
 
 #### 小程序开发者工具
@@ -508,8 +508,8 @@ $ npx taro build --type lark --watch
 $ npx taro build --type lark
 
 # watch 同时开启压缩
-$ set NODE_ENV=production && taro build --type lark --watch # Windows
-$ NODE_ENV=production taro build --type lark --watch # Mac
+$ set NODE_ENV=production && taro build --type lark --watch # CMD
+$ NODE_ENV=production taro build --type lark --watch # Bash
 ```
 
 #### 小程序开发者工具
@@ -574,8 +574,8 @@ $ npx taro build --type kwai --watch
 $ npx taro build --type kwai
 
 # watch 同时开启压缩
-$ set NODE_ENV=production && taro build --type kwai --watch # Windows
-$ NODE_ENV=production taro build --type kwai --watch # Mac
+$ set NODE_ENV=production && taro build --type kwai --watch # CMD
+$ NODE_ENV=production taro build --type kwai --watch # Bash
 ```
 
 #### 小程序开发者工具

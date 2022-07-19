@@ -105,8 +105,8 @@ $ npx taro build --type weapp --watch
 $ npx taro build --type weapp
 
 # watch mode enables compression
-$ set NODE_ENV=production && taro build --type weapp --watch # Windows
-$ NODE_ENV=production taro build --type weapp --watch # Mac
+$ set NODE_ENV=production && taro build --type weapp --watch # CMD
+$ NODE_ENV=production taro build --type weapp --watch # Bash
 ```
 
 #### Developer Tools
@@ -140,8 +140,8 @@ $ npx taro build --type swan --watch
 $ npx taro build --type swan
 
 # watch mode enables compression
-$ set NODE_ENV=production && taro build --type swan --watch # Windows
-$ NODE_ENV=production taro build --type swan --watch # Mac
+$ set NODE_ENV=production && taro build --type swan --watch # CMD
+$ NODE_ENV=production taro build --type swan --watch # Bash
 ```
 
 #### Developer Tools
@@ -175,8 +175,8 @@ $ npx taro build --type alipay --watch
 $ npx taro build --type alipay
 
 # watch mode enables compression
-$ set NODE_ENV=production && taro build --type alipay --watch # Windows
-$ NODE_ENV=production taro build --type alipay --watch # Mac
+$ set NODE_ENV=production && taro build --type alipay --watch # CMD
+$ NODE_ENV=production taro build --type alipay --watch # Bash
 ```
 
 #### Developer Tools
@@ -210,8 +210,8 @@ $ npx taro build --type tt --watch
 $ npx taro build --type tt
 
 # watch mode enables compression
-$ set NODE_ENV=production && taro build --type tt --watch # Windows
-$ NODE_ENV=production taro build --type tt --watch # Mac
+$ set NODE_ENV=production && taro build --type tt --watch # CMD
+$ NODE_ENV=production taro build --type tt --watch # Bash
 ```
 
 ####  Developer Tools
@@ -245,8 +245,8 @@ $ npx taro build --type qq --watch
 $ npx taro build --type qq
 
 # watch mode enables compression
-$ set NODE_ENV=production && taro build --type qq --watch # Windows
-$ NODE_ENV=production taro build --type qq --watch # Mac
+$ set NODE_ENV=production && taro build --type qq --watch # CMD
+$ NODE_ENV=production taro build --type qq --watch # Bash
 ```
 
 #### Developer Tools
@@ -280,8 +280,8 @@ $ npx taro build --type jd --watch
 $ npx taro build --type jd
 
 # watch mode enables compression
-$ set NODE_ENV=production && taro build --type jd --watch # Windows
-$ NODE_ENV=production taro build --type jd --watch # Mac
+$ set NODE_ENV=production && taro build --type jd --watch # CMD
+$ NODE_ENV=production taro build --type jd --watch # Bash
 ```
 
 #### Developer Tools
@@ -341,8 +341,8 @@ $ npx taro build --type qywx --watch
 $ npx taro build --type qywx
 
 # watch mode enables compression
-$ set NODE_ENV=production && taro build --type qywx --watch # Windows
-$ NODE_ENV=production taro build --type qywx --watch # Mac
+$ set NODE_ENV=production && taro build --type qywx --watch # CMD
+$ NODE_ENV=production taro build --type qywx --watch # Bash
 ```
 
 #### Developer Tools
@@ -392,8 +392,8 @@ $ npx taro build --type dd --watch
 $ npx taro build --type dd
 
 # watch mode enables compression
-$ set NODE_ENV=production && taro build --type dd --watch # Windows
-$ NODE_ENV=production taro build --type dd --watch # Mac
+$ set NODE_ENV=production && taro build --type dd --watch # CMD
+$ NODE_ENV=production taro build --type dd --watch # Bash
 ```
 
 #### Developer Tools
@@ -443,8 +443,8 @@ $ npx taro build --type iot --watch
 $ npx taro build --type iot
 
 # watch mode enables compression
-$ set NODE_ENV=production && taro build --type iot --watch # Windows
-$ NODE_ENV=production taro build --type iot --watch # Mac
+$ set NODE_ENV=production && taro build --type iot --watch # CMD
+$ NODE_ENV=production taro build --type iot --watch # Bash
 ```
 
 ### FeiShu Mini program
@@ -489,8 +489,8 @@ $ npx taro build --type lark --watch
 $ npx taro build --type lark
 
 # watch Also turn on compression
-$ set NODE_ENV=production && taro build --type lark --watch # Windows
-$ NODE_ENV=production taro build --type lark --watch # Mac
+$ set NODE_ENV=production && taro build --type lark --watch # CMD
+$ NODE_ENV=production taro build --type lark --watch # Bash
 ```
 
 #### Developer tool
@@ -555,8 +555,8 @@ $ npx taro build --type kwai --watch
 $ npx taro build --type kwai
 
 # watch also turn on compression
-$ set NODE_ENV=production && taro build --type kwai --watch # Windows
-$ NODE_ENV=production taro build --type kwai --watch # Mac
+$ set NODE_ENV=production && taro build --type kwai --watch # CMD
+$ NODE_ENV=production taro build --type kwai --watch # Bash
 ```
 
 #### Developer Tools

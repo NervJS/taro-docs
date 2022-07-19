@@ -204,10 +204,10 @@ Taro UI 作为 Taro 的官方 UI 库，依然处于维护状态，目前主要�
 如果想要在预览时降低包大小，可以设置 `NODE_ENV` 为 `production` 来开启压缩，例如编译微信小程序
 
 ```bash
-# Mac
+# Bash
 $ NODE_ENV=production taro build --type weapp --watch
 
-# Windows
+# CMD
 $ set NODE_ENV=production && taro build --type weapp --watch
 ```
 
