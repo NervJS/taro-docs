@@ -196,7 +196,7 @@ export default {
 | formType | `keyof FormType` |  | 否 | 用于 `<form/>` 组件，点击分别会触发 `<form/>` 组件的 submit/reset 事件 |
 | openType | `OpenType` |  | 否 | 微信开放能力 |
 | hoverClass | `string` | `button-hover` | 否 | 指定按下去的样式类。当 `hover-class="none"` 时，没有点击态效果 |
-| hoverStyle | `StyleProp<ViewStyle>` | `none` | 否 | 由于 RN 不支持 Class，故 RN 端的 Button 组件实现了 `hoverStyle`属性，写法和 style 类似，只不过 `hoverStyle` 的样式是指定按下去的样式。 |
+| hoverStyle | `StyleProp<ViewStyle>` | `none` | 否 | 由于 RN 不支持 hoverClass，故 RN 端的 Button 组件实现了 `hoverStyle`属性，写法和 style 类似，只不过 `hoverStyle` 的样式是指定按下去的样式。 |
 | hoverStopPropagation | `boolean` | `false` | 否 | 指定是否阻止本节点的祖先节点出现点击态 |
 | hoverStartTime | `number` | `20` | 否 | 按住后多久出现点击态，单位毫秒 |
 | hoverStayTime | `number` | `70` | 否 | 手指松开后点击态保留时间，单位毫秒 |
