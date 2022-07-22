@@ -115,7 +115,8 @@
         "type": "category",
         "items": [
           "compile-optimized",
-          "mini-split-chunks-plugin"
+          "mini-split-chunks-plugin",
+          "prebundle"
         ]
       },
       {
@@ -791,6 +792,7 @@
       "apis/location/offLocationChangeError",
       "apis/location/offLocationChange",
       "apis/location/getLocation",
+      "apis/location/getFuzzyLocation",
       "apis/location/choosePoi",
       "apis/location/chooseLocation"
     ],

@@ -87,9 +87,8 @@ title: Taro 仓库概览
 然后依次运行以下命令：
 
 ```bash
-$ yarn
-$ yarn run bootstrap
-$ yarn build
+$ pnpm install
+$ pnpm run build
 ```
 
 运行完上述命令后，环境已经准备好，此时可以新拉一条分支进行开发。

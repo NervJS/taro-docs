@@ -95,15 +95,17 @@ export default {
 
 ## RichTextProps
 
-| 参数 | 类型 | 必填 | 说明 |
-| --- | --- | :---: | --- |
-| nodes | `Nodes` | 否 | 节点列表/ HTML String |
-| space | `keyof TSpace` | 否 | 显示连续空格 |
+| 参数 | 类型 | 默认值 | 必填 | 说明 |
+| --- | --- | :---: | :---: | --- |
+| userSelect | `boolean` | `false` | 否 | 文本是否可选，该属性会使节点显示为 block |
+| nodes | `Nodes` |  | 否 | 节点列表/ HTML String |
+| space | `keyof TSpace` |  | 否 | 显示连续空格 |
 
 ### API 支持度
 
 | API | 微信小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: |
+| RichTextProps.userSelect | ✔️ |  |  |  |
 | RichTextProps.space | ✔️ |  | ✔️ |  |
 
 ### TSpace

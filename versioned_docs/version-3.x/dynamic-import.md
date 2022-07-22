@@ -83,6 +83,10 @@ H5 支持使用动态 import。
 
 如果有需要把动态 import 语法转换为 require 语法时，可以配置 `babel-preset-taro` 启用 `babel-plugin-dynamic-import-node` 插件（Taro v3.4.5+）。
 
+:::caution 请注意
+不可与 [prebundle](./prebundle) 搭配使用，这会对依赖的引入造成破坏。
+:::
+
 ```js title="babel.config.js" {8}
 // Taro v3.4.5+
 module.exports = {

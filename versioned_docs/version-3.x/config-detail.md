@@ -1603,6 +1603,25 @@ module.exports = {
 }
 ```
 
+### h5.htmlPluginOption
+
+:::info
+Taro v3.5 开始支持。
+:::
+
+`object`
+
+html-webpack-plugin 的具体配置。
+
+```js
+module.exports = {
+  // ...
+  htmlPluginOption: {
+    // 配置项同 https://github.com/jantimon/html-webpack-plugin#options
+  }
+}
+```
+
 ### h5.styleLoaderOption
 
 `object`
