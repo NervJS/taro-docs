@@ -63,8 +63,6 @@ class App extends Component {
 
   componentDidHide () {}
 
-  componentDidCatchError () {}
-
   // The render() function has no practical effect in the App class.
   // Please don't modify the function!
   render () {

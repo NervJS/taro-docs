@@ -307,8 +307,6 @@ class C extends Component {
 
 新增一个生命周期: [`componentDidCatch(err, info)`](https://reactjs.org/docs/react-component.html#componentdidcatch) ，这是由框架本身（React 或 Nerv）提供的。`componentDidCatch(err, info)` 会在组件和它的子孙抛出错误时触发，第一个参数 `err` 指向抛出的错误，第二个参数 `info` 是组件的调用信息。
 
-> `componentDidCatch` 和原有的 `componentDidCatchError` 共同存在，区别在于 `componentDidCatchError` 只能在入口组件（App）中使用，对应原生小程序的生命周期 `onError()`，`componentDidCatch` 可以在任何 React/Nerv 类组件中使用（包括入口组件）。
-
 ## Hooks
 
 在 Taro Next，Taro 的[专有 Hooks](./hooks)（例如 `usePageScroll`, `useReachBottom`）从 `@tarojs/taro` 中引入，框架自己的 Hooks （例如 `useEffect`, `useState`）从对应的框架引入。

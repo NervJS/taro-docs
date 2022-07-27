@@ -14,7 +14,6 @@ declare module './index' {
     componentWillUnmount?(): void
     componentDidShow?(): void
     componentDidHide?(): void
-    componentDidCatchError?(err: string): void
     componentDidNotFound?(opt: PageNotFoundObject): void
   }
   interface ComponentOptions {
