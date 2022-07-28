@@ -29,7 +29,8 @@ module.exports = {
           'hooks',
           'react-error-handling',
           'react-devtools',
-          'preact'
+          'preact',
+          'react-18'
         ],
       },
       {
