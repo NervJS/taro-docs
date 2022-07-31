@@ -342,6 +342,11 @@
             "color": "red"
           },
           {
+            "id": "938a3f82-1e7e-4993-8d16-3ee2022706d1",
+            "name": "Platform 团队",
+            "color": "pink"
+          },
+          {
             "id": "e3ff4b01-9ab6-482a-abfe-feb19a421e73",
             "name": "社区团队",
             "color": "brown"
