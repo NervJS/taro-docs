@@ -555,6 +555,28 @@ Taro v3.5 开始支持。
 
 是否显示依赖预编译的测速信息。
 
+#### compiler.prebundle.esbuild
+
+`object`
+
+自定义 [esbuild](https://esbuild.github.io/api/#build-api) 配置。
+
+#### compiler.prebundle.swc
+
+`object`
+
+自定义 [swc](https://swc.rs/docs/usage/core#options) 配置。
+
+#### compiler.prebundle.webpack
+
+`object`
+
+自定义 [webpack](https://webpack.js.org/configuration/#options) 配置。
+
+##### compiler.prebundle.webpack.provide
+
+提供 `@tarojs/runtime` 替换小程序运行时关联 API（BOM、DOM），使用可参考[代码](https://github.com/NervJS/taro/blob/next/packages/taro-plugin-vue-devtools/src/index.ts#L75)。
+
 #### compiler.prebundle.include
 
 `string array`
