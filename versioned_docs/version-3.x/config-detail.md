@@ -1444,6 +1444,16 @@ module.exports = {
 
 :::info
 Taro v3.3.18+ 开始支持传入数组配置自定义路由。
+
+配置自定义路由会导致原路由失效（无法访问，但不影响 API 使用），如果需要启用原路由可以参考如下配置:
+
+```js
+customRoutes: {
+  '/pages/detail/index': ['/detail', '/pages/detail/index']
+}
+```
+
+原路由失效会导致开发环境中，首次打开页面错误；如果自定义路由配置为 `'/'` 则会导致跳转错误，可以通过配置 [`entryPagePath`](/docs/app-config#entrypagepath) 修复该问题。
 :::
 
 ### h5.enableSourceMap
