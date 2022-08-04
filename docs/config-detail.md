@@ -1453,7 +1453,7 @@ customRoutes: {
 }
 ```
 
-原路由失效会导致开发环境中，首次打开页面错误；如果自定义路由配置为 `'/'` 则会导致跳转错误，可以通过配置 [`entryPagePath`](/docs/app-config#entrypagepath) 修复该问题。
+原路由失效会导致开发环境中，首次打开页面错误；如果自定义路由配置为 `'/'` 则会导致跳转错误，可以通过配置 [`entryPagePath`](/docs/app-config#entrypagepath) 修复该问题，3.5.2+ 版本可忽略该问题。
 :::
 
 ### h5.enableSourceMap
