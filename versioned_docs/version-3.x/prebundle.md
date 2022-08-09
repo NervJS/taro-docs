@@ -25,8 +25,6 @@ const config = {
 }
 ```
 
-需要注意的是，Taro 遵循 Webpack **“编译安全比编译速度重要”** 的理念，默认情况下 Taro 并不会启用依赖预编译，虽然我们相信依赖预编译可以带给开发者更好的体验，但编译安全仍然是需要考虑的重要因素。
-
 :::note
 Web 端使用依赖预编译特性时，需要在最外层增加 bootstrap 动态引入入口文件，来确保所有依赖都能够被正确加载，如果使用 [dynamic-import-node](/docs/babel-config/#dynamic-import-node) 配置会导致依赖加载失败，请在使用该配置时禁用 prebundle 特性。
 :::
