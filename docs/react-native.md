@@ -163,7 +163,7 @@ yarn build:rn --qr --platform ios
 
 1. `yarn`
 2. `yarn build:rn --platform android`
-3. `sudo apt install -y ruby-bundler`
+3. linux: `sudo apt install -y ruby-bundler`, mac: `gem install bundler`
 4. `cd android && bundle update && bundle exec fastlane assemble`
 
 ## 打包发布到 APP Store
