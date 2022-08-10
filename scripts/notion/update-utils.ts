@@ -161,7 +161,7 @@ export async function updateContributors({ owner = 'NervJS', repo = 'taro', rema
   console.log(`Tips: ${owner}/${repo} 查询到 ${list.length} 位贡献者。`)
   for (let i = 0; i < list.length; i++) {
     try {
-      updateMember(list[i], remarks)
+      await updateMember(list[i], remarks)
       await sleep()
     } catch (error) {
       console.error(`Notion: update ${list[i].login} with error`, error)
