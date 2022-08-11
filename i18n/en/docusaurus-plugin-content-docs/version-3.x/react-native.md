@@ -46,6 +46,7 @@ We will be compatible with the latest version React Native mainly, and keep up w
 | 0.66.x | >= 3.3.10 | [0.66.0](https://github.com/NervJS/taro-native-shell/tree/0.66.0) |
 | 0.67.x | >= 3.3.10, unimodules | [0.67.0](https://github.com/NervJS/taro-native-shell/tree/0.67.0) |
 | 0.67.x | >= 3.3.10, expo | [0.67.0-expo](https://github.com/NervJS/taro-native-shell/tree/0.67.0-expo) |
+| 0.68.x | >= 3.5.0 | [0.68.0](https://github.com/NervJS/taro-native-shell/tree/0.68.0) |
 
 ## Integration mode
 
@@ -162,7 +163,14 @@ The main steps include the following.
 
 1. `yarn`
 2. `yarn build:rn --platform android`
-3. `cd ./android && ./gradlew assembleRelease`
+3. linux: `sudo apt install -y ruby-bundler`, mac: `gem install bundler`
+4. `cd android && bundle update && bundle exec fastlane assemble`
+
+Without using CI tools.
+
+1. `yarn`
+2. `yarn build:rn --platform android`
+3. `cd android && ./gradlew assembleRelease` Or use Android Studio
 
 ## Package and release to APP Store
 
@@ -174,8 +182,14 @@ The main steps include the following.
 2. `yarn`
 3. `yarn build:rn --platform ios`
 4. `npx pod-install`
-5. `echo "exit 0;">node_modules/react-native/scripts/react-native-xcode.sh`
+5. `export SKIP_BUNDLING=1`
 6. `cd ios && bundle update && bundle exec fastlane build_release`
+
+Without using CI tools.
+
+1. `yarn`
+2. `yarn build:rn --platform ios`
+3. Packaging with Xcode
 
 ## Advanced tutorials
 
@@ -254,3 +268,25 @@ Check if the `config/index.js` file has changed the appName, the default is `tar
 0. modify `rn.appName` in `config/index.js`
 1. modify the return value of the `getMainComponentName` method in `MainActivity.java`
 2. modify `moduleName` of `RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"taroDemo" initialProperties:nil];` in  `AppDelegate.m`
+
+### Library not found for -IDoubleConversion
+
+When compiling with XCode, the file to open is `ios/taroDemo.xcworkspace`
+
+### Entry file index.js does not exist. If you use another file as your entry point, pass ENTRY_FILE=myindex.js
+
+Taro React Native jdbundle files are packaged by Taro (yarn build:rn) and if you use React Native's own command to package them (react-native bundle), you will get the error above. So we need to skip the original packaging phase of React Native.
+
+react-native/ios/taroDemo.xcodeproj/project.pbxproj
+
+```diff
+-			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
++			shellScript = "set -e\n\nexport NODE_BINARY=node\nexport SKIP_BUNDLING=1\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+```
+
+android/app/build.gradle
+
+```diff
+-apply from: "../../node_modules/react-native/react.gradle"
++// apply from: "../../node_modules/react-native/react.gradle"
+```

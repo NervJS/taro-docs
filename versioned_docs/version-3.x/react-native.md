@@ -166,6 +166,12 @@ yarn build:rn --qr --platform ios
 3. linux: `sudo apt install -y ruby-bundler`, mac: `gem install bundler`
 4. `cd android && bundle update && bundle exec fastlane assemble`
 
+不使用 CI 工具：
+
+1. `yarn`
+2. `yarn build:rn --platform android`
+3. `cd android && ./gradlew assembleRelease` 或使用 Android Studio 打包
+
 ## 打包发布到 APP Store
 
 先学习 [React Native 如何打包发布iOS包](https://www.react-native.cn/docs/publishing-to-app-store)。Taro 提供的 React Native 模板中集成了 GitHub Action，可使用 GitHub 进行打包，参考 [assemble_ios_release](https://github.com/wuba/taro-playground/blob/main/.github/workflows/assemble_ios_release.yml)。
@@ -178,6 +184,12 @@ yarn build:rn --qr --platform ios
 4. `npx pod-install`
 5. `export SKIP_BUNDLING=1`
 6. `cd ios && bundle update && bundle exec fastlane build_release`
+
+不使用 CI 工具：
+
+1. `yarn`
+2. `yarn build:rn --platform ios`
+3. 使用 Xcode 打包
 
 ## 进阶教程
 
@@ -260,3 +272,21 @@ metro 缓存导致，尝试 `yarn dev:rn --reset-cache`
 ### Library not found for -IDoubleConversion
 
 使用 XCode 编译时，需要打开的文件是 `ios/taroDemo.xcworkspace`
+
+### Entry file index.js does not exist. If you use another file as your entry point, pass ENTRY_FILE=myindex.js
+
+Taro React Native 的 jdbundle 文件由 Taro 进行打包（yarn build:rn），如果使用 React Native 自带命令进行打包（react-native bundle），则会出现如上错误。因此我们需要跳过 React Native 原有的打包阶段。
+
+react-native/ios/taroDemo.xcodeproj/project.pbxproj
+
+```diff
+-			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
++			shellScript = "set -e\n\nexport NODE_BINARY=node\nexport SKIP_BUNDLING=1\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+```
+
+android/app/build.gradle
+
+```diff
+-apply from: "../../node_modules/react-native/react.gradle"
++// apply from: "../../node_modules/react-native/react.gradle"
+```

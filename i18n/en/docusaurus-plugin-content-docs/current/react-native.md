@@ -166,6 +166,12 @@ The main steps include the following.
 3. linux: `sudo apt install -y ruby-bundler`, mac: `gem install bundler`
 4. `cd android && bundle update && bundle exec fastlane assemble`
 
+Without using CI tools.
+
+1. `yarn`
+2. `yarn build:rn --platform android`
+3. `cd android && ./gradlew assembleRelease` Or use Android Studio
+
 ## Package and release to APP Store
 
 Learn [how to package and release iOS packages in React Native](https://www.react-native.cn/docs/publishing-to-app-store). Taro provides a template for React Native that integrates with GitHub Action, so you can use GitHub for packaging, see [assemble_ios_release](https://github.com/wuba/taro-playground/blob/main/.github/workflows/assemble_ios_release.yml).
@@ -178,6 +184,12 @@ The main steps include the following.
 4. `npx pod-install`
 5. `export SKIP_BUNDLING=1`
 6. `cd ios && bundle update && bundle exec fastlane build_release`
+
+Without using CI tools.
+
+1. `yarn`
+2. `yarn build:rn --platform ios`
+3. Packaging with Xcode
 
 ## Advanced tutorials
 
@@ -260,3 +272,21 @@ Check if the `config/index.js` file has changed the appName, the default is `tar
 ### Library not found for -IDoubleConversion
 
 When compiling with XCode, the file to open is `ios/taroDemo.xcworkspace`
+
+### Entry file index.js does not exist. If you use another file as your entry point, pass ENTRY_FILE=myindex.js
+
+Taro React Native jdbundle files are packaged by Taro (yarn build:rn) and if you use React Native's own command to package them (react-native bundle), you will get the error above. So we need to skip the original packaging phase of React Native.
+
+react-native/ios/taroDemo.xcodeproj/project.pbxproj
+
+```diff
+-			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
++			shellScript = "set -e\n\nexport NODE_BINARY=node\nexport SKIP_BUNDLING=1\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+```
+
+android/app/build.gradle
+
+```diff
+-apply from: "../../node_modules/react-native/react.gradle"
++// apply from: "../../node_modules/react-native/react.gradle"
+```
