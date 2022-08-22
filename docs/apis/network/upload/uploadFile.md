@@ -38,11 +38,13 @@ sidebar_label: uploadFile
 
 ### SuccessCallbackResult
 
-| 参数 | 类型 | 说明 |
-| --- | --- | --- |
-| data | `string` | 开发者服务器返回的数据 |
-| statusCode | `number` | 开发者服务器返回的 HTTP 状态码 |
-| errMsg | `string` | 调用结果 |
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| data | `string` | 是 | 开发者服务器返回的数据 |
+| statusCode | `number` | 是 | 开发者服务器返回的 HTTP 状态码 |
+| errMsg | `string` | 是 | 调用结果 |
+| header | `TaroGeneral.IAnyObject` | 否 | 开发者服务器返回的 HTTP Response Header<br />API 支持度: weapp<br />weapp: 非官方文档标注属性 |
+| cookies | `string[]` | 否 | cookies<br />API 支持度: weapp<br />weapp: 非官方文档标注属性 |
 
 ## 示例代码
 

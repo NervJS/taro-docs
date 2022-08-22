@@ -109,9 +109,9 @@ export default {
 | --- | --- | :---: | :---: | --- |
 | longitude | `number` |  | 是 | 中心经度 |
 | latitude | `number` |  | 是 | 中心纬度 |
-| scale | `number` | `16` | 否 | 缩放级别，取值范围为3-20 |
-| minScale | `number` | `3` | 否 | 最小缩放级别3-20 |
-| maxScale | `number` | `20` | 否 | 最大缩放级别3-20 |
+| scale | `number` | `16` | 否 | 缩放级别，取值范围为 3-20 |
+| minScale | `number` | `3` | 否 | 最小缩放级别 3-20 |
+| maxScale | `number` | `20` | 否 | 最大缩放级别 3-20 |
 | markers | `marker[]` |  | 否 | 标记点 |
 | covers | `any[]` |  | 否 | 标记点<br />不推荐: 即将移除，请使用 markers |
 | polyline | `polyline[]` |  | 否 | 路线 |

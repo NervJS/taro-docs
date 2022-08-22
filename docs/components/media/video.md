@@ -117,16 +117,19 @@ export default class PageView extends Component {
 | pictureInPictureMode | "" or "push" or "pop" or ("push" or "pop")[] |  | 否 | 设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]） |
 | enableAutoRotation | `boolean` |  | 否 | 是否开启手机横屏时自动全屏，当系统设置开启自动旋转时生效 |
 | showScreenLockButton | `boolean` |  | 否 | 是否显示锁屏按钮，仅在全屏时显示，锁屏后控制栏的操作 |
+| showSnapshotButton | `boolean` |  | 否 | 是否显示截屏按钮，仅在全屏时显示 |
+| showBackgroundPlaybackButton | `boolean` |  | 否 | 是否展示后台音频播放按钮 |
+| backgroundPoster | `string` |  | 否 | 进入后台音频播放后的通知栏图标（Android 独有） |
 | onPlay | `CommonEventFunction` |  | 否 | 当开始/继续播放时触发 play 事件 |
 | onPause | `CommonEventFunction` |  | 否 | 当暂停播放时触发 pause 事件 |
 | onEnded | `CommonEventFunction` |  | 否 | 当播放到末尾时触发 ended 事件 |
-| onTimeUpdate | `CommonEventFunction<onTimeUpdateEventDetail>` |  | 否 | 播放进度变化时触发, 触发频率 250ms 一次<br /><br />event.detail = {currentTime, duration} |
-| onFullscreenChange | `CommonEventFunction<onFullscreenChangeEventDetail>` |  | 否 | 当视频进入和退出全屏时触发<br /><br />event.detail = {fullScreen, direction}，direction取为 vertical 或 horizontal |
+| onTimeUpdate | `CommonEventFunction<onTimeUpdateEventDetail>` |  | 否 | 播放进度变化时触发, 触发频率 250ms 一次 |
+| onFullscreenChange | `CommonEventFunction<onFullscreenChangeEventDetail>` |  | 否 | 当视频进入和退出全屏时触发 |
 | onWaiting | `CommonEventFunction<onWaitingEventDetail>` |  | 否 | 视频出现缓冲时触发 |
 | onError | `CommonEventFunction` |  | 否 | 视频播放出错时触发 |
 | onProgress | `CommonEventFunction<onProgressEventDetail>` |  | 否 | 加载进度变化时触发，只支持一段加载 |
-| onLoadedMetaData | `CommonEventFunction` |  | 否 | 视频元数据加载完成时触发。event.detail = {width, height, duration} |
-| onControlsToggle | `CommonEventFunction<onControlsToggleEventDetail>` |  | 否 | 切换 controls 显示隐藏时触发。event.detail = {show} |
+| onLoadedMetaData | `CommonEventFunction<onLoadedMetaDataEventDetail>` |  | 否 | 视频元数据加载完成时触发 |
+| onControlsToggle | `CommonEventFunction<onControlsToggleEventDetail>` |  | 否 | 切换 controls 显示隐藏时触发 |
 | onEnterPictureInPicture | `CommonEventFunction` |  | 否 | 播放器进入小窗 |
 | onLeavePictureInPicture | `CommonEventFunction` |  | 否 | 播放器退出小窗 |
 | onSeekComplete | `CommonEventFunction` |  | 否 | seek 完成时触发 |
@@ -137,45 +140,48 @@ export default class PageView extends Component {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | VideoProps.src | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.duration | ✔️ | ✔️ | ✔️ |  | (待定) | ✔️ |  |
+| VideoProps.duration | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
 | VideoProps.controls | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.danmuList | ✔️ | ✔️ |  |  | (待定) |  |  |
-| VideoProps.danmuBtn | ✔️ | ✔️ |  |  | (待定) |  |  |
-| VideoProps.enableDanmu | ✔️ | ✔️ |  |  | (待定) |  |  |
+| VideoProps.danmuList | ✔️ | ✔️ |  |  | ✔️ |  |  |
+| VideoProps.danmuBtn | ✔️ | ✔️ |  |  | ✔️ |  |  |
+| VideoProps.enableDanmu | ✔️ | ✔️ |  |  | ✔️ |  |  |
 | VideoProps.autoplay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.loop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.muted | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.initialTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.direction | ✔️ | ✔️ | ✔️ |  | (待定) |  |  |
-| VideoProps.showProgress | ✔️ | ✔️ |  | ✔️ | (待定) |  |  |
-| VideoProps.showFullscreenBtn | ✔️ | ✔️ | ✔️ | ✔️ | (待定) |  |  |
-| VideoProps.showPlayBtn | ✔️ | ✔️ | ✔️ | ✔️ | (待定) |  |  |
-| VideoProps.showCenterPlayBtn | ✔️ | ✔️ | ✔️ |  | (待定) | ✔️ |  |
-| VideoProps.enableProgressGesture | ✔️ | ✔️ | ✔️ | ✔️ | (待定) |  |  |
-| VideoProps.objectFit | ✔️ | ✔️ | ✔️ | ✔️ | (待定) |  |  |
+| VideoProps.direction | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| VideoProps.showProgress | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |
+| VideoProps.showFullscreenBtn | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
+| VideoProps.showPlayBtn | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
+| VideoProps.showCenterPlayBtn | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
+| VideoProps.enableProgressGesture | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
+| VideoProps.objectFit | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | VideoProps.poster | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.showMuteBtn | ✔️ |  |  | ✔️ | (待定) |  |  |
-| VideoProps.title | ✔️ |  |  |  | (待定) |  |  |
-| VideoProps.playBtnPosition | ✔️ |  |  | ✔️ | (待定) |  |  |
-| VideoProps.enablePlayGesture | ✔️ |  |  | ✔️ | (待定) |  |  |
-| VideoProps.autoPauseIfNavigate | ✔️ |  |  |  | (待定) |  |  |
-| VideoProps.autoPauseIfOpenNative | ✔️ |  |  |  | (待定) |  |  |
-| VideoProps.vslideGesture | ✔️ | ✔️ |  | ✔️ | (待定) |  |  |
-| VideoProps.vslideGestureInFullscreen | ✔️ |  |  | ✔️ | (待定) |  |  |
+| VideoProps.showMuteBtn | ✔️ |  |  | ✔️ | ✔️ |  |  |
+| VideoProps.title | ✔️ |  |  |  |  |  |  |
+| VideoProps.playBtnPosition | ✔️ |  |  | ✔️ |  |  |  |
+| VideoProps.enablePlayGesture | ✔️ |  |  | ✔️ | ✔️ |  |  |
+| VideoProps.autoPauseIfNavigate | ✔️ |  |  |  |  |  |  |
+| VideoProps.autoPauseIfOpenNative | ✔️ |  |  |  |  |  |  |
+| VideoProps.vslideGesture | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |
+| VideoProps.vslideGestureInFullscreen | ✔️ |  |  | ✔️ | ✔️ |  |  |
 | VideoProps.adUnitId | ✔️ |  |  |  |  |  |  |
 | VideoProps.posterForCrawler | ✔️ |  |  |  |  |  |  |
 | VideoProps.showCastingButton | ✔️ |  |  |  |  |  |  |
 | VideoProps.pictureInPictureMode | ✔️ |  |  |  |  |  |  |
 | VideoProps.enableAutoRotation | ✔️ |  |  |  |  |  |  |
 | VideoProps.showScreenLockButton | ✔️ |  |  |  |  |  |  |
+| VideoProps.showSnapshotButton | ✔️ |  |  |  |  |  |  |
+| VideoProps.showBackgroundPlaybackButton | ✔️ |  |  |  |  |  |  |
+| VideoProps.backgroundPoster | ✔️ |  |  |  |  |  |  |
 | VideoProps.onPlay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.onPause | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.onEnded | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.onTimeUpdate | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.onFullscreenChange | ✔️ | ✔️ | ✔️ | ✔️ | (待定) | ✔️ |  |
-| VideoProps.onWaiting | ✔️ | ✔️ |  | ✔️ | (待定) |  |  |
+| VideoProps.onFullscreenChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| VideoProps.onWaiting | ✔️ | ✔️ |  | ✔️ |  |  |  |
 | VideoProps.onError | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.onProgress | ✔️ |  | ✔️ |  | (待定) |  |  |
+| VideoProps.onProgress | ✔️ |  | ✔️ |  | ✔️ |  |  |
 | VideoProps.onLoadedMetaData | ✔️ |  |  | ✔️ |  | ✔️ |  |
 | VideoProps.onControlsToggle | ✔️ |  |  |  |  |  |  |
 | VideoProps.onEnterPictureInPicture | ✔️ |  |  |  |  |  |  |
@@ -223,14 +229,14 @@ playBtnPosition 的合法值
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| direction | `number` | 方向 |
+| direction | "vertical" or "horizontal" | 方向 |
 | fullScreen | number or boolean | 全屏 |
 
 ### onWaitingEventDetail
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| direction | `number` | 方向 |
+| direction | "vertical" or "horizontal" | 方向 |
 | fullScreen | number or boolean | 全屏 |
 
 ### onProgressEventDetail
@@ -238,6 +244,14 @@ playBtnPosition 的合法值
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
 | buffered | `number` | 百分比 |
+
+### onLoadedMetaDataEventDetail
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| width | `number` | 视频宽度 |
+| height | `number` | 视频高度 |
+| duration | `number` | 持续时间 |
 
 ### onControlsToggleEventDetail
 

@@ -36,12 +36,16 @@ sidebar_label: downloadFile
 
 ### FileSuccessCallbackResult
 
-| 参数 | 类型 | 说明 |
-| --- | --- | --- |
-| filePath | `string` | 用户文件路径。传入 filePath 时会返回，跟传入的 filePath 一致 |
-| statusCode | `number` | 开发者服务器返回的 HTTP 状态码 |
-| tempFilePath | `string` | 临时文件路径。没传入 filePath 指定文件存储路径时会返回，下载后的文件会存储到一个临时文件 |
-| errMsg | `string` | 调用结果 |
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| filePath | `string` | 是 | 用户文件路径。传入 filePath 时会返回，跟传入的 filePath 一致 |
+| statusCode | `number` | 是 | 开发者服务器返回的 HTTP 状态码 |
+| tempFilePath | `string` | 是 | 临时文件路径。没传入 filePath 指定文件存储路径时会返回，下载后的文件会存储到一个临时文件 |
+| errMsg | `string` | 是 | 调用结果 |
+| header | `TaroGeneral.IAnyObject` | 否 | 开发者服务器返回的 HTTP Response Header<br />API 支持度: weapp<br />weapp: 非官方文档标注属性 |
+| dataLength | `number` | 否 | 数据长度，单位 Byte<br />API 支持度: weapp<br />weapp: 非官方文档标注属性 |
+| cookies | `string[]` | 否 | cookies<br />API 支持度: weapp<br />weapp: 非官方文档标注属性 |
+| profile | `TaroGeneral.IAnyObject` | 否 | 网络请求过程中一些调试信息 |
 
 ## 示例代码
 

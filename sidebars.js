@@ -158,17 +158,18 @@ module.exports = {
       "components/slot",
     ],
     "视图容器": [
-      "components/viewContainer/view",
-      "components/viewContainer/scroll-view",
-      "components/viewContainer/swiper",
-      "components/viewContainer/swiper-item",
-      "components/viewContainer/movable-area",
-      "components/viewContainer/movable-view",
       "components/viewContainer/cover-view",
       "components/viewContainer/cover-image",
       "components/viewContainer/match-media",
+      "components/viewContainer/movable-area",
+      "components/viewContainer/movable-view",
+      "components/viewContainer/page-container",
+      "components/viewContainer/root-portal",
+      "components/viewContainer/scroll-view",
       "components/viewContainer/share-element",
-      "components/viewContainer/page-container"
+      "components/viewContainer/swiper",
+      "components/viewContainer/swiper-item",
+      "components/viewContainer/view"
     ],
     "基础内容": [
       "components/base/icon",
