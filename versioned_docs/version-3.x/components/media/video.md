@@ -122,7 +122,7 @@ export default class PageView extends Component {
 | onEnded | `CommonEventFunction` |  | 否 | 当播放到末尾时触发 ended 事件 |
 | onTimeUpdate | `CommonEventFunction<onTimeUpdateEventDetail>` |  | 否 | 播放进度变化时触发, 触发频率 250ms 一次<br /><br />event.detail = {currentTime, duration} |
 | onFullscreenChange | `CommonEventFunction<onFullscreenChangeEventDetail>` |  | 否 | 当视频进入和退出全屏时触发<br /><br />event.detail = {fullScreen, direction}，direction取为 vertical 或 horizontal |
-| onWaiting | `CommonEventFunction<onWaitingEventDetail>` |  | 否 | 当视频进入和退出全屏时触发<br /><br />event.detail = {fullScreen, direction}，direction 取为 vertical 或 horizontal |
+| onWaiting | `CommonEventFunction<onWaitingEventDetail>` |  | 否 | 视频出现缓冲时触发 |
 | onError | `CommonEventFunction` |  | 否 | 视频播放出错时触发 |
 | onProgress | `CommonEventFunction<onProgressEventDetail>` |  | 否 | 加载进度变化时触发，只支持一段加载 |
 | onLoadedMetaData | `CommonEventFunction` |  | 否 | 视频元数据加载完成时触发。event.detail = {width, height, duration} |

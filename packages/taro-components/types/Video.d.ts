@@ -254,13 +254,12 @@ interface VideoProps extends StandardProps {
    */
   onFullscreenChange?: CommonEventFunction<VideoProps.onFullscreenChangeEventDetail>
 
-  /** 当视频进入和退出全屏时触发
+  /** 视频出现缓冲时触发
    *
-   * event.detail = {fullScreen, direction}，direction 取为 vertical 或 horizontal
    * @supported weapp, swan, tt
    * @h5 待定
    */
-  onWaiting?: CommonEventFunction<VideoProps.onWaitingEventDetail>
+   onWaiting?: CommonEventFunction<VideoProps.onWaitingEventDetail>
 
   /** 视频播放出错时触发
    * @supported weapp, h5, swan, alipay, tt, rn
