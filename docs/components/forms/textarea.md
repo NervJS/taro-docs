@@ -80,7 +80,7 @@ export default class PageView extends Component {
 | maxlength | `number` | `140` | 否 | 最大输入长度，设置为 -1 的时候不限制最大长度 |
 | autoFocus | `boolean` | `false` | 否 | 自动聚焦，拉起键盘 |
 | focus | `boolean` | `false` | 否 | 获取焦点 |
-| autoHeight | `boolean` | `false` | 否 | 是否自动增高，设置 autoHeight 时，style.height不生效 |
+| autoHeight | `boolean` | `false` | 否 | 是否自动增高，设置 autoHeight 时, style.height 不生效 |
 | fixed | `boolean` | `false` | 否 | 如果 Textarea 是在一个 `position:fixed` 的区域，需要显示指定属性 fixed 为 true |
 | cursorSpacing | `number` | `0` | 否 | 指定光标与键盘的距离，单位 px 。取 Textarea 距离底部的距离和 cursorSpacing 指定的距离的最小值作为光标与键盘的距离 |
 | cursor | `number` | `-1` | 否 | 指定 focus 时的光标位置 |
@@ -110,7 +110,7 @@ export default class PageView extends Component {
 | TextareaProps.maxlength | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | TextareaProps.autoFocus | ✔️ |  | ✔️ |  |  |
 | TextareaProps.focus | ✔️ | ✔️ |  | ✔️ |  |
-| TextareaProps.autoHeight | ✔️ | ✔️ |  | ✔️ |  |
+| TextareaProps.autoHeight | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | TextareaProps.fixed | ✔️ |  |  |  |  |
 | TextareaProps.cursorSpacing | ✔️ | ✔️ |  |  |  |
 | TextareaProps.cursor | ✔️ | ✔️ |  |  |  |

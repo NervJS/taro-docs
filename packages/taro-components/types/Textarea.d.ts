@@ -47,9 +47,9 @@ interface TextareaProps extends StandardProps, FormItemProps {
    */
   focus?: boolean
 
-  /** 是否自动增高，设置 autoHeight 时，style.height不生效
+  /** 是否自动增高，设置 autoHeight 时, style.height 不生效
    * @default false
-   * @supported weapp, rn, tt
+   * @supported weapp, h5, rn, tt
    */
   autoHeight?: boolean
 
