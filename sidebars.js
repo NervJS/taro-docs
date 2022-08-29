@@ -347,6 +347,7 @@ module.exports = {
       "apis/route/EventChannel",
     ],
     "跳转": [
+      "apis/navigate/openBusinessView",
       "apis/navigate/openEmbeddedMiniProgram",
       "apis/navigate/navigateToMiniProgram",
       "apis/navigate/navigateBackMiniProgram",
