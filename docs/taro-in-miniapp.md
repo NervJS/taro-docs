@@ -326,14 +326,15 @@ config = {
 ## 把 Taro 组件编译为原生自定义组件
 
 :::info
-Taro v3.1.2 开始支持，且暂时只支持 React
+Taro v3.1.2 开始支持使用 React 开发，Taro v3.5.6 开始支持使用 Vue3 开发。
 :::
 
 Taro 支持把组件编译为**原生小程序自定义组件**，供原生项目使用。
 
 ### 示例项目
 
-[blended-taro-component](https://github.com/NervJS/taro/tree/next/examples/blended-taro-component)
+- [blended-taro-component](https://github.com/NervJS/taro/tree/next/examples/blended-taro-component)
+- [blended-taro-component-vue3](https://github.com/NervJS/taro/tree/next/examples/blended-taro-component-vue3)
 
 ### 使用方法
 
@@ -394,7 +395,7 @@ function Picker ({ mode, value, onInitial }) {
 
 ### 小程序自定义组件对象实例
 
-开发者可以通过 `props.$scope` 获取到小程序的自定义组件对象实例。
+React 开发者可以通过 `props.$scope` 获取到小程序的自定义组件对象实例，而 Vue3 开发者可以通过 `props._scope` 获取。
 
 使用某些小程序 API 时可能需要使用此实例，如获取视图层 DOM：
 
