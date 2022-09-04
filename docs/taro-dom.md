@@ -146,12 +146,12 @@ Taro 模拟实现了基于浏览器标准 `window` 对象，它主要实现了�
 | 属性或方法 | 说明 |
 | :------- | :-- |
 | createElement | 返回 `TaroElement` |
-| createElementNS | 没有正真去实现，等同于 `document.createElement`，返回 `TaroElement` |
+| createElementNS | 没有真正去实现，等同于 `document.createElement`，返回 `TaroElement` |
 | createTextNode | 返回 `TaroText` |
 | createComment | 返回 `TaroText` |
 | getElementById | 返回 `TaroElement` |
 | querySelector | 目前只能根据 `id` 寻找元素，等同于 `document.getElementById` |
-| querySelectorAll | 没有正真去实现，返回 `[]` |
+| querySelectorAll | 没有真正去实现，返回 `[]` |
 | defaultView | 返回 [window](taro-dom#window) |
 
 ### navigator
