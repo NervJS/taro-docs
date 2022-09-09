@@ -21,7 +21,7 @@ title: 编译配置详情
 ## designWidth
 
 :::info
-Taro v3.4.3 开始支持传入**函数**，[#11073](https://github.com/NervJS/taro/pull/11073)
+Taro v3.4.13 开始支持传入**函数**，[#11073](https://github.com/NervJS/taro/pull/11073)
 :::
 
 `number | function`

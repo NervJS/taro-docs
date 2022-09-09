@@ -40,7 +40,7 @@ const DEVICE_RATIO = {
 ```
 
 :::info
-Taro v3.4.3 开始支持配置**函数形式**的 `designWidth`，借此开发者可以动态地设置 `designWidth`，详情请查看：[config.designWidth](./config-detail#designwidth)
+Taro v3.4.13 开始支持配置**函数形式**的 `designWidth`，借此开发者可以动态地设置 `designWidth`，详情请查看：[config.designWidth](./config-detail#designwidth)
 :::
 
 ## API
