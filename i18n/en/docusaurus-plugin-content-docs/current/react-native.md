@@ -46,13 +46,18 @@ We will be compatible with the latest version React Native mainly, and keep up w
 | 0.66.x | >= 3.3.10 | [0.66.0](https://github.com/NervJS/taro-native-shell/tree/0.66.0) |
 | 0.67.x | >= 3.3.10, unimodules | [0.67.0](https://github.com/NervJS/taro-native-shell/tree/0.67.0) |
 | 0.67.x | >= 3.3.10, expo | [0.67.0-expo](https://github.com/NervJS/taro-native-shell/tree/0.67.0-expo) |
-| 0.68.x | >= 3.5.0 | [0.68.0](https://github.com/NervJS/taro-native-shell/tree/0.68.0) |
+| 0.68.x | >= 3.5.0, but after version 3.5.6, you need to use expo-av@~11.2.3 react@17, refer to [Discussion](https://github.com/NervJS/taro/discussions/12133) | [0.68.0](https://github.com/NervJS/taro-native-shell/tree/0.68.0) |
+| 0.69.x | >= 3.5.6 | [0.69.0](https://github.com/NervJS/taro-native-shell/tree/0.69.0) |
 
 ## Integration mode
 
 Initialize with the `taro init` command, selecting the `react-native` template. **After completion execute `yarn upgradePeerdeps` for dependency initialization**.
 
 Check out the [demo video](https://wos2.58cdn.com.cn/DeFazYxWvDti/frsupload/6820cfd5e0346eac050e7c3f0df78f65.mp4).
+
+> If you need to initialize a historical version of the React-Native project, you can find the branch for the corresponding version in the [taro-project-templates](https://github.com/NervJS/taro-project-templates) repository.
+> 
+> Use the `taro init --template-source github:NervJS/taro-project-templates#v3.5-RN-0.68` command, to initialize.
 
 ### Common commands
 

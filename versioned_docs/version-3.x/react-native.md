@@ -46,13 +46,18 @@ Taro 开发 React Native APP，提供了两种模式：
 | 0.66.x | >= 3.3.10 | [0.66.0](https://github.com/NervJS/taro-native-shell/tree/0.66.0) |
 | 0.67.x | >= 3.3.10, unimodules | [0.67.0](https://github.com/NervJS/taro-native-shell/tree/0.67.0) |
 | 0.67.x | >= 3.3.10, expo | [0.67.0-expo](https://github.com/NervJS/taro-native-shell/tree/0.67.0-expo) |
-| 0.68.x | >= 3.5.0 | [0.68.0](https://github.com/NervJS/taro-native-shell/tree/0.68.0) |
+| 0.68.x | >= 3.5.0，但 3.5.6 版本以后，需要使用 expo-av@~11.2.3 react@17，参考[Discussion](https://github.com/NervJS/taro/discussions/12133) | [0.68.0](https://github.com/NervJS/taro-native-shell/tree/0.68.0) |
+| 0.69.x | >= 3.5.6 | [0.69.0](https://github.com/NervJS/taro-native-shell/tree/0.69.0) |
 
 ## 集成模式
 
 使用 `taro init` 命令进行初始化，选择 `react-native` 模板。**完成后执行 `yarn upgradePeerdeps` 进行依赖初始化**。
 
 查看[演示视频](https://wos2.58cdn.com.cn/DeFazYxWvDti/frsupload/6820cfd5e0346eac050e7c3f0df78f65.mp4)。
+
+> 如果需要初始化历史版本的 React-Native 项目，可在 [taro-project-templates](https://github.com/NervJS/taro-project-templates) 仓库中，找到对应版本的分支。
+> 
+> 使用 `taro init --template-source github:NervJS/taro-project-templates#v3.5-RN-0.68` 命令，进行初始化。
 
 ### 常用命令
 
