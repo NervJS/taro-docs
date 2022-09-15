@@ -42,7 +42,7 @@ class App extends Component {
         <Text>可以自动聚焦的 input</Text>
           <Input type='text' placeholder='将会获取焦点' focus/>
           <Text>控制最大输入长度的 input</Text>
-          <Input type='text' placeholder='最大输入长度为 10' maxlength='10'/>
+          <Input type='text' placeholder='最大输入长度为 10' maxLength='10'/>
           <Text>数字输入的 input</Text>
           <Input type='number' placeholder='这是一个数字输入框'/>
           <Text>密码输入的 input</Text>
@@ -67,7 +67,7 @@ class App extends Component {
     <text>可以自动聚焦的 input</text>
     <input type="text" placeholder="将会获取焦点" :focus="true" />
     <text>控制最大输入长度的 input</text>
-    <input type="text" placeholder="最大输入长度为 10" maxlength="10"/>
+    <input type="text" placeholder="最大输入长度为 10" maxLength="10"/>
     <text>数字输入的 input</text>
     <input type="number" placeholder="这是一个数字输入框"/>
     <text>密码输入的 input</text>
@@ -117,50 +117,56 @@ class App extends Component {
 | randomNumber | `boolean` | `false` | 否 | 当 type 为 number, digit, idcard 数字键盘是否随机排列 |
 | controlled | `boolean` | `false` | 否 | 是否为受控组件 |
 | onInput | `CommonEventFunction<inputEventDetail>` |  | 否 | 当键盘输入时，触发input事件，event.detail = {value, cursor, keyCode}，处理函数可以直接 return 一个字符串，将替换输入框的内容。 |
-| onFocus | `CommonEventFunction<inputForceEventDetail>` |  | 否 | 输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度 |
-| onBlur | `CommonEventFunction<inputValueEventDetail>` |  | 否 | 输入框失去焦点时触发<br /><br />event.detail = {value: value} |
-| onConfirm | `CommonEventFunction<inputValueEventDetail>` |  | 否 | 点击完成按钮时触发<br /><br />event.detail = {value: value} |
-| onKeyboardHeightChange | `CommonEventFunction<onKeyboardHeightChangeEventDetail>` |  | 否 | 键盘高度发生变化的时候触发此事件<br /><br />event.detail = {height: height, duration: duration} |
+| onFocus | `CommonEventFunction<inputForceEventDetail>` |  | 否 | 输入框聚焦时触发 |
+| onBlur | `CommonEventFunction<inputValueEventDetail>` |  | 否 | 输入框失去焦点时触发 |
+| onConfirm | `CommonEventFunction<inputValueEventDetail>` |  | 否 | 点击完成按钮时触发 |
+| onKeyboardHeightChange | `CommonEventFunction<onKeyboardHeightChangeEventDetail>` |  | 否 | 键盘高度发生变化的时候触发此事件 |
 | nativeProps | `Record<string, unknown>` |  | 否 | 用于透传 `WebComponents` 上的属性到内部 H5 标签上 |
+| name | `string` |  | 否 | 组件名字，用于表单提交获取数据。 |
+| alwaysSystem | `string` |  | 否 | 是否强制使用系统键盘和 Web-view 创建的 input 元素。为 true 时，confirm-type、confirm-hold 可能失效。<br />版本要求：基础库 2.7.3 及以上 |
+| ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
 
 ### API 支持度
 
-| API | 微信小程序 | 支付宝小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| InputProps.value | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
-| InputProps.type | ✔️ |  | ✔️ | ✔️ | ✔️(部分支持) |  |
-| InputProps.password | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
-| InputProps.placeholder | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
-| InputProps.placeholderStyle | ✔️ |  | ✔️ |  | ✔️ |  |
-| InputProps.placeholderClass | ✔️ |  | ✔️ |  |  |  |
-| InputProps.placeholderTextColor |  |  |  |  | ✔️ |  |
-| InputProps.disabled | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
-| InputProps.maxlength | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
-| InputProps.cursorSpacing | ✔️ |  | ✔️ |  |  |  |
-| InputProps.autoFocus | ✔️ |  |  |  |  |  |
-| InputProps.focus | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
-| InputProps.confirmType | ✔️ |  | ✔️ |  | ✔️ |  |
-| InputProps.confirmHold | ✔️ |  |  |  |  |  |
-| InputProps.cursor | ✔️ |  | ✔️ |  | ✔️ |  |
-| InputProps.selectionStart | ✔️ |  | ✔️ |  | ✔️ |  |
-| InputProps.selectionEnd | ✔️ |  | ✔️ |  | ✔️ |  |
-| InputProps.adjustPosition | ✔️ |  | ✔️ |  |  |  |
-| InputProps.holdKeyboard | ✔️ |  |  |  |  |  |
-| InputProps.alwaysEmbed | ✔️ |  |  |  |  |  |
-| InputProps.safePasswordCertPath | ✔️ |  |  |  |  |  |
-| InputProps.safePasswordLength | ✔️ |  |  |  |  |  |
-| InputProps.safePasswordTimeStamp | ✔️ |  |  |  |  |  |
-| InputProps.safePasswordNonce | ✔️ |  |  |  |  |  |
-| InputProps.safePasswordSalt | ✔️ |  |  |  |  |  |
-| InputProps.safePasswordCustomHash | ✔️ |  |  |  |  |  |
-| InputProps.randomNumber |  | ✔️ |  |  |  |  |
-| InputProps.controlled |  | ✔️ |  |  |  |  |
-| InputProps.onInput | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
-| InputProps.onFocus | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
-| InputProps.onBlur | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
-| InputProps.onConfirm | ✔️ |  | ✔️ | (借用[Form 组件](./form)的`onSubmit`事件来替代) | ✔️ |  |
-| InputProps.onKeyboardHeightChange | ✔️ |  |  |  |  |  |
-| InputProps.nativeProps |  |  |  | ✔️ |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| InputProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| InputProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(部分支持) |  |
+| InputProps.password | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| InputProps.placeholder | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| InputProps.placeholderStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| InputProps.placeholderClass | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
+| InputProps.placeholderTextColor |  |  |  |  |  |  |  | ✔️ |  |
+| InputProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| InputProps.maxlength | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| InputProps.cursorSpacing | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
+| InputProps.autoFocus | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |
+| InputProps.focus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| InputProps.confirmType | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| InputProps.confirmHold | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
+| InputProps.cursor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| InputProps.selectionStart | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| InputProps.selectionEnd | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| InputProps.adjustPosition | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
+| InputProps.holdKeyboard | ✔️ |  |  |  |  |  |  |  |  |
+| InputProps.alwaysEmbed | ✔️ |  |  |  |  |  |  |  |  |
+| InputProps.safePasswordCertPath | ✔️ |  |  |  |  |  |  |  |  |
+| InputProps.safePasswordLength | ✔️ |  |  |  |  |  |  |  |  |
+| InputProps.safePasswordTimeStamp | ✔️ |  |  |  |  |  |  |  |  |
+| InputProps.safePasswordNonce | ✔️ |  |  |  |  |  |  |  |  |
+| InputProps.safePasswordSalt | ✔️ |  |  |  |  |  |  |  |  |
+| InputProps.safePasswordCustomHash | ✔️ |  |  |  |  |  |  |  |  |
+| InputProps.randomNumber |  |  | ✔️ |  |  |  |  |  |  |
+| InputProps.controlled |  |  | ✔️ |  |  |  |  |  |  |
+| InputProps.onInput | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| InputProps.onFocus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| InputProps.onBlur | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| InputProps.onConfirm | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(借用[Form 组件](./form)的`onSubmit`事件来替代) | ✔️ |  |
+| InputProps.onKeyboardHeightChange | ✔️ |  |  |  | ✔️ |  |  |  |  |
+| InputProps.nativeProps |  |  |  |  |  |  | ✔️ |  |  |
+| InputProps.name |  |  | ✔️ |  |  |  |  |  |  |
+| InputProps.alwaysSystem |  |  | ✔️ |  |  |  |  |  |  |
+| InputProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
 
 ### inputEventDetail
 

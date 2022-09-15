@@ -75,34 +75,52 @@ class App extends Components {
 | animation | `boolean` | `true` | 否 | 是否使用动画 |
 | onChange | `CommonEventFunction<onChangeEventDetail>` |  | 否 | 拖动过程中触发的事件 |
 | onScale | `CommonEventFunction<onScaleEventDetail>` |  | 否 | 缩放过程中触发的事件 |
-| onHTouchMove | `TouchEventFunction` |  | 否 | 初次手指触摸后移动为横向的移动，如果 catch 此事件，则意味着 touchmove 事件也被 catch |
-| onVTouchMove | `TouchEventFunction` |  | 否 | 初次手指触摸后移动为纵向的移动，如果 catch 此事件，则意味着 touchmove 事件也被 catch |
 | onDragStart | `CommonEventFunction` |  | 否 | 开始拖动时触发 |
 | onDragEnd | `CommonEventFunction` |  | 否 | 拖动结束时触发 |
+| catchTouchmove | `CommonEventFunction` |  | 否 | 初次手指触摸后移动为横向的移动时触发，如果 catch 此事件，则意味着 touchmove 事件也被catch |
+| onTouchStart | `CommonEventFunction` |  | 否 | 触摸动作开始，事件会向父节点传递。<br />版本要求： 基础库 1.11.5 及以上 |
+| catchTouchStart | `CommonEventFunction` |  | 否 | 触摸动作开始，事件仅作用于组件，不向父节点传递。<br />版本要求： 基础库 1.11.5 及以上 |
+| onTouchMove | `CommonEventFunction` |  | 否 | 触摸移动事件，事件会向父节点传递。<br />版本要求： 基础库 1.11.5 及以上 |
+| onHTouchMove | `TouchEventFunction` |  | 否 | 初次手指触摸后移动为横向的移动，如果 catch 此事件，则意味着 touchmove 事件也被 catch |
+| onVTouchMove | `TouchEventFunction` |  | 否 | 初次手指触摸后移动为纵向的移动，如果 catch 此事件，则意味着 touchmove 事件也被 catch |
+| catchTouchMove | `CommonEventFunction` |  | 否 | 触摸移动事件，事件仅作用于组件，不向父节点传递。<br />版本要求： 基础库 1.11.5 及以上 |
+| onTouchEnd | `CommonEventFunction` |  | 否 | 触摸动作结束，事件会向父节点传递。 |
+| catchTouchEnd | `CommonEventFunction` |  | 否 | 触摸动作结束，事件仅作用于组件，不向父节点传递。 |
+| onTouchCancel | `CommonEventFunction` |  | 否 | 触摸动作被打断，如来电提醒、弹窗。 |
+| onChangeEnd | `CommonEventFunction<onChangeEventDetail>` |  | 否 | 拖动结束触发的事件 |
 
 ### API 支持度
 
-| API | 微信小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| MovableViewProps.direction | ✔️ | ✔️ |  | ✔️ |  |
-| MovableViewProps.inertia | ✔️ | ✔️ |  |  |  |
-| MovableViewProps.outOfBounds | ✔️ | ✔️ |  |  |  |
-| MovableViewProps.x | ✔️ | ✔️ |  | ✔️ |  |
-| MovableViewProps.y | ✔️ | ✔️ |  | ✔️ |  |
-| MovableViewProps.damping | ✔️ | ✔️ |  |  |  |
-| MovableViewProps.friction | ✔️ | ✔️ |  |  |  |
-| MovableViewProps.disabled | ✔️ | ✔️ |  | ✔️ |  |
-| MovableViewProps.scale | ✔️ | ✔️ |  |  |  |
-| MovableViewProps.scaleMin | ✔️ | ✔️ |  |  |  |
-| MovableViewProps.scaleMax | ✔️ | ✔️ |  |  |  |
-| MovableViewProps.scaleValue | ✔️ | ✔️ |  |  |  |
-| MovableViewProps.animation | ✔️ | ✔️ |  |  |  |
-| MovableViewProps.onChange | ✔️ | ✔️ |  |  |  |
-| MovableViewProps.onScale | ✔️ | ✔️ |  |  |  |
-| MovableViewProps.onHTouchMove | ✔️ | ✔️ |  |  |  |
-| MovableViewProps.onVTouchMove | ✔️ | ✔️ |  |  |  |
-| MovableViewProps.onDragStart |  |  |  | ✔️ |  |
-| MovableViewProps.onDragEnd |  |  |  | ✔️ |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| MovableViewProps.direction | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| MovableViewProps.inertia | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MovableViewProps.outOfBounds | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MovableViewProps.x | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| MovableViewProps.y | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| MovableViewProps.damping | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MovableViewProps.friction | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MovableViewProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| MovableViewProps.scale | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MovableViewProps.scaleMin | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MovableViewProps.scaleMax | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MovableViewProps.scaleValue | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MovableViewProps.animation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MovableViewProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MovableViewProps.onScale | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MovableViewProps.onDragStart |  |  |  |  |  |  | ✔️ |  |
+| MovableViewProps.onDragEnd |  |  |  |  |  |  | ✔️ |  |
+| MovableViewProps.catchTouchmove | ✔️ |  |  | ✔️ |  |  |  |  |
+| MovableViewProps.onTouchStart |  |  | ✔️ |  |  |  |  |  |
+| MovableViewProps.catchTouchStart |  |  | ✔️ |  |  |  |  |  |
+| MovableViewProps.onTouchMove |  |  | ✔️ |  |  |  |  |  |
+| MovableViewProps.onHTouchMove |  | ✔️ |  |  |  |  |  |  |
+| MovableViewProps.onVTouchMove |  | ✔️ |  |  |  |  |  |  |
+| MovableViewProps.catchTouchMove |  |  | ✔️ |  |  |  |  |  |
+| MovableViewProps.onTouchEnd |  |  | ✔️ |  |  |  |  |  |
+| MovableViewProps.catchTouchEnd |  |  | ✔️ |  |  |  |  |  |
+| MovableViewProps.onTouchCancel |  |  | ✔️ |  |  |  |  |  |
+| MovableViewProps.onChangeEnd |  |  | ✔️ |  |  |  |  |  |
 
 ### TChangeSource
 

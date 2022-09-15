@@ -72,21 +72,35 @@ class App extends Components {
 | onLongTap | `CommonEventFunction` |  | 否 | 手指长按 500ms 之后触发，触发了长按事件后进行移动不会触发屏幕的滚动 |
 | onError | `CommonEventFunction<onErrorEventDetail>` |  | 否 | 当发生错误时触发 error 事件，detail = {errMsg: 'something wrong'} |
 | nativeProps | `Record<string, unknown>` |  | 否 | 用于透传 `WebComponents` 上的属性到内部 H5 标签上 |
+| id | `string` |  | 否 | 组件唯一标识符。<br />注意：同一页面中的 id 不可重复。 |
+| style | `string` |  | 否 | - |
+| class | `string` |  | 否 | - |
+| width | `string` |  | 否 |  |
+| height | `string` |  | 否 |  |
+| onTap | `CommonEventFunction` |  | 否 | 点击。 |
+| onReady | `CommonEventFunction` |  | 否 | canvas 组件初始化成功触发。<br />版本要求：基础库 2.7.0 及以上 |
 
 ### API 支持度
 
-| API | 微信小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: |
-| CanvasProps.type | ✔️ |  |  |  |
-| CanvasProps.canvasId | ✔️ |  |  |  |
-| CanvasProps.disableScroll | ✔️ |  |  |  |
-| CanvasProps.onTouchStart | ✔️ |  |  |  |
-| CanvasProps.onTouchMove | ✔️ |  |  |  |
-| CanvasProps.onTouchEnd | ✔️ |  |  |  |
-| CanvasProps.onTouchCancel | ✔️ |  |  |  |
-| CanvasProps.onLongTap | ✔️ |  |  |  |
-| CanvasProps.onError | ✔️ |  |  |  |
-| CanvasProps.nativeProps |  | ✔️ |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| CanvasProps.type | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |  |  |
+| CanvasProps.canvasId | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
+| CanvasProps.disableScroll | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
+| CanvasProps.onTouchStart | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| CanvasProps.onTouchMove | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| CanvasProps.onTouchEnd | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| CanvasProps.onTouchCancel | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| CanvasProps.onLongTap | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
+| CanvasProps.onError | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |  |  |
+| CanvasProps.nativeProps |  |  |  |  |  |  | ✔️ |  |  |
+| CanvasProps.id |  |  | ✔️ |  |  |  |  |  |  |
+| CanvasProps.style |  |  | ✔️ |  |  |  |  |  |  |
+| CanvasProps.class |  |  | ✔️ |  |  |  |  |  |  |
+| CanvasProps.width |  |  | ✔️ |  |  |  |  |  |  |
+| CanvasProps.height |  |  | ✔️ |  |  |  |  |  |  |
+| CanvasProps.onTap |  |  | ✔️ |  |  |  |  |  |  |
+| CanvasProps.onReady |  |  | ✔️ |  |  |  |  |  |  |
 
 ### onErrorEventDetail
 

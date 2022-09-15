@@ -64,17 +64,25 @@ class App extends Component {
 | defaultText | `string` |  | 否 | 数据为空时的默认文案 |
 | defaultAvatar | `string` |  | 否 | 用户头像为空时的默认图片，支持相对路径和网络图片路径 |
 | onError | `CommonEventFunction` |  | 否 | 群名称或用户信息为空时触发 |
+| useEmptyValue | `string` |  | 否 | 当数据为空且未设置默认值时，是否显示官方默认值 |
+| shareTicket | `string` |  | 否 | 当 type=groupCloudStorage 时有效，群分享对应的 shareTicket |
+| keyList | `string` |  | 否 | 当 type=*CloudStorage 时有效，指定要拉取的 key 列表 |
+| componentData | `string` |  | 否 | 当 type=*CloudStorage 时有效，从主域透传给开放数据域的数据，会自动注入到自定义开放数据域组件的 properties 中 |
 
 ### API 支持度
 
-| API | 微信小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| OpenDataProps.type | ✔️ | ✔️ |  |  |  |
-| OpenDataProps.openGid | ✔️ |  |  |  |  |
-| OpenDataProps.lang | ✔️ |  |  |  |  |
-| OpenDataProps.defaultText | ✔️ | ✔️ |  |  |  |
-| OpenDataProps.defaultAvatar | ✔️ | ✔️ |  |  |  |
-| OpenDataProps.onError | ✔️ | ✔️ |  |  |  |
+| API | 微信小程序 | 百度小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| OpenDataProps.type | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| OpenDataProps.openGid | ✔️ |  |  |  |  |  |  |
+| OpenDataProps.lang | ✔️ |  |  | ✔️ |  |  |  |
+| OpenDataProps.defaultText | ✔️ |  | ✔️ |  |  |  |  |
+| OpenDataProps.defaultAvatar | ✔️ |  | ✔️ |  |  |  |  |
+| OpenDataProps.onError | ✔️ |  | ✔️ | ✔️ |  |  |  |
+| OpenDataProps.useEmptyValue |  |  | ✔️ |  |  |  |  |
+| OpenDataProps.shareTicket |  |  |  | ✔️ |  |  |  |
+| OpenDataProps.keyList |  |  |  | ✔️ |  |  |  |
+| OpenDataProps.componentData |  |  |  | ✔️ |  |  |  |
 
 ### Type
 

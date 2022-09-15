@@ -185,13 +185,17 @@ export default {
 | disabled | `boolean` | `false` | 否 | 是否禁用 |
 | color | `string` | `"#09BB07"` | 否 | Radio 的颜色，同 css 的 color |
 | nativeProps | `Record<string, unknown>` |  | 否 | 用于透传 `WebComponents` 上的属性到内部 H5 标签上 |
+| ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
+| onChange | `CommonEventFunction<{ value?: string; }>` |  | 否 | <radio-group/> 中的选中项发生变化时触发 change 事件，event.detail = {value: 选中项radio的value} |
 
 ### API 支持度
 
-| API | 微信小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| RadioProps.value | ✔️ | ✔️ |  | ✔️ |  |
-| RadioProps.checked | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| RadioProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| RadioProps.color | ✔️ | ✔️ |  | ✔️ |  |
-| RadioProps.nativeProps |  |  | ✔️ |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| RadioProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |
+| RadioProps.checked | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
+| RadioProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
+| RadioProps.color | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |
+| RadioProps.nativeProps |  |  |  |  |  |  | ✔️ |  |  |
+| RadioProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
+| RadioProps.onChange |  |  |  |  |  | ✔️ |  |  |  |

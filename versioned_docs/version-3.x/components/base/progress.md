@@ -84,20 +84,22 @@ export default class PageView extends Component {
 | activeMode | "backwards" or "forwards" | `backwards` | 否 | backwards: 动画从头播<br /><br />forwards: 动画从上次结束点接着播 |
 | duration | `number` | `30` | 否 | 进度增加 1% 所需毫秒数 |
 | onActiveEnd | `CommonEventFunction` |  | 否 | 动画完成事件 |
+| ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| ProgressProps.percent | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ProgressProps.showInfo | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
-| ProgressProps.borderRadius | ✔️ |  |  |  | ✔️ |  |  |
-| ProgressProps.fontSize | ✔️ |  |  |  | ✔️ |  |  |
-| ProgressProps.strokeWidth | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ProgressProps.color | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| ProgressProps.activeColor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ProgressProps.backgroundColor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ProgressProps.active | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ProgressProps.activeMode | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
-| ProgressProps.duration | ✔️ |  |  |  | ✔️ |  |  |
-| ProgressProps.onActiveEnd | ✔️ |  |  |  | ✔️ |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| ProgressProps.percent | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ProgressProps.showInfo | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ProgressProps.borderRadius | ✔️ | ✔️ |  |  | ✔️ | ✔️ | ✔️ |  |  |
+| ProgressProps.fontSize | ✔️ | ✔️ |  |  | ✔️ | ✔️ | ✔️ |  |  |
+| ProgressProps.strokeWidth | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ProgressProps.color | ✔️ | ✔️ |  |  | ✔️ | ✔️ | ✔️ |  |  |
+| ProgressProps.activeColor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ProgressProps.backgroundColor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ProgressProps.active | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ProgressProps.activeMode | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ProgressProps.duration | ✔️ | ✔️ |  |  |  | ✔️ | ✔️ |  |  |
+| ProgressProps.onActiveEnd | ✔️ |  |  |  | ✔️ | ✔️ | ✔️ |  |  |
+| ProgressProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |

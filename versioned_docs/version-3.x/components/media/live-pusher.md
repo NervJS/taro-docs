@@ -6,7 +6,7 @@ sidebar_label: LivePusher
 实时音视频录制。需要用户授权 scope.camera、scope.record
 需要先通过类目审核，再在小程序管理后台，「开发」-「接口设置」中自助开通该组件权限。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/live-pusher.html)
 
@@ -81,7 +81,7 @@ class App extends Components {
 | zoom | `boolean` | `false` | 否 | 调整焦距 |
 | devicePosition | `string` | `"front"` | 否 | 前置或后置，值为front, back |
 | backgroundMute | `boolean` | `false` | 否 | 进入后台时是否静音 |
-| mirror | `boolean` | `false` | 否 | 设置推流画面是否镜像，产生的效果在 LivePlayer 反应到<br />**不推荐使用** |
+| mirror | `boolean` | `false` | 否 | 设置推流画面是否镜像，产生的效果在 LivePlayer 反应到 |
 | remoteMirror | `boolean` | `false` | 否 | 设置推流画面是否镜像，产生的效果在 LivePlayer 反应到<br /><br />**Note:** 同 mirror 属性，后续 mirror 将废弃 |
 | localMirror | `keyof LocalMirror` | `"auto"` | 否 | 控制本地预览画面是否镜像 |
 | audioReverbType | `keyof AudioReverbType` | `0` | 否 | 音频混响类型 |
@@ -94,54 +94,60 @@ class App extends Components {
 | beautyStyle | `keyof BeautyStyleType` | `smooth` | 否 | 设置美颜类型 |
 | filter | `keyof FilterType` | `standard` | 否 | 设置色彩滤镜 |
 | onStateChange | `CommonEventFunction<onStateChangeEventDetail>` |  | 否 | 状态变化事件，detail = {code} |
-| onNetstatus | `CommonEventFunction<onNetstatusEventDetail>` |  | 否 | 网络状态通知，detail = {info} |
 | onError | `CommonEventFunction<onErrorEventDetail>` |  | 否 | 渲染错误事件，detail = {errMsg, errCode} |
-| onBgmStart | `CommonEventFunction` |  | 否 | 背景音开始播放时触发 |
 | onBgmProgress | `CommonEventFunction<onBgmProgressEventDetail>` |  | 否 | 背景音进度变化时触发，detail = {progress, duration} |
 | onBgmComplete | `CommonEventFunction` |  | 否 | 背景音播放完成时触发 |
 | onAudioVolumeNotify | `CommonEventFunction` |  | 否 | 返回麦克风采集的音量大小 |
+| pictureInPictureMode | string or any[] |  | 否 | 设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]） |
+| onNetStatus | `CommonEventFunction` |  | 否 | 网络状态通知，detail = {info} |
+| onEnterPictureInPicture | `string` |  | 否 | 进入小窗 |
+| onLeavePictureInPicture | `string` |  | 否 | 退出小窗 |
+| onBgmStart | `CommonEventFunction` |  | 否 | 背景音开始播放时触发 |
 
 ### API 支持度
 
-| API | 微信小程序 | H5 | React Native |
-| :---: | :---: | :---: | :---: |
-| LivePusherProps.url | ✔️ |  |  |
-| LivePusherProps.mode | ✔️ |  |  |
-| LivePusherProps.autopush | ✔️ |  |  |
-| LivePusherProps.muted | ✔️ |  |  |
-| LivePusherProps.enableCamera | ✔️ |  |  |
-| LivePusherProps.autoFocus | ✔️ |  |  |
-| LivePusherProps.orientation | ✔️ |  |  |
-| LivePusherProps.beauty | ✔️ |  |  |
-| LivePusherProps.whiteness | ✔️ |  |  |
-| LivePusherProps.aspect | ✔️ |  |  |
-| LivePusherProps.minBitrate | ✔️ |  |  |
-| LivePusherProps.maxBitrate | ✔️ |  |  |
-| LivePusherProps.audioQuality | ✔️ |  |  |
-| LivePusherProps.waitingImage | ✔️ |  |  |
-| LivePusherProps.waitingImageHash | ✔️ |  |  |
-| LivePusherProps.zoom | ✔️ |  |  |
-| LivePusherProps.devicePosition | ✔️ |  |  |
-| LivePusherProps.backgroundMute | ✔️ |  |  |
-| LivePusherProps.mirror | ✔️ |  |  |
-| LivePusherProps.remoteMirror | ✔️ |  |  |
-| LivePusherProps.localMirror | ✔️ |  |  |
-| LivePusherProps.audioReverbType | ✔️ |  |  |
-| LivePusherProps.enableMic | ✔️ |  |  |
-| LivePusherProps.enableAgc | ✔️ |  |  |
-| LivePusherProps.enableAns | ✔️ |  |  |
-| LivePusherProps.audioVolumeType | ✔️ |  |  |
-| LivePusherProps.videoWidth | ✔️ |  |  |
-| LivePusherProps.videoHeight | ✔️ |  |  |
-| LivePusherProps.beautyStyle | ✔️ |  |  |
-| LivePusherProps.filter | ✔️ |  |  |
-| LivePusherProps.onStateChange | ✔️ |  |  |
-| LivePusherProps.onNetstatus | ✔️ |  |  |
-| LivePusherProps.onError | ✔️ |  |  |
-| LivePusherProps.onBgmStart | ✔️ |  |  |
-| LivePusherProps.onBgmProgress | ✔️ |  |  |
-| LivePusherProps.onBgmComplete | ✔️ |  |  |
-| LivePusherProps.onAudioVolumeNotify | ✔️ |  |  |
+| API | 微信小程序 | QQ 小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| LivePusherProps.url | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.mode | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.autopush | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.muted | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.enableCamera | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.autoFocus | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.orientation | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.beauty | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.whiteness | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.aspect | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.minBitrate | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.maxBitrate | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.audioQuality | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.waitingImage | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.waitingImageHash | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.zoom | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.devicePosition | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.backgroundMute | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.mirror | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.remoteMirror | ✔️ |  |  |  |  |
+| LivePusherProps.localMirror | ✔️ |  |  |  |  |
+| LivePusherProps.audioReverbType | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.enableMic | ✔️ |  |  |  |  |
+| LivePusherProps.enableAgc | ✔️ |  |  |  |  |
+| LivePusherProps.enableAns | ✔️ |  |  |  |  |
+| LivePusherProps.audioVolumeType | ✔️ |  |  |  |  |
+| LivePusherProps.videoWidth | ✔️ |  |  |  |  |
+| LivePusherProps.videoHeight | ✔️ |  |  |  |  |
+| LivePusherProps.beautyStyle | ✔️ |  |  |  |  |
+| LivePusherProps.filter | ✔️ |  |  |  |  |
+| LivePusherProps.onStateChange | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.onError | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.onBgmProgress | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.onBgmComplete | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.onAudioVolumeNotify | ✔️ |  |  |  |  |
+| LivePusherProps.pictureInPictureMode | ✔️ |  |  |  |  |
+| LivePusherProps.onNetStatus | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.onEnterPictureInPicture | ✔️ |  |  |  |  |
+| LivePusherProps.onLeavePictureInPicture | ✔️ |  |  |  |  |
+| LivePusherProps.onBgmStart | ✔️ | ✔️ |  |  |  |
 
 ### Orientation
 

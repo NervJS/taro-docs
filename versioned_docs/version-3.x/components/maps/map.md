@@ -109,11 +109,11 @@ export default {
 | --- | --- | :---: | :---: | --- |
 | longitude | `number` |  | 是 | 中心经度 |
 | latitude | `number` |  | 是 | 中心纬度 |
-| scale | `number` | `16` | 否 | 缩放级别，取值范围为3-20 |
-| minScale | `number` | `3` | 否 | 最小缩放级别3-20 |
-| maxScale | `number` | `20` | 否 | 最大缩放级别3-20 |
+| scale | `number` | `16` | 否 | 缩放级别，取值范围为 3-20 |
+| minScale | `number` | `3` | 否 | 最小缩放级别 3-20 |
+| maxScale | `number` | `20` | 否 | 最大缩放级别 3-20 |
 | markers | `marker[]` |  | 否 | 标记点 |
-| covers | `any[]` |  | 否 | 标记点<br />不推荐: 即将移除，请使用 markers |
+| covers | `any[]` |  | 否 | 标记点 |
 | polyline | `polyline[]` |  | 否 | 路线 |
 | circles | `circle[]` |  | 否 | 圆 |
 | controls | `control[]` |  | 否 | 控件（即将废弃，建议使用 cover-view 代替）<br />**不推荐使用** |
@@ -124,7 +124,6 @@ export default {
 | layerStyle | `number` | `1` | 否 | 个性化地图配置的 style，不支持动态修改 |
 | rotate | `number` | `0` | 否 | 旋转角度，范围 0 ~ 360, 地图正北和设备 y 轴角度的夹角 |
 | skew | `number` | `0` | 否 | 倾斜角度，范围 0 ~ 40 , 关于 z 轴的倾角 |
-| enable3D | `boolean` | `false` | 否 | 展示 3D 楼块 |
 | showCompass | `boolean` | `false` | 否 | 显示指南针 |
 | showScale | `boolean` | `false` | 否 | 显示比例尺 |
 | enableOverlooking | `boolean` | `false` | 否 | 开启俯视 |
@@ -145,51 +144,76 @@ export default {
 | includePadding | { left: string or number; right: string or number; top: string or number; bottom: string or number; } |  | 否 | 视野在地图 padding 范围内展示 |
 | groundOverlays | `any[]` |  | 否 | 覆盖物，自定义贴图 |
 | tileOverlay | `any[]` |  | 否 | 覆盖物，网格贴图 |
-| optimize | `boolean` |  | 否 | 开启 optimize 模式后，无需再监听 onRegionChange 来获取并设置新的 scale 值以保证地图不会再回到原来的缩放比例。 |
+| enablePoi | `string` |  | 否 | 是否展示 POI 点 |
+| enableBuilding | `string` |  | 否 | 是否展示建筑物 |
+| onCallOutTap | `CommonEventFunction` |  | 否 | 点击标记点对应的气泡时触发e.detail = {markerId} |
+| onAnchorPointTap | `CommonEventFunction` |  | 否 | 点击定位标时触发，e.detail = {longitude, latitude} |
+| style | `string` |  | 否 | 内联样式。 |
+| class | `string` |  | 否 | 样式名。 |
+| polygon | `string` |  | 否 | 覆盖物，多边形。<br /><br />版本要求：基础库 1.10.0 及以上 |
+| customMapStyle | `string` |  | 否 | 设置地图样式。<br /><br />default：默认样式<br />light：精简样式<br /><br />版本要求：基础库 1.20.0 及以上 |
+| panels | `string` |  | 否 | 基于 map 高级定制渲染，设置覆盖在地图上的 view。<br /><br />版本要求：基础库 1.23.0 及以上 |
+| onPanelTap | `CommonEventFunction` |  | 否 | 点击 panel 时触发。<br /><br />{<br /><br />  panelId,<br /><br />  layoutId,<br /><br />}<br /><br />版本要求：基础库 1.23.0 及以上 |
+| onInitComplete | `CommonEventFunction` |  | 否 | 地图初始化完成即将开始渲染第一帧时触发。<br /><br />版本要求：基础库 2.7.2 及以上 |
+| theme | `string` |  | 否 | 否 |
+| optimize | `string` |  | 否 | 内联样式。 |
+| enable3D | `string` | `false` | 否 | 展示3D楼块 |
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MapProps.longitude | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.latitude | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.scale | ✔️ | ✔️(取值范围为4-21) | ✔️(取值范围为5-18) | ✔️ |  |  |  |
-| MapProps.minScale | ✔️ |  |  | ✔️ |  |  |  |
-| MapProps.maxScale | ✔️ |  |  | ✔️ |  |  |  |
-| MapProps.markers | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.covers | ✔️ |  |  |  |  |  |  |
-| MapProps.polyline | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.circles | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.controls | ✔️ | ✔️ | ✔️ |  |  |  |  |
-| MapProps.includePoints | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.showLocation | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.polygons | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.subkey | ✔️ |  |  |  |  |  |  |
-| MapProps.layerStyle | ✔️ |  |  |  |  |  |  |
-| MapProps.rotate | ✔️ |  |  | ✔️ |  |  |  |
-| MapProps.skew | ✔️ |  |  | ✔️ |  |  |  |
-| MapProps.enable3D | ✔️ | ✔️ |  | ✔️ |  |  |  |
-| MapProps.showCompass | ✔️ | ✔️ |  | ✔️ |  |  |  |
-| MapProps.showScale | ✔️ |  |  | ✔️ |  |  |  |
-| MapProps.enableOverlooking | ✔️ | ✔️ |  | ✔️ |  |  |  |
-| MapProps.enableZoom | ✔️ | ✔️ |  | ✔️ |  |  |  |
-| MapProps.enableScroll | ✔️ | ✔️ |  | ✔️ |  |  |  |
-| MapProps.enableRotate | ✔️ | ✔️ |  | ✔️ |  |  |  |
-| MapProps.enableSatellite | ✔️ |  |  | ✔️ |  |  |  |
-| MapProps.enableTraffic | ✔️ |  |  | ✔️ |  |  |  |
-| MapProps.setting | ✔️ |  | ✔️ |  |  |  |  |
-| MapProps.onTap | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.onMarkerTap | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.onLabelTap | ✔️ |  |  | ✔️ |  |  |  |
-| MapProps.onControlTap | ✔️ | ✔️ | ✔️ |  |  |  |  |
-| MapProps.onCalloutTap | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.onUpdated | ✔️ | ✔️ |  | ✔️ |  |  |  |
-| MapProps.onRegionChange | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.onPoiTap | ✔️ | ✔️ |  |  |  |  |  |
-| MapProps.includePadding |  |  | ✔️ |  |  |  |  |
-| MapProps.groundOverlays |  |  | ✔️ |  |  |  |  |
-| MapProps.tileOverlay |  |  | ✔️ |  |  |  |  |
-| MapProps.optimize |  |  | ✔️ |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| MapProps.longitude | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MapProps.latitude | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MapProps.scale | ✔️ | ✔️(取值范围为4-21) | ✔️(取值范围为5-18) | ✔️ | ✔️ | ✔️ |  |  |  |
+| MapProps.minScale | ✔️ |  |  | ✔️ |  |  |  |  |  |
+| MapProps.maxScale | ✔️ |  |  | ✔️ |  |  |  |  |  |
+| MapProps.markers | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MapProps.covers | ✔️ |  |  |  |  |  |  |  |  |
+| MapProps.polyline | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MapProps.circles | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MapProps.controls | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |  |  |
+| MapProps.includePoints | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MapProps.showLocation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MapProps.polygons | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
+| MapProps.subkey | ✔️ |  |  |  | ✔️ |  |  |  |  |
+| MapProps.layerStyle | ✔️ |  |  |  | ✔️ |  |  |  |  |
+| MapProps.rotate | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| MapProps.skew | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| MapProps.showCompass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| MapProps.showScale | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| MapProps.enableOverlooking | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| MapProps.enableZoom | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| MapProps.enableScroll | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| MapProps.enableRotate | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| MapProps.enableSatellite | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| MapProps.enableTraffic | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| MapProps.setting | ✔️ |  | ✔️ |  | ✔️ |  |  |  |  |
+| MapProps.onTap | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MapProps.onMarkerTap | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MapProps.onLabelTap | ✔️ |  |  | ✔️ |  |  |  |  |  |
+| MapProps.onControlTap | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |  |  |
+| MapProps.onCalloutTap |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.onUpdated | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
+| MapProps.onRegionChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MapProps.onPoiTap | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
+| MapProps.includePadding |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.groundOverlays |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.tileOverlay |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.enablePoi | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.enableBuilding | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.onCallOutTap | ✔️ | ✔️ |  | ✔️ |  | ✔️ |  |  |  |
+| MapProps.onAnchorPointTap | ✔️ |  |  | ✔️ |  |  |  |  |  |
+| MapProps.style |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.class |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.polygon |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.customMapStyle |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.panels |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.onPanelTap |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.onInitComplete |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.theme |  |  |  |  |  | ✔️ |  |  |  |
+| MapProps.optimize |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.enable3D | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
 
 ### marker
 
@@ -253,8 +277,6 @@ marker 上的气泡 label
 | content | `string` | 文本 |
 | color | `string` | 文本颜色 |
 | fontSize | `number` | 文字大小 |
-| x | `number` | label的坐标（废弃）<br />**不推荐使用** |
-| y | `number` | label的坐标（废弃）<br />**不推荐使用** |
 | anchorX | `number` | label的坐标，原点是 marker 对应的经纬度 |
 | anchorY | `number` | label的坐标，原点是 marker 对应的经纬度 |
 | borderWidth | `number` | 边框宽度 |

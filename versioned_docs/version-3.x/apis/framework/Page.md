@@ -7,6 +7,7 @@ sidebar_label: Page
 
 ## 方法
 
-| 参数 | 类型 | 说明 |
-| --- | --- | --- |
-| route | `string` | 当前页面的路径 |
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| route | `string` | 否 | 当前页面的路径<br />note: 推荐使用 Taro.getCurrentInstance().router?.path 方法 |
+| __route__ | `string` | 否 |  |

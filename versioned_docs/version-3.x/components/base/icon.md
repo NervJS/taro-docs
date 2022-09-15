@@ -5,7 +5,7 @@ sidebar_label: Icon
 
 图标。组件属性的长度单位默认为 px
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/icon.html)
 
@@ -87,14 +87,16 @@ export default class PageView extends Component {
 | type | `keyof TIconType` |  | 是 | icon 的类型 |
 | size | `string` | `23` | 否 | icon 的大小，单位px |
 | color | `string` |  | 否 | icon 的颜色，同 css 的 color |
+| ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | H5 | React Native |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| IconProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| IconProps.size | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| IconProps.color | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| IconProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| IconProps.size | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| IconProps.color | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| IconProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
 
 ### TIconType
 

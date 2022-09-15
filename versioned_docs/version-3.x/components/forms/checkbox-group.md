@@ -82,11 +82,11 @@ export default class PageCheckbox extends Component {
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
 | name | `string` | 否 | 表单组件中加上 name 来作为 key |
-| onChange | `CommonEventFunction<{ value: string[]; }>` | 否 | `<CheckboxGroup/>` 中选中项发生改变是触发 change 事件<br /><br />event.detail = { value: [选中的checkbox的 value 的数组] } |
+| onChange | `CommonEventFunction<{ value: string[]; }>` | 否 | `<CheckboxGroup/>` 中选中项发生改变是触发 change 事件 |
 
 ### API 支持度
 
-| API | 微信小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| CheckboxGroupProps.name |  | ✔️ | ✔️ |  |  |
-| CheckboxGroupProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| CheckboxGroupProps.name |  |  | ✔️ | ✔️ |  |  | ✔️ |  |  |
+| CheckboxGroupProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |

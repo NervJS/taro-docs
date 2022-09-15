@@ -68,27 +68,57 @@ class App extends Component {
 
 ## AdProps
 
-| 参数 | 类型 | 必填 | 说明 |
-| --- | --- | :---: | --- |
-| unitId | `string` | 是 | 广告单元id，可在[小程序管理后台](https://mp.weixin.qq.com/)的流量主模块新建 |
-| adIntervals | `number` | 否 | 广告自动刷新的间隔时间，单位为秒，参数值必须大于等于30（该参数不传入时 Banner 广告不会自动刷新） |
-| adType | "banner" or "video" or "grid" | 否 | 广告类型，默认为展示`banner`，可通过设置该属性为`video`展示视频广告, `grid`为格子广告 |
-| adTheme | "white" or "black" | 否 | 广告主题样式设置 |
-| onLoad | `CommonEventFunction` | 否 | 广告加载成功的回调 |
-| onError | `CommonEventFunction<onErrorEventDetail>` | 否 | 当广告发生错误时，触发的事件，可以通过该事件获取错误码及原因，事件对象event.detail = {errCode: 1002} |
-| onClose | `CommonEventFunction` | 否 | 广告关闭的回调 |
+| 参数 | 类型 | 默认值 | 必填 | 说明 |
+| --- | --- | :---: | :---: | --- |
+| unitId | `string` |  | 是 | 广告单元id，可在[小程序管理后台](https://mp.weixin.qq.com/)的流量主模块新建 |
+| adIntervals | `number` |  | 否 | 广告自动刷新的间隔时间，单位为秒，参数值必须大于等于30（该参数不传入时 Banner 广告不会自动刷新） |
+| adType | "banner" or "video" or "grid" |  | 否 | 广告类型，默认为展示`banner`，可通过设置该属性为`video`展示视频广告, `grid`为格子广告 |
+| adTheme | "white" or "black" |  | 否 | 广告主题样式设置 |
+| onLoad | `CommonEventFunction` |  | 否 | 广告加载成功的回调 |
+| onError | `CommonEventFunction<onErrorEventDetail>` |  | 否 | 当广告发生错误时，触发的事件，可以通过该事件获取错误码及原因，事件对象 event.detail = {errCode: 1002} |
+| onClose | `CommonEventFunction` |  | 否 | 广告关闭的回调 |
+| appid | `string` |  | 否 | 小程序应用 ID |
+| apid | `string` |  | 否 | 小程序广告位 ID |
+| type | `string` | `feed` | 否 | 广告类型：banner、feed ，需和百青藤平台上的代码位类型相匹配 |
+| updatetime | `string` |  | 否 | 更改该属性，可以触发广告刷新 |
+| onStatus | `CommonEventFunction` |  | 否 | 贴片类型广告播放期间触发 |
+| fixed | `string` |  | 否 | 广告是否在屏幕中固定展示 |
+| scale | `string` | `100` | 否 | 广告的缩放比例，100 为标准尺寸 |
+| adLeft | `string` |  | 否 | type 为 feeds 时广告左边距（px），必须大于 0 |
+| adTop | `string` |  | 否 | type 为 feeds 时广告上边距（px），必须大于 0 |
+| adWidth | `string` |  | 否 | type 为 feeds 时广告宽度（px），默认 100%，最大值为屏幕宽度，最小值为 265 |
+| adHeight | `string` |  | 否 | type 为 feeds 时广告高度（px），最小 85，最大 160 |
+| blockSize | `string` | `1` | 否 | type 为 block 时请求积木广告数量（展示以实际拉取广告数量为准） |
+| blockOrientation | "vertical" or "landscape" | `landscape` | 否 | type 为 block 时请求积木广告排列方向 |
+| testBannerType | "one" or "three" | `three` | 否 | 开发者工具下，type 为 banner 时，指定 banner 广告展示三图文还是单图 |
+| onSize | `CommonEventFunction<onSizeEventDetail>` |  | 否 | type 为 feeds 时广告实际宽高回调 |
 
 ### API 支持度
 
-| API | 微信小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| AdProps.unitId | ✔️ | ✔️ |  |  |  |
-| AdProps.adIntervals | ✔️ | ✔️ |  |  |  |
-| AdProps.adType | ✔️ |  |  |  |  |
-| AdProps.adTheme | ✔️ |  |  |  |  |
-| AdProps.onLoad | ✔️ | ✔️ |  |  |  |
-| AdProps.onError | ✔️ | ✔️ |  |  |  |
-| AdProps.onClose | ✔️ | ✔️ |  |  |  |
+| API | 微信小程序 | 百度小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| AdProps.unitId | ✔️ |  | ✔️ | ✔️ |  |  |  |
+| AdProps.adIntervals | ✔️ |  | ✔️ |  |  |  |  |
+| AdProps.adType | ✔️ |  |  |  |  |  |  |
+| AdProps.adTheme | ✔️ |  |  |  |  |  |  |
+| AdProps.onLoad | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| AdProps.onError | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| AdProps.onClose | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| AdProps.appid |  | ✔️ |  |  |  |  |  |
+| AdProps.apid |  | ✔️ |  |  |  |  |  |
+| AdProps.type |  | ✔️ | ✔️ | ✔️ |  |  |  |
+| AdProps.updatetime |  | ✔️ |  |  |  |  |  |
+| AdProps.onStatus |  | ✔️ |  |  |  |  |  |
+| AdProps.fixed |  |  | ✔️ |  |  |  |  |
+| AdProps.scale |  |  | ✔️ |  |  |  |  |
+| AdProps.adLeft |  |  |  | ✔️ |  |  |  |
+| AdProps.adTop |  |  |  | ✔️ |  |  |  |
+| AdProps.adWidth |  |  |  | ✔️ |  |  |  |
+| AdProps.adHeight |  |  |  | ✔️ |  |  |  |
+| AdProps.blockSize |  |  |  | ✔️ |  |  |  |
+| AdProps.blockOrientation |  |  |  | ✔️ |  |  |  |
+| AdProps.testBannerType |  |  |  | ✔️ |  |  |  |
+| AdProps.onSize |  |  |  | ✔️ |  |  |  |
 
 ### onErrorEventDetail
 
@@ -114,3 +144,10 @@ class App extends Component {
 | 1006 | `广告组件被驳回` | `你的广告审核失败，无法展现广告` | `请前往 mp.weixin.qq.com 确认审核状态，且开发者需要针对这种情况做形态上的兼容。` |
 | 1007 | `广告组件被封禁` | `你的广告能力已经被封禁，封禁期间无法展现广告` | `请前往 mp.weixin.qq.com 确认小程序广告封禁状态。` |
 | 1008 | `广告单元已关闭` | `该广告位的广告能力已经被关闭` | `请前往 mp.weixin.qq.com 重新打开对应广告位的展现。` |
+
+### onSizeEventDetail
+
+| 参数 | 类型 |
+| --- | --- |
+| width | `number` |
+| height | `number` |

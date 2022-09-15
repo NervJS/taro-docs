@@ -26,7 +26,7 @@ const config = {
 ```
 
 :::note
-Web 端使用依赖预编译特性时，需要在最外层增加 bootstrap 动态引入入口文件，来确保所有依赖都能够被正确加载，如果使用 [dynamic-import-node](/docs/babel-config/#dynamic-import-node) 配置会导致依赖加载失败，请在使用该配置时禁用 prebundle 特性。
+Web 端使用依赖预编译特性时，需要在最外层增加 bootstrap 动态引入入口文件，来确保所有依赖都能够被正确加载，如果使用 [dynamic-import-node](/docs/babel-config/#dynamic-import-node) 配置会导致依赖加载失败，请在使用该配置时禁用 prebundle 特性。同时使用依赖预编译时，chunkFilename 不支持 [hash]、[chunkhash] 这一类的占位符，如果使用 `optimization.chunkId` 参数，则仅支持传入 `deterministic | named`。
 :::
 
 ## 特性实现

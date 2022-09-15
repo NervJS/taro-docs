@@ -24,7 +24,6 @@ ComponentType<CameraProps>
 | devicePosition | `keyof DevicePosition` | `"back"` | 否 | 摄像头朝向 |
 | flash | `keyof Flash` | `"auto"` | 否 | 闪光灯 |
 | frameSize | `keyof FrameSize` | `"medium"` | 否 | 指定期望的相机帧数据尺寸 |
-| scanArea | `number[]` |  | 否 | 扫码识别区域，格式为[x, y, w, h]，<br />x,y是相对于camera显示区域的左上角，<br />w,h为区域宽度，单位px，仅在 mode="scanCode" 时生效 |
 | onStop | `CommonEventFunction` |  | 否 | 摄像头在非正常终止时触发，<br />如退出后台等情况 |
 | onError | `CommonEventFunction` |  | 否 | 用户不允许使用摄像头时触发 |
 | onInitDone | `CommonEventFunction<onInitDoneEventDetail>` |  | 否 | 相机初始化完成时触发 |
@@ -32,18 +31,17 @@ ComponentType<CameraProps>
 
 ### API 支持度
 
-| API | 微信小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| CameraProps.mode | ✔️ | ✔️ |  | ✔️ |  |
-| CameraProps.resolution | ✔️ | ✔️ |  |  |  |
-| CameraProps.devicePosition | ✔️ | ✔️ |  | ✔️ |  |
-| CameraProps.flash | ✔️ | ✔️ |  | ✔️ |  |
-| CameraProps.frameSize | ✔️ | ✔️ |  |  |  |
-| CameraProps.scanArea | ✔️ |  |  |  |  |
-| CameraProps.onStop | ✔️ | ✔️ |  | ✔️ |  |
-| CameraProps.onError | ✔️ | ✔️ |  | ✔️ |  |
-| CameraProps.onInitDone | ✔️ | ✔️ |  | ✔️ |  |
-| CameraProps.onScanCode | ✔️ | ✔️ |  | ✔️ |  |
+| API | 微信小程序 | 百度小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| CameraProps.mode | ✔️ |  | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| CameraProps.resolution | ✔️ |  | ✔️ |  |  |  |  |  |
+| CameraProps.devicePosition | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| CameraProps.flash | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| CameraProps.frameSize | ✔️ |  | ✔️ |  |  |  |  |  |
+| CameraProps.onStop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| CameraProps.onError | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| CameraProps.onInitDone | ✔️ |  | ✔️ |  |  |  | ✔️ |  |
+| CameraProps.onScanCode | ✔️ |  | ✔️ | ✔️ |  |  | ✔️ |  |
 
 ### Mode
 

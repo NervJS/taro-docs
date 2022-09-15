@@ -205,50 +205,72 @@ export default {
 | fastDeceleration | `boolean` | `false` | 否 | boolean	false	滑动减速速率控制 (同时开启 enhanced 属性后生效) |
 | onScrollToUpper | `CommonEventFunction` |  | 否 | 滚动到顶部/左边，会触发 scrolltoupper 事件 |
 | onScrollToLower | `CommonEventFunction` |  | 否 | 滚动到底部/右边，会触发 scrolltolower 事件 |
-| onScroll | `BaseEventOrigFunction<onScrollDetail>` |  | 否 | 滚动时触发<br />`event.detail = {scrollLeft, scrollTop, scrollHeight, scrollWidth, deltaX, deltaY}` |
+| onScroll | `BaseEventOrigFunction<onScrollDetail>` |  | 否 | 滚动时触发 |
 | onRefresherPulling | `CommonEventFunction` |  | 否 | 自定义下拉刷新控件被下拉 |
 | onRefresherRefresh | `CommonEventFunction` |  | 否 | 自定义下拉刷新被触发 |
 | onRefresherRestore | `CommonEventFunction` |  | 否 | 自定义下拉刷新被复位 |
 | onRefresherAbort | `CommonEventFunction` |  | 否 | 自定义下拉刷新被中止 |
 | onDragStart | `CommonEventFunction` |  | 否 | 滑动开始事件 (同时开启 enhanced 属性后生效) |
 | onDragging | `CommonEventFunction` |  | 否 | 滑动事件 (同时开启 enhanced 属性后生效) |
-| onDragEnd | `CommonEventFunction` |  | 否 | 滑动结束事件 (同时开启 enhanced 属性后生效) |
+| onDragend | `CommonEventFunction` |  | 否 | 滑动结束事件 (同时开启 enhanced 属性后生效) detail { scrollTop, scrollLeft, velocity } |
+| class | `string` |  | 否 | 外部样式名。 |
+| style | `string` |  | 否 | 内联样式名。 |
+| scrollAnimationDuration | `string` |  | 否 | 当 scroll-with-animation设置为 true 时，可以设置 scroll-animation-duration 来控制动画的执行时间，单位 ms。<br />版本要求： 基础库 1.9.0 及以上 |
+| trapScroll | `string` |  | 否 | 纵向滚动时，当滚动到顶部或底部时，强制禁止触发页面滚动，仍然只触发 scroll-view 自身的滚动。<br />默认值： false<br />版本要求： 基础库 1.11.2 及以上 |
+| onTouchStart | `CommonEventFunction` |  | 否 | 触摸动作开始。<br />版本要求： 基础库 1.15.0 及以上 |
+| onTouchMove | `CommonEventFunction` |  | 否 | 触摸后移动。<br />版本要求： 基础库 1.15.0 及以上 |
+| onTouchEnd | `CommonEventFunction` |  | 否 | 触摸动作结束。<br />版本要求： 基础库 1.15.0 及以上 |
+| onTouchCancel | `CommonEventFunction` |  | 否 | 触摸动作被打断，如来电提醒、弹窗。<br />版本要求： 基础库 1.15.0 及以上 |
+| disableLowerScroll | `string` |  | 否 | 发生滚动前，对滚动方向进行判断，当方向是顶部/左边时，如果值为 always 将始终禁止滚动，如果值为 out-of-bounds 且当前已经滚动到顶部/左边，禁止滚动。<br />版本要求：基础库 2.6.2 及以上 |
+| disableUpperScroll | `string` |  | 否 | 发生滚动前，对滚动方向进行判断，当方向是底部/右边时，如果值为 always 将始终禁止滚动，如果值为 out-of-bounds 且当前已经滚动到底部/右边，禁止滚动。<br />版本要求：基础库 2.6.2 及以上 |
+| ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| ScrollViewProps.scrollX | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(二选一) |  |
-| ScrollViewProps.scrollY | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(二选一) |  |
-| ScrollViewProps.upperThreshold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ScrollViewProps.lowerThreshold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ScrollViewProps.scrollTop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ScrollViewProps.scrollLeft | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ScrollViewProps.scrollIntoView | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| ScrollViewProps.scrollWithAnimation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ScrollViewProps.enableBackToTop | ✔️ |  | ✔️ |  |  | ✔️ |  |
-| ScrollViewProps.enableFlex | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.scrollAnchoring | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.refresherEnabled | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.refresherThreshold | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.refresherDefaultStyle | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.refresherBackground | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.refresherTriggered | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.enhanced | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.bounces | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.showScrollbar | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.pagingEnabled | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.fastDeceleration | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.onScrollToUpper | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ScrollViewProps.onScrollToLower | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ScrollViewProps.onScroll | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ScrollViewProps.onRefresherPulling | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.onRefresherRefresh | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.onRefresherRestore | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.onRefresherAbort | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.onDragStart | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.onDragging | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.onDragEnd | ✔️ |  |  |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| ScrollViewProps.scrollX | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(二选一) |  |
+| ScrollViewProps.scrollY | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(二选一) |  |
+| ScrollViewProps.upperThreshold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ScrollViewProps.lowerThreshold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ScrollViewProps.scrollTop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ScrollViewProps.scrollLeft | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ScrollViewProps.scrollIntoView | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
+| ScrollViewProps.scrollWithAnimation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ScrollViewProps.enableBackToTop | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |
+| ScrollViewProps.enableFlex | ✔️ |  |  |  |  | ✔️ |  |  |  |
+| ScrollViewProps.scrollAnchoring | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.refresherEnabled | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.refresherThreshold | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.refresherDefaultStyle | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.refresherBackground | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.refresherTriggered | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.enhanced | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.bounces | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.showScrollbar | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.pagingEnabled | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.fastDeceleration | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onScrollToUpper | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ScrollViewProps.onScrollToLower | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ScrollViewProps.onScroll | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ScrollViewProps.onRefresherPulling | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onRefresherRefresh | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onRefresherRestore | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onRefresherAbort | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onDragStart | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onDragging | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onDragend | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.class |  |  | ✔️ |  |  |  |  |  |  |
+| ScrollViewProps.style |  |  | ✔️ |  |  |  |  |  |  |
+| ScrollViewProps.scrollAnimationDuration |  |  | ✔️ |  |  |  |  |  |  |
+| ScrollViewProps.trapScroll |  |  | ✔️ |  |  |  |  |  |  |
+| ScrollViewProps.onTouchStart |  |  | ✔️ |  |  |  |  |  |  |
+| ScrollViewProps.onTouchMove |  |  | ✔️ |  |  |  |  |  |  |
+| ScrollViewProps.onTouchEnd |  |  | ✔️ |  |  |  |  |  |  |
+| ScrollViewProps.onTouchCancel |  |  | ✔️ |  |  |  |  |  |  |
+| ScrollViewProps.disableLowerScroll |  |  | ✔️ |  |  |  |  |  |  |
+| ScrollViewProps.disableUpperScroll |  |  | ✔️ |  |  |  |  |  |  |
+| ScrollViewProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
 
 ### onScrollDetail
 

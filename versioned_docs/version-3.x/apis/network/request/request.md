@@ -49,9 +49,9 @@ sidebar_label: request
 | complete | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | jsonp | `boolean` | `false` | 否 | 设置 H5 端是否使用jsonp方式获取数据<br />API 支持度: h5 |
 | jsonpCache | `boolean` | `false` | 否 | 设置 H5 端 jsonp 请求 url 是否需要被缓存<br />API 支持度: h5 |
-| mode | `keyof CorsMode` | `same-origin` | 否 | 设置 H5 端是否允许跨域请求<br />API 支持度: h5 |
-| credentials | `keyof Credentials` | `omit` | 否 | 设置 H5 端是否携带 Cookie<br />API 支持度: h5 |
-| cache | `keyof Cache` | `default` | 否 | 设置 H5 端缓存模式<br />API 支持度: h5 |
+| mode | `keyof CorsMode` | `"same-origin"` | 否 | 设置 H5 端是否允许跨域请求<br />API 支持度: h5 |
+| credentials | `keyof Credentials` | `"omit"` | 否 | 设置 H5 端是否携带 Cookie<br />API 支持度: h5 |
+| cache | `keyof Cache` | `"default"` | 否 | 设置 H5 端缓存模式<br />API 支持度: h5 |
 | retryTimes | `number` | `2` | 否 | 设置 H5 端请求重试次数<br />API 支持度: h5 |
 | backup | string or string[] |  | 否 | 设置 H5 端请求的兜底接口<br />API 支持度: h5 |
 | dataCheck | `() => boolean` |  | 否 | 设置 H5 端请求响应的数据校验函数，若返回 false，则请求兜底接口，若无兜底接口，则报请求失败<br />API 支持度: h5 |
