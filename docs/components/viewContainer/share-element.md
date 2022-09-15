@@ -232,16 +232,16 @@ button {
 
 | 参数 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | :---: | :---: | --- |
-| mapkey | `string` |  | 是 | 映射标记 |
 | transform | `boolean` | `false` | 否 | 是否进行动画 |
 | duration | `number` | `300` | 否 | 动画时长，单位毫秒 |
 | easingFunction | `number` | `ease-out` | 否 | css缓动函数 |
+| key | `string` |  | 否 | 映射标记 |
 
 ### API 支持度
 
 | API | 微信小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: |
-| ShareElementProps.mapkey | ✔️ |  |  |  |
 | ShareElementProps.transform | ✔️ |  |  |  |
 | ShareElementProps.duration | ✔️ |  |  |  |
 | ShareElementProps.easingFunction | ✔️ |  |  |  |
+| ShareElementProps.key | ✔️ |  |  |  |

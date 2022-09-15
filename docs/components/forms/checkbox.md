@@ -167,14 +167,16 @@ export default {
 | color | `string` |  | 否 | checkbox的颜色，同 css 的 color |
 | onChange | `CommonEventFunction<{ value: string[]; }>` |  | 否 | 选中项发生变化时触发 change 事件，小程序无此 API |
 | nativeProps | `Record<string, unknown>` |  | 否 | 用于透传 `WebComponents` 上的属性到内部 H5 标签上 |
+| ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
 
 ### API 支持度
 
-| API | 微信小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| CheckboxProps.value | ✔️ | ✔️ |  | ✔️ |  |
-| CheckboxProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| CheckboxProps.checked | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| CheckboxProps.color | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| CheckboxProps.onChange |  |  | ✔️ | ✔️ |  |
-| CheckboxProps.nativeProps |  |  | ✔️ |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| CheckboxProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| CheckboxProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| CheckboxProps.checked | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| CheckboxProps.color | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| CheckboxProps.onChange |  |  | ✔️ |  |  |  | ✔️ | ✔️ |  |
+| CheckboxProps.nativeProps |  |  |  |  |  |  | ✔️ |  |  |
+| CheckboxProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |

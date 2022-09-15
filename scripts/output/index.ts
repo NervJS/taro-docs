@@ -334,9 +334,9 @@ export default function docsAPI (
   const cwd: string = process.cwd();
 
   if (diff) {
-    const canges = spawn('git', ['status', '-z'])
+    const changes = spawn('git', ['status', '-z'])
 
-    canges.stdout.on('data', (data) => {
+    changes.stdout.on('data', (data) => {
       const ss = data.toString().trim().split(/\u0000|\s+/ig)
       for (const s of ss) {
         const route = path.resolve(cwd, s)
@@ -347,7 +347,7 @@ export default function docsAPI (
           const pe = path.resolve(cwd, e)
           if (route.indexOf(pe) > -1) {
             compile(cwd, s, [generalPath], async (route, doc) => {
-              withLog && console.log(route)
+              withLog && console.log(`build-api(route): ${route}`)
               if (doc.length < 1) return
               await callback(output, doc, route === generalPath)
             })
@@ -355,7 +355,7 @@ export default function docsAPI (
         }
       }
     })
-    canges.stderr.on('data', (data) => {
+    changes.stderr.on('data', (data) => {
       console.error(`stderr: ${data}`)
     })
   } else {
@@ -364,7 +364,7 @@ export default function docsAPI (
         const output = route
           .replace(path.resolve(cwd, base), path.resolve(cwd, out))
           .replace(/(\.[a-z]+)$|\.d\.ts$/ig, '')
-        withLog && console.log(route)
+        withLog && console.log(`build-api(route): ${route}`)
         if (doc.length < 1) return
         await callback(output, doc, route === generalPath)
       })

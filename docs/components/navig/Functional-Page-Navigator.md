@@ -5,7 +5,7 @@ sidebar_label: FunctionalPageNavigator
 
 仅在插件中有效，用于跳转到插件功能页
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/functional-page-navigator.html)
 
@@ -28,14 +28,14 @@ ComponentType<FunctionalPageNavigatorProps>
 
 ### API 支持度
 
-| API | 微信小程序 | H5 | React Native |
-| :---: | :---: | :---: | :---: |
-| FunctionalPageNavigatorProps.version | ✔️ |  |  |
-| FunctionalPageNavigatorProps.name | ✔️ |  |  |
-| FunctionalPageNavigatorProps.args | ✔️ |  |  |
-| FunctionalPageNavigatorProps.onSuccess | ✔️ |  |  |
-| FunctionalPageNavigatorProps.onFail | ✔️ |  |  |
-| FunctionalPageNavigatorProps.onCancel | ✔️ |  |  |
+| API | 微信小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: |
+| FunctionalPageNavigatorProps.version | ✔️ |  |  |  |
+| FunctionalPageNavigatorProps.name | ✔️ |  |  |  |
+| FunctionalPageNavigatorProps.args | ✔️ |  |  |  |
+| FunctionalPageNavigatorProps.onSuccess | ✔️ |  |  |  |
+| FunctionalPageNavigatorProps.onFail | ✔️ |  |  |  |
+| FunctionalPageNavigatorProps.onCancel | ✔️ |  |  |  |
 
 ### Version
 

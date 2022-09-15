@@ -80,7 +80,7 @@ export default class PageView extends Component {
 | maxlength | `number` | `140` | 否 | 最大输入长度，设置为 -1 的时候不限制最大长度 |
 | autoFocus | `boolean` | `false` | 否 | 自动聚焦，拉起键盘 |
 | focus | `boolean` | `false` | 否 | 获取焦点 |
-| autoHeight | `boolean` | `false` | 否 | 是否自动增高，设置 autoHeight 时, style.height 不生效 |
+| autoHeight | `boolean` | `false` | 否 | 是否自动增高，设置 autoHeight 时，style.height不生效 |
 | fixed | `boolean` | `false` | 否 | 如果 Textarea 是在一个 `position:fixed` 的区域，需要显示指定属性 fixed 为 true |
 | cursorSpacing | `number` | `0` | 否 | 指定光标与键盘的距离，单位 px 。取 Textarea 距离底部的距离和 cursorSpacing 指定的距离的最小值作为光标与键盘的距离 |
 | cursor | `number` | `-1` | 否 | 指定 focus 时的光标位置 |
@@ -92,41 +92,53 @@ export default class PageView extends Component {
 | disableDefaultPadding | `boolean` | `false` | 否 | 是否去掉 iOS 下的默认内边距 |
 | onFocus | `CommonEventFunction<onFocusEventDetail>` |  | 否 | 输入框聚焦时触发 |
 | onBlur | `CommonEventFunction<onBlurEventDetail>` |  | 否 | 输入框失去焦点时触发 |
-| onLineChange | `CommonEventFunction<onLineChangeEventDetail>` |  | 否 | 输入框行数变化时调用，event.detail = {height: 0, heightRpx: 0, lineCount: 0} |
-| onInput | `CommonEventFunction<onInputEventDetail>` |  | 否 | 当键盘输入时，触发 input 事件，event.detail = {value, cursor, keyCode}<br /><br />**onInput 处理函数的返回值并不会反映到 textarea 上** |
-| onConfirm | `CommonEventFunction<onConfirmEventDetail>` |  | 否 | 点击完成时， 触发 confirm 事件，event.detail = {value: value} |
+| onLineChange | `CommonEventFunction<onLineChangeEventDetail>` |  | 否 | 输入框行数变化时调用 |
+| onInput | `CommonEventFunction<onInputEventDetail>` |  | 否 | 当键盘输入时，触发 input 事件<br /><br />**onInput 处理函数的返回值并不会反映到 textarea 上** |
+| onConfirm | `CommonEventFunction<onConfirmEventDetail>` |  | 否 | 点击完成时， 触发 confirm 事件 |
 | onKeyboardHeightChange | `CommonEventFunction<onKeyboardHeightChangeEventDetail>` |  | 否 | 键盘高度发生变化的时候触发此事件 |
 | nativeProps | `Record<string, unknown>` |  | 否 | 用于透传 `WebComponents` 上的属性到内部 H5 标签上 |
+| confirmType | "send" or "search" or "next" or "go" or "done" or "return" |  | 否 | 设置键盘右下角按钮的文字 |
+| confirmHold | `string` |  | 否 | 点击键盘右下角按钮时是否保持键盘不收起 |
+| name | `string` |  | 否 | 组件名字，用于表单提交获取数据。 |
+| showCount | `string` |  | 否 | 是否渲染字数统计功能（是否删除默认计数器/是否显示字数统计）。<br />版本要求： 基础库 1.8.0 及以上 |
+| controlled | `string` |  | 否 | 是否为受控组件。为 true 时，value 内容会完全受 setData 控制。<br />版本要求： 基础库 1.8.0 及以上 |
+| ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
 
 ### API 支持度
 
-| API | 微信小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| TextareaProps.value | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| TextareaProps.placeholder | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| TextareaProps.placeholderStyle | ✔️ | ✔️ |  |  |  |
-| TextareaProps.placeholderClass | ✔️ | ✔️ |  |  |  |
-| TextareaProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| TextareaProps.maxlength | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| TextareaProps.autoFocus | ✔️ |  | ✔️ |  |  |
-| TextareaProps.focus | ✔️ | ✔️ |  | ✔️ |  |
-| TextareaProps.autoHeight | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| TextareaProps.fixed | ✔️ |  |  |  |  |
-| TextareaProps.cursorSpacing | ✔️ | ✔️ |  |  |  |
-| TextareaProps.cursor | ✔️ | ✔️ |  |  |  |
-| TextareaProps.showConfirmBar | ✔️ | ✔️ |  |  |  |
-| TextareaProps.selectionStart | ✔️ | ✔️ |  | ✔️ |  |
-| TextareaProps.selectionEnd | ✔️ | ✔️ |  | ✔️ |  |
-| TextareaProps.adjustPosition | ✔️ | ✔️ |  |  |  |
-| TextareaProps.holdKeyboard | ✔️ | ✔️ |  |  |  |
-| TextareaProps.disableDefaultPadding | ✔️ | ✔️ |  |  |  |
-| TextareaProps.onFocus | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| TextareaProps.onBlur | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| TextareaProps.onLineChange | ✔️ | ✔️ |  | ✔️ |  |
-| TextareaProps.onInput | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| TextareaProps.onConfirm | ✔️ | ✔️ |  | ✔️ |  |
-| TextareaProps.onKeyboardHeightChange | ✔️ |  |  |  |  |
-| TextareaProps.nativeProps |  |  | ✔️ |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| TextareaProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| TextareaProps.placeholder | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| TextareaProps.placeholderStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| TextareaProps.placeholderClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| TextareaProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| TextareaProps.maxlength | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| TextareaProps.autoFocus | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |  |
+| TextareaProps.focus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| TextareaProps.autoHeight | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| TextareaProps.fixed | ✔️ | ✔️ |  |  | ✔️ |  |  |  |
+| TextareaProps.cursorSpacing | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
+| TextareaProps.cursor | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
+| TextareaProps.showConfirmBar | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
+| TextareaProps.selectionStart | ✔️ | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |
+| TextareaProps.selectionEnd | ✔️ | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |
+| TextareaProps.adjustPosition | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
+| TextareaProps.holdKeyboard | ✔️ |  |  | ✔️ |  |  |  |  |
+| TextareaProps.disableDefaultPadding | ✔️ |  |  | ✔️ |  |  |  |  |
+| TextareaProps.onFocus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| TextareaProps.onBlur | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| TextareaProps.onLineChange | ✔️ | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |
+| TextareaProps.onInput | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| TextareaProps.onConfirm | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| TextareaProps.onKeyboardHeightChange | ✔️ |  |  |  |  |  |  |  |
+| TextareaProps.nativeProps |  |  |  |  |  | ✔️ |  |  |
+| TextareaProps.confirmType | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| TextareaProps.confirmHold | ✔️ | ✔️ |  | ✔️ |  |  |  |  |
+| TextareaProps.name |  |  | ✔️ |  |  |  |  |  |
+| TextareaProps.showCount |  |  | ✔️ |  |  |  |  |  |
+| TextareaProps.controlled |  |  | ✔️ |  |  |  |  |  |
+| TextareaProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |
 
 ### onFocusEventDetail
 

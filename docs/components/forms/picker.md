@@ -210,7 +210,7 @@ export default class PagePicker extends Component {
 | value | `number` | `0` | 否 | 表示选择了 range 中的第几个（下标从 0 开始） |
 | itemStyle | `StyleProp<TextStyle>` | `{}` | 否 | mode为 selector 或 multiSelector 时 itemStyle 有效 |
 | indicatorStyle | `StyleProp<ViewStyle>` | `{}` | 否 | mode为 selector 或 multiSelector 时 indicatorStyle 有效 |
-| onChange | `CommonEventFunction<ChangeEventDetail>` |  | 是 | value 改变时触发 change 事件，event.detail = {value} |
+| onChange | `CommonEventFunction<ChangeEventDetail>` |  | 是 | value 改变时触发 change 事件 |
 
 ### API 支持度
 
@@ -241,7 +241,7 @@ export default class PagePicker extends Component {
 | value | string[] or number[] or Record<string, any>[] | `[]` | 是 | 表示选择了 range 中的第几个（下标从 0 开始） |
 | itemStyle | `StyleProp<TextStyle>` | `{}` | 否 | mode为 selector 或 multiSelector 时 itemStyle 有效 |
 | indicatorStyle | `StyleProp<ViewStyle>` | `{}` | 否 | mode为 selector 或 multiSelector 时 indicatorStyle 有效 |
-| onChange | `CommonEventFunction<ChangeEventDetail>` |  | 是 | 当 value 改变时触发 change 事件，event.detail = {value} |
+| onChange | `CommonEventFunction<ChangeEventDetail>` |  | 是 | 当 value 改变时触发 change 事件 |
 | onColumnChange | `CommonEventFunction<ColumnChangeEventDetail>` |  | 否 | 列改变时触发 |
 
 ### API 支持度
@@ -279,7 +279,7 @@ export default class PagePicker extends Component {
 | value | `string` | 是 | value 的值表示选择了 range 中的第几个（下标从 0 开始） |
 | start | `string` | 否 | 仅当 mode = timeordate 时有效，表示有效时间范围的开始，字符串格式为"hh:mm" |
 | end | `string` | 否 | 仅当 mode = timeordate 时有效，表示有效时间范围的结束，字符串格式为"hh:mm" |
-| onChange | `CommonEventFunction<ChangeEventDetail>` | 是 | value 改变时触发 change 事件，event.detail = {value} |
+| onChange | `CommonEventFunction<ChangeEventDetail>` | 是 | value 改变时触发 change 事件 |
 
 ### API 支持度
 
@@ -307,7 +307,7 @@ export default class PagePicker extends Component {
 | start | `string` |  | 否 | 仅当 mode = timeordate 时有效，表示有效时间范围的开始，字符串格式为"hh:mm" |
 | end | `string` |  | 否 | 仅当 mode = timeordate 时有效，表示有效时间范围的结束，字符串格式为"hh:mm" |
 | fields | `keyof Fields` | `"day"` | 否 | 有效值 year, month, day，表示选择器的粒度 |
-| onChange | `CommonEventFunction<ChangeEventDetail>` |  | 是 | value 改变时触发 change 事件，event.detail = {value} |
+| onChange | `CommonEventFunction<ChangeEventDetail>` |  | 是 | value 改变时触发 change 事件 |
 
 ### API 支持度
 
@@ -343,7 +343,7 @@ export default class PagePicker extends Component {
 | value | `string[]` | `[]` | 是 | 表示选中的省市区，默认选中每一列的第一个值 |
 | customItem | `string` |  | 否 | 可为每一列的顶部添加一个自定义的项 |
 | regionData | `RegionData[]` |  | 否 | 自定义省市区数据 |
-| onChange | `CommonEventFunction<ChangeEventDetail>` |  | 是 | value 改变时触发 change 事件，event.detail = {value, code, postcode}，其中字段 code 是统计用区划代码，postcode 是邮政编码 |
+| onChange | `CommonEventFunction<ChangeEventDetail>` |  | 是 | value 改变时触发 change 事件 |
 
 ### API 支持度
 

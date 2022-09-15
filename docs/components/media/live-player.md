@@ -71,7 +71,6 @@ class App extends Components {
 | maxCache | `number` | `3` | 否 | 最大缓冲区，单位s |
 | soundMode | `keyof soundMode` | `"speaker"` | 否 | 声音输出方式 |
 | autoPauseIfNavigate | `boolean` | `true` | 否 | 当跳转到本小程序的其他页面时，是否自动暂停本页面的实时音视频播放 |
-| autoPauseIfOpenNavigate | `boolean` | `true` | 否 | 当跳转到其它微信原生页面时，是否自动暂停本页面的实时音视频播放 |
 | pictureInPictureMode | "" or "push" or "pop" or ("push" or "pop")[] |  | 否 | 设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]） |
 | onStateChange | `CommonEventFunction<onStateChangeEventDetail>` |  | 否 | 播放状态变化事件，detail = {code} |
 | onFullScreenChange | `CommonEventFunction<onFullScreenChangeEventDetail>` |  | 否 | 全屏变化事件，detail = {direction, fullScreen} |
@@ -79,30 +78,43 @@ class App extends Components {
 | onAudioVolumeNotify | `CommonEventFunction<{}>` |  | 否 | 播放音量大小通知，detail = {} |
 | onEnterPictureInPicture | `CommonEventFunction` |  | 否 | 播放器进入小窗 |
 | onLeavePictureInPicture | `CommonEventFunction` |  | 否 | 播放器退出小窗 |
+| autoPauseIfOpenNative | `string` |  | 否 | 当跳转到其它微信原生页面时，是否自动暂停本页面的实时音视频播放 |
+| referrerPolicy | "origin" or "no-referrer" |  | 否 | 格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本； |
+| signature | `string` |  | 否 | 设置署名水印 |
+| onError | `CommonEventFunction` |  | 否 | 播放错误事件 |
+| enableMetadata | `string` |  | 否 | 是否回调metadata |
+| onMetaDataChange | `CommonEventFunction` |  | 否 | metadata通知，detail = {info} |
+| id | `string` |  | 否 | live-player 属性的唯一标志符 |
 
 ### API 支持度
 
-| API | 微信小程序 | 字节跳动小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| LivePlayerProps.src | ✔️ | ✔️ |  |  |  |
-| LivePlayerProps.mode | ✔️ |  |  |  |  |
-| LivePlayerProps.autoplay | ✔️ | ✔️ |  |  |  |
-| LivePlayerProps.muted | ✔️ | ✔️ |  |  |  |
-| LivePlayerProps.orientation | ✔️ | ✔️ |  |  |  |
-| LivePlayerProps.objectFit | ✔️ | ✔️ |  |  |  |
-| LivePlayerProps.backgroundMute | ✔️ |  |  |  |  |
-| LivePlayerProps.minCache | ✔️ |  |  |  |  |
-| LivePlayerProps.maxCache | ✔️ |  |  |  |  |
-| LivePlayerProps.soundMode | ✔️ |  |  |  |  |
-| LivePlayerProps.autoPauseIfNavigate | ✔️ |  |  |  |  |
-| LivePlayerProps.autoPauseIfOpenNavigate | ✔️ |  |  |  |  |
-| LivePlayerProps.pictureInPictureMode | ✔️ |  |  |  |  |
-| LivePlayerProps.onStateChange | ✔️ | ✔️ |  |  |  |
-| LivePlayerProps.onFullScreenChange | ✔️ | ✔️ |  |  |  |
-| LivePlayerProps.onNetStatus | ✔️ |  |  |  |  |
-| LivePlayerProps.onAudioVolumeNotify | ✔️ |  |  |  |  |
-| LivePlayerProps.onEnterPictureInPicture | ✔️ |  |  |  |  |
-| LivePlayerProps.onLeavePictureInPicture | ✔️ |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| LivePlayerProps.src | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| LivePlayerProps.mode | ✔️ |  |  | ✔️ | ✔️ |  |  |  |
+| LivePlayerProps.autoplay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| LivePlayerProps.muted | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| LivePlayerProps.orientation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| LivePlayerProps.objectFit | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| LivePlayerProps.backgroundMute | ✔️ | ✔️ |  |  |  |  |  |  |
+| LivePlayerProps.minCache | ✔️ | ✔️ |  | ✔️ |  |  |  |  |
+| LivePlayerProps.maxCache | ✔️ | ✔️ |  | ✔️ |  |  |  |  |
+| LivePlayerProps.soundMode | ✔️ |  |  | ✔️ | ✔️ |  |  |  |
+| LivePlayerProps.autoPauseIfNavigate | ✔️ |  |  | ✔️ |  |  |  |  |
+| LivePlayerProps.pictureInPictureMode | ✔️ |  |  |  |  |  |  |  |
+| LivePlayerProps.onStateChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| LivePlayerProps.onFullScreenChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| LivePlayerProps.onNetStatus | ✔️ | ✔️ |  | ✔️ |  |  |  |  |
+| LivePlayerProps.onAudioVolumeNotify | ✔️ |  |  |  |  |  |  |  |
+| LivePlayerProps.onEnterPictureInPicture | ✔️ |  |  |  |  |  |  |  |
+| LivePlayerProps.onLeavePictureInPicture | ✔️ |  |  |  |  |  |  |  |
+| LivePlayerProps.autoPauseIfOpenNative | ✔️ |  |  | ✔️ |  |  |  |  |
+| LivePlayerProps.referrerPolicy | ✔️ |  |  |  |  |  |  |  |
+| LivePlayerProps.signature |  |  | ✔️ |  |  |  |  |  |
+| LivePlayerProps.onError |  |  | ✔️ |  |  |  |  |  |
+| LivePlayerProps.enableMetadata |  |  |  | ✔️ |  |  |  |  |
+| LivePlayerProps.onMetaDataChange |  |  |  | ✔️ |  |  |  |  |
+| LivePlayerProps.id |  | ✔️ |  |  |  |  |  |  |
 
 ### Mode
 

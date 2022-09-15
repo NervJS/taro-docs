@@ -6,7 +6,7 @@ sidebar_label: PickerView
 嵌入页面的滚动选择器
 其中只可放置 picker-view-column 组件，其它节点不会显示
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/picker-view.html)
 
@@ -183,20 +183,28 @@ export default class Picks extends Component {
 | onChange | `CommonEventFunction<onChangeEventDetail>` |  | 否 | 当滚动选择，value 改变时触发 change 事件，event.detail = {value: value}；value为数组，表示 picker-view 内的 picker-view-column 当前选择的是第几项（下标从 0 开始） |
 | onPickStart | `CommonEventFunction` |  | 否 | 当滚动选择开始时候触发事件 |
 | onPickEnd | `CommonEventFunction` |  | 否 | 当滚动选择结束时候触发事件 |
+| title | `string` |  | 否 | 选择器标题，建议标题控制在 12 个中文汉字长度内，避免出现截断现象, 截断部分将以 ... 形式展示 |
+| ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
+| onPickerStart | `CommonEventFunction` |  | 否 | 当滚动选择开始时候触发事件。<br />版本要求： 基础库 2.7.23 及以上 |
+| onPickerEnd | `CommonEventFunction` |  | 否 | 当滚动选择结束时候触发事件。<br />版本要求： 基础库 2.7.23 及以上 |
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | H5 | React Native |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| PickerViewProps.value | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| PickerViewProps.indicatorStyle | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| PickerViewProps.indicatorClass | ✔️ | ✔️ | ✔️ |  |  |  |
-| PickerViewProps.maskStyle | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| PickerViewProps.maskClass | ✔️ | ✔️ | ✔️ |  |  |  |
-| PickerViewProps.immediateChange | ✔️ |  |  |  |  |  |
-| PickerViewProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| PickerViewProps.onPickStart | ✔️ |  |  |  |  |  |
-| PickerViewProps.onPickEnd | ✔️ |  |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| PickerViewProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| PickerViewProps.indicatorStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| PickerViewProps.indicatorClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| PickerViewProps.maskStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| PickerViewProps.maskClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| PickerViewProps.immediateChange | ✔️ |  |  | ✔️ |  |  |  |  |  |
+| PickerViewProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| PickerViewProps.onPickStart | ✔️ |  |  | ✔️ | ✔️ |  |  |  |  |
+| PickerViewProps.onPickEnd | ✔️ |  |  | ✔️ | ✔️ |  |  |  |  |
+| PickerViewProps.title |  | ✔️ |  |  |  |  |  |  |  |
+| PickerViewProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
+| PickerViewProps.onPickerStart |  |  | ✔️ |  |  |  |  |  |  |
+| PickerViewProps.onPickerEnd |  |  | ✔️ |  |  |  |  |  |  |
 
 ### onChangeEventDetail
 

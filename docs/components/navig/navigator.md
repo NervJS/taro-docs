@@ -5,7 +5,7 @@ sidebar_label: Navigator
 
 页面链接
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/navigator.html)
 
@@ -34,26 +34,30 @@ ComponentType<NavigatorProps>
 | onSuccess | `CommonEventFunction` |  | 否 | 当 `target="miniProgram"` 时有效，跳转小程序成功 |
 | onFail | `CommonEventFunction` |  | 否 | 当 `target="miniProgram"` 时有效，跳转小程序失败 |
 | onComplete | `CommonEventFunction` |  | 否 | 当 `target="miniProgram"` 时有效，跳转小程序完成 |
+| shortLink | `string` |  | 否 | 当target="miniProgram"时有效，当传递该参数后，可以不传 app-id 和 path。链接可以通过【小程序菜单】->【复制链接】获取。 |
+| ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | H5 | React Native |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| NavigatorProps.target | ✔️ | ✔️ |  |  |  |  |
-| NavigatorProps.url | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| NavigatorProps.openType | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| NavigatorProps.delta | ✔️ | ✔️ |  | ✔️ |  |  |
-| NavigatorProps.appId | ✔️ | ✔️ |  |  |  |  |
-| NavigatorProps.path | ✔️ | ✔️ |  |  |  |  |
-| NavigatorProps.extraData | ✔️ | ✔️ |  |  |  |  |
-| NavigatorProps.version | ✔️ | ✔️ |  |  |  |  |
-| NavigatorProps.hoverClass | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| NavigatorProps.hoverStopPropagation | ✔️ | ✔️ |  | ✔️ |  |  |
-| NavigatorProps.hoverStartTime | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| NavigatorProps.hoverStayTime | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| NavigatorProps.onSuccess | ✔️ | ✔️ |  |  |  |  |
-| NavigatorProps.onFail | ✔️ | ✔️ |  |  |  |  |
-| NavigatorProps.onComplete | ✔️ | ✔️ |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| NavigatorProps.target | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
+| NavigatorProps.url | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| NavigatorProps.openType | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| NavigatorProps.delta | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
+| NavigatorProps.appId | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
+| NavigatorProps.path | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
+| NavigatorProps.extraData | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
+| NavigatorProps.version | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
+| NavigatorProps.hoverClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| NavigatorProps.hoverStopPropagation | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
+| NavigatorProps.hoverStartTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| NavigatorProps.hoverStayTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| NavigatorProps.onSuccess | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
+| NavigatorProps.onFail | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
+| NavigatorProps.onComplete | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
+| NavigatorProps.shortLink | ✔️ |  |  |  |  |  |  |  |  |
+| NavigatorProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
 
 ### Target
 
