@@ -29,6 +29,8 @@ const config = {
 }
 ```
 
+> pinia@2.0.22 已经解决了这个问题（[#967](https://github.com/vuejs/pinia/pull/967)）, 所以你可能不再需要这个插件
+
 ## 例子
 
 - 运行 `taro init` 命令时选择 Vue3 -> pinia 即可创建 vue3-pinia 模板项目
