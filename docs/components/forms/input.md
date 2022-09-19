@@ -117,7 +117,7 @@ class App extends Component {
 | randomNumber | `boolean` | `false` | 否 | 当 type 为 number, digit, idcard 数字键盘是否随机排列 |
 | controlled | `boolean` | `false` | 否 | 是否为受控组件 |
 | onInput | `CommonEventFunction<inputEventDetail>` |  | 否 | 当键盘输入时，触发input事件，event.detail = {value, cursor, keyCode}，处理函数可以直接 return 一个字符串，将替换输入框的内容。 |
-| onFocus | `CommonEventFunction<inputForceEventDetail>` |  | 否 | 输入框聚焦时触发 |
+| onFocus | `CommonEventFunction<inputForceEventDetail>` |  | 否 | 输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度 |
 | onBlur | `CommonEventFunction<inputValueEventDetail>` |  | 否 | 输入框失去焦点时触发 |
 | onConfirm | `CommonEventFunction<inputValueEventDetail>` |  | 否 | 点击完成按钮时触发 |
 | onKeyboardHeightChange | `CommonEventFunction<onKeyboardHeightChangeEventDetail>` |  | 否 | 键盘高度发生变化的时候触发此事件 |
@@ -135,7 +135,7 @@ class App extends Component {
 | InputProps.password | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.placeholder | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.placeholderStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
-| InputProps.placeholderClass | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
+| InputProps.placeholderClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | InputProps.placeholderTextColor |  |  |  |  |  |  |  | ✔️ |  |
 | InputProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.maxlength | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
@@ -143,12 +143,12 @@ class App extends Component {
 | InputProps.autoFocus | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |
 | InputProps.focus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.confirmType | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
-| InputProps.confirmHold | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
+| InputProps.confirmHold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | InputProps.cursor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
 | InputProps.selectionStart | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
 | InputProps.selectionEnd | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
 | InputProps.adjustPosition | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
-| InputProps.holdKeyboard | ✔️ |  |  |  |  |  |  |  |  |
+| InputProps.holdKeyboard | ✔️ |  |  | ✔️ |  |  |  |  |  |
 | InputProps.alwaysEmbed | ✔️ |  |  |  |  |  |  |  |  |
 | InputProps.safePasswordCertPath | ✔️ |  |  |  |  |  |  |  |  |
 | InputProps.safePasswordLength | ✔️ |  |  |  |  |  |  |  |  |
