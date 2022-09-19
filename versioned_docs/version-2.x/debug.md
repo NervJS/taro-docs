@@ -248,7 +248,7 @@ export default class Index extends Component {
 
 这个时候我们可以把问题定位到 `Block` 组件中，我们可以查看 `@tarojs/components` 的 `Block` 组件源码：
 
-  ```jsx
+```jsx
 const Block = (props) =>  props.children
 export default Block
 ```
