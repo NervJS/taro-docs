@@ -8,7 +8,7 @@ title: Render Props
 具有 render prop 的组件接受一个函数，该函数返回一个 Taro 元素并调用它而不是实现自己的渲染逻辑。
 
 
-举个例子，假设我们有一个组件，它可以呈现一张在屏幕上追逐鼠标的猫的图片。我们或许会使用 <Cat mouse={{ x, y }} prop 来告诉组件鼠标的坐标以让它知道图片应该在屏幕哪个位置。
+举个例子，假设我们有一个组件，它可以呈现一张在屏幕上追逐鼠标的猫的图片。我们或许会使用 `<Cat mouse={{ x, y }} prop />` 来告诉组件鼠标的坐标以让它知道图片应该在屏幕哪个位置。
 
 我们可以提供一个带有函数 prop 的 `<Mouse>` 组件，它能够动态决定什么需要渲染的，而不是将 `<Cat>` 硬编码到 `<Mouse>` 组件里，并有效地改变它的渲染结果。
 
@@ -81,5 +81,4 @@ class MouseTracker extends Taro.Component {
 
 ### 注意事项
 
-**`render props` 是基于小程序 `slot` 机制实现的。** 因此它受到的限制和 `children 与组合`的限制一样多，更多详情请查看文档[Children与组合
-](./children.md#注意事项)。
+**`render props` 是基于小程序 `slot` 机制实现的。** 因此它受到的限制和 `children 与组合`的限制一样多，更多详情请查看文档[Children与组合](./children.md#注意事项)。

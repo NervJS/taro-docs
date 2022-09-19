@@ -520,7 +520,7 @@
     "description": "The label for category 广告 in sidebar API"
   },
   "sidebar.API.category.云开发": {
-    "message": "Cloud DE",
+    "message": "Cloud services developer",
     "description": "The label for category 云开发 in sidebar API"
   },
   "sidebar.API.category.Alipay": {
@@ -530,5 +530,17 @@
   "sidebar.API.category.Swan": {
     "message": "Swan",
     "description": "The label for category Swan in sidebar API"
+  },
+  "sidebar.docs.category.Taro 团队": {
+    "message": "Taro team",
+    "description": "The label for category Taro 团队 in sidebar docs"
+  },
+  "sidebar.docs.category.编译优化": {
+    "message": "Compiler optimization",
+    "description": "The label for category 编译优化 in sidebar docs"
+  },
+  "sidebar.docs.category.状态管理": {
+    "message": "State management",
+    "description": "The label for category 状态管理 in sidebar docs"
   }
 }
