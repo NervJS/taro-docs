@@ -70,12 +70,6 @@ const siteConfig = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   ({
-    hideableSidebar: true,
-    colorMode: {
-      defaultMode: 'light',
-      disableSwitch: false,
-      respectPrefersColorScheme: true,
-    },
     algolia: {
       appId: 'BH4D9OD16A',
       apiKey: '3f32982103f4e75dadd86900d26a9315', /* (github.com)taro:57b9948bff42bc0dbc6c219556fbae35, (netlify)taro_new:820a8e12c97e870d4e0785d52858230c */
@@ -84,6 +78,39 @@ const siteConfig = {
       searchParameters: {
         // facetFilters: [`version: ${versions[0]}`],
       },
+    },
+    announcementBar: {
+      id: 'support_us', // Any value that will identify this message.
+      content:
+        '<div class="top_tip" role="alert">由凹凸实验室倾力打造的「Deco 设计稿一键生成多端代码」预览版正式上线啦，欢迎<a target="_blank" href="https://deco-preview.jd.com?from=taro-docs">免费试用</a>！</div>',
+      backgroundColor: '#f6ffed', // Defaults to `#fff`.
+      textColor: '#333333', // Defaults to `#000`.
+      isCloseable: true, // Defaults to `true`.
+    },
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
+    docs: {
+      sidebar: {
+        hideable: true
+      }
+    },
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: '文档',
+          items: [
+            {
+              label: '文档',
+              to: '/docs',
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Taro by O2 labs`,
     },
     navbar: {
       hideOnScroll: false,
@@ -161,35 +188,9 @@ const siteConfig = {
         },
       ],
     },
-
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          title: '文档',
-          items: [
-            {
-              label: '文档',
-              to: '/docs',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Taro by O2 labs`,
-    },
-
     prism: {
       theme: require('prism-react-renderer/themes/github'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
-    },
-
-    announcementBar: {
-      id: 'support_us', // Any value that will identify this message.
-      content:
-        '<div class="top_tip" role="alert">由凹凸实验室倾力打造的「Deco 设计稿一键生成多端代码」预览版正式上线啦，欢迎<a target="_blank" href="https://deco-preview.jd.com?from=taro-docs">免费试用</a>！</div>',
-      backgroundColor: '#f6ffed', // Defaults to `#fff`.
-      textColor: '#333333', // Defaults to `#000`.
-      isCloseable: true, // Defaults to `true`.
     }
   }),
 
