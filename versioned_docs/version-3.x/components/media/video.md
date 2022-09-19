@@ -173,10 +173,12 @@ export default class PageView extends Component {
 | onEnterBackground | `CommonEventFunction` |  | 否 | 进入小窗播放时触发 |
 | onCloseBackground | `CommonEventFunction` |  | 否 | 关闭小窗播放时触发 |
 | onLeaveBackground | `CommonEventFunction` |  | 否 | 离开小窗进入 app 事件时触发 |
-| onLoadedData | `string` |  | 否 | 否 |
-| onLoadStart | `string` |  | 否 | 否 |
-| onSeeked | `string` |  | 否 | 否 |
-| onSeeking | `string` |  | 否 | 否 |
+| onLoadedData | `CommonEventFunction` |  | 否 | 否 |
+| onLoadStart | `CommonEventFunction` |  | 否 | 否 |
+| onSeeked | `CommonEventFunction` |  | 否 | 否 |
+| onSeeking | `CommonEventFunction` |  | 否 | 否 |
+| preferredPeakBitRate | `number` |  | 否 | 指定码率上界，单位为比特每秒 |
+| onAdLoad | `CommonEventFunction` |  | 否 | 贴片广告加载成功时触发，event.detail = { adType: 'preRollAd' or 'postRollAd' } |
 
 ### API 支持度
 
@@ -274,6 +276,8 @@ export default class PageView extends Component {
 | VideoProps.onLoadStart |  |  |  |  |  | ✔️ |  |  |  |
 | VideoProps.onSeeked |  |  |  |  |  | ✔️ |  |  |  |
 | VideoProps.onSeeking |  |  |  |  |  | ✔️ |  |  |  |
+| VideoProps.preferredPeakBitRate | ✔️ |  |  |  |  |  |  |  |  |
+| VideoProps.onAdLoad |  |  |  | ✔️ |  |  |  |  |  |
 
 ### direction
 

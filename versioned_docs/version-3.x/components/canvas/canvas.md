@@ -84,7 +84,7 @@ class App extends Components {
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| CanvasProps.type | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |  |  |
+| CanvasProps.type | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
 | CanvasProps.canvasId | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
 | CanvasProps.disableScroll | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
 | CanvasProps.onTouchStart | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
