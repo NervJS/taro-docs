@@ -142,17 +142,15 @@ export default class PageView extends Component {
 | licenseUrl | `string` |  | 否 | DRM 获取加密信息 url，仅 is-drm 为 true 时生效 |
 | onFullScreenChange | `CommonEventFunction<onFullscreenChangeEventDetail>` |  | 否 | 视频进入和退出全屏时触发 |
 | onControlsToggle | `CommonEventFunction<onControlsToggleEventDetail>` |  | 否 | 切换 controls 显示隐藏时触发。 |
-| style | `string` |  | 否 | 内联样式。 |
-| class | `string` |  | 否 | 外部样式名。 |
 | posterSize | `string` |  | 否 | 当 poster 高宽比跟视频高宽不匹配时，如何显示 poster，设置规则同 background-size 一致。 |
-| showThinProgressBar | `string` |  | 否 | 当底部工具条隐藏时，是否显示细进度条（controls=false 时设置无效）。<br />版本要求： 基础库 1.15.0 及以上 |
-| mobilenetHintType | `string` |  | 否 | 移动网络提醒样式。<br /><br />0 - 不提醒<br />1 - tip 提醒<br />2 - 阻塞提醒(无消耗流量大小)<br />3 - 阻塞提醒(有消耗流量大小提醒)<br /><br />版本要求： 基础库 1.13.0 及以上 |
+| showThinProgressBar | `string` |  | 否 | 当底部工具条隐藏时，是否显示细进度条（controls=false 时设置无效）。 |
+| mobilenetHintType | `string` |  | 否 | 移动网络提醒样式。<br /><br />0 - 不提醒<br />1 - tip 提醒<br />2 - 阻塞提醒(无消耗流量大小)<br />3 - 阻塞提醒(有消耗流量大小提醒) |
 | onLoading | `CommonEventFunction` |  | 否 | 视频出现缓冲时触发。 |
 | onTap | `CommonEventFunction<onTapEventDetail>` |  | 否 | 点击视频 view 时触发 |
 | onUserAction | `CommonEventFunction<onUserActionEventDetail>` |  | 否 | 用户操作事件 |
-| onStop | `CommonEventFunction` |  | 否 | 视频播放终止。<br />版本要求： 基础库 1.9.0 及以上 |
-| onRenderStart | `CommonEventFunction` |  | 否 | 当视频加载完真正开始播放时触发。<br />版本要求： 基础库 1.13.6 及以上 |
-| floatingMode | `string` |  | 否 | 浮窗设置。暂时不支持全局浮窗。<br />可选值：<br /><br />none：无浮窗。<br />page：页面内浮窗。<br />版本要求：基础库 1.24.6 及以上 |
+| onStop | `CommonEventFunction` |  | 否 | 视频播放终止。 |
+| onRenderStart | `CommonEventFunction` |  | 否 | 当视频加载完真正开始播放时触发。 |
+| floatingMode | `string` |  | 否 | 浮窗设置。暂时不支持全局浮窗。<br />可选值：<br /><br />none：无浮窗。<br />page：页面内浮窗。 |
 | showNoWifiTip | `string` |  | 否 | 非 wifi 环境下是否显示继续播放浮层 |
 | showLockBtn | `string` |  | 否 | 全屏模式下，是否显示锁屏按钮 |
 | showRateBtn | `string` |  | 否 | 是否显示倍速播放按钮 |
@@ -241,8 +239,6 @@ export default class PageView extends Component {
 | VideoProps.licenseUrl | ✔️ |  |  |  |  |  |  |  |  |
 | VideoProps.onFullScreenChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | VideoProps.onControlsToggle | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.style |  |  | ✔️ |  |  |  |  |  |  |
-| VideoProps.class |  |  | ✔️ |  |  |  |  |  |  |
 | VideoProps.posterSize |  |  | ✔️ |  |  |  |  |  |  |
 | VideoProps.showThinProgressBar |  |  | ✔️ |  |  |  |  |  |  |
 | VideoProps.mobilenetHintType |  |  | ✔️ |  |  | ✔️ |  |  |  |

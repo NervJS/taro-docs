@@ -78,12 +78,12 @@ class App extends Components {
 | onDragStart | `CommonEventFunction` |  | 否 | 开始拖动时触发 |
 | onDragEnd | `CommonEventFunction` |  | 否 | 拖动结束时触发 |
 | catchTouchmove | `CommonEventFunction` |  | 否 | 初次手指触摸后移动为横向的移动时触发，如果 catch 此事件，则意味着 touchmove 事件也被catch |
-| onTouchStart | `CommonEventFunction` |  | 否 | 触摸动作开始，事件会向父节点传递。<br />版本要求： 基础库 1.11.5 及以上 |
-| catchTouchStart | `CommonEventFunction` |  | 否 | 触摸动作开始，事件仅作用于组件，不向父节点传递。<br />版本要求： 基础库 1.11.5 及以上 |
-| onTouchMove | `CommonEventFunction` |  | 否 | 触摸移动事件，事件会向父节点传递。<br />版本要求： 基础库 1.11.5 及以上 |
+| onTouchStart | `CommonEventFunction` |  | 否 | 触摸动作开始，事件会向父节点传递。 |
+| catchTouchStart | `CommonEventFunction` |  | 否 | 触摸动作开始，事件仅作用于组件，不向父节点传递。 |
+| onTouchMove | `CommonEventFunction` |  | 否 | 触摸移动事件，事件会向父节点传递。 |
 | onHTouchMove | `TouchEventFunction` |  | 否 | 初次手指触摸后移动为横向的移动，如果 catch 此事件，则意味着 touchmove 事件也被 catch |
 | onVTouchMove | `TouchEventFunction` |  | 否 | 初次手指触摸后移动为纵向的移动，如果 catch 此事件，则意味着 touchmove 事件也被 catch |
-| catchTouchMove | `CommonEventFunction` |  | 否 | 触摸移动事件，事件仅作用于组件，不向父节点传递。<br />版本要求： 基础库 1.11.5 及以上 |
+| catchTouchMove | `CommonEventFunction` |  | 否 | 触摸移动事件，事件仅作用于组件，不向父节点传递。 |
 | onTouchEnd | `CommonEventFunction` |  | 否 | 触摸动作结束，事件会向父节点传递。 |
 | catchTouchEnd | `CommonEventFunction` |  | 否 | 触摸动作结束，事件仅作用于组件，不向父节点传递。 |
 | onTouchCancel | `CommonEventFunction` |  | 否 | 触摸动作被打断，如来电提醒、弹窗。 |

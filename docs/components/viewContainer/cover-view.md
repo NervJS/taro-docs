@@ -102,7 +102,7 @@ class App extends Components {
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
 | scrollTop | `number` | 否 | 设置顶部滚动偏移量，仅在设置了 overflow-y: scroll 成为滚动元素后生效 |
-| onTap | `CommonEventFunction` | 否 | 点击事件回调。<br />版本要求：基础库 1.9.0 及以上 |
+| onTap | `CommonEventFunction` | 否 | 点击事件回调。 |
 | fixedTop | `string` | 否 | 设置与容器顶部的固定距离，效果相当于在 CSS 中设置 position: fixed 和 top 值，该属性优先级高于 fixed-bottom，CSS 设置的 position、top、bottom 值 |
 | fixedRight | `string` | 否 | 设置与容器右侧的固定距离，效果相当于在 CSS 中设置 position: fixed 和 right 值，该属性优先级高于 CSS 设置的 position、left、right 值 |
 | fixedBottom | `string` | 否 | 设置与容器底部的固定距离，效果相当于在 CSS 中设置 position: fixed 和 bottom 值，该属性优先级高于 CSS 设置的 position、top、bottom 值 |

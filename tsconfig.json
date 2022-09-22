@@ -7,8 +7,9 @@
       "@site/static/*": ["./static/*"]
     },
     "resolveJsonModule": true,
+    "skipLibCheck": true,
     "strict": true,
-    "types": ["@types/jest", "@types/node", "typings"]
+    "types": ["@types/node"]
   },
   "include": ["blog", "docs", "i18n", "packages", "scripts", "src", "typings"],
   "exclude": ["src/sw.js"]

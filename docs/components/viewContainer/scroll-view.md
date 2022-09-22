@@ -213,16 +213,14 @@ export default {
 | onDragStart | `CommonEventFunction` |  | 否 | 滑动开始事件 (同时开启 enhanced 属性后生效) |
 | onDragging | `CommonEventFunction` |  | 否 | 滑动事件 (同时开启 enhanced 属性后生效) |
 | onDragend | `CommonEventFunction` |  | 否 | 滑动结束事件 (同时开启 enhanced 属性后生效) detail { scrollTop, scrollLeft, velocity } |
-| class | `string` |  | 否 | 外部样式名。 |
-| style | `string` |  | 否 | 内联样式名。 |
-| scrollAnimationDuration | `string` |  | 否 | 当 scroll-with-animation设置为 true 时，可以设置 scroll-animation-duration 来控制动画的执行时间，单位 ms。<br />版本要求： 基础库 1.9.0 及以上 |
-| trapScroll | `string` |  | 否 | 纵向滚动时，当滚动到顶部或底部时，强制禁止触发页面滚动，仍然只触发 scroll-view 自身的滚动。<br />默认值： false<br />版本要求： 基础库 1.11.2 及以上 |
-| onTouchStart | `CommonEventFunction` |  | 否 | 触摸动作开始。<br />版本要求： 基础库 1.15.0 及以上 |
-| onTouchMove | `CommonEventFunction` |  | 否 | 触摸后移动。<br />版本要求： 基础库 1.15.0 及以上 |
-| onTouchEnd | `CommonEventFunction` |  | 否 | 触摸动作结束。<br />版本要求： 基础库 1.15.0 及以上 |
-| onTouchCancel | `CommonEventFunction` |  | 否 | 触摸动作被打断，如来电提醒、弹窗。<br />版本要求： 基础库 1.15.0 及以上 |
-| disableLowerScroll | `string` |  | 否 | 发生滚动前，对滚动方向进行判断，当方向是顶部/左边时，如果值为 always 将始终禁止滚动，如果值为 out-of-bounds 且当前已经滚动到顶部/左边，禁止滚动。<br />版本要求：基础库 2.6.2 及以上 |
-| disableUpperScroll | `string` |  | 否 | 发生滚动前，对滚动方向进行判断，当方向是底部/右边时，如果值为 always 将始终禁止滚动，如果值为 out-of-bounds 且当前已经滚动到底部/右边，禁止滚动。<br />版本要求：基础库 2.6.2 及以上 |
+| scrollAnimationDuration | `string` |  | 否 | 当 scroll-with-animation设置为 true 时，可以设置 scroll-animation-duration 来控制动画的执行时间，单位 ms。 |
+| trapScroll | `string` | `false` | 否 | 纵向滚动时，当滚动到顶部或底部时，强制禁止触发页面滚动，仍然只触发 scroll-view 自身的滚动。 |
+| onTouchStart | `CommonEventFunction` |  | 否 | 触摸动作开始。 |
+| onTouchMove | `CommonEventFunction` |  | 否 | 触摸后移动。 |
+| onTouchEnd | `CommonEventFunction` |  | 否 | 触摸动作结束。 |
+| onTouchCancel | `CommonEventFunction` |  | 否 | 触摸动作被打断，如来电提醒、弹窗。 |
+| disableLowerScroll | `string` |  | 否 | 发生滚动前，对滚动方向进行判断，当方向是顶部/左边时，如果值为 always 将始终禁止滚动，如果值为 out-of-bounds 且当前已经滚动到顶部/左边，禁止滚动。 |
+| disableUpperScroll | `string` |  | 否 | 发生滚动前，对滚动方向进行判断，当方向是底部/右边时，如果值为 always 将始终禁止滚动，如果值为 out-of-bounds 且当前已经滚动到底部/右边，禁止滚动。 |
 | ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
 
 ### API 支持度
@@ -260,8 +258,6 @@ export default {
 | ScrollViewProps.onDragStart | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.onDragging | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.onDragend | ✔️ |  |  |  |  |  |  |  |  |
-| ScrollViewProps.class |  |  | ✔️ |  |  |  |  |  |  |
-| ScrollViewProps.style |  |  | ✔️ |  |  |  |  |  |  |
 | ScrollViewProps.scrollAnimationDuration |  |  | ✔️ |  |  |  |  |  |  |
 | ScrollViewProps.trapScroll |  |  | ✔️ |  |  |  |  |  |  |
 | ScrollViewProps.onTouchStart |  |  | ✔️ |  |  |  |  |  |  |

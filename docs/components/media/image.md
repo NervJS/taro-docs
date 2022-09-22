@@ -92,9 +92,7 @@ export default class PageView extends Component {
 | onLoad | `CommonEventFunction<onLoadEventDetail>` |  | 否 | 当图片载入完毕时，发布到 AppService 的事件名，事件对象 |
 | imgProps | `ImgHTMLAttributes<HTMLImageElement>` |  | 否 | 为 img 标签额外增加的属性 |
 | nativeProps | `Record<string, unknown>` |  | 否 | 用于透传 `WebComponents` 上的属性到内部 H5 标签上 |
-| class | `string` |  | 否 | 外部样式。 |
-| style | `string` |  | 否 | 内联样式。 |
-| defaultSource | `string` |  | 否 | 默认图片地址，若设置默认图片地址，会先显示默认图片，等 src 对应的图片加载成功后，再渲染对应的图片。<br />版本要求： 基础库 1.19.0 及以上 |
+| defaultSource | `string` |  | 否 | 默认图片地址，若设置默认图片地址，会先显示默认图片，等 src 对应的图片加载成功后，再渲染对应的图片。 |
 | onTap | `CommonEventFunction` |  | 否 | 点击图片时触发。 |
 | catchTap | `CommonEventFunction` |  | 否 | 点击图片时触发，阻止事件冒泡。 |
 | imageMenuPrevent | `string` |  | 否 | 阻止长按图片时弹起默认菜单（即将该属性设置为image-menu-prevent="true"或image-menu-prevent），只在初始化时有效，不能动态变更；若不想阻止弹起默认菜单，则不需要设置此属性。注：长按菜单后的操作暂不支持 svg 格式 |
@@ -116,8 +114,6 @@ export default class PageView extends Component {
 | ImageProps.onLoad | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ImageProps.imgProps |  |  |  |  |  |  | ✔️ |  |  |
 | ImageProps.nativeProps |  |  |  |  |  |  | ✔️ |  |  |
-| ImageProps.class |  |  | ✔️ |  |  |  |  |  |  |
-| ImageProps.style |  |  | ✔️ |  |  |  |  |  |  |
 | ImageProps.defaultSource |  |  | ✔️ |  |  |  |  |  |  |
 | ImageProps.onTap |  |  | ✔️ |  |  |  |  |  |  |
 | ImageProps.catchTap |  |  | ✔️ |  |  |  |  |  |  |

@@ -218,7 +218,7 @@ export default {
 | onChooseAvatar | `CommonEventFunction` |  | 否 | 获取用户头像回调<br /><br />生效时机：`open-type="chooseAvatar"` |
 | onTap | `CommonEventFunction` |  | 否 | 点击。<br />说明： 每点击一次会触发一次事件，建议自行使用代码防止重复点击,可以使用 js 防抖和节流实现。 |
 | publicId | `string` |  | 否 | 生活号 id，必须是当前小程序同主体且已关联的生活号，open-type="lifestyle" 时有效。 |
-| onFollowLifestyle | CommonEventFunction<{ followStatus: true or 1 or 2 or 3; }> |  | 否 | 当 open-type 为 lifestyle 时有效。<br />当点击按钮时触发。<br />event.detail = { followStatus }，followStatus 合法值有 1、2、3，其中 1 表示已关注。2 表示用户不允许关注。3 表示发生未知错误；<br />已知问题：基础库 1.0，当用户在点击按钮前已关注生活号，event.detail.followStatus 的值为 true。<br />版本要求：基础库 1.11.0 及以上 |
+| onFollowLifestyle | CommonEventFunction<{ followStatus: true or 1 or 2 or 3; }> |  | 否 | 当 open-type 为 lifestyle 时有效。<br />当点击按钮时触发。<br />event.detail = { followStatus }，followStatus 合法值有 1、2、3，其中 1 表示已关注。2 表示用户不允许关注。3 表示发生未知错误；<br />已知问题：基础库 1.0，当用户在点击按钮前已关注生活号，event.detail.followStatus 的值为 true。 |
 | templateId | string or string[] |  | 否 | 发送订阅类模板消息所用的模板库标题 ID ，可通过 getTemplateLibraryList 获取<br />当参数类型为 Array 时，可传递 1~3 个模板库标题 ID |
 | subscribeId | `string` |  | 否 | 发送订阅类模板消息时所使用的唯一标识符，内容由开发者自定义，用来标识订阅场景<br />注意：同一用户在同一 subscribe-id 下的多次授权不累积下发权限，只能下发一条。若要订阅多条，需要不同 subscribe-id |
 | onChooseAddress | `CommonEventFunction` |  | 否 | 用户点击该按钮时，调起用户编辑收货地址原生界面，并在编辑完成后返回用户选择的地址，从返回参数的 detail 中获取，和 swan.chooseAddress 一样的。和 open-type 搭配使用，使用时机：open-type="chooseAddress" |
