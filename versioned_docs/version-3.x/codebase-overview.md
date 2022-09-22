@@ -111,22 +111,22 @@ $ pnpm run build
 
 目前这些包配备了单元测试：
 
-- `babel-preset-taro`
-- `@tarojs/cli`
-- `@tarojs/components`
-- `@tarojs/react`
-- `@tarojs/webpack-runner`
-- `@tarojs/mini-runner`
-- `@tarojs/runtime`
-- `@tarojs/taro-rn`
-- `@tarojs/components-rn`
+* `babel-preset-taro`
+* `@tarojs/cli`
+* `@tarojs/components`
+* `@tarojs/react`
+* `@tarojs/webpack-runner`
+* `@tarojs/mini-runner`
+* `@tarojs/runtime`
+* `@tarojs/taro-rn`
+* `@tarojs/components-rn`
 
-开发者在修改上述包后，请务必运行 `lerna run test:ci --scope [包名]`，检查测试用例是否都能通过。
+开发者在修改上述包后，请务必运行 `pnpm --filter [包名] run test:ci`，检查测试用例是否都能通过。
 
 同时，在开发一些重要功能后，也请抽时间补上对应的测试用例。
 
 :::note
-注意：`@tarojs/mini-runner`、`@tarojs/webpack-runner` 使用了 `snapshot`（测试结果快照），在修改这两个包或其它一些包时，有可能导致这些快照失效，从而通过不了测试。当你修改了这两个包、或 CI 提示这两个包的测试用例出错时，请运行 `lerna run updateSnapshot --scope [包名]` 更新 snapshot 后重新提交。
+注意：`@tarojs/mini-runner`、`@tarojs/webpack-runner` 使用了 `snapshot`（测试结果快照），在修改这两个包或其它一些包时，有可能导致这些快照失效，从而通过不了测试。当你修改了这两个包、或 CI 提示这两个包的测试用例出错时，请运行 `pnpm --filter [包名] run test:ci -u` 更新 snapshot 后重新提交。
 :::
 
 ### commit 规范

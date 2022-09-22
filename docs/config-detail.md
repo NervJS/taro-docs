@@ -800,7 +800,7 @@ module.exports = {
               peerDependencies: true,
               // Reduce amount of console logging
               quiet: false,
-              // npm command used inside company, yarn is not supported yet
+              // npm command used inside company
               npm: 'cnpm'
             }]
           }
@@ -1359,7 +1359,7 @@ module.exports = {
               peerDependencies: true,
               // Reduce amount of console logging
               quiet: false,
-              // npm command used inside company, yarn is not supported yet
+              // npm command used inside company
               npm: 'cnpm'
             }]
           }
