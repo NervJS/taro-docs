@@ -378,7 +378,7 @@ const config = {
   webpackChain (chain, webpack) {
     chain.merge({
       module: {
-        rules: {
+        rule: {
           myloader: {
             test: /\.md$/,
             use: [{
