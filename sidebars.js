@@ -620,6 +620,7 @@ module.exports = {
           "apis/media/image/compressImage",
           "apis/media/image/chooseMessageFile",
           "apis/media/image/chooseImage",
+          "apis/media/image/cropImage",
         ]
       },
       {
