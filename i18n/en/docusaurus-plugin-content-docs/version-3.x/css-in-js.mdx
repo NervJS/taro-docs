@@ -13,10 +13,10 @@ There is a common CSS-in-JS solution in the React community: [styled-components]
 * TypeScript support
 * Zero runtime
 
-Using `linaria` is also very simple, first installing the dependencies via NPM: 
+Using `linaria` is also very simple, first installing the dependencies via NPM:
 
 ```bash
-$ npm i linaria
+$ pnpm i @linaria/core @linaria/react @linaria/babel-preset
 ```
 
 Next, configure `babel.config.js` in the project root directory:
@@ -28,7 +28,7 @@ module.exports = {
       framework: 'react',
       ts: true
     }],
-    'linaria/babel' // Add to babel-preset
+    '@linaria' // 添加到 babel-preset
   ]
 }
 ```
@@ -43,7 +43,7 @@ const config = {
       chain.module
         .rule('script')
         .use('linariaLoader')
-        .loader('linaria/loader')
+        .loader('@linaria/webpack-loader')
         .options({
           sourceMap: process.env.NODE_ENV !== 'production',
         })
@@ -54,7 +54,7 @@ const config = {
       chain.module
         .rule('script')
         .use('linariaLoader')
-        .loader('linaria/loader')
+        .loader('@linaria/webpack-loader')
         .options({
           sourceMap: process.env.NODE_ENV !== 'production',
         })
@@ -70,7 +70,7 @@ Finally, create a new `linaria.config.js` in the root of the project
 module.exports = {
   rules: [
     {
-      action: require("linaria/evaluators").shaker,
+      action: require("@linaria/shaker").default,
     },
     {
       test: /node_modules[\/\\](?!@tarojs)/,
@@ -91,9 +91,9 @@ In the business code we can use it like this.
 <TabItem value="JS">
 
 ```jsx
-import React from 'react'
+import { styled } from '@linaria/react'
 import { View } from '@tarojs/components'
-import { styled } from 'linaria/react'
+import React from 'react'
 
 const Title = styled(View)`
   color: ${props => props.color}
@@ -113,14 +113,21 @@ export default Index
 <TabItem value="TS">
 
 ```tsx
+import { styled } from '@linaria/react'
+import { View, ViewProps } from '@tarojs/components'
+
 import React from 'react'
-import { View } from '@tarojs/components'
-import { styled } from 'linaria/react'
+import './index.scss'
 
-const Title = styled(View)<{ color: string }>`
+declare type Component<TProps> = ((props: TProps) => any) | {
+  new (props: TProps): any
+}
+
+type VPS = ViewProps & { style?: React.CSSProperties }
+type TP = VPS & { color: string }
+const Title = styled<TP, VPS, Component<TP>>(View)`
   color: ${props => props.color}
-`;
-
+`
 const Index: React.FC = () => {
   return <Title color='red'>
     Hello World!
