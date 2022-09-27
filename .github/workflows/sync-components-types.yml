@@ -37,4 +37,3 @@ jobs:
         with:
           commit_message: "refactor(types): sync components types"
           commit_options: "--no-verify"
-          branch: types-sync-script
