@@ -8,6 +8,7 @@ interface CoverViewProps extends ViewProps {
   scrollTop?: number
 
   /** 点击事件回调。
+   * 版本要求：基础库 1.9.0 及以上
    * @supported alipay
    */
   onTap?: CommonEventFunction
