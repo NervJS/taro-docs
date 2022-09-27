@@ -2,7 +2,7 @@ name: Sync Components types
 on:
   push:
     branches:
-      - bot-types-sync-script
+      - bot-sync-components-types
 
 jobs:
   sync-components-types:
