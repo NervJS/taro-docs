@@ -25,7 +25,6 @@ interface LivePusherProps extends StandardProps {
 
   /** 是否静音。即将废弃，可用 enable-mic 替代
    * @default false
-   * @deprecated
    * @supported weapp, qq
    */
   muted?: boolean

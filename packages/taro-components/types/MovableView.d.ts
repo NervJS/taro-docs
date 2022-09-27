@@ -101,22 +101,20 @@ interface MovableViewProps extends Omit<StandardProps, 'animation'> {
    */
   onDragEnd?: CommonEventFunction
 
-  /** 初次手指触摸后移动为横向的移动时触发，如果 catch 此事件，则意味着 touchmove 事件也被catch
-   * @supported weapp, tt
-   */
-  catchTouchmove?: CommonEventFunction
-
   /** 触摸动作开始，事件会向父节点传递。
+   * 版本要求： 基础库 1.11.5 及以上
    * @supported alipay
    */
   onTouchStart?: CommonEventFunction
 
   /** 触摸动作开始，事件仅作用于组件，不向父节点传递。
+   * 版本要求： 基础库 1.11.5 及以上
    * @supported alipay
    */
   catchTouchStart?: CommonEventFunction
 
   /** 触摸移动事件，事件会向父节点传递。
+   * 版本要求： 基础库 1.11.5 及以上
    * @supported alipay
    */
   onTouchMove?: CommonEventFunction
@@ -132,6 +130,7 @@ interface MovableViewProps extends Omit<StandardProps, 'animation'> {
   onVTouchMove?: TouchEventFunction
 
   /** 触摸移动事件，事件仅作用于组件，不向父节点传递。
+   * 版本要求： 基础库 1.11.5 及以上
    * @supported alipay
    */
   catchTouchMove?: CommonEventFunction
@@ -155,6 +154,16 @@ interface MovableViewProps extends Omit<StandardProps, 'animation'> {
    * @supported alipay
    */
   onChangeEnd?: CommonEventFunction<MovableViewProps.onChangeEventDetail>
+
+  /** 初次手指触摸后移动为横向的移动时触发，如果 catch 此事件，则意味着 touchmove 事件也被catch
+   * @supported weapp, tt
+   */
+  htouchmove?: CommonEventFunction
+
+  /** 初次手指触摸后移动为纵向的移动时触发，如果 catch 此事件，则意味着 touchmove 事件也被catch
+   * @supported weapp, tt
+   */
+  vtouchmove?: CommonEventFunction
 }
 declare namespace MovableViewProps {
   /** 拖动过程中触发的事件 */

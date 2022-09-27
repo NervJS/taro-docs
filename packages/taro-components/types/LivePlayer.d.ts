@@ -39,7 +39,6 @@ interface LivePlayerProps extends StandardProps {
   /** 进入后台时是否静音（已废弃，默认退台静音）
    * @default false
    * @supported weapp, swan
-   * @deprecated
    */
   backgroundMute?: boolean
 
@@ -136,6 +135,12 @@ interface LivePlayerProps extends StandardProps {
    * @supported swan
    */
   id?: string
+
+  /** 是否开启手机横屏时自动全屏，当系统设置开启自动旋转时生效
+   * @supported weapp
+   * @default false
+   */
+  enableAutoRotation?: string
 }
 declare namespace LivePlayerProps {
   /** mode 的合法值 */
