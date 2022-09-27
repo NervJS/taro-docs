@@ -16,7 +16,8 @@
     "start": "cross-env NODE_OPTIONS=--max-old-space-size=20480 BASE=taro docusaurus start",
     "start:en": "cross-env NODE_OPTIONS=--max-old-space-size=20480 BASE=taro docusaurus start --locale en",
     "swizzle": "docusaurus swizzle",
-    "trans:en": "docusaurus write-translations --locale en"
+    "trans:en": "docusaurus write-translations --locale en",
+    "sync:types": "ts-node scripts/json-schema-to-types.ts"
   },
   "dependencies": {
     "@docusaurus/core": "2.1.0",
@@ -35,6 +36,10 @@
   "devDependencies": {
     "@algolia/client-search": "^4.13.0",
     "@babel/core": "^7.0.0",
+    "@babel/generator": "^7.19.0",
+    "@babel/parser": "^7.19.1",
+    "@babel/traverse": "^7.19.1",
+    "@babel/types": "^7.19.0",
     "@tarojs/components": "latest",
     "@tarojs/runtime": "latest",
     "@tsconfig/docusaurus": "^1.0.5",
@@ -49,7 +54,10 @@
     "csstype": "^3.1.1",
     "dotenv": "^16.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "humps": "^2.0.1",
+    "miniapp-types": "^1.1.10",
     "node-fetch": "2",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "swc-loader": "^0.1.15",
     "ts-node": "^10.7.0",

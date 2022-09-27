@@ -1,0 +1,40 @@
+name: Sync Components types
+on:
+  push:
+    branches:
+      - bot-types-sync-script
+
+jobs:
+  sync-components-types:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: checkout taro
+        uses: actions/checkout@v3
+        with:
+          repository: NervJS/taro
+          fetch-depth: 1
+          path: .taro
+      - run : |
+          cp .taro/packages/taro-components/types/* packages/taro-components/types
+          rm -rf .taro
+
+      - name: install
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+
+      - name: execute sync script
+        run: |
+          pnpm run sync:types
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "refactor(types): sync components types"
+          commit_options: "--no-verify"
+          branch: types-sync-script
