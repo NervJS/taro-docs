@@ -290,6 +290,31 @@ const siteConfig = {
         ],
       },
     ],
+    async function myPlugin(context, options) {
+      // ...
+      return {
+        name: 'my-plugin',
+        async loadContent() {
+          // ...
+        },
+        async contentLoaded({content, actions}) {
+          // ...
+        },
+        /* 其他生命周期 API */
+        configureWebpack(config, isServer, utils) {
+          const {getJSLoader} = utils;
+          if (!isServer) {
+            return {
+              optimization: {
+                runtimeChunk: {
+                  name: entrypoint => `runtime-${entrypoint.name}`,
+                }
+              }
+            }
+          };
+        },
+      };
+    },
   ],
 
   webpack: {
