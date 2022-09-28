@@ -126,9 +126,6 @@ class GenerateTypes {
                 /@supported .*?\n/,
                 `@supported ${supportedPlatforms.join(', ')}\n`
               )
-              if (value.match(/@deprecated/)) {
-                astPath.node.leadingComments[0].value = value.replace(/\* @deprecated.*?\n/, '')
-              }
             }
           },
         })
