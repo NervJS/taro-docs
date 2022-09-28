@@ -55,7 +55,7 @@
     "dotenv": "^16.0.0",
     "html-webpack-plugin": "^5.5.0",
     "humps": "^2.0.1",
-    "miniapp-types": "^1.1.10",
+    "miniapp-types": "^1.1.12",
     "node-fetch": "2",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
