@@ -117,12 +117,12 @@ interface MovableViewProps extends Omit<StandardProps, 'animation'> {
   onTouchMove?: CommonEventFunction
 
   /** 初次手指触摸后移动为横向的移动，如果 catch 此事件，则意味着 touchmove 事件也被 catch
-   * @supported swan
+   * @supported weapp, swan, tt
    */
   onHTouchMove?: TouchEventFunction
 
   /** 初次手指触摸后移动为纵向的移动，如果 catch 此事件，则意味着 touchmove 事件也被 catch
-   * @supported swan
+   * @supported weapp, swan, tt
    */
   onVTouchMove?: TouchEventFunction
 
@@ -150,16 +150,6 @@ interface MovableViewProps extends Omit<StandardProps, 'animation'> {
    * @supported alipay
    */
   onChangeEnd?: CommonEventFunction<MovableViewProps.onChangeEventDetail>
-
-  /** 初次手指触摸后移动为横向的移动时触发，如果 catch 此事件，则意味着 touchmove 事件也被catch
-   * @supported weapp, tt
-   */
-  htouchmove?: CommonEventFunction
-
-  /** 初次手指触摸后移动为纵向的移动时触发，如果 catch 此事件，则意味着 touchmove 事件也被catch
-   * @supported weapp, tt
-   */
-  vtouchmove?: CommonEventFunction
 }
 declare namespace MovableViewProps {
   /** 拖动过程中触发的事件 */
