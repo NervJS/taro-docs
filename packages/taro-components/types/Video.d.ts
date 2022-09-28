@@ -352,7 +352,6 @@ interface VideoProps extends StandardProps {
   posterSize?: string
 
   /** 当底部工具条隐藏时，是否显示细进度条（controls=false 时设置无效）。
-   * 版本要求： 基础库 1.15.0 及以上
    * @supported alipay
    */
   showThinProgressBar?: string
@@ -363,8 +362,6 @@ interface VideoProps extends StandardProps {
    * 1 - tip 提醒
    * 2 - 阻塞提醒(无消耗流量大小)
    * 3 - 阻塞提醒(有消耗流量大小提醒)
-   *
-   * 版本要求： 基础库 1.13.0 及以上
    * @supported alipay, jd
    */
   mobilenetHintType?: string
@@ -385,13 +382,11 @@ interface VideoProps extends StandardProps {
   onUserAction?: CommonEventFunction<VideoProps.onUserActionEventDetail>
 
   /** 视频播放终止。
-   * 版本要求： 基础库 1.9.0 及以上
    * @supported alipay
    */
   onStop?: CommonEventFunction
 
   /** 当视频加载完真正开始播放时触发。
-   * 版本要求： 基础库 1.13.6 及以上
    * @supported alipay
    */
   onRenderStart?: CommonEventFunction
@@ -401,7 +396,6 @@ interface VideoProps extends StandardProps {
    *
    * none：无浮窗。
    * page：页面内浮窗。
-   * 版本要求：基础库 1.24.6 及以上
    * @supported alipay
    */
   floatingMode?: string
