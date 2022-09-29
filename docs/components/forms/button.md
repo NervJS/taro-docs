@@ -260,10 +260,10 @@ export default {
 | ButtonProps.sendMessageImg | ✔️ |  |  |  |  |  |  |  |  |
 | ButtonProps.appParameter | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |
 | ButtonProps.scope |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.onGetUserInfo | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |  |  |
+| ButtonProps.onGetUserInfo | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
 | ButtonProps.onGetAuthorize |  |  | ✔️ |  |  |  |  |  |  |
 | ButtonProps.onContact | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
-| ButtonProps.onGetPhoneNumber | ✔️ | ✔️ |  | ✔️ |  | ✔️ |  |  |  |
+| ButtonProps.onGetPhoneNumber | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |  |
 | ButtonProps.onError | ✔️ |  | ✔️ |  | ✔️ | ✔️ |  |  |  |
 | ButtonProps.onOpenSetting | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |  |  |
 | ButtonProps.onLaunchApp | ✔️ |  |  |  | ✔️ |  |  |  |  |

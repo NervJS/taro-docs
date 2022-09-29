@@ -185,8 +185,6 @@ export default class Picks extends Component {
 | onPickEnd | `CommonEventFunction` |  | 否 | 当滚动选择结束时候触发事件 |
 | title | `string` |  | 否 | 选择器标题，建议标题控制在 12 个中文汉字长度内，避免出现截断现象, 截断部分将以 ... 形式展示 |
 | ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
-| onPickerStart | `CommonEventFunction` |  | 否 | 当滚动选择开始时候触发事件。 |
-| onPickerEnd | `CommonEventFunction` |  | 否 | 当滚动选择结束时候触发事件。 |
 
 ### API 支持度
 
@@ -199,12 +197,10 @@ export default class Picks extends Component {
 | PickerViewProps.maskClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | PickerViewProps.immediateChange | ✔️ |  |  | ✔️ |  |  |  |  |  |
 | PickerViewProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
-| PickerViewProps.onPickStart | ✔️ |  |  | ✔️ | ✔️ |  |  |  |  |
-| PickerViewProps.onPickEnd | ✔️ |  |  | ✔️ | ✔️ |  |  |  |  |
+| PickerViewProps.onPickStart | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| PickerViewProps.onPickEnd | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
 | PickerViewProps.title |  | ✔️ |  |  |  |  |  |  |  |
 | PickerViewProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
-| PickerViewProps.onPickerStart |  |  | ✔️ |  |  |  |  |  |  |
-| PickerViewProps.onPickerEnd |  |  | ✔️ |  |  |  |  |  |  |
 
 ### onChangeEventDetail
 

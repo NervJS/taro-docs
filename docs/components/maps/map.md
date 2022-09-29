@@ -140,14 +140,14 @@ export default {
 | onCalloutTap | `CommonEventFunction<onCalloutTapEventDetail>` |  | 否 | 点击标记点对应的气泡时触发，e.detail = {markerId} |
 | onUpdated | `CommonEventFunction` |  | 否 | 在地图渲染更新完成时触发 |
 | onRegionChange | CommonEventFunction<onRegionEventDetail<"begin"> or onRegionEventDetail<"end">> |  | 否 | 视野发生变化时触发 |
-| onPoiTap | `CommonEventFunction<onPoiTapEventDetail>` |  | 否 | 点击地图poi点时触发，e.detail = {name, longitude, latitude} |
+| onPoiTap | `CommonEventFunction<onPoiTapEventDetail>` |  | 否 | 点击地图poi点时触发 |
 | includePadding | { left: string or number; right: string or number; top: string or number; bottom: string or number; } |  | 否 | 视野在地图 padding 范围内展示 |
 | groundOverlays | `any[]` |  | 否 | 覆盖物，自定义贴图 |
 | tileOverlay | `any[]` |  | 否 | 覆盖物，网格贴图 |
 | enablePoi | `string` |  | 否 | 是否展示 POI 点 |
 | enableBuilding | `string` |  | 否 | 是否展示建筑物 |
-| onCallOutTap | `CommonEventFunction` |  | 否 | 点击标记点对应的气泡时触发e.detail = {markerId} |
-| onAnchorPointTap | `CommonEventFunction` |  | 否 | 点击定位标时触发，e.detail = {longitude, latitude} |
+| onCallOutTap | `CommonEventFunction<{ markerId: any; }>` |  | 否 | 点击标记点对应的气泡时触发 |
+| onAnchorPointTap | `CommonEventFunction<{ longitude: any; latitude: any; }>` |  | 否 | 点击定位标时触发 |
 | polygon | `string` |  | 否 | 覆盖物，多边形。 |
 | customMapStyle | `string` |  | 否 | 设置地图样式。<br /><br />default：默认样式<br />light：精简样式 |
 | panels | `string` |  | 否 | 基于 map 高级定制渲染，设置覆盖在地图上的 view。 |

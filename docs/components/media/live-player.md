@@ -85,6 +85,7 @@ class App extends Components {
 | enableMetadata | `string` |  | 否 | 是否回调metadata |
 | onMetaDataChange | `CommonEventFunction` |  | 否 | metadata通知，detail = {info} |
 | id | `string` |  | 否 | live-player 属性的唯一标志符 |
+| enableAutoRotation | `string` | `false` | 否 | 是否开启手机横屏时自动全屏，当系统设置开启自动旋转时生效 |
 
 ### API 支持度
 
@@ -115,6 +116,7 @@ class App extends Components {
 | LivePlayerProps.enableMetadata |  |  |  | ✔️ |  |  |  |  |
 | LivePlayerProps.onMetaDataChange |  |  |  | ✔️ |  |  |  |  |
 | LivePlayerProps.id |  | ✔️ |  |  |  |  |  |  |
+| LivePlayerProps.enableAutoRotation | ✔️ |  |  |  |  |  |  |  |
 
 ### Mode
 
