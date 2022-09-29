@@ -34,7 +34,6 @@ interface ViewProps extends StandardProps {
   hoverStayTime?: number
 
   /** 是否阻止区域内滚动页面。
-   * 默认值： false
    * 说明： 如果 view 中嵌套 view，外层 view 设置 disable-scroll 为 true 时禁止内部的滚动。
    * @supported alipay
    * @default false
@@ -42,25 +41,14 @@ interface ViewProps extends StandardProps {
   disableScroll?: string
 
   /** 是否隐藏。
-   * 默认值： false
    * @supported alipay
    * @default false
    */
   hidden?: boolean
 
-  /** 自定义样式名。
-   * @supported alipay
-   */
-  class?: string
-
-  /** 内联样式。
-   * @supported alipay
-   */
-  style?: string
-
   /** 用于动画，详见 my.createAnimation 。使用 my.createAnimation 生成的动画是通过过渡（Transition）实现的，只会触发 onTransitionEnd，不会触发 onAnimationStart, onAnimationIteration, onAnimationEnd。
-   * 默认值：{}
    * @supported alipay
+   * @default {}
    */
   animation?: TaroGeneral.IAnyObject
 

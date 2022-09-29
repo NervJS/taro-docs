@@ -175,15 +175,14 @@ interface ScrollViewProps extends StandardProps {
    */
   onDragging?: CommonEventFunction
 
-  /** 外部样式名。
-   * @supported alipay
+  /** 滑动结束事件 (同时开启 enhanced 属性后生效)
+   * @supported weapp
    */
-  class?: string
-
-  /** 内联样式名。
-   * @supported alipay
-   */
-  style?: string
+  onDragend?: CommonEventFunction<{
+    scrollTop
+    scrollLeft
+    velocity
+  }>
 
   /** 当 scroll-with-animation设置为 true 时，可以设置 scroll-animation-duration 来控制动画的执行时间，单位 ms。
    * @supported alipay
@@ -191,8 +190,8 @@ interface ScrollViewProps extends StandardProps {
   scrollAnimationDuration?: string
 
   /** 纵向滚动时，当滚动到顶部或底部时，强制禁止触发页面滚动，仍然只触发 scroll-view 自身的滚动。
-   * 默认值： false
    * @supported alipay
+   * @default false
    */
   trapScroll?: string
 
@@ -236,11 +235,6 @@ interface ScrollViewProps extends StandardProps {
    * @default false
    */
   enablePassive?: string
-
-  /** 滑动结束事件 (同时开启 enhanced 属性后生效) detail { scrollTop, scrollLeft, velocity }
-   * @supported weapp
-   */
-  onDragEnd?: CommonEventFunction
 }
 declare namespace ScrollViewProps {
   interface onScrollDetail {

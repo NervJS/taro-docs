@@ -192,7 +192,7 @@ interface MapProps extends StandardProps {
     MapProps.onRegionEventDetail<'begin'> | MapProps.onRegionEventDetail<'end'>
   >
 
-  /** 点击地图poi点时触发，e.detail = {name, longitude, latitude}
+  /** 点击地图poi点时触发
    * @supported weapp, swan, qq
    */
   onPoiTap?: CommonEventFunction<MapProps.onPoiTapEventDetail>
@@ -224,25 +224,20 @@ interface MapProps extends StandardProps {
    */
   enableBuilding?: string
 
-  /** 点击标记点对应的气泡时触发e.detail = {markerId}
+  /** 点击标记点对应的气泡时触发
    * @supported weapp, swan, tt, jd
    */
-  onCallOutTap?: CommonEventFunction
+  onCallOutTap?: CommonEventFunction<{
+    markerId
+  }>
 
-  /** 点击定位标时触发，e.detail = {longitude, latitude}
+  /** 点击定位标时触发
    * @supported weapp, tt
    */
-  onAnchorPointTap?: CommonEventFunction
-
-  /** 内联样式。
-   * @supported alipay
-   */
-  style?: string
-
-  /** 样式名。
-   * @supported alipay
-   */
-  class?: string
+  onAnchorPointTap?: CommonEventFunction<{
+    longitude
+    latitude
+  }>
 
   /** 覆盖物，多边形。
    * @supported alipay
@@ -265,7 +260,10 @@ interface MapProps extends StandardProps {
   /** 点击 panel 时触发。
    * @supported alipay
    */
-  onPanelTap?: CommonEventFunction<{ panelId, layoutId}>
+  onPanelTap?: CommonEventFunction<{
+    panelId
+    layoutId
+  }>
 
   /** 地图初始化完成即将开始渲染第一帧时触发。
    * @supported alipay
@@ -276,6 +274,11 @@ interface MapProps extends StandardProps {
    * @supported jd
    */
   theme?: string
+
+  /** 内联样式。
+   * @supported alipay
+   */
+  optimize?: string
 
   /** 展示3D楼块
    * @supported weapp, swan, tt, qq

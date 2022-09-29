@@ -63,16 +63,6 @@ interface CanvasProps extends StandardProps<any, CanvasTouchEvent> {
    */
   id?: string
 
-  /** -
-   * @supported alipay
-   */
-  style?: string
-
-  /** -
-   * @supported alipay
-   */
-  class?: string
-
   /**
    * @supported alipay
    */

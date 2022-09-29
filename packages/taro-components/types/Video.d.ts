@@ -336,16 +336,6 @@ interface VideoProps extends StandardProps {
    */
   onControlsToggle?: CommonEventFunction<VideoProps.onControlsToggleEventDetail>
 
-  /** 内联样式。
-   * @supported alipay
-   */
-  style?: string
-
-  /** 外部样式名。
-   * @supported alipay
-   */
-  class?: string
-
   /** 当 poster 高宽比跟视频高宽不匹配时，如何显示 poster，设置规则同 background-size 一致。
    * @supported alipay
    */
