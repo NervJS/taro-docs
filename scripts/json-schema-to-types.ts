@@ -10,7 +10,7 @@ import { format as prettify } from 'prettier'
 
 const MINI_APP_TYPES = ['weapp', 'alipay', 'swan', 'tt', 'qq', 'jd'] as const
 
-const OMIT_PROPS = ['generic:simple-component']
+const OMIT_PROPS = ['generic:simple-component', 'style', 'class']
 class GenerateTypes {
   jsonSchemas: any = {}
   componentName
