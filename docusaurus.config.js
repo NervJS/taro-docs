@@ -16,7 +16,7 @@ const url = {
 }
 const baseUrl = {
   zone: '/',
-  jd: '/taro/',
+  jd: '/',
   taro: '/taro-docs/'
 }
 
