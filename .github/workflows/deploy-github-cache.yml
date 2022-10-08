@@ -24,9 +24,8 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            ~/.pnpm-store
+            node_modules
             build/taro-docs
-            node_modules/.cache
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
