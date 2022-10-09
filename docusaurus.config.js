@@ -11,12 +11,12 @@ const versions = require('./versions.json');
 const path = require('path');
 const url = {
   zone: 'https://docs.taro.zone',
-  jd: 'https://storage.360buyimg.com',
+  jd: 'https://storage.360buyimg.com/pubfree-bucket/taro-docs/37fdd4b5e0/',
   taro: 'https://nervjs.github.io'
 }
 const baseUrl = {
   zone: '/',
-  jd: '/pubfree-bucket/taro-docs/37fdd4b5e0/',
+  jd: '/',
   taro: '/taro-docs/'
 }
 
