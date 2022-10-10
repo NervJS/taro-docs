@@ -117,8 +117,8 @@ const siteConfig = {
       title: 'Taro',
       logo: {
         alt: 'Taro logo',
-        src: 'img/logo-taro.png',
-        srcDark: 'img/logo-taro.png'
+        src: 'https://storage.360buyimg.com/pubfree-bucket/taro-docs/c07c6984de/img/logo-taro.png',
+        srcDark: 'https://storage.360buyimg.com/pubfree-bucket/taro-docs/c07c6984de/img/logo-taro.png'
       },
       items: [
         {
