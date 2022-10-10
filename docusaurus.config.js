@@ -309,6 +309,9 @@ const siteConfig = {
                 runtimeChunk: {
                   name: entrypoint => `runtime-${entrypoint.name}`,
                 }
+              },
+              output: {
+                publicPath: 'https://storage.360buyimg.com/pubfree-bucket/taro-docs/779d5c8c5f/'
               }
             }
           };
