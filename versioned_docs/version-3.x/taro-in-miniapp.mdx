@@ -2,6 +2,10 @@
 title: 原生项目使用 Taro
 ---
 
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import { VueIcon, ReactIcon } from './guides/index'
+
 :::info
 Taro v3.0.25 开始支持
 :::
@@ -72,7 +76,7 @@ App({
     |       └── util.js
     └── taro-project      Taro 项目
         ├── config
-        |   └── index.js 
+        |   └── index.js
         └── src
             └── pages
                 └── index 此页面中希望引用 miniapp/utils/util.js
@@ -156,10 +160,10 @@ logSomething()
     |           └── index.json
     └── taro-project           Taro 项目
         ├── config
-        |   └── index.js 
+        |   └── index.js
         └── src
             ├── components     小程序不支持引用根目录之外的组件，因此只能把原生项目的组件拷贝过来，让开发环境能正确解析组件
-            |   └── title      
+            |   └── title
             └── pages
                 └── index      此页面中希望引用 miniapp/components/title
 
@@ -447,4 +451,54 @@ export default {
   styleIsolation: 'isolated',
   virtualHost: true
 }
+```
+
+### 使用 Slot
+
+:::info
+Taro v3.5.7 开始支持
+:::
+
+组件可以使用 `<NativeSlot>` 作为小程序的 slot 节点。用法介绍：
+
+
+<Tabs
+  defaultValue="React"
+  values={[
+    {label:  <ReactIcon />, value: 'React'},
+    {label: <VueIcon />, value: 'Vue'}
+  ]}>
+<TabItem value="React">
+
+```jsx title="Taro 组件"
+import { View, NativeSlot } from '@tarojs/components'
+
+export default function () {
+  return (
+    <View>
+      <NativeSlot />
+    </View>
+  )
+}
+```
+
+</TabItem>
+
+<TabItem value="Vue">
+
+```html title="Taro 组件"
+<template>
+  <view>
+    <native-slot/>
+  </view>
+</template>
+```
+
+</TabItem>
+</Tabs>
+
+```xml title="原生组件 - index.wxml"
+<comp>
+  <view>Slot Content</view>
+</comp>
 ```

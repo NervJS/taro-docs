@@ -387,7 +387,7 @@ module.exports = {
   csso: {
     enable: true,
     config: {
-      // 配置项同 https://github.com/css/csso#minifysource-options
+      // 配置项同 https://cssnano.co/docs/what-are-optimisations/
     }
   }
 }

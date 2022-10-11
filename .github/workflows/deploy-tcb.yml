@@ -6,7 +6,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: '0 21 * * *'
+    - cron: "0 21 * * *"
 
 env:
   CI: true
@@ -17,13 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with :
-          ref : ${{ github.head_ref }}
-
-      - name: Cache pnpm modules
-        uses: actions/cache@v2
         with:
-          path: ~/.pnpm-store
+          ref: ${{ github.head_ref }}
+
+      - name: Cache pnpm modules and build
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            build/taro-docs
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-

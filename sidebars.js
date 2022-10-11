@@ -133,6 +133,7 @@ module.exports = {
       },
       'css-modules',
       'css-in-js',
+      'ossa',
       'nutui',
       'vant',
       'plugin-mini-ci',

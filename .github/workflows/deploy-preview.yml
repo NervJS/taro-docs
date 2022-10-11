@@ -12,13 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with :
-          ref : ${{ github.head_ref }}
-
-      - name: Cache pnpm modules
-        uses: actions/cache@v2
         with:
-          path: ~/.pnpm-store
+          ref: ${{ github.head_ref }}
+
+      - name: Cache pnpm modules and build
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            build/taro-docs
           key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
@@ -37,7 +39,7 @@ jobs:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.0.12
         with:
-          publish-dir: './dist'
+          publish-dir: "./dist"
           production-branch: docs
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
