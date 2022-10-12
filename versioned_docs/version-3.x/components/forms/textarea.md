@@ -100,8 +100,8 @@ export default class PageView extends Component {
 | confirmType | "send" or "search" or "next" or "go" or "done" or "return" |  | 否 | 设置键盘右下角按钮的文字 |
 | confirmHold | `string` |  | 否 | 点击键盘右下角按钮时是否保持键盘不收起 |
 | name | `string` |  | 否 | 组件名字，用于表单提交获取数据。 |
-| showCount | `string` |  | 否 | 是否渲染字数统计功能（是否删除默认计数器/是否显示字数统计）。<br />版本要求： 基础库 1.8.0 及以上 |
-| controlled | `string` |  | 否 | 是否为受控组件。为 true 时，value 内容会完全受 setData 控制。<br />版本要求： 基础库 1.8.0 及以上 |
+| showCount | `string` |  | 否 | 是否渲染字数统计功能（是否删除默认计数器/是否显示字数统计）。 |
+| controlled | `string` |  | 否 | 是否为受控组件。为 true 时，value 内容会完全受 setData 控制。 |
 | ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
 
 ### API 支持度

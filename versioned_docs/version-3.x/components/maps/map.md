@@ -148,13 +148,11 @@ export default {
 | enableBuilding | `string` |  | 否 | 是否展示建筑物 |
 | onCallOutTap | `CommonEventFunction` |  | 否 | 点击标记点对应的气泡时触发e.detail = {markerId} |
 | onAnchorPointTap | `CommonEventFunction` |  | 否 | 点击定位标时触发，e.detail = {longitude, latitude} |
-| style | `string` |  | 否 | 内联样式。 |
-| class | `string` |  | 否 | 样式名。 |
-| polygon | `string` |  | 否 | 覆盖物，多边形。<br /><br />版本要求：基础库 1.10.0 及以上 |
-| customMapStyle | `string` |  | 否 | 设置地图样式。<br /><br />default：默认样式<br />light：精简样式<br /><br />版本要求：基础库 1.20.0 及以上 |
-| panels | `string` |  | 否 | 基于 map 高级定制渲染，设置覆盖在地图上的 view。<br /><br />版本要求：基础库 1.23.0 及以上 |
-| onPanelTap | `CommonEventFunction` |  | 否 | 点击 panel 时触发。<br /><br />{<br /><br />  panelId,<br /><br />  layoutId,<br /><br />}<br /><br />版本要求：基础库 1.23.0 及以上 |
-| onInitComplete | `CommonEventFunction` |  | 否 | 地图初始化完成即将开始渲染第一帧时触发。<br /><br />版本要求：基础库 2.7.2 及以上 |
+| polygon | `string` |  | 否 | 覆盖物，多边形。 |
+| customMapStyle | `string` |  | 否 | 设置地图样式。<br /><br />default：默认样式<br />light：精简样式 |
+| panels | `string` |  | 否 | 基于 map 高级定制渲染，设置覆盖在地图上的 view。 |
+| onPanelTap | `CommonEventFunction<{ panelId: any; layoutId: any; }>` |  | 否 | 点击 panel 时触发。 |
+| onInitComplete | `CommonEventFunction` |  | 否 | 地图初始化完成即将开始渲染第一帧时触发。 |
 | theme | `string` |  | 否 | 否 |
 | optimize | `string` |  | 否 | 内联样式。 |
 | enable3D | `string` | `false` | 否 | 展示3D楼块 |
@@ -204,8 +202,6 @@ export default {
 | MapProps.enableBuilding | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
 | MapProps.onCallOutTap | ✔️ | ✔️ |  | ✔️ |  | ✔️ |  |  |  |
 | MapProps.onAnchorPointTap | ✔️ |  |  | ✔️ |  |  |  |  |  |
-| MapProps.style |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.class |  |  | ✔️ |  |  |  |  |  |  |
 | MapProps.polygon |  |  | ✔️ |  |  |  |  |  |  |
 | MapProps.customMapStyle |  |  | ✔️ |  |  |  |  |  |  |
 | MapProps.panels |  |  | ✔️ |  |  |  |  |  |  |

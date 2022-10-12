@@ -6,7 +6,7 @@ title: Taro Repository Overview
 
 The following list describes which NPM packages Taro consists of and what each package does.
 
-###  Base
+### Base
 
 | Path | Description |
 | ------------- |:------------- |
@@ -112,15 +112,15 @@ Debug **Runtime** code, you can breakpoint debug directly.
 
 The packages are currently equipped with unit tests for.
 
-- `babel-preset-taro`
-- `@tarojs/cli`
-- `@tarojs/components`
-- `@tarojs/react`
-- `@tarojs/webpack-runner`
-- `@tarojs/mini-runner`
-- `@tarojs/runtime`
-- `@tarojs/taro-rn`
-- `@tarojs/components-rn`
+* `babel-preset-taro`
+* `@tarojs/cli`
+* `@tarojs/components`
+* `@tarojs/react`
+* `@tarojs/webpack-runner`
+* `@tarojs/mini-runner`
+* `@tarojs/runtime`
+* `@tarojs/taro-rn`
+* `@tarojs/components-rn`
 
 After modifying the above packages, developers should make sure to run `pnpm --filter [package name] run test:ci` to check if the test cases all pass.
 

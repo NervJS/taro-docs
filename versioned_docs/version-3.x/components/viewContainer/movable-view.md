@@ -74,20 +74,19 @@ class App extends Components {
 | scaleValue | `number` | `1` | 否 | 定义缩放倍数，取值范围为 0.5 - 10 |
 | animation | `boolean` | `true` | 否 | 是否使用动画 |
 | onChange | `CommonEventFunction<onChangeEventDetail>` |  | 否 | 拖动过程中触发的事件 |
-| onScale | `CommonEventFunction<onScaleEventDetail>` |  | 否 | 缩放过程中触发的事件 |
+| onChangeEnd | `CommonEventFunction<onChangeEventDetail>` |  | 否 | 拖动结束触发的事件 |
 | onDragStart | `CommonEventFunction` |  | 否 | 开始拖动时触发 |
-| onDragEnd | `CommonEventFunction` |  | 否 | 拖动结束时触发 |
-| catchTouchmove | `CommonEventFunction` |  | 否 | 初次手指触摸后移动为横向的移动时触发，如果 catch 此事件，则意味着 touchmove 事件也被catch |
-| onTouchStart | `CommonEventFunction` |  | 否 | 触摸动作开始，事件会向父节点传递。<br />版本要求： 基础库 1.11.5 及以上 |
-| catchTouchStart | `CommonEventFunction` |  | 否 | 触摸动作开始，事件仅作用于组件，不向父节点传递。<br />版本要求： 基础库 1.11.5 及以上 |
-| onTouchMove | `CommonEventFunction` |  | 否 | 触摸移动事件，事件会向父节点传递。<br />版本要求： 基础库 1.11.5 及以上 |
+| onDragEnd | `CommonEventFunction` |  | 否 | 拖动结束时触发<br />触摸动作结束，事件会向父节点传递。 |
+| onScale | `CommonEventFunction<onScaleEventDetail>` |  | 否 | 缩放过程中触发的事件 |
+| onTouchStart | `CommonEventFunction` |  | 否 | 触摸动作开始，事件会向父节点传递。 |
+| onTouchMove | `CommonEventFunction` |  | 否 | 触摸动作开始，事件仅作用于组件，不向父节点传递。 |
+| onTouchEnd | `TouchEventFunction` |  | 否 | 手指触摸动作结束 |
+| onTouchCancel | `CommonEventFunction` |  | 否 | 触摸动作被打断，如来电提醒、弹窗。 |
 | onHTouchMove | `TouchEventFunction` |  | 否 | 初次手指触摸后移动为横向的移动，如果 catch 此事件，则意味着 touchmove 事件也被 catch |
 | onVTouchMove | `TouchEventFunction` |  | 否 | 初次手指触摸后移动为纵向的移动，如果 catch 此事件，则意味着 touchmove 事件也被 catch |
-| catchTouchMove | `CommonEventFunction` |  | 否 | 触摸移动事件，事件仅作用于组件，不向父节点传递。<br />版本要求： 基础库 1.11.5 及以上 |
-| onTouchEnd | `CommonEventFunction` |  | 否 | 触摸动作结束，事件会向父节点传递。 |
+| catchTouchStart | `CommonEventFunction` |  | 否 | 触摸移动事件，事件仅作用于组件，不向父节点传递。 |
+| catchTouchMove | `CommonEventFunction` |  | 否 | 触摸移动事件，事件仅作用于组件，不向父节点传递。 |
 | catchTouchEnd | `CommonEventFunction` |  | 否 | 触摸动作结束，事件仅作用于组件，不向父节点传递。 |
-| onTouchCancel | `CommonEventFunction` |  | 否 | 触摸动作被打断，如来电提醒、弹窗。 |
-| onChangeEnd | `CommonEventFunction<onChangeEventDetail>` |  | 否 | 拖动结束触发的事件 |
 
 ### API 支持度
 
@@ -107,20 +106,19 @@ class App extends Components {
 | MovableViewProps.scaleValue | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | MovableViewProps.animation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | MovableViewProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MovableViewProps.onScale | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| MovableViewProps.onChangeEnd |  |  | ✔️ |  |  |  |  |  |
 | MovableViewProps.onDragStart |  |  |  |  |  |  | ✔️ |  |
 | MovableViewProps.onDragEnd |  |  |  |  |  |  | ✔️ |  |
-| MovableViewProps.catchTouchmove | ✔️ |  |  | ✔️ |  |  |  |  |
+| MovableViewProps.onScale | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | MovableViewProps.onTouchStart |  |  | ✔️ |  |  |  |  |  |
-| MovableViewProps.catchTouchStart |  |  | ✔️ |  |  |  |  |  |
 | MovableViewProps.onTouchMove |  |  | ✔️ |  |  |  |  |  |
+| MovableViewProps.onTouchEnd |  |  |  |  |  | ✔️(此事件的触发顺序会因为当前事件机制引起组件内外注册的事件执行顺序不正常，外部注册的事件可能会优先于内部执行，如需保证执行顺序一致，需要在回调函数中包裹 setTimeout 临时处理) |  |  |
+| MovableViewProps.onTouchCancel |  |  | ✔️ |  |  |  |  |  |
 | MovableViewProps.onHTouchMove |  | ✔️ |  |  |  |  |  |  |
 | MovableViewProps.onVTouchMove |  | ✔️ |  |  |  |  |  |  |
-| MovableViewProps.catchTouchMove |  |  | ✔️ |  |  |  |  |  |
-| MovableViewProps.onTouchEnd |  |  | ✔️ |  |  |  |  |  |
+| MovableViewProps.catchTouchStart |  |  | ✔️ |  |  |  |  |  |
+| MovableViewProps.catchTouchMove | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
 | MovableViewProps.catchTouchEnd |  |  | ✔️ |  |  |  |  |  |
-| MovableViewProps.onTouchCancel |  |  | ✔️ |  |  |  |  |  |
-| MovableViewProps.onChangeEnd |  |  | ✔️ |  |  |  |  |  |
 
 ### TChangeSource
 

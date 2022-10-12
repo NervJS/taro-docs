@@ -25,14 +25,15 @@ sidebar_label: downloadFile
 
 ### Option
 
-| 参数 | 类型 | 必填 | 说明 |
-| --- | --- | :---: | --- |
-| url | `string` | 是 | 下载资源的 url |
-| complete | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
-| fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
-| filePath | `string` | 否 | 指定文件下载后存储的路径 |
-| header | `TaroGeneral.IAnyObject` | 否 | HTTP 请求的 Header，Header 中不能设置 Referer |
-| success | `(result: FileSuccessCallbackResult) => void` | 否 | 接口调用成功的回调函数 |
+| 参数 | 类型 | 默认值 | 必填 | 说明 |
+| --- | --- | :---: | :---: | --- |
+| url | `string` |  | 是 | 下载资源的 url |
+| filePath | `string` |  | 否 | 指定文件下载后存储的路径 |
+| header | `TaroGeneral.IAnyObject` |  | 否 | HTTP 请求的 Header，Header 中不能设置 Referer |
+| withCredentials | `boolean` | `true` | 否 | 是否应使用传出凭据 (cookie) 发送此请求<br />API 支持度: h5 |
+| complete | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+| fail | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用失败的回调函数 |
+| success | `(result: FileSuccessCallbackResult) => void` |  | 否 | 接口调用成功的回调函数 |
 
 ### FileSuccessCallbackResult
 
