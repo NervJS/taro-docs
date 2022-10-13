@@ -311,7 +311,7 @@ const siteConfig = {
                 }
               },
               output: {
-                publicPath: './'
+                publicPath: '/'
               }
             }
           };
