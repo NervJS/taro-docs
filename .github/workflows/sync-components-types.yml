@@ -2,16 +2,15 @@ name: Sync Components types
 on:
   schedule:
     - cron: '0 0 * * 6'
-    
 
 jobs:
   sync-components-types:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Checkout taro
+      - name: Checkout NervJS/taro
         uses: actions/checkout@v3
         with:
           repository: NervJS/taro
@@ -21,6 +20,25 @@ jobs:
           cp .taro/packages/taro-components/types/* packages/taro-components/types
           cp .taro/packages/taro/types/* packages/taro/types
           rm -rf .taro
+
+      - name: Cache pnpm modules and build
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-
+
+      - name: Installation Dependencies
+        uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+
+      - name: Generate API document
+        run: pnpm run build:docs-api --verbose
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
@@ -32,4 +50,4 @@ jobs:
           labels: |
             A-typings
             A-components
-          
+
