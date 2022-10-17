@@ -7,6 +7,7 @@
 
 // See https://docusaurus.io/docs/site-config.html for all the possible
 // site configuration options.
+const uniqueCommitId = require('unique-commit-id')
 const versions = require('./versions.json');
 const path = require('path');
 const url = {
@@ -311,7 +312,7 @@ const siteConfig = {
                 }
               },
               output: {
-                publicPath: '/'
+                publicPath: `https://storage.360buyimg.com/pubfree-bucket/taro-docs/${uniqueCommitId.latest()}/`
               }
             }
           };
