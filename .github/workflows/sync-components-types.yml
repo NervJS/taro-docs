@@ -1,7 +1,7 @@
 name: Sync Components types
 on:
   schedule:
-    - cron: '0 0 * * 6'
+    - cron: '0 0 * * 2,6'
   push:
     branches:
       - dev-ci
@@ -20,8 +20,8 @@ jobs:
           fetch-depth: 1
           path: .taro
       - run : |
-          cp -r .taro/packages/taro-components/types/ packages/taro-components/types
-          cp -r .taro/packages/taro/types/ packages/taro/types
+          cp -r .taro/packages/taro-components/types/* packages/taro-components/types
+          cp -r .taro/packages/taro/types/* packages/taro/types
           rm -rf .taro
 
       - name: Cache pnpm modules and build
