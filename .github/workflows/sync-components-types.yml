@@ -20,7 +20,8 @@ jobs:
           fetch-depth: 1
           path: .taro
       - run : |
-          cp .taro/packages/taro-components/types/* packages/taro-components/types
+          cp -r .taro/packages/taro-components/types/ packages/taro-components/types
+          cp -r .taro/packages/taro/types/ packages/taro/types
           rm -rf .taro
 
       - name: Cache pnpm modules and build
