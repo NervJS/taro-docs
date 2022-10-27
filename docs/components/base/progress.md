@@ -83,8 +83,8 @@ export default class PageView extends Component {
 | active | `boolean` | `false` | 否 | 进度条从左往右的动画 |
 | activeMode | "backwards" or "forwards" | `backwards` | 否 | backwards: 动画从头播<br /><br />forwards: 动画从上次结束点接着播 |
 | duration | `number` | `30` | 否 | 进度增加 1% 所需毫秒数 |
-| onActiveEnd | `CommonEventFunction` |  | 否 | 动画完成事件 |
 | ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
+| onActiveEnd | `CommonEventFunction` |  | 否 | 动画完成事件 |
 
 ### API 支持度
 
@@ -101,5 +101,5 @@ export default class PageView extends Component {
 | ProgressProps.active | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ProgressProps.activeMode | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ProgressProps.duration | ✔️ | ✔️ |  |  |  | ✔️ | ✔️ |  |  |
-| ProgressProps.onActiveEnd | ✔️ |  |  |  | ✔️ | ✔️ | ✔️ |  |  |
 | ProgressProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
+| ProgressProps.onActiveEnd | ✔️ |  |  |  | ✔️ | ✔️ | ✔️ |  |  |

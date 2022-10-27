@@ -133,6 +133,17 @@ export default {
 | enableSatellite | `boolean` | `false` | 否 | 是否开启卫星图 |
 | enableTraffic | `boolean` | `false` | 否 | 是否开启实时路况 |
 | setting | MapProps or { [key: string]: any; } |  | 否 | 配置项<br /><br />提供 setting 对象统一设置地图配置。同时对于一些动画属性如 rotate 和 skew，通过 setData 分开设置时无法同时生效，需通过 settting 统一修改。 |
+| includePadding | { left: string or number; right: string or number; top: string or number; bottom: string or number; } |  | 否 | 视野在地图 padding 范围内展示 |
+| groundOverlays | `any[]` |  | 否 | 覆盖物，自定义贴图 |
+| tileOverlay | `any[]` |  | 否 | 覆盖物，网格贴图 |
+| enablePoi | `string` |  | 否 | 是否展示 POI 点 |
+| enableBuilding | `string` |  | 否 | 是否展示建筑物 |
+| polygon | `string` |  | 否 | 覆盖物，多边形。 |
+| customMapStyle | `string` |  | 否 | 设置地图样式。<br /><br />default：默认样式<br />light：精简样式 |
+| panels | `string` |  | 否 | 基于 map 高级定制渲染，设置覆盖在地图上的 view。 |
+| theme | `string` |  | 否 | 否 |
+| optimize | `string` |  | 否 | 内联样式。 |
+| enable3D | `string` | `false` | 否 | 展示3D楼块 |
 | onTap | `CommonEventFunction` |  | 否 | 点击地图时触发 |
 | onMarkerTap | `CommonEventFunction<onMarkerTapEventDetail>` |  | 否 | 点击标记点时触发，e.detail = {markerId} |
 | onLabelTap | `CommonEventFunction<onLabelTapEventDetail>` |  | 否 | 点击label时触发，e.detail = {markerId} |
@@ -141,21 +152,10 @@ export default {
 | onUpdated | `CommonEventFunction` |  | 否 | 在地图渲染更新完成时触发 |
 | onRegionChange | CommonEventFunction<onRegionEventDetail<"begin"> or onRegionEventDetail<"end">> |  | 否 | 视野发生变化时触发 |
 | onPoiTap | `CommonEventFunction<onPoiTapEventDetail>` |  | 否 | 点击地图poi点时触发，e.detail = {name, longitude, latitude} |
-| includePadding | { left: string or number; right: string or number; top: string or number; bottom: string or number; } |  | 否 | 视野在地图 padding 范围内展示 |
-| groundOverlays | `any[]` |  | 否 | 覆盖物，自定义贴图 |
-| tileOverlay | `any[]` |  | 否 | 覆盖物，网格贴图 |
-| enablePoi | `string` |  | 否 | 是否展示 POI 点 |
-| enableBuilding | `string` |  | 否 | 是否展示建筑物 |
 | onCallOutTap | `CommonEventFunction` |  | 否 | 点击标记点对应的气泡时触发e.detail = {markerId} |
 | onAnchorPointTap | `CommonEventFunction` |  | 否 | 点击定位标时触发，e.detail = {longitude, latitude} |
-| polygon | `string` |  | 否 | 覆盖物，多边形。 |
-| customMapStyle | `string` |  | 否 | 设置地图样式。<br /><br />default：默认样式<br />light：精简样式 |
-| panels | `string` |  | 否 | 基于 map 高级定制渲染，设置覆盖在地图上的 view。 |
 | onPanelTap | `CommonEventFunction<{ panelId: any; layoutId: any; }>` |  | 否 | 点击 panel 时触发。 |
 | onInitComplete | `CommonEventFunction` |  | 否 | 地图初始化完成即将开始渲染第一帧时触发。 |
-| theme | `string` |  | 否 | 否 |
-| optimize | `string` |  | 否 | 内联样式。 |
-| enable3D | `string` | `false` | 否 | 展示3D楼块 |
 
 ### API 支持度
 
@@ -187,6 +187,17 @@ export default {
 | MapProps.enableSatellite | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
 | MapProps.enableTraffic | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
 | MapProps.setting | ✔️ |  | ✔️ |  | ✔️ |  |  |  |  |
+| MapProps.includePadding |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.groundOverlays |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.tileOverlay |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.enablePoi | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.enableBuilding | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.polygon |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.customMapStyle |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.panels |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.theme |  |  |  |  |  | ✔️ |  |  |  |
+| MapProps.optimize |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.enable3D | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
 | MapProps.onTap | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | MapProps.onMarkerTap | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | MapProps.onLabelTap | ✔️ |  |  | ✔️ |  |  |  |  |  |
@@ -195,21 +206,10 @@ export default {
 | MapProps.onUpdated | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
 | MapProps.onRegionChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | MapProps.onPoiTap | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
-| MapProps.includePadding |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.groundOverlays |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.tileOverlay |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.enablePoi | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
-| MapProps.enableBuilding | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
 | MapProps.onCallOutTap | ✔️ | ✔️ |  | ✔️ |  | ✔️ |  |  |  |
 | MapProps.onAnchorPointTap | ✔️ |  |  | ✔️ |  |  |  |  |  |
-| MapProps.polygon |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.customMapStyle |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.panels |  |  | ✔️ |  |  |  |  |  |  |
 | MapProps.onPanelTap |  |  | ✔️ |  |  |  |  |  |  |
 | MapProps.onInitComplete |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.theme |  |  |  |  |  | ✔️ |  |  |  |
-| MapProps.optimize |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.enable3D | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
 
 ### marker
 
