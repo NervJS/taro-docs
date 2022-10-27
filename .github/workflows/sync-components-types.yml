@@ -21,7 +21,6 @@ jobs:
           path: .taro
       - run : |
           cp .taro/packages/taro-components/types/* packages/taro-components/types
-          cp .taro/packages/taro/types/* packages/taro/types
           rm -rf .taro
 
       - name: Cache pnpm modules and build
