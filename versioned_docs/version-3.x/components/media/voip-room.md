@@ -43,8 +43,8 @@ export default class PageView extends Component {
 | --- | --- | :---: | :---: | --- |
 | mode | `keyof Mode` | `camera` | 否 | 对话窗口类型，自身传入 camera，其它用户传入 video |
 | devicePosition | `keyof DevicePosition` | `front` | 否 | 仅在 mode 为 camera 时有效，前置或后置，值为front, back |
+| openId | `string` | `none` | 否 | 进入房间用户的 openid |
 | onError | `CommonEventFunction` |  | 否 | 创建对话窗口失败时触发 |
-| openid | `string` | `none` | 否 | 进入房间用户的 openid |
 
 ### API 支持度
 
@@ -52,8 +52,8 @@ export default class PageView extends Component {
 | :---: | :---: | :---: | :---: | :---: |
 | VoipRoomProps.mode | ✔️ |  |  |  |
 | VoipRoomProps.devicePosition | ✔️ |  |  |  |
+| VoipRoomProps.openId | ✔️ |  |  |  |
 | VoipRoomProps.onError | ✔️ |  |  |  |
-| VoipRoomProps.openid | ✔️ |  |  |  |
 
 ### Mode
 

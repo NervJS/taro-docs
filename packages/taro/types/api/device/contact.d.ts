@@ -96,7 +96,7 @@ declare module '../../index' {
   }
 
   interface TaroStatic {
-    /** 添加手机通讯录联系人。用户可以选择将该表单以「新增联系人」或「添加到已有联系人」的方式，写入手机系统通讯录。
+    /** 选择手机通讯录联系人。
      * @supported weapp
      * @see https://developers.weixin.qq.com/miniprogram/dev/api/device/contact/wx.chooseContact.html
      */
