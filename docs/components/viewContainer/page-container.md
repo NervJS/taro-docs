@@ -34,6 +34,7 @@ ComponentType<PageContainerProps>
 | round | `boolean` | `false` | 否 | 是否显示圆角 |
 | overlayStyle | `string` |  | 否 | 自定义遮罩层样式 |
 | customStyle | `string` |  | 否 | 自定义弹出层样式 |
+| closeOnSlideDown | `string` | `false` | 否 | 是否在下滑一段距离后关闭 |
 | onBeforeEnter | `CommonEventFunction` |  | 否 | 进入前触发 |
 | onEnter | `CommonEventFunction` |  | 否 | 进入中触发 |
 | onAfterEnter | `CommonEventFunction` |  | 否 | 进入后触发 |
@@ -41,7 +42,6 @@ ComponentType<PageContainerProps>
 | onLeave | `CommonEventFunction` |  | 否 | 离开中触发 |
 | onAfterLeave | `CommonEventFunction` |  | 否 | 离开后触发 |
 | onClickOverlay | `CommonEventFunction` |  | 否 | 点击遮罩层时触发 |
-| closeOnSlideDown | `string` | `false` | 否 | 是否在下滑一段距离后关闭 |
 
 ### API 支持度
 
@@ -55,6 +55,7 @@ ComponentType<PageContainerProps>
 | PageContainerProps.round | ✔️ |  | ✔️ |  |
 | PageContainerProps.overlayStyle | ✔️ |  | ✔️ |  |
 | PageContainerProps.customStyle | ✔️ |  | ✔️ |  |
+| PageContainerProps.closeOnSlideDown | ✔️ |  |  |  |
 | PageContainerProps.onBeforeEnter | ✔️ |  | ✔️ |  |
 | PageContainerProps.onEnter | ✔️ |  | ✔️ |  |
 | PageContainerProps.onAfterEnter | ✔️ |  | ✔️ |  |
@@ -62,7 +63,6 @@ ComponentType<PageContainerProps>
 | PageContainerProps.onLeave | ✔️ |  | ✔️ |  |
 | PageContainerProps.onAfterLeave | ✔️ |  | ✔️ |  |
 | PageContainerProps.onClickOverlay | ✔️ |  |  |  |
-| PageContainerProps.closeOnSlideDown | ✔️ |  |  |  |
 
 ### Position
 

@@ -2,6 +2,9 @@ name: Sync Components types
 on:
   schedule:
     - cron: '0 0 * * 1,3,6'
+  push:
+    branches:
+      - dev-ci
 
 jobs:
   sync-components-types:

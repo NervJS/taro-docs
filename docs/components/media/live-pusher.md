@@ -93,12 +93,12 @@ class App extends Components {
 | videoHeight | `number` | `640` | 否 | 上推的视频流的分辨率高度 |
 | beautyStyle | `keyof BeautyStyleType` | `smooth` | 否 | 设置美颜类型 |
 | filter | `keyof FilterType` | `standard` | 否 | 设置色彩滤镜 |
+| pictureInPictureMode | string or any[] |  | 否 | 设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]） |
 | onStateChange | `CommonEventFunction<onStateChangeEventDetail>` |  | 否 | 状态变化事件，detail = {code} |
 | onError | `CommonEventFunction<onErrorEventDetail>` |  | 否 | 渲染错误事件，detail = {errMsg, errCode} |
 | onBgmProgress | `CommonEventFunction<onBgmProgressEventDetail>` |  | 否 | 背景音进度变化时触发，detail = {progress, duration} |
 | onBgmComplete | `CommonEventFunction` |  | 否 | 背景音播放完成时触发 |
 | onAudioVolumeNotify | `CommonEventFunction` |  | 否 | 返回麦克风采集的音量大小 |
-| pictureInPictureMode | string or any[] |  | 否 | 设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]） |
 | onNetStatus | `CommonEventFunction` |  | 否 | 网络状态通知，detail = {info} |
 | onEnterPictureInPicture | `string` |  | 否 | 进入小窗 |
 | onLeavePictureInPicture | `string` |  | 否 | 退出小窗 |
@@ -138,12 +138,12 @@ class App extends Components {
 | LivePusherProps.videoHeight | ✔️ |  |  |  |  |
 | LivePusherProps.beautyStyle | ✔️ |  |  |  |  |
 | LivePusherProps.filter | ✔️ |  |  |  |  |
+| LivePusherProps.pictureInPictureMode | ✔️ |  |  |  |  |
 | LivePusherProps.onStateChange | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.onError | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.onBgmProgress | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.onBgmComplete | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.onAudioVolumeNotify | ✔️ |  |  |  |  |
-| LivePusherProps.pictureInPictureMode | ✔️ |  |  |  |  |
 | LivePusherProps.onNetStatus | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.onEnterPictureInPicture | ✔️ |  |  |  |  |
 | LivePusherProps.onLeavePictureInPicture | ✔️ |  |  |  |  |
