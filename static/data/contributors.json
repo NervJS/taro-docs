@@ -1491,82 +1491,6 @@
     "cover": {
       "type": "external",
       "external": {
-        "url": "https://avatars.githubusercontent.com/u/6000794?v=4"
-      }
-    },
-    "properties": {
-      "title": {
-        "id": "title",
-        "type": "title",
-        "title": [
-          {
-            "type": "text",
-            "text": {
-              "content": "evernoteHW",
-              "link": null
-            },
-            "plain_text": "evernoteHW",
-            "href": null
-          }
-        ]
-      },
-      "github": {
-        "id": "ogpZ",
-        "type": "url",
-        "url": "https://github.com/evernoteHW"
-      },
-      "role": {
-        "id": "m%3AAW",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "173f3699-4a3f-4af4-bd8d-c8b47a0d2ca9",
-            "name": "合作者",
-            "color": "blue"
-          },
-          {
-            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
-            "name": "助手",
-            "color": "purple"
-          }
-        ]
-      },
-      "team": {
-        "id": "CBVI",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "938a3f82-1e7e-4993-8d16-3ee2022706d1",
-            "name": "Platform 团队",
-            "color": "pink"
-          }
-        ]
-      },
-      "group": {
-        "id": "%5ElK%3A",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "3ce33a4b-36b0-40ff-8680-54be7d7c9a8f",
-            "name": "H5 工作组",
-            "color": "pink"
-          }
-        ]
-      },
-      "alumni": {
-        "id": "dtGi",
-        "type": "formula",
-        "formula": {
-          "type": "boolean",
-          "boolean": false
-        }
-      }
-    }
-  },
-  {
-    "cover": {
-      "type": "external",
-      "external": {
         "url": "https://avatars.githubusercontent.com/u/15077010?v=4"
       }
     },
@@ -2103,6 +2027,82 @@
         "formula": {
           "type": "boolean",
           "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
+        "url": "https://avatars.githubusercontent.com/u/6000794?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "evernoteHW",
+              "link": null
+            },
+            "plain_text": "evernoteHW",
+            "href": null
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/evernoteHW"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "173f3699-4a3f-4af4-bd8d-c8b47a0d2ca9",
+            "name": "合作者",
+            "color": "blue"
+          },
+          {
+            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
+            "name": "助手",
+            "color": "purple"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "938a3f82-1e7e-4993-8d16-3ee2022706d1",
+            "name": "Platform 团队",
+            "color": "pink"
+          }
+        ]
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "3ce33a4b-36b0-40ff-8680-54be7d7c9a8f",
+            "name": "H5 工作组",
+            "color": "pink"
+          }
+        ]
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
         }
       }
     }
