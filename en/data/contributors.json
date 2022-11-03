@@ -3277,6 +3277,82 @@
     "cover": {
       "type": "external",
       "external": {
+        "url": "https://avatars.githubusercontent.com/u/20769230?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Medivh",
+              "link": null
+            },
+            "plain_text": "Medivh",
+            "href": null
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/crazyonebyone"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
+            "name": "助手",
+            "color": "purple"
+          },
+          {
+            "id": "7c557d2c-e604-45a3-8680-05867408143c",
+            "name": "个人贡献者",
+            "color": "pink"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "1db056fc-165e-4209-bf2d-442530065e78",
+            "name": "Core 团队",
+            "color": "red"
+          }
+        ]
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "c29ecc9d-a81f-491c-893f-296922942e98",
+            "name": "Runtime 工作组",
+            "color": "red"
+          }
+        ]
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
         "url": "https://avatars.githubusercontent.com/u/21057520?v=4"
       }
     },
@@ -3354,83 +3430,7 @@
         "type": "formula",
         "formula": {
           "type": "boolean",
-          "boolean": false
-        }
-      }
-    }
-  },
-  {
-    "cover": {
-      "type": "external",
-      "external": {
-        "url": "https://avatars.githubusercontent.com/u/20769230?v=4"
-      }
-    },
-    "properties": {
-      "title": {
-        "id": "title",
-        "type": "title",
-        "title": [
-          {
-            "type": "text",
-            "text": {
-              "content": "Medivh",
-              "link": null
-            },
-            "plain_text": "Medivh",
-            "href": null
-          }
-        ]
-      },
-      "github": {
-        "id": "ogpZ",
-        "type": "url",
-        "url": "https://github.com/crazyonebyone"
-      },
-      "role": {
-        "id": "m%3AAW",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
-            "name": "助手",
-            "color": "purple"
-          },
-          {
-            "id": "7c557d2c-e604-45a3-8680-05867408143c",
-            "name": "个人贡献者",
-            "color": "pink"
-          }
-        ]
-      },
-      "team": {
-        "id": "CBVI",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "1db056fc-165e-4209-bf2d-442530065e78",
-            "name": "Core 团队",
-            "color": "red"
-          }
-        ]
-      },
-      "group": {
-        "id": "%5ElK%3A",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "c29ecc9d-a81f-491c-893f-296922942e98",
-            "name": "Runtime 工作组",
-            "color": "red"
-          }
-        ]
-      },
-      "alumni": {
-        "id": "dtGi",
-        "type": "formula",
-        "formula": {
-          "type": "boolean",
-          "boolean": false
+          "boolean": true
         }
       }
     }
@@ -3508,7 +3508,7 @@
         "type": "formula",
         "formula": {
           "type": "boolean",
-          "boolean": false
+          "boolean": true
         }
       }
     }
@@ -3574,7 +3574,7 @@
         "type": "formula",
         "formula": {
           "type": "boolean",
-          "boolean": false
+          "boolean": true
         }
       }
     }
@@ -3974,6 +3974,67 @@
         "id": "ogpZ",
         "type": "url",
         "url": "https://github.com/A0150315"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "7c557d2c-e604-45a3-8680-05867408143c",
+            "name": "个人贡献者",
+            "color": "pink"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
+        "url": "https://avatars.githubusercontent.com/u/6134547?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "yoyo837",
+              "link": {
+                "url": "https://github.com/yoyo837"
+              }
+            },
+            "plain_text": "yoyo837",
+            "href": "https://github.com/yoyo837"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/yoyo837"
       },
       "role": {
         "id": "m%3AAW",
@@ -13429,67 +13490,6 @@
         "id": "ogpZ",
         "type": "url",
         "url": "https://github.com/notbucai"
-      },
-      "role": {
-        "id": "m%3AAW",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "7c557d2c-e604-45a3-8680-05867408143c",
-            "name": "个人贡献者",
-            "color": "pink"
-          }
-        ]
-      },
-      "team": {
-        "id": "CBVI",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "group": {
-        "id": "%5ElK%3A",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "alumni": {
-        "id": "dtGi",
-        "type": "formula",
-        "formula": {
-          "type": "boolean",
-          "boolean": false
-        }
-      }
-    }
-  },
-  {
-    "cover": {
-      "type": "external",
-      "external": {
-        "url": "https://avatars.githubusercontent.com/u/6134547?v=4"
-      }
-    },
-    "properties": {
-      "title": {
-        "id": "title",
-        "type": "title",
-        "title": [
-          {
-            "type": "text",
-            "text": {
-              "content": "yoyo837",
-              "link": {
-                "url": "https://github.com/yoyo837"
-              }
-            },
-            "plain_text": "yoyo837",
-            "href": "https://github.com/yoyo837"
-          }
-        ]
-      },
-      "github": {
-        "id": "ogpZ",
-        "type": "url",
-        "url": "https://github.com/yoyo837"
       },
       "role": {
         "id": "m%3AAW",
