@@ -1,5 +1,5 @@
 ---
-title: Taro.createCameraContext()
+title: Taro.createCameraContext(id)
 sidebar_label: createCameraContext
 ---
 
@@ -12,8 +12,14 @@ sidebar_label: createCameraContext
 ## 类型
 
 ```tsx
-{ (): CameraContext; (id: string): CameraContext; }
+(id?: string) => CameraContext
 ```
+
+## 参数
+
+| 参数 | 类型 |
+| --- | --- |
+| id | `string` |
 
 ## 示例代码
 

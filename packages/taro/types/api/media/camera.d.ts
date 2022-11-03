@@ -199,7 +199,6 @@ declare module '../../index' {
      * ```
      * @see https://developers.weixin.qq.com/miniprogram/dev/api/media/camera/wx.createCameraContext.html
      */
-    createCameraContext(): CameraContext
-    createCameraContext(id: string): CameraContext
+    createCameraContext(id?: string): CameraContext
   }
 }
