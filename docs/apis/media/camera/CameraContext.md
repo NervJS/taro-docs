@@ -117,7 +117,7 @@ listener.start()
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
 | zoom | `number` | 实际设置的缩放级别。由于系统限制，某些机型可能无法设置成指定值，会改用最接近的可设值。 |
-| setZoom | `number` | <br />API 支持度: alipay<br />alipay: on android |
+| setZoom | `number` | <br />API 支持度: alipay on android |
 
 ### StartRecordOption
 
