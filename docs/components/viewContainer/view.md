@@ -112,7 +112,6 @@ export default class PageView extends Component {
 | role | `string` |  | 否 | 表示组件的语义角色。设置为 img 时，组件聚焦后读屏软件会朗读出 图像 ；设置为 button 时，聚焦后读屏软件会朗读出 按钮 。详情请参见 aria-component。 |
 | ariaRole | `string` |  | 否 | 无障碍访问，（角色）标识元素的作用 |
 | ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
-| catchMove | `boolean` |  | 否 | 是否以 catch 的形式绑定 touchmove 事件<br />version: 3.1.0+ |
 | onTap | `CommonEventFunction` |  | 否 | 点击。 |
 | onTouchStart | `CommonEventFunction` |  | 否 | 触摸动作开始。 |
 | onTouchMove | `CommonEventFunction` |  | 否 | 触摸后移动。 |
@@ -126,6 +125,7 @@ export default class PageView extends Component {
 | onAppear | `CommonEventFunction` |  | 否 | 当前元素可见面积超过50%时触发。 |
 | onDisappear | `CommonEventFunction` |  | 否 | 当前元素不可见面积超过50%时触发。 |
 | onFirstAppear | `CommonEventFunction` |  | 否 | 当前元素首次可见面积达到50%时触发。 |
+| catchMove | `boolean` |  | 否 | 是否以 catch 的形式绑定 touchmove 事件<br />version: 3.1.0+<br />unique:  |
 
 ### API 支持度
 
@@ -142,7 +142,6 @@ export default class PageView extends Component {
 | ViewProps.role |  |  | ✔️ |  |  |  |  |  |  |
 | ViewProps.ariaRole |  |  |  |  | ✔️ |  |  |  |  |
 | ViewProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
-| ViewProps.catchMove | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | ViewProps.onTap |  |  | ✔️ |  |  |  |  |  |  |
 | ViewProps.onTouchStart |  |  | ✔️ |  |  |  |  |  |  |
 | ViewProps.onTouchMove |  |  | ✔️ |  |  |  |  |  |  |
@@ -156,3 +155,4 @@ export default class PageView extends Component {
 | ViewProps.onAppear |  |  | ✔️ |  |  |  |  |  |  |
 | ViewProps.onDisappear |  |  | ✔️ |  |  |  |  |  |  |
 | ViewProps.onFirstAppear |  |  | ✔️ |  |  |  |  |  |  |
+| ViewProps.catchMove | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
