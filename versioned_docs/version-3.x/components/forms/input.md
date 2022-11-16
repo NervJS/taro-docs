@@ -135,7 +135,7 @@ class App extends Component {
 | InputProps.password | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.placeholder | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.placeholderStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
-| InputProps.placeholderClass | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
+| InputProps.placeholderClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | InputProps.placeholderTextColor |  |  |  |  |  |  |  | ✔️ |  |
 | InputProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.maxlength | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
@@ -143,12 +143,12 @@ class App extends Component {
 | InputProps.autoFocus | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |
 | InputProps.focus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.confirmType | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
-| InputProps.confirmHold | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
+| InputProps.confirmHold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | InputProps.cursor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
 | InputProps.selectionStart | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
 | InputProps.selectionEnd | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
 | InputProps.adjustPosition | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
-| InputProps.holdKeyboard | ✔️ |  |  |  |  |  |  |  |  |
+| InputProps.holdKeyboard | ✔️ |  |  | ✔️ |  |  |  |  |  |
 | InputProps.alwaysEmbed | ✔️ |  |  |  |  |  |  |  |  |
 | InputProps.safePasswordCertPath | ✔️ |  |  |  |  |  |  |  |  |
 | InputProps.safePasswordLength | ✔️ |  |  |  |  |  |  |  |  |
