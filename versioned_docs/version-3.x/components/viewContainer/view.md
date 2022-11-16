@@ -125,6 +125,7 @@ export default class PageView extends Component {
 | onAppear | `CommonEventFunction` |  | 否 | 当前元素可见面积超过50%时触发。 |
 | onDisappear | `CommonEventFunction` |  | 否 | 当前元素不可见面积超过50%时触发。 |
 | onFirstAppear | `CommonEventFunction` |  | 否 | 当前元素首次可见面积达到50%时触发。 |
+| catchMove | `boolean` |  | 否 | 是否以 catch 的形式绑定 touchmove 事件<br />version: 3.1.0+ |
 
 ### API 支持度
 
@@ -154,3 +155,4 @@ export default class PageView extends Component {
 | ViewProps.onAppear |  |  | ✔️ |  |  |  |  |  |  |
 | ViewProps.onDisappear |  |  | ✔️ |  |  |  |  |  |  |
 | ViewProps.onFirstAppear |  |  | ✔️ |  |  |  |  |  |  |
+| ViewProps.catchMove | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |

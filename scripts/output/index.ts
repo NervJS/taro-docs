@@ -134,6 +134,9 @@ export const get = {
                     if (!isComp) return `<br />API 支持度: ${text}`
                   } else if (name === 'deprecated') {
                     return text ? `<br />不推荐: ${text}` : '<br />**不推荐使用**'
+                  } else if (name === 'unique') {
+                    // Note: 跳过该标签
+                    return ''
                   } else {
                     if (!isComp || !Object.values(envMap).find(env => env.name === name)) {
                       return `<br />${name}: ${parseLineFeed(text)}`
