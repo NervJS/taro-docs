@@ -2,6 +2,7 @@
 slug: 2019-03-12-mini-program-framework-full-review
 title: 小程序框架全面测评 
 authors: yuche
+tags: [v1]
 ---
 
 ![image](https://storage.jd.com/taro-resource/review.jpg)
