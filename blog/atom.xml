@@ -355,6 +355,7 @@
             <name>隔壁老李</name>
             <uri>https://github.com/luckyadam</uri>
         </author>
+        <category label="v2" term="v2"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[小程序跨框架开发的探索与实践]]></title>
@@ -457,6 +458,7 @@ Taro 开发者社区：<a href="https://taro-club.jd.com/" target="_blank" rel="
             <name>yuche</name>
             <uri>https://github.com/yuche</uri>
         </author>
+        <category label="v1" term="v1"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[小程序框架全面测评]]></title>
@@ -469,6 +471,7 @@ Taro 开发者社区：<a href="https://taro-club.jd.com/" target="_blank" rel="
             <name>yuche</name>
             <uri>https://github.com/yuche</uri>
         </author>
+        <category label="v1" term="v1"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[决战性能之巅 - Taro H5 转换与优化升级]]></title>
@@ -481,6 +484,7 @@ Taro 开发者社区：<a href="https://taro-club.jd.com/" target="_blank" rel="
             <name>Littly</name>
             <uri>https://github.com/Littly</uri>
         </author>
+        <category label="v1" term="v1"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Taro UI 2.0 发布：新增自定义主题功能，适配更多小程序]]></title>
@@ -505,6 +509,7 @@ Taro 开发者社区：<a href="https://taro-club.jd.com/" target="_blank" rel="
             <name>隔壁老李</name>
             <uri>https://github.com/luckyadam</uri>
         </author>
+        <category label="v1" term="v1"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Taro 1.1 发布，全面支持微信/百度/支付宝小程序]]></title>
@@ -529,6 +534,7 @@ Taro 开发者社区：<a href="https://taro-club.jd.com/" target="_blank" rel="
             <name>隔壁老李</name>
             <uri>https://github.com/luckyadam</uri>
         </author>
+        <category label="v1" term="v1"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Taro 在京东购物小程序上的实践]]></title>
