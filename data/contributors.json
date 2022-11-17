@@ -985,6 +985,89 @@
     "cover": {
       "type": "external",
       "external": {
+        "url": "https://avatars.githubusercontent.com/u/7858761?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "AdvancedCat",
+              "link": {
+                "url": "https://github.com/AdvancedCat"
+              }
+            },
+            "plain_text": "AdvancedCat",
+            "href": "https://github.com/AdvancedCat"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/AdvancedCat"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "173f3699-4a3f-4af4-bd8d-c8b47a0d2ca9",
+            "name": "合作者",
+            "color": "blue"
+          },
+          {
+            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
+            "name": "助手",
+            "color": "purple"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "1db056fc-165e-4209-bf2d-442530065e78",
+            "name": "Core 团队",
+            "color": "red"
+          },
+          {
+            "id": "f154527a-8950-4e92-8f3e-49ef5cd3e866",
+            "name": "Plugin 团队",
+            "color": "blue"
+          }
+        ]
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "c29ecc9d-a81f-491c-893f-296922942e98",
+            "name": "Runtime 工作组",
+            "color": "red"
+          }
+        ]
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
         "url": "https://avatars.githubusercontent.com/u/10875475?v=4"
       }
     },
@@ -1224,89 +1307,6 @@
           {
             "id": "281cb783-534f-4176-9c31-a7e9711a927a",
             "name": "Compile 工作组",
-            "color": "red"
-          }
-        ]
-      },
-      "alumni": {
-        "id": "dtGi",
-        "type": "formula",
-        "formula": {
-          "type": "boolean",
-          "boolean": false
-        }
-      }
-    }
-  },
-  {
-    "cover": {
-      "type": "external",
-      "external": {
-        "url": "https://avatars.githubusercontent.com/u/7858761?v=4"
-      }
-    },
-    "properties": {
-      "title": {
-        "id": "title",
-        "type": "title",
-        "title": [
-          {
-            "type": "text",
-            "text": {
-              "content": "AdvancedCat",
-              "link": {
-                "url": "https://github.com/AdvancedCat"
-              }
-            },
-            "plain_text": "AdvancedCat",
-            "href": "https://github.com/AdvancedCat"
-          }
-        ]
-      },
-      "github": {
-        "id": "ogpZ",
-        "type": "url",
-        "url": "https://github.com/AdvancedCat"
-      },
-      "role": {
-        "id": "m%3AAW",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "173f3699-4a3f-4af4-bd8d-c8b47a0d2ca9",
-            "name": "合作者",
-            "color": "blue"
-          },
-          {
-            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
-            "name": "助手",
-            "color": "purple"
-          }
-        ]
-      },
-      "team": {
-        "id": "CBVI",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "1db056fc-165e-4209-bf2d-442530065e78",
-            "name": "Core 团队",
-            "color": "red"
-          },
-          {
-            "id": "f154527a-8950-4e92-8f3e-49ef5cd3e866",
-            "name": "Plugin 团队",
-            "color": "blue"
-          }
-        ]
-      },
-      "group": {
-        "id": "%5ElK%3A",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "c29ecc9d-a81f-491c-893f-296922942e98",
-            "name": "Runtime 工作组",
             "color": "red"
           }
         ]
@@ -3348,6 +3348,89 @@
     "cover": {
       "type": "external",
       "external": {
+        "url": "https://avatars.githubusercontent.com/u/10125559?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "hubenkui",
+              "link": {
+                "url": "https://github.com/hubenkui"
+              }
+            },
+            "plain_text": "hubenkui",
+            "href": "https://github.com/hubenkui"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/hubenkui"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
+            "name": "助手",
+            "color": "purple"
+          },
+          {
+            "id": "7c557d2c-e604-45a3-8680-05867408143c",
+            "name": "个人贡献者",
+            "color": "pink"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "938a3f82-1e7e-4993-8d16-3ee2022706d1",
+            "name": "Platform 团队",
+            "color": "pink"
+          }
+        ]
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "8f8e3b5e-edde-43ce-a859-cef192c3eb96",
+            "name": "Open Harmony 工作组",
+            "color": "pink"
+          },
+          {
+            "id": "3ce33a4b-36b0-40ff-8680-54be7d7c9a8f",
+            "name": "H5 工作组",
+            "color": "pink"
+          }
+        ]
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
         "url": "https://avatars.githubusercontent.com/u/6134547?v=4"
       }
     },
@@ -3393,7 +3476,13 @@
       "team": {
         "id": "CBVI",
         "type": "multi_select",
-        "multi_select": []
+        "multi_select": [
+          {
+            "id": "e3ff4b01-9ab6-482a-abfe-feb19a421e73",
+            "name": "社区团队",
+            "color": "brown"
+          }
+        ]
       },
       "group": {
         "id": "%5ElK%3A",
@@ -3459,7 +3548,13 @@
       "team": {
         "id": "CBVI",
         "type": "multi_select",
-        "multi_select": []
+        "multi_select": [
+          {
+            "id": "e3ff4b01-9ab6-482a-abfe-feb19a421e73",
+            "name": "社区团队",
+            "color": "brown"
+          }
+        ]
       },
       "group": {
         "id": "%5ElK%3A",
@@ -3612,6 +3707,72 @@
     "cover": {
       "type": "external",
       "external": {
+        "url": "https://avatars.githubusercontent.com/u/118237328?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "wuxiaoyong001",
+              "link": {
+                "url": "https://github.com/wuxiaoyong001"
+              }
+            },
+            "plain_text": "wuxiaoyong001",
+            "href": "https://github.com/wuxiaoyong001"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/wuxiaoyong001"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
+            "name": "助手",
+            "color": "purple"
+          },
+          {
+            "id": "7c557d2c-e604-45a3-8680-05867408143c",
+            "name": "个人贡献者",
+            "color": "pink"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
         "url": "https://avatars.githubusercontent.com/u/53068384?v=4"
       }
     },
@@ -3689,12 +3850,12 @@
           {
             "type": "text",
             "text": {
-              "content": "Cookeke",
+              "content": "Cookek",
               "link": {
                 "url": "https://github.com/Cookeke"
               }
             },
-            "plain_text": "Cookeke",
+            "plain_text": "Cookek",
             "href": "https://github.com/Cookeke"
           }
         ]
@@ -3876,6 +4037,72 @@
     "cover": {
       "type": "external",
       "external": {
+        "url": "https://avatars.githubusercontent.com/u/20223778?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "zj3620",
+              "link": {
+                "url": "https://github.com/zj3620"
+              }
+            },
+            "plain_text": "zj3620",
+            "href": "https://github.com/zj3620"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/zj3620"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
+            "name": "助手",
+            "color": "purple"
+          },
+          {
+            "id": "7c557d2c-e604-45a3-8680-05867408143c",
+            "name": "个人贡献者",
+            "color": "pink"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
         "url": "https://avatars.githubusercontent.com/u/49017019?v=4"
       }
     },
@@ -3901,6 +4128,72 @@
         "id": "ogpZ",
         "type": "url",
         "url": "https://github.com/CholaDu"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
+            "name": "助手",
+            "color": "purple"
+          },
+          {
+            "id": "7c557d2c-e604-45a3-8680-05867408143c",
+            "name": "个人贡献者",
+            "color": "pink"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
+        "url": "https://avatars.githubusercontent.com/u/15867082?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "smileying",
+              "link": {
+                "url": "https://github.com/smileying"
+              }
+            },
+            "plain_text": "smileying",
+            "href": "https://github.com/smileying"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/smileying"
       },
       "role": {
         "id": "m%3AAW",
@@ -4099,72 +4392,6 @@
         "id": "ogpZ",
         "type": "url",
         "url": "https://github.com/gMorning-Wp"
-      },
-      "role": {
-        "id": "m%3AAW",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
-            "name": "助手",
-            "color": "purple"
-          },
-          {
-            "id": "7c557d2c-e604-45a3-8680-05867408143c",
-            "name": "个人贡献者",
-            "color": "pink"
-          }
-        ]
-      },
-      "team": {
-        "id": "CBVI",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "group": {
-        "id": "%5ElK%3A",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "alumni": {
-        "id": "dtGi",
-        "type": "formula",
-        "formula": {
-          "type": "boolean",
-          "boolean": false
-        }
-      }
-    }
-  },
-  {
-    "cover": {
-      "type": "external",
-      "external": {
-        "url": "https://avatars.githubusercontent.com/u/10125559?v=4"
-      }
-    },
-    "properties": {
-      "title": {
-        "id": "title",
-        "type": "title",
-        "title": [
-          {
-            "type": "text",
-            "text": {
-              "content": "hubenkui",
-              "link": {
-                "url": "https://github.com/hubenkui"
-              }
-            },
-            "plain_text": "hubenkui",
-            "href": "https://github.com/hubenkui"
-          }
-        ]
-      },
-      "github": {
-        "id": "ogpZ",
-        "type": "url",
-        "url": "https://github.com/hubenkui"
       },
       "role": {
         "id": "m%3AAW",
@@ -36595,6 +36822,82 @@
         "formula": {
           "type": "boolean",
           "boolean": true
+        }
+      }
+    }
+  },
+  {
+    "cover": null,
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": []
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": null
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": null,
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": []
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": null
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
         }
       }
     }
