@@ -168,14 +168,3 @@ rn: {
   }
 }
 ```
-
-## Reference Case
-
-The [Taro Playground](https://github.com/wuba/taro-playground) Project support RN, WeChat mini program, web is available for reference.
-
-| Android | iOS | Web | Mini Program |
-| - | - | - | - |
-| ![](https://pic3.58cdn.com.cn/nowater/fangfe/n_v295dd481b6b2f446592350e3187716d03.png) | ![](https://pic1.58cdn.com.cn/nowater/fangfe/n_v224532e5560314106b6ab32b0a1534a9d.png) | ![](https://pic5.58cdn.com.cn/nowater/frs/n_v2d585527f52e640679cdd37123a418fe3.png) | ![](https://pic3.58cdn.com.cn/nowater/frs/n_v23ec2613515c6458aaa44f01d459cea8b.jpg) |
-| https://github.com/wuba/taro-playground/releases | https://apps.apple.com/cn/app/taro-playground/id1576830673 | https://wuba.github.io/taro-playground/ | https://github.com/wuba/taro-playground |
-
-The project also integrates with [Github Workflows](https://github.com/wuba/taro-playground/tree/main/.github/workflows) to automate publishing for Android, iOS, WeChat applets, and web.

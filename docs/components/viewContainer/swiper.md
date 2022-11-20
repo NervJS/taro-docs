@@ -110,21 +110,21 @@ class App extends Component {
 | displayMultipleItems | `number` | `1` | 否 | 同时显示的滑块数量 |
 | skipHiddenItemLayout | `boolean` | `false` | 否 | 是否跳过未显示的滑块布局，设为 true 可优化复杂情况下的滑动性能，但会丢失隐藏状态滑块的布局信息 |
 | easingFunction | `keyof TEasingFunction` | `"default"` | 否 | 指定 swiper 切换缓动动画类型 |
-| onChange | `CommonEventFunction<onChangeEventDetail>` |  | 否 | current 改变时会触发 change 事件 |
-| onTransition | `CommonEventFunction<onTransitionEventDetail>` |  | 否 | swiper-item 的位置发生改变时会触发 transition 事件 |
-| onAnimationFinish | `CommonEventFunction<onChangeEventDetail>` |  | 否 | 动画结束时会触发 animationfinish 事件 |
 | disableTouch | `boolean` | `false` | 否 | 是否禁止用户 touch 操作 |
 | activeClass | `string` |  | 否 | swiper-item 可见时的 class。 |
 | changingClass | `string` |  | 否 | acceleration 设置为 {{true}} 时且处于滑动过程中，中间若干屏处于可见时的 class。 |
 | acceleration | `string` | `false` | 否 | 当开启时，会根据滑动速度，连续滑动多屏。 |
 | disableProgrammaticAnimation | `string` | `false` | 否 | 是否禁用代码变动触发 swiper 切换时使用动画。 |
-| onAnimationEnd | `CommonEventFunction<onCommonEventDetail>` |  | 否 | 动画结束时会触发 animationEnd 事件 |
 | swipeRatio | `string` |  | 否 | 滑动距离阈值，当滑动距离超过阈值时进行 swiper-item 切换。 |
 | swipeSpeed | `string` |  | 否 | 滑动综合速度阈值，当超过阈值时进行 swiper-item 切换，数值越小越敏感。 |
 | touchAngle | `string` |  | 否 | 计算用户手势时所依赖的滑动角度。角度根据 touchstart 事件和首次 touchmove 事件的坐标计算得出。数值越小越对用户的滑动方向准确度要求越高。 |
 | adjustHeight | "first" or "current" or "highest" or "none" |  | 否 | 自动以指定滑块的高度为整个容器的高度。当 vertical 为 true 时，默认不调整。可选值为： |
 | adjustVerticalHeight | `string` |  | 否 | vertical 为 true 时强制使 adjust-height 生效。 |
 | disableTouchmove | `string` | `false` | 否 | 是否停止响应用户 touchmove 操作 |
+| onChange | `CommonEventFunction<onChangeEventDetail>` |  | 否 | current 改变时会触发 change 事件 |
+| onTransition | `CommonEventFunction<onTransitionEventDetail>` |  | 否 | swiper-item 的位置发生改变时会触发 transition 事件 |
+| onAnimationFinish | `CommonEventFunction<onChangeEventDetail>` |  | 否 | 动画结束时会触发 animationfinish 事件 |
+| onAnimationEnd | `CommonEventFunction<onCommonEventDetail>` |  | 否 | 动画结束时会触发 animationEnd 事件 |
 
 ### API 支持度
 
@@ -145,21 +145,21 @@ class App extends Component {
 | SwiperProps.displayMultipleItems | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | SwiperProps.skipHiddenItemLayout |  |  |  |  | ✔️ | ✔️ |  |  |  |
 | SwiperProps.easingFunction | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |  |  |
-| SwiperProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| SwiperProps.onTransition | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| SwiperProps.onAnimationFinish | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | SwiperProps.disableTouch |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.activeClass |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.changingClass |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.acceleration |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.disableProgrammaticAnimation |  |  | ✔️ |  |  |  |  |  |  |
-| SwiperProps.onAnimationEnd |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.swipeRatio |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.swipeSpeed |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.touchAngle |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.adjustHeight |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.adjustVerticalHeight |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.disableTouchmove |  | ✔️ |  |  |  |  |  |  |  |
+| SwiperProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| SwiperProps.onTransition | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| SwiperProps.onAnimationFinish | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| SwiperProps.onAnimationEnd |  |  | ✔️ |  |  |  |  |  |  |
 
 ### TChangeSource
 

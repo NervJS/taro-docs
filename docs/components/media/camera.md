@@ -24,24 +24,28 @@ ComponentType<CameraProps>
 | devicePosition | `keyof DevicePosition` | `"back"` | 否 | 摄像头朝向 |
 | flash | `keyof Flash` | `"auto"` | 否 | 闪光灯 |
 | frameSize | `keyof FrameSize` | `"medium"` | 否 | 指定期望的相机帧数据尺寸 |
+| outputDimension | "360P" or "540P" or "720P" or "1080P" or "max" | `"720P"` | 否 | 相机拍照，录制的分辨率。 |
 | onStop | `CommonEventFunction` |  | 否 | 摄像头在非正常终止时触发，<br />如退出后台等情况 |
 | onError | `CommonEventFunction` |  | 否 | 用户不允许使用摄像头时触发 |
 | onInitDone | `CommonEventFunction<onInitDoneEventDetail>` |  | 否 | 相机初始化完成时触发 |
-| onScanCode | `CommonEventFunction` |  | 否 | 在成功识别到一维码时触发，<br />仅在 mode="scanCode" 时生效 |
+| onReady | `CommonEventFunction<onInitDoneEventDetail>` |  | 否 | 相机初始化成功时触发。 |
+| onScanCode | `CommonEventFunction<onScanCodeEventDetail>` |  | 否 | 在成功识别到一维码时触发，<br />仅在 mode="scanCode" 时生效 |
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| CameraProps.mode | ✔️ |  | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
-| CameraProps.resolution | ✔️ |  | ✔️ |  |  |  |  |  |
-| CameraProps.devicePosition | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
-| CameraProps.flash | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
-| CameraProps.frameSize | ✔️ |  | ✔️ |  |  |  |  |  |
-| CameraProps.onStop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
-| CameraProps.onError | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
-| CameraProps.onInitDone | ✔️ |  | ✔️ |  |  |  | ✔️ |  |
-| CameraProps.onScanCode | ✔️ |  | ✔️ | ✔️ |  |  | ✔️ |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| CameraProps.mode | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| CameraProps.resolution | ✔️ |  |  | ✔️ |  |  |  |  |  |
+| CameraProps.devicePosition | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| CameraProps.flash | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| CameraProps.frameSize | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
+| CameraProps.outputDimension |  |  | ✔️ |  |  |  |  |  |  |
+| CameraProps.onStop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| CameraProps.onError | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| CameraProps.onInitDone | ✔️ |  |  | ✔️ |  |  |  | ✔️ |  |
+| CameraProps.onReady |  |  | ✔️ |  |  |  |  |  |  |
+| CameraProps.onScanCode | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |
 
 ### Mode
 
@@ -97,3 +101,20 @@ frame-size 的合法值
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
 | maxZoom | `number` | 最大变焦 |
+
+### onScanCodeEventDetail
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| charSet | `string` | 字符集 |
+| rawData | `string` | 原始数据 |
+| type | `string` | 码类型 |
+| result | `string` | 识别结果 |
+| fullResult | `string` | 识别结果(完整) |
+
+#### API 支持度
+
+| API | 微信小程序 | 支付宝小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| onScanCodeEventDetail.rawData | ✔️ |  |  |  |  |
+| onScanCodeEventDetail.fullResult |  | ✔️ |  |  |  |

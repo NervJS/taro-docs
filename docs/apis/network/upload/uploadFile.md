@@ -23,18 +23,19 @@ sidebar_label: uploadFile
 
 ### Option
 
-| 参数 | 类型 | 必填 | 说明 |
-| --- | --- | :---: | --- |
-| url | `string` | 是 | 开发者服务器地址 |
-| filePath | `string` | 是 | 要上传文件资源的路径 |
-| name | `string` | 是 | 文件对应的 key，开发者在服务端可以通过这个 key 获取文件的二进制内容 |
-| header | `TaroGeneral.IAnyObject` | 否 | HTTP 请求 Header，Header 中不能设置 Referer |
-| formData | `TaroGeneral.IAnyObject` | 否 | HTTP 请求中其他额外的 form data |
-| timeout | `number` | 否 | 超时时间，单位为毫秒 |
-| fileName | `string` | 否 | 上传的文件名<br />API 支持度: h5 |
-| complete | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
-| fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
-| success | `(result: SuccessCallbackResult) => void` | 否 | 接口调用成功的回调函数 |
+| 参数 | 类型 | 默认值 | 必填 | 说明 |
+| --- | --- | :---: | :---: | --- |
+| url | `string` |  | 是 | 开发者服务器地址 |
+| filePath | `string` |  | 是 | 要上传文件资源的路径 |
+| name | `string` |  | 是 | 文件对应的 key，开发者在服务端可以通过这个 key 获取文件的二进制内容 |
+| header | `TaroGeneral.IAnyObject` |  | 否 | HTTP 请求 Header，Header 中不能设置 Referer |
+| formData | `TaroGeneral.IAnyObject` |  | 否 | HTTP 请求中其他额外的 form data |
+| timeout | `number` |  | 否 | 超时时间，单位为毫秒 |
+| fileName | `string` |  | 否 | 上传的文件名<br />API 支持度: h5 |
+| withCredentials | `boolean` | `true` | 否 | 是否应使用传出凭据 (cookie) 发送此请求<br />API 支持度: h5 |
+| complete | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+| fail | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用失败的回调函数 |
+| success | `(result: SuccessCallbackResult) => void` |  | 否 | 接口调用成功的回调函数 |
 
 ### SuccessCallbackResult
 

@@ -88,17 +88,17 @@ export default class PageView extends Component {
 | svg | `boolean` | `false` | 否 | 默认不解析 svg 格式，svg 图片只支持 aspectFit |
 | lazyLoad | `boolean` | `false` | 否 | 图片懒加载。只针对 page 与 scroll-view 下的 image 有效 |
 | showMenuByLongpress | `boolean` | `false` | 否 | 开启长按图片显示识别小程序码菜单 |
-| onError | `CommonEventFunction<onErrorEventDetail>` |  | 否 | 当错误发生时，发布到 AppService 的事件名，事件对象 |
-| onLoad | `CommonEventFunction<onLoadEventDetail>` |  | 否 | 当图片载入完毕时，发布到 AppService 的事件名，事件对象 |
 | imgProps | `ImgHTMLAttributes<HTMLImageElement>` |  | 否 | 为 img 标签额外增加的属性 |
 | nativeProps | `Record<string, unknown>` |  | 否 | 用于透传 `WebComponents` 上的属性到内部 H5 标签上 |
 | defaultSource | `string` |  | 否 | 默认图片地址，若设置默认图片地址，会先显示默认图片，等 src 对应的图片加载成功后，再渲染对应的图片。 |
-| onTap | `CommonEventFunction` |  | 否 | 点击图片时触发。 |
-| catchTap | `CommonEventFunction` |  | 否 | 点击图片时触发，阻止事件冒泡。 |
 | imageMenuPrevent | `string` |  | 否 | 阻止长按图片时弹起默认菜单（即将该属性设置为image-menu-prevent="true"或image-menu-prevent），只在初始化时有效，不能动态变更；若不想阻止弹起默认菜单，则不需要设置此属性。注：长按菜单后的操作暂不支持 svg 格式 |
 | preview | `string` |  | 否 | 点击后是否预览图片。在不设置的情况下，若 image 未监听点击事件且宽度大于 1/4 屏宽，则默认开启 |
 | originalSrc | `string` |  | 否 | 预览时显示的图片地址 |
 | ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
+| onError | `CommonEventFunction<onErrorEventDetail>` |  | 否 | 当错误发生时，发布到 AppService 的事件名，事件对象 |
+| onLoad | `CommonEventFunction<onLoadEventDetail>` |  | 否 | 当图片载入完毕时，发布到 AppService 的事件名，事件对象 |
+| onTap | `CommonEventFunction` |  | 否 | 点击图片时触发。 |
+| catchTap | `CommonEventFunction` |  | 否 | 点击图片时触发，阻止事件冒泡。 |
 
 ### API 支持度
 
@@ -110,17 +110,17 @@ export default class PageView extends Component {
 | ImageProps.svg |  |  |  |  |  |  |  | ✔️ |  |
 | ImageProps.lazyLoad | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
 | ImageProps.showMenuByLongpress | ✔️ |  |  |  |  |  |  |  |  |
-| ImageProps.onError | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ImageProps.onLoad | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ImageProps.imgProps |  |  |  |  |  |  | ✔️ |  |  |
 | ImageProps.nativeProps |  |  |  |  |  |  | ✔️ |  |  |
 | ImageProps.defaultSource |  |  | ✔️ |  |  |  |  |  |  |
-| ImageProps.onTap |  |  | ✔️ |  |  |  |  |  |  |
-| ImageProps.catchTap |  |  | ✔️ |  |  |  |  |  |  |
 | ImageProps.imageMenuPrevent |  | ✔️ |  |  |  |  |  |  |  |
 | ImageProps.preview |  | ✔️ |  |  |  |  |  |  |  |
 | ImageProps.originalSrc |  | ✔️ |  |  |  |  |  |  |  |
 | ImageProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
+| ImageProps.onError | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ImageProps.onLoad | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| ImageProps.onTap |  |  | ✔️ |  |  |  |  |  |  |
+| ImageProps.catchTap |  |  | ✔️ |  |  |  |  |  |  |
 
 ### Mode
 

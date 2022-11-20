@@ -64,7 +64,7 @@ export async function updateTechnicalCommittee() {
     }
     members.push(member)
     return members
-  }, [])
+  }, Promise.resolve([]))
   writeFile(`static/data/contributors.json`, JSON.stringify(data.map(e => {
     const title = head(e.properties.title?.title)
     title && set(e, ['properties', 'title', 'title'], [title])

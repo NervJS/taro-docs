@@ -33,12 +33,12 @@ ComponentType<PageMetaProps>
 | scrollDuration | `number` | `300` | 否 | 滚动动画时长 |
 | pageStyle | `string` | `""` | 否 | 页面根节点样式，页面根节点是所有页面节点的祖先节点，相当于 HTML 中的 body 节点 |
 | rootFontSize | `string` | `""` | 否 | 页面的根字体大小，页面中的所有 rem 单位，将使用这个字体大小作为参考值，即 1rem 等于这个字体大小 |
-| onResize | `CommonEventFunction<onResizeEventDetail>` |  | 否 | 页面尺寸变化时会触发 resize 事件 |
-| onScroll | `CommonEventFunction<onScrollEventDetail>` |  | 否 | 页面滚动时会触发 scroll 事件 |
-| onScrollDone | `CommonEventFunction` |  | 否 | 如果通过改变 scroll-top 属性来使页面滚动，页面滚动结束后会触发 scrolldone 事件 |
 | rootBackgroundColor | `string` |  | 否 | 页面内容的背景色，用于页面中的空白部分和页面大小变化 resize 动画期间的临时空闲区域 |
 | pageFontSize | `string` |  | 否 | 页面 page 的字体大小，可以设置为 system ，表示使用当前用户设置的微信字体大小 |
 | pageOrientation | `string` |  | 否 | 页面的方向，可为 auto portrait 或 landscape |
+| onResize | `CommonEventFunction<onResizeEventDetail>` |  | 否 | 页面尺寸变化时会触发 resize 事件 |
+| onScroll | `CommonEventFunction<onScrollEventDetail>` |  | 否 | 页面滚动时会触发 scroll 事件 |
+| onScrollDone | `CommonEventFunction` |  | 否 | 如果通过改变 scroll-top 属性来使页面滚动，页面滚动结束后会触发 scrolldone 事件 |
 
 ### API 支持度
 
@@ -52,12 +52,12 @@ ComponentType<PageMetaProps>
 | PageMetaProps.scrollDuration | ✔️ | ✔️ |  |  |  |
 | PageMetaProps.pageStyle | ✔️ | ✔️ |  |  |  |
 | PageMetaProps.rootFontSize | ✔️ | ✔️ |  |  |  |
-| PageMetaProps.onResize | ✔️ |  |  |  |  |
-| PageMetaProps.onScroll | ✔️ | ✔️ |  |  |  |
-| PageMetaProps.onScrollDone | ✔️ |  |  |  |  |
 | PageMetaProps.rootBackgroundColor | ✔️ | ✔️ |  |  |  |
 | PageMetaProps.pageFontSize | ✔️ | ✔️ |  |  |  |
 | PageMetaProps.pageOrientation | ✔️ |  |  |  |  |
+| PageMetaProps.onResize | ✔️ |  |  |  |  |
+| PageMetaProps.onScroll | ✔️ | ✔️ |  |  |  |
+| PageMetaProps.onScrollDone | ✔️ |  |  |  |  |
 
 ### onResizeEventDetail
 

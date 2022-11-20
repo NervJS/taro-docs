@@ -89,12 +89,12 @@ export default class PageView extends Component {
 | poster | `string` |  | 否 | 默认控件上的音频封面的图片资源地址，如果 controls 属性值为 false 则设置 poster 无效 |
 | name | `string` | `"未知音频"` | 否 | 默认控件上的音频名字，如果 controls 属性值为 false 则设置 name 无效 |
 | author | `string` | `"未知作者"` | 否 | 默认控件上的作者名字，如果 controls 属性值为 false 则设置 author 无效 |
+| nativeProps | `Record<string, unknown>` |  | 否 | 用于透传 `WebComponents` 上的属性到内部 H5 标签上 |
 | onError | `CommonEventFunction<onErrorEventDetail>` |  | 否 | 当发生错误时触发 error 事件，detail = {errMsg: MediaError.code} |
 | onPlay | `CommonEventFunction` |  | 否 | 当开始/继续播放时触发play事件 |
 | onPause | `CommonEventFunction` |  | 否 | 当暂停播放时触发 pause 事件 |
 | onTimeUpdate | `CommonEventFunction<onTimeUpdateEventDetail>` |  | 否 | 当播放进度改变时触发 timeupdate 事件，detail = {currentTime, duration} |
 | onEnded | `CommonEventFunction` |  | 否 | 当播放到末尾时触发 ended 事件 |
-| nativeProps | `Record<string, unknown>` |  | 否 | 用于透传 `WebComponents` 上的属性到内部 H5 标签上 |
 
 ### API 支持度
 
@@ -108,12 +108,12 @@ export default class PageView extends Component {
 | AudioProps.poster | ✔️ | ✔️ | ✔️ |  |  |  |
 | AudioProps.name | ✔️ | ✔️ | ✔️ |  |  |  |
 | AudioProps.author | ✔️ | ✔️ | ✔️ |  |  |  |
+| AudioProps.nativeProps |  |  |  | ✔️ |  |  |
 | AudioProps.onError | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | AudioProps.onPlay | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | AudioProps.onPause | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | AudioProps.onTimeUpdate | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | AudioProps.onEnded | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| AudioProps.nativeProps |  |  |  | ✔️ |  |  |
 
 ### onErrorEventDetail
 

@@ -74,14 +74,10 @@ class App extends Component {
 | adIntervals | `number` |  | 否 | 广告自动刷新的间隔时间，单位为秒，参数值必须大于等于30（该参数不传入时 Banner 广告不会自动刷新） |
 | adType | "banner" or "video" or "grid" |  | 否 | 广告类型，默认为展示`banner`，可通过设置该属性为`video`展示视频广告, `grid`为格子广告 |
 | adTheme | "white" or "black" |  | 否 | 广告主题样式设置 |
-| onLoad | `CommonEventFunction` |  | 否 | 广告加载成功的回调 |
-| onError | `CommonEventFunction<onErrorEventDetail>` |  | 否 | 当广告发生错误时，触发的事件，可以通过该事件获取错误码及原因，事件对象 event.detail = {errCode: 1002} |
-| onClose | `CommonEventFunction` |  | 否 | 广告关闭的回调 |
 | appid | `string` |  | 否 | 小程序应用 ID |
 | apid | `string` |  | 否 | 小程序广告位 ID |
 | type | `string` | `feed` | 否 | 广告类型：banner、feed ，需和百青藤平台上的代码位类型相匹配 |
 | updatetime | `string` |  | 否 | 更改该属性，可以触发广告刷新 |
-| onStatus | `CommonEventFunction` |  | 否 | 贴片类型广告播放期间触发 |
 | fixed | `string` |  | 否 | 广告是否在屏幕中固定展示 |
 | scale | `string` | `100` | 否 | 广告的缩放比例，100 为标准尺寸 |
 | adLeft | `string` |  | 否 | type 为 feeds 时广告左边距（px），必须大于 0 |
@@ -91,6 +87,10 @@ class App extends Component {
 | blockSize | `string` | `1` | 否 | type 为 block 时请求积木广告数量（展示以实际拉取广告数量为准） |
 | blockOrientation | "vertical" or "landscape" | `landscape` | 否 | type 为 block 时请求积木广告排列方向 |
 | testBannerType | "one" or "three" | `three` | 否 | 开发者工具下，type 为 banner 时，指定 banner 广告展示三图文还是单图 |
+| onLoad | `CommonEventFunction` |  | 否 | 广告加载成功的回调 |
+| onError | `CommonEventFunction<onErrorEventDetail>` |  | 否 | 当广告发生错误时，触发的事件，可以通过该事件获取错误码及原因，事件对象 event.detail = {errCode: 1002} |
+| onClose | `CommonEventFunction` |  | 否 | 广告关闭的回调 |
+| onStatus | `CommonEventFunction` |  | 否 | 贴片类型广告播放期间触发 |
 | onSize | `CommonEventFunction<onSizeEventDetail>` |  | 否 | type 为 feeds 时广告实际宽高回调 |
 
 ### API 支持度
@@ -101,14 +101,10 @@ class App extends Component {
 | AdProps.adIntervals | ✔️ |  | ✔️ |  |  |  |  |
 | AdProps.adType | ✔️ |  |  |  |  |  |  |
 | AdProps.adTheme | ✔️ |  |  |  |  |  |  |
-| AdProps.onLoad | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| AdProps.onError | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| AdProps.onClose | ✔️ | ✔️ | ✔️ |  |  |  |  |
 | AdProps.appid |  | ✔️ |  |  |  |  |  |
 | AdProps.apid |  | ✔️ |  |  |  |  |  |
 | AdProps.type |  | ✔️ | ✔️ | ✔️ |  |  |  |
 | AdProps.updatetime |  | ✔️ |  |  |  |  |  |
-| AdProps.onStatus |  | ✔️ |  |  |  |  |  |
 | AdProps.fixed |  |  | ✔️ |  |  |  |  |
 | AdProps.scale |  |  | ✔️ |  |  |  |  |
 | AdProps.adLeft |  |  |  | ✔️ |  |  |  |
@@ -118,6 +114,10 @@ class App extends Component {
 | AdProps.blockSize |  |  |  | ✔️ |  |  |  |
 | AdProps.blockOrientation |  |  |  | ✔️ |  |  |  |
 | AdProps.testBannerType |  |  |  | ✔️ |  |  |  |
+| AdProps.onLoad | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| AdProps.onError | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| AdProps.onClose | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| AdProps.onStatus |  | ✔️ |  |  |  |  |  |
 | AdProps.onSize |  |  |  | ✔️ |  |  |  |
 
 ### onErrorEventDetail

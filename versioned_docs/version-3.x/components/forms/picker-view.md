@@ -180,13 +180,11 @@ export default class Picks extends Component {
 | maskStyle | `string` |  | 否 | 设置蒙层的样式 |
 | maskClass | `string` |  | 否 | 设置蒙层的类名 |
 | immediateChange | `boolean` | `false` | 否 | 是否在手指松开时立即触发 change 事件。若不开启则会在滚动动画结束后触发 change 事件。 |
+| title | `string` |  | 否 | 选择器标题，建议标题控制在 12 个中文汉字长度内，避免出现截断现象, 截断部分将以 ... 形式展示 |
+| ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
 | onChange | `CommonEventFunction<onChangeEventDetail>` |  | 否 | 当滚动选择，value 改变时触发 change 事件，event.detail = {value: value}；value为数组，表示 picker-view 内的 picker-view-column 当前选择的是第几项（下标从 0 开始） |
 | onPickStart | `CommonEventFunction` |  | 否 | 当滚动选择开始时候触发事件 |
 | onPickEnd | `CommonEventFunction` |  | 否 | 当滚动选择结束时候触发事件 |
-| title | `string` |  | 否 | 选择器标题，建议标题控制在 12 个中文汉字长度内，避免出现截断现象, 截断部分将以 ... 形式展示 |
-| ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
-| onPickerStart | `CommonEventFunction` |  | 否 | 当滚动选择开始时候触发事件。<br />版本要求： 基础库 2.7.23 及以上 |
-| onPickerEnd | `CommonEventFunction` |  | 否 | 当滚动选择结束时候触发事件。<br />版本要求： 基础库 2.7.23 及以上 |
 
 ### API 支持度
 
@@ -198,13 +196,11 @@ export default class Picks extends Component {
 | PickerViewProps.maskStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | PickerViewProps.maskClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | PickerViewProps.immediateChange | ✔️ |  |  | ✔️ |  |  |  |  |  |
-| PickerViewProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
-| PickerViewProps.onPickStart | ✔️ |  |  | ✔️ | ✔️ |  |  |  |  |
-| PickerViewProps.onPickEnd | ✔️ |  |  | ✔️ | ✔️ |  |  |  |  |
 | PickerViewProps.title |  | ✔️ |  |  |  |  |  |  |  |
 | PickerViewProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
-| PickerViewProps.onPickerStart |  |  | ✔️ |  |  |  |  |  |  |
-| PickerViewProps.onPickerEnd |  |  | ✔️ |  |  |  |  |  |  |
+| PickerViewProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| PickerViewProps.onPickStart | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| PickerViewProps.onPickEnd | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
 
 ### onChangeEventDetail
 

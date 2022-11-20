@@ -164,7 +164,7 @@ export async function updateContributors({ owner = 'NervJS', repo = 'taro', rema
       await updateMember(list[i], remarks)
       await sleep()
     } catch (error) {
-      console.error(`Notion: update ${list[i].login} with error`, error)
+      console.error(`Notion: update contributors ${list[i].login} with error`, error)
     }
   }
 }

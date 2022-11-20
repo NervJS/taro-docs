@@ -62,7 +62,14 @@
           "vue-devtools"
         ]
       },
-      "router",
+      {
+        "label": "路由功能",
+        "type": "category",
+        "items": [
+          "router",
+          "router-extend"
+        ]
+      },
       "static-reference",
       {
         "label": "多端开发",
@@ -650,7 +657,8 @@
           "apis/media/image/editImage",
           "apis/media/image/compressImage",
           "apis/media/image/chooseMessageFile",
-          "apis/media/image/chooseImage"
+          "apis/media/image/chooseImage",
+          "apis/media/image/cropImage"
         ]
       },
       {

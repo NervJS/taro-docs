@@ -19,15 +19,15 @@ ComponentType<RadioGroupProps>
 
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
-| onChange | `CommonEventFunction` | 否 | RadioGroup 中选中项发生改变时触发 change 事件，detail = {value:[选中的radio的value的数组]} |
 | name | `string` | 否 | 组件名字，用于表单提交获取数据。 |
+| onChange | `CommonEventFunction` | 否 | RadioGroup 中选中项发生改变时触发 change 事件，detail = {value:[选中的radio的value的数组]} |
 
 ### API 支持度
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| RadioGroupProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | RadioGroupProps.name |  |  | ✔️ | ✔️ |  |  |  |  |
+| RadioGroupProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 
 ### onChangeEventDetail
 
