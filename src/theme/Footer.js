@@ -7,10 +7,15 @@
 
 import React from "react";
 import Translate from '@docusaurus/Translate';
+import { useLocation } from "@docusaurus/router";
 
+import AffixContact from '../components/affix-contact';
 
 function Footer() {
+  const { pathname = '' } = useLocation()
   return (
+  <>
+    {pathname && pathname.indexOf('/communicate') < 0 && <AffixContact />}
     <footer className="footer" id="footer">
       <div className="grid_c1 footer_cont">
         <div className="footer_logo_container">
@@ -181,6 +186,7 @@ function Footer() {
         </div>
       </div>
     </footer>
+  </>
   );
 }
 
