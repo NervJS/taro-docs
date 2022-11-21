@@ -6,6 +6,9 @@ on:
     branches:
       - dev-ci
 
+env:
+  CI: true
+  NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
 jobs:
   sync-components-types:
     runs-on: ubuntu-latest
@@ -28,7 +31,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.pnpm-store
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-types
           restore-keys: |
             ${{ runner.os }}-
 
@@ -39,6 +42,17 @@ jobs:
           run_install: |
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
+
+      - name: Fetch notion database
+        run: |
+          pnpm notion:update
+          pnpm run notion
+
+      - name: Push changes
+        id: auto-commit-action
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore(date): update contributor member-list"
 
       - name: Generate API document
         run: pnpm run build:docs-api --verbose

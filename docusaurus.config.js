@@ -19,13 +19,13 @@ const baseUrl = {
   jd: '/taro/',
   taro: '/taro-docs/'
 }
-
+const BASE_DOMAIN = process.env.BASE || 'taro'
 
 const siteConfig = {
   title: 'Taro 文档' /* title for your website */,
   tagline: 'Taro 是一个开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv 等框架来开发微信/京东/百度/支付宝/字节跳动/ QQ 小程序/H5/React Native 等应用。',
-  url: url[process.env.BASE || 'taro'], /* your website url */
-  baseUrl: baseUrl[process.env.BASE || 'taro'], /* base url for your project */
+  url: url[BASE_DOMAIN], /* your website url */
+  baseUrl: baseUrl[BASE_DOMAIN], /* base url for your project */
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   onDuplicateRoutes: 'throw',
@@ -297,7 +297,7 @@ const siteConfig = {
       loader: require.resolve('swc-loader'),
       options: {
         jsc: {
-          baseUrl: baseUrl[process.env.BASE || 'taro'],
+          baseUrl: baseUrl[BASE_DOMAIN],
           parser: {
             syntax: 'typescript',
             tsx: true
