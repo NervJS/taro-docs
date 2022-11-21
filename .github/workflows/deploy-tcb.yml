@@ -10,7 +10,6 @@ on:
 
 env:
   CI: true
-  NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
 jobs:
   publish:
     name: Publish
@@ -26,7 +25,7 @@ jobs:
           path: |
             node_modules
             build/taro-docs
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-tcb-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-
 
