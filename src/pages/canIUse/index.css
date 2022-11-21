@@ -1,0 +1,24 @@
+.can-i-use-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px  auto;
+    max-width: 1000px;
+}
+
+.can-i-use-wrap input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+.can-i-use-wrap table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
