@@ -15,12 +15,20 @@
   height: 36px;
   padding: 0 12px;
   border: 0;
-  background: #5c5cff;
   cursor: pointer;
   color: #FFF;
   width: fit-content;
   border-radius: 40px;
   z-index: 11;
+}
+.affix-contact-btn-full {
+  background: #5c5cff;
+  color: #FFF;
+}
+.affix-contact-btn-outline {
+  border: 1px solid #5c5cff;
+  color: #5c5cff;
+  background: #fff;
 }
 
 .affix-contact-content {

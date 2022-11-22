@@ -13,7 +13,7 @@ export default function AffixContact() {
   }
 
   return <div className="affix-contact-container" onClick={toggleShowQrCode}>
-    <div className="affix-contact-btn" > 沟通与反馈 </div>
+    <div className={`affix-contact-btn ${showQrCode ? 'affix-contact-btn-outline' : 'affix-contact-btn-full'}`}> 沟通与反馈 </div>
     <div className="affix-contact-content" style={{display: showQrCode ? 'block': 'none'}}>
       <span>选择下列对应的群，使用微信扫码添加，会收到入群二维码，再扫群码添加即可。</span>
       <ImageList
