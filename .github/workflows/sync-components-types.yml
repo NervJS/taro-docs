@@ -16,17 +16,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Checkout NervJS/taro
-        uses: actions/checkout@v3
-        with:
-          repository: NervJS/taro
-          fetch-depth: 1
-          path: .taro
-      - run : |
-          cp -r .taro/packages/taro-components/types/* packages/taro-components/types
-          cp -r .taro/packages/taro/types/* packages/taro/types
-          rm -rf .taro
-
       - name: Cache pnpm modules and build
         uses: actions/cache@v3
         with:
@@ -53,6 +42,17 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "chore(date): update contributor member-list"
+
+      - name: Checkout NervJS/taro
+        uses: actions/checkout@v3
+        with:
+          repository: NervJS/taro
+          fetch-depth: 1
+          path: .taro
+      - run : |
+          cp -r .taro/packages/taro-components/types/* packages/taro-components/types
+          cp -r .taro/packages/taro/types/* packages/taro/types
+          rm -rf .taro
 
       - name: Generate API document
         run: pnpm run build:docs-api --verbose
