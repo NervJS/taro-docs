@@ -23,9 +23,11 @@ function CanIUse() {
     if (key.match(/^bind/)) {
       return result;
     }
+
     types.forEach((item) => {
       const filtered = item.value.filter(
         (subItem) =>
+          subItem.key.toLowerCase() === key.toLowerCase() ||
           subItem.value.properties[key] ||
           subItem.value.properties[key.replace(/^on/, 'bind')] ||
           Object.keys(subItem.value.properties).some((subKey) => {
