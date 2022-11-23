@@ -143,7 +143,7 @@ export default {
 | panels | `string` |  | 否 | 基于 map 高级定制渲染，设置覆盖在地图上的 view。 |
 | theme | `string` |  | 否 | 否 |
 | optimize | `string` |  | 否 | 内联样式。 |
-| enable3D | `string` | `false` | 否 | 展示3D楼块 |
+| enable3D | `boolean` | `false` | 否 | 展示3D楼块 |
 | onTap | `CommonEventFunction` |  | 否 | 点击地图时触发 |
 | onMarkerTap | `CommonEventFunction<onMarkerTapEventDetail>` |  | 否 | 点击标记点时触发，e.detail = {markerId} |
 | onLabelTap | `CommonEventFunction<onLabelTapEventDetail>` |  | 否 | 点击label时触发，e.detail = {markerId} |

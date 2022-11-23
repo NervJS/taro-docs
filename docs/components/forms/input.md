@@ -98,8 +98,8 @@ class App extends Component {
 | disabled | `boolean` |  | 否 | 是否禁用 |
 | maxlength | `number` | `140` | 否 | 最大输入长度，设置为 -1 的时候不限制最大长度 |
 | cursorSpacing | `number` | `0` | 否 | 指定光标与键盘的距离，单位 px 。取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离 |
-| autoFocus | `boolean` | `false` | 否 | (即将废弃，请直接使用 focus )自动聚焦，拉起键盘 |
-| focus | `boolean` |  | 否 | 获取焦点 |
+| autoFocus | `boolean` | `false` | 否 | (即将废弃，请直接使用 focus )自动聚焦，拉起键盘<br />**不推荐使用** |
+| focus | `boolean` | `false` | 否 | 获取焦点 |
 | confirmType | "send" or "search" or "next" or "go" or "done" | `done` | 否 | 设置键盘右下角按钮的文字 |
 | confirmHold | `boolean` | `false` | 否 | 点击键盘右下角按钮时是否保持键盘不收起 |
 | cursor | `number` |  | 否 | 指定focus时的光标位置 |
@@ -140,7 +140,7 @@ class App extends Component {
 | InputProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.maxlength | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.cursorSpacing | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
-| InputProps.autoFocus | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |
+| InputProps.autoFocus | ✔️ |  |  |  | ✔️ | ✔️ | ✔️ |  |  |
 | InputProps.focus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.confirmType | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
 | InputProps.confirmHold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
