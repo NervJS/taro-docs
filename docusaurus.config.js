@@ -151,6 +151,11 @@ const siteConfig = {
           position: 'left',
         },
         {
+          href: '/canIUse',
+          label: 'CanIUse',
+          position: 'left',
+        },
+        {
           to: "docs/guide",
           activeBasePath: 'docs/guide',
           activeBaseRegex: 'docs/guide',

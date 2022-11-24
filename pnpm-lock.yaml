@@ -25,6 +25,7 @@ specifiers:
   dotenv: ^16.0.0
   html-webpack-plugin: ^5.5.0
   lodash: ^4.17.21
+  miniapp-types: ^1.1.18
   node-fetch: ^2.6.7
   prism-react-renderer: ^1.3.1
   react: ^17.0.2
@@ -48,6 +49,7 @@ dependencies:
   '@swc/core': registry.npmjs.org/@swc/core/1.2.174
   clsx: registry.npmjs.org/clsx/1.1.1
   lodash: registry.npmjs.org/lodash/4.17.21
+  miniapp-types: registry.npmjs.org/miniapp-types/1.1.18
   prism-react-renderer: registry.npmjs.org/prism-react-renderer/1.3.1_react@17.0.2
   react: registry.npmjs.org/react/17.0.2
   react-dom: registry.npmjs.org/react-dom/17.0.2_react@17.0.2
@@ -8505,6 +8507,12 @@ packages:
     dependencies:
       schema-utils: registry.npmjs.org/schema-utils/4.0.0
       webpack: registry.npmjs.org/webpack/5.74.0_@swc+core@1.2.174
+    dev: false
+
+  registry.npmjs.org/miniapp-types/1.1.18:
+    resolution: {integrity: sha512-KXGW5t8yg6Qw3hJd0kUCtp708+i+6hq4EMlZ1DygtxCbsIDrZm12j3ViL7PV8vKl4u4nmJHDj+8x6DnQuZd6Cw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/miniapp-types/-/miniapp-types-1.1.18.tgz}
+    name: miniapp-types
+    version: 1.1.18
     dev: false
 
   registry.npmjs.org/minimalistic-assert/1.0.1:
