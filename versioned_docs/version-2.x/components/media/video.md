@@ -303,7 +303,7 @@ export default class PageView extends Component {
       <td><code>BaseEventOrigFunction&lt;onWaitingEventDetail&gt;</code></td>
       <td style={{ textAlign: "center"}}></td>
       <td style={{ textAlign: "center"}}>否</td>
-      <td>当视频进入和退出全屏时触发<br /><br />event.detail = {`{fullScreen, direction}`}，direction 取为 vertical 或 horizontal</td>
+      <td>视频出现缓冲时触发<br /><br />event.detail = {`{fullScreen, direction}`}，direction 取为 vertical 或 horizontal</td>
     </tr>
     <tr>
       <td>onError</td>
