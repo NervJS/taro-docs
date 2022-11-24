@@ -4,6 +4,7 @@ import Layout from '@theme/Layout';
 
 import types from 'miniapp-types/dist/jsonSchema.json';
 import './index.css';
+
 function CanIUse() {
   const [search, setSearch] = useState('');
 
