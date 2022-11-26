@@ -1019,11 +1019,6 @@
             "id": "173f3699-4a3f-4af4-bd8d-c8b47a0d2ca9",
             "name": "合作者",
             "color": "blue"
-          },
-          {
-            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
-            "name": "助手",
-            "color": "purple"
           }
         ]
       },
@@ -1102,11 +1097,6 @@
             "id": "173f3699-4a3f-4af4-bd8d-c8b47a0d2ca9",
             "name": "合作者",
             "color": "blue"
-          },
-          {
-            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
-            "name": "助手",
-            "color": "purple"
           }
         ]
       },
@@ -1193,11 +1183,6 @@
             "id": "173f3699-4a3f-4af4-bd8d-c8b47a0d2ca9",
             "name": "合作者",
             "color": "blue"
-          },
-          {
-            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
-            "name": "助手",
-            "color": "purple"
           }
         ]
       },
@@ -1271,11 +1256,6 @@
             "id": "173f3699-4a3f-4af4-bd8d-c8b47a0d2ca9",
             "name": "合作者",
             "color": "blue"
-          },
-          {
-            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
-            "name": "助手",
-            "color": "purple"
           }
         ]
       },
@@ -1359,11 +1339,6 @@
             "id": "173f3699-4a3f-4af4-bd8d-c8b47a0d2ca9",
             "name": "合作者",
             "color": "blue"
-          },
-          {
-            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
-            "name": "助手",
-            "color": "purple"
           }
         ]
       },
@@ -1447,11 +1422,6 @@
             "id": "173f3699-4a3f-4af4-bd8d-c8b47a0d2ca9",
             "name": "合作者",
             "color": "blue"
-          },
-          {
-            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
-            "name": "助手",
-            "color": "purple"
           }
         ]
       },
@@ -1669,11 +1639,6 @@
             "id": "173f3699-4a3f-4af4-bd8d-c8b47a0d2ca9",
             "name": "合作者",
             "color": "blue"
-          },
-          {
-            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
-            "name": "助手",
-            "color": "purple"
           }
         ]
       },
@@ -1852,7 +1817,7 @@
     "cover": {
       "type": "external",
       "external": {
-        "url": "https://avatars.githubusercontent.com/u/19852293?v=4"
+        "url": "https://avatars.githubusercontent.com/u/10484248?v=4"
       }
     },
     "properties": {
@@ -1863,20 +1828,20 @@
           {
             "type": "text",
             "text": {
-              "content": "SyMind",
+              "content": "bigmeow",
               "link": {
-                "url": "https://github.com/SyMind"
+                "url": "https://github.com/bigmeow"
               }
             },
-            "plain_text": "SyMind",
-            "href": "https://github.com/SyMind"
+            "plain_text": "bigmeow",
+            "href": "https://github.com/bigmeow"
           }
         ]
       },
       "github": {
         "id": "ogpZ",
         "type": "url",
-        "url": "https://github.com/SyMind"
+        "url": "https://github.com/bigmeow"
       },
       "role": {
         "id": "m%3AAW",
@@ -1913,7 +1878,7 @@
     "cover": {
       "type": "external",
       "external": {
-        "url": "https://avatars.githubusercontent.com/u/10484248?v=4"
+        "url": "https://avatars.githubusercontent.com/u/19852293?v=4"
       }
     },
     "properties": {
@@ -1924,20 +1889,20 @@
           {
             "type": "text",
             "text": {
-              "content": "bigmeow",
+              "content": "SyMind",
               "link": {
-                "url": "https://github.com/bigmeow"
+                "url": "https://github.com/SyMind"
               }
             },
-            "plain_text": "bigmeow",
-            "href": "https://github.com/bigmeow"
+            "plain_text": "SyMind",
+            "href": "https://github.com/SyMind"
           }
         ]
       },
       "github": {
         "id": "ogpZ",
         "type": "url",
-        "url": "https://github.com/bigmeow"
+        "url": "https://github.com/SyMind"
       },
       "role": {
         "id": "m%3AAW",
@@ -5074,6 +5039,67 @@
         "id": "ogpZ",
         "type": "url",
         "url": "https://github.com/CaiDingxian"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "7c557d2c-e604-45a3-8680-05867408143c",
+            "name": "个人贡献者",
+            "color": "pink"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
+        "url": "https://avatars.githubusercontent.com/u/57180744?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "PengBoUESTC",
+              "link": {
+                "url": "https://github.com/PengBoUESTC"
+              }
+            },
+            "plain_text": "PengBoUESTC",
+            "href": "https://github.com/PengBoUESTC"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/PengBoUESTC"
       },
       "role": {
         "id": "m%3AAW",
@@ -13065,67 +13091,6 @@
         "id": "ogpZ",
         "type": "url",
         "url": "https://github.com/NoManPlay"
-      },
-      "role": {
-        "id": "m%3AAW",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "7c557d2c-e604-45a3-8680-05867408143c",
-            "name": "个人贡献者",
-            "color": "pink"
-          }
-        ]
-      },
-      "team": {
-        "id": "CBVI",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "group": {
-        "id": "%5ElK%3A",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "alumni": {
-        "id": "dtGi",
-        "type": "formula",
-        "formula": {
-          "type": "boolean",
-          "boolean": false
-        }
-      }
-    }
-  },
-  {
-    "cover": {
-      "type": "external",
-      "external": {
-        "url": "https://avatars.githubusercontent.com/u/57180744?v=4"
-      }
-    },
-    "properties": {
-      "title": {
-        "id": "title",
-        "type": "title",
-        "title": [
-          {
-            "type": "text",
-            "text": {
-              "content": "PengBoUESTC",
-              "link": {
-                "url": "https://github.com/PengBoUESTC"
-              }
-            },
-            "plain_text": "PengBoUESTC",
-            "href": "https://github.com/PengBoUESTC"
-          }
-        ]
-      },
-      "github": {
-        "id": "ogpZ",
-        "type": "url",
-        "url": "https://github.com/PengBoUESTC"
       },
       "role": {
         "id": "m%3AAW",
