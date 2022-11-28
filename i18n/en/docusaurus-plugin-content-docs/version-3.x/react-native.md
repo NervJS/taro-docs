@@ -273,6 +273,7 @@ Check if the `config/index.js` file has changed the appName, the default is `tar
 0. modify `rn.appName` in `config/index.js`
 1. modify the return value of the `getMainComponentName` method in `MainActivity.java`
 2. modify `moduleName` of `RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"taroDemo" initialProperties:nil];` in  `AppDelegate.m`
+3. `yarn dev:rn --reset-cache`
 
 ### Library not found for -IDoubleConversion
 

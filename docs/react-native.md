@@ -273,6 +273,7 @@ metro 缓存导致，尝试 `yarn dev:rn --reset-cache`
 0. 修改 `config/index.js` 中的 `rn.appName`
 1. 修改 `MainActivity.java` 中 `getMainComponentName` 方法的返回值
 2. 修改 `AppDelegate.m` 中 `RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"taroDemo" initialProperties:nil];` 的 `moduleName`
+3. `yarn dev:rn --reset-cache`
 
 ### Library not found for -IDoubleConversion
 
