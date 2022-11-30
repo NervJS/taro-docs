@@ -111,6 +111,8 @@ class App extends Component {
 | skipHiddenItemLayout | `boolean` | `false` | 否 | 是否跳过未显示的滑块布局，设为 true 可优化复杂情况下的滑动性能，但会丢失隐藏状态滑块的布局信息 |
 | easingFunction | `keyof TEasingFunction` | `"default"` | 否 | 指定 swiper 切换缓动动画类型 |
 | disableTouch | `boolean` | `false` | 否 | 是否禁止用户 touch 操作 |
+| zoom | `boolean` | `false` | 否 | 是否启用缩放 |
+| full | `boolean` | `false` | 否 | 是否开启全屏 |
 | activeClass | `string` |  | 否 | swiper-item 可见时的 class。 |
 | changingClass | `string` |  | 否 | acceleration 设置为 {{true}} 时且处于滑动过程中，中间若干屏处于可见时的 class。 |
 | acceleration | `string` | `false` | 否 | 当开启时，会根据滑动速度，连续滑动多屏。 |
@@ -146,6 +148,8 @@ class App extends Component {
 | SwiperProps.skipHiddenItemLayout |  |  |  |  | ✔️ | ✔️ |  |  |  |
 | SwiperProps.easingFunction | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |  |  |
 | SwiperProps.disableTouch |  |  | ✔️ |  |  |  |  |  |  |
+| SwiperProps.zoom |  |  |  |  |  |  | ✔️ |  |  |
+| SwiperProps.full |  |  |  |  |  |  | ✔️ |  |  |
 | SwiperProps.activeClass |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.changingClass |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.acceleration |  |  | ✔️ |  |  |  |  |  |  |
