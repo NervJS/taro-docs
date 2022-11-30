@@ -26,7 +26,6 @@ ComponentType<LottieProps>
 | autoReverse | `boolean` | `false` | 否 | 是否自动回播。 |
 | assetsPath | `string` |  | 否 | 资源地址。"/" 表明是小程序根目录。 |
 | placeholder | `string` |  | 否 | 兜底图或者降级图地址。<br /><br />1. 支持本地资源，案例：'/image/lottie/lottie2_default.png'。<br />支持 http 的 cdn 地址、近端地址。<br />小程序场景不支持 djangoId。 |
-| djangoId | `string` |  | 否 | Lottie 在线资源。远端的 Zip 文件地址。Lottie 组件会执行 MD5 校验、解压、获取等过程，在过程中显示 placeholder 图片。<br />与 path 二选一 |
 | md5 | `string` |  | 否 | 在线资源的 md5 校验。<br />djangoId=https://b.zip。<br />可以使用 b.zip 加密 获取 md5 值<br />md5="77c6c86fc89ba94cc0a9271b77ae77d2" |
 | optimize | `boolean` | `false` | 否 | 降级。降级是指如遇低端设备，Lottie 会降级展示为 placeholder。<br />当 optimize 为 true ，并且传入了 placeholder 时，在低端设备上只会展示 placeholder，不展示 Lottie。<br />低端设备如下所示：<br /><br />iOS ：小于等于 iPhone6P<br />Android：内存容量小于 3G |
 | onDataReady | `CommonEventFunction` |  | 否 | 当数据下载+视图创建完成时触发。 |
@@ -48,7 +47,6 @@ ComponentType<LottieProps>
 | LottieProps.autoReverse |  | ✔️ |  |  |  |
 | LottieProps.assetsPath |  | ✔️ |  |  |  |
 | LottieProps.placeholder |  | ✔️ |  |  |  |
-| LottieProps.djangoId |  | ✔️ |  |  |  |
 | LottieProps.md5 |  | ✔️ |  |  |  |
 | LottieProps.optimize |  | ✔️ |  |  |  |
 | LottieProps.onDataReady |  | ✔️ |  |  |  |
