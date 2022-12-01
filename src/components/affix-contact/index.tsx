@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import ImageList from '../../../docs/mdx/image-list';
-import AffixContactSvg from '../../../static/img/svg/affix-contact-msg.svg';
+import AffixContactMsgSvg from '../../../static/img/svg/affix-contact-msg.svg';
+import AffixContactCloseSvg from '../../../static/img/svg/affix-contact-close.svg';
+
 import './index.css'
 
 export default function AffixContact() {
@@ -12,11 +14,15 @@ export default function AffixContact() {
     setShowQrCode(!showQrCode)
   }
 
-  return <div className="affix-contact-container" onClick={toggleShowQrCode}>
-    <div className={`affix-contact-btn ${showQrCode ? 'affix-contact-btn-show' : 'affix-contact-btn-hide'}`}>
-      <AffixContactSvg  />
+  return <div className="affix-contact-container">
+    <div 
+      className={`affix-contact-btn ${showQrCode ? 'affix-contact-btn-show' : 'affix-contact-btn-hide'}`} 
+      onClick={toggleShowQrCode}
+    >
+      {!showQrCode && <AffixContactMsgSvg  />}
+      {showQrCode && <AffixContactCloseSvg />}
     </div>
-    <div className="affix-contact-content" style={{display: showQrCode ? 'block': 'none'}}>
+    <div className={`affix-contact-content ${showQrCode ? 'active':''}`}>
       <span className="affix-contact-content-tips">选择下列对应的群，使用微信扫码添加，会收到入群二维码，再扫群码添加即可。</span>
       <ImageList
         height={148}
