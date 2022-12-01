@@ -43,14 +43,12 @@
   transition: .3s cubic-bezier(.175,.885,.32,1.275);
   transform-origin: bottom right;
   visibility: hidden;
-  
 }
 .affix-contact-content.active {
   visibility: visible;
   opacity: 1;
   transform: scale(1);
 }
-
 .affix-contact-content-tips {
   margin-bottom: 20px;
 }
