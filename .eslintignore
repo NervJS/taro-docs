@@ -1,0 +1,6 @@
+.docusaurus
+*.d.ts
+
+build
+lib
+node_modules
