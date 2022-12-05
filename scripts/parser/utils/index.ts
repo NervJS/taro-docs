@@ -1,5 +1,6 @@
-import * as ts from "typescript"
-import { DocEntry } from "../"
+import ts from 'typescript'
+
+import { DocEntry } from '../'
 
 const SymbolFlags = Object.values(ts.SymbolFlags)
 

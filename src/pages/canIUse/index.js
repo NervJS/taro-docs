@@ -1,9 +1,8 @@
-import React, { useState, Fragment } from 'react';
+import './index.css'
 
-import Layout from '@theme/Layout';
-
-import types from 'miniapp-types/dist/jsonSchema.json';
-import './index.css';
+import Layout from '@theme/Layout'
+import types from 'miniapp-types/dist/jsonSchema.json'
+import React, { Fragment,useState } from 'react'
 
 const useList = {}
 types.forEach((e) => {
@@ -17,17 +16,17 @@ types.forEach((e) => {
   })
 })
 
-function CanIUse() {
-  const [search, setSearch] = useState('');
+function CanIUse () {
+  const [search, setSearch] = useState('')
 
   const handleChanges = (e) => {
-    setSearch(e.target.value);
-  };
+    setSearch(e.target.value)
+  }
 
   const filterTypes = (key) => {
-    const result = [];
+    const result = []
     if (key.match(/^bind/)) {
-      return result;
+      return result
     }
 
     types.forEach((item) => {
@@ -40,29 +39,29 @@ function CanIUse() {
             return (
               subKey.toLowerCase() === key.toLowerCase() ||
               subKey.toLowerCase() === key.replace(/^on/, 'bind').toLowerCase()
-            );
+            )
           }),
-      );
+      )
 
       if (filtered.length) {
         result.push({
           key: item.key,
           value: filtered,
-        });
+        })
       }
-    });
+    })
 
-    return result;
-  };
+    return result
+  }
 
-  const filteredTypes = filterTypes(search);
-  const componentName = [];
+  const filteredTypes = filterTypes(search)
+  const componentName = []
   filteredTypes.forEach((item) => {
     item.value.forEach((subItem) => {
-      if (componentName.includes(subItem.key)) return;
-      componentName.push(subItem.key);
-    });
-  });
+      if (componentName.includes(subItem.key)) return
+      componentName.push(subItem.key)
+    })
+  })
 
   return (
     <Layout permalink="/caniuse">
@@ -96,7 +95,7 @@ function CanIUse() {
                           >
                             {type.key}
                           </th>
-                        );
+                        )
                       })}
                     </tr>
                   </thead>
@@ -105,21 +104,21 @@ function CanIUse() {
                       {filteredTypes.map((subItem) => {
                         const isSupport = subItem.value.find(
                           (subSubItem) => subSubItem.key === item,
-                        );
+                        )
                         return (
                           <td key={subItem.key}>{isSupport ? '✅' : '❌'}</td>
-                        );
+                        )
                       })}
                     </tr>
                   </tbody>
                 </table>
               </Fragment>
-            );
+            )
           })}
         </div>
       </div>
     </Layout>
-  );
+  )
 }
 
-export default CanIUse;
+export default CanIUse

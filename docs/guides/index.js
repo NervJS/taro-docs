@@ -68,7 +68,7 @@ export function VueIcon () {
       </svg>
       <span style={{color: VueColor}}>Vue</span>
     </span>
-  );
+  )
 }
 
 const ReactColor = `#61dafb`
@@ -98,5 +98,5 @@ export function ReactIcon () {
       </svg>
       <span style={{ color: ReactColor }}>React</span>
     </span>
-  );
+  )
 }

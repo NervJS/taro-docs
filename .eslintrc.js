@@ -20,7 +20,6 @@ module.exports = {
     '@typescript-eslint/camelcase': 0,
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/explicit-module-boundary-types': 0,
-    '@typescript-eslint/indent': [2, 2],
     '@typescript-eslint/interface-name-prefix': 0,
     '@typescript-eslint/member-delimiter-style': [1, { multiline: { delimiter: 'none' }, singleline: { delimiter: 'comma' } }],
     '@typescript-eslint/no-empty-function': 0,
@@ -37,6 +36,7 @@ module.exports = {
     'import/no-duplicates': 2,
     indent: 'off',
     'no-console': [2, { allow: ['warn', 'error'] }],
+    'no-irregular-whitespace': 1,
     'no-prototype-builtins': 0,
     'no-unused-expressions': 0,
     'no-unused-vars': 'off',
@@ -106,9 +106,9 @@ module.exports = {
     react: {
       version: 'detect'
     },
-    "mdx/code-blocks": 1,
+    'mdx/code-blocks': 1,
     // optional, if you want to disable language mapper, set it to `false`
     // if you want to override the default language mapper inside, you can provide your own
-    "mdx/language-mapper": {}
+    'mdx/language-mapper': {}
   },
 }

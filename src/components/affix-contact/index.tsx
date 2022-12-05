@@ -1,14 +1,13 @@
-import React from "react";
-import { useState } from "react";
-import ImageList from '../../../docs/mdx/image-list';
-import AffixContactMsgSvg from '../../../static/img/svg/affix-contact-msg.svg';
-import AffixContactCloseSvg from '../../../static/img/svg/affix-contact-close.svg';
-
 import './index.css'
 
-export default function AffixContact() {
+import React, { useState } from 'react'
 
-  const [showQrCode, setShowQrCode] = useState(false);
+import ImageList from '../../../docs/mdx/image-list'
+import AffixContactCloseSvg from '../../../static/img/svg/affix-contact-close.svg'
+import AffixContactMsgSvg from '../../../static/img/svg/affix-contact-msg.svg'
+
+export default function AffixContact () {
+  const [showQrCode, setShowQrCode] = useState(false)
 
   const toggleShowQrCode = () => {
     setShowQrCode(!showQrCode)

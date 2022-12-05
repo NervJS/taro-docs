@@ -1,61 +1,62 @@
 .can-i-use-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 100px  auto;
-    max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px  auto;
+  max-width: 1000px;
 }
 
 .can-i-use-wrap input {
-    height: 40px;
-    border: 0;
-    border-bottom: 1px solid #ccc;
-    background-color: transparent;
-    text-align: center;
-    margin: 0 5px;
+  margin: 0 5px;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  height: 40px;
+  background-color: transparent;
+  text-align: center;
 }
 
 .can-i-use-wrap input:focus {
-    outline: none;
+  outline: none;
 }
 
 .can-i-use-wrap table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
+  border-collapse: collapse;
+  width: 100%;
+  font-family: arial, sans-serif;
 }
 
 .can-i-use-wrap table td {
-    text-align: center;
+  text-align: center;
 }
 
 .d-flex {
-    display: flex;
+  display: flex;
 }
 
 .align-items-center {
-    align-items: center;
+  align-items: center;
 }
 
 .justify-content-center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .justify-content-end {
-    justify-content: end;
+  justify-content: end;
 }
 
 .can-i-use-wrap select {
-    height: 40px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0 10px;
-    margin-left: 24px;
-}
-.w-100 {
-    width: 100%;
-}
-.mb-5 {
-    margin-bottom: 2rem;
+  margin-left: 24px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 40px;
 }
 
+.w-100 {
+  width: 100%;
+}
+
+.mb-5 {
+  margin-bottom: 2rem;
+}

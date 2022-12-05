@@ -26,7 +26,7 @@ authors: JJ
 
 Taro 遵循以微信小程序为主，其他小程序为辅的组件与 API 规范。
 
-但浏览器并没有小程序规范的组件与 API 可供使用，例如我们不能在浏览器上使用小程序的 `view` 组件和 `getSystemInfo`  API。因此我们需要在 H5 端实现一套基于小程序规范的组件库和 API 库。
+但浏览器并没有小程序规范的组件与 API 可供使用，例如我们不能在浏览器上使用小程序的 `view` 组件和 `getSystemInfo` API。因此我们需要在 H5 端实现一套基于小程序规范的组件库和 API 库。
 
 > Taro H5 架构图：
 
@@ -59,9 +59,9 @@ Taro 遵循以微信小程序为主，其他小程序为辅的组件与 API 规�
 
 Web Components 的主要技术规范为：
 
-* Custom Elements
-* Shadow DOM
-* HTML Template
+- Custom Elements
+- Shadow DOM
+- HTML Template
 
 Custom Elements 让开发者可以自定义带有特定行为的 HTML 标签。
 
@@ -83,13 +83,13 @@ Shadow DOM 对标签内的结构和样式进行一层包装。
 
 ```js
 class App extends HTMLElement {
-  constructor () {
+  constructor() {
     super(...arguments)
 
     // 开启 Shadow DOM
     const shadowRoot = this.attachShadow({ mode: 'open' })
 
-    // 复用 <template> 定义好的结构 
+    // 复用 <template> 定义好的结构
     const template = document.querySelector('#template')
     const node = template.content.cloneNode(true)
     shadowRoot.appendChild(node)
@@ -123,17 +123,17 @@ Stencil 是一个可以生成 Web Components 的编译器。它糅合了业界�
 import { Component, Prop, State, h } from '@stencil/core'
 
 @Component({
-  tag: 'my-component'
+  tag: 'my-component',
 })
 export class MyComponent {
   @Prop() first = ''
   @State() last = 'JS'
 
-  componentDidLoad () {
+  componentDidLoad() {
     console.log('load')
   }
 
-  render () {
+  render() {
     return (
       <div>
         Hello, my name is {this.first} {this.last}
@@ -146,7 +146,7 @@ export class MyComponent {
 使用组件：
 
 ```html
-<my-component first='Taro' />
+<my-component first="Taro" />
 ```
 
 ## 在 React 与 Vue 中使用 Stencil
@@ -172,11 +172,11 @@ React 使用 `setAttribute` 的形式给 Web Components 传递参数。当参数
 我们可以把 Web Components 包装一层高阶组件，把高阶组件上的 props 设置为 Web Components 的 property：
 
 ```js
-const reactifyWebComponent = WC => {
+const reactifyWebComponent = (WC) => {
   return class extends React.Component {
     ref = React.createRef()
 
-    update () {
+    update() {
       Object.entries(this.props).forEach(([prop, val]) => {
         if (prop === 'children' || prop === 'dangerouslySetInnerHTML') {
           return
@@ -191,20 +191,24 @@ const reactifyWebComponent = WC => {
       })
     }
 
-    componentDidUpdate () {
+    componentDidUpdate() {
       this.update()
     }
 
-    componentDidMount () {
+    componentDidMount() {
       this.update()
     }
 
-    render () {
+    render() {
       const { children, dangerouslySetInnerHTML } = this.props
-      return React.createElement(WC, {
-        ref: this.ref,
-        dangerouslySetInnerHTML
-      }, children)
+      return React.createElement(
+        WC,
+        {
+          ref: this.ref,
+          dangerouslySetInnerHTML,
+        },
+        children
+      )
     }
   }
 }
@@ -214,8 +218,8 @@ const MyComponent = reactifyWebComponent('my-component')
 
 注意：
 
-* children、dangerouslySetInnerHTML 属性需要透传。
-* React 中 style 属性值可以接受对象形式，这里需要额外处理。
+- children、dangerouslySetInnerHTML 属性需要透传。
+- React 中 style 属性值可以接受对象形式，这里需要额外处理。
 
 #### 2. Events
 
@@ -226,7 +230,7 @@ const MyComponent = reactifyWebComponent('my-component')
 以下 Web Component 的 onLongPress 回调不会被触发：
 
 ```html
-<my-view onLongPress={onLongPress}>view</my-view>
+<my-view onLongPress="{onLongPress}">view</my-view>
 ```
 
 ##### 2.2 解决方案
@@ -265,7 +269,7 @@ const reactifyWebComponent = WC => {
     componentWillUnmount () {
       this.clearEventHandlers()
     }
-    
+
     ...
   }
 }
@@ -293,7 +297,7 @@ domRef 会获取到 `MyComponent`，而不是 `<my-component></my-component>`
 const reactifyWebComponent = WC => {
   class Index extends React.Component {
     ...
-    
+
     render () {
       const { children, forwardRef } = this.props
       return React.createElement(WC, {
@@ -314,15 +318,15 @@ const reactifyWebComponent = WC => {
 在 Stencil 里我们可以使用 Host 组件为 host element 添加类名。
 
 ```js
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h } from '@stencil/core'
 
 @Component({
-  tag: 'todo-list'
+  tag: 'todo-list',
 })
 export class TodoList {
-  render () {
+  render() {
     return (
-      <Host class='todo-list'>
+      <Host class="todo-list">
         <div>todo</div>
       </Host>
     )
@@ -398,20 +402,24 @@ const reactifyWebComponent = WC => {
 同样的思路，需要在 Web Components 上包装一层 Vue 的自定义组件。
 
 ```js
-function createComponent (name, classNames = []) {
+function createComponent(name, classNames = []) {
   return {
     name,
     computed: {
-      listeners () {
+      listeners() {
         return { ...this.$listeners }
-      }
+      },
     },
-    render (createElement) {
-      return createElement(name, {
-        class: ['hydrated', ...classNames],
-        on: this.listeners
-      }, this.$slots.default)
-    }
+    render(createElement) {
+      return createElement(
+        name,
+        {
+          class: ['hydrated', ...classNames],
+          on: this.listeners,
+        },
+        this.$slots.default
+      )
+    },
   }
 }
 
@@ -420,8 +428,8 @@ Vue.component('todo-list', createComponent('todo-list', ['todo-list']))
 
 注意：
 
-* 我们在自定义组件中重复声明了 Web Component 该有的内置类名。后续开发者为自定义组件设置类名时，Vue 将会[自动对类名进行合并](https://cn.vuejs.org/v2/guide/components-props.html#%E6%9B%BF%E6%8D%A2-%E5%90%88%E5%B9%B6%E5%B7%B2%E6%9C%89%E7%9A%84-Attribute)。
-* 需要把自定义组件上绑定的事件通过 [$listeners](https://cn.vuejs.org/v2/guide/components-custom-events.html#%E5%B0%86%E5%8E%9F%E7%94%9F%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%88%B0%E7%BB%84%E4%BB%B6) 透传给 Web Component。
+- 我们在自定义组件中重复声明了 Web Component 该有的内置类名。后续开发者为自定义组件设置类名时，Vue 将会[自动对类名进行合并](https://cn.vuejs.org/v2/guide/components-props.html#%E6%9B%BF%E6%8D%A2-%E5%90%88%E5%B9%B6%E5%B7%B2%E6%9C%89%E7%9A%84-Attribute)。
+- 需要把自定义组件上绑定的事件通过 [$listeners](https://cn.vuejs.org/v2/guide/components-custom-events.html#%E5%B0%86%E5%8E%9F%E7%94%9F%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%88%B0%E7%BB%84%E4%BB%B6) 透传给 Web Component。
 
 #### 2. Ref
 
@@ -437,7 +445,7 @@ Vue 并没有 forwardRef 的概念，只可简单粗暴地修改 `this.$parent.$
 
 ```js
 export const refs = {
-  mounted () {
+  mounted() {
     if (Object.keys(this.$parent.$refs).length) {
       const refs = this.$parent.$refs
 
@@ -449,7 +457,7 @@ export const refs = {
       }
     }
   },
-  beforeDestroy () {
+  beforeDestroy() {
     if (Object.keys(this.$parent.$refs).length) {
       const refs = this.$parent.$refs
 
@@ -460,13 +468,13 @@ export const refs = {
         }
       }
     }
-  }
+  },
 }
 ```
 
 注意：
 
-* 上述代码没有处理循环 ref，循环 ref 还需要另外判断和处理。
+- 上述代码没有处理循环 ref，循环 ref 还需要另外判断和处理。
 
 #### 3. v-model
 
@@ -481,37 +489,41 @@ export const refs = {
 改造上述的自定义组件：
 
 ```js
-export default function createFormsComponent (name, event, modelValue = 'value', classNames = []) {
+export default function createFormsComponent(name, event, modelValue = 'value', classNames = []) {
   return {
     name,
     computed: {
-      listeners () {
+      listeners() {
         return { ...this.$listeners }
-      }
+      },
     },
     model: {
       prop: modelValue,
-      event: 'model'
+      event: 'model',
     },
     methods: {
-      input (e) {
+      input(e) {
         this.$emit('input', e)
         this.$emit('model', e.target.value)
       },
-      change (e) {
+      change(e) {
         this.$emit('change', e)
         this.$emit('model', e.target.value)
-      }
+      },
     },
-    render (createElement) {
-      return createElement(name, {
-        class: ['hydrated', ...classNames],
-        on: {
-          ...this.listeners,
-          [event]: this[event]
-        }
-      }, this.$slots.default)
-    }
+    render(createElement) {
+      return createElement(
+        name,
+        {
+          class: ['hydrated', ...classNames],
+          on: {
+            ...this.listeners,
+            [event]: this[event],
+          },
+        },
+        this.$slots.default
+      )
+    },
   }
 }
 

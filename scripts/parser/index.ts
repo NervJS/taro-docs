@@ -1,7 +1,8 @@
-import * as fs from "fs"
-import * as path from 'path'
-import * as ts from "typescript"
-import { generateDocumentation, DocEntry } from "./ast"
+import fs from 'fs'
+import path from 'path'
+import ts from 'typescript'
+
+import { DocEntry, generateDocumentation } from './ast'
 import envMap from './taro-env'
   
 export default function compile (p: string, n: string, dep: string[], callback?: (routePath: string, doc: DocEntry[]) => void) {
@@ -27,4 +28,4 @@ export default function compile (p: string, n: string, dep: string[], callback?:
   }
 }
 
-export { generateDocumentation, DocEntry, envMap }
+export { DocEntry, envMap,generateDocumentation }

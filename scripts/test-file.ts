@@ -7,16 +7,16 @@ class C {
    * @param a my parameter documentation
    * @param b another parameter documentation
    */
-  constructor(a: string, b: C) { }
+  constructor (a: string, b: C) { }
 }
 
 /**
  * for test
  */
 export interface test {
-  a: string;
+  a: string
   // test doc
-  b: InnerAudioContext;
+  b: InnerAudioContext
 }
 
 type InnerAudioContext = {
@@ -41,11 +41,11 @@ type InnerAudioContext = {
   // 当前是是否暂停或停止状态（只读）
   paused: HTMLMediaElement['paused']
   // 音频缓冲的时间点，仅保证当前播放时间点到此时间点内容已缓冲（只读）
-  buffered: HTMLMediaElement["buffered"]
+  buffered: HTMLMediaElement['buffered']
   // 播放
-  play: HTMLAudioElement["play"]
+  play: HTMLAudioElement['play']
   // 暂停。暂停后的音频再播放会从暂停处开始播放
-  pause: HTMLAudioElement["pause"]
+  pause: HTMLAudioElement['pause']
   // 停止。停止后的音频再播放会从头开始播放。
   stop: () => void
   // 跳转到指定位置

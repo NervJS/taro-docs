@@ -14,6 +14,7 @@ interface SlotProps {
 }
 
 /** slot 插槽
+ * @classification viewContainer
  * @supported weapp, swan, alipay, tt, jd, qq
  * @example
  * ```tsx

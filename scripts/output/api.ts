@@ -1,8 +1,9 @@
-import * as path from 'path'
-import { get, isntTaroMethod, TaroMethod } from '.'
+import path from 'path'
+
 import { DocEntry } from '../parser'
 import { childrenMerge, isFunction, isNotAPI, isShowAPI, splicing } from '../parser/utils'
 import writeFile from '../write'
+import { get, isntTaroMethod, TaroMethod } from '.'
 
 export async function writeApiDoc (routePath: string, doc: DocEntry[], withGeneral = false) {
   const _p = path.parse(routePath)
