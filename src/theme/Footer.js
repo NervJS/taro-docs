@@ -7,6 +7,7 @@
 
 import React from "react";
 import Translate from '@docusaurus/Translate';
+import Link from "@docusaurus/Link";
 import { useLocation } from "@docusaurus/router";
 
 import AffixContact from '../components/affix-contact';
@@ -24,64 +25,38 @@ function Footer() {
         </div>
         <div className="footer_link_container">
           <div className="footer_link">
-            <h3 className="footer_link_tit footer_link_tit1"> 
+            <h3 className="footer_link_tit footer_link_tit1">
               <Translate description="The homepage main heading">
-               相关资源
+                相关资源
               </Translate>
             </h3>
             <p>
-              <a className="link" href="https://taro.jd.com/" target="_blank">
-                Taro
-              </a>
+              <Link to="https://taro.jd.com/">Taro</Link>
             </p>
             <p>
-              <a
-                className="link"
-                href="https://taro-ui.jd.com/"
-                target="_blank"
-              >
-                Taro UI
-              </a>
+              <Link to="https://taro-ui.jd.com/">Taro UI</Link>
             </p>
             <p>
-              <a
-                className="link"
-                href="https://at-ui.github.io/at-ui/#/zh"
-                target="_blank"
-              >
-                At-UI
-              </a>
+              <Link to="https://at-ui.github.io/at-ui/#/zh">At-UI</Link>
             </p>
             <p>
-              <a className="link" href="https://nerv.aotu.io/" target="_blank">
-                Nerv
-              </a>
+              <Link to="https://nerv.aotu.io/">Nerv</Link>
             </p>
             <p>
-              <a
-                className="link"
-                href="https://athena.aotu.io/"
-                target="_blank"
-              >
-                Athena
-              </a>
+              <Link to="https://athena.aotu.io/">Athena</Link>
             </p>
           </div>
           <div className="footer_link">
             <h3 className="footer_link_tit footer_link_tit2">
               <Translate description="The footer content">
-               社区
+                社区
               </Translate>
             </h3>
             <p>
-              <a href="https://github.com/NervJS/taro/issues" target="_blank">
-                GitHub
-              </a>
+              <Link to="https://github.com/NervJS/taro/issues">GitHub</Link>
             </p>
             <p>
-              <a href="https://taro-club.jd.com" target="_blank">
-                Taro BBS
-              </a>
+              <Link to="https://taro-club.jd.com">Taro BBS</Link>
             </p>
             <p className="footer_link_connect_wrap">
               <span className="footer_link_connect footer_link_wechat">
@@ -129,53 +104,50 @@ function Footer() {
           <div className="footer_link">
             <h3 className="footer_link_tit footer_link_tit3">
               <Translate description="The footer content">
-               关于我们
+                关于我们
               </Translate>
             </h3>
             <p>
-              <a href="https://aotu.io/" target="_blank">
-              <Translate description="The footer content">
-               凹凸实验室
-              </Translate>
-              </a>
+              <Link to="https://aotu.io/">
+                <Translate description="The footer content">
+                  凹凸实验室
+                </Translate>
+              </Link>
             </p>
             <p>
-              <a href="https://aotu.io/join/" target="_blank">
-              <Translate description="The footer content">
-               加入我们
-              </Translate>
-              </a>
+              <Link to="https://aotu.io/join/">
+                <Translate description="The footer content">
+                  加入我们
+                </Translate>
+              </Link>
             </p>
             <p>
-              <a href="mailto:taro@jd.com?subject=【Taro 合作】合作标题">
-              <Translate description="The footer content">
-               联系我们
-              </Translate>
-              </a>
+              <Link to="mailto:taro@jd.com?subject=【Taro 合作】合作标题">
+                <Translate description="The footer content">
+                  联系我们
+                </Translate>
+              </Link>
             </p>
           </div>
           <div className="footer_link">
             <h3 className="footer_link_tit footer_link_tit4">
               <Translate description="The footer content">
-               感谢
+                感谢
               </Translate>
             </h3>
             <p>
-              <a href="https://jdc.jd.com/" target="_blank">
-              <Translate description="The footer content">
-               用户体验设计部
-              </Translate>
-              </a>
+              <Link to="https://jdc.jd.com/">
+                <Translate description="The footer content">
+                  用户体验设计部
+                </Translate>
+              </Link>
             </p>
             <p>
-              <a
-                href="https://github.com/nervjs/taro#%E8%B4%A1%E7%8C%AE%E8%80%85%E4%BB%AC"
-                target="_blank"
-              >
+              <Link to="/docs/team/role-committer">
                 <Translate description="The footer content">
                   Taro 贡献者们
                 </Translate>
-              </a>
+              </Link>
             </p>
           </div>
         </div>
