@@ -1,7 +1,12 @@
 import o2logo from '@site/static/img/o2logo@2x.png'
 import React from 'react'
 
-interface Item {
+interface IList {
+  list?: IListItem[]
+  height?: number
+}
+
+interface IListItem {
   image?: string
   label?: string
 }
@@ -9,9 +14,9 @@ interface Item {
 export default function ImageList ({
   list = [],
   height = 88
-}) {
+}: IList) {
   return <div style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'center' }}>
-    {list.map((item: Item, index) => <div
+    {list.map((item: IListItem, index) => <div
       key={index}
       style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '0 10px 10px 0', height: '100%' }}
     >

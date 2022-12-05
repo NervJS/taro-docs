@@ -15,8 +15,8 @@ export default function AffixContact() {
   }
 
   return <div className="affix-contact-container">
-    <div 
-      className={`affix-contact-btn ${showQrCode ? 'affix-contact-btn-show' : 'affix-contact-btn-hide'}`} 
+    <div
+      className={`affix-contact-btn ${showQrCode ? 'affix-contact-btn-show' : 'affix-contact-btn-hide'}`}
       onClick={toggleShowQrCode}
     >
       {!showQrCode && <AffixContactMsgSvg  />}
