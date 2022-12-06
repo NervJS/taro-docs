@@ -45,7 +45,14 @@ module.exports = {
           'vue-devtools'
         ],
       },
-      'router',
+      {
+        'label': '路由功能',
+        'type': 'category',
+        'items': [
+          'router',
+          'router-extend'
+        ]
+      },
       'static-reference',
       {
         label: '多端开发',

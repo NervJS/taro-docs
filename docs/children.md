@@ -6,20 +6,18 @@ title: Children 与组合
 
 ## Children
 
-在我们设计组件时，有些组件通常不知道自己的子组件会有什么内容，例如 `Sidebar` 和 `Dialog`  这样的容器组件。
+在我们设计组件时，有些组件通常不知道自己的子组件会有什么内容，例如 `Sidebar` 和 `Dialog` 这样的容器组件。
 
 我们建议在这样的情况使用 `this.props.children` 来传递子元素：
 
 ```jsx
 class Dialog extends Component {
-  render () {
+  render() {
     return (
-      <View className='dialog'>
-        <View className='header'>Welcome!</View>
-        <View className='body'>
-          {this.props.children}
-        </View>
-        <View className='footer'>-- divider --</View>
+      <View className="dialog">
+        <View className="header">Welcome!</View>
+        <View className="body">{this.props.children}</View>
+        <View className="footer">-- divider --</View>
       </View>
     )
   }
@@ -30,13 +28,11 @@ class Dialog extends Component {
 
 ```jsx
 class App extends Component {
-  render () {
+  render() {
     return (
-      <View className='container'>
+      <View className="container">
         <Dialog>
-          <View className="dialog-message">
-            Thank you for using Taro.
-          </View>
+          <View className="dialog-message">Thank you for using Taro.</View>
         </Dialog>
       </View>
     )
@@ -54,7 +50,6 @@ class App extends Component {
 
 **不能把 `this.props.children` 分解为变量再使用**。由于普通的 `props` 有一个确切的值，所以当你把它们分解为变量运行时可以处理，`this.props.children` 则不能这样操作，你必须显性地把 `this.props.children` 全部都写完整才能实现它的功能。
 
-
 ## 组合
 
 > 自 `1.1.9` 开始支持
@@ -63,38 +58,26 @@ class App extends Component {
 
 ```jsx
 class Dialog extends Component {
-  render () {
+  render() {
     return (
-      <View className='dialog'>
-        <View className='header'>
-          {this.props.renderHeader}
-        </View>
-        <View className='body'>
-          {this.props.children}
-        </View>
-        <View className='footer'>
-          {this.props.renderFooter}
-        </View>
+      <View className="dialog">
+        <View className="header">{this.props.renderHeader}</View>
+        <View className="body">{this.props.children}</View>
+        <View className="footer">{this.props.renderFooter}</View>
       </View>
     )
   }
 }
 
 class App extends Component {
-  render () {
+  render() {
     return (
-      <View className='container'>
+      <View className="container">
         <Dialog
-          renderHeader={
-            <View className='welcome-message'>Welcome!</View>
-          }
-          renderFooter={
-            <Button className='close'>Close</Button>
-          }
+          renderHeader={<View className="welcome-message">Welcome!</View>}
+          renderFooter={<Button className="close">Close</Button>}
         >
-          <View className="dialog-message">
-            Thank you for using Taro.
-          </View>
+          <View className="dialog-message">Thank you for using Taro.</View>
         </Dialog>
       </View>
     )

@@ -2,7 +2,7 @@
 title: 从旧版本迁移到 Taro Next
 ---
 
-这是一篇针对旧版本用户升级到 Taro Next 的迁移指南。因为本章内容包含了许多详尽的阐述和迁移例子，所以看起来有一些长。但请不要担心，Taro Next  大部分用法还是和旧版本一样的。**本章没有提到的内容，你可以像旧版本的 Taro 一样操作或使用**。
+这是一篇针对旧版本用户升级到 Taro Next 的迁移指南。因为本章内容包含了许多详尽的阐述和迁移例子，所以看起来有一些长。但请不要担心，Taro Next 大部分用法还是和旧版本一样的。**本章没有提到的内容，你可以像旧版本的 Taro 一样操作或使用**。
 
 事实上，你并不需要去更改任何业务的逻辑代码，许多更改使用编辑器的「查找/替换」就可以完成。你甚至不需要完整地阅读整章内容（重点在 1，2 小节， [API](#API) 和 [项目/页面配置](#项目/页面配置)），只有当出问题时定位到具体的小节即可。
 
@@ -20,6 +20,7 @@ $ taro build --type weapp --watch
 ```
 
 ## API
+
 在旧版本 Taro 中，我们把所有面向应用开发者的 API 都放在 `@tarojs/taro` 里，一个典型的 Taro 组件/页面会像这样：
 
 ```jsx
@@ -81,6 +82,7 @@ function Fast () {
 > Nerv 是凹凸实验室的一个开源类 React 框架，体积比 React 更小，多数情况性能表现也比 React 更好。但某些 React 生态的库兼容性可能会出现问题。
 
 ## 项目/页面配置
+
 在旧版本 Taro 中，页面/项目的配置挂载在类组件的类属性或函数式的属性上，通过 AST 分析取出来，然后生成 JSON 文件。但这样做，项目页面的配置就无法动态地生成：
 
 ```jsx
@@ -163,7 +165,6 @@ export default {
         └── index.js
 ```
 
-
 ## 使用第三方 React 库
 
 如果你需要引入 React 相关生态的库，直接通过 `npm install` 安装然后引入使用即可，Taro 不会再维护类似于 `taro-redux` 、`taro-mobx` 之类的库。
@@ -190,7 +191,7 @@ import { getCurrentInstance } from '@tarojs/taro'
 class C extends Component {
   current = getCurrentInstance()
 
-  componentWillMount () {
+  componentWillMount() {
     // getCurrentInstance().router 和 this.$router 和属性一样
     console.log(this.current.router)
   }
@@ -198,7 +199,7 @@ class C extends Component {
 
 // 函数式组件
 import { getCurrentInstance } from '@tarojs/taro'
-function C () {
+function C() {
   const { router } = getCurrentInstance()
   // getCurrentInstance().router 和 useRouter 返回的内容也一样
   // const router = useRouter()
@@ -229,8 +230,8 @@ class App extends Component {
 
 ## 编译配置
 
-* 需要添加 [framework 配置](/docs/config)，取值为使用的框架（react, nerv, vue, vue3）
-* [jsxAttributeNameReplace](/docs/1.x/config) 配置已被移除。因为我们不需要配置
+- 需要添加 [framework 配置](/docs/config)，取值为使用的框架（react, nerv, vue, vue3）
+- [jsxAttributeNameReplace](/docs/1.x/config) 配置已被移除。因为我们不需要配置
 
 ## 编译依赖库
 
@@ -245,7 +246,7 @@ class App extends Component {
 ```jsx
 import React from 'react'
 import { View, Text } from '@tarojs/components'
-function C () {
+function C() {
   // 你可以选择不使用 JSX，但元素还是必须从 `@tarojs/components` 引入
   const title = React.createElement(View, null, 'Numbers:')
 
@@ -254,10 +255,12 @@ function C () {
     numbers.push(<Text key={i}>{i}</Text>)
   }
 
-  return <>
-    {title}
-    {numbers}
-  </>
+  return (
+    <>
+      {title}
+      {numbers}
+    </>
+  )
 }
 ```
 
@@ -275,7 +278,7 @@ Taro Next 在底层会维护一个精简的 DOM 系统，在框架中使用 `ref
 class C extends Component {
   input = React.createRef()
 
-  componentDidMount () {
+  componentDidMount() {
     const node = this.input.current // node 是一个 Taro Element 实例
     node.focus() // ok, 在 Web 开发中常见做法
 
@@ -289,8 +292,8 @@ class C extends Component {
     const miniNode = Taro.createSelectorQuery().select('#' + node.id)
   }
 
-  render () {
-    return <Input ref={this.input} id='input' />
+  render() {
+    return <Input ref={this.input} id="input" />
   }
 }
 ```
@@ -301,9 +304,9 @@ class C extends Component {
 
 当你使用 React 时（使用 Nerv 不受此影响），以下生命周期被更名：
 
-* `componentWillMount()` -> `UNSAFE_componentWillMount()`
-* `componentWillReceiveProps` -> `UNSAFE_componentWillReceiveProps()`
-* `componentWillUpdate` -> `UNSAFE_componentWillUpdate()`
+- `componentWillMount()` -> `UNSAFE_componentWillMount()`
+- `componentWillReceiveProps` -> `UNSAFE_componentWillReceiveProps()`
+- `componentWillUpdate` -> `UNSAFE_componentWillUpdate()`
 
 新增一个生命周期: [`componentDidCatch(err, info)`](https://reactjs.org/docs/react-component.html#componentdidcatch) ，这是由框架本身（React 或 Nerv）提供的。`componentDidCatch(err, info)` 会在组件和它的子孙抛出错误时触发，第一个参数 `err` 指向抛出的错误，第二个参数 `info` 是组件的调用信息。
 

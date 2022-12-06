@@ -41,6 +41,7 @@ specifiers:
   eslint-plugin-simple-import-sort: ^7.0.0
   eslint-plugin-standard: ^4.0.1
   html-webpack-plugin: ^5.5.0
+  husky: ^8.0.1
   lint-staged: ^13.0.2
   lodash: ^4.17.21
   miniapp-types: ^1.1.18
@@ -113,6 +114,7 @@ devDependencies:
   eslint-plugin-simple-import-sort: registry.npmjs.org/eslint-plugin-simple-import-sort/7.0.0_eslint@8.29.0
   eslint-plugin-standard: registry.npmjs.org/eslint-plugin-standard/4.1.0_eslint@8.29.0
   html-webpack-plugin: registry.npmjs.org/html-webpack-plugin/5.5.0_webpack@5.69.0
+  husky: registry.npmjs.org/husky/8.0.2
   lint-staged: registry.npmjs.org/lint-staged/13.1.0
   node-fetch: registry.npmjs.org/node-fetch/2.6.7
   postcss: registry.npmjs.org/postcss/8.4.19
@@ -8853,6 +8855,14 @@ packages:
     name: human-signals
     version: 3.0.1
     engines: {node: '>=12.20.0'}
+    dev: true
+
+  registry.npmjs.org/husky/8.0.2:
+    resolution: {integrity: sha512-Tkv80jtvbnkK3mYWxPZePGFpQ/tT3HNSs/sasF9P2YfkMezDl3ON37YN6jUUI4eTg5LcyVynlb6r4eyvOmspvg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/husky/-/husky-8.0.2.tgz}
+    name: husky
+    version: 8.0.2
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   registry.npmjs.org/iconv-lite/0.4.24:

@@ -9,41 +9,33 @@ Taro 事件绑定属性的命名采用驼峰式写法，而不是小写。
 例如，传统的微信小程序模板：
 
 ```html
-<button onclick="activateLasers">
-  Activate Lasers
-</button>
+<button onclick="activateLasers">Activate Lasers</button>
 ```
 
 Taro 中稍稍有点不同：
 
 ```jsx
-<button onClick={this.activateLasers}>
-  Activate Lasers
-</button>
+<button onClick={this.activateLasers}>Activate Lasers</button>
 ```
 
 在 Taro 中另一个不同是你不能使用 `catchEvent` 的方式阻止事件冒泡。你必须明确的使用 `stopPropagation`。例如，阻止事件冒泡你可以这样写：
 
 ```jsx
 class Toggle extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
-    this.state = {isToggleOn: true}
+    this.state = { isToggleOn: true }
   }
 
   onClick = (e) => {
     e.stopPropagation()
-    this.setState(prevState => ({
-      isToggleOn: !prevState.isToggleOn
+    this.setState((prevState) => ({
+      isToggleOn: !prevState.isToggleOn,
     }))
   }
 
-  render () {
-    return (
-      <button onClick={this.onClick}>
-        {this.state.isToggleOn ? 'ON' : 'OFF'}
-      </button>
-    )
+  render() {
+    return <button onClick={this.onClick}>{this.state.isToggleOn ? 'ON' : 'OFF'}</button>
   }
 }
 ```
@@ -60,17 +52,18 @@ class Toggle extends Component {
 
 ```jsx
 class Popper extends Component {
-  constructor () {
+  constructor() {
     super(...arguments)
-    this.state = { name:'Hello world!' }
+    this.state = { name: 'Hello world!' }
   }
 
   // 你可以通过 bind 传入多个参数
-  preventPop (name, test, e) {    //事件对象 e 要放在最后
+  preventPop(name, test, e) {
+    //事件对象 e 要放在最后
     e.stopPropagation()
   }
 
-  render () {
+  render() {
     return <Button onClick={this.preventPop.bind(this, this.state.name, 'test')}></Button>
   }
 }
@@ -86,20 +79,22 @@ class Popper extends Component {
 
 ```jsx
 class Popper extends Component {
-  constructor () {
+  constructor() {
     super(...arguments)
     this.state = { name: 'Hello world!' }
   }
 
-  render () {
+  render() {
     const name = 'test'
     return (
-      <Button onClick={(e) => {
-        e.stopPropagation()
-        this.setState({
-          name
-        })
-      }}>
+      <Button
+        onClick={(e) => {
+          e.stopPropagation()
+          this.setState({
+            name,
+          })
+        }}
+      >
         {this.state.name}
       </Button>
     )
@@ -148,26 +143,28 @@ class Title extends Component{
 
 ```jsx
 const App = () => {
-  const [c1, setC1] = useState(0);
-  const [c2, setC2] = useState(0);
-  const [c3, setC3] = useState(0);
+  const [c1, setC1] = useState(0)
+  const [c2, setC2] = useState(0)
+  const [c3, setC3] = useState(0)
 
-  const increment = c => c + 1
+  const increment = (c) => c + 1
 
   // 只有 useCallback 对应的 c1 或 c2 的值改变时，才会返回新的函数
-  const increment1 = useCallback(() => setC1(increment), [c1]);
-  const increment2 = useCallback(() => setC2(increment), [c2]);
+  const increment1 = useCallback(() => setC1(increment), [c1])
+  const increment2 = useCallback(() => setC2(increment), [c2])
 
-  return (<View>
-    <Text> Counter 1 is {c1} </Text>
-    <Text> Counter 2 is {c2} </Text>
-    <Text> Counter 3 is {c3} </Text>
+  return (
     <View>
-      <Button onClick={increment1}>Increment Counter 1</Button>
-      <Button onClick={increment2}>Increment Counter 2</Button>
-      <Button onClick={() => setC3(increment)}>Increment Counter 3</Button>
+      <Text> Counter 1 is {c1} </Text>
+      <Text> Counter 2 is {c2} </Text>
+      <Text> Counter 3 is {c3} </Text>
+      <View>
+        <Button onClick={increment1}>Increment Counter 1</Button>
+        <Button onClick={increment2}>Increment Counter 2</Button>
+        <Button onClick={() => setC3(increment)}>Increment Counter 3</Button>
+      </View>
     </View>
-  </View>)
+  )
 }
 ```
 

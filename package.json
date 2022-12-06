@@ -2,6 +2,8 @@
   "name": "taro-docs",
   "private": true,
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky install",
     "build": "npm run build:github",
     "build:docs-api": "ts-node --project ./scripts/tsconfig.json ./scripts/docs",
     "build:github": "cross-env NODE_OPTIONS=--max-old-space-size=20480 BASE=taro docusaurus build --out-dir build/taro-docs",
@@ -68,6 +70,7 @@
     "eslint-plugin-react": "^7.4.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-standard": "^4.0.1",
+    "husky": "^8.0.1",
     "html-webpack-plugin": "^5.5.0",
     "lint-staged": "^13.0.2",
     "node-fetch": "^2.6.7",

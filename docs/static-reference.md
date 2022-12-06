@@ -35,14 +35,15 @@ import defaultExportName from './css/path/name.js'
 可以直接通过 ES6 的 `import` 语法来引用此类文件，拿到文件引用后直接在 JSX 中进行使用
 
 ```jsx
-
 // 引用文件
 import namedPng from '../../images/path/named.png'
 
 // 使用
-<View>
-  <Image src={namedPng} />
-</View>
+export default () => (
+  <View>
+    <Image src={namedPng} />
+  </View>
+)
 ```
 
 ## 引用 JSON 文件
@@ -52,11 +53,11 @@ import namedPng from '../../images/path/named.png'
 ```jsx
 // 引用 json 文件
 /**
-* named.json
-* {
-*   x: 1
-* }
-**/
+ * named.json
+ * {
+ *   x: 1
+ * }
+ **/
 import namedJson from '../../json/path/named.json'
 
 console.log(namedJson.x)

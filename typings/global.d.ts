@@ -3,4 +3,5 @@ declare module '*.svg' {
   export default React.ComponentType<SVGProps>
 }
 
+declare module '@docusaurus/*'
 declare module '@site/static/*'

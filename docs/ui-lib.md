@@ -9,6 +9,7 @@ title: 基于 Taro 开发第三方多端 UI 库
 多端 UI 库的项目目录结构与普通 Taro 项目基本一致，不同点如下
 
 #### 增加一个 UI 库入口文件
+
 > RN 端 `index.js` 已经被占用，如果要兼容 RN 端，需改为其他名字，并通过 `--ui-index`指定入口文件。
 
 需要在 `src` 目录下添加 `index.js` 或者 `index.ts` 来作为 UI 库的入口文件，用于输出 UI 组件，如果有多个 UI 组件，可以如下书写
@@ -23,7 +24,9 @@ export { default as B } from './components/B/B'
 ```javascript
 import { A } from 'taro-ui-sample'
 
-<A />
+export default function Demo {
+  return <A />
+}
 ```
 
 如果只有 UI 组件，也可以如下书写
@@ -39,7 +42,9 @@ export default A
 ```javascript
 import A from 'taro-ui-sample'
 
-<A />
+export default function Demo {
+  return <A />
+}
 ```
 
 #### 配置文件改造
@@ -51,9 +56,9 @@ if (process.env.TARO_BUILD_TYPE === 'ui') {
   Object.assign(config.h5, {
     enableSourceMap: false,
     enableExtract: false,
-    enableDll: false
+    enableDll: false,
   })
-  config.h5.webpackChain = chain => {
+  config.h5.webpackChain = (chain) => {
     chain.plugins.delete('htmlWebpackPlugin')
     chain.plugins.delete('addAssetHtmlWebpackPlugin')
     chain.merge({
@@ -61,15 +66,15 @@ if (process.env.TARO_BUILD_TYPE === 'ui') {
         path: path.join(process.cwd(), 'dist', 'h5'),
         filename: 'index.js',
         libraryTarget: 'umd',
-        library: 'taro-ui-sample'
+        library: 'taro-ui-sample',
       },
       externals: {
         nervjs: 'commonjs2 nervjs',
         classnames: 'commonjs2 classnames',
         '@tarojs/components': 'commonjs2 @tarojs/components',
         '@tarojs/taro-h5': 'commonjs2 @tarojs/taro-h5',
-        'weui': 'commonjs2 weui'
-      }
+        weui: 'commonjs2 weui',
+      },
     })
   }
 }
@@ -86,7 +91,8 @@ if (process.env.TARO_BUILD_TYPE === 'ui') {
 ```bash
 $ TARO_BUILD_TYPE=ui taro build --ui --ui-index=${CUSTOM_ENTRY}
 ```
-只有当 UI 库入口文件非 `index.js` 时，才需要通过 `--ui-index`指定入口文件，其中 `CUSTOM_ENTRY` 为自定义的 UI 库入口文件。 
+
+只有当 UI 库入口文件非 `index.js` 时，才需要通过 `--ui-index`指定入口文件，其中 `CUSTOM_ENTRY` 为自定义的 UI 库入口文件。
 
 打包之后的文件在 `dist` 目录下
 

@@ -7,8 +7,13 @@ Taro 项目的 Babel 配置位于根目录的 `babel.config.js` 文件中，里�
 ```js title="babel.config.js"
 module.exports = {
   presets: [
-    ['taro', {/** 配置项 */}]
-  ]
+    [
+      'taro',
+      {
+        /** 配置项 */
+      },
+    ],
+  ],
 }
 ```
 
@@ -17,7 +22,6 @@ module.exports = {
 ## babel-preset-taro
 
 `babel-preset-taro` 会根据当前项目的技术栈，选择性地使用以下的 `presets` 和 `plugins`。
-
 
 #### 1. 通用
 
@@ -129,14 +133,14 @@ module.exports = {
 开发者需要在入口文件 `app.js` 中引入 `core-js`：
 
 ```js title="src/app.js"
-import "core-js"
+import 'core-js'
 ```
 
 Babel 会根据 [targets](babel-config#targets)，引入对应的 `core-js` 依赖。例如上述代码会被编译为：
 
 ```js title="dist/app.js"
-import "core-js/modules/es.string.pad-start";
-import "core-js/modules/es.string.pad-end";
+import 'core-js/modules/es.string.pad-start'
+import 'core-js/modules/es.string.pad-end'
 // ...
 ```
 
@@ -179,23 +183,23 @@ import "core-js/modules/es.string.pad-end";
 ### spec
 
 `@babel/preset-env` 的 [spec](https://babeljs.io/docs/en/babel-preset-env#spec) 配置项。
-  
+
 ### configPath
 
 `@babel/preset-env` 的 [configPath](https://babeljs.io/docs/en/babel-preset-env#configpath) 配置项。
-  
+
 ### include
 
 `@babel/preset-env` 的 [include](https://babeljs.io/docs/en/babel-preset-env#include) 配置项。
-  
+
 ### exclude
 
 `@babel/preset-env` 的 [exclude](https://babeljs.io/docs/en/babel-preset-env#exclude) 配置项。
-  
+
 ### shippedProposals
 
 `@babel/preset-env` 的 [shippedProposals](https://babeljs.io/docs/en/babel-preset-env#shippedproposals) 配置项。
-  
+
 ### forceAllTransforms
 
 `@babel/preset-env` 的 [forceAllTransforms](https://babeljs.io/docs/en/babel-preset-env#forcealltransforms) 配置项。
@@ -232,6 +236,6 @@ import "core-js/modules/es.string.pad-end";
 可以去掉冗余代码，对于一些严格限制包体大小的场景（比如 PWA 等）有帮助，但这也会去掉页面和组件的懒加载，导致 app.js 过大。
 
 > 注意：**h5** 平台默认关闭，其他平台默认开启，小程序默认是不支持动态加载的，可以通过[dynamic-import 插件](https://github.com/JiyuShao/taro-dynamic-import-weapp/tree/master/packages/taro-plugin-dynamic-import-weapp)提供该能力。
-:::
+> :::
 
 **类型**：`boolean`

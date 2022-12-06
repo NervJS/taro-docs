@@ -6,10 +6,9 @@ title: Refs 引用
 
 在常规的 Taro 数据流中，props 是父组件与子组件交互的唯一方式。要修改子元素，你需要用新的 props 去重新渲染子元素。然而，在少数情况下，你需要在常规数据流外强制修改子元素。被修改的子元素可以是 Taro 组件实例，或者是一个 DOM 元素。在这种情况下，Taro 提供了解决办法。
 
-
 ## 不要过度使用 Refs
-你可能首先会想到在你的应用程序中使用 refs 来更新组件。如果是这种情况，请花一点时间，更多的关注在组件层中使用 state。在组件层中，通常较高级别的 state 更为清晰。例如，相比于在 `Dialog` 组件中暴露 `open()` 和 `close()` 方法，最好传递 `isOpen` 属性。
 
+你可能首先会想到在你的应用程序中使用 refs 来更新组件。如果是这种情况，请花一点时间，更多的关注在组件层中使用 state。在组件层中，通常较高级别的 state 更为清晰。例如，相比于在 `Dialog` 组件中暴露 `open()` 和 `close()` 方法，最好传递 `isOpen` 属性。
 
 ## 创建 Refs
 
@@ -21,8 +20,7 @@ Taro 支持使用字符串和函数两种方式创建 Ref。
 
 ```jsx
 class MyComponent extends Component {
-
-  componentDidMount () {
+  componentDidMount() {
     // 如果 ref 的是小程序原生组件，那只有在 didMount 生命周期之后才能通过
     // this.refs.input 访问到小程序原生组件
     if (process.env.TARO_ENV === 'weapp') {
@@ -32,8 +30,8 @@ class MyComponent extends Component {
     }
   }
 
-  render () {
-    return <Input ref='input' />
+  render() {
+    return <Input ref="input" />
   }
 }
 ```
@@ -42,29 +40,28 @@ class MyComponent extends Component {
 
 你也可以通过传递一个函数创建 ref, 在函数中被引用的组件会作为函数的第一个参数传递。如果是被引用的组件是自定义组件，那可以在任意的生命周期访问引用。
 
-*不管在任何情况下，Taro 都推荐你使用函数的方式创建 ref。*
+_不管在任何情况下，Taro 都推荐你使用函数的方式创建 ref。_
 
 ```jsx
 class MyComponent extends Component {
-
-  roar () {
+  roar() {
     // 会打印 `miao, miao, miao~`
     this.cat.miao()
   }
 
-  refCat = (node) => this.cat = node // `this.cat` 会变成 `Cat` 组件实例的引用
+  refCat = (node) => (this.cat = node) // `this.cat` 会变成 `Cat` 组件实例的引用
 
-  render () {
+  render() {
     return <Cat ref={this.refCat} />
   }
 }
 
 class Cat extends Component {
-  miao () {
+  miao() {
     console.log('miao, miao, miao~')
   }
 
-  render () {
+  render() {
     return <View />
   }
 }
@@ -77,7 +74,6 @@ class Cat extends Component {
 Refs 还是使用 `Taro.createRef()` 创建的，并通过 ref 属性附加到 Taro 元素。在构造组件时，通常将 Refs 分配给实例属性，以便可以在整个组件中引用它们。
 
 当 ref 被传递给 `render` 中的元素时，对该节点的引用可以在 ref 的 `current` 属性中被访问。
-
 
 ```jsx
 class MyComponent extends Component {

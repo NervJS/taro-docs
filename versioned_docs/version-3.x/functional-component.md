@@ -10,7 +10,7 @@ title: 函数式组件
 
 ```jsx
 function Welcome(props) {
-  return <View>Hello, {props.name}</View>;
+  return <View>Hello, {props.name}</View>
 }
 ```
 
@@ -19,7 +19,7 @@ function Welcome(props) {
 ```jsx
 class Welcome extends React.Component {
   render() {
-    return <View>Hello, {this.props.name}</View>;
+    return <View>Hello, {this.props.name}</View>
   }
 }
 ```
@@ -28,7 +28,6 @@ class Welcome extends React.Component {
 
 1. 函数的命名需要遵循[帕斯卡式命名法](https://baike.baidu.com/item/%E5%B8%95%E6%96%AF%E5%8D%A1%E5%91%BD%E5%90%8D%E6%B3%95/9464494?fr=aladdin)；
 2. 一个文件中只能定义一个普通函数式组件或一个 Class 组件
-
 
 ## 类函数式组件
 
@@ -74,7 +73,7 @@ class SomePage extends Taro.Component {
 在一个普通的函数式组件中，我们需要一个另外的抽象组件多次调用，同时我们还希望这个抽象组件能访问到我们当前作用域的值，这时候我们就需要闭包函数式组件：
 
 ```jsx
-function Header ({ user }) {
+function Header({ user }) {
   const name = user.name
   const renderTitle = () => {
     // renderTitle 每次都能获取到当前作用域 `name` 的值
@@ -82,7 +81,7 @@ function Header ({ user }) {
   }
   return (
     <View>
-      {/* 重要人士我们要欢迎他三次 */ }
+      {/* 重要人士我们要欢迎他三次 */}
       {renderTitle()}
       {renderTitle()}
       {renderTitle()}

@@ -21,21 +21,22 @@ const config = {
 
 ```jsx
 const DEVICE_RATIO = {
-  '640': 2.34 / 2,
-  '750': 1,
-  '828': 1.81 / 2
+  640: 2.34 / 2,
+  750: 1,
+  828: 1.81 / 2,
 }
 ```
 
 建议使用 Taro 时，设计稿以 iPhone 6 `750px` 作为设计尺寸标准。
 
 如果你的设计稿是 `375` ，不在以上三种之中，那么你需要把 `designWidth` 配置为 `375`，同时在 `DEVICE_RATIO` 中添加换算规则如下：
+
 ```jsx {5}
 const DEVICE_RATIO = {
-  '640': 2.34 / 2,
-  '750': 1,
-  '828': 1.81 / 2,
-  '375': 2 / 1
+  640: 2.34 / 2,
+  750: 1,
+  828: 1.81 / 2,
+  375: 2 / 1,
 }
 ```
 
@@ -190,15 +191,15 @@ H5 根节点 `font-size` 的最小值。
 当前忽略单个属性的最简单的方法，就是 px 单位使用大写字母。
 
 ```css
- /* `px` is converted to `rem` */
+/* `px` is converted to `rem` */
 .convert {
   font-size: 16px; // converted to 1rem
 }
 
- /* `Px` or `PX` is ignored by `postcss-pxtorem` but still accepted by browsers */
+/* `Px` or `PX` is ignored by `postcss-pxtorem` but still accepted by browsers */
 .ignore {
-  border: 1Px solid; // ignored
-  border-width: 2PX; // ignored
+  border: 1px solid; // ignored
+  border-width: 2px; // ignored
 }
 ```
 
@@ -214,7 +215,7 @@ H5 根节点 `font-size` 的最小值。
 .textHide {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp:2;
+  -webkit-line-clamp: 2;
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -240,7 +241,7 @@ H5 根节点 `font-size` 的最小值。
 #### 忽略样式方法 3 写成行内样式
 
 ```HTML {2-9}
-<View 
+<View
   style={{
     display: '-webkit-box',
     '-webkit-box-orient': 'vertical',
@@ -256,4 +257,4 @@ H5 根节点 `font-size` 的最小值。
 
 ### 相关链接
 
-- [Taro多行文本省略不生效](https://taro-club.jd.com/topic/2270/taro%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9C%81%E7%95%A5%E4%B8%8D%E7%94%9F%E6%95%88)
+- [Taro 多行文本省略不生效](https://taro-club.jd.com/topic/2270/taro%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9C%81%E7%95%A5%E4%B8%8D%E7%94%9F%E6%95%88)

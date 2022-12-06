@@ -2,9 +2,10 @@
 title: 微信小程序自定义 Tabbar
 ---
 
-import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
-import { VueIcon, ReactIcon } from './guides/index'
+import Tabs from '@theme/Tabs'
+
+import { ReactIcon, VueIcon } from './guides/index'
 
 Taro 支持使用 React、Vue、或者小程序原生语法来编写小程序自定义 TabBar 组件。
 
@@ -26,33 +27,36 @@ Taro 支持使用 React、Vue、或者小程序原生语法来编写小程序自
 
 ```js title="app.config.js" {3}
 export default {
-  "tabBar": {
-    "custom": true,
-    "color": "#000000",
-    "selectedColor": "#000000",
-    "backgroundColor": "#000000",
-    "list": [{
-      "pagePath": "page/component/index",
-      "text": "组件"
-    }, {
-      "pagePath": "page/API/index",
-      "text": "接口"
-    }]
-  }
+  tabBar: {
+    custom: true,
+    color: '#000000',
+    selectedColor: '#000000',
+    backgroundColor: '#000000',
+    list: [
+      {
+        pagePath: 'page/component/index',
+        text: '组件',
+      },
+      {
+        pagePath: 'page/API/index',
+        text: '接口',
+      },
+    ],
+  },
 }
 ```
 
 ```js title="page/component/index.config.js" {3}
 export default {
   navigationBarTitleText: '组件页',
-  "usingComponents": {}
+  usingComponents: {},
 }
 ```
 
 ```js title="page/API/index.config.js" {3}
 export default {
   navigationBarTitleText: '接口页',
-  "usingComponents": {}
+  usingComponents: {},
 }
 ```
 
@@ -89,7 +93,6 @@ export default {
     |       └── index.wxml
     └── package.json
 
-
 ### 图片资源引用
 
 使用 React/Vue 开发自定义 TabBar 时，可以不使用 `import` 或 `require` 引用图片资源（Taro 会自动根据 TabBar 配置处理）。
@@ -119,7 +122,7 @@ Taro.getCurrentInstance().page.getTabBar()
 
 React 和 Vue 推荐使用**状态管理工具**（Redux、Vuex 等）对 TabBar 页的状态进行管理。优点在于无须侵入各个 TabBar 页面的代码，逻辑可以归集在 TabBar 组件中。
 
-如果开发者不希望使用状态管理工具，Taro 提供了 `Taro.getTabBar` API 以获取自定义 TabBar 组件（React/Vue组件），然后开发者可以调用它上面的方法去更新 TabBar 组件的状态。
+如果开发者不希望使用状态管理工具，Taro 提供了 `Taro.getTabBar` API 以获取自定义 TabBar 组件（React/Vue 组件），然后开发者可以调用它上面的方法去更新 TabBar 组件的状态。
 
 ```js
 // 页面 onShow 时
@@ -147,14 +150,14 @@ const tabbar = Taro.getTabBar(pageObj)
 // Class Component
 class CustomTabBar extends Component {
   static options = {
-    addGlobalClass: true
+    addGlobalClass: true,
   }
 }
 
 // Functional Component
-function CustomTabBar () {}
+function CustomTabBar() {}
 CustomTabBar.options = {
-    addGlobalClass: true
+  addGlobalClass: true,
 }
 ```
 
@@ -164,12 +167,12 @@ CustomTabBar.options = {
 
 ```html title="示例代码"
 <script>
-// 只支持 Options API 写法，不支持 <script setup>
-export default {
-  options: {
-    addGlobalClass: true
+  // 只支持 Options API 写法，不支持 <script setup>
+  export default {
+    options: {
+      addGlobalClass: true,
+    },
   }
-}
 </script>
 ```
 

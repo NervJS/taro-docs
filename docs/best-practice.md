@@ -6,16 +6,16 @@ title: 最佳实践
 
 由于 JSX 中的写法千变万化，我们不能支持到所有的 JSX 写法，同时由于微信小程序端的限制，也有部分 JSX 的优秀用法暂时不能得到很好地支持，特在此补充说明一下对于 JSX 的支持程度:
 
-* [不能使用 Array#map 之外的方法操作 JSX 数组](https://github.com/NervJS/taro/blob/master/packages/eslint-plugin-taro/docs/manipulate-jsx-as-array.md)
-* [暂不支持在 render() 之外的方法定义 JSX](https://github.com/NervJS/taro/blob/master/packages/eslint-plugin-taro/docs/no-jsx-in-class-method.md) (自 v1.3.0-beta.0 起支持)
-* [不能在 JSX 参数中使用对象展开符](https://github.com/NervJS/taro/blob/master/packages/eslint-plugin-taro/docs/no-spread-in-props.md) (自 v1.3.0-beta.0 起，自定义组件可以使用对象展开符，内置组件仍然需要分别单独传入参数)
-* [不支持无状态组件](https://github.com/NervJS/taro/blob/master/packages/eslint-plugin-taro/docs/no-stateless-function.md) (自 v1.3.0-beta.0 起支持)
+- [不能使用 Array#map 之外的方法操作 JSX 数组](https://github.com/NervJS/taro/blob/master/packages/eslint-plugin-taro/docs/manipulate-jsx-as-array.md)
+- [暂不支持在 render() 之外的方法定义 JSX](https://github.com/NervJS/taro/blob/master/packages/eslint-plugin-taro/docs/no-jsx-in-class-method.md) (自 v1.3.0-beta.0 起支持)
+- [不能在 JSX 参数中使用对象展开符](https://github.com/NervJS/taro/blob/master/packages/eslint-plugin-taro/docs/no-spread-in-props.md) (自 v1.3.0-beta.0 起，自定义组件可以使用对象展开符，内置组件仍然需要分别单独传入参数)
+- [不支持无状态组件](https://github.com/NervJS/taro/blob/master/packages/eslint-plugin-taro/docs/no-stateless-function.md) (自 v1.3.0-beta.0 起支持)
 
 以上的规则在 Taro 默认生成的模板都有 ESLint 检测，无需做任何配置。如果你的编辑器没有安装 ESLint 插件可以参考以下教程在你的编辑器安装：
 
-* [VSCode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-* [IntelliJ IDEA(WebStorm 等 JetBrains 系)](https://www.jetbrains.com/help/idea/eslint.html)
-* [Sublime Text](https://packagecontrol.io/packages/ESLint)
+- [VSCode](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [IntelliJ IDEA(WebStorm 等 JetBrains 系)](https://www.jetbrains.com/help/idea/eslint.html)
+- [Sublime Text](https://packagecontrol.io/packages/ESLint)
 
 默认情况下 Taro 的编译器也会对无法运行的代码进行警告，当没有调用栈信息时代码是可以生成的。如果你需要在编译时禁用掉 ESLint 检查，可以在命令前加入 `ESLINT=false` 参数，例如：
 
@@ -75,15 +75,10 @@ const property = this.props.property
 ```jsx
 // 调用 Custom 组件，传入 handleEvent 函数，属性名为 onTrigger
 class Parent extends Component {
+  handleEvent() {}
 
-  handleEvent () {
-
-  }
-
-  render () {
-    return (
-      <Custom onTrigger={this.handleEvent}></Custom>
-    )
+  render() {
+    return <Custom onTrigger={this.handleEvent}></Custom>
   }
 }
 ```
@@ -123,18 +118,12 @@ class Parent extends Component {
 
 ```javascript
 class Dialog extends Component {
-  render () {
+  render() {
     return (
-      <View className='dialog'>
-        <View className='header'>
-          {this.props.renderHeader}
-        </View>
-        <View className='body'>
-          {this.props.children}
-        </View>
-        <View className='footer'>
-          {this.props.renderFooter}
-        </View>
+      <View className="dialog">
+        <View className="header">{this.props.renderHeader}</View>
+        <View className="body">{this.props.children}</View>
+        <View className="footer">{this.props.renderFooter}</View>
       </View>
     )
   }
@@ -145,20 +134,14 @@ class Dialog extends Component {
 
 ```javascript
 class App extends Component {
-  render () {
+  render() {
     return (
-      <View className='container'>
+      <View className="container">
         <Dialog
-          renderHeader={
-            <View className='welcome-message'>Welcome!</View>
-          }
-          renderFooter={
-            <Button className='close'>Close</Button>
-          }
+          renderHeader={<View className="welcome-message">Welcome!</View>}
+          renderFooter={<Button className="close">Close</Button>}
         >
-          <View className="dialog-message">
-            Thank you for using Taro.
-          </View>
+          <View className="dialog-message">Thank you for using Taro.</View>
         </Dialog>
       </View>
     )
@@ -205,7 +188,7 @@ render () {
 
 很多细心的开发者应该已经注意到了，在 Taro 编译到小程序端后，组件的 `constructor` 与 `render` 默认会多调用一次，表现得与 React 不太一致。
 
-这是因为，Taro 的组件编译后就是小程序的自定义组件，而小程序的自定义组件的初始化时是可以指定 `data` 来让组件拥有初始化数据的。开发者一般会在组件的 `constructor` 中设置一些初始化的 `state`，同时也可能会在 `render` 中处理 `state`  与 `props` 产生新的数据，在 Taro 中多出的这一次提前调用，就是为了收集组件的初始化数据，给自定义组件提前生成 `data` ，以保证组件初始化时能带有数据，让组件初次渲染正常。
+这是因为，Taro 的组件编译后就是小程序的自定义组件，而小程序的自定义组件的初始化时是可以指定 `data` 来让组件拥有初始化数据的。开发者一般会在组件的 `constructor` 中设置一些初始化的 `state`，同时也可能会在 `render` 中处理 `state` 与 `props` 产生新的数据，在 Taro 中多出的这一次提前调用，就是为了收集组件的初始化数据，给自定义组件提前生成 `data` ，以保证组件初始化时能带有数据，让组件初次渲染正常。
 
 所以，在编码时，需要在处理数据的时候做一些容错处理，这样可以避免在 `constructor` 与 `render` 提前调用时出现由于没有数据导致出错的情况。
 
@@ -264,11 +247,11 @@ this.setData({
 ```jsx
 const globalData = {}
 
-export function set (key, val) {
+export function set(key, val) {
   globalData[key] = val
 }
 
-export function get (key) {
+export function get(key) {
   return globalData[key]
 }
 ```

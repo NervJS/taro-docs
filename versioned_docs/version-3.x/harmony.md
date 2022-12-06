@@ -6,7 +6,6 @@ title: 鸿蒙 & OpenHarmony
 Taro v3.5+ 开始支持
 :::
 
-
 随着鸿蒙系统的日渐完善，众多应用厂商都期待着把自家应用移植到鸿蒙平台上。借助 Taro，可以实现快速开发鸿蒙应用、把小程序快速转换为鸿蒙应用等功能。
 
 ## 背景阅读
@@ -67,12 +66,13 @@ API 也是一样，两者的 API 有部分交集，可用法、功能上也有�
 
 ## 配置鸿蒙环境
 
-首先要准备鸿蒙运行所需的环境，根据参考文档提示的步骤在 HUAWEI DevEco Studio 的 IDE 中完成 MyApplication 项目的创建，熟悉鸿蒙开发者工具的预览查看等功能。 
+首先要准备鸿蒙运行所需的环境，根据参考文档提示的步骤在 HUAWEI DevEco Studio 的 IDE 中完成 MyApplication 项目的创建，熟悉鸿蒙开发者工具的预览查看等功能。
+
 ### 1. 安装、配置 DevEco Studio
 
-（1）登录 [HarmonysOS 应用开发门户](https://link.juejin.cn/?target=https%3A%2F%2Fdeveloper.harmonyos.com%2Fcn%2Fhome)，点击右上角注册按钮，注册开发者帐号。
+（1）登录  [HarmonysOS 应用开发门户](https://link.juejin.cn/?target=https%3A%2F%2Fdeveloper.harmonyos.com%2Fcn%2Fhome)，点击右上角注册按钮，注册开发者帐号。
 
-（2）进入 [HUAWEI DevEco Studio 产品页](https://link.juejin.cn/?target=https%3A%2F%2Fdeveloper.harmonyos.com%2Fcn%2Fdevelop%2Fdeveco-studio)，登录华为开发者账号后下载 DevEco Studio 安装包并进行安装。
+（2）进入  [HUAWEI DevEco Studio 产品页](https://link.juejin.cn/?target=https%3A%2F%2Fdeveloper.harmonyos.com%2Fcn%2Fdevelop%2Fdeveco-studio)，登录华为开发者账号后下载 DevEco Studio 安装包并进行安装。
 
 （3）启动 DevEco Studio，根据工具引导下载 HarmonyOS SDK。
 
@@ -88,13 +88,13 @@ API 也是一样，两者的 API 有部分交集，可用法、功能上也有�
 
 （1）DevEco Studio 支持下述方式查看运行效果，链接到鸿蒙官网查看具体步骤
 
-a. [使用预览器 previewer](https://developer.harmonyos.com/cn/docs/documentation/doc-guides/previewer-0000001054328973)  该功能与真机效果可能存在差异，不推荐
+a. [使用预览器 previewer](https://developer.harmonyos.com/cn/docs/documentation/doc-guides/previewer-0000001054328973) 该功能与真机效果可能存在差异，不推荐
 
-b. [使用模拟器](https://developer.harmonyos.com/cn/docs/documentation/doc-guides/run_simulator-0000001053303709)  
+b. [使用模拟器](https://developer.harmonyos.com/cn/docs/documentation/doc-guides/run_simulator-0000001053303709)
 
-c. [使用远程真机](https://developer.harmonyos.com/cn/docs/documentation/doc-guides/ide-remote-real-device-0000001167977777)   提供远程真机设备供开发者使用，解决开发者没有真机的问题
+c. [使用远程真机](https://developer.harmonyos.com/cn/docs/documentation/doc-guides/ide-remote-real-device-0000001167977777) 提供远程真机设备供开发者使用，解决开发者没有真机的问题
 
-c. [使用本地真机](https://developer.harmonyos.com/cn/docs/documentation/doc-guides/run_phone_tablat-0000001064774652)   用户真机与电脑相连，打开开发者模式，即可在真机看到效果
+c. [使用本地真机](https://developer.harmonyos.com/cn/docs/documentation/doc-guides/run_phone_tablat-0000001064774652) 用户真机与电脑相连，打开开发者模式，即可在真机看到效果
 
 ![示例图](https://img13.360buyimg.com/imagetools/jfs/t1/172857/29/21648/2058072/61b02582Eabe79722/80378acc6479d312.png)
 
@@ -102,16 +102,13 @@ c. [使用本地真机](https://developer.harmonyos.com/cn/docs/documentation/do
 
 在编译器中打开 Run -> Edit Configurations 设置调试代码为 JS, 检查 config.json 中配置的属性，设置 Hap 包安装方式之后启动调试
 
-
 ![示例图](https://img11.360buyimg.com/imagetools/jfs/t1/158561/21/21509/1769838/61b05362Ed0878669/35ee0cb64465d229.jpg)
-
 
 ### 相关阅读
 
 - [《初窥鸿蒙》](https://juejin.cn/post/6972109475347955749)
 - [《华为开发者工具》](https://developer.harmonyos.com/cn/develop/deveco-studio)
 - [《鸿蒙开发文档》](https://developer.harmonyos.com/cn/documentation)
-
 
 ## 使用 Taro 开发鸿蒙 JS UI
 
@@ -129,9 +126,9 @@ npm i -g @tarojs/cli@canary
 
 如您是新项目，创建项目时选择鸿蒙模板即可；
 
-旧项目需要把 `package.json` 文件中 Taro 相关依赖的版本修改为 `~3.5.0-canary.0`，再重新安装依赖。
+旧项目需要把  `package.json`  文件中 Taro 相关依赖的版本修改为  `~3.5.0-canary.0`，再重新安装依赖。
 
-> 如果安装失败或打开项目失败，可以删除 **node_modules**、**yarn.lock**、**package-lock.json** 后重新安装依赖再尝试。
+> 如果安装失败或打开项目失败，可以删除  **node_modules**、**yarn.lock**、**package-lock.json**  后重新安装依赖再尝试。
 
 ### 2. 安装 Taro 适配鸿蒙插件
 
@@ -150,7 +147,7 @@ config = {
     // 因为 previewer 对长串的压缩文本解析有问题。（真机/远程真机没有此问题）
     debugReact: true,
     // 如果需要真机断点调试，需要关闭 sourcemap 的生成
-    enableSourceMap: false
+    enableSourceMap: false,
   },
   // harmony 相关配置
   harmony: {
@@ -159,8 +156,8 @@ config = {
     // 【可选】HAP 的名称，默认为 'entry'
     hapName: 'entry',
     // 【可选】JS FA 的名称，默认为 'default'
-    jsFAName: 'default'
-  }
+    jsFAName: 'default',
+  },
 }
 ```
 
@@ -198,12 +195,12 @@ $ taro build —-type harmony —-watch
 
 各端尺寸单位对比：
 
-| 平台 | 逻辑像素单位 | 自适应单位 | 尺寸基准 |
-| :-- | :-- | :-- | :-- |
-| H5 | px | rem |  |
-| 小程序 | px | rpx | 750 |
-| Harmony（autoDesignWidth：false） | vp | px | 720 |
-| Harmony（autoDesignWidth：true） | px/vp |  | 720 |
+| 平台                              | 逻辑像素单位 | 自适应单位 | 尺寸基准 |
+| :-------------------------------- | :----------- | :--------- | :------- |
+| H5                                | px           | rem        |          |
+| 小程序                            | px           | rpx        | 750      |
+| Harmony（autoDesignWidth：false） | vp           | px         | 720      |
+| Harmony（autoDesignWidth：true）  | px/vp        |            | 720      |
 
 为了更好地兼容现有生态，Taro 在编译鸿蒙时会把鸿蒙配置中的 `autoDesignWidth` 设置为 `false`，把 `designWidth` 设置为 `750`。开发者和过去编写 Taro 应用一样：如果拿到的是 `750` 的设计稿，对于设计稿上 `200px` 的元素：如果样式中直接书写 `200px` 会被 Taro 编译为 `200px`，**尺寸随屏幕宽度变化而自适应**；如果样式中书写 `100PX` 会被 Taro 编译为 `100vp`，在 750 的屏幕上等于 `200px`，**尺寸不会随屏幕宽度变化而改变**。
 

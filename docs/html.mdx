@@ -6,8 +6,8 @@ title: 渲染 HTML
 
 Taro 可以直接通过 `Element#innerHTML` 或 Vue 的 `v-html` 或 React/Nerv 的 `dangerouslySetInnerHTML` 直接渲染 HTML:
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import TabItem from '@theme/TabItem'
+import Tabs from '@theme/Tabs'
 
 <Tabs
   defaultValue="React"
@@ -35,32 +35,28 @@ function helloWorld() {
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      html: `<h1 style="color: red">Wallace is way taller than other reporters.</h1>`
-    }
+  export default {
+    data() {
+      return {
+        html: `<h1 style="color: red">Wallace is way taller than other reporters.</h1>`,
+      }
+    },
   }
-}
 </script>
 ```
 
 </TabItem>
 
-
 </Tabs>
-
-
 
 ## 自定义 HTML 样式
 
 直接设置 HTML 不会让 HTML 标签带上浏览器的默认样式，Taro 提供两种内置样式我们可以直接引入生效：
 
-* `@tarojs/taro/html.css`: [W3C HTML4 的内置样式](https://www.w3.org/TR/CSS2/sample.html)，只有 HTML4 标签样式，体积较小，兼容性强，能适应大多数情况。
-* `@tarojs/taro/html5.css`: [Chrome(Blink) HTML5 的内置样式](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css)，内置样式丰富，包括了大多数 HTML5 标签，体积较大，不一定支持所有小程序容器。
+- `@tarojs/taro/html.css`: [W3C HTML4 的内置样式](https://www.w3.org/TR/CSS2/sample.html)，只有 HTML4 标签样式，体积较小，兼容性强，能适应大多数情况。
+- `@tarojs/taro/html5.css`: [Chrome(Blink) HTML5 的内置样式](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css)，内置样式丰富，包括了大多数 HTML5 标签，体积较大，不一定支持所有小程序容器。
 
 为了让内置的标签样式起作用，我们还需要将 HTML 容器的 CSS 类设置为 `.taro_html`:
-
 
 <Tabs
   defaultValue="React"
@@ -92,24 +88,23 @@ function helloWorld() {
 </template>
 
 <script>
-if (process.env.TARO_ENV !== 'h5') {
-  require('@tarojs/taro/html.css')
-}
-
-export default {
-  data () {
-    return {
-      html: `<h1 style="color: red">Wallace is way taller than other reporters.</h1>`
-    }
+  if (process.env.TARO_ENV !== 'h5') {
+    require('@tarojs/taro/html.css')
   }
-}
+
+  export default {
+    data() {
+      return {
+        html: `<h1 style="color: red">Wallace is way taller than other reporters.</h1>`,
+      }
+    },
+  }
 </script>
 ```
 
   </TabItem>
 
 </Tabs>
-
 
 同样地，我们也可以自己编写 CSS 样式，Taro 最终渲染的 HTML 标签的类名都和 HTML 标签名保持一致，例如我们的容器 CSS 类名为 `my_css`，想要设置 `h1` 标签的样式，那就这样这样做：
 
@@ -121,19 +116,19 @@ export default {
 
 你可能会倾向于其他浏览器的默认样式：
 
-* [Firefox](https://dxr.mozilla.org/mozilla-central/source/layout/style/res/html.css)
-* [Internet Explorer](https://web.archive.org/web/20170122223926/https://www.iecss.com/)
-* [Safari/Chrome(Webkit)](https://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css)
-* [Opera](https://web.archive.org/web/20161031005401/https://www.iecss.com/opera-10.51.css)
-* [W3C HTML5 Spec](https://www.w3.org/TR/html5/rendering.html)
-* [normalize.css](https://github.com/necolas/normalize.css/blob/master/normalize.css)
+- [Firefox](https://dxr.mozilla.org/mozilla-central/source/layout/style/res/html.css)
+- [Internet Explorer](https://web.archive.org/web/20170122223926/https://www.iecss.com/)
+- [Safari/Chrome(Webkit)](https://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css)
+- [Opera](https://web.archive.org/web/20161031005401/https://www.iecss.com/opera-10.51.css)
+- [W3C HTML5 Spec](https://www.w3.org/TR/html5/rendering.html)
+- [normalize.css](https://github.com/necolas/normalize.css/blob/master/normalize.css)
 
 ## HTML 转义
 
 由于进行 HTML 转义需要消耗较多的性能和较大的体积，默认而言 Taro 的 HTML 接口只接受转义后的 HTML 字符串，我们推荐直接在服务端返回转义后的 HTML。如果确实需要在客户端转义，开源社区有两个较好的选择：
 
-* [he](https://www.npmjs.com/package/he): 体积较大，但开源协议更为宽松
-* [entities](https://www.npmjs.com/package/entities): 体积较小，但开源协议更为严格
+- [he](https://www.npmjs.com/package/he): 体积较大，但开源协议更为宽松
+- [entities](https://www.npmjs.com/package/entities): 体积较小，但开源协议更为严格
 
 你可能会需要[高级选项](#高级选项)的 `transformText` 配合 HTML 转义进行字符串渲染。
 
@@ -176,42 +171,39 @@ function helloWorld() {
 
   <TabItem value="Vue">
 
-
 ```html
 <template>
   <view v-html="html" class="taro_html"></view>
 </template>
 
 <script>
-import '@tarojs/taro/html.css'
+  import '@tarojs/taro/html.css'
 
-export default {
-  data () {
-    return {
-      html: `<h1 id="test">Wallace is way taller than other reporters.</h1>`
+  export default {
+    data () {
+      return {
+        html: `<h1 id="test">Wallace is way taller than other reporters.</h1>`
+      }
+    },
+    mounted () {
+      const el = document.getElementById('test')
+      el.addEventListener('tap', this.testOnTap)
+    },
+    testOnTap (event) {
+      // do something
+      ...
+    },
+    beforeDestroy () {
+      const el = document.getElementById('test')
+      el.removeEventListener('tap', this.testOnTap)
     }
-  },
-  mounted () {
-    const el = document.getElementById('test')
-    el.addEventListener('tap', this.testOnTap)
-  },
-  testOnTap (event) {
-    // do something
-    ...
-  },
-  beforeDestroy () {
-    const el = document.getElementById('test')
-    el.removeEventListener('tap', this.testOnTap)
   }
-}
 </script>
 ```
 
   </TabItem>
 
 </Tabs>
-
-<!--END_DOCUSAURUS_CODE_TABS-->
 
 如果需要动态绑定事件的元素没有 ID 的话，你可能需要使用[高级选项](#高级选项)的 `transformElement`。
 
@@ -233,7 +225,6 @@ Taro.options.html.skipElements.add('source')
 默认值：`new Set(['style', 'script'])`
 
 HashSet 中包含的 HTML 标签将不会被解析。
-
 
 ### voidElements
 

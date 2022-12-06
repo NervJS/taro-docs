@@ -55,11 +55,11 @@ title: 目录结构
 
 小程序的主体由下面三个文件组成：
 
-| 文件 | 必须 | 作用 |
-| :-- | :-- | :-- |
-| app.js | 是 | 小程序入口逻辑 |
-| app.css | 否 | 小程序全局样式 |
-| app.config.js | 是 | 小程序全局配置 |
+| 文件          | 必须 | 作用           |
+| :------------ | :--- | :------------- |
+| app.js        | 是   | 小程序入口逻辑 |
+| app.css       | 否   | 小程序全局样式 |
+| app.config.js | 是   | 小程序全局配置 |
 
 代码示例请根据你选择的框架进行查看：[React](./react-overall), [PReact](./preact), [Vue](./vue-overall), [Vue3](./vue3)。
 
@@ -72,7 +72,7 @@ title: 目录结构
 小程序全局样式文件可以通过 ES6 规范的 `import` 进行引入。
 
 ```js title="app.js"
-import './app.css';
+import './app.css'
 ```
 
 ### page
@@ -86,11 +86,11 @@ import './app.css';
 
 一个小程序页面由三个文件组成，如下：
 
-| 文件 | 必须 | 作用 |
-| :-- | :-- | :-- |
-| page.js | 是 | 页面入口逻辑 |
-| page.css | 否 | 页面样式 |
-| page.config.js | 否 | 页面配置 |
+| 文件           | 必须 | 作用         |
+| :------------- | :--- | :----------- |
+| page.js        | 是   | 页面入口逻辑 |
+| page.css       | 否   | 页面样式     |
+| page.config.js | 否   | 页面配置     |
 
 #### 1. 页面配置
 
@@ -101,7 +101,7 @@ import './app.css';
 页面的样式文件可以通过 ES6 规范的 `import` 进行引入。
 
 ```js title="pages/index/index.js"
-import './index.css';
+import './index.css'
 ```
 
 #### 3. 页面路由

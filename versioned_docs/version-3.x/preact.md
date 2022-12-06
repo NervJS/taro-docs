@@ -27,7 +27,7 @@ yarn add preact @tarojs/plugin-framework-react
 ```js title="config/index.js" {3}
 const config = {
   // ...
-  framework: 'preact'
+  framework: 'preact',
 }
 ```
 
@@ -36,13 +36,15 @@ const config = {
 ```js title="babel.config.js" {4}
 module.exports = {
   presets: [
-    ['taro', {
-      framework: 'preact'
-    }]
-  ]
+    [
+      'taro',
+      {
+        framework: 'preact',
+      },
+    ],
+  ],
 }
 ```
-
 
 3. 如果项目使用了 TypeScript，请打开 `skipLibCheck` 配置，以避免和其它 React 生态库配合使用时报类型错误：
 
@@ -66,19 +68,22 @@ const config = {
   // ...
   h5: {
     devServer: {
-      hot: false
-    }
-  }
+      hot: false,
+    },
+  },
 }
 ```
 
 ```js title="babel.config.js" {5}
 module.exports = {
   presets: [
-    ['taro', {
-      framework: 'preact',
-      hot: false
-    }]
-  ]
+    [
+      'taro',
+      {
+        framework: 'preact',
+        hot: false,
+      },
+    ],
+  ],
 }
 ```
