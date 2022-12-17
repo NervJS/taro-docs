@@ -3672,6 +3672,67 @@
     "cover": {
       "type": "external",
       "external": {
+        "url": "https://avatars.githubusercontent.com/u/14323022?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "tutuxxx",
+              "link": {
+                "url": "https://github.com/tutuxxx"
+              }
+            },
+            "plain_text": "tutuxxx",
+            "href": "https://github.com/tutuxxx"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/tutuxxx"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
+            "name": "助手",
+            "color": "purple"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
         "url": "https://avatars.githubusercontent.com/u/118237328?v=4"
       }
     },
@@ -36848,158 +36909,6 @@
         "formula": {
           "type": "boolean",
           "boolean": true
-        }
-      }
-    }
-  },
-  {
-    "cover": null,
-    "properties": {
-      "title": {
-        "id": "title",
-        "type": "title",
-        "title": []
-      },
-      "github": {
-        "id": "ogpZ",
-        "type": "url",
-        "url": null
-      },
-      "role": {
-        "id": "m%3AAW",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "team": {
-        "id": "CBVI",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "group": {
-        "id": "%5ElK%3A",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "alumni": {
-        "id": "dtGi",
-        "type": "formula",
-        "formula": {
-          "type": "boolean",
-          "boolean": false
-        }
-      }
-    }
-  },
-  {
-    "cover": null,
-    "properties": {
-      "title": {
-        "id": "title",
-        "type": "title",
-        "title": []
-      },
-      "github": {
-        "id": "ogpZ",
-        "type": "url",
-        "url": null
-      },
-      "role": {
-        "id": "m%3AAW",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "team": {
-        "id": "CBVI",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "group": {
-        "id": "%5ElK%3A",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "alumni": {
-        "id": "dtGi",
-        "type": "formula",
-        "formula": {
-          "type": "boolean",
-          "boolean": false
-        }
-      }
-    }
-  },
-  {
-    "cover": null,
-    "properties": {
-      "title": {
-        "id": "title",
-        "type": "title",
-        "title": []
-      },
-      "github": {
-        "id": "ogpZ",
-        "type": "url",
-        "url": null
-      },
-      "role": {
-        "id": "m%3AAW",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "team": {
-        "id": "CBVI",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "group": {
-        "id": "%5ElK%3A",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "alumni": {
-        "id": "dtGi",
-        "type": "formula",
-        "formula": {
-          "type": "boolean",
-          "boolean": false
-        }
-      }
-    }
-  },
-  {
-    "cover": null,
-    "properties": {
-      "title": {
-        "id": "title",
-        "type": "title",
-        "title": []
-      },
-      "github": {
-        "id": "ogpZ",
-        "type": "url",
-        "url": null
-      },
-      "role": {
-        "id": "m%3AAW",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "team": {
-        "id": "CBVI",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "group": {
-        "id": "%5ElK%3A",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "alumni": {
-        "id": "dtGi",
-        "type": "formula",
-        "formula": {
-          "type": "boolean",
-          "boolean": false
         }
       }
     }
