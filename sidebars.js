@@ -152,6 +152,7 @@ module.exports = {
     CONTRIBUTING: [
       'join-in',
       'CONTRIBUTING',
+      'CONTRIBUTING-GUIDE',
       'codebase-overview',
       'debug-config',
       'implement-note',
