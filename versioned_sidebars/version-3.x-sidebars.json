@@ -134,7 +134,15 @@
       "report",
       "seowhy"
     ],
-    "CONTRIBUTING": ["join-in", "CONTRIBUTING", "codebase-overview", "debug-config", "implement-note", "taro-dom"]
+    "CONTRIBUTING": [
+      "join-in",
+      "CONTRIBUTING",
+      "CONTRIBUTING-GUIDE",
+      "codebase-overview",
+      "debug-config",
+      "implement-note",
+      "taro-dom"
+    ]
   },
   "components": {
     "关于组件库": ["components-desc", "components/page-meta", "components/common", "components/event"],
