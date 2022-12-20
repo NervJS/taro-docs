@@ -160,3 +160,22 @@ Taro v3.5.0+ 开始支持
 | path        | string  | 不存在页面的路径                                                               |
 | query       | Object  | 打开不存在页面的 query 参数                                                    |
 | isEntryPage | boolean | 是否本次启动的首个页面（例如从分享等入口进来，首个页面是开发者配置的分享页面） |
+
+### onUnhandledRejection (Object)
+
+:::info
+Taro v3.5.10+ 开始支持
+:::
+
+小程序有未处理的 Promise 拒绝时触发。
+
+#### 参数
+
+##### Object
+
+| 属性    | 类型    | 说明                            |
+| ------- | ------- | ------------------------------- |
+| reason  | string  | 拒绝原因，一般是一个 Error 对象 |
+| promise | Promise | 被拒绝的 Promise 对象           |
+
+> 注意：**支付宝小程序**需要在源码根目录的 `project.alipay.json` 文件中添加配置 `enableAppxNg: true` 才能在真机环境进行监听。

@@ -75,6 +75,22 @@ usePageNotFound((res) => {
 })
 ```
 
+### useUnhandledRejection
+
+:::info
+Taro v3.5.10+ 开始支持
+:::
+
+等同于 App 入口的 `onUnhandledRejection` 生命周期钩子。
+
+```jsx title="示例代码"
+useUnhandledRejection((res) => {
+  console.log(res.reason, res.promise)
+})
+```
+
+> 注意：**支付宝小程序**需要在源码根目录的 `project.alipay.json` 文件中添加配置 `enableAppxNg: true` 才能在真机环境进行监听。
+
 ### useRouter
 
 等同于 Class Component 的 `getCurrentInstance().router`。
