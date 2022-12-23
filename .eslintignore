@@ -8,3 +8,4 @@ node_modules
 **/apis/**
 !**/apis/about
 **/components/**
+*.mdx
