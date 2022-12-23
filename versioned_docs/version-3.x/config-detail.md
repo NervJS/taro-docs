@@ -905,7 +905,7 @@ module.exports = {
       url: {
         enable: true,
         config: {
-          limit: 10240, // 设定转换尺寸上限
+          maxSize: 10, // 设定转换尺寸上限（单位：kbytes）
         },
       },
       // css modules 功能开关与相关配置
