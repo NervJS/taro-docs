@@ -288,7 +288,7 @@ export default class Index extends Component {
 ```js
 // app.js 入口文件
 import Vue from 'vue'
-import { registerVirtualList } from '@tarojs/components/virtual-list'
+import registerVirtualList from '@tarojs/components/virtual-list'
 // Note: 使用以下路径导出插件可以在 vue 中获得更好的类型支持
 // import registerVirtualList from '@tarojs/components-advanced/dist/components/virtual-list/vue'
 
