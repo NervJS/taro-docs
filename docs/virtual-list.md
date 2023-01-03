@@ -206,6 +206,10 @@ export default class Index extends Component {
 
 在可视区域之外渲染的列表单项数量，值设置得越高，快速滚动时出现白屏的概率就越小，相应地，每次滚动的性能会变得越差。
 
+### `placeholderCount: number = overscanCount`
+
+在可视区域之外占位的列表单项数量，值设置得越高，快速滚动时出现白屏的概率就越小，相应地，每次滚动的性能会变得越差。
+
 #### `unlimitedSize?: boolean`
 
 解开高度列表单项大小限制，默认值使用: itemSize (请注意，初始高度与实际高度差异过大会导致隐患)。
@@ -502,6 +506,10 @@ Vue.use(registerVirtualList)
 #### `overscanCount: number = 1`
 
 在可视区域之外渲染的列表单项数量，值设置得越高，快速滚动时出现白屏的概率就越小，相应地，每次滚动的性能会变得越差。
+
+### `placeholderCount: number = overscanCount`
+
+在可视区域之外占位的列表单项数量，值设置得越高，快速滚动时出现白屏的概率就越小，相应地，每次滚动的性能会变得越差。
 
 #### `unlimitedSize?: boolean`
 
