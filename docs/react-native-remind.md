@@ -132,7 +132,7 @@ const config = {
 
 # 三、导航
 
-React Native 导航是封装的 React-Navigation 5.x，为了更好的方便业务自定义，支持全局与页面配置中透传 React Navigation 的配置，但注意以下导航相关设置 Taro 3.x 生效。
+React Native 导航是封装的 React-Navigation [6.x](https://github.com/NervJS/taro/pull/11344)，为了更好的方便业务自定义，支持全局与页面配置中透传 React Navigation 的配置，但注意以下导航相关设置 Taro 3.x 生效。
 
 ### 全局配置
 
