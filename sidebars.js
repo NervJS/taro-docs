@@ -1240,6 +1240,7 @@ module.exports = {
     'WXML': [
       'apis/wxml/createSelectorQuery',
       'apis/wxml/createIntersectionObserver',
+      'apis/wxml/createMediaQueryObserver',
       'apis/wxml/IntersectionObserver',
       'apis/wxml/MediaQueryObserver',
       'apis/wxml/NodesRef',
