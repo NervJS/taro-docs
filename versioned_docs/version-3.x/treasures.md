@@ -224,11 +224,11 @@ Taro 小程序脚手架。 特性： 封装 api、redux 优雅集成、生成海
 
 @jdf2e 出品。【[官网](https://nutui.jd.com/#/)】【[Github](https://github.com/jdf2e/nutui)】
 
-<img src="https://img13.360buyimg.com/imagetools/jfs/t1/183067/5/17431/1078586/6107ebb5E9f192cd2/2457e76a5aaa53fc.jpg" width="700px" />
+<img src="https://img13.360buyimg.com/imagetools/jfs/t1/222418/40/22573/338132/63bcc1e5Ff4cbffd2/412f9667b2b57333.png" width="700px" />
 
-|        | 微信 | 阿里系 | 百度 | 头条 | H5  | RN  |
-| :----: | :--: | :----: | :--: | :--: | :-: | :-: |
-| 支持度 |  ✔️  |        |      |      | ✔️  |     |
+|        | 微信 | 京东 | 阿里系 | 百度 | 头条 | H5  | RN  |
+| :----: | :--: | :--: | :----: | :--: | :--: | :-: | :-: |
+| 支持度 |  ✔️  |  ✔️  |   ✔️   |      |      | ✔️  |     |
 
 ---
 
