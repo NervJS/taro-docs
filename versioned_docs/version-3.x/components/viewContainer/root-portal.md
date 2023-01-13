@@ -13,7 +13,7 @@ root-portal
 ## 类型
 
 ```tsx
-ComponentType
+ComponentType<RootPortalProps>
 ```
 
 ## 示例代码
@@ -54,3 +54,15 @@ export default function RootPortalExample {
 ```
 </TabItem>
 </Tabs>
+
+## RootPortalProps
+
+| 参数 | 类型 | 默认值 | 必填 | 说明 |
+| --- | --- | :---: | :---: | --- |
+| enable | `boolean` | `true` | 否 | 是否从页面中脱离出来 |
+
+### API 支持度
+
+| API | 微信小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: |
+| RootPortalProps.enable | ✔️ |  |  |  |

@@ -5,7 +5,7 @@ sidebar_label: Textarea
 
 多行输入框。该组件是原生组件，使用时请注意相关限制
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/textarea.html)
 
@@ -96,6 +96,7 @@ export default class PageView extends Component {
 | name | `string` |  | 否 | 组件名字，用于表单提交获取数据。 |
 | showCount | `string` |  | 否 | 是否渲染字数统计功能（是否删除默认计数器/是否显示字数统计）。 |
 | controlled | `string` |  | 否 | 是否为受控组件。为 true 时，value 内容会完全受 setData 控制。 |
+| enableNative | `boolean` | `false` | 否 | 使用原生键盘 |
 | ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
 | onFocus | `CommonEventFunction<onFocusEventDetail>` |  | 否 | 输入框聚焦时触发 |
 | onBlur | `CommonEventFunction<onBlurEventDetail>` |  | 否 | 输入框失去焦点时触发 |
@@ -132,6 +133,7 @@ export default class PageView extends Component {
 | TextareaProps.name |  |  | ✔️ |  |  |  |  |  |
 | TextareaProps.showCount |  |  | ✔️ |  |  |  |  |  |
 | TextareaProps.controlled |  |  | ✔️ |  |  |  |  |  |
+| TextareaProps.enableNative |  |  | ✔️ |  |  |  |  |  |
 | TextareaProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |
 | TextareaProps.onFocus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | TextareaProps.onBlur | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |

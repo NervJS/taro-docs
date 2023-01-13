@@ -10,7 +10,6 @@ on:
 
 env:
   CI: true
-  NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
 jobs:
   publish:
     name: Publish
@@ -26,12 +25,12 @@ jobs:
           path: |
             node_modules
             build/taro-docs
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-tcb
           restore-keys: |
             ${{ runner.os }}-
 
       - name: install
-        uses: pnpm/action-setup@v2.2.2
+        uses: pnpm/action-setup@v2
         with:
           version: 7
           run_install: |

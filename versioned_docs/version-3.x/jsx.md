@@ -20,10 +20,8 @@ import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
 
 class Home extends Component {
-  render () {
-    return (
-      <View>Hello World!</View>
-    )
+  render() {
+    return <View>Hello World!</View>
   }
 }
 ```
@@ -47,10 +45,8 @@ import home_page from './page'
 
 // 错误！组件名应该首字母大写:
 class App extends Component {
-  render () {
-    return (
-      <home_page message="Hello World!" />
-    )
+  render() {
+    return <home_page message="Hello World!" />
   }
 }
 ```
@@ -63,10 +59,8 @@ import Taro, { Component } from '@tarojs/taro'
 import HomePage from './page'
 
 class App extends Component {
-  render () {
-    return (
-      <HomePage message="Hello World!" />
-    )
+  render() {
+    return <HomePage message="Hello World!" />
   }
 }
 ```
@@ -93,7 +87,7 @@ if 语句和 for 循环在 JavaScript 中不是表达式，因此它们不能直
 import Taro, { Component } from '@tarojs/taro'
 
 class App extends Components {
-  render () {
+  render() {
     let description
 
     if (this.props.number % 2 == 0) {
@@ -102,7 +96,11 @@ class App extends Components {
       description = <Text>odd</Text>
     }
 
-    return <View>{this.props.number} is an {description} number</View>
+    return (
+      <View>
+        {this.props.number} is an {description} number
+      </View>
+    )
   }
 }
 ```
@@ -129,10 +127,12 @@ class App extends Components {
 
 > 和 React/Nerv 的不同：
 > React 可以使用 `...` 拓展操作符来传递属性，但在 Taro 中你不能这么做。例如：
+>
 > ```jsx
-> const props = {firstName: 'Plus', lastName: 'Second'}
+> const props = { firstName: 'Plus', lastName: 'Second' }
 > return <Greeting {...props} />
 > ```
+>
 > 这样的操作会报错。你只能手动地把所有需要引用的 props 写上去：
 > `<Greeting firstName="Plus" lastName="Second" />`
 
@@ -141,7 +141,7 @@ class App extends Components {
 如果 JSX 标签是闭合式的，那么你需要在结尾处用 `/>`, 就好像 XML/HTML 一样：
 
 ```jsx
-const element = <Image src={user.avatarUrl} />;
+const element = <Image src={user.avatarUrl} />
 ```
 
 JSX 标签同样可以相互嵌套：

@@ -1,37 +1,38 @@
-import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints'
 import 'dotenv/config'
+
+import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints'
+import { head,pick, set, unset } from 'lodash'
 import { RichTextItemResponse, TextRequest } from 'notion'
-import { pick, set, unset, head } from 'lodash'
 
 import writeFile from '../write'
 import { databaseId, getProperty, notion, sleep } from './common'
 import { fetchUser } from './github'
 import { updateMember } from './update-utils'
 
-export async function fetchTechnicalCommittee(list: QueryDatabaseResponse['results'] = [], start_cursor?: string) {
+export async function fetchTechnicalCommittee (list: QueryDatabaseResponse['results'] = [], start_cursor?: string) {
   const response = await notion.databases.query({
     database_id: databaseId,
     sorts: [{
-      "property": "role",
-      "direction": "ascending"
+      'property': 'role',
+      'direction': 'ascending'
     }, {
-      "property": "alumni",
-      "direction": "ascending"
+      'property': 'alumni',
+      'direction': 'ascending'
     }, {
-      "property": "team",
-      "direction": "ascending"
+      'property': 'team',
+      'direction': 'ascending'
     }, {
-      "property": "group",
-      "direction": "ascending"
+      'property': 'group',
+      'direction': 'ascending'
     }, {
-      "property": "contributions",
-      "direction": "descending"
+      'property': 'contributions',
+      'direction': 'descending'
     }, {
-      "property": "remarks",
-      "direction": "ascending"
+      'property': 'remarks',
+      'direction': 'ascending'
     }, {
-      "property": "github",
-      "direction": "ascending"
+      'property': 'github',
+      'direction': 'ascending'
     }],
     start_cursor
   })
@@ -42,7 +43,7 @@ export async function fetchTechnicalCommittee(list: QueryDatabaseResponse['resul
   return list
 }
 
-export async function updateTechnicalCommittee() {
+export async function updateTechnicalCommittee () {
   const list = await fetchTechnicalCommittee()
   const data = await list.reduce(async (p, member) => {
     const members = await p

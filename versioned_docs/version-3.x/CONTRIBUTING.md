@@ -1,12 +1,10 @@
 ---
-title: 贡献指南
+title: 贡献形式
 ---
 
 正如我们在[《给开发者的信》](./join-in) 中所写的，我们非常欢迎各位开发者为 Taro 社区做出贡献。
 
 贡献之前，请你花一些时间阅读以下内容，保证贡献是符合规范并且能帮助到社区。
-
-## 贡献形式
 
 > “Taro 社区如何运作？我可以怎样参与？”
 
@@ -36,35 +34,7 @@ Taro 会收集重要的 Feature Requests，在 [《来为 Taro 的 Feature Reque
 
 文档是开发者与框架沟通的桥梁，但文档一直以来是 Taro 的弱项。一方面我们会不断完善文档，另一方面也希望社区能协助我们把文档做好。
 
-当阅读时遇到明显的错误，开发者可以点击每篇文档最下方的 `Edit this page` 按钮，即会打开 Github 的编辑界面。开发者对文档进行编辑后，就可以提交一个 Pull Request。
-
-如果是较复杂的修改，可以按以下步骤进行操作：
-
-#### 1. 下载 Taro 仓库
-
-```bash
-$ git clone git@github.com:NervJS/taro-docs.git
-```
-#### 2. 编译预览
-
-```bash
-$ pnpm install
-$ pnpm run start
-```
-
-#### 3. 修改、新增对应文档
-
-> 文档支持 `md` 和 `mdx` 后缀，语法详见 [Docusaurus 官网](https://docusaurus.io/docs/next/markdown-features)
-
-##### 3.1 修改文档
-
-进入 `docs` 目录，找到对应的文件进行编辑。（必须，对应**下个版本**的相关文档）
-
-进入 `versioned_docs/version-3.x` 目录，找到对应的文件进行编辑。（可选，对应**3.x 版本**的相关文档。不修改则需要等待 Taro 团队更新文档版本后，才会同步到文档的 `3.x` 版本）
-
-##### 3.2 新增文档
-
-新增文档和修改文档类似，首先分别到 `docs` 和 `versioned_docs/version-3.x` 目录新增一个文件。然后在 `sidebars.js` 和 `versioned_sidebars/version-3.x-sidebars.json` 文件中添加上述新增文件的路径。
+在修改之前请先阅读[《贡献指南》](./CONTRIBUTING-GUIDE#贡献文档)，它介绍了 Taro 文档的仓库地址、如何修改等信息。
 
 ### 新想法
 
@@ -78,19 +48,19 @@ $ pnpm run start
 
 > “我可以从哪些方向入手？又应该怎么做？”
 
-开发者可以从处理 Issues 入手，[这里](https://github.com/NervJS/taro/issues?q=label%3A%22good+first+issue%22+is%3Aissue+is%3Aopen)会列出所有被标记为 **Help Wanted** 的 Issues，并且会被分为 `Easy`、 `Medium`、 `Hard` 三种难易程度。
+开发者可以从处理 Issues 入手，[这里](https://github.com/NervJS/taro/issues?q=label%3A%22good+first+issue%22+is%3Aissue+is%3Aopen)会列出所有被标记为 **good first issue** 的 Issues，这是社区专门留给新贡献者的相对简单的入门级 Issues。也可以通过通过 Label 筛选出 **Helper Wanted** 的 Issues，并且会被分为 `Easy`、 `Medium`、 `Hard` 三种难易程度。
 
 除了帮忙处理 Issues，Taro 还有很多方向需要人力进行建设。
 
 随着对 Taro 内部运行机制的熟悉，开发者可能会产生一些新的想法，例如希望开发一些新的功能等。这时需要先编写 RFC 文档，在社区谈论完善后再开始编码。
 
-在开发之前请先阅读[《Taro 的仓库概览》](./codebase-overview)，它介绍了 Taro 仓库构成、如何开发和提交规范等信息。
+在开发之前请先阅读[《Taro 的仓库概览》](./codebase-overview)以及[《贡献指南》](./CONTRIBUTING-GUIDE#贡献代码)，它们介绍了 Taro 仓库构成、如何开发和提交规范等信息。
 
 如果是首次提交代码，可参考文章：[如何参与大型开源项目-Taro 共建](/blog/2022-01-19-how-to-join-Taro)。
 
 ### 工具分享
 
-在社区分享你的 “轮子”（例如**SDK**、**组件**、**插件**、**UI 库**、**开源项目**等）。  
+在社区分享你的 “轮子”（例如**SDK**、**组件**、**插件**、**UI 库**、**开源项目**等）。
 
 可以提交到 [Taro 物料市场](https://taro-ext.jd.com)、文档[《社区优质物料》](./treasures) 、仓库 [awesome-taro](https://github.com/NervJS/awesome-taro) 里，并提供完善的说明。然后在 [Taro 论坛](https://github.com/NervJS/taro/discussions/categories/%E7%94%9F%E6%80%81) 中添加一条讨论，与开发者进行沟通。
 
@@ -102,7 +72,7 @@ Taro 团队会定期甄选优秀的物料汇集成文，在 Taro 社区和各大
 
 ### 文章投稿
 
-分享你的经验（教程、文章等），可以给「Taro社区」公众号投稿。
+分享你的经验（教程、文章等），可以给「Taro 社区」公众号投稿。
 
 ## Credits
 

@@ -4,9 +4,7 @@ title: 使用 OSSA(React) UI组件库
 
 > 注意：OSSA 目前必须使用 taro 3.x 版本 + **React 技术栈** 进行开发。
 
-[OSSA](https://ossa.miaode.com/) 提供了30+ 组件涵盖了日常业务开发使用的大部分组件。
-
-
+[OSSA](https://ossa.miaode.com/) 提供了 30+ 组件涵盖了日常业务开发使用的大部分组件。
 
 ## 预览体验
 
@@ -17,11 +15,11 @@ title: 使用 OSSA(React) UI组件库
 
 ### 安装
 
-* 通过 Npm 或 Yarn 安装
+- 通过 Npm 或 Yarn 安装
 
 #### 安装 Taro 脚手架
 
-``` bash
+```bash
 # 使用 npm 安装 CLI
 npm install -g @tarojs/cli
 
@@ -32,15 +30,15 @@ yarn global add @tarojs/cli
 cnpm install -g @tarojs/cli
 ```
 
-> 值得一提的是，如果安装过程出现sass相关的安装错误，请在安装 mirror-config-china 后重试。
+> 值得一提的是，如果安装过程出现 sass 相关的安装错误，请在安装 mirror-config-china 后重试。
 
-``` bash
+```bash
 npm install -g mirror-config-china
 ```
 
 #### 检查是否安装成功
 
-``` bash
+```bash
 taro -v
 ```
 
@@ -48,11 +46,11 @@ taro -v
 
 使用命令创建模板：
 
-``` bash
+```bash
 taro init myApp
 ```
 
-#### 安装OSSA
+#### 安装 OSSA
 
 ```bash
 npm install ossaui
@@ -61,6 +59,7 @@ npm install ossaui
 ### 使用
 
 #### 全量引入
+
 1. 在入口文件中引入样式文件
 
 ```javascript
@@ -78,7 +77,9 @@ import { OsButton } from 'ossaui'
 
 const demo = () => {
   return (
-    <OsButton type='primary' onClick={()=>handleClick()}>按钮</OsButton>
+    <OsButton type="primary" onClick={() => handleClick()}>
+      按钮
+    </OsButton>
   )
 }
 ```
@@ -87,14 +88,16 @@ const demo = () => {
 
 全量引用会导致所有组件都打包进最终的产物中，所以更推荐按需引入
 
-> 注意，目前组件库的按需引入需要借助一个babel插件[babel-plugin-import](https://github.com/umijs/babel-plugin-import)来实现
+> 注意，目前组件库的按需引入需要借助一个 babel 插件[babel-plugin-import](https://github.com/umijs/babel-plugin-import)来实现
 
 1. 安装插件
+
 ```bash
 npm i babel-plugin-import -D
 ```
 
 2. 添加配置：
+
 ```javascript title="babel.config.js"
 {
   // ...
@@ -104,13 +107,12 @@ npm i babel-plugin-import -D
       {
         libraryName: 'ossaui',
         customName: (name) => `ossaui/lib/components/${name.replace(/^os-/, '')}`,
-        customStyleName: (name) => `ossaui/dist/style/components/${name.replace(/^os-/, '')}.scss`
+        customStyleName: (name) => `ossaui/dist/style/components/${name.replace(/^os-/, '')}.scss`,
       },
-      'ossaui'
-    ]
+      'ossaui',
+    ],
   ]
 }
-
 ```
 
 3. 在页面中使用`OSSA`组件
@@ -120,18 +122,20 @@ import { OsButton } from 'ossaui'
 
 const demo = () => {
   return (
-    <OsButton type='primary' onClick={()=>handleClick()}>按钮</OsButton>
+    <OsButton type="primary" onClick={() => handleClick()}>
+      按钮
+    </OsButton>
   )
 }
 ```
 
-#### 关闭组件库的prebundle
+#### 关闭组件库的 prebundle
 
 :::tip
-在taro3.5之后的版本中，在开启prebundle(默认开启)的情况下，会导致`ossaui`所引用的`@taro/components`组件没有被打进最终的bundle中，导致页面表现异常。
+在 taro3.5 之后的版本中，在开启 prebundle(默认开启)的情况下，会导致`ossaui`所引用的`@taro/components`组件没有被打进最终的 bundle 中，导致页面表现异常。
 :::
 
-为了解决上述问题，可以手动将`ossaui`排除在prebundle列表之外。
+为了解决上述问题，可以手动将`ossaui`排除在 prebundle 列表之外。
 
 ```javascript title="config/index.js"
 module.exports = {
@@ -140,40 +144,41 @@ module.exports = {
   compiler: {
     type: 'webpack5',
     prebundle: {
-      exclude: ['ossaui']
-    }
+      exclude: ['ossaui'],
+    },
   },
 }
 ```
 
 #### 输出 H5 时编译组件
+
 :::tip
-在输出H5时，组件的尺寸可能会表现异常
+在输出 H5 时，组件的尺寸可能会表现异常
 :::
-为了解决上述问题，可以配在在输出H5时，对`ossaui`进行postcss处理。
+为了解决上述问题，可以配在在输出 H5 时，对`ossaui`进行 postcss 处理。
+
 ```javascript title="config/index.js"
 module.exports = {
   // ...
   h5: {
     // ...
-    esnextModules: ['ossaui']
-  }
+    esnextModules: ['ossaui'],
+  },
 }
 ```
 
 #### 定制化主题
 
 创建定制化主题样式文件 `src/styles/variables.scss` ，样式变量覆盖表参考 [OSSA UI variables](https://github.com/NeteaseYanxuan/OSSA/blob/main/packages/ossa/src/style/_variable.scss)
+
 ```scss title="src/styles/variables.scss"
 $--text-color-base: #333;
-$--color-border-base: #D9D9D9;
+$--color-border-base: #d9d9d9;
 ```
-
-
 
 然后需要在 `config/index.js` 文件中配置 `scss` 文件全局覆盖如：
 
-``` javascript
+```javascript
 const path = require('path');
 const config = {
   deviceRatio: {
@@ -192,7 +197,7 @@ const config = {
 
 ### 预览
 
-详细的Taro项目预览可参考[Taro文档](https://docs.taro.zone/docs/GETTING-STARTED#%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C)
+详细的 Taro 项目预览可参考[Taro 文档](https://docs.taro.zone/docs/GETTING-STARTED#%E7%BC%96%E8%AF%91%E8%BF%90%E8%A1%8C)
 
 ```bash
 // 微信小程序预览

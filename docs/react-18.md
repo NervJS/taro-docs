@@ -9,8 +9,8 @@ Taro v3.5 开始支持。
 从 Taro v3.5 开始，Taro 将默认使用 React 18 版本。你可以在 Taro 使用 React18 中激动人心的新特性了。
 
 ### 相关资料
-- [React v18.0](https://reactjs.org/blog/2022/03/29/react-v18.html)
 
+- [React v18.0](https://reactjs.org/blog/2022/03/29/react-v18.html)
 
 ## 使用方法
 
@@ -19,7 +19,7 @@ Taro v3.5 开始支持。
 ```bash
 # @tarojs/cli 升级到 v3.5
 $ taro init myProject
-# 选择「react」框架 
+# 选择「react」框架
 ```
 
 ### 旧项目升级
@@ -28,7 +28,6 @@ $ taro init myProject
 $ taro update project 3.5
 # 项目 package.json 中 react / react-dom 版本升级为 "^18"
 ```
-
 
 :::note
 如果升级了 Taro v3.5，但不想使用 React v18，可以将项目 `package.json` 中 `react / react-dom` 版本降级为 `^17` 并重新安装依赖。

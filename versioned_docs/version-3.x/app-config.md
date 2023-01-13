@@ -25,8 +25,8 @@ export default defineAppConfig({
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'WeChat',
-    navigationBarTextStyle: 'black'
-  }
+    navigationBarTextStyle: 'black',
+  },
 })
 ```
 
@@ -34,12 +34,12 @@ export default defineAppConfig({
 
 在 H5、React Native、所有小程序均支持的配置。
 
-| 属性 | 类型 | 必填 | 描述 |
-| :--- | :--- | :--- | :--- |
-| [pages](#pages) | String Array | 是 | 页面路径列表 |
-| [window](#window) | Object | 否 | 全局的默认窗口表现 |
-| [tabBar](#tabbar) | Object | 否 | 底部 tab 栏的表现 |
-| [subPackages](#subpackages) | Object Array | 否 | 分包结构配置 |
+| 属性                        | 类型         | 必填 | 描述               |
+| :-------------------------- | :----------- | :--- | :----------------- |
+| [pages](#pages)             | String Array | 是   | 页面路径列表       |
+| [window](#window)           | Object       | 否   | 全局的默认窗口表现 |
+| [tabBar](#tabbar)           | Object       | 否   | 底部 tab 栏的表现  |
+| [subPackages](#subpackages) | Object Array | 否   | 分包结构配置       |
 
 ### pages
 
@@ -67,10 +67,7 @@ export default defineAppConfig({
 
 ```jsx title="app.config.js"
 export default {
-  pages: [
-    'pages/index/index',
-    'pages/logs/logs'
-  ]
+  pages: ['pages/index/index', 'pages/logs/logs'],
 }
 ```
 
@@ -78,51 +75,48 @@ export default {
 
 用于设置小程序的状态栏、导航条、标题、窗口背景色，其配置项如下。
 
-| 属性 | 类型 | 默认值 | 描述 |
-| - | - | - | - |
-| navigationBarBackgroundColor | HexColor（十六进制颜色值） | #000000 | 导航栏背景颜色，如 #000000 |
-| navigationBarTextStyle | String | white | 导航栏标题颜色，仅支持 black / white |
-| navigationBarTitleText | String |  | 导航栏标题文字内容 |
-| navigationStyle | String | default | 导航栏样式，仅支持以下值：default 默认样式；custom 自定义导航栏，只保留右上角胶囊按钮 |
-| backgroundColor | String |  | 窗口的背景色 |
-| backgroundTextStyle | String | dark | 下拉 loading 的样式，仅支持 dark / light |
-| backgroundColorTop | String | #ffffff | 顶部窗口的背景色，仅 iOS 支持 |
-| backgroundColorBottom | String | #ffffff | 底部窗口的背景色，仅 iOS 支持 |
-| enablePullDownRefresh | boolean | false | 是否开启当前页面的下拉刷新。 |
-| onReachBottomDistance | Number | 50 | 页面上拉触底事件触发时距页面底部距离，单位为 px |
-|pageOrientation | String | portrait | 屏幕旋转设置，支持 auto / portrait / landscape 详见 响应显示区域变化 |
+| 属性                         | 类型                       | 默认值   | 描述                                                                                  |
+| ---------------------------- | -------------------------- | -------- | ------------------------------------------------------------------------------------- |
+| navigationBarBackgroundColor | HexColor（十六进制颜色值） | #000000  | 导航栏背景颜色，如 #000000                                                            |
+| navigationBarTextStyle       | String                     | white    | 导航栏标题颜色，仅支持 black / white                                                  |
+| navigationBarTitleText       | String                     |          | 导航栏标题文字内容                                                                    |
+| navigationStyle              | String                     | default  | 导航栏样式，仅支持以下值：default 默认样式；custom 自定义导航栏，只保留右上角胶囊按钮 |
+| backgroundColor              | String                     |          | 窗口的背景色                                                                          |
+| backgroundTextStyle          | String                     | dark     | 下拉 loading 的样式，仅支持 dark / light                                              |
+| backgroundColorTop           | String                     | #ffffff  | 顶部窗口的背景色，仅 iOS 支持                                                         |
+| backgroundColorBottom        | String                     | #ffffff  | 底部窗口的背景色，仅 iOS 支持                                                         |
+| enablePullDownRefresh        | boolean                    | false    | 是否开启当前页面的下拉刷新。                                                          |
+| onReachBottomDistance        | Number                     | 50       | 页面上拉触底事件触发时距页面底部距离，单位为 px                                       |
+| pageOrientation              | String                     | portrait | 屏幕旋转设置，支持 auto / portrait / landscape 详见 响应显示区域变化                  |
 
 #### 各端支持程度如下
 
-| 属性 | 微信 | 百度 | 字节跳动 | 支付宝 | H5 | RN |
-| - | - | - | - | - | - | - |
-| navigationBarBackgroundColor | ✔️ | ✔️|✔️|✔️|✔️|✔️|
-| navigationBarTextStyle | ✔️ | ✔️|✔️|  ✘ |✔️|✔️|
-| navigationBarTitleText | ✔️ | ✔️|✔️| ✔️ |✔️|✔️|
-| navigationStyle | ✔️（微信客户端 6.6.0） | ✔️（百度 App 版本 11.1.0）|✔️|  ✘ | ✘| ✘|
-| backgroundColor | ✔️ | ✔️|✔️| ✘ |✘|✘|
-| backgroundTextStyle | ✔️ | ✔️|✔️| ✘ |✘|✘|
-| backgroundColorTop |✔️（微信客户端 6.5.16） | ✘|✔️| ✘ |✘|✘|
-| backgroundColorBottom | ✔️（微信客户端 6.5.16） | ✘|✔️| ✘ |✘|✘|
-| enablePullDownRefresh | ✔️ | ✔️|✔️| ✔️ |✘|✘|
-| onReachBottomDistance | ✔️ | ✔️|✔️| ✘ |✘|✘|
-|pageOrientation | ✔️ 2.4.0 (auto) / 2.5.0 (landscape) | ✘|✘| ✘ |✘|✘|
+| 属性                         | 微信                                | 百度                       | 字节跳动 | 支付宝 | H5  | RN  |
+| ---------------------------- | ----------------------------------- | -------------------------- | -------- | ------ | --- | --- |
+| navigationBarBackgroundColor | ✔️                                  | ✔️                         | ✔️       | ✔️     | ✔️  | ✔️  |
+| navigationBarTextStyle       | ✔️                                  | ✔️                         | ✔️       | ✘      | ✔️  | ✔️  |
+| navigationBarTitleText       | ✔️                                  | ✔️                         | ✔️       | ✔️     | ✔️  | ✔️  |
+| navigationStyle              | ✔️（微信客户端 6.6.0）              | ✔️（百度 App 版本 11.1.0） | ✔️       | ✘      | ✘   | ✘   |
+| backgroundColor              | ✔️                                  | ✔️                         | ✔️       | ✘      | ✘   | ✘   |
+| backgroundTextStyle          | ✔️                                  | ✔️                         | ✔️       | ✘      | ✘   | ✘   |
+| backgroundColorTop           | ✔️（微信客户端 6.5.16）             | ✘                          | ✔️       | ✘      | ✘   | ✘   |
+| backgroundColorBottom        | ✔️（微信客户端 6.5.16）             | ✘                          | ✔️       | ✘      | ✘   | ✘   |
+| enablePullDownRefresh        | ✔️                                  | ✔️                         | ✔️       | ✔️     | ✘   | ✘   |
+| onReachBottomDistance        | ✔️                                  | ✔️                         | ✔️       | ✘      | ✘   | ✘   |
+| pageOrientation              | ✔️ 2.4.0 (auto) / 2.5.0 (landscape) | ✘                          | ✘        | ✘      | ✘   | ✘   |
 
 #### 代码示例
 
 ```jsx title="app.config.js"
 export default {
-  pages: [
-    'pages/index/index',
-    'pages/logs/logs'
-  ],
+  pages: ['pages/index/index', 'pages/logs/logs'],
   window: {
     navigationBarBackgroundColor: '#ffffff',
     navigationBarTextStyle: 'black',
     navigationBarTitleText: '微信接口功能演示',
     backgroundColor: '#eeeeee',
-    backgroundTextStyle: 'light'
-  }
+    backgroundTextStyle: 'light',
+  },
 }
 ```
 
@@ -132,36 +126,36 @@ export default {
 
 其配置项如下
 
-| 属性 | 类型 |  必填 | 默认值 | 描述 |
-| - | - | - | - | - |
-| color | HexColor（十六进制颜色值） | 是 |  | tab 上的文字默认颜色，仅支持十六进制颜色 |
-| selectedColor | HexColor（十六进制颜色值） | 是 |  | tab 上的文字选中时的颜色，仅支持十六进制颜色 |
-| backgroundColor | HexColor（十六进制颜色值） | 是 |  | tab 的背景色，仅支持十六进制颜色 |
-| borderStyle | String | 是 | black | tabbar 上边框的颜色， 仅支持 black / white |
-| list | Array | 是 |  | tab 的列表，详见 list 属性说明，最少 2 个、最多 5 个 tab |
-| position | String | 否 | bottom | tabBar的位置，仅支持 bottom / top |
-| custom | Boolean | 否 | false | 自定义 tabBar |
+| 属性            | 类型                       | 必填 | 默认值 | 描述                                                     |
+| --------------- | -------------------------- | ---- | ------ | -------------------------------------------------------- |
+| color           | HexColor（十六进制颜色值） | 是   |        | tab 上的文字默认颜色，仅支持十六进制颜色                 |
+| selectedColor   | HexColor（十六进制颜色值） | 是   |        | tab 上的文字选中时的颜色，仅支持十六进制颜色             |
+| backgroundColor | HexColor（十六进制颜色值） | 是   |        | tab 的背景色，仅支持十六进制颜色                         |
+| borderStyle     | String                     | 是   | black  | tabbar 上边框的颜色， 仅支持 black / white               |
+| list            | Array                      | 是   |        | tab 的列表，详见 list 属性说明，最少 2 个、最多 5 个 tab |
+| position        | String                     | 否   | bottom | tabBar 的位置，仅支持 bottom / top                       |
+| custom          | Boolean                    | 否   | false  | 自定义 tabBar                                            |
 
 其中 list 接受一个数组，只能配置最少 2 个、最多 5 个 tab。tab 按数组的顺序排序，每个项都是一个对象，其属性值如下：
 
-| 属性 | 类型 |  必填 |  描述	 |
-| - | - | - | - |
-| pagePath | String | 是 |  页面路径，必须在 pages 中先定义 |
-| text | String | 是 |  tab 上按钮文字 |
-| iconPath | String | 否 |  图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px，不支持网络图片。<br/>当 position 为 top 时，不显示 icon。 |
-| selectedIconPath | String | 否 |  选中时的图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px，不支持网络图片。<br/>当 position 为 top 时，不显示 icon。 |
+| 属性             | 类型   | 必填 | 描述                                                                                                                       |
+| ---------------- | ------ | ---- | -------------------------------------------------------------------------------------------------------------------------- |
+| pagePath         | String | 是   | 页面路径，必须在 pages 中先定义                                                                                            |
+| text             | String | 是   | tab 上按钮文字                                                                                                             |
+| iconPath         | String | 否   | 图片路径，icon 大小限制为 40kb，建议尺寸为 81px \* 81px，不支持网络图片。<br/>当 position 为 top 时，不显示 icon。         |
+| selectedIconPath | String | 否   | 选中时的图片路径，icon 大小限制为 40kb，建议尺寸为 81px \* 81px，不支持网络图片。<br/>当 position 为 top 时，不显示 icon。 |
 
 #### 各端支持程度如下
 
-| 属性 | 微信 | 百度 | 字节跳动 | 支付宝 | H5 | RN |
-| - | - | - | - | - | - | - |
-| color | ✔️ | ✔️|✔️|✔️|✔️|✔️|
-| selectedColor | ✔️ | ✔️|✔️|  ✔️ |✔️|✔️|
-| backgroundColor | ✔️ | ✔️|✔️| ✔️ |✔️|✔️|
-| borderStyle | ✔️ | ✔️|✔️|  ✘ | ✔️| ✔️|
-| list | ✔️ | ✔️|✔️| ✔️ |✔️|✔️|
-| position | ✔️ | ✘|✔️| ✘ |✘|✘|
-| custom |✔️（基础库 2.5.0 以上） | ✘|✘| ✘ |✘|✘|
+| 属性            | 微信                    | 百度 | 字节跳动 | 支付宝 | H5  | RN  |
+| --------------- | ----------------------- | ---- | -------- | ------ | --- | --- |
+| color           | ✔️                      | ✔️   | ✔️       | ✔️     | ✔️  | ✔️  |
+| selectedColor   | ✔️                      | ✔️   | ✔️       | ✔️     | ✔️  | ✔️  |
+| backgroundColor | ✔️                      | ✔️   | ✔️       | ✔️     | ✔️  | ✔️  |
+| borderStyle     | ✔️                      | ✔️   | ✔️       | ✘      | ✔️  | ✔️  |
+| list            | ✔️                      | ✔️   | ✔️       | ✔️     | ✔️  | ✔️  |
+| position        | ✔️                      | ✘    | ✔️       | ✘      | ✘   | ✘   |
+| custom          | ✔️（基础库 2.5.0 以上） | ✘    | ✘        | ✘      | ✘   | ✘   |
 
 ### subPackages
 
@@ -173,15 +167,15 @@ export default {
 
 只在部分小程序中支持的属性，H5、RN 均不支持。
 
-| 属性 | 类型 | 描述 |
-| :--- | :--- | :--- |
-| [networkTimeout](#networktimeout) | Object | 网络超时时间 |
-| [debug](#debug) | Boolean | 是否开启 debug 模式，默认关闭 |
-| [permission](#permission) | Object | 小程序接口权限相关设置 |
-| [requiredBackgroundModes](#requiredbackgroundmodes) | String Array | 需要在后台使用的能力，如「音乐播放」 |
-| [preloadRule](#preloadrule) | Object | 分包预下载规则 |
-| [entryPagePath](#entrypagepath) | String | 小程序默认启动首页 |
-| [workers](#workers) | String | Worker 代码放置的目录 |
+| 属性                                                              | 类型         | 描述                                                |
+| :---------------------------------------------------------------- | :----------- | :-------------------------------------------------- |
+| [networkTimeout](#networktimeout)                                 | Object       | 网络超时时间                                        |
+| [debug](#debug)                                                   | Boolean      | 是否开启 debug 模式，默认关闭                       |
+| [permission](#permission)                                         | Object       | 小程序接口权限相关设置                              |
+| [requiredBackgroundModes](#requiredbackgroundmodes)               | String Array | 需要在后台使用的能力，如「音乐播放」                |
+| [preloadRule](#preloadrule)                                       | Object       | 分包预下载规则                                      |
+| [entryPagePath](#entrypagepath)                                   | String       | 小程序默认启动首页                                  |
+| [workers](#workers)                                               | String       | Worker 代码放置的目录                               |
 | [navigateToMiniProgramAppIdList](#navigatetominiprogramappidlist) | String Array | 需要跳转的小程序列表，详见 wx.navigateToMiniProgram |
 
 ### networkTimeout
@@ -190,12 +184,12 @@ export default {
 
 各类网络请求的超时时间，单位均为毫秒。
 
-| 属性 | 类型 |  必填 | 默认值 | 描述 |
-| - | - | - | - | - |
-| request | Number | 否 | 60000 | [Taro.request](./apis/network/request/request.md) 的超时时间，单位：毫秒 |
-| connectSocket | Number | 否 | 60000 | [Taro.connectSocket](./apis/network/webSocket/connectSocket.md) 的超时时间，单位：毫秒 |
-| uploadFile | Number | 否 | 60000 | [Taro.uploadFile](./apis/network/upload/uploadFile.md) 的超时时间，单位：毫秒 |
-| downloadFile | Number | 否 | 60000 | [Taro.downloadFile](./apis/network/download/downloadFile.md) 的超时时间，单位：毫秒 |
+| 属性          | 类型   | 必填 | 默认值 | 描述                                                                                   |
+| ------------- | ------ | ---- | ------ | -------------------------------------------------------------------------------------- |
+| request       | Number | 否   | 60000  | [Taro.request](./apis/network/request/request.md) 的超时时间，单位：毫秒               |
+| connectSocket | Number | 否   | 60000  | [Taro.connectSocket](./apis/network/webSocket/connectSocket.md) 的超时时间，单位：毫秒 |
+| uploadFile    | Number | 否   | 60000  | [Taro.uploadFile](./apis/network/upload/uploadFile.md) 的超时时间，单位：毫秒          |
+| downloadFile  | Number | 否   | 60000  | [Taro.downloadFile](./apis/network/download/downloadFile.md) 的超时时间，单位：毫秒    |
 
 ### debug
 
@@ -209,29 +203,26 @@ export default {
 
 小程序[接口权限](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html)相关设置。字段类型为 `Object`，结构为：
 
-| 属性 | 类型 |  必填 | 默认值 | 描述 |
-| - | - | - | - | - |
-| scope.userLocation | PermissionObject | 否 |  | 位置相关权限声明 |
+| 属性               | 类型             | 必填 | 默认值 | 描述             |
+| ------------------ | ---------------- | ---- | ------ | ---------------- |
+| scope.userLocation | PermissionObject | 否   |        | 位置相关权限声明 |
 
 `PermissionObject` 结构：
 
-| 属性 | 类型 |  必填 | 默认值 | 描述 |
-| - | - | - | - | - |
-| desc | string | 是 |  | 小程序获取权限时展示的接口用途说明。最长 30 个字符 |
+| 属性 | 类型   | 必填 | 默认值 | 描述                                               |
+| ---- | ------ | ---- | ------ | -------------------------------------------------- |
+| desc | string | 是   |        | 小程序获取权限时展示的接口用途说明。最长 30 个字符 |
 
 #### 代码示例
 
 ```js title="app.config.js"
 export default {
-  pages: [
-    'pages/index/index',
-    'pages/logs/logs'
-  ],
+  pages: ['pages/index/index', 'pages/logs/logs'],
   permission: {
     'scope.userLocation': {
-      desc: '你的位置信息将用于小程序位置接口的效果展示'
-    }
-  }
+      desc: '你的位置信息将用于小程序位置接口的效果展示',
+    },
+  },
 }
 ```
 
@@ -250,8 +241,8 @@ export default {
 
 ```js title="app.config.js"
 export default {
-  "pages": ["pages/index/index"],
-  "requiredBackgroundModes": ["audio", "location"]
+  pages: ['pages/index/index'],
+  requiredBackgroundModes: ['audio', 'location'],
 }
 ```
 
@@ -277,10 +268,9 @@ export default {
 
 ```js title="app.config.js"
 export default {
-  "entryPagePath": "pages/index/index"
+  entryPagePath: 'pages/index/index',
 }
 ```
-
 
 ### workers
 
@@ -301,20 +291,20 @@ export default {
 
 只在微信小程序中支持的属性。<img src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/>
 
-| 属性 | 类型 | 描述 |
-| :--- | :--- | :--- |
-| [functionalPages](#functionalpages) | Boolean | 是否启用插件功能页，默认关闭 |
-| [plugins](#plugins) | Object | 使用到的插件 |
-| [resizable](#resizable) | Boolean | iPad 小程序是否支持屏幕旋转，默认关闭 |
-| [usingComponents](#usingcomponents) | Object | 全局自定义组件配置 |
-| [sitemapLocation](#sitemaplocation) |	String | 指明 sitemap.json 的位置 |
-| [style](#style) |	String | 指定使用升级后的weui样式 |
-| [useExtendedLib](#useextendedlib) |	Object | 指定需要引用的扩展库 |
-| [entranceDeclare](#entrancedeclare) |	Object | 微信消息用小程序打开 |
-| [darkmode](#darkmode) |	boolean | 小程序支持 DarkMode |
-| [themeLocation](#themelocation) |	String | 指明 theme.json 的位置 |
-| [lazyCodeLoading](#lazycodeloading) |	String | 配置自定义组件代码按需注入 |
-| [singlePage](#singlepage) |	Object | 单页模式相关配置 |
+| 属性                                | 类型    | 描述                                  |
+| :---------------------------------- | :------ | :------------------------------------ |
+| [functionalPages](#functionalpages) | Boolean | 是否启用插件功能页，默认关闭          |
+| [plugins](#plugins)                 | Object  | 使用到的插件                          |
+| [resizable](#resizable)             | Boolean | iPad 小程序是否支持屏幕旋转，默认关闭 |
+| [usingComponents](#usingcomponents) | Object  | 全局自定义组件配置                    |
+| [sitemapLocation](#sitemaplocation) | String  | 指明 sitemap.json 的位置              |
+| [style](#style)                     | String  | 指定使用升级后的 weui 样式            |
+| [useExtendedLib](#useextendedlib)   | Object  | 指定需要引用的扩展库                  |
+| [entranceDeclare](#entrancedeclare) | Object  | 微信消息用小程序打开                  |
+| [darkmode](#darkmode)               | boolean | 小程序支持 DarkMode                   |
+| [themeLocation](#themelocation)     | String  | 指明 theme.json 的位置                |
+| [lazyCodeLoading](#lazycodeloading) | String  | 配置自定义组件代码按需注入            |
+| [singlePage](#singlepage)           | Object  | 单页模式相关配置                      |
 
 ### functionalPages
 
@@ -367,9 +357,9 @@ export default {
 
 ```js title="app.config.js"
 export default {
-  "useExtendedLib": {
-    "weui": true
-  }
+  useExtendedLib: {
+    weui: true,
+  },
 }
 ```
 
@@ -383,12 +373,12 @@ export default {
 
 ```js title="app.config.js"
 export default {
-  "entranceDeclare": {
-    "locationMessage": {
-        "path": "pages/index/index",
-        "query": "foo=bar"
-    }
-  }
+  entranceDeclare: {
+    locationMessage: {
+      path: 'pages/index/index',
+      query: 'foo=bar',
+    },
+  },
 }
 ```
 
@@ -404,7 +394,7 @@ export default {
 
 ```js title="app.config.js"
 export default {
-  "darkmode": true
+  darkmode: true,
 }
 ```
 
@@ -416,7 +406,7 @@ export default {
 
 ```js title="app.config.js"
 export default {
-  "themeLocation": "/path/to/theme.json"
+  themeLocation: '/path/to/theme.json',
 }
 ```
 
@@ -432,7 +422,7 @@ export default {
 
 ```js title="app.config.js"
 export default {
-  "lazyCodeLoading": "requiredComponents"
+  lazyCodeLoading: 'requiredComponents',
 }
 ```
 
@@ -442,18 +432,18 @@ export default {
 
 单页模式相关配置：
 
-| 属性 | 类型 | 必填 | 默认值 | 描述 |
-| :--- | :--- | :--- | :--- | :--- |
-| navigationBarFit | String | 否 | 默认自动调整，若原页面是自定义导航栏，则为 `float`，否则为 `squeezed` | 导航栏与页面的相交状态，值为 `float` 时表示导航栏浮在页面上，与页面相交；值为 `squeezed` 时表示页面被导航栏挤压，与页面不相交 |
+| 属性             | 类型   | 必填 | 默认值                                                                | 描述                                                                                                                          |
+| :--------------- | :----- | :--- | :-------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------- |
+| navigationBarFit | String | 否   | 默认自动调整，若原页面是自定义导航栏，则为 `float`，否则为 `squeezed` | 导航栏与页面的相交状态，值为 `float` 时表示导航栏浮在页面上，与页面相交；值为 `squeezed` 时表示页面被导航栏挤压，与页面不相交 |
 
 ## 百度小程序特有属性
 
 只在百度小程序中支持的属性。<img src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/>
 
-| 属性 | 类型 | 描述 |
-| :--- | :--- | :--- |
-| [routes](#routes) | Array Object | 小程序自定义路由相关设置 |
-| [dynamicLib](#dynamiclib) | Object | 引入动态库 |
+| 属性                      | 类型         | 描述                     |
+| :------------------------ | :----------- | :----------------------- |
+| [routes](#routes)         | Array Object | 小程序自定义路由相关设置 |
+| [dynamicLib](#dynamiclib) | Object       | 引入动态库               |
 
 ### routes
 
@@ -463,46 +453,38 @@ export default {
 
 routes 为一个数组，数组中每一项代表一组路由规则，具体包含字段为：
 
-| 属性 | 类型 | 必填 | 描述 | 示例 |
-| :--- | :--- | :--- | :--- | :--- |
-| path | String | 是 | 访问路径 | "home" |
-| page | String | 是 | 页面源码文件路径，从小程序包根目录开始的文件路径 | "pages/home/index" |
+| 属性 | 类型   | 必填 | 描述                                             | 示例               |
+| :--- | :----- | :--- | :----------------------------------------------- | :----------------- |
+| path | String | 是   | 访问路径                                         | "home"             |
+| page | String | 是   | 页面源码文件路径，从小程序包根目录开始的文件路径 | "pages/home/index" |
 
 #### 代码示例
 
 ```js title="app.config.js"
 export default {
-  "pages": [
-      "pages/home/home",
-      "pages/list/list",
-      "pages/detail/detail"
+  pages: ['pages/home/home', 'pages/list/list', 'pages/detail/detail'],
+  subPackage: [
+    {
+      root: 'packageA',
+      pages: ['pages/home/home', 'pages/list/list', 'pages/detail/detail'],
+    },
   ],
-  "subPackage": [
-      {
-          "root": "packageA",
-          "pages": [
-              "pages/home/home",
-              "pages/list/list",
-              "pages/detail/detail"
-          ]
-      }
+  routes: [
+    {
+      // 投放入口，scheme中的path
+      path: 'home',
+      // 真实的物理存储路径
+      page: 'pages/home/home',
+    },
+    {
+      path: 'list',
+      page: 'pages/list/list',
+    },
+    {
+      path: 'foo/bar',
+      page: 'pages/list/list',
+    },
   ],
-  "routes": [
-      {
-          // 投放入口，scheme中的path
-          "path": "home", 
-          // 真实的物理存储路径
-          "page": "pages/home/home" 
-      },
-      {
-          "path": "list",
-          "page": "pages/list/list"
-      },
-      {
-          "path": "foo/bar",
-          "page": "pages/list/list"
-      }
-  ]
 }
 ```
 
@@ -514,8 +496,8 @@ export default {
 
 只在 QQ 小程序中支持的属性。<img src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/>
 
-| 属性 | 类型 | 描述 |
-| :--- | :--- | :--- |
+| 属性                        | 类型          | 描述                       |
+| :-------------------------- | :------------ | :------------------------- |
 | [groupIdList](#groupidlist) | String Object | 需要打开群资料卡的群号列表 |
 
 ### groupIdList
@@ -526,9 +508,9 @@ export default {
 
 只在京东小程序中支持的属性。<img src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/>
 
-| 属性 | 类型 | 描述 |
-| :--- | :--- | :--- |
-| [pageAlias](#pagealias) | Object | 页面page别名 |
+| 属性                    | 类型   | 描述               |
+| :---------------------- | :----- | :----------------- |
+| [pageAlias](#pagealias) | Object | 页面 page 别名     |
 | [quickMenu](#quickmenu) | Object | 胶囊按钮内菜单配置 |
 
 ### pageAlias
@@ -539,27 +521,27 @@ export default {
 
 ```js title="app.config.js"
 export default {
-  "pages": [
-    "pages/index/index",
-    "pages/my/my"
-  ],
-  "window": {
-    "navigationBarTitleText": "京东小程序 Demo"
+  pages: ['pages/index/index', 'pages/my/my'],
+  window: {
+    navigationBarTitleText: '京东小程序 Demo',
   },
-  "tabBar": {
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页"
-    }, {
-      "pagePath": "pages/my/my",
-      "text": "个人中心"
-    }]
+  tabBar: {
+    list: [
+      {
+        pagePath: 'pages/index/index',
+        text: '首页',
+      },
+      {
+        pagePath: 'pages/my/my',
+        text: '个人中心',
+      },
+    ],
   },
-  "debug": true,
-  "pageAlias":{
-    "index":"pages/index/index",
-    "my":"pages/my/my"
-  }
+  debug: true,
+  pageAlias: {
+    index: 'pages/index/index',
+    my: 'pages/my/my',
+  },
 }
 ```
 
@@ -577,11 +559,11 @@ openapp.jdmobile://virtual?params={"category":"jump","des":"jdmp","appId":"ao123
 
 胶囊按钮里面的部分菜单可通过配置开关来显示隐藏，默认是 `true` 显示状态。 可配置的菜单有：
 
-| 属性 | 类型 | 必填 | 默认值 | 说明 |
-| :--- | :--- | :--- | :--- | :--- |
-| share | Boolean | 否 | true | 是否显示推送给朋友（分享）菜单 |
-| favorite | Boolean | 否 | true | 是否显示关注菜单 |
-| sendToDesktop | Boolean | 否 | true | 是否显示发送到桌面菜单，仅安卓有效 |
+| 属性          | 类型    | 必填 | 默认值 | 说明                               |
+| :------------ | :------ | :--- | :----- | :--------------------------------- |
+| share         | Boolean | 否   | true   | 是否显示推送给朋友（分享）菜单     |
+| favorite      | Boolean | 否   | true   | 是否显示关注菜单                   |
+| sendToDesktop | Boolean | 否   | true   | 是否显示发送到桌面菜单，仅安卓有效 |
 
 下面示例中，发送给朋友、关注、发送到桌面三个菜单将都隐藏，不会展示，示例如下：
 
@@ -589,18 +571,15 @@ openapp.jdmobile://virtual?params={"category":"jump","des":"jdmp","appId":"ao123
 
 ```js title="app.config.js"
 export default {
-  "pages": [
-    "pages/index/index",
-    "pages/my/my"
-  ],
-  "window": {
-    "navigationBarTitleText": "京东小程序 Demo"
+  pages: ['pages/index/index', 'pages/my/my'],
+  window: {
+    navigationBarTitleText: '京东小程序 Demo',
   },
-  "quickMenu":{
-    "share":false,
-    "favorite":false,
-    "sendToDesktop":false
-  }
+  quickMenu: {
+    share: false,
+    favorite: false,
+    sendToDesktop: false,
+  },
 }
 ```
 
@@ -608,11 +587,11 @@ export default {
 
 ## H5 端支持的属性
 
-| 属性 | 类型 | 必填 | 默认值 | 描述 | 最低版本 |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| [entryPagePath](#entrypagepath) | String |否 |   | 默认启动首页 | 3.3.17 |
-| [appId](#appId) | String | 否 | "app" | 渲染页面的容器 id | 3.3.18 |
-| [animation](#animation) | [`RouterAnimate`](#RouterAnimate)、`boolean` | 否 | `{ "duration": 300, "delay": 50 }` | 是否开启 h5 端路由动画功能，默认开启 | 3.3.18 |
+| 属性                            | 类型                                         | 必填 | 默认值                             | 描述                                 | 最低版本 |
+| :------------------------------ | :------------------------------------------- | :--- | :--------------------------------- | :----------------------------------- | :------- |
+| [entryPagePath](#entrypagepath) | String                                       | 否   |                                    | 默认启动首页                         | 3.3.17   |
+| [appId](#appId)                 | String                                       | 否   | "app"                              | 渲染页面的容器 id                    | 3.3.18   |
+| [animation](#animation)         | [`RouterAnimate`](#RouterAnimate)、`boolean` | 否   | `{ "duration": 300, "delay": 50 }` | 是否开启 h5 端路由动画功能，默认开启 | 3.3.18   |
 
 ### appId
 
@@ -630,7 +609,7 @@ H5 渲染页面的容器 id，如果修改 Html 文件中的容器 Id，需要�
 
 ```js title="app.config.js"
 export default {
-  "appId": "app"
+  appId: 'app',
 }
 ```
 
@@ -659,6 +638,6 @@ interface RouterAnimate {
 
 ```js title="app.config.js"
 export default {
-  "animation": false
+  animation: false,
 }
 ```

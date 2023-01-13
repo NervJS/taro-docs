@@ -10,34 +10,34 @@ title: Taro DOM Reference
 
 ### TaroEventTarget
 
-| 属性或方法 | 说明 |
-| :------- | :-- |
-| addEventListener | 绑定事件 |
+| 属性或方法          | 说明     |
+| :------------------ | :------- |
+| addEventListener    | 绑定事件 |
 | removeEventListener | 解绑事件 |
 
 ### TaroNode
 
 `TaroEventTarget <- TaroNode`
 
-| 属性或方法 | 说明 |
-| :------- | :-- |
-| nodeType |  |
-| nodeName |  |
-| parentNode |  |
-| childNodes |  |
-| nextSibling |  |
-| previousSibling |  |
-| parentElement |  |
-| firstChild |  |
-| lastChild |  |
-| textContent | setter |
-| insertBefore |  |
-| appendChild |  |
-| replaceChild |  |
-| removeChild |  |
-| remove |  |
-| hasChildNodes |  |
-| ownerDocument | 只读，返回模拟的 [document](taro-dom#document) 对象 |
+| 属性或方法      | 说明                                                |
+| :-------------- | :-------------------------------------------------- |
+| nodeType        |                                                     |
+| nodeName        |                                                     |
+| parentNode      |                                                     |
+| childNodes      |                                                     |
+| nextSibling     |                                                     |
+| previousSibling |                                                     |
+| parentElement   |                                                     |
+| firstChild      |                                                     |
+| lastChild       |                                                     |
+| textContent     | setter                                              |
+| insertBefore    |                                                     |
+| appendChild     |                                                     |
+| replaceChild    |                                                     |
+| removeChild     |                                                     |
+| remove          |                                                     |
+| hasChildNodes   |                                                     |
+| ownerDocument   | 只读，返回模拟的 [document](taro-dom#document) 对象 |
 
 #### 可选属性/方法
 
@@ -48,56 +48,56 @@ title: Taro DOM Reference
 但 Vue3 必须开启，因为它使用了 insertAdjacentHTML。
 :::
 
-| 属性或方法 | 默认状态 | 配置项 | 说明 |
-| :------- | :------ | :---- |:--- |
-| innerHTML | 开启 | enableInnerHTML | 目前只实现了 `setter`(主要用于支持 React `dangerouslySetInnerHTML`、Vue `v-html`)<br/>`getter` 只会返回空字符串 |
-| insertAdjacentHTML | 开启（Vue3） | enableAdjacentHTML |  |
-| cloneNode | 开启（Vue3） | enableCloneNode |  |
-| contains | 关闭 | enableContains | |
+| 属性或方法         | 默认状态     | 配置项             | 说明                                                                                                            |
+| :----------------- | :----------- | :----------------- | :-------------------------------------------------------------------------------------------------------------- |
+| innerHTML          | 开启         | enableInnerHTML    | 目前只实现了 `setter`(主要用于支持 React `dangerouslySetInnerHTML`、Vue `v-html`)<br/>`getter` 只会返回空字符串 |
+| insertAdjacentHTML | 开启（Vue3） | enableAdjacentHTML |                                                                                                                 |
+| cloneNode          | 开启（Vue3） | enableCloneNode    |                                                                                                                 |
+| contains           | 关闭         | enableContains     |                                                                                                                 |
 
 ### TaroText
 
 `TaroEventTarget <- TaroNode <- TaroText`
 
-| 属性或方法 | 说明 |
-| :------- | :-- |
-| textContent |  |
-| nodeValue |  |
+| 属性或方法  | 说明 |
+| :---------- | :--- |
+| textContent |      |
+| nodeValue   |      |
 
 ### TaroElement
 
 `TaroEventTarget <- TaroNode <- TaroElement`
 
-| 属性或方法 | 说明 |
-| :------- | :-- |
-| id |  |
-| tagName |  |
-| props |  |
-| style |  |
-| dataset |  |
-| className |  |
-| cssText |  |
-| classList |  |
-| children |  |
-| attributes |  |
-| textContent |  |
-| hasAttribute |  |
-| hasAttributes |  |
-| focus |  |
-| blur |  |
-| setAttribute |  |
-| removeAttribute |  |
-| getAttribute |  |
-| getElementsByTagName |  |
-| getElementsByClassName |  |
-| dispatchEvent |  |
+| 属性或方法             | 说明 |
+| :--------------------- | :--- |
+| id                     |      |
+| tagName                |      |
+| props                  |      |
+| style                  |      |
+| dataset                |      |
+| className              |      |
+| cssText                |      |
+| classList              |      |
+| children               |      |
+| attributes             |      |
+| textContent            |      |
+| hasAttribute           |      |
+| hasAttributes          |      |
+| focus                  |      |
+| blur                   |      |
+| setAttribute           |      |
+| removeAttribute        |      |
+| getAttribute           |      |
+| getElementsByTagName   |      |
+| getElementsByClassName |      |
+| dispatchEvent          |      |
 
 #### 可选属性/方法
 
-| 属性或方法 | 默认状态 | 配置项 | 说明 |
-| :------- | :------ | :---- |:--- |
-| content | 开启（Vue3） | enableTemplateContent |  |
-| getBoundingClientRect | 关闭 | enableSizeAPIs | 受限于小程序，此 API 是**异步函数** |
+| 属性或方法            | 默认状态     | 配置项                | 说明                                |
+| :-------------------- | :----------- | :-------------------- | :---------------------------------- |
+| content               | 开启（Vue3） | enableTemplateContent |                                     |
+| getBoundingClientRect | 关闭         | enableSizeAPIs        | 受限于小程序，此 API 是**异步函数** |
 
 ### RootElement
 
@@ -111,9 +111,9 @@ title: Taro DOM Reference
 
 `TaroEventTarget <- TaroNode <- TaroElement <- FormElement`
 
-| 属性或方法 | 说明 |
-| :------- | :-- |
-| value | 返回或设置当前控件的值 |
+| 属性或方法 | 说明                   |
+| :--------- | :--------------------- |
+| value      | 返回或设置当前控件的值 |
 
 ### SVGElement
 
@@ -129,30 +129,30 @@ Taro 模拟实现了基于浏览器标准 `window` 对象，它主要实现了�
 
 此外，Taro 会为 `window` 对象赋值小程序的 `global` 对象上的全部属性。
 
-| 属性或方法 | 说明 |
-| :------- | :-- |
-| navigator | 模拟的 [navigator](taro-dom#navigator) 对象 |
-| document | 模拟的 [document](taro-dom#document) 对象 |
+| 属性或方法            | 说明                                                               |
+| :-------------------- | :----------------------------------------------------------------- |
+| navigator             | 模拟的 [navigator](taro-dom#navigator) 对象                        |
+| document              | 模拟的 [document](taro-dom#document) 对象                          |
 | requestAnimationFrame | 模拟的 [requestAnimationFrame](taro-dom#requestanimationframe) API |
-| cancelAnimationFrame | 模拟的 [cancelAnimationFrame](taro-dom#cancelanimationframe) API |
-| getComputedStyle | 只能用于返回元素的 `style` 值，做不到真正去计算 `css` 后的样式 |
-| addEventListener | 空函数 |
-| removeEventListener | 空函数 |
+| cancelAnimationFrame  | 模拟的 [cancelAnimationFrame](taro-dom#cancelanimationframe) API   |
+| getComputedStyle      | 只能用于返回元素的 `style` 值，做不到真正去计算 `css` 后的样式     |
+| addEventListener      | 空函数                                                             |
+| removeEventListener   | 空函数                                                             |
 
 ### document
 
 `TaroEventTarget <- TaroNode <- TaroElement <- document`
 
-| 属性或方法 | 说明 |
-| :------- | :-- |
-| createElement | 返回 `TaroElement` |
-| createElementNS | 没有真正去实现，等同于 `document.createElement`，返回 `TaroElement` |
-| createTextNode | 返回 `TaroText` |
-| createComment | 返回 `TaroText` |
-| getElementById | 返回 `TaroElement` |
-| querySelector | 目前只能根据 `id` 寻找元素，等同于 `document.getElementById` |
-| querySelectorAll | 没有真正去实现，返回 `[]` |
-| defaultView | 返回 [window](taro-dom#window) |
+| 属性或方法       | 说明                                                                |
+| :--------------- | :------------------------------------------------------------------ |
+| createElement    | 返回 `TaroElement`                                                  |
+| createElementNS  | 没有真正去实现，等同于 `document.createElement`，返回 `TaroElement` |
+| createTextNode   | 返回 `TaroText`                                                     |
+| createComment    | 返回 `TaroText`                                                     |
+| getElementById   | 返回 `TaroElement`                                                  |
+| querySelector    | 目前只能根据 `id` 寻找元素，等同于 `document.getElementById`        |
+| querySelectorAll | 没有真正去实现，返回 `[]`                                           |
+| defaultView      | 返回 [window](taro-dom#window)                                      |
 
 ### navigator
 

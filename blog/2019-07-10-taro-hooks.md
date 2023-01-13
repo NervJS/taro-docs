@@ -1,6 +1,6 @@
 ---
 slug: 2019-07-10-taro-hooks
-title: 使用 React Hooks 重构你的小程序 
+title: 使用 React Hooks 重构你的小程序
 authors: yuche
 ---
 
@@ -10,7 +10,6 @@ authors: yuche
 
 <!--truncate-->
 
-
 ## 背景
 
 一直关注小程序开发的朋友应该会注意到，最开始小程序就是为了微型创新型业务打造的一个框架，最多只能运行 1m 的包。可是后来发现很多厂商把越来越多的业务搬到了小程序上，小程序的能力也在不断地开放，变得越来越强大。于是后来打包限制上升到了 2m，然后引入了分包，现在已经已经可以上传 8m 的小程序。其实这个体积已经可以实现非常巨型非常复杂的业务了。就从 Taro 的用户来看，例如京东购物小程序和 58 同城小程序不管从代码的数量还是复杂度都不亚于 PC 端业务，所以我们可以说前端开发的复杂度正在向小程序端转移。
@@ -19,19 +18,17 @@ authors: yuche
 
 首先我们看看 React：React Core Team 成员，同时也是 Redux 的作者 Dan Abramov 在 2018 年的 ReactConf 向大家首次介绍了 React Hooks。React Hooks 是为了解决 Class Component 的一些问题而引入的：
 
-* Class Component 组件间的逻辑难以复用。因为  JavaScript 不像 Go 或 C++ 一样，Class 可以多重继承，类的逻辑的复用就成了一个问题；
-* 复杂组件难以理解。Class Component 经常会在生命周期做一些数据获取事件监听的副作用函数，这样的情况下我们就很难把组件拆分为更小的力度；
-* Class 令人迷惑。很多新手应该会被 Class 组件绑定事件的 `this` 迷惑过，绑定事件可以用 bind，可以直接写箭头函数，也可以写类属性函数，但到底哪种方法才是最好的呢？而到了 ES 2018，class 还有多种语法，例如装饰器，例如 private fileds 这些奇奇怪怪的语法也为新手增加了更多的困惑。
+- Class Component 组件间的逻辑难以复用。因为 JavaScript 不像 Go 或 C++ 一样，Class 可以多重继承，类的逻辑的复用就成了一个问题；
+- 复杂组件难以理解。Class Component 经常会在生命周期做一些数据获取事件监听的副作用函数，这样的情况下我们就很难把组件拆分为更小的力度；
+- Class 令人迷惑。很多新手应该会被 Class 组件绑定事件的 `this` 迷惑过，绑定事件可以用 bind，可以直接写箭头函数，也可以写类属性函数，但到底哪种方法才是最好的呢？而到了 ES 2018，class 还有多种语法，例如装饰器，例如 private fileds 这些奇奇怪怪的语法也为新手增加了更多的困惑。
 
-而对于 Vue 而言也有相同的问题，Vue 的作者尤玉溪老师在 VueConf China 2019 也给 Vue 3.0 引入了一个叫 *Functional-based API* 的概念，它是受 React Hooks 启发而增加的新 API。由于 Vue 2.0 组件组合的模式是对象字面量形式，所以 *Functional-based API* 可以作为 Mixins 的替代，配合新的响应式 API 作为新的组件组合模式。那么对于 Vue 3.0 我们还知之甚少，以后的 API 也有可能改变，但或许是英雄所见略同，React 和 Vue 对于降低前端开发复杂度这一问题都不约而同地选择了 Hooks 这一方案，这到底是为什么呢？
-
+而对于 Vue 而言也有相同的问题，Vue 的作者尤玉溪老师在 VueConf China 2019 也给 Vue 3.0 引入了一个叫 _Functional-based API_ 的概念，它是受 React Hooks 启发而增加的新 API。由于 Vue 2.0 组件组合的模式是对象字面量形式，所以 _Functional-based API_ 可以作为 Mixins 的替代，配合新的响应式 API 作为新的组件组合模式。那么对于 Vue 3.0 我们还知之甚少，以后的 API 也有可能改变，但或许是英雄所见略同，React 和 Vue 对于降低前端开发复杂度这一问题都不约而同地选择了 Hooks 这一方案，这到底是为什么呢？
 
 ![why_hooks.png](https://i.loli.net/2019/07/02/5d1af3a5e84b022890.png)
 
+我们可以一下之前的组件组合方案，首先是 _Mixins_，红色圈的 _Mixins_，黄色的是组件，我们知道 _Mixins_ 其实就是把多个对象组合成一个对象，_Mixins_ 的过程就有点像调用 `Object.assgin` 方法。那 _Mixins_ 有什么问题呢？首先是命名空间耦合，如果多个对象同名参数，这些参数就会耦合在一起；其次由于 _Mixins_ 必须是运行时才能知道具体有什么参数，所以是 TypeScript 是无法做静态检查的；第三是组件参数不清晰，在 _Mixins_ 中组件的 props 和其他参数没什么两样，很容易被其它的 _Mixins_ 覆盖掉。
 
-我们可以一下之前的组件组合方案，首先是 *Mixins*，红色圈的 *Mixins*，黄色的是组件，我们知道 *Mixins* 其实就是把多个对象组合成一个对象，*Mixins* 的过程就有点像调用 `Object.assgin` 方法。那 *Mixins* 有什么问题呢？首先是命名空间耦合，如果多个对象同名参数，这些参数就会耦合在一起；其次由于 *Mixins* 必须是运行时才能知道具体有什么参数，所以是 TypeScript 是无法做静态检查的；第三是组件参数不清晰，在 *Mixins* 中组件的 props 和其他参数没什么两样，很容易被其它的 *Mixins* 覆盖掉。
-
-为了解决 *Mixins* 的问题，后来发展出了高阶组件（*HOC*）的方式，高阶组件就和图里一样，一个组件嵌套着另外的组件。它的确解决了 *Mixins* 的一些问题，例如命名空间解耦，由于每次都会生成新组件，就不存在命名空间问题了；其次它也能很好地做静态检查；但它依然没有办法处理组件 props 的问题，props 还是有可能会在高阶组件中被更改；而且它还有了新的问题，每多用一次高阶组件，都会多出一个组件实例。
+为了解决 _Mixins_ 的问题，后来发展出了高阶组件（_HOC_）的方式，高阶组件就和图里一样，一个组件嵌套着另外的组件。它的确解决了 _Mixins_ 的一些问题，例如命名空间解耦，由于每次都会生成新组件，就不存在命名空间问题了；其次它也能很好地做静态检查；但它依然没有办法处理组件 props 的问题，props 还是有可能会在高阶组件中被更改；而且它还有了新的问题，每多用一次高阶组件，都会多出一个组件实例。
 
 最后我们来看一下 Hooks，紫色的圈圈是 Hooks，就像图里一样，Hooks 都在同一个组件里，Hooks 之间还可以相互调用。因为 Hooks 跑在一个普通函数式组件里，所以他肯定是没有命名空间的问题，同时 TypeScript 也能对普通函数做很好的静态检查，而且 Hooks 也不能更改组件的 Props，传入的是啥最后可用的就是啥；最后 Hooks 也不会生成新的组件，所以他是单组件实例。
 
@@ -50,13 +47,14 @@ authors: yuche
 ```js
 Page({
   data: {
-    count: 0
+    count: 0,
   },
-  increment: () => { // 这里写箭头函数就跑不了了
+  increment: () => {
+    // 这里写箭头函数就跑不了了
     this.setData({
-      count: this.data.count + 1
+      count: this.data.count + 1,
     })
-  }
+  },
 })
 ```
 
@@ -65,21 +63,19 @@ Page({
 然后我们在定义一个增加的函数，把他绑定到 `onClick` 事件上。
 
 ```jsx
-function Counter () {
-  // 返回一个值和一个设置值的函数              
+function Counter() {
+  // 返回一个值和一个设置值的函数
   // 每次设置值之后会重新渲染组件
-  const [ count, setCount ] = useState(0)
+  const [count, setCount] = useState(0)
 
-  function increment () {
+  function increment() {
     setCount(count + 1)
   }
 
   return (
     <View>
       <Text>You clicked {count} times</Text>
-      <Button onClick={increment}>
-        Click me
-      </Button>
+      <Button onClick={increment}>Click me</Button>
     </View>
   )
 }
@@ -98,32 +94,30 @@ function Counter () {
 ```js
 Page({
   data: {
-    time: 60
+    time: 60,
   },
   start: false,
-  toggleStart () {
+  toggleStart() {
     this.start = !this.start
     if (this.start) {
       this.interval = setInterval(() => {
         this.setData({
-          time: this.data.time - 1
+          time: this.data.time - 1,
         })
       }, 1000)
     } else {
       clearInterval(this.interval)
     }
   },
-  onUnload () {
+  onUnload() {
     clearInterval(this.interval)
-  }
+  },
 })
 ```
 
 ```html
 <view>
-  <button bindtap="toggleStart">
-    {{time}} 
-  </button>
+  <button bindtap="toggleStart">{{time}}</button>
 </view>
 ```
 
@@ -133,21 +127,22 @@ Page({
 在我们这个例子中，当 `start` 每次变化就会重新跑一次 `effect` 函数，每隔一秒会设置一次 `time` 的值让它减一，但这样的写法是有问题的。
 
 ```jsx
-function Counter () {
-  const [ start, setStart ] = useState(false)
-  const [ time, setTime ] = useState(60)
-  
-  useEffect(() => { // effect 函数，不接受也不返回任何参数
+function Counter() {
+  const [start, setStart] = useState(false)
+  const [time, setTime] = useState(60)
+
+  useEffect(() => {
+    // effect 函数，不接受也不返回任何参数
     let interval
     if (start) {
       interval = setInterval(() => {
         // setTime(time - 1) ❌ time 在 effect 闭包函数里是拿不到准确值的
-        setTime(t => t -1) // ✅ 在 setTime 的回调函数参数里可以拿到对应 state 的最新值
+        setTime((t) => t - 1) // ✅ 在 setTime 的回调函数参数里可以拿到对应 state 的最新值
       }, 1000)
     }
     return () => clearInterval(interval) // clean-up 函数，当前组件被注销时调用
-  }, [ start ]) // 依赖数组，当数组中变量变化时会调用 effect 函数
-  
+  }, [start]) // 依赖数组，当数组中变量变化时会调用 effect 函数
+
   return (
     <View>
       <Button onClick={() => setStart(!start)}>{time}</Button>
@@ -161,12 +156,13 @@ function Counter () {
 还有另一种方法是使用 `useRef` Hooks，`useRef` 可以返回一个可变的引用，它会生成一个对象，对象里这个有 `current` 属性，而 `current` 的值是可变的。在我们这个例子里，每次更改 `currentTime.current` 都是同步的，而且 `currentTime` 是一个引用，所以 `currentTime.current` 一定是可控的。
 
 ```jsx
-function Counter () {
-  const [ start, setStart ] = useState(false)
-  const [ time, setTime ] = useState(60)
+function Counter() {
+  const [start, setStart] = useState(false)
+  const [time, setTime] = useState(60)
   const currentTime = useRef(time) // 生成一个可变引用
-  
-  useEffect(() => { // effect 函数，不接受也不返回任何参数
+
+  useEffect(() => {
+    // effect 函数，不接受也不返回任何参数
     let interval
     if (start) {
       interval = setInterval(() => {
@@ -174,8 +170,8 @@ function Counter () {
       }, 1000)
     }
     return () => clearInterval(interval) // clean-up 函数，当前组件被注销时调用
-  }, [ start ]) // 依赖数组，当数组中变量变化时会调用 effect 函数
-  
+  }, [start]) // 依赖数组，当数组中变量变化时会调用 effect 函数
+
   return (
     <View>
       <Button onClick={() => setStart(!start)}>{time}</Button>
@@ -187,20 +183,21 @@ function Counter () {
 虽然说我们可以 `useRef` 来解决这个问题，但是没必要这样做。因为 `setTime` 传递一个回调函数的方法显然可读性更高。真正有必要的是把我们的 `interval` 变量作为一个 ref，我们在函数最顶层的作用域把 `interval` 作为一个 ref，这样我们就可以在这个函数的任何一个地方把他清除，而原来的代码中我们把 `interval` 作为一个普通的变量放在 effect 函数里，这样如果我们有一个事件也需要清除 interval，这就没法做到了。但是用 `useRef` 生成可变引用就没有这个限制。
 
 ```jsx
-function Counter () {
-  const [ start, setStart ] = useState(false)
-  const [ time, setTime ] = useState(60)
+function Counter() {
+  const [start, setStart] = useState(false)
+  const [time, setTime] = useState(60)
   const interval = useRef() // interval 可以在这个作用域里任何地方清除和设置
-  
-  useEffect(() => { // effect 函数，不接受也不返回任何参数
+
+  useEffect(() => {
+    // effect 函数，不接受也不返回任何参数
     if (start) {
       interval.current = setInterval(() => {
-        setTime(t => t - 1) // ✅ 在 setTime 的回调函数参数里可以拿到对应 state 的最新值
+        setTime((t) => t - 1) // ✅ 在 setTime 的回调函数参数里可以拿到对应 state 的最新值
       }, 1000)
     }
     return () => clearInterval(interval.current) // clean-up 函数，当前组件被注销时调用
-  }, [ start ]) // 依赖数组，当数组中变量变化时会调用 effect 函数
-  
+  }, [start]) // 依赖数组，当数组中变量变化时会调用 effect 函数
+
   return (
     <View>
       <Button onClick={() => setStart(!start)}>{time}</Button>
@@ -211,7 +208,7 @@ function Counter () {
 
 ### `useContext` 与跨组件通信
 
-接下来我们再来看一个跨组件通信的例子，例如我们有三个组件，*page* 组件有一个 *child* 组件，*child* 组件有一个 *counter* 组件，而我们 *counter* 组件的 `count` 值和 `setCount` 函数，是由 *page* 组件传递下来的。这种情况在一个复杂业务的开发中也经常能遇到，在原生小程序开发中我们应该怎么做呢？
+接下来我们再来看一个跨组件通信的例子，例如我们有三个组件，_page_ 组件有一个 _child_ 组件，_child_ 组件有一个 _counter_ 组件，而我们 _counter_ 组件的 `count` 值和 `setCount` 函数，是由 _page_ 组件传递下来的。这种情况在一个复杂业务的开发中也经常能遇到，在原生小程序开发中我们应该怎么做呢？
 
 我们需要手动的把我们 `counter` 的值和函数手动地依次地传递下去，而这样的传递必须是显式的，你需要在 JavaScript 中设置 props 的参数，也需要在 WXML 里设置 props 的参数，一个也不能少，少了就跑不动。我们还注意到即便 child 组件没有任何业务逻辑，他也必须要设置一个 `triggerEvent` 的函数和 props 的类型声明。这样的写法无疑是非常麻烦而且限制很大的。
 
@@ -242,82 +239,78 @@ function Counter () {
 // page.js
 Page({
   data: {
-    count: 0
+    count: 0,
   },
-  increment () {
+  increment() {
     this.setData({
-      count: this.data.count + 1
+      count: this.data.count + 1,
     })
-  }
+  },
 })
 
 // child.js
 Component({
   properties: {
-    count: Number
+    count: Number,
   },
   methods: {
-    increment () {
+    increment() {
       this.triggerEvent('increment')
-    }
-  }
+    },
+  },
 })
 
 // counter.js
 Component({
   properties: {
-    count: Number
+    count: Number,
   },
   methods: {
-    increment () {
+    increment() {
       this.triggerEvent('increment')
-    }
-  }
+    },
+  },
 })
 ```
 
-而我们可以看看 Hooks 的写法，首先我们用 `Taro.createContext` 创建一个 `context` 对象，在我们 *page* 组件里把我们的 `count` 和 `setCount` 函数作为一个对象传入到 `Context.Provider` 的 `value` 里。然后在我们的 *Counter* 组件，我们可以使用 `useContext` 这个 Hooks 把我们的 `count` 和 `setCount` 取出来，就直接可以使用了。
+而我们可以看看 Hooks 的写法，首先我们用 `Taro.createContext` 创建一个 `context` 对象，在我们 _page_ 组件里把我们的 `count` 和 `setCount` 函数作为一个对象传入到 `Context.Provider` 的 `value` 里。然后在我们的 _Counter_ 组件，我们可以使用 `useContext` 这个 Hooks 把我们的 `count` 和 `setCount` 取出来，就直接可以使用了。
 
 ```jsx
-export const CounterContext = Taro.createContext(null);
+export const CounterContext = Taro.createContext(null)
 
 // page.js
 const Page = () => {
-  const [ count, setCount ] = useState(0)
+  const [count, setCount] = useState(0)
 
   return (
     <CounterContext.Provider value={{ count, setCount }}>
       <Child />
     </CounterContext.Provider>
-  );
-};
+  )
+}
 
 // child.js
 const Child = () => (
   <View>
     <Counter />
   </View>
-);
+)
 
 // counter.js
 const Counter = () => {
   const { count, setCount } = useContext(CounterContext)
   return (
     <View>
-      <Text>
-        You clicked {count} times
-      </Text>
-      <Button onClick={() => setCount(count + 1)}>
-        Click me
-      </Button>
+      <Text>You clicked {count} times</Text>
+      <Button onClick={() => setCount(count + 1)}>Click me</Button>
     </View>
   )
 }
 ```
 
-大家可以发现使用 Context 的代码比原来的代码精简了很多，参数不需要一级一级地显式传递，*child* 组件也和事实一样，没有一行多余的逻辑。但精简不是最大的好处。最大的好处是大家可以发现我们的 Context 可以传递一个复杂的对象，熟悉小程序原生开发的同学可能会知道，所有 props 的传递都会被小程序序列化掉，如果传递了一个复杂的对象最终会变成一个 JSON。但是用 Taro 的 context 则没有这层限制，你可以传入一个带有函数的对象，也可以传入像是 `imutabale` 或者 `obserable` 这样复杂的对象。在 taro 1.3 我们对 props 系统进行了一次重构，Taro 的 context 和 props 一样，属性传递没有任何限制，想传啥就传啥。
+大家可以发现使用 Context 的代码比原来的代码精简了很多，参数不需要一级一级地显式传递，_child_ 组件也和事实一样，没有一行多余的逻辑。但精简不是最大的好处。最大的好处是大家可以发现我们的 Context 可以传递一个复杂的对象，熟悉小程序原生开发的同学可能会知道，所有 props 的传递都会被小程序序列化掉，如果传递了一个复杂的对象最终会变成一个 JSON。但是用 Taro 的 context 则没有这层限制，你可以传入一个带有函数的对象，也可以传入像是 `imutabale` 或者 `obserable` 这样复杂的对象。在 taro 1.3 我们对 props 系统进行了一次重构，Taro 的 context 和 props 一样，属性传递没有任何限制，想传啥就传啥。
 
-另外一个值得注意的点的是，context 的传递可以无视父级组件的更新策略，在这个例子中即便我们通过 `shouldComponentUpdate()` 禁止了 *child* 组件的更新，但 *counter* 作为它的子组件依然是可以更新的。这个特性可以让我们做性能优化的时候更为灵活一些。
+另外一个值得注意的点的是，context 的传递可以无视父级组件的更新策略，在这个例子中即便我们通过 `shouldComponentUpdate()` 禁止了 _child_ 组件的更新，但 _counter_ 作为它的子组件依然是可以更新的。这个特性可以让我们做性能优化的时候更为灵活一些。
 
 ## Hooks 在小程序实战
 
@@ -330,28 +323,29 @@ const Counter = () => {
 于是你就自己实现了一个双击事件，代码大概是这样，有一个上次点击的时间作为状态，每次触发单机事件的时候和上次点击的时间做对比，如果间隔过小，那他就是一个双击事件。代码非常简单，但我们不禁就会产生一个问题问题，每一次给一个组件加单击事件，我们就每次都加这么一坨代码吗？
 
 ```jsx
-function EditableText ({ title }) {
-  const [ lastClickTime, setClickTime ] = useState(0)
-  const [ editing, setEditing ] = useState(false)
+function EditableText({ title }) {
+  const [lastClickTime, setClickTime] = useState(0)
+  const [editing, setEditing] = useState(false)
 
   return (
     <View>
-      {
-        editing
-          ? <TextInput editing={editing} />
-          : <Text
-            onClick={e => {
-              const currentTime = e.timeStamp
-              const gap = currentTime - lastClickTime
-              if (gap > 0 && gap < 300) { // double click
-                setEditing(true)
-              }
-              setClickTime(currentTime)
-            }}
-          >
-            {title}
-          </Text>
-      }
+      {editing ? (
+        <TextInput editing={editing} />
+      ) : (
+        <Text
+          onClick={(e) => {
+            const currentTime = e.timeStamp
+            const gap = currentTime - lastClickTime
+            if (gap > 0 && gap < 300) {
+              // double click
+              setEditing(true)
+            }
+            setClickTime(currentTime)
+          }}
+        >
+          {title}
+        </Text>
+      )}
     </View>
   )
 }
@@ -360,8 +354,8 @@ function EditableText ({ title }) {
 这个时候我们就可以写一个自定义 Hooks，代码和原来的代码也差不多，`useDoubleClick` 不接受任何参数，但当我们调用 `useDoubleClick` 时候返回一个名为 `textOnDoubleClick` 的函数，在在 Text 组件的事件传参中，我们再在 `textOnDoubleClick` 函数中传入一个回调函数，这个回调函数就是触发双击条件时候的函数。当我们给这个自定义 Hooks 做了柯里化之后，我们就可以做到知道 Hook 使用时才暴露回调函数:
 
 ```jsx
-function useDoubleClick () {
-  const [ lastClickTime, setClickTime ] = useState(0)
+function useDoubleClick() {
+  const [lastClickTime, setClickTime] = useState(0)
 
   return (callback) => (e) => {
     const currentTime = e.timeStamp
@@ -373,23 +367,17 @@ function useDoubleClick () {
   }
 }
 
-function EditableText ({ title }) {
-  const [ editing, setEditing ] = useState(false)
+function EditableText({ title }) {
+  const [editing, setEditing] = useState(false)
   const textOnDoubleClick = useDoubleClick()
 
   return (
     <View>
-      {
-        editing
-          ? <TextInput editing={editing} />
-          : <Text
-            onClick={textOnDoubleClick(() =>
-              setEditing(true)
-            )}
-          >
-            {title}
-          </Text>
-      }
+      {editing ? (
+        <TextInput editing={editing} />
+      ) : (
+        <Text onClick={textOnDoubleClick(() => setEditing(true))}>{title}</Text>
+      )}
     </View>
   )
 }
@@ -423,16 +411,18 @@ function EditableText ({ title }) {
 
 ```js
 class Numbers extends Component {
-  shouldComponentUpdate () {
+  shouldComponentUpdate() {
     return false
   }
 
-  render () {
-    return <View>
-      {
-       expensive(this.props.array).map(i => <View>{i}</View>)
-      }
-    </View>
+  render() {
+    return (
+      <View>
+        {expensive(this.props.array).map((i) => (
+          <View>{i}</View>
+        ))}
+      </View>
+    )
   }
 }
 ```
@@ -440,14 +430,12 @@ class Numbers extends Component {
 而对于函数式组件而言，我们也可以做一样的事情。Taro 和 React 一样提供 `Taro.memo` API，他的第一个参数接受一个函数式组件，第二个参数和我们的 `shouldComponentUpdate()` 一样，判断组件在什么样的情况下需要更新。如果第二个参数没有传入的话，`Taro.memo` 的效果就和 `Taro.PureComponent` 一样，对新旧 props 做一层浅对比，如果浅对比不相等则更新组件。
 
 ```js
-function Numbers ({ array }) {
+function Numbers({ array }) {
   return (
     <View>
-      {
-       expensive(array).map(
-         i => <View>{i}</View>
-       )
-      }
+      {expensive(array).map((i) => (
+        <View>{i}</View>
+      ))}
     </View>
   )
 }
@@ -458,8 +446,8 @@ export default Taro.memo(Numbers, () => true)
 第二种情况我们可以看看我们的老朋友，计数器组件。但是这个计数器组件和老朋友有两点不一样：第一是每次点击 + 1，计数器需要调用 `expensive` 函数循环 1 亿次才能拿到我们想要的值，第二点是它多了一个 `Input` 组件。在我们真实的业务开发中，这种情况也很常见：我们的组件可能需要进行一次昂贵的数据处理才能得到最终想要的值，但这个组件又还有多个 state 控制其它的组件。在这种情况下，我们如果正常书写业务逻辑是有性能问题的：
 
 ```js
-function Counter () {
-  const [ count, setCount ] = useState(0)
+function Counter() {
+  const [count, setCount] = useState(0)
   const [val, setValue] = useState('')
   function expensive() {
     let sum = 0
@@ -472,10 +460,8 @@ function Counter () {
   return (
     <View>
       <Text>You clicked {expensive()} times}</Text>
-      <Button onClick={() => setCount(count + 1)}>
-        Click me
-      </Button>
-      <Input value={val} onChange={event => setValue(event.detail.value)} />
+      <Button onClick={() => setCount(count + 1)}>Click me</Button>
+      <Input value={val} onChange={(event) => setValue(event.detail.value)} />
     </View>
   )
 }
@@ -484,8 +470,8 @@ function Counter () {
 因为我们 `count` 的值跟 `Input` 的值没有关系，但我们每次改变 `Input` 的值，就会触发这个组件重新渲染。也就是说这个循环一亿次的 `expensive()` 函数就会重新调用。这样情况显然是不能接受的。为了解决这个问题，我们可以使用 `useMemo` API。`useMemo` 的签名和 `useEffect` 有点像，区别就在于 `useMemo` 的第一个函数有返回值，这个函数返回的值同时也是 `useMemo` 函数的返回值。而第二个参数同样是依赖数组，只有当这个数组的数据变化时候，`useMemo` 的函数才会重新计算，如果数组没有变化，那就直接从缓存中取数据。在我们这个例子里我们只需要 `count` 变化才进行计算，而 Input value 变化无需计算。
 
 ```js
-function Counter () {
-  const [ count, setCount ] = useState(0)
+function Counter() {
+  const [count, setCount] = useState(0)
   const [val, setValue] = useState('')
   const expensive = useMemo(() => {
     let sum = 0
@@ -493,21 +479,19 @@ function Counter () {
       sum += i
     }
     return sum
-  }, [ count ]) // ✅ 只有 count 变化时，回调函数才会执行
+  }, [count]) // ✅ 只有 count 变化时，回调函数才会执行
 
   return (
     <View>
       <Text>You Clicked {expensive} times</Text>
-      <Button onClick={() => setCount(count + 1)}>
-        Click me
-      </Button>
-      <Input value={val} onChange={event => setValue(event.detail.value)} />
+      <Button onClick={() => setCount(count + 1)}>Click me</Button>
+      <Input value={val} onChange={(event) => setValue(event.detail.value)} />
     </View>
   )
 }
 ```
 
-我们刚才提到的两个 memo 的 API ，他的全称其实是 *Memoization*。由于 Hooks 都是在普通函数中运行的，所以我们要做好性能优化，一定要好好利用缓存和记忆化这一技术。
+我们刚才提到的两个 memo 的 API ，他的全称其实是 _Memoization_。由于 Hooks 都是在普通函数中运行的，所以我们要做好性能优化，一定要好好利用缓存和记忆化这一技术。
 
 > 在计算机科学中，记忆化（Memoization）是一种提高程序运行速度的优化技术。通过储存大计算量函数的返回值，当这个结果再次被需要时将其从缓存提取，而不用再次计算来节省计算时间。
 
@@ -523,13 +507,13 @@ function Counter () {
 
 ## Hooks 的实现
 
-我们现在对 Hooks 已经有了以下的了解，一个合法的 Hooks ，必须满足以下需求才能执行: 
+我们现在对 Hooks 已经有了以下的了解，一个合法的 Hooks ，必须满足以下需求才能执行:
 
-* 只能在函数式函数中调用
-* 只能在函数最顶层中调用
-* 不能在条件语句中调用
-* 不能在循环中调用
-* 不能在嵌套函数中调用
+- 只能在函数式函数中调用
+- 只能在函数最顶层中调用
+- 不能在条件语句中调用
+- 不能在循环中调用
+- 不能在嵌套函数中调用
 
 我想请大家思考一下，为什么一个 Hook 函数需要满足以上的需求呢？我想请大家以可以框架开发者的角度去思考下这个问题，而不是以 API 的调用者的角度去逆向地思考。当一个 Hook 函数被调用的时，这个 Hook 函数的内部实现应该可以访问到当前正在执行的组件，但是我们的 Hooks API 的入参却没有传入这个组件，那究竟是怎么样的设计才可以让我们的 hook 函数访问到正在执行的组件，也能够准确地定位自己呢？
 
@@ -544,7 +528,7 @@ function Counter () {
 
 ```typescript
 const CurrentOwner: {
-  current: null | Component<any, any>,
+  current: null | Component<any, any>
   index: number
 } = {
   // 正在执行的 Taro 函数,
@@ -552,7 +536,7 @@ const CurrentOwner: {
   current: null,
   // Taro 函数中 hooks 的顺序
   // 每执行一个 Hook 自增
-  index: 0
+  index: 0,
 }
 ```
 
@@ -561,13 +545,14 @@ const CurrentOwner: {
 接下来我们来实现我们的 `getHook` 函数，同样很简单，如果 `CurrenOwner.current` 是 `null`，那这就不是一个合法的 hook 函数，我们直接报错。如果满足条件，我们就把 hook 的 `index` + 1，接下来我们把组件的 Hooks 都保存在一个数组里，如果 `index` 大于 Hooks 的长度，说明 Hooks 没有被创造，我们就 push 一个空对象，避免之后取值发生 runtime error。然后我们直接返回我们的 Hook。
 
 ```typescript
-function getHook (): Hook {
+function getHook(): Hook {
   if (CurrentOwner.current === null) {
     throw new Error(`invalid hooks call: hooks can only be called in a taro component.`)
   }
   const index = CurrentOwner.index++ // hook 在该 Taro 函数中的 ID
   const hooks: Hook[] = CurrentOwner.current.hooks // 所有的 hooks
-  if (index >= hooks.length) { // 如果 hook 还没有创建
+  if (index >= hooks.length) {
+    // 如果 hook 还没有创建
     hooks.push({} as Hook) // 对象就是 hook 的内部状态
   }
   return hooks[index] // 返回正在执行的 hook 状态
@@ -579,19 +564,22 @@ function getHook (): Hook {
 首先如果 `initState` 是函数，直接执行它。其次调用我们我们之前写好的 `getHook` 函数，它返回的就是 Hook 的状态。接下来就是 useState 的主逻辑，如果 hook 还没有状态的话，我们就先把正在执行的组件缓存起来，然后 `useState` 返回的，就是我们的 `hook.state`, 其实就是一个数组，第一个值当然就是我们 `initState`，第一个参数是一个函数，它如果是一个函数，我们就执行它，否则就直接把参数赋值给我们 的 `hook.state` 第一个值，赋值完毕之后我们把当前的组件加入到更新队列，等待更新。
 
 ```typescript
-function useState<S> (initialState: S | (() => S)): [S, Dispatch<SetStateAction<S>>] {
-  if (isFunction(initialState)) { // 如果 initialState 是函数
+function useState<S>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<S>>] {
+  if (isFunction(initialState)) {
+    // 如果 initialState 是函数
     initialState = initialState() // 就直接执行
   }
   const hook = getHook() as HookState<S> // 找到该函数中对应的 hook
-  if (isUndefined(hook.state)) { // 如果 hook 还没有状态
+  if (isUndefined(hook.state)) {
+    // 如果 hook 还没有状态
     hook.component = Current.current! // 正在执行的 Taro 函数，缓存起来
-    hook.state = [ // hook.state 就是我们要返回的元组
+    hook.state = [
+      // hook.state 就是我们要返回的元组
       initialState,
       (action) => {
         hook.state[0] = isFunction(action) ? action(hook.state[0]) : action
         enqueueRender(hook.component) // 加入更新队列
-      }
+      },
     ]
   }
   return hook.state // 已经创建 hook 就直接返回
@@ -602,13 +590,12 @@ function useState<S> (initialState: S | (() => S)): [S, Dispatch<SetStateAction<
 
 Taro 的 Hooks 总共有八个 API， `useState` 的实现大家可以发现非常简单，但其实它的代码量和复杂度是所有 Hooks 的实现中第二高的。所以其实 Hooks 也没有什么黑科技，大家可以放心大胆地使用。
 
-
 ## 总结与展望
 
-在 2018 年 Ember.js 的作者提出过一个观点，*Compilers are the New Frameworks*，编译器即框架。什么意思呢？就拿 React 来举例，单单一个 React 其实没什么用，你还需要配合 *create-react-app*, *eslint-plugin-react-hooks*, *prettier* 等等编译相关的工具最终才能构成一个框架，而这些工具也恰巧是 React Core Team 的人创造的。而这样趋势不仅仅发生在 React 身上，大家可以发现在2018年，尤玉溪老师的主要工作就是开发 *vue-cli*。而对一些更激进的框架，例如 *svelte*，它的框架就是编译器，编译器就是框架。
+在 2018 年 Ember.js 的作者提出过一个观点，_Compilers are the New Frameworks_，编译器即框架。什么意思呢？就拿 React 来举例，单单一个 React 其实没什么用，你还需要配合 _create-react-app_, _eslint-plugin-react-hooks_, _prettier_ 等等编译相关的工具最终才能构成一个框架，而这些工具也恰巧是 React Core Team 的人创造的。而这样趋势不仅仅发生在 React 身上，大家可以发现在 2018 年，尤玉溪老师的主要工作就是开发 _vue-cli_。而对一些更激进的框架，例如 _svelte_，它的框架就是编译器，编译器就是框架。
 
 而到了 2019 年，我想提出一个新概念，叫框架即生态。就拿 Taro 来说，使用 Taro 你可以复用 React 生态的东西，同时 Taro 还有 `taro doctor`，Taro 开发者社区，Taro 物料市场，还有腾讯小程序·云开发等等多个合作伙伴一起构成了 Taro 生态，而整个 Taro 生态才是框架。在过去的半年，我们持续改进并优化了 Taro 框架的表现，以上提到的特性与功能在 Taro 1.3 全部都可以正常使用。而在框架之外，我们也深耕社区，推出了 Taro 物料市场和 Taro 开发者社区，并和腾讯小程序·云开发合作举办了物料开发竞赛。现在，我们诚挚邀请你一起来参与社区贡献，让小程序开发变得更好、更快、更方便：
 
-* Taro 官网：https://taro.jd.com/
-* Taro 物料市场：https://taro-ext.jd.com/
-* Taro 开发者社区：https://taro-club.jd.com/
+- Taro 官网：https://taro.jd.com/
+- Taro 物料市场：https://taro-ext.jd.com/
+- Taro 开发者社区：https://taro-club.jd.com/

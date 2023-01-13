@@ -7,7 +7,6 @@ title: Context
 
 在一个典型的 Taro 应用中，数据是通过 props 属性自上而下（由父及子）进行传递的，但这种做法对于某些类型的属性而言是极其繁琐的（例如：地区偏好，UI 主题），这些属性是应用程序中许多组件都需要的。Context 提供了一种在组件之间共享此类值的方式，而不必显式地通过组件树的逐层传递 props。
 
-
 ## API
 
 ### Taro.createContext
@@ -15,10 +14,10 @@ title: Context
 ```jsx
 const MyContext = Taro.createContext(defaultValue)
 ```
+
 创建一个 Context 对象。当 Taro 渲染一个订阅了这个 Context 对象的组件，这个组件会从最先渲染的 `Provider` 中读取到 `Provider` 的 `value`。
 
 > 在 Taro 中，即便在框架层面也无法知道组件的树结构，因此 Taro 无法像 React 一样往父组件找离自己最近的 Provider。因此创建的 Context 最好只在一个地方使用。
-
 
 ### Context.Provider
 
@@ -41,23 +40,23 @@ Provider 接收一个 `value` 属性，传递给消费组件。一个 Provider �
 ```jsx
 class MyClass extends Taro.Component {
   componentDidMount() {
-    let value = this.context;
+    let value = this.context
     /* 在组件挂载完成后，使用 MyContext 组件的值来执行一些有副作用的操作 */
   }
   componentDidUpdate() {
-    let value = this.context;
+    let value = this.context
     /* ... */
   }
   componentWillUnmount() {
-    let value = this.context;
+    let value = this.context
     /* ... */
   }
   render() {
-    let value = this.context;
+    let value = this.context
     /* 基于 MyContext 组件的值进行渲染 */
   }
 }
-MyClass.contextType = MyContext;
+MyClass.contextType = MyContext
 ```
 
 挂载在 class 上的 `contextType` 属性会被重赋值为一个由 `Taro.createContext()` 创建的 Context 对象。这能让你使用 this.context 来消费 Context 上的那个值。你可以在任何生命周期中访问到它，包括 render 函数中。
@@ -68,9 +67,9 @@ MyClass.contextType = MyContext;
 
 ```jsx
 class MyClass extends React.Component {
-  static contextType = MyContext;
+  static contextType = MyContext
   render() {
-    let value = this.context;
+    let value = this.context
     /* 基于这个值进行渲染工作 */
   }
 }
@@ -82,19 +81,19 @@ class MyClass extends React.Component {
 
 ```jsx
 // counter-context.js
-export const CounterContext = Taro.createContext(0);
+export const CounterContext = Taro.createContext(0)
 
 // index.js
 class Index extends Component {
-  render () {
-    const [ count, setCount ] = useState(0)
+  render() {
+    const [count, setCount] = useState(0)
     return (
       <CounterContext.Provider value={count}>
-        <View className='container'>
+        <View className="container">
           <Test />
           <Button onClick={() => setCount(0)}>Reset</Button>
-          <Button onClick={() => setCount(prevCount => prevCount + 1)}>+</Button>
-          <Button onClick={() => setCount(prevCount => prevCount - 1)}>-</Button>
+          <Button onClick={() => setCount((prevCount) => prevCount + 1)}>+</Button>
+          <Button onClick={() => setCount((prevCount) => prevCount - 1)}>-</Button>
         </View>
       </CounterContext.Provider>
     )
@@ -103,12 +102,12 @@ class Index extends Component {
 
 // child.js
 class Child extends Taro.Component {
-  shouldComponentUpdate () {
+  shouldComponentUpdate() {
     // 即便返回 false 也不会阻止 CounterContext 更新消费它的组件
     return false
   }
 
-  render () {
+  render() {
     return <Counter />
   }
 }
@@ -118,13 +117,9 @@ import { CounterContext } from './counter-context.js'
 class Counter extends Taro.Component {
   static contextType = CounterContext
 
-  render () {
+  render() {
     const value = this.context
-    return (
-      <View>
-        Count: {value}
-      </View>
-    )
+    return <View>Count: {value}</View>
   }
 }
 ```
@@ -134,16 +129,16 @@ class Counter extends Taro.Component {
 ### 消费多个 Context
 
 ```jsx
-const ThemeContext = Taro.createContext('light');
+const ThemeContext = Taro.createContext('light')
 
 // 用户登录 context
 const UserContext = Taro.createContext({
   name: 'Guest',
-});
+})
 
 class App extends Taro.Component {
   render() {
-    const {signedInUser, theme} = this.props;
+    const { signedInUser, theme } = this.props
 
     // 提供初始 context 值的 App 组件
     return (
@@ -152,7 +147,7 @@ class App extends Taro.Component {
           <Layout />
         </UserContext.Provider>
       </ThemeContext.Provider>
-    );
+    )
   }
 }
 
@@ -162,15 +157,13 @@ function Layout() {
       <Sidebar />
       <Content />
     </div>
-  );
+  )
 }
 
 // 一个组件可能会消费多个 context
 function Content() {
   const theme = useContext(ThemeContext)
-  const user =  useContext(UserContext)
-  return (
-    <ProfilePage user={user} theme={theme} />
-  )
+  const user = useContext(UserContext)
+  return <ProfilePage user={user} theme={theme} />
 }
 ```

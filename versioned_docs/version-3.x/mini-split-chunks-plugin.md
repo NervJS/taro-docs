@@ -2,7 +2,7 @@
 title: 智能提取分包依赖
 ---
 
-在开发小程序时， Taro 编译器依赖 SplitChunksPlugin 插件抽取公共文件，默认主包、分包依赖的 module 都会打包到根目录 vendors.js 文件中（有一个例外，当只有分包里面有且只有一个页面依赖 module 时，会打包到分包中依赖页面源码中），直接影响到小程序主包大小，很容易超出 2M 的限制大小。
+在开发小程序时，Taro 编译器依赖 SplitChunksPlugin 插件抽取公共文件，默认主包、分包依赖的 module 都会打包到根目录 vendors.js 文件中（有一个例外，当只有分包里面有且只有一个页面依赖 module 时，会打包到分包中依赖页面源码中），直接影响到小程序主包大小，很容易超出 2M 的限制大小。
 
 ### SplitChunks 默认配置
 
@@ -46,16 +46,16 @@ title: 智能提取分包依赖
 
 - 分包根目录/sub-vendors.(js|wxss)
 
-  - 如果该 module 只被单个分包内的多个page引用，则提取到该分包根目录的 sub-vendors 文件中。
+  - 如果该 module 只被单个分包内的多个 page 引用，则提取到该分包根目录的 sub-vendors 文件中。
 
   ![sub-venders](https://img13.360buyimg.com/imagetools/jfs/t1/205404/34/21044/222198/6256e36cE62a6c078/93671ab13f3df367.png)
 
-- 分包根目录/sub-common/*.(js|wxss)
+- 分包根目录/sub-common/\*.(js|wxss)
 
-  - 如果该 module 被多个分包内的page引用，正常情况下会被提取到主包的公共模块中，这里为了保证主包的体积最优，则会先提取成一个公共模块，然后分别复制到对应分包的 sub-common 文件夹下**（因为小程序无法跨分包引入文件，所以这里需要每个分包都复制一份）**，需要注意的是，这样会导致总包的体积变大一些。
+  - 如果该 module 被多个分包内的 page 引用，正常情况下会被提取到主包的公共模块中，这里为了保证主包的体积最优，则会先提取成一个公共模块，然后分别复制到对应分包的 sub-common 文件夹下**（因为小程序无法跨分包引入文件，所以这里需要每个分包都复制一份）**，需要注意的是，这样会导致总包的体积变大一些。
 
   ![sub-common](https://img12.360buyimg.com/imagetools/jfs/t1/136245/21/26437/256225/6256e36dE6a1c438f/43dfcf54cf443ca0.png)
-  
+
 ### 使用方法
 
 1 将 Taro 升级到 **3.3.11** 及以上版本
@@ -66,7 +66,7 @@ $ taro update self [版本号]
 # 使用Taro 升级命令更新CLI版本到指定版本
 $ taro update self
 # 使用Taro 升级命令将项目依赖升级到与@tarojs/cli一致的版本
-$ taro update project 
+$ taro update project
 # 使用Taro 升级命令将项目依赖升级到指定版本
 $ taro update project [版本号]
 ```
@@ -82,9 +82,9 @@ config = {
   mini: {
     // ...
     optimizeMainPackage: {
-      enable: true
+      enable: true,
     },
-  }
+  },
 }
 ```
 
@@ -100,11 +100,11 @@ config = {
     optimizeMainPackage: {
       enable: true,
       exclude: [
-        path.resolve(__dirname, '../src/utils/moduleName.js'), 
-        (module) => module.resource?.indexOf('moduleName') >= 0
-      ]
+        path.resolve(__dirname, '../src/utils/moduleName.js'),
+        (module) => module.resource?.indexOf('moduleName') >= 0,
+      ],
     },
-  }
+  },
 }
 ```
 
@@ -176,7 +176,7 @@ dist
 │   │       ├── index.json
 │   │       ├── index.wxml
 │   │       └── index.wxss
-│   ├── sub-common 
+│   ├── sub-common
 │   │   ├── 34299ff0bdffe7d50742f6fc2ed88f06.js // miniprogram-sm-crypto 依赖模块 jsbn 源码
 │   │   └── a223b12dc801f51582835c16be379976.js // miniprogram-sm-crypto 源码
 │   ├── sub-vendors.js // taro-ui AtButton组件源码
@@ -197,7 +197,7 @@ dist
 │   │       ├── index.wxml
 │   │       └── index.wxss
 │   └── sub-common
-│       ├── 34299ff0bdffe7d50742f6fc2ed88f06.js // miniprogram-sm-crypto 依赖模块 jsbn 源码 
+│       ├── 34299ff0bdffe7d50742f6fc2ed88f06.js // miniprogram-sm-crypto 依赖模块 jsbn 源码
 │       └── a223b12dc801f51582835c16be379976.js // miniprogram-sm-crypto 源码
 ├── pages
 │   └── index
@@ -216,4 +216,4 @@ dist
 
 ### 注意事项
 
-因为sub-common会在每个分包目录下分别复制一份，所以会增大小程序包整体大小，使用时需根据具体场景具体分析，采用适合自己的性能最优方案。
+因为 sub-common 会在每个分包目录下分别复制一份，所以会增大小程序包整体大小，使用时需根据具体场景具体分析，采用适合自己的性能最优方案。

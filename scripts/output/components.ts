@@ -1,10 +1,11 @@
 import { isEmpty } from 'lodash'
-import * as path from 'path'
-import * as ts from 'typescript'
-import { get, isntTaroMethod, TaroMethod } from '.'
+import path from 'path'
+import ts from 'typescript'
+
 import { DocEntry } from '../parser'
 import { childrenMerge, isFunction, splicing } from '../parser/utils'
 import writeFile from '../write'
+import { get, isntTaroMethod, TaroMethod } from '.'
 
 export async function writeDoc (routePath: string, doc: DocEntry[]) {
   const isComp = true

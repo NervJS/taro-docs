@@ -1,4 +1,4 @@
-import * as ts from "typescript"
+import ts from 'typescript'
 
 export interface DocEntry {
   name?: string
@@ -18,7 +18,7 @@ export interface DocEntry {
   symbol?: DocEntry
 }
 
-export function generateDocumentation(
+export function generateDocumentation (
   filepaths: string[],
   options: ts.CompilerOptions,
   output: DocEntry[] = []
@@ -49,7 +49,7 @@ export function generateDocumentation(
 
   return output
 
-  function visitAST(node: ts.Node, o: DocEntry[]) {
+  function visitAST (node: ts.Node, o: DocEntry[]) {
     // Only consider exported nodes
     if (!isNodeExported(node as ts.Declaration) || node.kind === ts.SyntaxKind.EndOfFileToken || node.kind === ts.SyntaxKind.DeclareKeyword
         || ts.isImportDeclaration(node) || ts.isImportEqualsDeclaration(node) || ts.isImportClause(node)
@@ -82,7 +82,7 @@ export function generateDocumentation(
         o.push(st)
       } else {
         // @ts-ignore
-        const sym = node.symbol, type = node.type?.types?.map(e => checker.typeToString(checker.getTypeFromTypeNode(e))).join(' | ')
+        const sym = node.symbol; const type = node.type?.types?.map(e => checker.typeToString(checker.getTypeFromTypeNode(e))).join(' | ')
         o.push(
           serializeSymbol(sym, sym.getName(), type)
         )
@@ -107,7 +107,8 @@ export function generateDocumentation(
       o.push(out)
     } else if (ts.isVariableDeclarationList(node)) {
       node.declarations.forEach(d => {
-        const symbol = d['symbol']
+        // @ts-ignore
+        const symbol = d.symbol // checker.getSymbolsInScope(d, d.symbol.flags)
         symbol && o.push(serializeType(symbol))
       })
     } else {
@@ -116,7 +117,7 @@ export function generateDocumentation(
   }
 
   /** Serialize a symbol into a json object */
-  function serializeSymbol(symbol: ts.Symbol, name?: string, type?: string): DocEntry {
+  function serializeSymbol (symbol: ts.Symbol, name?: string, type?: string): DocEntry {
     const declarations: DocEntry[] = [];
     (symbol.getDeclarations() || []).map(
       d => checker.getSignaturesOfType(checker.getTypeAtLocation(d), ts.SignatureKind.Call).map(
@@ -137,7 +138,7 @@ export function generateDocumentation(
   }
 
   /** Serialize a class symbol information */
-  function serializeClass(symbol: ts.Symbol) {
+  function serializeClass (symbol: ts.Symbol) {
     const details = serializeSymbol(symbol)
     // Get the construct signatures
     const constructorType = checker.getTypeOfSymbolAtLocation(
@@ -150,7 +151,7 @@ export function generateDocumentation(
   }
 
   /** Serialize a types (type or interface) symbol information */
-  function serializeType(symbol: ts.Symbol, name?: string, type?:  keyof typeof ts.SyntaxKind): DocEntry {
+  function serializeType (symbol: ts.Symbol, name?: string, type?:  keyof typeof ts.SyntaxKind): DocEntry {
     // console.log(type, Object.keys(symbol))
     const doc: DocEntry = serializeSymbol(symbol, name, type)
     symbol.exports && symbol.exports.forEach((value) => {
@@ -165,7 +166,7 @@ export function generateDocumentation(
   }
 
   /** Serialize a signature (call or construct) */
-  function serializeSignature(signature: ts.Signature, name?: string) {
+  function serializeSignature (signature: ts.Signature, name?: string) {
     const typeParameters = signature.getTypeParameters() || []
 
     return {
@@ -179,7 +180,7 @@ export function generateDocumentation(
   }
 
   /** True if this is visible outside this file, false otherwise */
-  function isNodeExported(node: ts.Declaration): boolean {
+  function isNodeExported (node: ts.Declaration): boolean {
     return (
       (ts.getCombinedModifierFlags(node) & ts.ModifierFlags.Export) !== 0 ||
       (!!node.parent/*  && node.parent.kind === ts.SyntaxKind.SourceFile */)

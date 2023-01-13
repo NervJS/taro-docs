@@ -21,7 +21,7 @@ jobs:
           path: |
             node_modules
             build/taro-docs
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-preview
           restore-keys: |
             ${{ runner.os }}-
 

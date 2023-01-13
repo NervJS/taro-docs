@@ -21,6 +21,3 @@ Taro.request(url).then(function (res) {
   console.log(res)
 })
 ```
-
-
-

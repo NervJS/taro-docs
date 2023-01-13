@@ -19,10 +19,10 @@ export default class Weapp extends TaroPlatformBase {
 
 构造函数，接受两个参数。
 
-| 参数 | 类型 | 说明 |
-| :--- | :--- | :--- |
-| ctx | object | 插件上下文对象 |
-| config | object | Taro 编译配置 |
+| 参数   | 类型   | 说明           |
+| :----- | :----- | :------------- |
+| ctx    | object | 插件上下文对象 |
+| config | object | Taro 编译配置  |
 
 ### ctx
 
@@ -36,7 +36,7 @@ export default class Weapp extends TaroPlatformBase {
 
 ```js title="program.ts"
 class Weapp extends TaroPlatformBase {
-  modifyWebpackChain () {
+  modifyWebpackChain() {
     // 通过 this.ctx.modifyWepackChain 能获取到 WebpackChain 实例
     this.ctx.modifyWebpackChain(({ chain }) => {
       // chain.xxxx
@@ -119,10 +119,9 @@ class Weapp extends TaroPlatformBase {
     // 脚本文件后缀
     script: '.js',
     // 【可选】渲染层脚本文件后缀，如微信小程序的 wxs，支付宝小程序的 sjs
-    xs: '.wxs'
+    xs: '.wxs',
   }
 }
-
 ```
 
 ### (abstract) template
@@ -222,10 +221,10 @@ export default (ctx) => {
   ctx.registerPlatform({
     name: 'weapp',
     useConfigName: 'mini',
-    async fn ({ config }) {
+    async fn({ config }) {
       const program = new Weapp(ctx, config)
       await program.start()
-    }
+    },
   })
 }
 ```
@@ -234,10 +233,10 @@ export default (ctx) => {
 
 用于生成 project.config.json 此类项目配置文件。
 
-| 参数 | 类型 | 默认值 | 说明 |
-| :--- | :--- | :--- | :--- |
-| src | string |  | 项目源码中配置文件的名称 |
-| dist | string | 'project.config.json' | 编译后配置文件的名称 |
+| 参数 | 类型   | 默认值                | 说明                     |
+| :--- | :----- | :-------------------- | :----------------------- |
+| src  | string |                       | 项目源码中配置文件的名称 |
+| dist | string | 'project.config.json' | 编译后配置文件的名称     |
 
 例子：
 
@@ -252,9 +251,9 @@ generateProjectConfig('project.swan.json', 'project.swan.json')
 
 递归替换目标对象的 key 值。
 
-| 参数 | 类型 | 说明 |
-| :--- | :--- | :--- |
-| target | object | 目标对象 |
+| 参数   | 类型   | 说明           |
+| :----- | :----- | :------------- |
+| target | object | 目标对象       |
 | keyMap | object | key 值替换规则 |
 
 例子，支付宝小程序配置项 key 值和大多数小程序的规范不一样，需要进行对齐：
@@ -270,9 +269,9 @@ this.ctx.modifyMiniConfigs(({ configMap }) => {
     text: 'name',
     iconPath: 'icon',
     selectedIconPath: 'activeIcon',
-    color: 'textColor'
+    color: 'textColor',
   }
-  Object.keys(configMap).forEach(key => {
+  Object.keys(configMap).forEach((key) => {
     const item = configMap[key]
     if (item.content) {
       // 递归替换配置文件里的 key 值为目标对象的 key 值
@@ -318,7 +317,7 @@ class Weapp extends TaroPlatformBase {
 
   constructor (ctx, config) {
     super(ctx, config)
-  
+
     /**
     * 1. setupTransaction - init
     * 2. setup
@@ -378,19 +377,19 @@ import { singleQuote } from '@tarojs/shared'
 
 export const components = {
   // 组件名 CamelCase
-  ScrollView: 
-  // 属性对象
-  {
-    // value 为空字符串时，代表不设置默认值
-    'scroll-left': '',
-    // 属性默认值为布尔值或数字时，value 写为字符串
-    'enable-flex': 'false',
-    'refresher-threshold': '45',
-    // 属性默认值为字符串时，需要使用 singleQuote 函数进行包裹
-    'refresher-default-style': singleQuote('black'),
-    // 事件
-    bindRefresherAbort: ''
-  }
+  ScrollView:
+    // 属性对象
+    {
+      // value 为空字符串时，代表不设置默认值
+      'scroll-left': '',
+      // 属性默认值为布尔值或数字时，value 写为字符串
+      'enable-flex': 'false',
+      'refresher-threshold': '45',
+      // 属性默认值为字符串时，需要使用 singleQuote 函数进行包裹
+      'refresher-default-style': singleQuote('black'),
+      // 事件
+      bindRefresherAbort: '',
+    },
 }
 ```
 
@@ -402,10 +401,10 @@ export const components = {
 
 合并组件补丁到 `this.internalComponents`。
 
-| 参数 | 类型 | 说明 |
-| :--- | :--- | :--- |
-| ctx | object | 插件上下文对象 |
-| patch | object | 组件补丁 |
+| 参数  | 类型   | 说明           |
+| :---- | :----- | :------------- |
+| ctx   | object | 插件上下文对象 |
+| patch | object | 组件补丁       |
 
 例子：
 
@@ -413,16 +412,16 @@ export const components = {
 import { components } from './components'
 
 class Weapp extends TaroPlatformBase {
-  constructor (ctx, config) {
+  constructor(ctx, config) {
     super(ctx, config)
 
     // 在 setup 阶段结束时，修改模板
     this.setupTransaction.addWrapper({
-      close: this.modifyTemplate
+      close: this.modifyTemplate,
     })
   }
 
-  modifyTemplate () {
+  modifyTemplate() {
     this.template.mergeComponents(this.ctx, components)
   }
 }
@@ -432,11 +431,11 @@ class Weapp extends TaroPlatformBase {
 export const components = {
   ScrollView: {
     'enable-flex': 'true',
-    'refresher-threshold': '45'
+    'refresher-threshold': '45',
   },
   Xyz: {
-    'a': ''
-  }
+    a: '',
+  },
 }
 ```
 
@@ -447,7 +446,7 @@ internalComponent = {
   ScrollView: {
     'scroll-left': '',
     'enable-flex': 'false',
-  }
+  },
 }
 ```
 
@@ -460,12 +459,12 @@ internalComponent = {
     // enable-flex 的默认值修改了
     'enable-flex': 'true',
     // 新增了 refresher-threshold 属性
-    'refresher-threshold': '45'
+    'refresher-threshold': '45',
   },
   // 新增了 Xyz 组件
   Xyz: {
-    'a': ''
-  }
+    a: '',
+  },
 }
 ```
 
@@ -475,14 +474,14 @@ internalComponent = {
 
 ```js title="program.ts"
 class Weapp extends TaroPlatformBase {
-  modifyTemplate () {
+  modifyTemplate() {
     // 删除 Slider 组件里的一些属性
     this.modifySlider(this.template.internalComponents.Slider)
     // 改写 View 组件的属性对象
     this.template.internalComponents.View = {}
   }
 
-  modifySlider (slider) {
+  modifySlider(slider) {
     delete slider['block-size']
     delete slider['block-color']
   }

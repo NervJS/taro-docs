@@ -26,9 +26,7 @@ $ yarn add --dev @tarojs/plugin-vue-devtools
 
 ```js title="config/dev.js"
 config = {
-  plugins: [
-    '@tarojs/plugin-vue-devtools'
-  ],
+  plugins: ['@tarojs/plugin-vue-devtools'],
   // ...
 }
 ```

@@ -45,12 +45,12 @@ Taro 选择了利用小程序 `<template>` 可以引用其它 `<template>` 的�
 
 Taro 内部默认支持 6 大小程序平台，自 [Taro v3.1](/blog/2021-03-10-taro-3-1-lts#1-开放式架构) 版本之后，对各小程序平台的支持都以 Taro 插件的形式进行：
 
-- `@tarojs/plugin-platform-weapp`	微信小程序插件
-- `@tarojs/plugin-platform-alipay`	支付宝小程序插件
-- `@tarojs/plugin-platform-swan`	百度小程序插件
-- `@tarojs/plugin-platform-tt`	字节跳动小程序插件
-- `@tarojs/plugin-platform-qq`	qq 小程序插件
-- `@tarojs/plugin-platform-jd`	京东小程序插件
+- `@tarojs/plugin-platform-weapp` 微信小程序插件
+- `@tarojs/plugin-platform-alipay` 支付宝小程序插件
+- `@tarojs/plugin-platform-swan` 百度小程序插件
+- `@tarojs/plugin-platform-tt` 字节跳动小程序插件
+- `@tarojs/plugin-platform-qq` qq 小程序插件
+- `@tarojs/plugin-platform-jd` 京东小程序插件
 
 端平台插件针对特定的平台，会分别为编译时和运行时注入逻辑，详情请见 [《端平台插件概述》](./platform-plugin)。
 

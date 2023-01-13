@@ -3,6 +3,7 @@
   "compilerOptions": {
     "lib": ["DOM", "ESNext"],
     "baseUrl": ".",
+    "esModuleInterop": true,
     "paths": {
       "@site/static/*": ["./static/*"]
     },
@@ -11,6 +12,6 @@
     "strict": true,
     "types": ["@types/node"]
   },
-  "include": ["blog", "docs", "i18n", "packages", "scripts", "src", "typings"],
+  "include": ["blog", "docs", "i18n", "packages", "scripts", "src", "versioned_docs", "typings"],
   "exclude": ["src/sw.js"]
 }

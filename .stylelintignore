@@ -1,0 +1,10 @@
+__tests__
+__mocks__
+
+.docusaurus
+build
+lib
+node_modules
+*.log
+*.lock
+*.yaml

@@ -5,7 +5,7 @@ sidebar_label: Video
 
 视频。相关api：Taro.createVideoContext
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/video.html)
 
@@ -129,6 +129,7 @@ export default class PageView extends Component {
 | posterSize | `string` |  | 否 | 当 poster 高宽比跟视频高宽不匹配时，如何显示 poster，设置规则同 background-size 一致。 |
 | showThinProgressBar | `string` |  | 否 | 当底部工具条隐藏时，是否显示细进度条（controls=false 时设置无效）。 |
 | mobilenetHintType | `string` |  | 否 | 移动网络提醒样式。<br /><br />0 - 不提醒<br />1 - tip 提醒<br />2 - 阻塞提醒(无消耗流量大小)<br />3 - 阻塞提醒(有消耗流量大小提醒) |
+| enableNative | `boolean` | `true` | 否 | 使用原生 |
 | floatingMode | `string` |  | 否 | 浮窗设置。暂时不支持全局浮窗。<br />可选值：<br /><br />none：无浮窗。<br />page：页面内浮窗。 |
 | showNoWifiTip | `string` |  | 否 | 非 wifi 环境下是否显示继续播放浮层 |
 | showLockBtn | `string` |  | 否 | 全屏模式下，是否显示锁屏按钮 |
@@ -226,6 +227,7 @@ export default class PageView extends Component {
 | VideoProps.posterSize |  |  | ✔️ |  |  |  |  |  |  |
 | VideoProps.showThinProgressBar |  |  | ✔️ |  |  |  |  |  |  |
 | VideoProps.mobilenetHintType |  |  | ✔️ |  |  | ✔️ |  |  |  |
+| VideoProps.enableNative |  |  | ✔️ |  |  |  |  |  |  |
 | VideoProps.floatingMode |  |  | ✔️ |  |  |  |  |  |  |
 | VideoProps.showNoWifiTip |  | ✔️ |  |  |  |  |  |  |  |
 | VideoProps.showLockBtn |  | ✔️ |  |  |  |  |  |  |  |

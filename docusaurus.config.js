@@ -10,6 +10,7 @@
 const uniqueCommitId = require('unique-commit-id')
 const versions = require('./versions.json');
 const path = require('path');
+
 const url = {
   zone: 'https://docs.taro.zone',
   jd: 'https://taro-docs.jd.com',
@@ -20,13 +21,13 @@ const baseUrl = {
   jd: '/',
   taro: '/taro-docs/'
 }
-
+const BASE_DOMAIN = process.env.BASE || 'taro'
 
 const siteConfig = {
   title: 'Taro 文档' /* title for your website */,
   tagline: 'Taro 是一个开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv 等框架来开发微信/京东/百度/支付宝/字节跳动/ QQ 小程序/H5/React Native 等应用。',
-  url: url[process.env.BASE || 'taro'], /* your website url */
-  baseUrl: baseUrl[process.env.BASE || 'taro'], /* base url for your project */
+  url: url[BASE_DOMAIN], /* your website url */
+  baseUrl: baseUrl[BASE_DOMAIN], /* base url for your project */
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   onDuplicateRoutes: 'throw',
@@ -43,7 +44,7 @@ const siteConfig = {
           // sidebars file relative to website dir.
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/nervjs/taro-docs/edit/master/',
-          lastVersion: "3.x",
+          lastVersion: '3.x',
           versions: {
             current: {
               label: '下个版本',
@@ -69,7 +70,7 @@ const siteConfig = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   ({
     algolia: {
       appId: 'BH4D9OD16A',
@@ -152,7 +153,12 @@ const siteConfig = {
           position: 'left',
         },
         {
-          to: "docs/guide",
+          href: '/canIUse',
+          label: 'CanIUse',
+          position: 'left',
+        },
+        {
+          to: 'docs/guide',
           activeBasePath: 'docs/guide',
           activeBaseRegex: 'docs/guide',
           label: '教程',
@@ -326,7 +332,7 @@ const siteConfig = {
       loader: require.resolve('swc-loader'),
       options: {
         jsc: {
-          baseUrl: baseUrl[process.env.BASE || 'taro'],
+          baseUrl: baseUrl[BASE_DOMAIN],
           parser: {
             syntax: 'typescript',
             tsx: true

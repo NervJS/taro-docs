@@ -24,9 +24,7 @@ $ yarn add --dev @tarojs/plugin-react-devtools
 
 ```js title="config/dev.js"
 config = {
-  plugins: [
-    '@tarojs/plugin-react-devtools'
-  ],
+  plugins: ['@tarojs/plugin-react-devtools'],
   // ...
 }
 ```

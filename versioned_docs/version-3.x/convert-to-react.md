@@ -30,8 +30,8 @@ import './index.scss'
 
 @withWeapp({
   data: {
-    text: 'Hello World'
-  }
+    text: 'Hello World',
+  },
 })
 class _C extends React.Component {
   render() {
@@ -57,16 +57,15 @@ export default _C
 
 Taro 会将原生小程序的生命周期转换为 Taro 的生命周期，完整对应关系如下：
 
-|小程序生命周期|Taro 生命周期|
-| :-- | :-- |
-| onShow | componentDidShow |
-| onHide | componentDidHide |
-| App.onLaunch | onLaunch |
-| Page.onLoad | onLoad |
-| Page.onReady | onReady |
-| Page.onUnload | componentWillUnmount |
-| Component.created | componentWillMount |
-| Component.attached | componentDidMount |
-| Component.ready | Page.onReady  |
+| 小程序生命周期     | Taro 生命周期        |
+| :----------------- | :------------------- |
+| onShow             | componentDidShow     |
+| onHide             | componentDidHide     |
+| App.onLaunch       | onLaunch             |
+| Page.onLoad        | onLoad               |
+| Page.onReady       | onReady              |
+| Page.onUnload      | componentWillUnmount |
+| Component.created  | componentWillMount   |
+| Component.attached | componentDidMount    |
+| Component.ready    | Page.onReady         |
 | Component.detached | componentWillUnmount |
-
