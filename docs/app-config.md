@@ -504,6 +504,12 @@ export default {
 
 详情请参考 [Button](https://q.qq.com/wiki/develop/miniprogram/component/form/button.html)
 
+需使用可手动新增以下配置，补充 QQ 小程序类型
+
+```ts title="global.d.ts"
+/// <reference types="@tarojs/plugin-platform-qq/types/shims-qq" />
+```
+
 ## 京东小程序特有属性
 
 只在京东小程序中支持的属性。<img src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/>

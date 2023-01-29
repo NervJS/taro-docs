@@ -283,5 +283,5 @@ declare module '@tarojs/components' {
 开发者在类型定义文件中引入此文件即可：
 
 ```ts title="global.d.ts"
-/// <reference path="node_modules/@tarojs/plugin-platform-alipay-iot/types/shims-iot.d.ts" />
+/// <reference types="@tarojs/plugin-platform-alipay-iot/types/shims-iot" />
 ```
