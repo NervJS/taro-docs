@@ -143,7 +143,7 @@ class App extends Component {
 | SwiperProps.vertical | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | SwiperProps.previousMargin | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | SwiperProps.nextMargin | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| SwiperProps.snapToEdge | ✔️ |  | ✔️ |  |  | ✔️ |  |  |  |
+| SwiperProps.snapToEdge | ✔️ |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.displayMultipleItems | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | SwiperProps.skipHiddenItemLayout |  |  |  |  | ✔️ | ✔️ |  |  |  |
 | SwiperProps.easingFunction | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |  |  |
@@ -161,7 +161,7 @@ class App extends Component {
 | SwiperProps.adjustVerticalHeight |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.disableTouchmove |  | ✔️ |  |  |  |  |  |  |  |
 | SwiperProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| SwiperProps.onTransition | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| SwiperProps.onTransition | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
 | SwiperProps.onAnimationFinish | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | SwiperProps.onAnimationEnd |  |  | ✔️ |  |  |  |  |  |  |
 

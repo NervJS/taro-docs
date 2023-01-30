@@ -221,6 +221,7 @@ module.exports = {
       'components/media/ar-camera',
       'components/media/audio',
       'components/media/camera',
+      'components/media/channel-live',
       'components/media/image',
       'components/media/live-player',
       'components/media/live-pusher',
