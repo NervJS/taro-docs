@@ -119,13 +119,14 @@ class App extends Component {
 | nativeProps | `Record<string, unknown>` |  | 否 | 用于透传 `WebComponents` 上的属性到内部 H5 标签上 |
 | name | `string` |  | 否 | 组件名字，用于表单提交获取数据。 |
 | alwaysSystem | `boolean` | `false` | 否 | 是否强制使用系统键盘和 Web-view 创建的 input 元素。为 true 时，confirm-type、confirm-hold 可能失效。 |
-| enableNative | `boolean` | `true` | 否 | 使用原生键盘 |
 | ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
+| enableNative | `boolean` | `true` | 否 | 是否启用原生键盘。 |
 | onInput | `CommonEventFunction<inputEventDetail>` |  | 否 | 当键盘输入时，触发input事件，event.detail = {value, cursor, keyCode}，处理函数可以直接 return 一个字符串，将替换输入框的内容。 |
 | onFocus | `CommonEventFunction<inputForceEventDetail>` |  | 否 | 输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度 |
 | onBlur | `CommonEventFunction<inputValueEventDetail>` |  | 否 | 输入框失去焦点时触发 |
 | onConfirm | `CommonEventFunction<inputValueEventDetail>` |  | 否 | 点击完成按钮时触发 |
 | onKeyboardHeightChange | `CommonEventFunction<onKeyboardHeightChangeEventDetail>` |  | 否 | 键盘高度发生变化的时候触发此事件 |
+| onNickNameReview | `CommonEventFunction` |  | 否 | 用户昵称审核完毕后触发，仅在 type 为 "nickname" 时有效，event.detail = { pass, timeout } |
 
 ### API 支持度
 
@@ -162,13 +163,14 @@ class App extends Component {
 | InputProps.nativeProps |  |  |  |  |  |  | ✔️ |  |  |
 | InputProps.name |  |  | ✔️ |  |  |  |  |  |  |
 | InputProps.alwaysSystem |  |  | ✔️ |  |  |  |  |  |  |
-| InputProps.enableNative |  |  | ✔️ |  |  |  |  |  |  |
 | InputProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
+| InputProps.enableNative |  |  | ✔️ |  |  |  |  |  |  |
 | InputProps.onInput | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.onFocus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.onBlur | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.onConfirm | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(借用[Form 组件](./form)的`onSubmit`事件来替代) | ✔️ |  |
 | InputProps.onKeyboardHeightChange | ✔️ |  |  |  | ✔️ |  |  |  |  |
+| InputProps.onNickNameReview | ✔️ |  |  |  |  |  |  |  |  |
 
 ### Type
 

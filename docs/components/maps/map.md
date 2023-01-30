@@ -143,6 +143,7 @@ export default {
 | panels | `string` |  | 否 | 基于 map 高级定制渲染，设置覆盖在地图上的 view。 |
 | theme | `string` |  | 否 | 否 |
 | optimize | `string` |  | 否 | 内联样式。 |
+| enableAutoMaxOverlooking | `boolean` | `false` | 否 | 开启最大俯视角，俯视角度从 45 度拓展到 75 度 |
 | enable3D | `boolean` | `false` | 否 | 展示3D楼块 |
 | onTap | `CommonEventFunction` |  | 否 | 点击地图时触发 |
 | onMarkerTap | `CommonEventFunction<onMarkerTapEventDetail>` |  | 否 | 点击标记点时触发，e.detail = {markerId} |
@@ -197,6 +198,7 @@ export default {
 | MapProps.panels |  |  | ✔️ |  |  |  |  |  |  |
 | MapProps.theme |  |  |  |  |  | ✔️ |  |  |  |
 | MapProps.optimize |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.enableAutoMaxOverlooking | ✔️ |  |  |  |  |  |  |  |  |
 | MapProps.enable3D | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
 | MapProps.onTap | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | MapProps.onMarkerTap | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
