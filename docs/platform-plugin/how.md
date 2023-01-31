@@ -88,7 +88,7 @@ Taro 小程序相关配置默认放在 `mini` 字段下，因此一般情况配�
 
 `object`
 
-整合上述 [options.useConfigName](./how#optionsuseconfigname) 指定字段后的 Taro 编译配置，编译配置各字段详情请看[编译配置详情](../config-detail.md)。
+整合上述 [options.useConfigName](./how#optionsuseconfigname) 指定字段后的 Taro 编译配置，编译配置各字段详情请看[编译配置详情](../config-detail)。
 
 ### 二、编写平台类
 

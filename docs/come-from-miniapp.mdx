@@ -75,7 +75,7 @@ App.use(setGlobalDataPlugin, {
 
 ### 1. 层级过深
 
-对于[模板不支持递归](platform-plugin-template#递归与非递归模板)的小程序（微信、QQ、京东小程序等），当页面元素嵌套层级超过一定层数（默认为 16 层，可以通过配置 [baseLevel](config-detail#minibaselevel) 修改），会创建一个自定义组件协助递归。
+对于[模板不支持递归](./platform-plugin/template#递归与非递归模板)的小程序（微信、QQ、京东小程序等），当页面元素嵌套层级超过一定层数（默认为 16 层，可以通过配置 [baseLevel](config-detail#minibaselevel) 修改），会创建一个自定义组件协助递归。
 
 此自定义组件的 `scope` 没有暴露给开发者，因此层级过深且需要调用此类 API 时，需要使用 `<CustomWrapper>` 组件包裹。
 

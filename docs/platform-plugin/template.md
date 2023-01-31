@@ -159,7 +159,7 @@ nestElements = new Map([
 
 `key` 值为可以递归调用自身的组件。
 
-`value` 值代表递归生成此组件的次数，**-1** 代表循环 [baseLevel](./config-detail#minibaselevel) 层。
+`value` 值代表递归生成此组件的次数，**-1** 代表循环 [baseLevel](../config-detail#minibaselevel) 层。
 
 ### replacePropName (name, value, componentName)
 
