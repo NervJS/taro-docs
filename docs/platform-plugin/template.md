@@ -203,7 +203,7 @@ buildXsTemplate () {
 | child    | string | 组件模板的子节点循环体 |
 | nodeName | string | 组件名                 |
 
-没有在 [this.voidElements](./platform-plugin-template#thisvoidelements) 中声明过的组件，会遍历子节点进行渲染。
+没有在 [this.voidElements](./template#thisvoidelements) 中声明过的组件，会遍历子节点进行渲染。
 
 这些组件的模板通用格式为：
 

@@ -118,11 +118,12 @@ module.exports = {
         label: '扩展编译平台',
         type: 'category',
         items: [
-          'platform-plugin',
-          'platform-plugin-how',
-          'platform-plugin-base',
-          'platform-plugin-template',
-          'platform-plugin-reconciler'
+          'platform-plugin/index',
+          'platform-plugin/how',
+          'platform-plugin/platform-mini',
+          'platform-plugin/reconciler',
+          'platform-plugin/template',
+          'platform-plugin/platform-web'
         ]
       },
       'external-libraries'

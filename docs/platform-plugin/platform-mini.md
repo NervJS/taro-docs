@@ -130,7 +130,7 @@ class Weapp extends TaroPlatformBase {
 
 `object`
 
-[模板对象](./platform-plugin-template)的实例。
+[模板对象](./template)的实例。
 
 ### (optional) projectConfigJson
 
@@ -346,7 +346,7 @@ export default Weapp
 
 ### 2. 处理模板逻辑
 
-编写一个[模板类](./platform-plugin-template)以处理模板逻辑，把它的实例设置为自定义平台类的 `template` 属性：
+编写一个[模板类](./template)以处理模板逻辑，把它的实例设置为自定义平台类的 `template` 属性：
 
 ```js title="program.ts"
 import { Template } from './template'
@@ -360,7 +360,7 @@ class Weapp extends TaroPlatformBase {
 
 ### 3. 处理组件
 
-我们把目前支持的 6 种小程序进行了组件和组件属性的比对，得出了一份最通用的组件以及其属性。访问 `Template` 类实例的 [internalComponents](./platform-plugin-template#thisinternalcomponents) 属性可以获取到这些通用组件以及属性。
+我们把目前支持的 6 种小程序进行了组件和组件属性的比对，得出了一份最通用的组件以及其属性。访问 `Template` 类实例的 [internalComponents](./template#thisinternalcomponents) 属性可以获取到这些通用组件以及属性。
 
 > 抽取这份通用组件的目的是为了在生成 B 小程序的模板时，尽量不会含有 A 小程序独有的组件或属性。
 
@@ -514,7 +514,7 @@ export const Editor = 'editor'
 export const OfficialAccount = 'official-account'
 ```
 
-2. 设置 [taroComponentsPath](./platform-plugin-base#optional-tarocomponentspath)
+2. 设置 [taroComponentsPath](./platform-mini#optional-tarocomponentspath)
 
 ```js title="program.ts"
 const PACKAGE_NAME = '@tarojs/plugin-platform-weapp'
