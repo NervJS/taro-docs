@@ -2,7 +2,7 @@ import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints'
 import { IGithubContributor } from 'github'
 import { QueryDatabaseProperty, RichTextItemResponse, TextRequest } from 'notion'
 
-import { databaseId, notion, getProperty, getPropertyTitle, sleep } from './common'
+import { databaseId, getProperty, getPropertyTitle, notion, sleep } from './common'
 import { fetchContributors } from './github'
 
 export async function checkMember (github: string): Promise<QueryDatabaseResponse['results'][number]> {
@@ -156,7 +156,7 @@ interface IUpdateContributorsArgs {
   repo?: string
   remarks?: QueryDatabaseProperty['rich_text']
 }
-export async function updateContributors({ owner = 'NervJS', repo = 'taro', remarks }: IUpdateContributorsArgs) {
+export async function updateContributors ({ owner = 'NervJS', repo = 'taro', remarks }: IUpdateContributorsArgs) {
   const list = await fetchContributors({ owner, repo })
   console.log(`Tips: ${owner}/${repo} 查询到 ${list.length} 位贡献者。`)
   for (let i = 0; i < list.length; i++) {

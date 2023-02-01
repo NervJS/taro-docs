@@ -2,9 +2,10 @@
 title: 原生项目使用 Taro
 ---
 
-import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
-import { VueIcon, ReactIcon } from './guides/index'
+import Tabs from '@theme/Tabs'
+
+import { ReactIcon, VueIcon } from './guides/index'
 
 :::info
 Taro v3.0.25 开始支持
@@ -49,15 +50,15 @@ $ taro build --type [platform] --blended
 const taroApp = require('./taro/app.js').taroApp
 
 App({
-  onShow () {
+  onShow() {
     // 可选，调用 Taro 项目 app 的 onShow 生命周期
     taroApp.onShow()
   },
 
-  onHide () {
+  onHide() {
     // 可选，调用 Taro 项目 app 的 onHide 生命周期
     taroApp.onHide()
-  }
+  },
 })
 ```
 
@@ -88,22 +89,23 @@ App({
 ```js title="config/index.js" {3,8,10,15-29}
 const config = {
   alias: {
-    '@/utils': process.env.NODE_ENV === 'production'
-      // 生产环境路径计算：
-      // Webpack 编译发生在 taro-project 下，假设编译后的 taro-project/dist 会被移到到 miniapp/taro。
-      // path.resolve(__dirname, '..') 为 taro-project。taro-project/dist 之于 taro-project，相当于 miniapp/taro 之于 miniapp。
-      // 再根据 miniapp/utils 与 miniapp 的相对路径，得出 path.resolve(__dirname, '../utils')
-      ? path.resolve(__dirname, '../utils')
-      // 开发环境直接引用原生项目下的依赖，方便开发
-      : path.resolve(__dirname, '../../miniapp/utils')
+    '@/utils':
+      process.env.NODE_ENV === 'production'
+        ? // 生产环境路径计算：
+          // Webpack 编译发生在 taro-project 下，假设编译后的 taro-project/dist 会被移到到 miniapp/taro。
+          // path.resolve(__dirname, '..') 为 taro-project。taro-project/dist 之于 taro-project，相当于 miniapp/taro 之于 miniapp。
+          // 再根据 miniapp/utils 与 miniapp 的相对路径，得出 path.resolve(__dirname, '../utils')
+          path.resolve(__dirname, '../utils')
+        : // 开发环境直接引用原生项目下的依赖，方便开发
+          path.resolve(__dirname, '../../miniapp/utils'),
   },
   mini: {
-    webpackChain (chain) {
+    webpackChain(chain) {
       chain.merge({
         externals: [
           (context, request, callback) => {
             const externalDirs = ['@/utils']
-            const externalDir = externalDirs.find(dir => request.startsWith(dir))
+            const externalDir = externalDirs.find((dir) => request.startsWith(dir))
 
             if (process.env.NODE_ENV === 'production' && externalDir) {
               const externalDirPath = config.alias[externalDir]
@@ -114,10 +116,10 @@ const config = {
 
             callback()
           },
-        ]
+        ],
       })
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -173,23 +175,24 @@ logSomething()
 ```js title="config/index.js" {3,8,10}
 const config = {
   alias: {
-    '@/components': process.env.NODE_ENV === 'production'
-      // 生产环境路径计算：
-      // Webpack 编译发生在 taro-project 下，假设编译后的 taro-project/dist 会被移到到 miniapp/taro。
-      // path.resolve(__dirname, '..') 为 taro-project。taro-project/dist 之于 taro-project，相当于 miniapp/taro 之于 miniapp。
-      // 再根据 miniapp/components 与 miniapp 的相对路径，得出 path.resolve(__dirname, '../components')
-      ? path.resolve(__dirname, '../components')
-      // 开发环境引用 taro-project/src 下的组件
-      : path.resolve(__dirname, '../src/components')
-  }
+    '@/components':
+      process.env.NODE_ENV === 'production'
+        ? // 生产环境路径计算：
+          // Webpack 编译发生在 taro-project 下，假设编译后的 taro-project/dist 会被移到到 miniapp/taro。
+          // path.resolve(__dirname, '..') 为 taro-project。taro-project/dist 之于 taro-project，相当于 miniapp/taro 之于 miniapp。
+          // 再根据 miniapp/components 与 miniapp 的相对路径，得出 path.resolve(__dirname, '../components')
+          path.resolve(__dirname, '../components')
+        : // 开发环境引用 taro-project/src 下的组件
+          path.resolve(__dirname, '../src/components'),
+  },
 }
 ```
 
 ```js title="taro-project/src/pages/index/index.config.js" {3}
 export default {
   usingComponents: {
-    title: '@/components/title/index'
-  }
+    title: '@/components/title/index',
+  },
 }
 ```
 
@@ -225,11 +228,11 @@ Taro 默认会把页面共用的普通依赖打包为主包里的 `common.js`，
 ```js title="config/index.js" {3-6,12-20}
 const config = {
   mini: {
-    addChunkPages (pages) {
+    addChunkPages(pages) {
       pages.set('subpackages/bar/index', ['subpackages/common']),
-      pages.set('subpackages/foo/index', ['subpackages/common'])
+        pages.set('subpackages/foo/index', ['subpackages/common'])
     },
-    webpackChain (chain) {
+    webpackChain(chain) {
       chain.merge({
         optimization: {
           splitChunks: {
@@ -238,17 +241,17 @@ const config = {
                 name: 'subpackages/common',
                 minChunks: 2,
                 test: (module, chunks) => {
-                  const isNoOnlySubpackRequired = chunks.find(chunk => !(/\bsubpackages\b/.test(chunk.name)))
+                  const isNoOnlySubpackRequired = chunks.find((chunk) => !/\bsubpackages\b/.test(chunk.name))
                   return !isNoOnlySubpackRequired
                 },
-                priority: 200
-              }
-            }
-          }
-        }
+                priority: 200,
+              },
+            },
+          },
+        },
       })
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -272,9 +275,7 @@ npm i @tarojs/plugin-indie --save-dev
 
 ```js title="config/index.js"
 const config = {
-  plugins: [
-    '@tarojs/plugin-indie'
-  ]
+  plugins: ['@tarojs/plugin-indie'],
 }
 ```
 
@@ -313,15 +314,15 @@ $ taro build --type [platform] --blended
 ```js title="config/index.js" {7}
 config = {
   mini: {
-    webpackChain (chain) {
+    webpackChain(chain) {
       chain.merge({
         output: {
           // 可以配合 npm script 和环境变量来动态修改
-          jsonpFunction: process.env.JSONP_NAME || "webpackJsonp"
-        }
+          jsonpFunction: process.env.JSONP_NAME || 'webpackJsonp',
+        },
       })
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -349,10 +350,7 @@ Taro 支持把组件编译为**原生小程序自定义组件**，供原生项�
 ```js title="app.config.js"
 export default {
   // ...
-  components: [
-    'pages/index/index',
-    'components/picker/index'
-  ]
+  components: ['pages/index/index', 'components/picker/index'],
 }
 ```
 
@@ -374,11 +372,11 @@ Page({
     pickerProps: {
       mode: 'format',
       value: [0, 0, 0],
-      onInitial (value, index) {
+      onInitial(value, index) {
         console.log('onInitial')
-      }
-    }
-  }
+      },
+    },
+  },
 })
 ```
 
@@ -449,7 +447,7 @@ Taro v3.3.20 开始支持
 ```js title="index.config.js"
 export default {
   styleIsolation: 'isolated',
-  virtualHost: true
+  virtualHost: true,
 }
 ```
 
@@ -460,7 +458,6 @@ Taro v3.5.7 开始支持
 :::
 
 组件可以使用 `<NativeSlot>` 作为小程序的 slot 节点。用法介绍：
-
 
 <Tabs
   defaultValue="React"
@@ -489,7 +486,7 @@ export default function () {
 ```html title="Taro 组件"
 <template>
   <view>
-    <native-slot/>
+    <native-slot />
   </view>
 </template>
 ```

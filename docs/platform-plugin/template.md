@@ -50,7 +50,7 @@ class Template extends UnRecursiveTemplate {
     forIndex: 'wx:for-index',
     key: 'wx:key',
     xs: 'wxs',
-    type: 'weapp'
+    type: 'weapp',
   }
 }
 ```
@@ -101,11 +101,7 @@ Taro 内置组件列表，包括了相对通用的组件及其部分通用属性
 默认值：
 
 ```js
-focusComponents = new Set([
-  'input',
-  'textarea',
-  'editor'
-])
+focusComponents = new Set(['input', 'textarea', 'editor'])
 ```
 
 ### this.voidElements
@@ -131,7 +127,7 @@ voidElements = new Set([
   'ad',
   'official-account',
   'open-data',
-  'navigation-bar'
+  'navigation-bar',
 ])
 ```
 
@@ -157,22 +153,22 @@ nestElements = new Map([
   ['slot-view', 8],
   ['label', 6],
   ['form', 4],
-  ['scroll-view', 4]
+  ['scroll-view', 4],
 ])
 ```
 
 `key` 值为可以递归调用自身的组件。
 
-`value` 值代表递归生成此组件的次数，**-1** 代表循环 [baseLevel](./config-detail#minibaselevel) 层。
+`value` 值代表递归生成此组件的次数，**-1** 代表循环 [baseLevel](../config-detail#minibaselevel) 层。
 
 ### replacePropName (name, value, componentName)
 
 代替组件的属性名。
 
-| 参数 | 类型 | 说明 |
-| :--- | :--- | :--- |
-| name | string | 属性名 |
-| value | string | 属性值 |
+| 参数         | 类型   | 说明   |
+| :----------- | :----- | :----- |
+| name         | string | 属性名 |
+| value        | string | 属性值 |
 | componetName | string | 组件名 |
 
 例子：
@@ -202,12 +198,12 @@ buildXsTemplate () {
 
 修改组件模板的子节点循环体。
 
-| 参数 | 类型 | 说明 |
-| :--- | :--- | :--- |
-| child | string | 组件模板的子节点循环体 |
-| nodeName | string | 组件名 |
+| 参数     | 类型   | 说明                   |
+| :------- | :----- | :--------------------- |
+| child    | string | 组件模板的子节点循环体 |
+| nodeName | string | 组件名                 |
 
-没有在 [this.voidElements](./platform-plugin-template#thisvoidelements) 中声明过的组件，会遍历子节点进行渲染。
+没有在 [this.voidElements](./template#thisvoidelements) 中声明过的组件，会遍历子节点进行渲染。
 
 这些组件的模板通用格式为：
 
@@ -245,10 +241,10 @@ modifyLoopBody (child, nodeName) {
 
 修改组件模板的子节点循环。
 
-| 参数 | 类型 | 说明 |
-| :--- | :--- | :--- |
+| 参数     | 类型   | 说明                 |
+| :------- | :----- | :------------------- |
 | children | string | 组件模板的子节点循环 |
-| nodeName | string | 组件名 |
+| nodeName | string | 组件名               |
 
 例子：
 
@@ -268,11 +264,11 @@ modifyLoopContainer (children, nodeName) {
 
 修改组件模板的最终结果。
 
-| 参数 | 类型 | 说明 |
-| :--- | :--- | :--- |
-| res | string | 组件模板的结果 |
-| nodeName | string | 组件名 |
-| level | string | 循环层级 |
+| 参数     | 类型   | 说明                 |
+| :------- | :----- | :------------------- |
+| res      | string | 组件模板的结果       |
+| nodeName | string | 组件名               |
+| level    | string | 循环层级             |
 | children | string | 组件模板的子节点循环 |
 
 例子：
@@ -289,10 +285,10 @@ modifyTemplateResult = (res: string, nodeName: string) => {
 
 设置组件的属性绑定语法。
 
-| 参数 | 类型 | 说明 |
-| :--- | :--- | :--- |
-| value | string | 属性值 |
-| key | string | 属性名 |
+| 参数     | 类型   | 说明   |
+| :------- | :----- | :----- |
+| value    | string | 属性值 |
+| key      | string | 属性名 |
 | nodeName | string | 组件名 |
 
 例子：
@@ -317,9 +313,9 @@ getAttrValue (value, key, nodeName) {
 
 ### 头条小程序模板
 
-* 头条小程序支持模板递归，所以继承 `RecursiveTemplate` 基类。
+- 头条小程序支持模板递归，所以继承 `RecursiveTemplate` 基类。
 
-* 因为不需要调整模板内容，所以只用设置 `supportXS` 和 `Adapter` 属性即可。
+- 因为不需要调整模板内容，所以只用设置 `supportXS` 和 `Adapter` 属性即可。
 
 ```js
 import { RecursiveTemplate } from '@tarojs/shared/dist/template'
@@ -334,17 +330,17 @@ export class Template extends RecursiveTemplate {
     forItem: 'tt:for-item',
     forIndex: 'tt:for-index',
     key: 'tt:key',
-    type: 'tt'
+    type: 'tt',
   }
 }
 ```
 
 ### 微信小程序模板
 
-* 微信小程序不支持模板递归，所以继承 `UnRecursiveTemplate` 基类。
-* 设置 `supportXS` 和 `Adapter` 属性。
-* 因为微信小程序支持渲染层脚本 `wxs`，所以通过 `buildXsTemplate` 设置 base 模板中对 utils 脚本的引用语法。
-* 利用 `replacePropName` 修改了组件绑定的属性名。
+- 微信小程序不支持模板递归，所以继承 `UnRecursiveTemplate` 基类。
+- 设置 `supportXS` 和 `Adapter` 属性。
+- 因为微信小程序支持渲染层脚本 `wxs`，所以  通过 `buildXsTemplate` 设置 base 模板中对 utils 脚本的引用语法。
+- 利用 `replacePropName` 修改了组件绑定的属性名。
 
 ```js
 import { UnRecursiveTemplate } from '@tarojs/shared/dist/template'
@@ -360,14 +356,14 @@ export class Template extends UnRecursiveTemplate {
     forIndex: 'wx:for-index',
     key: 'wx:key',
     xs: 'wxs',
-    type: 'weapp'
+    type: 'weapp',
   }
 
-  buildXsTemplate () {
+  buildXsTemplate() {
     return '<wxs module="xs" src="./utils.wxs" />'
   }
 
-  replacePropName (name, value, componentName) {
+  replacePropName(name, value, componentName) {
     if (value === 'eh') {
       const nameLowerCase = name.toLowerCase()
       if (nameLowerCase === 'bindlongtap' && componentName !== 'canvas') return 'bindlongpress'

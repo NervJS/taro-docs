@@ -6,40 +6,40 @@ title: Troubleshooting
 
 ### 入口 App 对象
 
-|属性|说明|
-|:--|:--|
-|onError||
-|onPageNotFound||
-|onUnhandledRejection||
-|onThemeChange||
+| 属性                 | 说明 |
+| :------------------- | :--- |
+| onError              |      |
+| onPageNotFound       |      |
+| onUnhandledRejection |      |
+| onThemeChange        |      |
 
 ### 页面 Page 对象
 
-|属性|说明|
-|:--|:--|
-|selectComponent|建议使用 React ref 重构|
-|selectAllComponents|建议使用 React ref 重构|
-|selectOwnerComponent|建议使用 React ref 重构|
-|groupSetData||
+| 属性                 | 说明                    |
+| :------------------- | :---------------------- |
+| selectComponent      | 建议使用 React ref 重构 |
+| selectAllComponents  | 建议使用 React ref 重构 |
+| selectOwnerComponent | 建议使用 React ref 重构 |
+| groupSetData         |                         |
 
 ### 自定义组件
 
-|属性|说明|
-|:--|:--|
-|moved||
-|externalClasses|Taro 3 不存在自定义组件，建议规范类名或使用 CSS Module 代替|
-|relations||
-|options||
-|definitionFilter||
+| 属性             | 说明                                                        |
+| :--------------- | :---------------------------------------------------------- |
+| moved            |                                                             |
+| externalClasses  | Taro 3 不存在自定义组件，建议规范类名或使用 CSS Module 代替 |
+| relations        |                                                             |
+| options          |                                                             |
+| definitionFilter |                                                             |
 
 ### wxml 语法
 
-|属性|说明|
-|:--|:--|
-|循环|[部分语法有限制]|
-|事件|[部分语法有限制](./taroize-troubleshooting#2-事件)|
-|引用|[部分语法有限制](./taroize-troubleshooting#16-include-里不支持使用-template)|
-|wxs|[部分语法有限制](./taroize-troubleshooting#15-不支持-wxs-里的-getregexp-方法)|
+| 属性 | 说明                                                                          |
+| :--- | :---------------------------------------------------------------------------- |
+| 循环 | [部分语法有限制]                                                              |
+| 事件 | [部分语法有限制](./taroize-troubleshooting#2-事件)                            |
+| 引用 | [部分语法有限制](./taroize-troubleshooting#16-include-里不支持使用-template)  |
+| wxs  | [部分语法有限制](./taroize-troubleshooting#15-不支持-wxs-里的-getregexp-方法) |
 
 ## 关键问题
 
@@ -52,7 +52,7 @@ title: Troubleshooting
 ```js
 // 组件
 VantComponent({
-  data: {}
+  data: {},
 })
 // 基类
 function VantComponent(vantOptions = {}) {
@@ -60,7 +60,7 @@ function VantComponent(vantOptions = {}) {
   // ...
 
   // 调用小程序的 Component 方法构造自定义组件
-  Component(options);
+  Component(options)
 }
 ```
 
@@ -68,7 +68,7 @@ Taro 在编译时只能识别出入口、页面、组件文件中存在的 `App(
 
 ```js
 VantComponent({
-  data: {}
+  data: {},
 })
 // withWeapp 中应该传入小程序配置对象
 @withWeapp({})
@@ -85,17 +85,16 @@ function VantComponent(vantOptions = {}) {
 
   // 调用小程序的 Component 方法构造自定义组件
   // Component(options);
-  
+
   // 1. 基类直接返回整合后的 options
   return options
 }
 ```
 
-
 ```js
 // 2. 把基类创建的配置传入 withWeapp：
 const options = VantComponent({
-  data: {}
+  data: {},
 })
 @withWeapp(options)
 class _C extends React.Component {}
@@ -137,17 +136,19 @@ class _C extends React.Component {}
 
 ```jsx
 // 转换后：
-{index % 2 !== 0 && (
-  <Block>
-    {objectArray.map((item, index) => {
-      return (
-        <Block>
-          <View>{'objectArray item: ' + item.id}</View>
-        </Block>
-      )
-    })}
-  </Block>
-)}
+{
+  index % 2 !== 0 && (
+    <Block>
+      {objectArray.map((item, index) => {
+        return (
+          <Block>
+            <View>{'objectArray item: ' + item.id}</View>
+          </Block>
+        )
+      })}
+    </Block>
+  )
+}
 ```
 
 上例可见，对于条件语句的转换，目前的处理会把条件提取到组件外部。但是如果条件使用了 `item` 或 `index` 时，这样的提取逻辑会导致**变量未定义**的报错。
@@ -169,11 +170,7 @@ class _C extends React.Component {}
 ```jsx
 <Block>
   {objectArray.map((item, index) => {
-    return (
-      <Block>
-        {index % 2 !== 0 && <View>{'objectArray item: ' + item.id}</View>}
-      </Block>
-    )
+    return <Block>{index % 2 !== 0 && <View>{'objectArray item: ' + item.id}</View>}</Block>
   })}
 </Block>
 ```
@@ -211,7 +208,6 @@ const { a, b, c } = this.data
 
 `this.data` 中的变量名，不要和用于指定数组当前下标的变量名，默认值为 `item`，或由 `wx:for-index` 具体指定的变量名相同。
 
-
 #### 1.5 不支持 WXS 里的 GetRegExp 方法
 
 使用 `RegExp` 构造正则表达式。
@@ -222,19 +218,19 @@ const { a, b, c } = this.data
 
 ### 2. 事件
 
-* 事件不支持绑定字符串。
-* `catchtouchmove` 转换后只能停止回调函数的冒泡，不能阻止滚动穿透。如要阻止滚动穿透，可以手动给编译后的 `View` 组件加上 `catchMove` 属性。
-* 不支持事件捕获阶段。
-* 不支持使用 WXS 函数响应事件。
-* 不支持互斥事件绑定 `mut-bind`。
-* 不支持 `mark` 来识别具体触发事件的 target 节点。
+- 事件不支持绑定字符串。
+- `catchtouchmove` 转换后只能停止回调函数的冒泡，不能阻止滚动穿透。如要阻止滚动穿透，可以手动给编译后的 `View` 组件加上 `catchMove` 属性。
+- 不支持事件捕获阶段。
+- 不支持使用 WXS 函数响应事件。
+- 不支持互斥事件绑定 `mut-bind`。
+- 不支持 `mark` 来识别具体触发事件的 target 节点。
 
 ### 3. CommonJS 和 ES 模块化语法不能混用
 
 可能遇到的报错信息：
 
-* Cannot assign to read only property 'exports' of object
-* export '[something]' (imported as '[name]') was not found in '[somePath]'
+- Cannot assign to read only property 'exports' of object
+- export '[something]' (imported as '[name]') was not found in '[somePath]'
 
 在使用到小程序 API 的地方，Taro 会把 `wx.api()` 转换为 `Taro.api()`，同时在文件的头部加上 `import Taro from '@tarjs/taro`。
 
@@ -271,7 +267,7 @@ Taro 会对 `Image` 组件的 src 进行处理：
 
 可能遇到的报错信息：
 
-* The "path" argument must be of type string. Received type undefined
+- The "path" argument must be of type string. Received type undefined
 
 不支持转换以下写法，[#4749](https://github.com/NervJS/taro/issues/4749)：
 

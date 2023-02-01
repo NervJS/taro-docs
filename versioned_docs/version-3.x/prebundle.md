@@ -19,9 +19,9 @@ const config = {
     type: 'webpack5',
     // 仅 webpack5 支持依赖预编译配置
     prebundle: {
-      enable: true
-    }
-  }
+      enable: true,
+    },
+  },
 }
 ```
 
@@ -85,7 +85,7 @@ Web 端使用依赖预编译特性时，需要在最外层增加 bootstrap 动�
 ```ts
 import { VirtualModule } from '@tarojs/webpack5-prebundle/dist/h5'
 
-VirtualModule.writeModule(bootPath, 'import(\'./app\')')
+VirtualModule.writeModule(bootPath, "import('./app')")
 ```
 
 当然手动更改入口文件引用的方法，可以跳过该操作，这样操作在普通项目中更为适用。

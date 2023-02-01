@@ -22,7 +22,6 @@ import { $ } from '@tarojs/extend'
 
 ## 核心方法
 
-
 ### $()
 
 - `$(selector, [context])   ⇒ collection`
@@ -35,19 +34,18 @@ import { $ } from '@tarojs/extend'
 
 `collection` 是一个类似数组的对象，它具有链式方法来操作它指向的 DOM 节点，除了 `$()` 对象上的直接方法外(如`$.extend`)，文档对象中的所有方法都是集合方法。
 
-如果选择器中存在content参数(css选择器，dom，或者集合对象)，那么只在所给的节点背景下进行css选择器；这个功能和使用 `$(context).find(selector)` 是一样的。
+如果选择器中存在 content 参数(css 选择器，dom，或者集合对象)，那么只在所给的节点背景下进行 css 选择器；这个功能和使用 `$(context).find(selector)` 是一样的。
 
 ```js
-$('view')  //=> 所有页面中得p元素
+$('view') //=> 所有页面中得p元素
 $('#foo') //=> ID 为 "foo" 的元素
 
 // 创建元素:
-$("<text>Hello</text>") //=> 新的text元素
+$('<text>Hello</text>') //=> 新的text元素
 // 创建带有属性的元素:
-$("<text />", { text:"Hello", id:"greeting", css:{color:'darkblue'} })
+$('<text />', { text: 'Hello', id: 'greeting', css: { color: 'darkblue' } })
 //=> <text id=greeting style="color:darkblue">Hello</p>
 ```
-
 
 :::caution 请注意
 此不支持 [jQuery CSS 扩展](https://www.html.cn/jqapi-1.9/category/selectors/jquery-selector-extensions/)， 然而，可选的“selector”模块有限提供了支持几个最常用的伪选择器，而且可以被丢弃，与现有的代码或插件的兼容执行。
@@ -64,8 +62,10 @@ $.fn 是一个对象，它拥有 jQuery 对象上所有可用的方法，如 `ad
 这里有一个实现 jQuery 的 `empty()` 方法的例子：
 
 ```js
-$.fn.empty = function(){
-  return this.each(function(){ this.innerHTML = '' })
+$.fn.empty = function () {
+  return this.each(function () {
+    this.innerHTML = ''
+  })
 }
 ```
 
@@ -74,13 +74,13 @@ $.fn.empty = function(){
 - `addClass(name)   ⇒ self`
 - `addClass(function(index, oldClassName){ ... })   ⇒ self`
 
-为每个匹配的元素添加指定的class类名。多个class类名使用空格分隔。
+为每个匹配的元素添加指定的 class 类名。多个 class 类名使用空格分隔。
 
 ### after
 
 - `after(content)   ⇒ self`
 
-在每个匹配的元素后插入内容（注：外部插入）。内容可以为html字符串，dom节点，或者节点组成的数组。
+在每个匹配的元素后插入内容（注：外部插入）。内容可以为 html 字符串，dom 节点，或者节点组成的数组。
 
 ```js
 $('form label').after('<p>A note below the label</p>')
@@ -90,8 +90,7 @@ $('form label').after('<p>A note below the label</p>')
 
 - `append(content)   ⇒ self`
 
-在每个匹配的元素末尾插入内容（注：内部插入）。内容可以为html字符串，dom节点，或者节点组成的数组。
-
+在每个匹配的元素末尾插入内容（注：内部插入）。内容可以为 html 字符串，dom 节点，或者节点组成的数组。
 
 ```js
 $('ul').append('<li>new list item</li>')
@@ -104,20 +103,20 @@ $('ul').append('<li>new list item</li>')
 - `attr(name, function(index, oldValue){ ... })   ⇒ self`
 - `attr({ name: value, name2: value2, ... })   ⇒ self`
 
-读取或设置dom的属性。如果没有给定value参数，则读取对象集合中第一个元素的属性值。当给定了value参数。则设置对象集合中所有元素的该属性的值。当value参数为`null`，那么这个属性将被移除(类似`removeAttr`)，多个属性可以通过对象键值对的方式进行设置。
+读取或设置 dom 的属性。如果没有给定 value 参数，则读取对象集合中第一个元素的属性值。当给定了 value 参数。则设置对象集合中所有元素的该属性的值。当 value 参数为`null`，那么这个属性将被移除(类似`removeAttr`)，多个属性可以通过对象键值对的方式进行设置。
 
-要读取DOM的属性如 `checked`和`selected`, 使用 `prop`。
+要读取 DOM 的属性如 `checked`和`selected`, 使用 `prop`。
 
 ```js
 var form = $('form')
-form.attr('action')             //=> 读取值
-form.attr('action', '/create')  //=> 设置值
-form.attr('action', null)       //=> 移除属性
+form.attr('action') //=> 读取值
+form.attr('action', '/create') //=> 设置值
+form.attr('action', null) //=> 移除属性
 
 // 多个属性:
 form.attr({
   action: '/create',
-  method: 'post'
+  method: 'post',
 })
 ```
 
@@ -125,8 +124,7 @@ form.attr({
 
 - `before(content)   ⇒ self`
 
-在匹配每个元素的前面插入内容（注：外部插入）。内容可以为html字符串，dom节点，或者节点组成的数组。
-
+在匹配每个元素的前面插入内容（注：外部插入）。内容可以为 html 字符串，dom 节点，或者节点组成的数组。
 
 ```js
 $('table').before('<p>See the following table:</p>')
@@ -136,7 +134,7 @@ $('table').before('<p>See the following table:</p>')
 
 - `children([selector])   ⇒ collection`
 
-获得每个匹配元素集合元素的直接子元素，如果给定selector，那么返回的结果中只包含符合css选择器的元素。
+获得每个匹配元素集合元素的直接子元素，如果给定 selector，那么返回的结果中只包含符合 css 选择器的元素。
 
 ```js
 $('ol').children('*:nth-child(2n)')
@@ -155,9 +153,9 @@ $('ol').children('*:nth-child(2n)')
 - `closest(collection)   ⇒ collection`
 - `closest(element)   ⇒ collection`
 
-从元素本身开始，逐级向上级元素匹配，并返回最先匹配selector的元素。如果给定context节点参数，那么只匹配该节点的后代元素。这个方法与 `parents(selector)`有点相像，但它只返回最先匹配的祖先元素。
+从元素本身开始，逐级向上级元素匹配，并返回最先匹配 selector 的元素。如果给定 context 节点参数，那么只匹配该节点的后代元素。这个方法与 `parents(selector)`有点相像，但它只返回最先匹配的祖先元素。
 
-如果参数是一个jQuery对象集合或者一个元素，结果必须匹配给定的元素而不是选择器。
+如果参数是一个 jQuery 对象集合或者一个元素，结果必须匹配给定的元素而不是选择器。
 
 ```js
 var input = $('input[type=text]')
@@ -168,7 +166,7 @@ input.closest('form')
 
 - `contents()   ⇒ collection`
 
-获得每个匹配元素集合元素的子元素，包括文字和注释节点。（注：`.contents()`和`.children()`方法类似，只不过前者包括文本节点以及jQuery对象中产生的HTML元素。）
+获得每个匹配元素集合元素的子元素，包括文字和注释节点。（注：`.contents()`和`.children()`方法类似，只不过前者包括文本节点以及 jQuery 对象中产生的 HTML 元素。）
 
 ### css
 
@@ -177,17 +175,17 @@ input.closest('form')
 - `css(property, value)   ⇒ self`
 - `css({ property: value, property2: value2, ... })   ⇒ self`
 
-读取或设置DOM元素的css属性。当value参数不存在的时候，返回对象集合中第一个元素的css属性。当value参数存在时，设置对象集合中每一个元素的对应css属性。
+读取或设置 DOM 元素的 css 属性。当 value 参数不存在的时候，返回对象集合中第一个元素的 css 属性。当 value 参数存在时，设置对象集合中每一个元素的对应 css 属性。
 
 多个属性可以通过传递一个属性名组成的数组一次性获取。多个属性可以利用对象键值对的方式进行设置。
 
-当value为空(空字符串，null 或 undefined)，那个css属性将会被移出。当value参数为一个无单位的数字，如果该css属性需要单位，“px”将会自动添加到该属性上。
+当 value 为空(空字符串，null 或 undefined)，那个 css 属性将会被移出。当 value 参数为一个无单位的数字，如果该 css 属性需要单位，“px”将会自动添加到该属性上。
 
 ```js
 var elem = $('h1')
-elem.css('background-color')          // read property
-elem.css('background-color', '#369')  // set property
-elem.css('background-color', '')      // remove property
+elem.css('background-color') // read property
+elem.css('background-color', '#369') // set property
+elem.css('background-color', '') // remove property
 
 // set multiple properties:
 elem.css({ backgroundColor: '#8EE', fontSize: 28 })
@@ -201,15 +199,14 @@ elem.css(['backgroundColor', 'fontSize'])['fontSize']
 - `data(name)   ⇒ value`
 - `data(name, value)   ⇒ self`
 
-读取或写入dom的 `data-*` 属性。行为有点像 attr ，但是属性名称前面加上 data-。
+读取或写入 dom 的 `data-*` 属性。行为有点像 attr ，但是属性名称前面加上 data-。
 
 当读取属性值时，会有下列转换:
 
 - “true”, “false”, and “null” 被转换为相应的类型；
 - 数字值转换为实际的数字类型；
-- JSON值将会被解析，如果它是有效的JSON；
+- JSON 值将会被解析，如果它是有效的 JSON；
 - 其它的一切作为字符串返回。
-
 
 ### each
 
@@ -218,7 +215,7 @@ elem.css(['backgroundColor', 'fontSize'])['fontSize']
 遍历一个对象集合每个元素。在迭代函数中，`this`关键字指向当前项(作为函数的第二个参数传递)。如果迭代函数返回 `false`，遍历结束。
 
 ```js
-$('form input').each(function(index){
+$('form input').each(function (index) {
   console.log('input %d is: %o', index, this)
 })
 ```
@@ -227,18 +224,17 @@ $('form input').each(function(index){
 
 - `empty()   ⇒ self`
 
-清空对象集合中每个元素的DOM内容。
-
+清空对象集合中每个元素的 DOM 内容。
 
 ### eq
 
 - `eq(index)   ⇒ collection`
 
-从当前对象集合中获取给定索引值（注：以0为基数）的元素。
+从当前对象集合中获取给定索引值（注：以 0 为基数）的元素。
 
 ```js
-$('li').eq(0)   //=> only the first list item
-$('li').eq(-1)  //=> only the last list item
+$('li').eq(0) //=> only the first list item
+$('li').eq(-1) //=> only the last list item
 ```
 
 ### filter
@@ -246,7 +242,7 @@ $('li').eq(-1)  //=> only the last list item
 - `filter(selector)   ⇒ collection`
 - `filter(function(index){ ... })   ⇒ collection`
 
-过滤对象集合，返回对象集合中满足css选择器的项。如果参数为一个函数，函数返回有实际值得时候，元素才会被返回。在函数中， this 关键字指向当前的元素。
+过滤对象集合，返回对象集合中满足 css 选择器的项。如果参数为一个函数，函数返回有实际值得时候，元素才会被返回。在函数中， this 关键字指向当前的元素。
 
 ### find
 
@@ -254,9 +250,9 @@ $('li').eq(-1)  //=> only the last list item
 - `find(collection)   ⇒ collection v1.0+`
 - `find(element)   ⇒ collection v1.0+`
 
-在当对象前集合内查找符合CSS选择器的每个元素的后代元素。
+在当对象前集合内查找符合 CSS 选择器的每个元素的后代元素。
 
-如果给定Zepto对象集合或者元素，过滤它们，只有当它们在当前Zepto集合对象中时，才回被返回。
+如果给定 Zepto 对象集合或者元素，过滤它们，只有当它们在当前 Zepto 集合对象中时，才回被返回。
 
 ```js
 var form = $('#myform')
@@ -284,21 +280,20 @@ $('form').first()
 - `get()   ⇒ array`
 - `get(index)   ⇒ DOM node`
 
-从当前对象集合中获取所有元素或单个元素。当index参数不存在的时，以普通数组的方式返回所有的元素。当指定index时，只返回该置的元素。这点与`eq`不同，该方法返回的是DOM节点，不是Zepto对象集合。
+从当前对象集合中获取所有元素或单个元素。当 index 参数不存在的时，以普通数组的方式返回所有的元素。当指定 index 时，只返回该置的元素。这点与`eq`不同，该方法返回的是 DOM 节点，不是 Zepto 对象集合。
 
 ```js
 var elements = $('h2')
-elements.get()   //=> get all headings as an array
-elements.get(0)  //=> get first heading node
+elements.get() //=> get all headings as an array
+elements.get(0) //=> get first heading node
 ```
-
 
 ### has
 
 - `has(selector)   ⇒ collection`
 - `has(node)   ⇒ collection`
 
-判断当前对象集合的子元素是否有符合选择器的元素，或者是否包含指定的DOM节点，如果有，则返回新的对象集合，该对象过滤掉不含有选择器匹配元素或者不含有指定DOM节点的对象。
+判断当前对象集合的子元素是否有符合选择器的元素，或者是否包含指定的 DOM 节点，如果有，则返回新的对象集合，该对象过滤掉不含有选择器匹配元素或者不含有指定 DOM 节点的对象。
 
 ```js
 $('ol > li').has('a[href]')
@@ -309,11 +304,10 @@ $('ol > li').has('a[href]')
 
 - `hasClass(name)   ⇒ boolean`
 
-检查对象集合中是否有元素含有指定的class。
-
+检查对象集合中是否有元素含有指定的 class。
 
 ```js
-$("li").hasClass("test")
+$('li').hasClass('test')
 ```
 
 ### height
@@ -336,7 +330,7 @@ const height = await $('#foo').height() // => 123
 
 - `hide()   ⇒ self`
 
-通过设置css的属性 `display` 为 `none` 来将对象集合中的元素隐藏。
+通过设置 css 的属性 `display` 为 `none` 来将对象集合中的元素隐藏。
 
 ### html
 
@@ -344,13 +338,12 @@ const height = await $('#foo').height() // => 123
 - `html(content)   ⇒ self`
 - `html(function(index, oldHtml){ ... })   ⇒ self`
 
-获取或设置对象集合中元素的HTML内容。当没有给定content参数时，返回对象集合中第一个元素的innerHtml。当给定content参数时，用其替换对象集合中每个元素的内容。content可以是append中描述的所有类型。
+获取或设置对象集合中元素的 HTML 内容。当没有给定 content 参数时，返回对象集合中第一个元素的 innerHtml。当给定 content 参数时，用其替换对象集合中每个元素的内容。content 可以是 append 中描述的所有类型。
 
 ```js
 // autolink everything that looks like a Twitter username
-$('.comment p').html(function(idx, oldHtml){
-  return oldHtml.replace(/(^|\W)@(\w{1,15})/g,
-    '$1@<a href="https://twitter.com/$2">$2</a>')
+$('.comment p').html(function (idx, oldHtml) {
+  return oldHtml.replace(/(^|\W)@(\w{1,15})/g, '$1@<a href="https://twitter.com/$2">$2</a>')
 })
 ```
 
@@ -358,10 +351,10 @@ $('.comment p').html(function(idx, oldHtml){
 
 - `index([element])   ⇒ number`
 
-获取一个元素的索引值（注：从0开始计数）。当elemen参数没有给出时，返回当前元素在兄弟节点中的位置。当element参数给出时，返回它在当前对象集合中的位置。如果没有找到该元素，则返回-1。
+获取一个元素的索引值（注：从 0 开始计数）。当 elemen 参数没有给出时，返回当前元素在兄弟节点中的位置。当 element 参数给出时，返回它在当前对象集合中的位置。如果没有找到该元素，则返回-1。
 
 ```js
-$('li:nth-child(2)').index()  //=> 1
+$('li:nth-child(2)').index() //=> 1
 ```
 
 ### insertAfter
@@ -398,12 +391,17 @@ $('li').last()
 
 - `map(function(index, item){ ... })   ⇒ collection`
 
-遍历对象集合中的所有元素。通过遍历函数返回值形成一个新的集合对象。在遍历函数中this关键之指向当前循环的项（遍历函数中的第二个参数）。
+遍历对象集合中的所有元素。通过遍历函数返回值形成一个新的集合对象。在遍历函数中 this 关键之指向当前循环的项（遍历函数中的第二个参数）。
 
-遍历中返回 null和undefined，遍历将结束。
+遍历中返回 null 和 undefined，遍历将结束。
 
 ```js
-elements.map(function(){ return $(this).text() }).get().join(', ')
+elements
+  .map(function () {
+    return $(this).text()
+  })
+  .get()
+  .join(', ')
 ```
 
 ### next
@@ -413,14 +411,13 @@ elements.map(function(){ return $(this).text() }).get().join(', ')
 
 获取对象集合中每一个元素的下一个兄弟节点(可以选择性的带上过滤选择器)。
 
-
 ### not
 
 - `not(selector)   ⇒ collection`
 - `not(collection)   ⇒ collection`
 - `not(function(index){ ... })   ⇒ collection`
 
-过滤当前对象集合，获取一个新的对象集合，它里面的元素不能匹配css选择器。如果另一个参数为Zepto对象集合，那么返回的新Zepto对象中的元素都不包含在该参数对象中。如果参数是一个函数。仅仅包含函数执行为`false`值得时候的元素，函数的 `this` 关键字指向当前循环元素。
+过滤当前对象集合，获取一个新的对象集合，它里面的元素不能匹配 css 选择器。如果另一个参数为 Zepto 对象集合，那么返回的新 Zepto 对象中的元素都不包含在该参数对象中。如果参数是一个函数。仅仅包含函数执行为`false`值得时候的元素，函数的 `this` 关键字指向当前循环元素。
 
 与它相反的功能，查看 `filter`。
 
@@ -430,30 +427,30 @@ elements.map(function(){ return $(this).text() }).get().join(', ')
 - `offset(coordinates)   ⇒ self`
 - `offset(function(index, oldOffset){ ... })   ⇒ self`
 
-获得当前元素相对于document的位置。返回一个对象含有： `top`, `left`, `width`和`height`。
+获得当前元素相对于 document 的位置。返回一个对象含有： `top`, `left`, `width`和`height`。
 
 ### offsetParent
 
 - `offsetParent()   ⇒ collection`
 
-找到第一个定位过的祖先元素，意味着它的css中的 `position` 属性值为“relative”, “absolute” or “fixed”
+找到第一个定位过的祖先元素，意味着它的 css 中的 `position` 属性值为“relative”, “absolute” or “fixed”
 
 ### parent
 
 - `parent([selector])   ⇒ collection`
 
-获取对象集合中每个元素的直接父元素。如果css选择器参数给出。过滤出符合条件的元素。
+获取对象集合中每个元素的直接父元素。如果 css 选择器参数给出。过滤出符合条件的元素。
 
 ### parents
 
 - `parents([selector])   ⇒ collection`
 
-获取对象集合每个元素所有的祖先元素。如果css选择器参数给出，过滤出符合条件的元素。
+获取对象集合每个元素所有的祖先元素。如果 css 选择器参数给出，过滤出符合条件的元素。
 
-如果想获取直接父级元素，使用 `parent`。如果只想获取到第一个符合css选择器的元素，使用`closest`。
+如果想获取直接父级元素，使用 `parent`。如果只想获取到第一个符合 css 选择器的元素，使用`closest`。
 
 ```js
-$('h1').parents()   //=> [<div#container>, <body>, <html>]
+$('h1').parents() //=> [<div#container>, <body>, <html>]
 ```
 
 ### position
@@ -469,7 +466,7 @@ var pos = element.position()
 $('#tooltip').css({
   position: 'absolute',
   top: pos.top - 30,
-  left: pos.left
+  left: pos.left,
 })
 ```
 
@@ -477,7 +474,7 @@ $('#tooltip').css({
 
 - `prepend(content)   ⇒ self`
 
-将参数内容插入到每个匹配元素的前面（注：元素内部插入）。插入d的元素可以试html字符串片段，一个dom节点，或者一个节点的数组。
+将参数内容插入到每个匹配元素的前面（注：元素内部插入）。插入 d 的元素可以试 html 字符串片段，一个 dom 节点，或者一个节点的数组。
 
 ```js
 $('ul').prepend('<li>first list item</li>')
@@ -506,7 +503,7 @@ $('<li>first list item</li>').prependTo('ul')
 - `prop(name, value)   ⇒ self`
 - `prop(name, function(index, oldValue){ ... })   ⇒ self`
 
-读取或设置dom元素的属性值。它在读取属性值的情况下优先于 `attr`，因为这些属性值会因为用户的交互发生改变，如`checked` 和 `selected`。
+读取或设置 dom 元素的属性值。它在读取属性值的情况下优先于 `attr`，因为这些属性值会因为用户的交互发生改变，如`checked` 和 `selected`。
 
 简写或小写名称，比如`for`, `class`, `readonly`及类似的属性，将被映射到实际的属性上，比如`htmlFor`, `className`, `readOnly`, 等等。
 
@@ -514,8 +511,7 @@ $('<li>first list item</li>').prependTo('ul')
 
 - `remove()   ⇒ self`
 
-从其父节点中删除当前集合中的元素，有效的从dom中移除。
-
+从其父节点中删除当前集合中的元素，有效的从 dom 中移除。
 
 ### removeAttr
 
@@ -528,23 +524,23 @@ $('<li>first list item</li>').prependTo('ul')
 - `removeClass([name])   ⇒ self`
 - `removeClass(function(index, oldClassName){ ... })   ⇒ self`
 
-移除当前对象集合中所有元素的指定class。如果没有指定name参数，将移出所有的class。多个class参数名称可以利用空格分隔。下例移除了两个class。
+移除当前对象集合中所有元素的指定 class。如果没有指定 name 参数，将移出所有的 class。多个 class 参数名称可以利用空格分隔。下例移除了两个 class。
 
 ```js
-$("#check1").removeClass("test")
+$('#check1').removeClass('test')
 ```
 
 ### removeProp
 
 - `removeProp(name)   ⇒ self`
 
-从集合的每个DOM节点中删除一个属性。这是用JavaScript的`delete`操作符完成。值得注意的是如果尝试删除DOM的一些内置属性，如`className`或`maxLength`，将不会有任何效果，因为浏览器禁止删除这些属性。
+从集合的每个 DOM 节点中删除一个属性。这是用 JavaScript 的`delete`操作符完成。值得注意的是如果尝试删除 DOM 的一些内置属性，如`className`或`maxLength`，将不会有任何效果，因为浏览器禁止删除这些属性。
 
 ### replaceWith
 
 - `replaceWith(content)   ⇒ self`
 
-用给定的内容替换所有匹配的元素。(包含元素本身)。content参数可以为 `before`中描述的类型。
+用给定的内容替换所有匹配的元素。(包含元素本身)。content 参数可以为 `before`中描述的类型。
 
 ### scrollLeft
 
@@ -576,8 +572,7 @@ const height = await $('#foo').scrollTop() // => 123
 
 - `siblings([selector])   ⇒ collection`
 
-获取对象集合中所有元素的兄弟节点。如果给定CSS选择器参数，过滤出符合选择器的元素。
-
+获取对象集合中所有元素的兄弟节点。如果给定 CSS 选择器参数，过滤出符合选择器的元素。
 
 ### size
 
@@ -585,12 +580,11 @@ const height = await $('#foo').scrollTop() // => 123
 
 获取对象集合中元素的数量。
 
-
 ### slice
 
 - `slice(start, [end])   ⇒ array`
 
-提取这个数组array的子集，从`start`开始，如果给定`end`，提取从从`start`开始到`end`结束的元素，但是不包含`end`位置的元素。
+提取这个数组 array 的子集，从`start`开始，如果给定`end`，提取从从`start`开始到`end`结束的元素，但是不包含`end`位置的元素。
 
 ### text
 
@@ -598,7 +592,7 @@ const height = await $('#foo').scrollTop() // => 123
 - `text(content)   ⇒ self`
 - `text(function(index, oldText){ ... })   ⇒ self`
 
-获取或者设置所有对象集合中元素的文本内容。当没有给定content参数时，返回当前对象集合中第一个元素的文本内容（包含子节点中的文本内容）。当给定content参数时，使用它替换对象集合中所有元素的文本内容。它有待点似 html，与它不同的是它不能用来获取或设置 HTML。
+获取或者设置所有对象集合中元素的文本内容。当没有给定 content 参数时，返回当前对象集合中第一个元素的文本内容（包含子节点中的文本内容）。当给定 content 参数时，使用它替换对象集合中所有元素的文本内容。它有待点似 html，与它不同的是它不能用来获取或设置 HTML。
 
 ### toggle
 
@@ -611,13 +605,13 @@ const height = await $('#foo').scrollTop() // => 123
 - `toggleClass(names, [setting])   ⇒ self`
 - `toggleClass(function(index, oldClassNames){ ... }, [setting])   ⇒ self`
 
-在匹配的元素集合中的每个元素上添加或删除一个或多个样式类。如果class的名称存在则删除它，如果不存在，就添加它。如果 setting的值为真，这个功能类似于 addClass，如果为假，这个功能类似与 removeClass。
+在匹配的元素集合中的每个元素上添加或删除一个或多个样式类。如果 class 的名称存在则删除它，如果不存在，就添加它。如果 setting 的值为真，这个功能类似于 addClass，如果为假，这个功能类似与 removeClass。
 
 ### unwrap
 
 - `unwrap()   ⇒ self`
 
-移除集合中每个元素的直接父节点，并把他们的子元素保留在原来的位置。 基本上，这种方法删除上一的祖先元素，同时保持DOM中的当前元素。
+移除集合中每个元素的直接父节点，并把他们的子元素保留在原来的位置。 基本上，这种方法删除上一的祖先元素，同时保持 DOM 中的当前元素。
 
 ### val
 
@@ -625,7 +619,7 @@ const height = await $('#foo').scrollTop() // => 123
 - `val(value)   ⇒ self`
 - `val(function(index, oldValue){ ... })   ⇒ self`
 
-获取或设置匹配元素的值。当没有给定value参数，返回第一个元素的值。当给定value参数，那么将设置所有元素的值。
+获取或设置匹配元素的值。当没有给定 value 参数，返回第一个元素的值。当给定 value 参数，那么将设置所有元素的值。
 
 ### width
 
@@ -636,7 +630,7 @@ const height = await $('#foo').scrollTop() // => 123
 获取对象集合中第一个元素的宽；或者设置对象集合中所有元素的宽。
 
 ```js
-await $('#foo').width()   // => 123
+await $('#foo').width() // => 123
 ```
 
 ## 事件
@@ -657,12 +651,11 @@ await $('#foo').width()   // => 123
 - `on({ type: handler, type2: handler2, ... }, [selector])   ⇒ self`
 - `on({ type: handler, type2: handler2, ... }, [selector], [data])   ⇒ self`
 
-添加事件处理程序到对象集合中得元素上。多个事件可以通过空格的字符串方式添加，或者以事件类型为键、以函数为值的对象 方式。如果给定css选择器，当事件在匹配该选择器的元素上发起时，事件才会被触发（注：即事件委派，或者说事件代理）。
+添加事件处理程序到对象集合中得元素上。多个事件可以通过空格的字符串方式添加，或者以事件类型为键、以函数为值的对象 方式。如果给定 css 选择器，当事件在匹配该选择器的元素上发起时，事件才会被触发（注：即事件委派，或者说事件代理）。
 
 如果给定`data`参数，这个值将在事件处理程序执行期间被作为有用的 `event.data` 属性
 
-事件处理程序在添加该处理程序的元素、或在给定选择器情况下匹配该选择器的元素的上下文中执行(注：this指向触发事件的元素)。 当一个事件处理程序返回false，preventDefault() 和 stopPropagation()被当前事件调用的情况下，  将防止默认浏览器操作，如链接。
-
+事件处理程序在添加该处理程序的元素、或在给定选择器情况下匹配该选择器的元素的上下文中执行(注：this 指向触发事件的元素)。 当一个事件处理程序返回 false，preventDefault() 和 stopPropagation()被当前事件调用的情况下， 将防止默认浏览器操作，如链接。
 
 ```js
 var elem = $('#content')
@@ -689,7 +682,7 @@ $('#test').on('click', 'nav a', false)
 
 - `trigger(event, [args])   ⇒ self`
 
-在对象集合的元素上触发指定的事件。如果给定args参数，它会作为参数传递给事件函数。
+在对象集合的元素上触发指定的事件。如果给定 args 参数，它会作为参数传递给事件函数。
 
 ```js
 $('#test').trigger('tap', ['one', 'two'])
@@ -697,6 +690,6 @@ $('#test').trigger('tap', ['one', 'two'])
 
 ### triggerHandler
 
-- triggerHandler(event, [args])   ⇒ self
+- triggerHandler(event, [args]) ⇒ self
 
 和 `trigger` 一样，它只在当前元素上触发事件，但不冒泡。

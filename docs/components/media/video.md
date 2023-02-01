@@ -5,7 +5,7 @@ sidebar_label: Video
 
 视频。相关api：Taro.createVideoContext
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/video.html)
 
@@ -141,6 +141,8 @@ export default class PageView extends Component {
 | enablePlayInBackground | `string` |  | 否 | video 播放时宿主退出后台后开启小窗播放，iOS 14 及以上版本支持。开启时首次退出后台后给予弹窗提示用户授权，授权完成后可以到小程序「设置」中重设。支持场景见后台小窗播放 |
 | signature | `string` |  | 否 | 设置署名水印 |
 | preferredPeakBitRate | `number` |  | 否 | 指定码率上界，单位为比特每秒 |
+| isLive | `boolean` |  | 否 | 是否为直播源 |
+| definition | `string` |  | 否 | 清晰度，设置清晰度列表和默认播放的清晰度。切换清晰度按钮仅在全屏时展示，属性说明详见 Definition 类型说明。需要保证 src 和 definition 中有一个为必填，若同时设置了 src 和 definition，definition 优先级高于 src |
 | onPlay | `CommonEventFunction` |  | 否 | 当开始/继续播放时触发 play 事件 |
 | onPause | `CommonEventFunction` |  | 否 | 当暂停播放时触发 pause 事件 |
 | onEnded | `CommonEventFunction` |  | 否 | 当播放到末尾时触发 ended 事件 |
@@ -189,7 +191,7 @@ export default class PageView extends Component {
 | VideoProps.autoplay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.loop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.muted | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.initialTime | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| VideoProps.initialTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.direction | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
 | VideoProps.showProgress | ✔️ | ✔️ |  |  | ✔️ |  | ✔️ |  |  |
 | VideoProps.showFullscreenBtn | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
@@ -211,7 +213,7 @@ export default class PageView extends Component {
 | VideoProps.showCastingButton | ✔️ |  |  |  |  |  |  |  |  |
 | VideoProps.pictureInPictureMode | ✔️ |  |  |  |  |  |  |  |  |
 | VideoProps.enableAutoRotation | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.showScreenLockButton | ✔️ |  |  |  |  |  |  |  |  |
+| VideoProps.showScreenLockButton | ✔️ |  |  | ✔️ |  |  |  |  |  |
 | VideoProps.showSnapshotButton | ✔️ |  |  |  |  |  |  |  |  |
 | VideoProps.showBackgroundPlaybackButton | ✔️ |  |  |  |  |  |  |  |  |
 | VideoProps.backgroundPoster | ✔️ |  |  |  |  |  |  |  |  |
@@ -238,6 +240,8 @@ export default class PageView extends Component {
 | VideoProps.enablePlayInBackground |  |  |  | ✔️ |  |  |  |  |  |
 | VideoProps.signature |  |  |  | ✔️ |  |  |  |  |  |
 | VideoProps.preferredPeakBitRate | ✔️ |  |  |  |  |  |  |  |  |
+| VideoProps.isLive | ✔️ |  |  |  |  |  |  |  |  |
+| VideoProps.definition |  |  |  | ✔️ |  |  |  |  |  |
 | VideoProps.onPlay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.onPause | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.onEnded | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
@@ -251,7 +255,7 @@ export default class PageView extends Component {
 | VideoProps.onLeavePictureInPicture | ✔️ |  |  |  |  |  |  |  |  |
 | VideoProps.onSeekComplete | ✔️ |  |  | ✔️ |  |  |  |  |  |
 | VideoProps.onFullScreenChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| VideoProps.onControlsToggle | ✔️ |  |  |  |  |  |  |  |  |
+| VideoProps.onControlsToggle | ✔️ | ✔️ |  |  |  |  |  |  |  |
 | VideoProps.onLoading |  |  | ✔️ |  |  |  |  |  |  |
 | VideoProps.onTap |  |  | ✔️ |  |  |  |  |  |  |
 | VideoProps.onUserAction |  |  | ✔️ |  |  |  |  |  |  |

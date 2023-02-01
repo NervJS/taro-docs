@@ -7,8 +7,9 @@
 
 // See https://docusaurus.io/docs/site-config.html for all the possible
 // site configuration options.
-const versions = require('./versions.json');
-const path = require('path');
+const versions = require('./versions.json')
+const path = require('path')
+
 const url = {
   zone: 'https://docs.taro.zone',
   jd: 'https://taro-docs.jd.com',
@@ -42,7 +43,7 @@ const siteConfig = {
           // sidebars file relative to website dir.
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/nervjs/taro-docs/edit/master/',
-          lastVersion: "3.x",
+          lastVersion: '3.x',
           versions: {
             current: {
               label: '下个版本',
@@ -68,7 +69,7 @@ const siteConfig = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   ({
     algolia: {
       appId: 'BH4D9OD16A',
@@ -156,7 +157,7 @@ const siteConfig = {
           position: 'left',
         },
         {
-          to: "docs/guide",
+          to: 'docs/guide',
           activeBasePath: 'docs/guide',
           activeBaseRegex: 'docs/guide',
           label: '教程',

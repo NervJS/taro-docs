@@ -48,8 +48,8 @@ export const useCounterStore = defineStore('counter', {
   actions: {
     increment() {
       this.count++
-    }
-  }
+    },
+  },
 })
 ```
 
@@ -64,21 +64,21 @@ export const useCounterStore = defineStore('counter', {
 </template>
 
 <script>
-import { useCounterStore } from '../stores'
+  import { useCounterStore } from '../stores'
 
-export default {
-  setup() {
-    const counter = useCounterStore()
+  export default {
+    setup() {
+      const counter = useCounterStore()
 
-    const onAdd = () => {
-      counter.count++
-    }
+      const onAdd = () => {
+        counter.count++
+      }
 
-    return {
-      counter,
-      onAdd
-    }
+      return {
+        counter,
+        onAdd,
+      }
+    },
   }
-}
 </script>
 ```

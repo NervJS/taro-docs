@@ -25,21 +25,21 @@ Taro 内置的一些 Composition API，可以从 `@tarojs/taro` 包中引入使�
 
 ```html title="在 setup 函数中使用"
 <script>
-import { useDidShow } from '@tarojs/taro'
+  import { useDidShow } from '@tarojs/taro'
 
-export default {
-  setup () {
-    useDidShow(() => console.log('onShow'))
+  export default {
+    setup() {
+      useDidShow(() => console.log('onShow'))
+    },
   }
-}
 </script>
 ```
 
 ```html title="在 <script setup> 中使用"
 <script setup>
-import { useDidShow } from '@tarojs/taro'
+  import { useDidShow } from '@tarojs/taro'
 
-useDidShow(() => console.log('onShow'))
+  useDidShow(() => console.log('onShow'))
 </script>
 ```
 
@@ -137,7 +137,7 @@ useReachBottom(() => {
 监听用户滑动页面事件。等同于 `onPageScroll` 页面生命周期钩子。
 
 ```jsx title="示例代码"
-usePageScroll(res => {
+usePageScroll((res) => {
   console.log(res.scrollTop)
 })
 ```
@@ -147,7 +147,7 @@ usePageScroll(res => {
 小程序屏幕旋转时触发。等同于 `onResize` 页面生命周期钩子。
 
 ```jsx title="示例代码"
-useResize(res => {
+useResize((res) => {
   console.log(res.size.windowWidth)
   console.log(res.size.windowHeight)
 })
@@ -161,24 +161,24 @@ useResize(res => {
 
 ```html title="page.vue"
 <script setup>
-import { useShareAppMessage } from '@tarojs/taro'
+  import { useShareAppMessage } from '@tarojs/taro'
 
-useShareAppMessage(res => {
-  if (res.from === 'button') {
-    // 来自页面内转发按钮
-    console.log(res.target)
-  }
-  return {
-    title: '自定义转发标题',
-    path: '/page/user?id=123'
-  }
-})
+  useShareAppMessage((res) => {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '自定义转发标题',
+      path: '/page/user?id=123',
+    }
+  })
 </script>
 ```
 
 ```js title="page.config.js" {2}
 export default {
-  enableShareAppMessage: true
+  enableShareAppMessage: true,
 }
 ```
 
@@ -187,7 +187,7 @@ export default {
 点击 tab 时触发。等同于 `onTabItemTap` 页面生命周期钩子。
 
 ```jsx title="示例代码"
-useTabItemTap(item => {
+useTabItemTap((item) => {
   console.log(item.index)
   console.log(item.pagePath)
   console.log(item.text)
@@ -204,17 +204,17 @@ useTabItemTap(item => {
 
 ```html title="page.vue"
 <script setup>
-import { useShareTimeline } from '@tarojs/taro'
+  import { useShareTimeline } from '@tarojs/taro'
 
-useShareTimeline(() => {
-  console.log('onShareTimeline')
-})
+  useShareTimeline(() => {
+    console.log('onShareTimeline')
+  })
 </script>
 ```
 
 ```js title="page.config.js" {2}
 export default {
-  enableShareTimeline: true
+  enableShareTimeline: true,
 }
 ```
 
@@ -225,7 +225,7 @@ export default {
 > 只有微信小程序支持，本接口为 Beta 版本，安卓 7.0.15 版本起支持，暂只在安卓平台支持
 
 ```jsx title="示例代码"
-useAddToFavorites(res => {
+useAddToFavorites((res) => {
   // webview 页面返回 webviewUrl
   console.log('WebviewUrl: ', res.webviewUrl)
   return {
@@ -251,7 +251,7 @@ useSaveExitState(() => {
   const exitState = { myDataField: 'myData' } // 需要保存的数据
   return {
     data: exitState,
-    expireTimeStamp: Date.now() + 24 * 60 * 60 * 1000 // 超时时刻
+    expireTimeStamp: Date.now() + 24 * 60 * 60 * 1000, // 超时时刻
   }
 })
 ```

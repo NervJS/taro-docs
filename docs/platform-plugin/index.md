@@ -4,27 +4,30 @@ title: 概述
 
 ## 端平台插件
 
-自 `v3.1.0` 起，我们把对每个小程序平台的兼容逻辑抽取了出来，以 [Taro 插件](./plugin)的形式注入 Taro 框架，从而支持对应平台的编译。
+自 `v3.1.0` 起，我们把对每个小程序平台的兼容逻辑抽取了出来，以 [Taro 插件](../plugin)的形式注入 Taro 框架，从而支持对应平台的编译。
+
+> Web 端平台插件自 `v3.6.0` 开始支持
 
 ### Taro 内置的端平台插件
 
-| 插件 | 编译平台 |
-| :--- | :--- |
-| @tarojs/plugin-platform-weapp | 微信小程序 |
+| 插件                           | 编译平台     |
+| :----------------------------- | :----------- |
+| @tarojs/plugin-platform-weapp  | 微信小程序   |
 | @tarojs/plugin-platform-alipay | 支付宝小程序 |
-| @tarojs/plugin-platform-swan | 百度小程序 |
-| @tarojs/plugin-platform-tt | 头条小程序 |
-| @tarojs/plugin-platform-qq | QQ 小程序 |
-| @tarojs/plugin-platform-jd | 京东小程序 |
+| @tarojs/plugin-platform-swan   | 百度小程序   |
+| @tarojs/plugin-platform-tt     | 头条小程序   |
+| @tarojs/plugin-platform-qq     | QQ 小程序    |
+| @tarojs/plugin-platform-jd     | 京东小程序   |
+| @tarojs/plugin-platform-h5     | Web 端       |
 
 ### 其它端平台插件
 
-| 插件 | 编译平台 |
-| :--- | :--- |
-| [@tarojs/plugin-platform-weapp-qy](https://github.com/NervJS/taro-plugin-platform-weapp-qy) | 企业微信小程序 |
-| [@tarojs/plugin-platform-alipay-dd](https://github.com/NervJS/taro-plugin-platform-alipay-dd) | 钉钉小程序 |
+| 插件                                                                                            | 编译平台          |
+| :---------------------------------------------------------------------------------------------- | :---------------- |
+| [@tarojs/plugin-platform-weapp-qy](https://github.com/NervJS/taro-plugin-platform-weapp-qy)     | 企业微信小程序    |
+| [@tarojs/plugin-platform-alipay-dd](https://github.com/NervJS/taro-plugin-platform-alipay-dd)   | 钉钉小程序        |
 | [@tarojs/plugin-platform-alipay-iot](https://github.com/NervJS/taro-plugin-platform-alipay-iot) | 支付宝 IOT 小程序 |
-| [@tarojs/plugin-platform-lark](https://github.com/NervJS/taro-plugin-platform-lark) | 飞书小程序 |
+| [@tarojs/plugin-platform-lark](https://github.com/NervJS/taro-plugin-platform-lark)             | 飞书小程序        |
 
 ### 端平台插件使用方法
 
@@ -34,9 +37,7 @@ title: 概述
 // Taro 项目配置
 module.exports = {
   // ...
-  plugins: [
-    '@tarojs/plugin-platform-alipay-iot'
-  ]
+  plugins: ['@tarojs/plugin-platform-alipay-iot'],
 }
 ```
 
@@ -57,16 +58,16 @@ taro build --type iot --watch
 
 为此我们萌生了打造一个**开放式框架**的想法。目标是可以通过插件的形式扩展 Taro 的端平台支持能力：
 
-* 插件开发者无需修改 Taro 核心库代码，按照一定的规则即可编写出一个端平台插件。
-* 插件使用者只需安装、配置端平台插件，即可把代码编译到指定平台。
+- 插件开发者无需修改 Taro 核心库代码，按照一定的规则即可编写出一个端平台插件。
+- 插件使用者只需安装、配置端平台插件，即可把代码编译到指定平台。
 
 端平台扩展又可以分为横向扩展和纵向扩展两种方式：
 
-* 横向扩展
+- 横向扩展
 
   扩展一个全新的编译平台，如美团小程序。
 
-* 纵向扩展
+- 纵向扩展
 
   继承现有的端平台插件，扩展出新的编译平台，如 QQ 小程序插件继承于微信小程序插件。
 

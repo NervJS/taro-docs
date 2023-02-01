@@ -12,7 +12,7 @@ Bug & Tip
  1. tip: 当前页面最多只有 1 个容器，若已存在容器的情况下，无法增加新的容器
  2. tip: wx.navigateBack 无法在页面栈顶调用，此时没有上一级页面
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/page-container.html)
 
@@ -34,7 +34,7 @@ ComponentType<PageContainerProps>
 | round | `boolean` | `false` | 否 | 是否显示圆角 |
 | overlayStyle | `string` |  | 否 | 自定义遮罩层样式 |
 | customStyle | `string` |  | 否 | 自定义弹出层样式 |
-| closeOnSlideDown | `string` | `false` | 否 | 是否在下滑一段距离后关闭 |
+| closeOnSlideDown | `boolean` | `false` | 否 | 是否在下滑一段距离后关闭 |
 | onBeforeEnter | `CommonEventFunction` |  | 否 | 进入前触发 |
 | onEnter | `CommonEventFunction` |  | 否 | 进入中触发 |
 | onAfterEnter | `CommonEventFunction` |  | 否 | 进入后触发 |
@@ -42,27 +42,31 @@ ComponentType<PageContainerProps>
 | onLeave | `CommonEventFunction` |  | 否 | 离开中触发 |
 | onAfterLeave | `CommonEventFunction` |  | 否 | 离开后触发 |
 | onClickOverlay | `CommonEventFunction` |  | 否 | 点击遮罩层时触发 |
+| onEnterCancelled | `CommonEventFunction` |  | 否 | 进入被打断时触发（通过 a: if 打断时不会触发）。 |
+| onLeaveCancelled | `CommonEventFunction` |  | 否 | 离开被打断时触发（通过 a: if 打断时不会触发）。 |
 
 ### API 支持度
 
-| API | 微信小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: |
-| PageContainerProps.show | ✔️ |  | ✔️ |  |
-| PageContainerProps.duration | ✔️ |  | ✔️ |  |
-| PageContainerProps.zIndex | ✔️ |  |  |  |
-| PageContainerProps.overlay | ✔️ |  | ✔️ |  |
-| PageContainerProps.position | ✔️ |  | ✔️ |  |
-| PageContainerProps.round | ✔️ |  | ✔️ |  |
-| PageContainerProps.overlayStyle | ✔️ |  | ✔️ |  |
-| PageContainerProps.customStyle | ✔️ |  | ✔️ |  |
-| PageContainerProps.closeOnSlideDown | ✔️ |  |  |  |
-| PageContainerProps.onBeforeEnter | ✔️ |  | ✔️ |  |
-| PageContainerProps.onEnter | ✔️ |  | ✔️ |  |
-| PageContainerProps.onAfterEnter | ✔️ |  | ✔️ |  |
-| PageContainerProps.onBeforeLeave | ✔️ |  | ✔️ |  |
-| PageContainerProps.onLeave | ✔️ |  | ✔️ |  |
-| PageContainerProps.onAfterLeave | ✔️ |  | ✔️ |  |
-| PageContainerProps.onClickOverlay | ✔️ |  |  |  |
+| API | 微信小程序 | 支付宝小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| PageContainerProps.show | ✔️ | ✔️ |  | ✔️ |  |
+| PageContainerProps.duration | ✔️ | ✔️ |  | ✔️ |  |
+| PageContainerProps.zIndex | ✔️ | ✔️ |  |  |  |
+| PageContainerProps.overlay | ✔️ | ✔️ |  | ✔️ |  |
+| PageContainerProps.position | ✔️ | ✔️ |  | ✔️ |  |
+| PageContainerProps.round | ✔️ | ✔️ |  | ✔️ |  |
+| PageContainerProps.overlayStyle | ✔️ | ✔️ |  | ✔️ |  |
+| PageContainerProps.customStyle | ✔️ | ✔️ |  | ✔️ |  |
+| PageContainerProps.closeOnSlideDown | ✔️ | ✔️ |  |  |  |
+| PageContainerProps.onBeforeEnter | ✔️ | ✔️ |  | ✔️ |  |
+| PageContainerProps.onEnter | ✔️ | ✔️ |  | ✔️ |  |
+| PageContainerProps.onAfterEnter | ✔️ | ✔️ |  | ✔️ |  |
+| PageContainerProps.onBeforeLeave | ✔️ | ✔️ |  | ✔️ |  |
+| PageContainerProps.onLeave | ✔️ | ✔️ |  | ✔️ |  |
+| PageContainerProps.onAfterLeave | ✔️ | ✔️ |  | ✔️ |  |
+| PageContainerProps.onClickOverlay | ✔️ | ✔️ |  |  |  |
+| PageContainerProps.onEnterCancelled |  | ✔️ |  |  |  |
+| PageContainerProps.onLeaveCancelled |  | ✔️ |  |  |  |
 
 ### Position
 

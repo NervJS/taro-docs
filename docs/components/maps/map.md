@@ -5,7 +5,7 @@ sidebar_label: Map
 
 地图。相关api Taro.createMapContext。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/map.html#map)
 
@@ -143,6 +143,7 @@ export default {
 | panels | `string` |  | 否 | 基于 map 高级定制渲染，设置覆盖在地图上的 view。 |
 | theme | `string` |  | 否 | 否 |
 | optimize | `string` |  | 否 | 内联样式。 |
+| enableAutoMaxOverlooking | `boolean` | `false` | 否 | 开启最大俯视角，俯视角度从 45 度拓展到 75 度 |
 | enable3D | `boolean` | `false` | 否 | 展示3D楼块 |
 | onTap | `CommonEventFunction` |  | 否 | 点击地图时触发 |
 | onMarkerTap | `CommonEventFunction<onMarkerTapEventDetail>` |  | 否 | 点击标记点时触发，e.detail = {markerId} |
@@ -197,6 +198,7 @@ export default {
 | MapProps.panels |  |  | ✔️ |  |  |  |  |  |  |
 | MapProps.theme |  |  |  |  |  | ✔️ |  |  |  |
 | MapProps.optimize |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.enableAutoMaxOverlooking | ✔️ |  |  |  |  |  |  |  |  |
 | MapProps.enable3D | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
 | MapProps.onTap | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | MapProps.onMarkerTap | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |

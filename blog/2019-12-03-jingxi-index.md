@@ -1,6 +1,6 @@
 ---
 slug: 2019-12-03-jingxi-index
-title: 京喜首页（微信购物入口）跨端开发与优化实践 
+title: 京喜首页（微信购物入口）跨端开发与优化实践
 author: aNd1coder
 author_url: https://github.com/aNd1coder
 author_image_url: https://avatars2.githubusercontent.com/u/168796?s=460&v=4
@@ -41,7 +41,7 @@ author_image_url: https://avatars2.githubusercontent.com/u/168796?s=460&v=4
 
 ![京喜丰富的产品形态](https://img14.360buyimg.com/ling/jfs/t1/99778/13/1485/65058/5dc00468E7d60a4e0/5bb82c1ec5ce3dd7.jpg)
 
-在技术选型上，我们选择团队自研的 [Taro](https://github.com/NervJS/taro/ "Taro") 多端统一开发解决方案。
+在技术选型上，我们选择团队自研的 [Taro](https://github.com/NervJS/taro/ 'Taro') 多端统一开发解决方案。
 
 > Taro 是一套遵循 React 语法规范的多端开发解决方案。
 >
@@ -59,26 +59,29 @@ author_image_url: https://avatars2.githubusercontent.com/u/168796?s=460&v=4
 
 ### H5 篇
 
-我们所有的页面都依赖现有业务的全局公共头尾及搜索栏等组件，这就不可避免的需要将 Taro 开发流程融入到现有开发和发布流程中去。同时公共组件都是通过 [SSI](https://en.wikipedia.org/wiki/Server_Side_Includes "SSI") 的方式引入和维护的，为了能在运行 `npm run dev:h5` 时预览到完整的页面效果，需要对 `index.html` 模版中的 SSI 语法进行解析，`index.html` 模版文件代码结构大致如下：
+我们所有的页面都依赖现有业务的全局公共头尾及搜索栏等组件，这就不可避免的需要将 Taro 开发流程融入到现有开发和发布流程中去。同时公共组件都是通过 [SSI](https://en.wikipedia.org/wiki/Server_Side_Includes 'SSI') 的方式引入和维护的，为了能在运行 `npm run dev:h5` 时预览到完整的页面效果，需要对 `index.html` 模版中的 SSI 语法进行解析，`index.html` 模版文件代码结构大致如下：
 
 ```html
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>京喜</title>
-  <!--#include virtual="/sinclude/common/head_inc.shtml"-->
-</head>
-<body>
-  <div id="m_common_header" style="display:none;"></div>
-  <!--S 搜索框-->
-  <div id="search_block" class="search_block"></div>
-  <div id="smartboxBlock" style="display:none;"></div>
-  <!--E 搜索框-->
-  <div id="app" class="wx_wrap"></div>
-  <!--#include virtual="/sinclude/common/foot.shtml"-->
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <title>京喜</title>
+    <!--#include virtual="/sinclude/common/head_inc.shtml"-->
+  </head>
+  <body>
+    <div id="m_common_header" style="display:none;"></div>
+    <!--S 搜索框-->
+    <div id="search_block" class="search_block"></div>
+    <div id="smartboxBlock" style="display:none;"></div>
+    <!--E 搜索框-->
+    <div id="app" class="wx_wrap"></div>
+    <!--#include virtual="/sinclude/common/foot.shtml"-->
+  </body>
 </html>
 ```
 
@@ -95,23 +98,23 @@ module.exports = {
               test: /\.html/,
               use: [
                 {
-                  loader: 'html-loader'
+                  loader: 'html-loader',
                 },
                 {
                   loader: 'ssi-loader',
                   options: {
                     locations: {
-                      include: 'https://wqs.jd.com'
-                    }
-                  }
-                }
-              ]
-            }
-          }
-        }
+                      include: 'https://wqs.jd.com',
+                    },
+                  },
+                },
+              ],
+            },
+          },
+        },
       })
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -133,8 +136,8 @@ const config = {
   outputRoot: process.argv[3] === 'weapp' ? '../.temp' : 'dist',
   // 不输出 app.js 和 app.json 文件
   weapp: {
-    appOutput: false
-  }
+    appOutput: false,
+  },
 }
 ```
 
@@ -144,45 +147,34 @@ const config = {
 // WEAPP
 const basePath = `../.temp`
 const destPaths = [`${basePath}/pages/index/`, `${basePath}/pages/components/`]
-const destFiles = destPaths.map(item => `${item}**/*.js`)
+const destFiles = destPaths.map((item) => `${item}**/*.js`)
 
 /*
  * 基类替换
  */
-function replaceBaseComponent (files) {
-  return (
-    gulp
-      .src(files || destFiles, { base: basePath })
-      .pipe(
-        replace(
-          /\b(Page|Component)(\(require\(['"](.*? "'"")\/npm\/)(.*)(createComponent.*)/,
-          function(match, p1, p2, p3, p4, p5) {
-            const type =
-              (p5 || '').indexOf('true') != -1 ||
-              (p5 || '').indexOf('!0') != -1
-                ? 'Page'
-                : 'Component'
-            if (type == 'Page') p5 = p5.replace('))', '), true)') // 新：page.js基类要多传一个参数
-            const reservedParts = p2 + p4 + p5
-            // const type = p1
-            // const reservedParts = p2
-            const rootPath = p3
+function replaceBaseComponent(files) {
+  return gulp
+    .src(files || destFiles, { base: basePath })
+    .pipe(
+      replace(
+        /\b(Page|Component)(\(require\(['"](.*? "'"")\/npm\/)(.*)(createComponent.*)/,
+        function (match, p1, p2, p3, p4, p5) {
+          const type = (p5 || '').indexOf('true') != -1 || (p5 || '').indexOf('!0') != -1 ? 'Page' : 'Component'
+          if (type == 'Page') p5 = p5.replace('))', '), true)') // 新：page.js基类要多传一个参数
+          const reservedParts = p2 + p4 + p5
+          // const type = p1
+          // const reservedParts = p2
+          const rootPath = p3
 
-            const clsName = type == 'Page' ? 'JDPage' : 'JDComponent'
-            const baseFile = type == 'Page' ? 'page.taro.js' : 'component.js'
+          const clsName = type == 'Page' ? 'JDPage' : 'JDComponent'
+          const baseFile = type == 'Page' ? 'page.taro.js' : 'component.js'
 
-            console.log(
-              `🌝 Replace with \`${clsName}\` successfully: ${this.file.path.replace(
-                /.*?wxapp\//,
-                'wxapp/'
-              )}`
-            )
-            return `new (require("${rootPath}/bases/${baseFile}").${clsName})${reservedParts}`
-          }
-        )
+          console.log(`🌝 Replace with \`${clsName}\` successfully: ${this.file.path.replace(/.*?wxapp\//, 'wxapp/')}`)
+          return `new (require("${rootPath}/bases/${baseFile}").${clsName})${reservedParts}`
+        }
       )
-      .pipe(gulp.dest(basePath))
-  )
+    )
+    .pipe(gulp.dest(basePath))
 }
 
 // 基类替换
@@ -209,9 +201,9 @@ rn: {
 }
 ```
 
-这样，当我们运行 `yarn run dev:rn` 进行本地开发时，文件自动编译到了 JDReact 项目，接下来我们就可以用模拟器或者真机来进行预览调试了。当我们在进行本地开发调试的时候，最高效的方式还是推荐用 Taro 官方提供的 [`taro-native-shell`](https://github.com/NervJS/taro-native-shell "`taro-native-shell`") 原生 React Native 壳子来启动我们的项目，详细的配置参照该项目的 README 进行配置即可。
+这样，当我们运行 `yarn run dev:rn` 进行本地开发时，文件自动编译到了 JDReact 项目，接下来我们就可以用模拟器或者真机来进行预览调试了。当我们在进行本地开发调试的时候，最高效的方式还是推荐用 Taro 官方提供的 [`taro-native-shell`](https://github.com/NervJS/taro-native-shell '`taro-native-shell`') 原生 React Native 壳子来启动我们的项目，详细的配置参照该项目的 README 进行配置即可。
 
-由于 React Native 官方提供的 [Remote Debugger](https://facebook.github.io/react-native/docs/debugging.html#chrome-developer-tools "Remote Debugger") 功能非常弱，推荐使用 [React Native Debugger](https://github.com/jhen0409/react-native-debugger "React Native Debugger") 来进行本地 RN 调试，提供了更为丰富的功能，基本接近 H5 和小程序的调试体验。
+由于 React Native 官方提供的 [Remote Debugger](https://facebook.github.io/react-native/docs/debugging.html#chrome-developer-tools 'Remote Debugger') 功能非常弱，推荐使用 [React Native Debugger](https://github.com/jhen0409/react-native-debugger 'React Native Debugger') 来进行本地 RN 调试，提供了更为丰富的功能，基本接近 H5 和小程序的调试体验。
 
 ![React Native Debugger 界面](https://img20.360buyimg.com/ling/jfs/t1/93257/12/1534/249244/5dc0282eE862961c6/bf7b8367ac970ecf.png)
 
@@ -263,14 +255,12 @@ rn: {
   下面的代码在 android 下会报错（empty_string 内容为空字符串）
 
   ```jsx
-  <View>
-    {empty_string && <Text></Text>}
-  </View>
+  <View>{empty_string && <Text></Text>}</View>
   ```
 
   因为 `empty_string && <Text></Text>` 的返回值是空字符串，RN 尝试把字符串添加到 View 的 children 时在安卓环境下会报错：
 
-  ``` js
+  ```js
   Error: Cannot add a child that doesn't have a YogaNode
   ```
 
@@ -281,9 +271,10 @@ rn: {
 
 - 透明 View 无法点击的问题，给设置了 onClick 的元素添加透明背景色即可：
 
-``` js
+```js
 style={{ backgroundColor: "transparent" }}
 ```
+
 不可以用 scss 写，只有写在 JSX 上的才有效，Taro 编译时可能把透明背景色忽略了。
 
 - 一像素缝隙问题
@@ -397,7 +388,7 @@ Taro 也支持样式文件内的条件编译，语法如下：
 /* #endif */
 ```
 
-`%PLATFORM%` 的取值请参考 [Taro 内置环境变量](/docs/envs "Taro 内置环境变量")
+`%PLATFORM%` 的取值请参考 [Taro 内置环境变量](/docs/envs 'Taro 内置环境变量')
 
 以下为示例代码：
 
@@ -405,7 +396,7 @@ Taro 也支持样式文件内的条件编译，语法如下：
 .selector {
   color: #fff;
   /* #ifndef RN */
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
   /* #endif */
 }
 ```
@@ -415,7 +406,7 @@ Taro 也支持样式文件内的条件编译，语法如下：
 ```scss
 .selector {
   color: #fff;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, .1);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 ```
 
@@ -461,7 +452,7 @@ RN 的样式为：
 
 针对这种场景也尝试过用 FlatList 和 SectionList 组件来优化，但是它们都要求规则等高的列表条目，于是不得不自己来实现不规则的瀑布流无限滚动加载。其核心思路是通过判断列表的条目是否在视窗内来决定图片是否渲染，要优化得更彻底些得话，甚至可以移除条目内所有内容只保留容器，以达到减少内容节点以及内存占用，不过在快速进行滑动时比较容易出现一片白框，算是为了性能损失一些体验，整体上来说是可以接受得。
 
-由于 RN 下在获取元素坐标偏移等数据相对 H5 和小程序要麻烦得到，具体的实现细节可以查看抽离出来的简单实现[Taro 高性能瀑布流组件（for RN）](https://github.com/aNd1coder/taro-waterfall "Taro 高性能瀑布流组件（for RN）")。
+由于 RN 下在获取元素坐标偏移等数据相对 H5 和小程序要麻烦得到，具体的实现细节可以查看抽离出来的简单实现[Taro 高性能瀑布流组件（for RN）](https://github.com/aNd1coder/taro-waterfall 'Taro 高性能瀑布流组件（for RN）')。
 
 ## 写在最后
 

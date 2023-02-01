@@ -2,9 +2,8 @@
 title: 入口组件
 ---
 
-import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
-import { VueIcon, ReactIcon } from './guides/index'
+import Tabs from '@theme/Tabs'
 
 每一个 Taro 应用都需要一个入口组件（React 组件）用来注册应用。入口文件默认是 `src` 目录下的 `app.js`。
 
@@ -34,18 +33,18 @@ const store = configStore()
 
 class App extends Component {
   // 可以使用所有的 React 生命周期方法
-  componentDidMount () {}
+  componentDidMount() {}
 
   // 对应 onLaunch
-  onLaunch () {}
+  onLaunch() {}
 
   // 对应 onShow
-  componentDidShow () {}
+  componentDidShow() {}
 
   // 对应 onHide
-  componentDidHide () {}
+  componentDidHide() {}
 
-  render () {
+  render() {
     // 在入口组件不会渲染任何内容，但我们可以在这里做类似于状态管理的事情
     return (
       <Provider store={store}>
@@ -63,7 +62,7 @@ export default App
 
 <TabItem value="functional">
 
-```jsx  title="app.js"
+```jsx title="app.js"
 import React, { useEffect } from 'react'
 
 // Taro 额外添加的 hooks 要从 '@tarojs/taro' 中引入
@@ -78,7 +77,7 @@ import './app.css'
 
 const store = configStore()
 
-function App (props) {
+function App(props) {
   // 可以使用所有的 React Hooks
   useEffect(() => {})
 
@@ -121,22 +120,21 @@ export default App
 
 ##### options
 
-| 属性 | 类型 |  说明 |
-| - | - | - |
-| path | string | 启动小程序的路径 |
-| scene | number | 启动小程序的场景值 |
-| query | Object | 启动小程序的 query 参数 |
-| shareTicket | string | shareTicket，详见获取更多转发信息 |
+| 属性         | 类型   | 说明                                                                 |
+| ------------ | ------ | -------------------------------------------------------------------- |
+| path         | string | 启动小程序的路径                                                     |
+| scene        | number | 启动小程序的场景值                                                   |
+| query        | Object | 启动小程序的 query 参数                                              |
+| shareTicket  | string | shareTicket，详见获取更多转发信息                                    |
 | referrerInfo | Object | 来源信息。从另一个小程序、公众号或 App 进入小程序时返回。否则返回 {} |
-
 
 ##### options.referrerInfo
 
-| 属性 | 类型 |  说明 |
-| - | - | - |
-| appId | string | 来源小程序，或者公众号（微信中） |
-| extraData | Object | 来源小程序传过来的数据，微信和百度小程序在scene=1037或1038时支持 |
-| sourceServiceId | string | 来源插件，当处于插件运行模式时可见 |
+| 属性            | 类型   | 说明                                                                 |
+| --------------- | ------ | -------------------------------------------------------------------- |
+| appId           | string | 来源小程序，或者公众号（微信中）                                     |
+| extraData       | Object | 来源小程序传过来的数据，微信和百度小程序在 scene=1037 或 1038 时支持 |
+| sourceServiceId | string | 来源插件，当处于插件运行模式时可见                                   |
 
 > options 参数的字段在不同小程序中可能存在差异，如：
 >
@@ -150,10 +148,10 @@ export default App
 
 参数与 `onLaunch` 中获取的基本一致，但**百度小程序**中补充两个参数如下：
 
-| 属性 | 类型 |  说明 |
-| - | - | - |
-| entryType | string | 展现的来源标识，取值为 user/ schema /sys :<br />user：表示通过home前后<br/>切换或解锁屏幕等方式调起；<br/>schema：表示通过协议调起;<br />sys：其它 |
-| appURL | string | 展现时的调起协议，仅当entryType值为 schema 时存在|
+| 属性      | 类型   | 说明                                                                                                                                                 |
+| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| entryType | string | 展现的来源标识，取值为 user/ schema /sys :<br />user：表示通过 home 前后<br/>切换或解锁屏幕等方式调起；<br/>schema：表示通过协议调起;<br />sys：其它 |
+| appURL    | string | 展现时的调起协议，仅当 entryType 值为 schema 时存在                                                                                                  |
 
 ### componentDidHide ()
 
@@ -172,10 +170,30 @@ Taro v3.5.0+ 开始支持
 程序要打开的页面不存在时触发。
 
 #### 参数
+
 ##### Object
 
-| 属性 | 类型 |  说明 |
-| - | - | - |
-| path | string | 不存在页面的路径 |
-| query | Object | 打开不存在页面的 query 参数 |
+| 属性        | 类型    | 说明                                                                           |
+| ----------- | ------- | ------------------------------------------------------------------------------ |
+| path        | string  | 不存在页面的路径                                                               |
+| query       | Object  | 打开不存在页面的 query 参数                                                    |
 | isEntryPage | boolean | 是否本次启动的首个页面（例如从分享等入口进来，首个页面是开发者配置的分享页面） |
+
+### onUnhandledRejection (Object)
+
+:::info
+Taro v3.5.10+ 开始支持
+:::
+
+小程序有未处理的 Promise 拒绝时触发。
+
+#### 参数
+
+##### Object
+
+| 属性    | 类型    | 说明                            |
+| ------- | ------- | ------------------------------- |
+| reason  | string  | 拒绝原因，一般是一个 Error 对象 |
+| promise | Promise | 被拒绝的 Promise 对象           |
+
+> 注意：**支付宝小程序**需要在源码根目录的 `project.alipay.json` 文件中添加配置 `enableAppxNg: true` 才能在真机环境进行监听。

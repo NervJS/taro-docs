@@ -5,7 +5,7 @@ sidebar_label: Input
 
 输入框。该组件是原生组件，使用时请注意相关限制
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/input.html)
 
@@ -89,23 +89,23 @@ class App extends Component {
 | 参数 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | :---: | :---: | --- |
 | value | `string` |  | 否 | 输入框的初始内容 |
-| type | "number" or "text" or "idcard" or "digit" or "safe-password" or "nickname" | `"text"` | 否 | input 的类型 |
-| password | `boolean` |  | 否 | 是否是密码类型 |
+| type | `keyof Type` | `"text"` | 否 | input 的类型 |
+| password | `boolean` | `false` | 否 | 是否是密码类型 |
 | placeholder | `string` |  | 否 | 输入框为空时占位符 |
 | placeholderStyle | `string` |  | 否 | 指定 placeholder 的样式 |
 | placeholderClass | `string` | `"input-placeholder"` | 否 | 指定 placeholder 的样式类 |
 | placeholderTextColor | `string` |  | 否 | 指定 placeholder 的文本颜色 |
-| disabled | `boolean` |  | 否 | 是否禁用 |
+| disabled | `boolean` | `false` | 否 | 是否禁用 |
 | maxlength | `number` | `140` | 否 | 最大输入长度，设置为 -1 的时候不限制最大长度 |
 | cursorSpacing | `number` | `0` | 否 | 指定光标与键盘的距离，单位 px 。取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离 |
 | autoFocus | `boolean` | `false` | 否 | (即将废弃，请直接使用 focus )自动聚焦，拉起键盘<br />**不推荐使用** |
 | focus | `boolean` | `false` | 否 | 获取焦点 |
-| confirmType | "send" or "search" or "next" or "go" or "done" | `done` | 否 | 设置键盘右下角按钮的文字 |
+| confirmType | `keyof ConfirmType` | `done` | 否 | 设置键盘右下角按钮的文字，仅在type='text'时生效 |
 | confirmHold | `boolean` | `false` | 否 | 点击键盘右下角按钮时是否保持键盘不收起 |
 | cursor | `number` |  | 否 | 指定focus时的光标位置 |
 | selectionStart | `number` | `-1` | 否 | 光标起始位置，自动聚集时有效，需与selection-end搭配使用 |
 | selectionEnd | `number` | `-1` | 否 | 光标结束位置，自动聚集时有效，需与selection-start搭配使用 |
-| adjustPosition | `boolean` | `false` | 否 | 键盘弹起时，是否自动上推页面 |
+| adjustPosition | `boolean` | `true` | 否 | 键盘弹起时，是否自动上推页面 |
 | holdKeyboard | `boolean` | `false` | 否 | focus 时，点击页面的时候不收起键盘 |
 | alwaysEmbed | `boolean` | `false` | 否 | 强制 input 处于同层状态，默认 focus 时 input 会切到非同层状态 (仅在 iOS 下生效) |
 | safePasswordCertPath | `string` |  | 否 | 安全键盘加密公钥的路径，只支持包内路径 |
@@ -115,23 +115,25 @@ class App extends Component {
 | safePasswordSalt | `string` |  | 否 | 安全键盘计算hash盐值，若指定custom-hash 则无效 |
 | safePasswordCustomHash | `string` |  | 否 | 安全键盘计算hash的算法表达式，如 `md5(sha1('foo' + sha256(sm3(password + 'bar'))))` |
 | randomNumber | `boolean` | `false` | 否 | 当 type 为 number, digit, idcard 数字键盘是否随机排列 |
-| controlled | `boolean` | `false` | 否 | 是否为受控组件 |
+| controlled | `boolean` | `false` | 否 | 是否为受控组件。为 true 时，value 内容会完全受 setData 控制。<br /><br />建议当 type 值为 text 时不要将 controlled 设置为 true,详见 [Bugs & Tips](https://opendocs.alipay.com/mini/component/input#Bug%20%26%20Tip) |
 | nativeProps | `Record<string, unknown>` |  | 否 | 用于透传 `WebComponents` 上的属性到内部 H5 标签上 |
 | name | `string` |  | 否 | 组件名字，用于表单提交获取数据。 |
-| alwaysSystem | `string` |  | 否 | 是否强制使用系统键盘和 Web-view 创建的 input 元素。为 true 时，confirm-type、confirm-hold 可能失效。 |
+| alwaysSystem | `boolean` | `false` | 否 | 是否强制使用系统键盘和 Web-view 创建的 input 元素。为 true 时，confirm-type、confirm-hold 可能失效。 |
 | ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
+| enableNative | `boolean` | `true` | 否 | 是否启用原生键盘。 |
 | onInput | `CommonEventFunction<inputEventDetail>` |  | 否 | 当键盘输入时，触发input事件，event.detail = {value, cursor, keyCode}，处理函数可以直接 return 一个字符串，将替换输入框的内容。 |
 | onFocus | `CommonEventFunction<inputForceEventDetail>` |  | 否 | 输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度 |
 | onBlur | `CommonEventFunction<inputValueEventDetail>` |  | 否 | 输入框失去焦点时触发 |
 | onConfirm | `CommonEventFunction<inputValueEventDetail>` |  | 否 | 点击完成按钮时触发 |
 | onKeyboardHeightChange | `CommonEventFunction<onKeyboardHeightChangeEventDetail>` |  | 否 | 键盘高度发生变化的时候触发此事件 |
+| onNickNameReview | `CommonEventFunction` |  | 否 | 用户昵称审核完毕后触发，仅在 type 为 "nickname" 时有效，event.detail = { pass, timeout } |
 
 ### API 支持度
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | InputProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| InputProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(部分支持) |  |
+| InputProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.password | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.placeholder | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.placeholderStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
@@ -142,7 +144,7 @@ class App extends Component {
 | InputProps.cursorSpacing | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
 | InputProps.autoFocus | ✔️ |  |  |  | ✔️ | ✔️ | ✔️ |  |  |
 | InputProps.focus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| InputProps.confirmType | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| InputProps.confirmType | ✔️ | ✔️ | ✔️(confirm-type 与 enableNative 属性冲突，若希望 confirm-type 生效，enableNative 不能设定为 false，而且不能设定 always-system) | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
 | InputProps.confirmHold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | InputProps.cursor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
 | InputProps.selectionStart | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
@@ -162,11 +164,55 @@ class App extends Component {
 | InputProps.name |  |  | ✔️ |  |  |  |  |  |  |
 | InputProps.alwaysSystem |  |  | ✔️ |  |  |  |  |  |  |
 | InputProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
+| InputProps.enableNative |  |  | ✔️ |  |  |  |  |  |  |
 | InputProps.onInput | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.onFocus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.onBlur | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.onConfirm | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(借用[Form 组件](./form)的`onSubmit`事件来替代) | ✔️ |  |
 | InputProps.onKeyboardHeightChange | ✔️ |  |  |  | ✔️ |  |  |  |  |
+| InputProps.onNickNameReview | ✔️ |  |  |  |  |  |  |  |  |
+
+### Type
+
+Input 类型
+
+| 参数 | 说明 |
+| --- | --- |
+| text | 文本输入键盘 |
+| number | 数字输入键盘 |
+| idcard | 身份证输入键盘 |
+| digit | 带小数点的数字键盘 |
+| safe-password | 密码安全输入键盘[指引](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/safe-password.html) |
+| nickname | 昵称输入键盘 |
+| numberpad | 数字输入键盘 |
+| digitpad | 带小数点的数字键盘 |
+| idcardpad | 身份证输入键盘 |
+
+#### API 支持度
+
+| API | 微信小程序 | 支付宝小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| Type.text | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| Type.number | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| Type.idcard | ✔️ | ✔️ |  | ✔️ |  |
+| Type.digit | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| Type.safe-password | ✔️ | ✔️ |  |  |  |
+| Type.nickname | ✔️ | ✔️ |  |  |  |
+| Type.numberpad |  | ✔️ |  |  |  |
+| Type.digitpad |  | ✔️ |  |  |  |
+| Type.idcardpad |  | ✔️ |  |  |  |
+
+### ConfirmType
+
+Confirm 类型
+
+| 参数 | 说明 |
+| --- | --- |
+| send | 右下角按钮为“发送” |
+| search | 右下角按钮为“搜索” |
+| next | 右下角按钮为“下一个” |
+| go | 右下角按钮为“前往” |
+| done | 右下角按钮为“完成” |
 
 ### inputEventDetail
 

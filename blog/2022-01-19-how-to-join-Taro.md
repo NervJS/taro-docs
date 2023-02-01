@@ -34,13 +34,13 @@ description: '本文讲述了参与大型开源项目-Taro 的流程，其中以
 
 ### 2. 找到感兴趣的 issue
 
-> Taro 官网：issue 中会列出所有被标记为 Help Wanted 的 Issues，并且会被分为 Easy、 Medium、 Hard 三种难易程度。
+> Taro 官网：issue 中会列出所有被标记为 good first issue 或 Helper Wanted 的 Issues，并且会被分为 Easy、 Medium、 Hard 三种难易程度。
 
-通过 issue 标签筛选，选择自己感兴趣的 issue，可以先从 **"Easy"** 的开始：
+通过 issue 标签筛选，选择自己感兴趣的 issue，可以先从 **"good first issue"** 或 **"Easy"** 的开始：
 
 ![s17454801222022](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/70b054166ff542e7be25584fde5f6de8~tplv-k3u1fbpfcp-zoom-1.image)
 
-在 issue 中 Assignees 至自己：
+在 Issue 中查看有没有你感兴趣的而且可以被分配（无其他重复 Issue 且未被分配）的 Issue， Assignees 至自己。如无 Assignees 权限，可以通过 [Draft Pull Requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests#draft-pull-requests) 占位或在评论区中 @管理员使其分配任务。
 
 ![s17463701222022](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0f1b088680d34783ac2712106b77cf4e~tplv-k3u1fbpfcp-zoom-1.image)
 

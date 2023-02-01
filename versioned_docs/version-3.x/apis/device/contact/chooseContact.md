@@ -12,7 +12,7 @@ sidebar_label: chooseContact
 ## 类型
 
 ```tsx
-(option: Option) => Promise<TaroGeneral.CallbackResult>
+(option: Option) => Promise<SuccessCallbackResult>
 ```
 
 ## 参数

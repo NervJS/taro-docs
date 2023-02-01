@@ -28,7 +28,7 @@ Taro 支持开发微信小程序插件，本文将介绍主要用法。
     ├── config                 配置目录
     ├── src                    源码目录
     |   ├── pages              调试页面目录，用于调试插件
-    |   |   └── index          
+    |   |   └── index
     |   ├── plugin             插件目录
     |   |   ├── doc            插件文档目录
     |   |   ├── components     组件插件目录
@@ -70,9 +70,7 @@ plugin.json 的 **pages** 字段加入页面插件路径：
 页面使用路径： **plugin://[app.js 中注册的插件名]/[plugin.json 中注册的页面名]** 进行跳转。
 
 ```jsx {1}
-<Navigator url='plugin://myPlugin/list'>
-  Go to pages/list!
-</Navigator>
+<Navigator url="plugin://myPlugin/list">Go to pages/list!</Navigator>
 ```
 
 ### 插件页面获取小程序渲染层元素
@@ -80,9 +78,12 @@ plugin.json 的 **pages** 字段加入页面插件路径：
 ```js
 // 通过 this.props.$scope 获取到小程序原生配置对象
 const query = Taro.createSelectorQuery().in(this.props.$scope)
-query.select('#id').boundingClientRect().exec(res => {
-  console.log(res)
-})
+query
+  .select('#id')
+  .boundingClientRect()
+  .exec((res) => {
+    console.log(res)
+  })
 ```
 
 ### genericsImplementation
@@ -107,8 +108,8 @@ plugin.json 的 **publicComponents** 字段加入组件插件路径：
 export default class Index extends Component {
   config = {
     usingComponents: {
-      'avatar': 'plugin://myPlugin/avatar'
-    }
+      avatar: 'plugin://myPlugin/avatar',
+    },
   }
 }
 ```
@@ -135,7 +136,7 @@ const extraProps = {
 
 ```js
 // 调用方传入事件回调函数
-<Plugin props={{ onSomeEvent () {} }} />
+;<Plugin props={{ onSomeEvent() {} }} />
 
 // 插件调用事件函数
 this.props.onSomeEvent()
@@ -146,9 +147,12 @@ this.props.onSomeEvent()
 ```js
 // 通过 this.props.$scope 获取到小程序原生配置对象
 const query = Taro.createSelectorQuery().in(this.props.$scope)
-query.select('#id').boundingClientRect().exec(res => {
-  console.log(res)
-})
+query
+  .select('#id')
+  .boundingClientRect()
+  .exec((res) => {
+    console.log(res)
+  })
 ```
 
 ### componentGenerics

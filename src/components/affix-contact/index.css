@@ -16,10 +16,13 @@
   border-radius: 48px;
   z-index: 300;
   background: #fff;
+  transition: .3s;
   border: 2px  solid #f1f1f1;
   box-shadow: 0 6px 16px 0 rgb(0 0 0 / 8%), 0 3px 6px -4px rgb(0 0 0 / 12%), 0 9px 28px 8px rgb(0 0 0 / 5%);
 }
+.affix-contact-btn:hover,
 .affix-contact-btn-show {
+  transform: scale(1.1);
   box-shadow: 0 6px 16px 0 rgb(0 0 0 / 18%), 0 3px 6px -4px rgb(0 0 0 / 12%), 0 9px 28px 8px rgb(0 0 0 / 5%);
 }
 .affix-contact-content {
@@ -36,6 +39,15 @@
   border-radius: 8px;
   box-shadow: 0 6px 16px 0 rgb(0 0 0 / 8%), 0 3px 6px -4px rgb(0 0 0 / 12%), 0 9px 28px 8px rgb(0 0 0 / 5%);
   -webkit-overflow-scrolling: touch;
+  transform: scale(0.8);
+  transition: .3s cubic-bezier(.175,.885,.32,1.275);
+  transform-origin: bottom right;
+  visibility: hidden;
+}
+.affix-contact-content.active {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
 }
 .affix-contact-content-tips {
   margin-bottom: 20px;

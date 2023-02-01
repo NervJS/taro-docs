@@ -2,9 +2,10 @@
 title: 使用 Vant Weapp
 ---
 
-import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
-import { VueIcon, ReactIcon } from './guides/index'
+import Tabs from '@theme/Tabs'
+
+import { ReactIcon, VueIcon } from './guides/index'
 
 Taro3 支持使用 [Vant Weapp](https://youzan.github.io/vant-weapp/#/intro) 组件库进行开发，示例仓库：[taro3-vant-sample](https://github.com/NervJS/taro3-vant-sample)。
 
@@ -28,10 +29,10 @@ const config = {
       pxtransform: {
         enable: true,
         config: {
-          selectorBlackList: [/van-/]
-        }
-      }
-    }
+          selectorBlackList: [/van-/],
+        },
+      },
+    },
   },
 }
 ```
@@ -47,14 +48,28 @@ const config = {
     patterns: [
       { from: 'src/components/vant-weapp/dist/wxs', to: 'dist/components/vant-weapp/dist/wxs' },
       { from: 'src/components/vant-weapp/dist/common/style', to: 'dist/components/vant-weapp/dist/common/style' },
-      { from: 'src/components/vant-weapp/dist/common/index.wxss', to: 'dist/components/vant-weapp/dist/common/index.wxss' },
-      { from: 'src/components/vant-weapp/dist/calendar/index.wxs', to: 'dist/components/vant-weapp/dist/calendar/index.wxs' },
-      { from: 'src/components/vant-weapp/dist/calendar/utils.wxs', to: 'dist/components/vant-weapp/dist/calendar/utils.wxs' },
-      { from: 'src/components/vant-weapp/dist/calendar/calendar.wxml', to: 'dist/components/vant-weapp/dist/calendar/calendar.wxml' },
-      { from: 'src/components/vant-weapp/dist/calendar/components/month/index.wxs', to: 'dist/components/vant-weapp/dist/calendar/components/month/index.wxs' },
+      {
+        from: 'src/components/vant-weapp/dist/common/index.wxss',
+        to: 'dist/components/vant-weapp/dist/common/index.wxss',
+      },
+      {
+        from: 'src/components/vant-weapp/dist/calendar/index.wxs',
+        to: 'dist/components/vant-weapp/dist/calendar/index.wxs',
+      },
+      {
+        from: 'src/components/vant-weapp/dist/calendar/utils.wxs',
+        to: 'dist/components/vant-weapp/dist/calendar/utils.wxs',
+      },
+      {
+        from: 'src/components/vant-weapp/dist/calendar/calendar.wxml',
+        to: 'dist/components/vant-weapp/dist/calendar/calendar.wxml',
+      },
+      {
+        from: 'src/components/vant-weapp/dist/calendar/components/month/index.wxs',
+        to: 'dist/components/vant-weapp/dist/calendar/components/month/index.wxs',
+      },
     ],
-    options: {
-    }
+    options: {},
   },
 }
 ```
@@ -67,8 +82,8 @@ const config = {
 export default {
   navigationBarTitleText: '首页',
   usingComponents: {
-    'van-button': '../../components/vant-weapp/dist/button/index'
-  }
+    'van-button': '../../components/vant-weapp/dist/button/index',
+  },
 }
 ```
 
@@ -91,10 +106,12 @@ import React, { Component } from 'react'
 import { View } from '@tarojs/components'
 
 export default class Index extends Component {
-  render () {
+  render() {
     return (
       <View>
-        <van-button type='primary' loading loading-text='ing'>Button</van-button>
+        <van-button type="primary" loading loading-text="ing">
+          Button
+        </van-button>
       </View>
     )
   }
@@ -108,14 +125,14 @@ export default class Index extends Component {
 ```html
 <template>
   <view>
-    <van-button type='primary' :loading='true' loading-text='ing'>Button</van-button>
+    <van-button type="primary" :loading="true" loading-text="ing">Button</van-button>
   </view>
 </template>
 
 <script>
-export default {
-  name: 'index'
-}
+  export default {
+    name: 'index',
+  }
 </script>
 ```
 
@@ -143,15 +160,17 @@ export default class Index extends Component {
     console.log('click')
   }
 
-  onAfterRead = res => {
+  onAfterRead = (res) => {
     console.log(res)
   }
 
-  render () {
+  render() {
     return (
       <View>
         // 对应 bind:click 事件
-        <van-button type='primary' onClick={this.handleClick} >Button</van-button>
+        <van-button type="primary" onClick={this.handleClick}>
+          Button
+        </van-button>
         // 对应 bind:after-read 事件
         <van-uploader fileList={[]} onAfterRead={this.onAfterRead} />
       </View>
@@ -167,22 +186,22 @@ export default class Index extends Component {
 ```html
 <template>
   <view>
-    <van-button type='primary' @click='handleClick'>Button</van-button>
-    <van-uploader :fileList='[]' @after-read='onAfterRead' />
+    <van-button type="primary" @click="handleClick">Button</van-button>
+    <van-uploader :fileList="[]" @after-read="onAfterRead" />
   </view>
 </template>
 
 <script>
-export default {
-  methods: {
-    handleClick () {
-      console.log('click')
+  export default {
+    methods: {
+      handleClick() {
+        console.log('click')
+      },
+      onAfterRead(res) {
+        console.log(res)
+      },
     },
-    onAfterRead (res) {
-      console.log(res)
-    }
   }
-}
 </script>
 ```
 
@@ -204,11 +223,11 @@ import React, { Component } from 'react'
 import { View, Slot } from '@tarojs/components'
 
 export default class Index extends Component {
-  render () {
+  render() {
     return (
       <View>
         <van-calendar poppable show>
-          <Slot name='title'>
+          <Slot name="title">
             <View>Hello world</View>
           </Slot>
         </van-calendar>
@@ -225,7 +244,7 @@ export default class Index extends Component {
 ```html
 <template>
   <view>
-    <van-calendar :poppable='true' :show='true'>
+    <van-calendar :poppable="true" :show="true">
       <slot-view :name='"title"'>
         <view>Hello world</view>
       </slot-view>
@@ -234,9 +253,9 @@ export default class Index extends Component {
 </template>
 
 <script>
-export default {
-  name: 'index'
-}
+  export default {
+    name: 'index',
+  }
 </script>
 ```
 
@@ -256,9 +275,9 @@ Component({
   props: {
     image: {
       type: String,
-      value: 'default'
-    }
-  }
+      value: 'default',
+    },
+  },
 })
 ```
 
@@ -269,15 +288,18 @@ Component({
 ```js
 const config = {
   plugins: [
-    ['@tarojs/plugin-inject', {
-      thirdPartyComponents: {
-        // 为 `van-empty` 组件的 image 属性设置默认值 'default'
-        'van-empty': {
-          'image': "'default'"
-        }
-      }
-    }]
-  ]
+    [
+      '@tarojs/plugin-inject',
+      {
+        thirdPartyComponents: {
+          // 为 `van-empty` 组件的 image 属性设置默认值 'default'
+          'van-empty': {
+            image: "'default'",
+          },
+        },
+      },
+    ],
+  ],
 }
 ```
 

@@ -39,8 +39,8 @@ tags: [v1]
 
 [死码删除（Dead code elimination）](https://en.wikipedia.org/wiki/Dead_code_elimination)是一种代码优化技术，可以删除对应用程序执行结果没有影响的代码。Web Fundamentals 的一篇文章有提到，treeshaking 是由 Rollup 提出的一种死码删除的形式。
 
-> Tree shaking is a form of dead code elimination. The term was popularized by Rollup, but the concept of dead code elimination has existed for some time. 
-> 
+> Tree shaking is a form of dead code elimination. The term was popularized by Rollup, but the concept of dead code elimination has existed for some time.
+>
 > -- [Reduce JavaScript Payloads with Tree Shaking](https://developers.google.com/web/fundamentals/performance/optimizing-javascript/tree-shaking/), Jeremy Wagner
 
 通过在构建时进行静态分析，编译工具可以分析出我们代码中真正的依赖关系。treeshaking 把我们的代码想象成一棵树，代码的每个依赖项看作树上的节点。将未使用过的依赖项从构建结果中移除，这就是 treeshaking 的基本思想。
@@ -66,7 +66,7 @@ import add2 from './add2.js' // 有副作用，不能直接删除
 
 ### 站在巨人的肩膀上
 
-除了 Rollup 之外，支持 treeshaking 的工具/插件还有很多，比如 babel-plugin-transform-dead-code-elimination、uglify、terser等。 webpack 在 v2 之后就内置了对 treeshaking 的支持，并在 webpack@4 中对 treeshaking 功能进行了扩展。
+除了 Rollup 之外，支持 treeshaking 的工具/插件还有很多，比如 babel-plugin-transform-dead-code-elimination、uglify、terser 等。 webpack 在 v2 之后就内置了对 treeshaking 的支持，并在 webpack@4 中对 treeshaking 功能进行了扩展。
 
 Taro H5 端在构建过程中，使用 webpack 作为构建的核心。在 webpack 中使用 treeshaking 功能有几个需要注意的地方：
 
@@ -100,13 +100,17 @@ webpack 的 treeshaking 工作主要分为两步。第一步是在模块级别�
 
 ```javascript
 // utils.js
-module.exports.add = function (a, b) { return a + b };
-module.exports.minus = function (a, b) { return a - b };
+module.exports.add = function (a, b) {
+  return a + b
+}
+module.exports.minus = function (a, b) {
+  return a - b
+}
 
 // index.js;
-var utils = require('./utils.js');
+var utils = require('./utils.js')
 
-utils.add(1, 2);
+utils.add(1, 2)
 ```
 
 像上面这段代码，虽然我们最终只使用了`add`函数，但`minus`函数也会在最终的打包代码中出现，因为在编译时无法快速得知是否使用了`minus`函数。
@@ -115,12 +119,16 @@ utils.add(1, 2);
 
 ```javascript
 // utils.js
-export function add (a, b) { return a + b };
-export function minus (a, b) { return a - b };
+export function add(a, b) {
+  return a + b
+}
+export function minus(a, b) {
+  return a - b
+}
 
 // index.js;
-import { add } from './utils.js';
-add(1, 2);
+import { add } from './utils.js'
+add(1, 2)
 ```
 
 在使用 ES6 模块系统改造后，我们可以清楚地看到，`minus`函数确实没有被使用过，所以可以安全地将其从最终打包代码中移除。
@@ -177,7 +185,7 @@ Taro.getSystemInfo()
 
 只要 Api 是通过对`Taro`变量取属性获取，`Taro`变量就需要具备所有的 Api，treeshaking 也就无从谈起。
 
-有没有办法把 defaultImport 修改为 namedImports 呢？答案是肯定的。我们写了一个 babel 插件 babel-plugin-transform-taroapi，将指定的 Api 调用替换为 namedImports，未指定的变量则保留属性取值的形式。具体源码可以在__这里__查看。
+有没有办法把 defaultImport 修改为 namedImports 呢？答案是肯定的。我们写了一个 babel 插件 babel-plugin-transform-taroapi，将指定的 Api 调用替换为 namedImports，未指定的变量则保留属性取值的形式。具体源码可以在**这里**查看。
 
 ```javascript
 // const apis = new Set(['navigateTo', 'navigateBack', ...])
@@ -197,7 +205,7 @@ Taro.getSystemInfo()
 
 这个插件接受一个对象作为配置参数：`packageName`属性指定需要进行替换的模块名，`apis`接受一个 Set 对象，也就是所有 Api 的列表。
 
-为了避免后期手动维护 Api 列表的情况，我们给 @tarojs/taro-h5 模块加了一个编译任务，通过一个简单的Rollup 插件，在执行`yarn build`命令时生成一份 Api 列表：
+为了避免后期手动维护 Api 列表的情况，我们给 @tarojs/taro-h5 模块加了一个编译任务，通过一个简单的 Rollup 插件，在执行`yarn build`命令时生成一份 Api 列表：
 
 ![image-20190225210238592](https://m.360buyimg.com/img/jfs/t1/11020/15/9616/262595/5c77fbadE6f554c3f/c4d4bc42d65508cd.png)
 
@@ -205,16 +213,16 @@ Taro.getSystemInfo()
 
 ```javascript
 // 编译前
-import Taro from '@tarojs/taro-h5';
-Taro.initPxTransform({});
+import Taro from '@tarojs/taro-h5'
+Taro.initPxTransform({})
 Taro.setStorage()
 Taro['getStorage']()
 
 // 编译后
-import Taro, { setStorage as _setStorage, getStorage as _getStorage } from '@tarojs/taro-h5';
-Taro.initPxTransform({});
-_setStorage();
-_getStorage();
+import Taro, { setStorage as _setStorage, getStorage as _getStorage } from '@tarojs/taro-h5'
+Taro.initPxTransform({})
+_setStorage()
+_getStorage()
 ```
 
 到这里，虽然过程比较艰辛，但我们对 @tarojs/taro-h5 的模块化改造终于完成了。
@@ -223,6 +231,6 @@ _getStorage();
 
 截至目前，Taro 在 H5 端的完成度已经很高，但是并不完美。未来，在对已有问题进行修复的同时，我们还将继续为 Taro H5 端带来更多新的特性，比如对社区中呼声相当高的`switchTab`、页面滚动监听`onPageScroll`、下拉刷新`onPullDownRefresh`等 Api 的支持，更加统一的页面切换动画，以及更加稳定的多页面模式等等。
 
-Taro 发展到现在，离不开社区的支持。非常感谢在 github、微信群中踊跃反馈的开发者们。如果你对Taro有什么想法或建议，Taro 非常欢迎你来吐槽或观光：
+Taro 发展到现在，离不开社区的支持。非常感谢在 github、微信群中踊跃反馈的开发者们。如果你对 Taro 有什么想法或建议，Taro 非常欢迎你来吐槽或观光：
 
 https://github.com/NervJS/taro

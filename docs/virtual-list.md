@@ -13,7 +13,6 @@ title: 长列表渲染（虚拟列表）
 
 ![virtual-list](https://img20.360buyimg.com/ling/jfs/t1/125645/6/13305/50138/5f6aaaa4E2f20eba7/d70a2d2da2d68de1.jpg)
 
-
 ## React/Nerv
 
 使用 React/Nerv 我们可以直接从 `@tarojs/components/virtual-list` 引入虚拟列表（VirtualList）组件：
@@ -25,16 +24,18 @@ import VirtualList from '@tarojs/components/virtual-list'
 一个最简单的长列表组件会像这样，`VirtualList` 的 5 个属性都是必填项：
 
 ```jsx
-function buildData (offset = 0) {
-  return Array(100).fill(0).map((_, i) => i + offset);
+function buildData(offset = 0) {
+  return Array(100)
+    .fill(0)
+    .map((_, i) => i + offset)
 }
 
-const Row = React.memo(({ id, index, style, data }) => {
+const Row = React.memo(({ id, index, data }) => {
   return (
-    <View id={id} className={index % 2 ? 'ListItemOdd' : 'ListItemEven'} style={style}>
+    <View id={id} className={index % 2 ? 'ListItemOdd' : 'ListItemEven'}>
       Row {index} : {data[index]}
     </View>
-  );
+  )
 })
 
 export default class Index extends Component {
@@ -47,15 +48,14 @@ export default class Index extends Component {
     const dataLen = data.length
     return (
       <VirtualList
-        height={500} /* 列表的高度 */
-        width='100%' /* 列表的宽度 */
-        itemData={data} /* 渲染列表的数据 */
-        itemCount={dataLen} /*  渲染列表的长度 */
+        height={800} /* 列表的高度 */
+        width="100%" /* 列表的宽度 */
+        item={Row} /* 列表单项组件，这里只能传入一个组件 */
+        itemData={data} /* 渲染列表的数据 */
+        itemCount={dataLen} /* 渲染列表的长度 */
         itemSize={100} /* 列表单项的高度  */
-      >
-        {Row} /* 列表单项组件，这里只能传入一个组件 */
-      </VirtualList>
-    );
+      />
+    )
   }
 }
 ```
@@ -65,17 +65,18 @@ export default class Index extends Component {
 实现无限滚动也非常简单，我们只需要在列表滚动到底部时，往列表尾部追加数据即可：
 
 ```jsx
-const Row = React.memo(({ id, index, style, data }) => {
+const Row = React.memo(({ id, index, data }) => {
   return (
-    <View id={id} className={index % 2 ? 'ListItemOdd' : 'ListItemEven'} style={style}>
+    <View id={id} className={index % 2 ? 'ListItemOdd' : 'ListItemEven'}>
       Row {index} : {data[index]}
     </View>
-  );
+  )
 })
 
-
-function buildData (offset = 0) {
-  return Array(100).fill(0).map((_, i) => i + offset);
+function buildData(offset = 0) {
+  return Array(100)
+    .fill(0)
+    .map((_, i) => i + offset)
 }
 
 export default class Index extends Component {
@@ -92,12 +93,15 @@ export default class Index extends Component {
     this.loading = true
     setTimeout(() => {
       const { data } = this.state
-      this.setState({
-        data: data.concat(buildData(data.length))
-      }, () => {
-        this.loading = false;
-        Taro.hideLoading()
-      })
+      this.setState(
+        {
+          data: data.concat(buildData(data.length)),
+        },
+        () => {
+          this.loading = false
+          Taro.hideLoading()
+        }
+      )
     }, 1000)
   }
 
@@ -107,12 +111,13 @@ export default class Index extends Component {
     const itemSize = 100
     return (
       <VirtualList
-        className='List'
+        className="List"
         height={500}
+        item={Row}
         itemData={data}
         itemCount={dataLen}
         itemSize={itemSize}
-        width='100%'
+        width="100%"
         onScroll={({ scrollDirection, scrollOffset }) => {
           if (
             // 避免重复加载数据
@@ -121,33 +126,29 @@ export default class Index extends Component {
             scrollDirection === 'forward' &&
             // 5 = (列表高度 / 单项列表高度)
             // 100 = 滚动提前加载量，可根据样式情况调整
-            scrollOffset > ((dataLen - 5) * itemSize + 100)
+            scrollOffset > (dataLen - 5) * itemSize + 100
           ) {
             this.listReachBottom()
           }
         }}
-      >
-        {Row}
-      </VirtualList>
-    );
+      />
+    )
   }
 }
-
 ```
 
 ### props
 
-#### `children: ReactComponent`
+#### `item: ReactComponent` （原 children 参数）
 
 将要渲染的列表单项组件。组件的 `props` 有 4 个属性：
 
-* `style`: 单项的样式，样式必须传入组件的 `style` 中
-* `data`: 组件渲染的数据，同虚拟列表 `itemData`
-* `index`: 组件渲染数据的索引
-* `isScrolling`: 组件是否正在滚动，当 `useIsScrolling` 值为 `true` 时返回布尔值，否则返回 `undefined`
+- `id`: 单项的 ID，必须传入组件的 `id` 中
+- `index`: 组件渲染数据的索引
+- `data`: 组件渲染的数据，同虚拟列表 `itemData`
+- `isScrolling`: 组件是否正在滚动，当 `useIsScrolling` 值为 `true` 时返回布尔值，否则返回 `undefined`
 
 推荐使用 `React.memo` 或 `React.PureComponent` 或使用 `shouldComponentUpdate()` 来优化此组件，避免不必要的渲染。
-
 
 #### `itemCount: number`
 
@@ -157,7 +158,7 @@ export default class Index extends Component {
 
 渲染数据。必填。
 
-#### `itemSize: number`
+#### `itemSize: number ｜ (index?: number, itemData?: Array<any>) => number`
 
 列表单项的大小，垂直滚动时为高度，水平滚动时为宽度。必填。
 
@@ -181,14 +182,9 @@ export default class Index extends Component {
 
 初始滚动偏移值，水平滚动影响 `scrollLeft`，垂直滚动影响 `scrollTop`。
 
-
 #### `innerElementType: ReactElement = View`
 
 列表内部容器组件类型，默认值为 `View`。此容器的 `parentNode` 是 `ScrollView`，`childNodes` 是列表。
-
-#### `innerRef: Ref | Function`
-
-列表内部容器组件的 ref。
 
 #### `layout: string = 'vertical'`
 
@@ -198,9 +194,9 @@ export default class Index extends Component {
 
 列表滚动时调用函数，函数的第一个参数为对象，由三个属性构成：
 
-* `scrollDirection`，滚动方向，可能值为 `forward` 往前， `backward` 往后。
-* `scrollOffset`，滚动距离
-* `scrollUpdateWasRequested`, 当滚动是由 `scrollTo()` 或 `scrollToItem()` 调用时返回 `true`，否则返回 `false`
+- `scrollDirection`，滚动方向，可能值为 `forward` 往前， `backward` 往后。
+- `scrollOffset`，滚动距离
+- `scrollUpdateWasRequested`, 当滚动是由 `scrollTo()` 或 `scrollToItem()` 调用时返回 `true`，否则返回 `false`
 
 #### `onScrollNative: Function`
 
@@ -210,6 +206,10 @@ export default class Index extends Component {
 
 在可视区域之外渲染的列表单项数量，值设置得越高，快速滚动时出现白屏的概率就越小，相应地，每次滚动的性能会变得越差。
 
+### `placeholderCount: number = overscanCount`
+
+在可视区域之外占位的列表单项数量，值设置得越高，快速滚动时出现白屏的概率就越小，相应地，每次滚动的性能会变得越差。
+
 #### `unlimitedSize?: boolean`
 
 解开高度列表单项大小限制，默认值使用: itemSize (请注意，初始高度与实际高度差异过大会导致隐患)。
@@ -218,13 +218,17 @@ export default class Index extends Component {
 
 布局方式，默认采用 "absolute"
 
+#### `renderTop?: ReactNode`
+
+顶部区域
+
 #### `renderBottom?: ReactNode`
 
 底部区域
 
 #### `useIsScrolling: boolean`
 
-是否注入 `isScrolling` 属性到 `children` 组件。这个参数一般用于实现滚动骨架屏（或其它 placeholder） 时比较有用。
+是否注入 `isScrolling` 属性到 `item` 组件。这个参数一般用于实现滚动骨架屏（或其它 placeholder） 时比较有用。
 
 #### 其它 `ScrollView` 组件的参数
 
@@ -254,15 +258,13 @@ export default class Index extends Component {
     return (
       <VirtualList
         height={500} /* 列表的高度 */
-        width='100%' /* 列表的宽度 */
-        itemData={data} /* 渲染列表数据 */
-        itemCount={dataLen} /*  渲染列表的长度 */
+        width="100%" /* 列表的宽度 */
+        item={Row} /* 列表单项组件，这里只能传入一个组件 */
+        itemData={threads} /* 渲染列表的数据 */
+        itemCount={threads.length} /*  渲染列表的长度 */
         itemSize={100} /* 列表单项的高度  */
-        ref={this.list}
-      >
-        {Row} /* 列表单项组件，这里只能传入一个组件 */
-      </VirtualList>
-    );
+      />
+    )
   }
 }
 ```
@@ -277,11 +279,11 @@ export default class Index extends Component {
 
 第二参数 `align` 的值可能为：
 
-* `auto`: 尽可能滚动距离最小保证条目在可视区域中，如果已经在可视区域，就不滚动
-* `smart`:  条目如果已经在可视区域，就不滚动；如果有部分在可视区域，尽可能滚动距离最小保证条目在可视区域中；如果条目完全不在可视区域，那就滚动到条目在可视区域居中显示
-* `center`: 让条目在可视区域居中显示
-* `end`: 让条目在可视区域末尾显示
-* `start`: 让条目在可视区域末尾显示
+- `auto`: 尽可能滚动距离最小保证条目在可视区域中，如果已经在可视区域，就不滚动
+- `smart`: 条目如果已经在可视区域，就不滚动；如果有部分在可视区域，尽可能滚动距离最小保证条目在可视区域中；如果条目完全不在可视区域，那就滚动到条目在可视区域居中显示
+- `center`: 让条目在可视区域居中显示
+- `end`: 让条目在可视区域末尾显示
+- `start`: 让条目在可视区域末尾显示
 
 ## Vue
 
@@ -290,31 +292,28 @@ export default class Index extends Component {
 ```js
 // app.js 入口文件
 import Vue from 'vue'
-import VirtualList from '@tarojs/components/virtual-list'
+import registerVirtualList from '@tarojs/components/virtual-list'
+// Note: 使用以下路径导出插件可以在 vue 中获得更好的类型支持
+// import registerVirtualList from '@tarojs/components-advanced/dist/components/virtual-list/vue'
 
-Vue.use(VirtualList)
+Vue.use(registerVirtualList)
 ```
 
 一个最简单的长列表组件会像这样，`virtual-list` 的 5 个属性都是必填项：
 
 ```html
-<! –– row.vue 单项组件 ––> 
+<! –– row.vue 单项组件 ––>
 <template>
-  <view
-    :class="index % 2 ? 'ListItemOdd' : 'ListItemEven'"
-    :style="css"
-  >
-    Row {{ index }} : {{ data[index] }}
-  </view>
+  <view :id="id" :class="index % 2 ? 'ListItemOdd' : 'ListItemEven'"> Row {{ index }} : {{ data[index] }} </view>
 </template>
 
 <script>
-export default {
-  props: ['index', 'data', 'css']
-}
+  export default {
+    props: ['id', 'index', 'data'],
+  }
 </script>
 
-<! –– page.vue 页面组件 ––> 
+<! –– page.vue 页面组件 ––>
 <template>
   <virtual-list
     wclass="List"
@@ -328,22 +327,24 @@ export default {
 </template>
 
 <script>
-import Row from './row.vue'
+  import { markRaw } from 'vue'
+  import Row from './row.vue'
 
-function buildData (offset = 0) {
-  return Array(100).fill(0).map((_, i) => i + offset)
-}
+  function buildData(offset = 0) {
+    return Array(100)
+      .fill(0)
+      .map((_, i) => i + offset)
+  }
 
-export default {
-  data() {
-    return {
-      Row,
-      list: buildData(0)
-    }
-  },
-}
+  export default {
+    data() {
+      return {
+        Row: markRaw(Row),
+        list: buildData(0),
+      }
+    },
+  }
 </script>
-
 ```
 
 ### 无限滚动
@@ -365,57 +366,62 @@ export default {
 </template>
 
 <script>
-import Row from './row.vue'
+  import { markRaw } from 'vue'
+  import Row from './row.vue'
 
-function buildData (offset = 0) {
-  return Array(100).fill(0).map((_, i) => i + offset)
-}
-
-export default {
-  data() {
-    return {
-      Row,
-      list: buildData(0),
-      loading: false,
-      itemHeight: 100
-    }
-  },
-  computed: {
-    dataLen () {
-      return this.list.length
-    }
-  },
-  methods: {
-    listReachBottom() {
-      Taro.showLoading()
-      this.loading = true
-      setTimeout(() => {
-        const { data } = this.state
-        this.setState({
-          data: data.concat(buildData(data.length))
-        }, () => {
-          this.loading = false;
-          Taro.hideLoading()
-        })
-      }, 1000)
-    },
-    onScroll({ scrollDirection, scrollOffset }) {
-      if (
-        // 避免重复加载数据
-        !this.loading &&
-        // 只有往前滚动我们才触发
-        scrollDirection === 'forward' &&
-        // 5 = (列表高度 / 单项列表高度)
-        // 100 = 滚动提前加载量，可根据样式情况调整
-        scrollOffset > ((this.dataLen - 5) * this.itemHeight + 100)
-      ) {
-        this.listReachBottom()
-      }
-    }
+  function buildData(offset = 0) {
+    return Array(100)
+      .fill(0)
+      .map((_, i) => i + offset)
   }
-}
-</script>
 
+  export default {
+    data() {
+      return {
+        Row: markRaw(Row),
+        list: buildData(0),
+        loading: false,
+        itemHeight: 100,
+      }
+    },
+    computed: {
+      dataLen() {
+        return this.list.length
+      },
+    },
+    methods: {
+      listReachBottom() {
+        Taro.showLoading()
+        this.loading = true
+        setTimeout(() => {
+          const { data } = this.state
+          this.setState(
+            {
+              data: data.concat(buildData(data.length)),
+            },
+            () => {
+              this.loading = false
+              Taro.hideLoading()
+            }
+          )
+        }, 1000)
+      },
+      onScroll({ scrollDirection, scrollOffset }) {
+        if (
+          // 避免重复加载数据
+          !this.loading &&
+          // 只有往前滚动我们才触发
+          scrollDirection === 'forward' &&
+          // 5 = (列表高度 / 单项列表高度)
+          // 100 = 滚动提前加载量，可根据样式情况调整
+          scrollOffset > (this.dataLen - 5) * this.itemHeight + 100
+        ) {
+          this.listReachBottom()
+        }
+      },
+    },
+  }
+</script>
 ```
 
 ### props
@@ -424,11 +430,12 @@ export default {
 
 将要渲染的列表单项组件。组件的 `props` 有 4 个属性：
 
-* `css`: 单项的样式，样式必须传入组件的 `style` 中
-* `data`: 组件渲染的数据，同虚拟列表 `itemData`
-* `index`: 组件渲染数据的索引
-* `isScrolling`: 组件是否正在滚动，当 `useIsScrolling` 值为 `true` 时返回布尔值，否则返回 `undefined`
+- `id`: 单项的 ID，必须传入组件的 `id` 中
+- `index`: 组件渲染数据的索引
+- `data`: 组件渲染的数据，同虚拟列表 `itemData`
+- `isScrolling`: 组件是否正在滚动，当 `useIsScrolling` 值为 `true` 时返回布尔值，否则返回 `undefined`
 
+推荐使用 `markRaw` 或使用 `shallowReactive` 来优化此组件。
 
 #### `itemCount: number`
 
@@ -438,7 +445,7 @@ export default {
 
 渲染数据。必填。
 
-#### `itemSize: number`
+#### `itemSize: number ｜ (index?: number, itemData?: Array<any>) => number`
 
 列表单项的大小，垂直滚动时为高度，水平滚动时为宽度。必填。
 
@@ -450,11 +457,11 @@ export default {
 
 列表的宽度。当滚动方向为水平时必填。
 
-#### `wclass: string`
+#### `class: string` (原 wclass 参数)
 
 根组件 CSS 类
 
-#### `wstyle: Style`
+#### `style: Style` (原 wstyle 参数)
 
 根组件的样式
 
@@ -462,11 +469,9 @@ export default {
 
 初始滚动偏移值，水平滚动影响 `scrollLeft`，垂直滚动影响 `scrollTop`。
 
-
 #### `innerElementType: string = 'view'`
 
 列表内部容器组件类型，默认值为 `view`。此容器的 `parentNode` 是 `scroll-view`，`childNodes` 是列表。
-
 
 #### `layout: string = 'vertical'`
 
@@ -476,11 +481,11 @@ export default {
 
 列表滚动时调用函数，函数的第一个参数为对象，由三个属性构成：
 
-* `scrollDirection`，滚动方向，可能值为 `forward` 往前， `backward` 往后。
-* `scrollOffset`，滚动距离
-* `scrollUpdateWasRequested`, 当滚动是由 `scrollTo()` 或 `scrollToItem()` 调用时返回 `true`，否则返回 `false`
+- `scrollDirection`，滚动方向，可能值为 `forward` 往前， `backward` 往后。
+- `scrollOffset`，滚动距离
+- `scrollUpdateWasRequested`, 当滚动是由 `scrollTo()` 或 `scrollToItem()` 调用时返回 `true`，否则返回 `false`
 
-#### `scrollNative: Function`
+#### `onScrollNative: Function` (原 scrollNative 参数)
 
 调用平台原生的滚动监听函数。注意调用传递此函数时使用的是 `v-bind` 而不是 `v-on`：
 
@@ -502,12 +507,38 @@ export default {
 
 在可视区域之外渲染的列表单项数量，值设置得越高，快速滚动时出现白屏的概率就越小，相应地，每次滚动的性能会变得越差。
 
+### `placeholderCount: number = overscanCount`
+
+在可视区域之外占位的列表单项数量，值设置得越高，快速滚动时出现白屏的概率就越小，相应地，每次滚动的性能会变得越差。
+
+#### `unlimitedSize?: boolean`
+
+解开高度列表单项大小限制，默认值使用: itemSize (请注意，初始高度与实际高度差异过大会导致隐患)。
+
+#### `position?: 'absolute' | 'relative'`
+
+布局方式，默认采用 "absolute"
 
 #### `useIsScrolling: boolean`
 
 是否注入 `isScrolling` 属性到 `item` 组件。这个参数一般用于实现滚动骨架屏（或其它 placeholder） 时比较有用。
 
+#### Slots
+
+支持 `top`、`bottom` 两个插槽，分别对应顶部和底部区域
+
+```html
+<virtual-list wclass="List" :height="500" :item-data="list" :item-count="list.length" :item-size="100" :item="Row">
+  <template #top>
+    <view>top</view>
+  </template>
+  <template #bottom>
+    <view>bottom</view>
+  </template>
+</virtual-list>
+```
+
 ## 相关问题
 
-* 百度小程序暂时不支持使用虚拟列表组件，详见 [#7254](https://github.com/NervJS/taro/issues/7254)
-* 虚拟列表组件需要实现一份 `Vue3` 版本（待实现），详见 [Vue3 其它限制](/docs/vue3#其它限制)
+- 百度小程序暂时不支持使用虚拟列表组件，详见 [#7254](https://github.com/NervJS/taro/issues/7254)
+- 在 `Vue3` 中使用虚拟列表需升级至 v3.6+ 版本

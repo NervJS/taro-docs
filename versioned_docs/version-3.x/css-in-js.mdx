@@ -2,21 +2,21 @@
 title: 使用 CSS-in-JS
 ---
 
-import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
+import Tabs from '@theme/Tabs'
 
 ## linaria
 
 在 React 社区有一个著名的 CSS-in-JS 解决方案: [styled-components](https://github.com/styled-components/styled-components)。但遗憾的是，`styled-components` 使用 `<style>` 标签来动态地控制样式，在小程序没有类似的方案。但我们可以通过 [linaria](https://github.com/callstack/linaria) 实现同样的功能，`linaria` 主要提供以下特性：
 
-* 近似于 `styled-components` 的 API
-* 完整的 TypeScript 支持
-* 零运行时
+- 近似于 `styled-components` 的 API
+- 完整的 TypeScript 支持
+- 零运行时
 
 使用 `linaria` 也非常简单，首先通过 NPM 安装依赖：
 
 ```bash
-$ pnpm i @linaria/core @linaria/react @linaria/babel-preset
+$ pnpm i @linaria/core @linaria/react @linaria/babel-preset @linaria/webpack-loader
 ```
 
 其次配置项目根目录的 `babel.config.js`:
@@ -24,12 +24,15 @@ $ pnpm i @linaria/core @linaria/react @linaria/babel-preset
 ```js title="babel.config.js"
 module.exports = {
   presets: [
-    ['taro', {
-      framework: 'react',
-      ts: true
-    }],
-    '@linaria' // 添加到 babel-preset
-  ]
+    [
+      'taro',
+      {
+        framework: 'react',
+        ts: true,
+      },
+    ],
+    '@linaria', // 添加到 babel-preset
+  ],
 }
 ```
 
@@ -47,7 +50,7 @@ const config = {
         .options({
           sourceMap: process.env.NODE_ENV !== 'production',
         })
-    }
+    },
   },
   h5: {
     webpackChain(chain, webpack) {
@@ -58,8 +61,8 @@ const config = {
         .options({
           sourceMap: process.env.NODE_ENV !== 'production',
         })
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -70,13 +73,13 @@ const config = {
 module.exports = {
   rules: [
     {
-      action: require("@linaria/shaker").default,
+      action: require('@linaria/shaker').default,
     },
     {
       test: /node_modules[\/\\](?!@tarojs)/,
-      action: "ignore"
-    }
-  ]
+      action: 'ignore',
+    },
+  ],
 }
 ```
 
@@ -96,13 +99,11 @@ import { View } from '@tarojs/components'
 import React from 'react'
 
 const Title = styled(View)`
-  color: ${props => props.color}
-`;
+  color: ${(props) => props.color};
+`
 
 const Index = () => {
-  return <Title color='red'>
-    Hello World!
-  </Title>
+  return <Title color="red">Hello World!</Title>
 }
 
 export default Index
@@ -119,19 +120,19 @@ import { View, ViewProps } from '@tarojs/components'
 import React from 'react'
 import './index.scss'
 
-declare type Component<TProps> = ((props: TProps) => any) | {
-  new (props: TProps): any
-}
+declare type Component<TProps> =
+  | ((props: TProps) => any)
+  | {
+      new (props: TProps): any
+    }
 
 type VPS = ViewProps & { style?: React.CSSProperties }
 type TP = VPS & { color: string }
 const Title = styled<TP, VPS, Component<TP>>(View)`
-  color: ${props => props.color}
+  color: ${(props) => props.color};
 `
 const Index: React.FC = () => {
-  return <Title color='red'>
-    Hello World!
-  </Title>
+  return <Title color="red">Hello World!</Title>
 }
 
 export default Index
@@ -142,9 +143,9 @@ export default Index
 
 ### 常见问题
 
-* 使用 Linaria 设置组件样式后，该组件上的属性不生效，[#11664](https://github.com/NervJS/taro/issues/11664)
-* `styled(View)` 写法会产生类型错误，[#8883](https://github.com/NervJS/taro/issues/8883)
-* 与微信小程序直播插件 `live-player-plugin` 共用时报错，[#7389](https://github.com/NervJS/taro/issues/7389)
+- 使用 Linaria 设置组件样式后，该组件上的属性不生效，[#11664](https://github.com/NervJS/taro/issues/11664)
+- `styled(View)` 写法会产生类型错误，[#8883](https://github.com/NervJS/taro/issues/8883)
+- 与微信小程序直播插件 `live-player-plugin` 共用时报错，[#7389](https://github.com/NervJS/taro/issues/7389)
 
 ## Fower
 

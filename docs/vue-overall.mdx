@@ -2,9 +2,8 @@
 title: 概述
 ---
 
-import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
-import { VueIcon, ReactIcon } from './guides/index'
+import Tabs from '@theme/Tabs'
 
 Taro 3 支持将 Web 框架直接运行在各平台，开发者使用的是真实的 Vue/Vue3 和 React 等框架。
 
@@ -61,15 +60,19 @@ Taro 中可以使用小程序规范的内置组件进行开发，如 `<view>`、
 
 <script>
   export default {
-    data () {
+    data() {
       return {
-        interval: 1000
+        interval: 1000,
       }
     },
     methods: {
-      handleTap () {console.log('tap')},
-      handleAnimationFinish () {console.log('finish')}
-    }
+      handleTap() {
+        console.log('tap')
+      },
+      handleAnimationFinish() {
+        console.log('finish')
+      },
+    },
   }
 </script>
 ```
@@ -82,7 +85,7 @@ Taro 中可以使用小程序规范的内置组件进行开发，如 `<view>`、
 
 ### Taro 规范
 
-1. 使用 `@` 修饰符（或 `v-on:`，更多用法可以参考[Vue文档](https://cn.vuejs.org/v2/guide/events.html)）替代小程序事件名中的 `bind`(替代支付宝小程序事件名中的 `on`)。
+1. 使用 `@` 修饰符（或 `v-on:`，更多用法可以参考[Vue 文档](https://cn.vuejs.org/v2/guide/events.html)）替代小程序事件名中的 `bind`(替代支付宝小程序事件名中的 `on`)。
 2. Vue 中点击事件使用 `@tap`。
 3. 事件名称一般遵循组件属性规范（全部小写）。
 4. 在 `vue@3.0.6` 或之后版本使用 JSX 时，事件名遵循 **onCamelcase** 规范，例如 `onGetphonenumber`。具体原因可参考 [#8796](https://github.com/NervJS/taro/issues/8796#issuecomment-802796286)。
@@ -107,15 +110,20 @@ Taro 中可以使用小程序规范的内置组件进行开发，如 `<view>`、
 </template>
 
 <script>
-export default {
-  methods: {
-    handleClick(e) {console.log('handleClick')
-      e.stopPropagation() // 阻止冒泡
+  export default {
+    methods: {
+      handleClick(e) {
+        console.log('handleClick')
+        e.stopPropagation() // 阻止冒泡
+      },
+      handleScroll() {
+        console.log('handleScroll')
+      },
+      handleScrollToUpper() {
+        console.log('handleScrollToUpper')
+      },
     },
-    handleScroll () {console.log('handleScroll')},
-    handleScrollToUpper () {console.log('handleScrollToUpper')}
   }
-}
 </script>
 ```
 
@@ -177,17 +185,20 @@ export default {
 ```js title="config/index.js"
 const config = {
   plugins: [
-    ['@tarojs/plugin-inject', {
-      components: {
-        View: {
-          'data-index': "'dataIndex'"
+    [
+      '@tarojs/plugin-inject',
+      {
+        components: {
+          View: {
+            'data-index': "'dataIndex'",
+          },
+          ScrollView: {
+            'data-observe': "'dataObserve'",
+          },
         },
-        ScrollView: {
-          'data-observe': "'dataObserve'",
-        }
-      }
-    }]
-  ]
+      },
+    ],
+  ],
 }
 ```
 
@@ -245,12 +256,12 @@ Vue 组件的生命周期方法在 Taro 中都支持使用。
 </template>
 
 <script>
-export default {
-  mounted () {
-    // 获取到的 DOM 具有类似 HTMLElement 或 Text 等对象的 API
-    console.log(this.$refs.el)
+  export default {
+    mounted() {
+      // 获取到的 DOM 具有类似 HTMLElement 或 Text 等对象的 API
+      console.log(this.$refs.el)
+    },
   }
-}
 </script>
 ```
 
@@ -258,26 +269,26 @@ export default {
 
 <TabItem value="vue3">
 
-```html  title="示例代码"
+```html title="示例代码"
 <template>
   <view id="only" ref="el" />
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'
+  import { ref, onMounted } from 'vue'
 
-export default {
-  setup () {
-    const el = ref(null)
+  export default {
+    setup() {
+      const el = ref(null)
 
-    onMounted(() => {
-      // 获取到的 DOM 具有类似 HTMLElement 或 Text 等对象的 API
-      console.log(el.value)
-    })
+      onMounted(() => {
+        // 获取到的 DOM 具有类似 HTMLElement 或 Text 等对象的 API
+        console.log(el.value)
+      })
 
-    return { el }
+      return { el }
+    },
   }
-}
 </script>
 ```
 
@@ -287,7 +298,6 @@ export default {
 ### 获取小程序 DOM
 
 获取真实的小程序渲染层节点，需要在 [onReady](vue-page#onready-) 生命周期中，调用小程序中用于获取 DOM 的 API。
-
 
 <Tabs
   defaultValue="vue"
@@ -303,16 +313,17 @@ export default {
 </template>
 
 <script>
-import Taro from '@tarojs/taro'
+  import Taro from '@tarojs/taro'
 
-export default {
-  onReady () {
-    // onReady 触发后才能获取小程序渲染层的节点
-    Taro.createSelectorQuery().select('#only')
-      .boundingClientRect()
-      .exec(res => console.log(res))
+  export default {
+    onReady() {
+      // onReady 触发后才能获取小程序渲染层的节点
+      Taro.createSelectorQuery()
+        .select('#only')
+        .boundingClientRect()
+        .exec((res) => console.log(res))
+    },
   }
-}
 </script>
 ```
 
@@ -320,24 +331,25 @@ export default {
 
 <TabItem value="vue3">
 
-```html  title="示例代码"
+```html title="示例代码"
 <template>
   <view id="only" />
 </template>
 
 <script>
-import Taro from '@tarojs/taro'
+  import Taro from '@tarojs/taro'
 
-export default {
-  onReady () {
-    // onReady 触发后才能获取小程序渲染层的节点，Vue3 需要使用 Taro.nextTick 确保已经渲染完成
-    Taro.nextTick(() => {
-      Taro.createSelectorQuery().select('#only')
-        .boundingClientRect()
-        .exec(res => console.log(res))
-    })
+  export default {
+    onReady() {
+      // onReady 触发后才能获取小程序渲染层的节点，Vue3 需要使用 Taro.nextTick 确保已经渲染完成
+      Taro.nextTick(() => {
+        Taro.createSelectorQuery()
+          .select('#only')
+          .boundingClientRect()
+          .exec((res) => console.log(res))
+      })
+    },
   }
-}
 </script>
 ```
 
@@ -362,6 +374,6 @@ export default {
 
 ## 其它限制
 
-* 由于小程序访问元素位置为异步 API，因此小程序中无法使用内置的 `transition-group` 组件。
-* 小程序中不支持 `<style scoped>`，建议使用 cssModules 代替。[#6662](https://github.com/NervJS/taro/issues/6662)
-* 所有组件的 `id` 必须在整个应用中保持唯一（即使他们在不同的页面），否则可能导致事件不触发的问题，[#7317](https://github.com/NervJS/taro/issues/7317)
+- 由于小程序访问元素位置为异步 API，因此小程序中无法使用内置的 `transition-group` 组件。
+- 小程序中不支持 `<style scoped>`，建议使用 cssModules 代替。[#6662](https://github.com/NervJS/taro/issues/6662)
+- 所有组件的 `id` 必须在整个应用中保持唯一（即使他们在不同的页面），否则可能导致事件不触发的问题，[#7317](https://github.com/NervJS/taro/issues/7317)

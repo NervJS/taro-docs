@@ -39,9 +39,7 @@ Taro 开发者社区：[https://taro-club.jd.com/](https://taro-club.jd.com/)
 
 我们希望与开发者进行及时且顺畅的交流，更希望每一次的问题答疑、经验交流都能被沉淀，分享给更多开发者，同时，我们渴望开发者之间可以开放互助，因此我们打造了一个全新的开发者社区。
 
-
 开发者可通过社区多个版块交流问题、共享经验、发布案例，等等。
-
 
 Taro 社区基于 NodeBB 开发，共设有 12 个版块，包括 Taro、Taro UI 及其对应转换的 8 个端，有效地对内容做了归类。此外，还设置了 新闻 版块，用于发布 Taro 新闻、公告、规划等；招聘 版块，让 Taro 求职者和招聘者快速匹配；灌水 版块，提供一个健康文明的交流（you）平台。
 
@@ -68,7 +66,8 @@ Taro 正在经历由内而外的成长，因此，我们对 Taro 品牌进行了
 希望通过我们的点滴努力，创造出更好的移动端开发环境，让工作回归简单、让生活日益丰满。
 
 相关网址：
-* Taro 官网：https://taro.jd.com
-* Taro 物料市场: https://taro-ext.jd.com
-* Taro 社区：https://taro-club.jd.com
-* GitHub: https://github.com/NervJS/taro
+
+- Taro 官网：https://taro.jd.com
+- Taro 物料市场: https://taro-ext.jd.com
+- Taro 社区：https://taro-club.jd.com
+- GitHub: https://github.com/NervJS/taro

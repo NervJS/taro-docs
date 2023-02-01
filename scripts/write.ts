@@ -1,7 +1,7 @@
-import * as fs from "fs"
-import * as path from "path"
+import fs from 'fs'
+import path from 'path'
 
-export default function writeFile (route: string, text: string = '') {
+export default function writeFile (route: string, text = '') {
   if (!route || !text) return
   console.log(`Document written to ${route}`)
   try {

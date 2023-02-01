@@ -6,7 +6,7 @@ sidebar_label: Swiper
 滑块视图容器。其中只可放置 swiper-item 组件，否则会导致未定义的行为。
 > 不要为 `SwiperItem` 设置 **style** 属性，可以通过 class 设置样式。[7147](https://github.com/NervJS/taro/issues/7147)
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html)
 
@@ -111,6 +111,8 @@ class App extends Component {
 | skipHiddenItemLayout | `boolean` | `false` | 否 | 是否跳过未显示的滑块布局，设为 true 可优化复杂情况下的滑动性能，但会丢失隐藏状态滑块的布局信息 |
 | easingFunction | `keyof TEasingFunction` | `"default"` | 否 | 指定 swiper 切换缓动动画类型 |
 | disableTouch | `boolean` | `false` | 否 | 是否禁止用户 touch 操作 |
+| zoom | `boolean` | `false` | 否 | 是否启用缩放 |
+| full | `boolean` | `false` | 否 | 是否开启全屏 |
 | activeClass | `string` |  | 否 | swiper-item 可见时的 class。 |
 | changingClass | `string` |  | 否 | acceleration 设置为 {{true}} 时且处于滑动过程中，中间若干屏处于可见时的 class。 |
 | acceleration | `string` | `false` | 否 | 当开启时，会根据滑动速度，连续滑动多屏。 |
@@ -146,6 +148,8 @@ class App extends Component {
 | SwiperProps.skipHiddenItemLayout |  |  |  |  | ✔️ | ✔️ |  |  |  |
 | SwiperProps.easingFunction | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |  |  |
 | SwiperProps.disableTouch |  |  | ✔️ |  |  |  |  |  |  |
+| SwiperProps.zoom |  |  |  |  |  |  | ✔️ |  |  |
+| SwiperProps.full |  |  |  |  |  |  | ✔️ |  |  |
 | SwiperProps.activeClass |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.changingClass |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.acceleration |  |  | ✔️ |  |  |  |  |  |  |
