@@ -1637,6 +1637,28 @@ module.exports = {
 }
 ```
 
+### h5.compile
+
+`object`
+
+Web 编译过程的相关配置。
+
+> 需要 v3.6 以上版本
+
+#### h5.compile.exclude
+
+`array`
+
+配置 Web 应用编译过程中**排除不需要经过 Taro 编译的文件**，使用方式与 [mini.compile.exclude](./config-detail#minicompileexclude) 一致，同 [Rule.exclude](https://webpack.js.org/configuration/module/#ruleexclude)。
+
+#### h5.compile.include
+
+`array`
+
+配置额外**需要经过 Taro 编译的文件**，使用方式与 [mini.compile.exclude](./config-detail#minicompileexclude) 一致，同 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude)。
+
+例如 Taro 默认不编译 `node_modules` 中的文件，可以通过这个配置让 Taro 编译 `node_modules` 中的文件。
+
 ### h5.htmlPluginOption
 
 :::info
