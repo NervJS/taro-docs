@@ -23,9 +23,9 @@
     "trans:en": "docusaurus write-translations --locale en"
   },
   "dependencies": {
-    "@docusaurus/core": "2.2.0",
-    "@docusaurus/plugin-pwa": "2.2.0",
-    "@docusaurus/preset-classic": "2.2.0",
+    "@docusaurus/core": "2.3.0",
+    "@docusaurus/plugin-pwa": "2.3.0",
+    "@docusaurus/preset-classic": "2.3.0",
     "@mdx-js/react": "^1.6.22",
     "@notionhq/client": "^2.2.2",
     "@swc/core": "^1.2.174",
@@ -70,8 +70,8 @@
     "eslint-plugin-react": "^7.4.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-standard": "^4.0.1",
-    "husky": "^8.0.1",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.1",
     "lint-staged": "^13.0.2",
     "node-fetch": "^2.6.7",
     "postcss": "^8.4.12",
