@@ -66,6 +66,7 @@ class App extends Components {
 | url | `string` |  | 否 | 推流地址。目前仅支持 rtmp 格式 |
 | mode | "SD" or "HD" or "FHD" or "RTC" | `"RTC"` | 否 | SD（标清）, HD（高清）, FHD（超清）, RTC（实时通话） |
 | autopush | `boolean` | `false` | 否 | 自动推流 |
+| enableVideoCustomRender | `boolean` | `false` | 否 | 自定义渲染，允许开发者自行处理所采集的视频帧 |
 | muted | `boolean` | `false` | 否 | 是否静音。即将废弃，可用 enable-mic 替代<br />**不推荐使用** |
 | enableCamera | `boolean` | `true` | 否 | 开启摄像头 |
 | autoFocus | `boolean` | `true` | 否 | 自动聚集 |
@@ -94,6 +95,11 @@ class App extends Components {
 | beautyStyle | `keyof BeautyStyleType` | `smooth` | 否 | 设置美颜类型 |
 | filter | `keyof FilterType` | `standard` | 否 | 设置色彩滤镜 |
 | pictureInPictureMode | string or any[] |  | 否 | 设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]） |
+| customEffect | `boolean` | `false` | 否 | 是否启动自定义特效，设定后不能更改 |
+| skinWhiteness | `number` | `0` | 否 | 自定义特效美白效果，取值 0~1。需要开启 custom-effect |
+| skinSmoothness | `number` | `0` | 否 | 自定义特效磨皮效果，取值 0~1。需要开启 custom-effect |
+| faceThinness | `number` | `0` | 否 | 自定义特效瘦脸效果，取值 0~1。需要开启 custom-effect |
+| eyeBigness | `number` | `0` | 否 | 自定义特效大眼效果，取值 0~1。需要开启 custom-effect |
 | onStateChange | `CommonEventFunction<onStateChangeEventDetail>` |  | 否 | 状态变化事件，detail = {code} |
 | onError | `CommonEventFunction<onErrorEventDetail>` |  | 否 | 渲染错误事件，detail = {errMsg, errCode} |
 | onBgmProgress | `CommonEventFunction<onBgmProgressEventDetail>` |  | 否 | 背景音进度变化时触发，detail = {progress, duration} |
@@ -111,6 +117,7 @@ class App extends Components {
 | LivePusherProps.url | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.mode | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.autopush | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.enableVideoCustomRender | ✔️ |  |  |  |  |
 | LivePusherProps.muted | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.enableCamera | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.autoFocus | ✔️ | ✔️ |  |  |  |
@@ -139,6 +146,11 @@ class App extends Components {
 | LivePusherProps.beautyStyle | ✔️ |  |  |  |  |
 | LivePusherProps.filter | ✔️ |  |  |  |  |
 | LivePusherProps.pictureInPictureMode | ✔️ |  |  |  |  |
+| LivePusherProps.customEffect | ✔️ |  |  |  |  |
+| LivePusherProps.skinWhiteness | ✔️ |  |  |  |  |
+| LivePusherProps.skinSmoothness | ✔️ |  |  |  |  |
+| LivePusherProps.faceThinness | ✔️ |  |  |  |  |
+| LivePusherProps.eyeBigness | ✔️ |  |  |  |  |
 | LivePusherProps.onStateChange | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.onError | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.onBgmProgress | ✔️ | ✔️ |  |  |  |
@@ -189,6 +201,7 @@ audioVolumeType 的合法值
 
 | 参数 | 说明 |
 | --- | --- |
+| auto | 自动 |
 | media | 媒体音量 |
 | voicecall | 通话音量 |
 

@@ -237,7 +237,7 @@ export default {
 | ScrollViewProps.scrollIntoView | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | ScrollViewProps.scrollWithAnimation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ScrollViewProps.enableBackToTop | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |
-| ScrollViewProps.enableFlex | ✔️ |  |  |  |  | ✔️ |  |  |  |
+| ScrollViewProps.enableFlex | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.scrollAnchoring | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.refresherEnabled | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.refresherThreshold | ✔️ |  |  |  |  |  |  |  |  |

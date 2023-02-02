@@ -177,9 +177,18 @@ export default App
 </TabItem>
 </Tabs>
 
+支付宝小程序的 `navigator` 组件不支持 `onTap` 事件，这导致 `<Link>` 组件或 `<a>` 标签无法捕获点击事件，从而无法拦截事件触发路由更新。
+因此，如果你需要适配支付宝小程序，需要额外处理 `<Link>` 组件或 `<a>` 标签的动态转换，指定 `as` 属性，`@tarojs/plugin-html` 插件会将其转换为指定的标签名：
+
+```jsx
+<a as="view"></a>  // => 将其转换为 view 标签展示
+<Link as="view" to="xxx" />
+<NavLink as="view" to="xxx" />
+```
+
 ## 示例 DEMO
 
-可以在以下 demo 中看到更多路由特性用法。
+在引入路由库前，可以从以下 demo 中看到更多路由特性用法。
 
 - [React + react-router v6](https://github.com/AdvancedCat/taro-react-router)
 - [Vue3 + vue-router v4](https://github.com/AdvancedCat/taro-vue-router)
@@ -245,7 +254,8 @@ window.addEventListener('popstate', () => {
 ## 注意事项
 
 1. 在 Web 端可以通过赋值 location.href 实现页面加载，但在小程序中不适用，小程序端的页面跳转仍建议使用 `Taro.navigateTo` 等官方 api。在小程序侧，应该将 `location` 上的属性视为只读。
-2. `location.origin` 将默认为 `https://taro.com`，`location.assigin()` `location.replace()` 在小程序侧无效；
+2. `location.origin` 将默认为 `https://taro.com`，`location.assign()` `location.replace()` 在小程序侧无效；
+3. 需要为支付宝小程序做额外适配，见文档说明；
 
 ## 详细设计
 
