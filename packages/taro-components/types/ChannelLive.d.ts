@@ -1,6 +1,5 @@
 import { ComponentType } from 'react'
 import { StandardProps } from './common'
-
 interface ChannelLiveProps extends StandardProps {
   /** 视频 feedId
    * @supported weapp
