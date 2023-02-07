@@ -23,9 +23,9 @@
     "trans:en": "docusaurus write-translations --locale en"
   },
   "dependencies": {
-    "@docusaurus/core": "2.3.0",
-    "@docusaurus/plugin-pwa": "2.3.0",
-    "@docusaurus/preset-classic": "2.3.0",
+    "@docusaurus/core": "^2.3.1",
+    "@docusaurus/plugin-pwa": "^2.3.1",
+    "@docusaurus/preset-classic": "^2.3.1",
     "@mdx-js/react": "^1.6.22",
     "@notionhq/client": "^2.2.2",
     "@swc/core": "^1.2.174",
