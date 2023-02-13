@@ -37,7 +37,7 @@ Handles compile-related operations such as Webpack configuration, template gener
 
 ### 一、Writing Taro plugins
 
-Pre-reading: [[How to Write a Taro Plugin]](./plugin#如何编写一个插件)。
+Pre-reading: [[How to Write a Taro Plugin]](./plugin-custom)。
 
 First we need to write a Taro plugin to register our compilation platform, eg.
 

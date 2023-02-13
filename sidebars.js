@@ -78,7 +78,14 @@ module.exports = {
       'use-h5',
       'jquery-like',
       'dynamic-import',
-      'plugin',
+      {
+        label: '插件功能',
+        type: 'category',
+        items: [
+          'plugin',
+          'plugin-custom'
+        ]
+      },
       {
         label: '性能优化',
         type: 'category',
