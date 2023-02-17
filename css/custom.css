@@ -56,6 +56,14 @@
     no-repeat;
 }
 
+/* light icon */
+[class^='lightToggleIcon'] {
+  color: #FFF;
+}
+[class^='lightToggleIcon']:hover {
+  color: inherit;
+}
+
 
 .navbar a.navbar__link {
   color: whitesmoke;
@@ -153,7 +161,7 @@ a, a:hover {
   padding-bottom: 20px;
   font-size: 18px;
   line-height: 27px;
-  color: #333;
+  /* color: #333; */
   vertical-align: middle;
 }
 
