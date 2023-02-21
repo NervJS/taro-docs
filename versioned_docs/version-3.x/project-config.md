@@ -6,7 +6,7 @@ title: 项目配置
 
 - 微信小程序，[project.config.json](https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html?search-key=%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE)
 - 百度小程序，[project.swan.json](https://smartprogram.baidu.com/docs/develop/devtools/projectconfig/)
-- 字节跳动小程序，[project.config.json](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/framework/basic-reference/catalog-structure/#projectconfigjson-%E9%85%8D%E7%BD%AE%E4%BB%8B%E7%BB%8D)
+- 字节跳动小程序，[project.config.json](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/framework/basic-reference/catalog-structure)
 - QQ 小程序，project.config.json
 - 支付宝小程序，[mini.project.json](https://opendocs.alipay.com/mini/framework/project)
 - 京东小程序，暂无发现
