@@ -230,7 +230,7 @@ button {
 
 | 参数 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | :---: | :---: | --- |
-| key | `string` |  | 否 | 映射标记 |
+| mapkey | `string` |  | 否 | 映射标记 |
 | name | `string` |  | 否 | 映射标记 |
 | transform | `boolean` | `false` | 否 | 是否进行动画 |
 | duration | `number` | `300` | 否 | 动画时长，单位毫秒 |
