@@ -277,8 +277,8 @@ export default class PagePicker extends Component {
 | --- | --- | :---: | --- |
 | mode | `"time"` | 是 | 选择器类型 |
 | value | `string` | 是 | value 的值表示选择了 range 中的第几个（下标从 0 开始） |
-| start | `string` | 否 | 仅当 mode = timeordate 时有效，表示有效时间范围的开始，字符串格式为"hh:mm" |
-| end | `string` | 否 | 仅当 mode = timeordate 时有效，表示有效时间范围的结束，字符串格式为"hh:mm" |
+| start | `string` | 否 | 仅当 mode = time 或 date 时有效，表示有效时间范围的开始，字符串格式为"hh:mm" |
+| end | `string` | 否 | 仅当 mode = time 或 date 时有效，表示有效时间范围的结束，字符串格式为"hh:mm" |
 | onChange | `CommonEventFunction<ChangeEventDetail>` | 是 | value 改变时触发 change 事件 |
 
 ### API 支持度
@@ -304,8 +304,8 @@ export default class PagePicker extends Component {
 | --- | --- | :---: | :---: | --- |
 | mode | `"date"` |  | 是 | 选择器类型 |
 | value | `string` | `0` | 是 | 表示选中的日期，格式为"YYYY-MM-DD" |
-| start | `string` |  | 否 | 仅当 mode = timeordate 时有效，表示有效时间范围的开始，字符串格式为"hh:mm" |
-| end | `string` |  | 否 | 仅当 mode = timeordate 时有效，表示有效时间范围的结束，字符串格式为"hh:mm" |
+| start | `string` |  | 否 | 仅当 mode = time 或 date 时有效，表示有效时间范围的开始，字符串格式为"YYYY-MM-DD" |
+| end | `string` |  | 否 | 仅当 mode = time 或 date 时有效，表示有效时间范围的结束，字符串格式为"YYYY-MM-DD" |
 | fields | `keyof Fields` | `"day"` | 否 | 有效值 year, month, day，表示选择器的粒度 |
 | onChange | `CommonEventFunction<ChangeEventDetail>` |  | 是 | value 改变时触发 change 事件 |
 
