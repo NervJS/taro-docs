@@ -103,7 +103,7 @@ class App extends Component {
 | AdProps.adTheme | ✔️ |  |  |  |  |  |  |
 | AdProps.appid |  | ✔️ |  |  |  |  |  |
 | AdProps.apid |  | ✔️ |  |  |  |  |  |
-| AdProps.type |  | ✔️ | ✔️ | ✔️ |  |  |  |
+| AdProps.type |  | ✔️(支持 banner、feed) | ✔️ | ✔️(支持 banner、card、feeds、block) |  |  |  |
 | AdProps.updatetime |  | ✔️ |  |  |  |  |  |
 | AdProps.fixed |  |  | ✔️ |  |  |  |  |
 | AdProps.scale |  |  | ✔️ |  |  |  |  |
