@@ -345,7 +345,7 @@ lang 的合法值
 
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
-| userInfo | `{ nickName: string; avatarUrl: string; gender: keyof Gender; province: string; city: string; country: string; }` | 是 |  |
+| userInfo | `{ nickName: string; avatarUrl: string; avatar: string; gender: keyof Gender; province: string; city: string; country: string; }` | 是 |  |
 | rawData | `string` | 是 | 不包括敏感信息的原始数据 `JSON` 字符串，用于计算签名 |
 | signature | `string` | 是 | 使用 `sha1(rawData + sessionkey)` 得到字符串，用于校验用户信息 |
 | encryptedData | `string` | 是 | 包括敏感数据在内的完整用户信息的加密数据 |
@@ -379,6 +379,13 @@ lang 的合法值
 | encryptedData | `string` | 是 | 包括敏感数据在内的完整用户信息的加密数据 |
 | iv | `string` | 是 | 加密算法的初始向量 |
 | code | `string` | 否 | 动态令牌。可通过动态令牌换取用户手机号。<br />[参考地址](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/share.html#%E4%BD%BF%E7%94%A8%E6%8C%87%E5%BC%95) |
+| sign | `string` | 是 | 签名信息，如果在开放平台后台配置了加签方式后有此字段 |
+
+#### API 支持度
+
+| API | 微信小程序 | 支付宝小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| onGetPhoneNumberEventDetail.sign |  | ✔️ |  |  |  |
 
 ### onOpenSettingEventDetail
 

@@ -134,15 +134,15 @@ export default {
 | enableTraffic | `boolean` | `false` | 否 | 是否开启实时路况 |
 | setting | MapProps or { [key: string]: any; } |  | 否 | 配置项<br /><br />提供 setting 对象统一设置地图配置。同时对于一些动画属性如 rotate 和 skew，通过 setData 分开设置时无法同时生效，需通过 settting 统一修改。 |
 | includePadding | { left: string or number; right: string or number; top: string or number; bottom: string or number; } |  | 否 | 视野在地图 padding 范围内展示 |
-| groundOverlays | `any[]` |  | 否 | 覆盖物，自定义贴图 |
-| tileOverlay | `any[]` |  | 否 | 覆盖物，网格贴图 |
-| enablePoi | `string` |  | 否 | 是否展示 POI 点 |
-| enableBuilding | `string` |  | 否 | 是否展示建筑物 |
-| polygon | `string` |  | 否 | 覆盖物，多边形。 |
+| groundOverlays | `groundOverlays[]` |  | 否 | 覆盖物，自定义贴图 |
+| tileOverlay | `tileOverlay` |  | 否 | 覆盖物，网格贴图 |
+| enablePoi | `boolean` | `true` | 否 | 是否展示 POI 点 |
+| enableBuilding | `boolean` | `true` | 否 | 是否展示建筑物 |
+| polygon | `polygon[]` |  | 否 | 覆盖物，多边形。 |
 | customMapStyle | `string` |  | 否 | 设置地图样式。<br /><br />default：默认样式<br />light：精简样式 |
-| panels | `string` |  | 否 | 基于 map 高级定制渲染，设置覆盖在地图上的 view。 |
+| panels | `panels[]` |  | 否 | 基于 map 高级定制渲染，设置覆盖在地图上的 view。 |
 | theme | `string` |  | 否 | 否 |
-| optimize | `string` |  | 否 | 内联样式。 |
+| optimize | `boolean` | `false` | 否 | 保持缩放比例不变 |
 | enableAutoMaxOverlooking | `boolean` | `false` | 否 | 开启最大俯视角，俯视角度从 45 度拓展到 75 度 |
 | enable3D | `boolean` | `false` | 否 | 展示3D楼块 |
 | onTap | `CommonEventFunction` |  | 否 | 点击地图时触发 |
@@ -303,13 +303,28 @@ marker 上的气泡 label
 
 指定一系列坐标点，根据 points 坐标数据生成闭合多边形
 
-| 参数 | 类型 | 必填 | 说明 | 备注 |
-| --- | --- | :---: | --- | --- |
-| points | `point[]` | 是 | 经纬度数组 | `[{latitude: 0, longitude: 0}]` |
-| strokeWidth | `number` | 否 | 描边的宽度 |  |
-| strokeColor | `string` | 否 | 描边的颜色 | `十六进制` |
-| fillColor | `string` | 否 | 填充颜色 | `十六进制` |
-| zIndex | `number` | 否 | 设置多边形Z轴数值 |  |
+| 参数 | 类型 | 默认值 | 必填 | 说明 | 备注 |
+| --- | --- | :---: | :---: | --- | --- |
+| dashArray | `number[]` | `[0,0]` | 否 | 边线虚线 | `默认值 [0, 0] 为实线，[10, 10]表示十个像素的实线和十个像素的空白（如此反复）组成的虚线` |
+| points | `point[]` |  | 是 | 经纬度数组 | `[{latitude: 0, longitude: 0}]` |
+| color | `string` |  | 否 | 线的颜色，用 8 位十六进制表示，后两位表示 alpha 值，如：#eeeeeeAA。 | `当前 Android 与 iOS 上此属性默认值存在差异（分别为 transparent 与 #ff0000ff ），建议在代码中统一显式设置。` |
+| strokeWidth | `number` |  | 否 | 描边的宽度 |  |
+| strokeColor | `string` |  | 否 | 描边的颜色 | `十六进制` |
+| fillColor | `string` |  | 否 | 填充颜色 | `十六进制` |
+| width | `number` |  | 否 | 线的宽度 | `当前 Android 与 iOS 上此属性默认值存在差异（分别为 0 与 5），建议在代码中统一显式设置。` |
+| zIndex | `number` |  | 否 | 设置多边形Z轴数值 |  |
+| level | `string` |  | 否 | 压盖关系 | `默认为 abovelabels` |
+| displayRanges | `[{ from: number; to: number; }]` |  | 否 | 标明在特定地图缩放级别下展示。 | `[{ from: 12, to: 17}]` |
+
+#### API 支持度
+
+| API | 微信小程序 | 支付宝小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| polygon.dashArray | ✔️ |  |  |  |  |
+| polygon.color |  | ✔️ |  |  |  |
+| polygon.width |  | ✔️ |  |  |  |
+| polygon.level | ✔️ |  |  |  |  |
+| polygon.displayRanges |  | ✔️ |  |  |  |
 
 ### circle
 
@@ -350,6 +365,34 @@ marker 上的气泡 label
 | top | `number` | `0` | 距离地图的上边界多远 |
 | width | `number` | `图片宽度` | 控件宽度 |
 | height | `number` | `图片宽度` | 控件高度 |
+
+### groundOverlays
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| id | `string` | 刷新的时候需要变更id值 |
+| include-points | `[{ latitude: number; longitude: number; }, { latitude: number; longitude: number; }]` | 右上 左下 |
+| image | `string` |  |
+| alpha | `number` |  |
+| zIndex | `number` |  |
+
+### tileOverlay
+
+| 参数 | 类型 |
+| --- | --- |
+| url | `string` |
+| type | `number` |
+| tileWidth | `number` |
+| tileHeight | `number` |
+| zIndex | `number` |
+
+### panels
+
+| 参数 | 类型 |
+| --- | --- |
+| id | `number` |
+| layout | `{ src: string; }` |
+| position | `position` |
 
 ### onMarkerTapEventDetail
 

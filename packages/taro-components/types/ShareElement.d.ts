@@ -37,7 +37,8 @@ interface ShareElementProps extends StandardProps {
  * @classification viewContainer
  * @supported weapp, alipay
  * @example_react
- * ```tsx title="index.js"
+ * ```tsx
+ * // index.js
  * import { useState, useCallback } from 'react'
  * import { View, Button, PageContainer, ShareElement } from '@tarojs/components'
  *
@@ -142,7 +143,8 @@ interface ShareElementProps extends StandardProps {
  *   )
  * }
  * ```
- * ```scss title="index.scss"
+ * ```scss
+ * \/** index.scss *\/
  * page {
  *   color: #333;
  *   background-color: #ddd;
