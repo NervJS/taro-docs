@@ -170,6 +170,8 @@ module.exports = {
     '视图容器': [
       'components/viewContainer/cover-image',
       'components/viewContainer/cover-view',
+      'components/viewContainer/grid-view',
+      'components/viewContainer/list-view',
       'components/viewContainer/custom-wrapper',
       'components/viewContainer/match-media',
       'components/viewContainer/movable-area',
@@ -179,6 +181,8 @@ module.exports = {
       'components/viewContainer/root-portal',
       'components/viewContainer/scroll-view',
       'components/viewContainer/share-element',
+      'components/viewContainer/sticky-header',
+      'components/viewContainer/sticky-section',
       'components/viewContainer/slot',
       'components/viewContainer/swiper',
       'components/viewContainer/swiper-item',
@@ -222,6 +226,7 @@ module.exports = {
       'components/media/audio',
       'components/media/camera',
       'components/media/channel-live',
+      'components/media/channel-video',
       'components/media/image',
       'components/media/live-player',
       'components/media/live-pusher',
@@ -505,6 +510,7 @@ module.exports = {
           'apis/ui/window/setWindowSize',
           'apis/ui/window/onWindowResize',
           'apis/ui/window/offWindowResize',
+          'apis/ui/window/checkIsPictureInPictureActive',
         ]
       },
     ],
@@ -925,6 +931,13 @@ module.exports = {
         ]
       },
       {
+        'label': '我的小程序',
+        'type': 'category',
+        'items': [
+          'apis/open-api/my-miniprogram/checkIsAddedToMyMiniProgram',
+        ]
+      },
+      {
         'label': '车牌',
         'type': 'category',
         'items': [
@@ -1264,6 +1277,9 @@ module.exports = {
     ],
     'Alipay': [
       'apis/alipay/getOpenUserInfo'
+    ],
+    'QQ': [
+      'apis/qq/openQzonePublish'
     ],
     'Swan': [
       'apis/swan/setPageInfo'

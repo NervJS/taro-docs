@@ -115,7 +115,7 @@ export default {
 | FormProps.reportType |  | ✔️ |  |  |  |  |  |  |  |
 | FormProps.templateId |  | ✔️ |  |  |  |  |  |  |  |
 | FormProps.subscribeId |  | ✔️ |  |  |  |  |  |  |  |
-| FormProps.onSubmit | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| FormProps.onSubmit | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | FormProps.onReset | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 
 ### onSubmitEventDetail
