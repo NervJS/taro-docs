@@ -4,7 +4,7 @@ title: 使用 CSS Modules
 
 ## 用法
 
-Taro 中内置了 [CSS Modules](https://github.com/css-modules/css-modules) 的支持，但默认是关闭的，如果需要开启使用，请先在[编译配置](./config-detail.md)中添加如下配置。
+Taro 中内置了 [CSS Modules](https://github.com/css-modules/css-modules) 的支持，但默认是关闭的，如果需要开启使用，请先在[编译配置](./config-detail)中添加如下配置。
 
 ### 在小程序端开启
 

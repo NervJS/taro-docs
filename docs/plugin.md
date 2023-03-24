@@ -8,7 +8,7 @@ Taro 引入了插件化机制，目的是为了让开发者能够通过编写插
 
 ### 官方插件
 
-- [@taro/plugin-mini-ci](plugin-mini-ci.md)，小程序持续集成插件。感谢 [@bigmeow](https://github.com/bigmeow) 的贡献！
+- [@taro/plugin-mini-ci](./plugin-mini-ci)，小程序持续集成插件。感谢 [@bigmeow](https://github.com/bigmeow) 的贡献！
 - [@tarojs/plugin-mock](https://github.com/NervJS/taro-plugin-mock)，一个简易的数据 mock 插件。
 
 ### 社区优质插件
@@ -22,11 +22,11 @@ Taro 引入了插件化机制，目的是为了让开发者能够通过编写插
 
 ## 如何引入插件
 
-你可以从 npm 或者本地中引入插件，引入方式主要通过 [编译配置](./config-detail.md)中的 `plugins` 和 `presets`，使用如下
+你可以从 npm 或者本地中引入插件，引入方式主要通过 [编译配置](./config-detail)中的 `plugins` 和 `presets`，使用如下
 
 ### plugins
 
-插件在 Taro 中，一般通过[编译配置](./config-detail.md)中的 `plugins` 字段进行引入。
+插件在 Taro 中，一般通过[编译配置](./config-detail)中的 `plugins` 字段进行引入。
 
 `plugins` 字段取值为一个数组，配置方式如下：
 
@@ -57,7 +57,7 @@ const config = {
 
 如果你有一系列插件需要配置，而他们通常是组合起来完成特定的事儿，那你可以通过**插件集** `presets` 来进行配置。
 
-配置[编译配置](./config-detail.md)中的 `presets` 字段，如下。
+配置[编译配置](./config-detail)中的 `presets` 字段，如下。
 
 ```js title="/config/index.js"
 const config = {

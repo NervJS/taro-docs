@@ -241,7 +241,7 @@ module.exports = {
 
 `array`
 
-一个 preset 是一系列 Taro 插件的集合，配置语法同 [plugins](./config-detail.md#plugins)。
+一个 preset 是一系列 Taro 插件的集合，配置语法同 [plugins](./config-detail#plugins)。
 
 ```js
 module.exports = {
