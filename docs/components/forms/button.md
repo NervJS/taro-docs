@@ -260,6 +260,7 @@ export default {
 | ButtonProps.sendMessageImg | ✔️ |  |  |  |  |  |  |  |  |
 | ButtonProps.appParameter | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |
 | ButtonProps.scope |  |  | ✔️ |  |  |  |  |  |  |
+| ButtonProps.showMessageCard | ✔️ |  |  |  |  |  |  |  |  |
 | ButtonProps.publicId |  |  | ✔️ |  | ✔️ |  |  |  |  |
 | ButtonProps.templateId |  | ✔️ |  |  |  |  |  |  |  |
 | ButtonProps.subscribeId |  | ✔️ |  |  |  |  |  |  |  |

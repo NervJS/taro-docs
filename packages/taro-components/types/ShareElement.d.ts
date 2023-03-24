@@ -95,7 +95,7 @@ interface ShareElementProps extends StandardProps {
  *         {
  *           contacts.map((item, index) => (
  *             <View key={item.id} className="contact" onClick={e => showNext(e, index)}>
- *               <ShareElement duration={300} className="name" mapkey="name" transform={transformIdx === index}>
+ *               <ShareElement duration={300} className="name" key="name" transform={transformIdx === index}>
  *                 {item.name}
  *               </ShareElement>
  *               <View className="list">
@@ -122,7 +122,7 @@ interface ShareElementProps extends StandardProps {
  *       >
  *         <View className="screen screen2">
  *           <View className="contact">
- *             <ShareElement className="name" mapkey="name" duration={300} transform>
+ *             <ShareElement className="name" key="name" duration={300} transform>
  *               {contact.name}
  *             </ShareElement>
  *             <View className={`paragraph ${show ? 'enter' : ''}`}>

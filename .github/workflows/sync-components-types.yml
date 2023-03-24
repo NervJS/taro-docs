@@ -55,7 +55,7 @@ jobs:
           rm -rf .taro
 
       - name: Generate API document
-        run: pnpm run build:docs-api --verbose
+        run: pnpm run build:docs-api --force --verbose
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
