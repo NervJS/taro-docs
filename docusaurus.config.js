@@ -106,7 +106,7 @@ const siteConfig = {
           items: [
             {
               label: '文档',
-              to: '/docs',
+              to: '/docs/',
             },
           ],
         },
