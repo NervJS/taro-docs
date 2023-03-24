@@ -905,7 +905,7 @@ module.exports = {
       url: {
         enable: true,
         config: {
-          limit: 10240, // 设定转换尺寸上限
+          maxSize: 10, // 设定转换尺寸上限（单位：kbytes）
         },
       },
       // css modules 功能开关与相关配置
@@ -920,7 +920,7 @@ module.exports = {
 }
 ```
 
-#### h5.postcss.htmltransform
+#### mini.postcss.htmltransform
 
 `object`
 
@@ -936,6 +936,29 @@ module.exports = {
         enable: false, // 小程序默认关闭该配置
         config: {
           removeCursorStyle: true, // 默认为 true
+        },
+      },
+    },
+  },
+}
+```
+
+#### mini.postcss.url
+
+`object`
+
+可以进行 `url` 的配置，默认是 `inline` 配置（config 配置可参考 [postcss-url](https://www.npmjs.com/package/postcss-url)）。例如：
+
+```js
+module.exports = {
+  // ...
+  mini: {
+    // ...
+    postcss: {
+      url: {
+        enable: true,
+        config: {
+          maxSize: 10, // 设定转换尺寸上限（单位 kbytes）
         },
       },
     },
@@ -1611,6 +1634,29 @@ module.exports = {
 ```
 
 > 需要 v3.5 以上版本
+
+#### h5.postcss.url
+
+`object`
+
+可以进行 `url` 的配置，默认 `inline` 配置（config 配置可参考 [postcss-url](https://www.npmjs.com/package/postcss-url)）。例如：
+
+```js
+module.exports = {
+  // ...
+  h5: {
+    // ...
+    postcss: {
+      url: {
+        enable: true,
+        config: {
+          maxSize: 10, // 设定转换尺寸上限（单位 kbytes）
+        },
+      },
+    },
+  },
+}
+```
 
 #### h5.postcss.cssModules
 

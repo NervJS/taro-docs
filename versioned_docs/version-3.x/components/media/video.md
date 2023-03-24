@@ -192,6 +192,7 @@ export default class PageView extends Component {
 | VideoProps.loop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.muted | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.initialTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| VideoProps.pageGesture | ✔️ |  |  |  |  |  |  |  |  |
 | VideoProps.direction | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
 | VideoProps.showProgress | ✔️ | ✔️ |  |  | ✔️ |  | ✔️ |  |  |
 | VideoProps.showFullscreenBtn | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |

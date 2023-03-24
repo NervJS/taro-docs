@@ -218,6 +218,12 @@ export default class Index extends Component {
 
 布局方式，默认采用 "absolute"
 
+### `enhanced?: boolean = false`
+
+通过 ScrollViewContext 优化组件滚动性能
+
+> 部分平台不支持，使用时请注意甄别
+
 #### `renderTop?: ReactNode`
 
 顶部区域
@@ -518,6 +524,12 @@ Vue.use(registerVirtualList)
 #### `position?: 'absolute' | 'relative'`
 
 布局方式，默认采用 "absolute"
+
+### `enhanced?: boolean = false`
+
+通过 ScrollViewContext 优化组件滚动性能
+
+> 部分平台不支持，使用时请注意甄别
 
 #### `useIsScrolling: boolean`
 

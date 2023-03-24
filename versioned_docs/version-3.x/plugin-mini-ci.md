@@ -73,37 +73,35 @@ const CIPluginFn = async () => {
    * @type {CIOptions}
    */
   return {
-      weapp: {
-          appid: "微信小程序appid",
-          privateKeyPath: "密钥文件相对项目根目录的相对路径，例如 key/private.appid.key"
-      },
-      tt: {
-          email: "字节小程序邮箱",
-          password: "字节小程序密码"
-      },
-      alipay: {
-        appid: "支付宝小程序appid",
-        toolId: "工具id",
-        privateKeyPath: "密钥文件相对项目根目录的相对路径，例如 key/pkcs8-private-pem"
-      },
-      dd: {
-        appid: "钉钉小程序appid,即钉钉开放平台后台应用管理的 MiniAppId 选项"
-        token: "令牌，从钉钉后台获取"
-      },
-      swan: {
-        token: "鉴权需要的token令牌"
-      },
-      // 版本号
-      version: "1.0.0",
-      // 版本发布描述
-      desc: "版本描述"
+    weapp: {
+      appid: '微信小程序appid',
+      privateKeyPath: '密钥文件相对项目根目录的相对路径，例如 key/private.appid.key',
+    },
+    tt: {
+      email: '字节小程序邮箱',
+      password: '字节小程序密码',
+    },
+    alipay: {
+      appid: '支付宝小程序appid',
+      toolId: '工具id',
+      privateKeyPath: '密钥文件相对项目根目录的相对路径，例如 key/pkcs8-private-pem',
+    },
+    dd: {
+      appid: '钉钉小程序appid,即钉钉开放平台后台应用管理的 MiniAppId 选项',
+      token: '令牌，从钉钉后台获取',
+    },
+    swan: {
+      token: '鉴权需要的token令牌',
+    },
+    // 版本号
+    version: '1.0.0',
+    // 版本发布描述
+    desc: '版本描述',
   }
 }
 
 const config = {
-  plugins: [
-    [ "@tarojs/plugin-mini-ci", CIPluginFn ]
-  ]
+  plugins: [['@tarojs/plugin-mini-ci', CIPluginFn]],
 }
 ```
 
@@ -244,7 +242,7 @@ const config = {
     // 应用自己写的插件
     require('path').join(__dirname, './test'),
   ],
-  ...其他配置省略,
+  // 其他配置省略
 }
 
 module.exports = function (merge) {
@@ -416,30 +414,18 @@ export interface TTConfig {
 
 /** 终端类型 */
 export type AlipayClientType =
-  /** 支付宝 */
-  | 'alipay'
-  /** AMPE */
-  | 'ampe'
-  /** 高德 */
-  | 'amap'
-  /** 天猫精灵 */
-  | 'genie'
-  /** ALIOS */
-  | 'alios'
-  /** UC */
-  | 'uc'
-  /** 夸克 */
-  | 'quark'
-  /** 口碑 */
-  | 'koubei'
-  /** loT */
-  | 'alipayiot'
-  /** 菜鸟 */
-  | 'cainiao'
-  /** 阿里健康(医蝶谷) */
-  | 'alihealth'
-  /** 阿里医院 */
-  | 'health'
+  | 'alipay' /** 支付宝 */
+  | 'ampe' /** AMPE */
+  | 'amap' /** 高德 */
+  | 'genie' /** 天猫精灵 */
+  | 'alios' /** ALIOS */
+  | 'uc' /** UC */
+  | 'quark' /** 夸克 */
+  | 'koubei' /** 口碑 */
+  | 'alipayiot' /** loT */
+  | 'cainiao' /** 菜鸟 */
+  | 'alihealth' /** 阿里健康(医蝶谷) */
+  | 'health' /** 阿里医院 */
 
 /** 支付宝系列小程序配置 */
 export interface AlipayConfig {

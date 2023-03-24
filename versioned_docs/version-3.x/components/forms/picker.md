@@ -340,8 +340,9 @@ export default class PagePicker extends Component {
 | 参数 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | :---: | :---: | --- |
 | mode | `"region"` |  | 是 | 选择器类型 |
-| value | `string[]` | `[]` | 是 | 表示选中的省市区，默认选中每一列的第一个值 |
+| value | `string[]` | `[]` | 否 | 表示选中的省市区，默认选中每一列的第一个值 |
 | customItem | `string` |  | 否 | 可为每一列的顶部添加一个自定义的项 |
+| level | `keyof Level` | `"region"` | 否 | 选择器层级 |
 | regionData | `RegionData[]` |  | 否 | 自定义省市区数据 |
 | onChange | `CommonEventFunction<ChangeEventDetail>` |  | 是 | value 改变时触发 change 事件 |
 
@@ -351,6 +352,7 @@ export default class PagePicker extends Component {
 | :---: | :---: | :---: | :---: | :---: |
 | PickerRegionProps.value | ✔️ | ✔️ | ✔️ |  |
 | PickerRegionProps.customItem | ✔️ | ✔️ | ✔️ |  |
+| PickerRegionProps.level | ✔️ |  |  |  |
 | PickerRegionProps.regionData |  |  | ✔️ |  |
 | PickerRegionProps.onChange | ✔️ | ✔️ | ✔️ |  |
 
@@ -369,3 +371,12 @@ export default class PagePicker extends Component {
 | value | `string` | 是 |
 | code | `string` | 是 |
 | postcode | `string` | 否 |
+
+### Level
+
+| 参数 | 说明 |
+| --- | --- |
+| province | 省级选择器 |
+| city | 市级选择器 |
+| region | 区级选择器 |
+| sub-district | 街道选择器 |

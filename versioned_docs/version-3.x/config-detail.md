@@ -958,8 +958,8 @@ module.exports = {
       url: {
         enable: true,
         config: {
-          maxSize: 10 // 设定转换尺寸上限（单位 kbytes）
-        }
+          maxSize: 10, // 设定转换尺寸上限（单位 kbytes）
+        },
       },
     },
   },
@@ -1635,7 +1635,6 @@ module.exports = {
 
 > 需要 v3.5 以上版本
 
-
 #### h5.postcss.url
 
 `object`
@@ -1651,8 +1650,8 @@ module.exports = {
       url: {
         enable: true,
         config: {
-          maxSize: 10 // 设定转换尺寸上限（单位 kbytes）
-        }
+          maxSize: 10, // 设定转换尺寸上限（单位 kbytes）
+        },
       },
     },
   },

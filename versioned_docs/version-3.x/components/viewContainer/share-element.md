@@ -33,7 +33,8 @@ import TabItem from '@theme/TabItem'
 ]}>
 <TabItem value="React">
 
-```tsx title="index.js"
+```tsx
+// index.js
 import { useState, useCallback } from 'react'
 import { View, Button, PageContainer, ShareElement } from '@tarojs/components'
 
@@ -138,7 +139,8 @@ export default function () {
   )
 }
 ```
-```scss title="index.scss"
+```scss
+\/** index.scss *\/
 page {
   color: #333;
   background-color: #ddd;
