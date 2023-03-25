@@ -220,7 +220,7 @@ module.exports = {
       'components/forms/textarea'
     ],
     '导航': [
-      'components/navig/Functional-Page-Navigator',
+      'components/navig/functional-page-navigator',
       'components/navig/navigation-bar',
       'components/navig/navigator',
       'components/navig/tab-item',
@@ -551,14 +551,14 @@ module.exports = {
         'label': 'WebSocket',
         'type': 'category',
         'items': [
-          'apis/network/webSocket/sendSocketMessage',
-          'apis/network/webSocket/onSocketOpen',
-          'apis/network/webSocket/onSocketMessage',
-          'apis/network/webSocket/onSocketError',
-          'apis/network/webSocket/onSocketClose',
-          'apis/network/webSocket/connectSocket',
-          'apis/network/webSocket/closeSocket',
-          'apis/network/webSocket/SocketTask',
+          'apis/network/websocket/sendSocketMessage',
+          'apis/network/websocket/onSocketOpen',
+          'apis/network/websocket/onSocketMessage',
+          'apis/network/websocket/onSocketError',
+          'apis/network/websocket/onSocketClose',
+          'apis/network/websocket/connectSocket',
+          'apis/network/websocket/closeSocket',
+          'apis/network/websocket/SocketTask',
         ]
       },
       {
@@ -1035,14 +1035,14 @@ module.exports = {
         'label': '蓝牙-信标(Beacon)',
         'type': 'category',
         'items': [
-          'apis/device/ibeacon/stopBeaconDiscovery',
-          'apis/device/ibeacon/startBeaconDiscovery',
-          'apis/device/ibeacon/onBeaconUpdate',
-          'apis/device/ibeacon/onBeaconServiceChange',
-          'apis/device/ibeacon/offBeaconUpdate',
-          'apis/device/ibeacon/offBeaconServiceChange',
-          'apis/device/ibeacon/getBeacons',
-          'apis/device/ibeacon/IBeaconInfo',
+          'apis/device/iBeacon/stopBeaconDiscovery',
+          'apis/device/iBeacon/startBeaconDiscovery',
+          'apis/device/iBeacon/onBeaconUpdate',
+          'apis/device/iBeacon/onBeaconServiceChange',
+          'apis/device/iBeacon/offBeaconUpdate',
+          'apis/device/iBeacon/offBeaconServiceChange',
+          'apis/device/iBeacon/getBeacons',
+          'apis/device/iBeacon/IBeaconInfo',
         ]
       },
       {
