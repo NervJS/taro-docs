@@ -89,6 +89,7 @@ HTTP 请求方法
 | HEAD | HTTP 请求 HEAD |
 | POST | HTTP 请求 POST |
 | PUT | HTTP 请求 PUT |
+| PATCH | HTTP 请求 PATCH |
 | DELETE | HTTP 请求 DELETE |
 | TRACE | HTTP 请求 TRACE |
 | CONNECT | HTTP 请求 CONNECT |

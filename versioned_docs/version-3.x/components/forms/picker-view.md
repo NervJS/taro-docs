@@ -195,7 +195,7 @@ export default class Picks extends Component {
 | PickerViewProps.indicatorClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | PickerViewProps.maskStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | PickerViewProps.maskClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| PickerViewProps.immediateChange | ✔️ |  |  | ✔️ |  |  |  |  |  |
+| PickerViewProps.immediateChange | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
 | PickerViewProps.title |  | ✔️ |  |  |  |  |  |  |  |
 | PickerViewProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
 | PickerViewProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |

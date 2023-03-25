@@ -31,6 +31,7 @@ ComponentType<CommentListProps>
 | viewMoreStyle | `IViewMoreStyle` |  | 否 | 『全部 xx 条』的样式，目前只支持开发者自定义字体颜色 |
 | onClickComment | `CommonEventFunction` |  | 否 | 绑定点击单条评论的事件，点击单条评论时触发，返回数据为{status, data:{srid}} |
 | onViewMore | `CommonEventFunction` |  | 否 | 绑定点击更多事件，若除了页面跳转还需要其他操作，可通过该回调执行；若为浮层，也可使用该回调自定义交互逻辑 |
+| onReply | `CommonEventFunction` |  | 否 | 评论发布成功时触发，返回数据为 {status, data:{srid}} |
 
 ### API 支持度
 
@@ -48,6 +49,7 @@ ComponentType<CommentListProps>
 | CommentListProps.viewMoreStyle |  | ✔️ |  |  |  |
 | CommentListProps.onClickComment |  | ✔️ |  |  |  |
 | CommentListProps.onViewMore |  | ✔️ |  |  |  |
+| CommentListProps.onReply |  | ✔️ |  |  |  |
 
 ### ICommentParam
 
