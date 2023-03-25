@@ -63,6 +63,6 @@ export default function RootPortalExample {
 
 ### API 支持度
 
-| API | 微信小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: |
-| RootPortalProps.enable | ✔️ |  |  |  |
+| API | 微信小程序 | 支付宝小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| RootPortalProps.enable | ✔️ | ✔️ |  |  |  |
