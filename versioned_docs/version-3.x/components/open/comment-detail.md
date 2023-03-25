@@ -27,6 +27,7 @@ ComponentType<CommentDetailProps>
 | backListAfterDelete | `boolean` | `true` | 否 | 删除详情后是否返回列表项，默认一站式逻辑。若使用浮层，请设置改属性为 false |
 | addComment | `boolean` | `false` | 否 | 用于调起评论发布器发布评论 |
 | onDelete | `CommonEventFunction` |  | 否 | 删除整体详情内容时触发，返回数据为{status, data:{srid}} |
+| onReply | `CommonEventFunction` |  | 否 | 评论发布成功时触发，返回数据为 {status, data:{srid}} |
 
 ### API 支持度
 
@@ -40,6 +41,7 @@ ComponentType<CommentDetailProps>
 | CommentDetailProps.backListAfterDelete |  | ✔️ |  |  |  |
 | CommentDetailProps.addComment |  | ✔️ |  |  |  |
 | CommentDetailProps.onDelete |  | ✔️ |  |  |  |
+| CommentDetailProps.onReply |  | ✔️ |  |  |  |
 
 ### ICommentParam
 

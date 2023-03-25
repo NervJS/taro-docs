@@ -77,7 +77,7 @@ class App extends Components {
 | signature | `string` |  | 否 | 设置署名水印 |
 | enableMetadata | `string` |  | 否 | 是否回调metadata |
 | id | `string` |  | 否 | live-player 属性的唯一标志符 |
-| enableAutoRotation | `string` | `false` | 否 | 是否开启手机横屏时自动全屏，当系统设置开启自动旋转时生效 |
+| enableAutoRotation | `boolean` | `false` | 否 | 是否开启手机横屏时自动全屏，当系统设置开启自动旋转时生效 |
 | onStateChange | `CommonEventFunction<onStateChangeEventDetail>` |  | 否 | 播放状态变化事件，detail = {code} |
 | onFullScreenChange | `CommonEventFunction<onFullScreenChangeEventDetail>` |  | 否 | 全屏变化事件，detail = {direction, fullScreen} |
 | onNetStatus | `CommonEventFunction<onNetStatusEventDetail>` |  | 否 | 网络状态通知，detail = {info} |

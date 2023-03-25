@@ -21,9 +21,9 @@ ComponentType<GridViewProps>
 | --- | --- | :---: | :---: | --- |
 | type | `string` | `"aligned"` | 是 | 布局方式。masonry - 瀑布流，根据子元素高度自动布局。  aligned - 每行高度由同一行中最大高度子节点决定。 |
 | crossAxisCount | `number` | `2` | 否 | 交叉轴元素数量 |
-| maxCrossAxisExtend | `number` | `0` | 否 | 交叉轴元素最大范围 |
 | mainAxisGap | `number` | `0` | 否 | 主轴方向间隔 |
 | crossAxisGap | `number` | `0` | 否 | 交叉轴方向间隔 |
+| maxCrossAxisExtent | `number` | `0` | 否 | 交叉轴元素最大范围 |
 
 ### API 支持度
 
@@ -31,6 +31,6 @@ ComponentType<GridViewProps>
 | :---: | :---: | :---: | :---: | :---: |
 | GridViewProps.type | ✔️ |  |  |  |
 | GridViewProps.crossAxisCount | ✔️ |  |  |  |
-| GridViewProps.maxCrossAxisExtend | ✔️ |  |  |  |
 | GridViewProps.mainAxisGap | ✔️ |  |  |  |
 | GridViewProps.crossAxisGap | ✔️ |  |  |  |
+| GridViewProps.maxCrossAxisExtent | ✔️ |  |  |  |
