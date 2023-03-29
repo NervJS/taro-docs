@@ -9,6 +9,8 @@ title: 编写插件
 $ taro create plugin-name --type=plugin-command
 # 生成用于扩展编译时的插件模版
 $ taro create plugin-name --type=plugin-build
+# 生成用于扩展自定义页面模版的插件模版
+$ taro create plugin-name --type=plugin-template
 ```
 
 ### 代码结构
@@ -96,6 +98,24 @@ export default (ctx) => {
 
 参考[扩展编译平台](./platform-plugin)
 
+### 创建页面自定义模版扩展
+
+通过 `ctx.modifyCreateTemplate(setCustomTemplateConfig:TSetCustomTemplateConfig)` 这个钩子，可以对 taro create 创建出来的页面模版进行修改。
+
+`setCustomTemplateConfig` 是一个回调函数，其类行为：
+```typescript
+type TSetCustomTemplateConfig = (customTemplateConfig: TCustomTemplateInfo) => void
+type TCustomTemplateInfo = {
+  customTemplatePath?: string
+  css: 'none' | 'sass' | 'stylus' | 'less'
+  typescript?: boolean
+  compiler?: 'webpack4' | 'webpack5' | 'vite'
+  template?: string
+}
+```
+只需要按照 taro 模版的格式，编写好需要的模版（模版编写参考[模版格式](./template.md)，静态模版与动态模版均支持），并且下载到电脑本地任意一个目录下，把该目录的绝对路径赋值给 `customTemplateConfig.customTemplatePath`，如果是动态模版，那么可以根据编写的模版的 template_creator.js，配置需要的其他参数，最后生成完整的 `customTemplateConfig` 对象，作为参数调用 `setCustomTemplateConfig` 即可。
+
+通过运行 `taro create plugin-name --type=plugin-template` 会生成一个插件示例，可根据具体需求进行修改。
 ## API
 
 通过以上内容，我们已经大致知道 Taro 插件可以实现哪些特性并且可以编写一个简单的 Taro 插件了，但是，为了能够编写更加复杂且标准的插件，我们需要了解 Taro 插件机制中的具体 API 用法。
