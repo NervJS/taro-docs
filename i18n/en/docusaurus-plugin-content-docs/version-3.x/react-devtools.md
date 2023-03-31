@@ -49,6 +49,14 @@ Default value: `true`.
 
 Controls whether to connect to `react-devtools`, which will inject backend code into the developer's app when enabled.
 
+### hostname
+
+`string`
+
+Default value：`localhost`
+
+When localhost is not available, customize the host name of `taro` connection `react-devtools`, which is mostly used for LAN or remote debugging.
+
 ### port
 
 `number`

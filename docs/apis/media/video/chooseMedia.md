@@ -60,6 +60,7 @@ sidebar_label: chooseMedia
 | --- | --- |
 | video | 只能拍摄视频或从相册选择视频 |
 | image | 只能拍摄图片或从相册选择图片 |
+| mix | 可同时选择图片和视频 |
 
 ### sourceType
 

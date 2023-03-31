@@ -24,9 +24,9 @@ export interface IProjectBaseConfig {
   port?: number
   projectName?: string
   date?: string
-  designWidth?: number
-  watcher?: any[]
+  designWidth?: number | ((size: number) => number)
   deviceRatio?: TaroGeneral.TDeviceRatio
+  watcher?: any[]
   sourceRoot?: string
   outputRoot?: string
   env?: IOption
@@ -67,7 +67,7 @@ export interface IProjectBaseConfig {
   onCompilerMake?: (compilation: Webpack.Compilation, compiler: Webpack.Compiler, plugin: any) => Promise<any>
   onWebpackChainReady?: (webpackChain: Chain) => Promise<any>
   /**
-   * 编译中修改 webpack 配置，在这个钩子中，你可以对 webpackChain 作出想要的调整，等同于配置 [`webpackChain`](./config-detail.md#miniwebpackchain)
+   * 编译中修改 webpack 配置，在这个钩子中，你可以对 webpackChain 作出想要的调整，等同于配置 [`webpackChain`](./config-detail#miniwebpackchain)
    */
   modifyWebpackChain?: (chain: Chain, webpack: typeof Webpack, data: IModifyWebpackChain) => Promise<any>
   /**

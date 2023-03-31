@@ -2,7 +2,7 @@
 title: Vue3
 ---
 
-Taro 可以使用 Vue 3 进行开发，开发者可以使用 `taro init` 命令创建 Vue3 的模版，包括 **default**、 **vuex** 以及 [NutUI3.0](https://nutui.jd.com/#/button) 。我们推荐使用 NutUI3.0 模版进行开发。
+Taro 可以使用 Vue 3 进行开发，开发者可以使用 `taro init` 命令创建 Vue3 的模版，包括 **default**、 **vuex** 以及 [NutUI](https://nutui.jd.com/) 。我们推荐使用 NutUI4.0 模版进行开发。
 
 具体用法可以参考 Taro Vue 系列文档。
 
@@ -31,7 +31,7 @@ export default {
   },
   setup() {
     const state = reactive({
-      msg: '欢迎使用 NutUI3.0 开发小程序',
+      msg: '欢迎使用 NutUI 开发小程序',
       msg2: '你成功了～',
     })
 

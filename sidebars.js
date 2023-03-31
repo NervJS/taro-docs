@@ -78,7 +78,14 @@ module.exports = {
       'use-h5',
       'jquery-like',
       'dynamic-import',
-      'plugin',
+      {
+        label: '插件功能',
+        type: 'category',
+        items: [
+          'plugin',
+          'plugin-custom'
+        ]
+      },
       {
         label: '性能优化',
         type: 'category',
@@ -170,6 +177,8 @@ module.exports = {
     '视图容器': [
       'components/viewContainer/cover-image',
       'components/viewContainer/cover-view',
+      'components/viewContainer/grid-view',
+      'components/viewContainer/list-view',
       'components/viewContainer/custom-wrapper',
       'components/viewContainer/match-media',
       'components/viewContainer/movable-area',
@@ -179,6 +188,8 @@ module.exports = {
       'components/viewContainer/root-portal',
       'components/viewContainer/scroll-view',
       'components/viewContainer/share-element',
+      'components/viewContainer/sticky-header',
+      'components/viewContainer/sticky-section',
       'components/viewContainer/slot',
       'components/viewContainer/swiper',
       'components/viewContainer/swiper-item',
@@ -209,7 +220,7 @@ module.exports = {
       'components/forms/textarea'
     ],
     '导航': [
-      'components/navig/Functional-Page-Navigator',
+      'components/navig/functional-page-navigator',
       'components/navig/navigation-bar',
       'components/navig/navigator',
       'components/navig/tab-item',
@@ -222,6 +233,7 @@ module.exports = {
       'components/media/audio',
       'components/media/camera',
       'components/media/channel-live',
+      'components/media/channel-video',
       'components/media/image',
       'components/media/live-player',
       'components/media/live-pusher',
@@ -505,6 +517,7 @@ module.exports = {
           'apis/ui/window/setWindowSize',
           'apis/ui/window/onWindowResize',
           'apis/ui/window/offWindowResize',
+          'apis/ui/window/checkIsPictureInPictureActive',
         ]
       },
     ],
@@ -538,14 +551,14 @@ module.exports = {
         'label': 'WebSocket',
         'type': 'category',
         'items': [
-          'apis/network/webSocket/sendSocketMessage',
-          'apis/network/webSocket/onSocketOpen',
-          'apis/network/webSocket/onSocketMessage',
-          'apis/network/webSocket/onSocketError',
-          'apis/network/webSocket/onSocketClose',
-          'apis/network/webSocket/connectSocket',
-          'apis/network/webSocket/closeSocket',
-          'apis/network/webSocket/SocketTask',
+          'apis/network/websocket/sendSocketMessage',
+          'apis/network/websocket/onSocketOpen',
+          'apis/network/websocket/onSocketMessage',
+          'apis/network/websocket/onSocketError',
+          'apis/network/websocket/onSocketClose',
+          'apis/network/websocket/connectSocket',
+          'apis/network/websocket/closeSocket',
+          'apis/network/websocket/SocketTask',
         ]
       },
       {
@@ -925,6 +938,13 @@ module.exports = {
         ]
       },
       {
+        'label': '我的小程序',
+        'type': 'category',
+        'items': [
+          'apis/open-api/my-miniprogram/checkIsAddedToMyMiniProgram',
+        ]
+      },
+      {
         'label': '车牌',
         'type': 'category',
         'items': [
@@ -1015,14 +1035,14 @@ module.exports = {
         'label': '蓝牙-信标(Beacon)',
         'type': 'category',
         'items': [
-          'apis/device/ibeacon/stopBeaconDiscovery',
-          'apis/device/ibeacon/startBeaconDiscovery',
-          'apis/device/ibeacon/onBeaconUpdate',
-          'apis/device/ibeacon/onBeaconServiceChange',
-          'apis/device/ibeacon/offBeaconUpdate',
-          'apis/device/ibeacon/offBeaconServiceChange',
-          'apis/device/ibeacon/getBeacons',
-          'apis/device/ibeacon/IBeaconInfo',
+          'apis/device/iBeacon/stopBeaconDiscovery',
+          'apis/device/iBeacon/startBeaconDiscovery',
+          'apis/device/iBeacon/onBeaconUpdate',
+          'apis/device/iBeacon/onBeaconServiceChange',
+          'apis/device/iBeacon/offBeaconUpdate',
+          'apis/device/iBeacon/offBeaconServiceChange',
+          'apis/device/iBeacon/getBeacons',
+          'apis/device/iBeacon/IBeaconInfo',
         ]
       },
       {
@@ -1264,6 +1284,9 @@ module.exports = {
     ],
     'Alipay': [
       'apis/alipay/getOpenUserInfo'
+    ],
+    'QQ': [
+      'apis/qq/openQzonePublish'
     ],
     'Swan': [
       'apis/swan/setPageInfo'

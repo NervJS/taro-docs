@@ -85,6 +85,8 @@ App.use(setGlobalDataPlugin, {
 
 [`<CustomWrapper>`](optimized#2-customwrapper-组件) 组件常用于优化更新性能。它本质上是一个小程序自定义组件。
 
+Taro v3.6.3+ 推荐使用以下方式获取：
+
 <Tabs
   defaultValue="React"
   values={[
@@ -94,7 +96,60 @@ App.use(setGlobalDataPlugin, {
 <TabItem value="React">
 
 ```jsx title="示例代码"
-;<CustomWrapper id="demo" />
+class Index extends React.Component {
+  onReady () {
+    // 获取到 CustomWrapper 这个自定义组件对象，也就是所说的 scope
+    const ctx = document.getElementById('demo').ctx
+  }
+
+  render () {
+    return (
+      <View className='index'>
+        <CustomWrapper id='demo'>
+          <Text>Hello world!</Text>
+        </CustomWrapper>
+      </View>
+    )
+  }
+}
+```
+
+</TabItem>
+
+<TabItem value="Vue">
+
+```html title="示例代码"
+<template>
+  <custom-wrapper id="demo" />
+</template>
+
+<script>
+  import Taro from '@tarojs/taro'
+
+  export default {
+    onReady() {
+      // 获取到 CustomWrapper 这个自定义组件对象，也就是所说的 scope
+      const ctx = document.getElementById('demo').ctx
+    },
+  }
+</script>
+```
+
+</TabItem>
+</Tabs>
+
+Taro v3.6.2 及以下版本可以通过以下方式获取（需要对应小程序平台支持 `selectComponent` API）：
+
+<Tabs
+  defaultValue="React"
+  values={[
+    {label:  <ReactIcon />, value: 'React'},
+    {label: <VueIcon />, value: 'Vue'}
+  ]}>
+<TabItem value="React">
+
+```jsx title="示例代码"
+<CustomWrapper id="demo" />
 
 const page = Taro.getCurrentInstance().page
 // 获取到 CustomWrapper 这个自定义组件对象，也就是所说的 scope
@@ -130,5 +185,5 @@ const scope = page.selectComponent('#demo')
 
 小程序的 `dataset` 概念在 Taro 中得到部分实现，详细请看：
 
-- [React dataset](react-overall#dataset)
-- [Vue dataset](vue-overall#dataset)
+- [React dataset](./react-overall#dataset)
+- [Vue dataset](./vue-overall#dataset)
