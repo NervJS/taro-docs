@@ -524,79 +524,6 @@
     "cover": {
       "type": "external",
       "external": {
-        "url": "https://avatars.githubusercontent.com/u/38068220?v=4"
-      }
-    },
-    "properties": {
-      "title": {
-        "id": "title",
-        "type": "title",
-        "title": [
-          {
-            "type": "text",
-            "text": {
-              "content": "iChengbo",
-              "link": {
-                "url": "https://github.com/iChengbo"
-              }
-            },
-            "plain_text": "iChengbo",
-            "href": "https://github.com/iChengbo"
-          }
-        ]
-      },
-      "github": {
-        "id": "ogpZ",
-        "type": "url",
-        "url": "https://github.com/iChengbo"
-      },
-      "role": {
-        "id": "m%3AAW",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "71ff4a6e-5b97-4c7d-937b-806d1dd662ac",
-            "name": "技术委员会成员",
-            "color": "orange"
-          }
-        ]
-      },
-      "team": {
-        "id": "CBVI",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "938a3f82-1e7e-4993-8d16-3ee2022706d1",
-            "name": "Platform 团队",
-            "color": "pink"
-          }
-        ]
-      },
-      "group": {
-        "id": "%5ElK%3A",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "33dd1bb8-aa2b-4775-8fd6-7b2671996a01",
-            "name": "React Native 工作组",
-            "color": "pink"
-          }
-        ]
-      },
-      "alumni": {
-        "id": "dtGi",
-        "type": "formula",
-        "formula": {
-          "type": "boolean",
-          "boolean": false
-        }
-      }
-    }
-  },
-  {
-    "cover": {
-      "type": "external",
-      "external": {
         "url": "https://avatars.githubusercontent.com/u/3080820?v=4"
       }
     },
@@ -667,6 +594,79 @@
         "formula": {
           "type": "boolean",
           "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
+        "url": "https://avatars.githubusercontent.com/u/38068220?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "iChengbo",
+              "link": {
+                "url": "https://github.com/iChengbo"
+              }
+            },
+            "plain_text": "iChengbo",
+            "href": "https://github.com/iChengbo"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/iChengbo"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "71ff4a6e-5b97-4c7d-937b-806d1dd662ac",
+            "name": "技术委员会成员",
+            "color": "orange"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "938a3f82-1e7e-4993-8d16-3ee2022706d1",
+            "name": "Platform 团队",
+            "color": "pink"
+          }
+        ]
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "33dd1bb8-aa2b-4775-8fd6-7b2671996a01",
+            "name": "React Native 工作组",
+            "color": "pink"
+          }
+        ]
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": true
         }
       }
     }
@@ -8565,6 +8565,67 @@
     "cover": {
       "type": "external",
       "external": {
+        "url": "https://avatars.githubusercontent.com/u/17666471?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "aimuz",
+              "link": {
+                "url": "https://github.com/aimuz"
+              }
+            },
+            "plain_text": "aimuz",
+            "href": "https://github.com/aimuz"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/aimuz"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "7c557d2c-e604-45a3-8680-05867408143c",
+            "name": "个人贡献者",
+            "color": "pink"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
         "url": "https://avatars.githubusercontent.com/u/20061726?v=4"
       }
     },
@@ -13628,67 +13689,6 @@
     "cover": {
       "type": "external",
       "external": {
-        "url": "https://avatars.githubusercontent.com/u/17666471?v=4"
-      }
-    },
-    "properties": {
-      "title": {
-        "id": "title",
-        "type": "title",
-        "title": [
-          {
-            "type": "text",
-            "text": {
-              "content": "aimuz",
-              "link": {
-                "url": "https://github.com/aimuz"
-              }
-            },
-            "plain_text": "aimuz",
-            "href": "https://github.com/aimuz"
-          }
-        ]
-      },
-      "github": {
-        "id": "ogpZ",
-        "type": "url",
-        "url": "https://github.com/aimuz"
-      },
-      "role": {
-        "id": "m%3AAW",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "7c557d2c-e604-45a3-8680-05867408143c",
-            "name": "个人贡献者",
-            "color": "pink"
-          }
-        ]
-      },
-      "team": {
-        "id": "CBVI",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "group": {
-        "id": "%5ElK%3A",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "alumni": {
-        "id": "dtGi",
-        "type": "formula",
-        "formula": {
-          "type": "boolean",
-          "boolean": false
-        }
-      }
-    }
-  },
-  {
-    "cover": {
-      "type": "external",
-      "external": {
         "url": "https://avatars.githubusercontent.com/u/1286674?v=4"
       }
     },
@@ -18167,6 +18167,67 @@
         "id": "ogpZ",
         "type": "url",
         "url": "https://github.com/PerfectPan"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "7c557d2c-e604-45a3-8680-05867408143c",
+            "name": "个人贡献者",
+            "color": "pink"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
+        "url": "https://avatars.githubusercontent.com/u/8066567?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Phecda",
+              "link": {
+                "url": "https://github.com/Phecda"
+              }
+            },
+            "plain_text": "Phecda",
+            "href": "https://github.com/Phecda"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/Phecda"
       },
       "role": {
         "id": "m%3AAW",
