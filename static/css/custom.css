@@ -4,10 +4,48 @@
 :root {
   --ifm-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --ifm-line-height-base: 2;
-  /* change width of sidebar from 300px to 240px */
+  /* change the width of sidebar from 300px to 240px */
   --doc-sidebar-width: 240px !important; 
-  /* change width of sidebar from 83px to 63px */
+  /* change the width of sidebar from 83vw to 63vw */
   --ifm-navbar-sidebar-width: 63vw;
+}
+
+/* -----change the width of main content-----start */
+main > .container {
+  max-width: none;
+}
+main > .container > .row {
+  margin: 0;
+}
+
+@media (min-width: 997px) {
+  main > .container > .row > div:first-child {
+    /* modify from 75% to 83% */
+    max-width: 83% !important;
+  }
+}
+main > .container > .row > .col--3 {
+  --ifm-col-width:  calc(2 / 12 * 100%);
+  /* change padding of toc */
+  --ifm-spacing-horizontal: 0px;
+}
+/* -----change the width of main content-----end */
+
+/* ---- set the first column of table sticky ----start*/
+@media (min-width: 768px) { 
+  table thead th:first-child,
+  table tbody th:first-child,
+  table tbody td:first-child {
+    position: sticky;
+    left: 0;
+    border: var(--ifm-table-border-width) solid var(--ifm-table-border-color);
+    background-color: var(--ifm-color-emphasis-100) !important;
+  }
+}
+/* ---- set the first column of table sticky ----start*/
+
+table {
+  font-size: 14px;
 }
 
 .main-wrapper header h1 {
