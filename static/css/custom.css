@@ -351,6 +351,19 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
   /* Color which works with dark mode syntax highlighting theme */
 }
 
+.theme-code-block-highlighted-line {
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+  background-color: rgba(0,0,0,.1) !important;
+}
+
+html[data-theme="dark"] .theme-code-block-highlighted-line {
+  background-color: rgb(72, 77, 91) !important;
+  /* Color which works with dark mode syntax highlighting theme */
+}
+
+
 .footer_link_wechat_img img {
   width: 100%;
 }

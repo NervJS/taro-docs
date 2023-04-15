@@ -240,7 +240,7 @@ H5 根节点 `font-size` 的最小值。
 
 #### 忽略样式方法 3 写成行内样式
 
-```HTML {2-9}
+```jsx {2-9}
 <View
   style={{
     display: '-webkit-box',
@@ -248,7 +248,7 @@ H5 根节点 `font-size` 的最小值。
     '-webkit-line-clamp': 2,
     'text-overflow': 'ellipsis',
     overflow: 'hidden',
-    'line-height': 2
+    'line-height': 2,
   }}
 >
   这是要省略的内容这是要省略的内容这是要省略的内容
