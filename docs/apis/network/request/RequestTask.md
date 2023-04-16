@@ -125,12 +125,6 @@ Transfer-Encoding Chunk Received 事件的回调函数
 
 #### CallbackResult
 
-| 参数 | 类型 | 说明 |
-| --- | --- | --- |
-| res | `Response` | 开发者服务器每次返回新 chunk 时的 Response |
-
-#### Response
-
 开发者服务器每次返回新 chunk 时的 Response
 
 | 参数 | 类型 | 说明 |

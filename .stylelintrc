@@ -5,8 +5,11 @@
   "plugins": ["stylelint-order"],
   "customSyntax": "postcss-scss",
   "rules": {
+    "color-hex-case": "upper",
+    "color-function-notation": "legacy",
     "font-family-no-missing-generic-family-keyword": null,
     "function-url-quotes": null,
+    "length-zero-no-unit": null,
     "max-line-length": 150,
     "no-descending-specificity": null,
     "number-max-precision": 10,

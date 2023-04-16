@@ -95,7 +95,7 @@ module.exports = {
       'taro',
       {
         // ...
-        'dynamic-import-node': true,
+        'dynamic-import-node': true, // 如果使用时遇到问题，可尝试将 devServer 配置项中的 hot 设置为 false
       },
     ],
   ],
