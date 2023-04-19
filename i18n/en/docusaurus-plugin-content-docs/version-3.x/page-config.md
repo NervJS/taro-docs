@@ -30,6 +30,7 @@ Notes:
 | disableScroll | Boolean | false | Set to true and the page will not scroll up or down. <br />only works in the page configuration, and cannot be set in app.json |
 | disableSwipeBack | Boolean | false | Disable page right swipe gesture to return  |
 | usingComponents | Object | false | Page customization component configuration |
+| renderer              | String          | webview       | render engine            |
 
 `usingComponents` generally does not need to be configured, but only when it needs to be configured with reference to native mini program components.
 
@@ -51,3 +52,4 @@ Notes:
 | disableScroll | ✔️ | ✘|✘| ✘ |✘|✔️|
 | disableSwipeBack | ✔️ | ✘|✘| ✘ |✘|✘|
 | usingComponents | ✔️ | ✔️|✔️| ✔️ |✘|✘|
+| renderer              | ✔️                                 | ✘                         | ✘             | ✘           | ✘   | ✘   |
