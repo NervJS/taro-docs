@@ -64,7 +64,8 @@ module.exports = {
       alias: {
         ...config.resolve.alias,
         '@tarojs/taro': '@tarojs/taro-h5',
-        ['@tarojs/components$']: '@tarojs/components/dist-h5/react',
+        // Note: 3.6 之前，请使用 '@tarojs/components$': '@tarojs/components/dist-h5/react',
+        ['@tarojs/components$']: '@tarojs/components/lib/react',
       },
     },
     plugins: [
@@ -151,7 +152,7 @@ module.exports = {
   moduleNameMapper: {
     // ...
     '@tarojs/taro': '@tarojs/taro-h5',
-    // '@tarojs/components': '@tarojs/components/dist-h5/react',
+    // '@tarojs/components': '@tarojs/components/lib/react',
     // '@tarojs/plugin-framework-react/dist/runtime': '<rootDir>/__mocks__/taro-framework',
     // '@tarojs/plugin-framework-vue2/dist/runtime': '<rootDir>/__mocks__/taro-framework',
     // '@tarojs/plugin-framework-vue3/dist/runtime': '<rootDir>/__mocks__/taro-framework',

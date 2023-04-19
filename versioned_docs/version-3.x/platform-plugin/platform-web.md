@@ -262,6 +262,7 @@ import '@tarojs/components/dist/taro-components/taro-components.css'
 
 import { applyPolyfills, defineCustomElements } from '@tarojs/components/loader'
 
+// Note: 3.6.3 开始，不再需要手动调用 applyPolyfills 和 defineCustomElements
 applyPolyfills().then(function () {
   defineCustomElements(window)
 })
@@ -272,6 +273,7 @@ applyPolyfills().then(function () {
 ```ts title="src/runtime/index.ts"
 import { defineCustomElement } from '@tarojs/components/dist/components/taro-pull-to-refresh'
 
+// Note: 3.6.3 开始，组件会自动注册，不需要手动调用 defineCustomElement
 defineCustomElement()
 ```
 
