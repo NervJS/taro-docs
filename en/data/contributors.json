@@ -5149,6 +5149,67 @@
     "cover": {
       "type": "external",
       "external": {
+        "url": "https://avatars.githubusercontent.com/u/8528523?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "linhaobin",
+              "link": {
+                "url": "https://github.com/linhaobin"
+              }
+            },
+            "plain_text": "linhaobin",
+            "href": "https://github.com/linhaobin"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/linhaobin"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "7c557d2c-e604-45a3-8680-05867408143c",
+            "name": "个人贡献者",
+            "color": "pink"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
         "url": "https://avatars.githubusercontent.com/u/14868752?v=4"
       }
     },
@@ -14202,67 +14263,6 @@
         "id": "ogpZ",
         "type": "url",
         "url": "https://github.com/lf7817"
-      },
-      "role": {
-        "id": "m%3AAW",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "7c557d2c-e604-45a3-8680-05867408143c",
-            "name": "个人贡献者",
-            "color": "pink"
-          }
-        ]
-      },
-      "team": {
-        "id": "CBVI",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "group": {
-        "id": "%5ElK%3A",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "alumni": {
-        "id": "dtGi",
-        "type": "formula",
-        "formula": {
-          "type": "boolean",
-          "boolean": false
-        }
-      }
-    }
-  },
-  {
-    "cover": {
-      "type": "external",
-      "external": {
-        "url": "https://avatars.githubusercontent.com/u/8528523?v=4"
-      }
-    },
-    "properties": {
-      "title": {
-        "id": "title",
-        "type": "title",
-        "title": [
-          {
-            "type": "text",
-            "text": {
-              "content": "linhaobin",
-              "link": {
-                "url": "https://github.com/linhaobin"
-              }
-            },
-            "plain_text": "linhaobin",
-            "href": "https://github.com/linhaobin"
-          }
-        ]
-      },
-      "github": {
-        "id": "ogpZ",
-        "type": "url",
-        "url": "https://github.com/linhaobin"
       },
       "role": {
         "id": "m%3AAW",
