@@ -528,7 +528,8 @@ module.exports = {
         'items': [
           'apis/network/request/request',
           'apis/network/request/RequestTask',
-          'apis/network/request/addInterceptor'
+          'apis/network/request/addInterceptor',
+          'apis/network/request/cleanInterceptors'
         ]
       },
       {
