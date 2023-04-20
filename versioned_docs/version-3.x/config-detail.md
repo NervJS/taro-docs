@@ -241,7 +241,7 @@ module.exports = {
 
 `array`
 
-一个 preset 是一系列 Taro 插件的集合，配置语法同 [plugins](./config-detail.md#plugins)。
+一个 preset 是一系列 Taro 插件的集合，配置语法同 [plugins](./config-detail#plugins)。
 
 ```js
 module.exports = {
@@ -905,7 +905,7 @@ module.exports = {
       url: {
         enable: true,
         config: {
-          limit: 10240, // 设定转换尺寸上限
+          maxSize: 10, // 设定转换尺寸上限（单位：kbytes）
         },
       },
       // css modules 功能开关与相关配置
@@ -920,7 +920,7 @@ module.exports = {
 }
 ```
 
-#### h5.postcss.htmltransform
+#### mini.postcss.htmltransform
 
 `object`
 
@@ -936,6 +936,29 @@ module.exports = {
         enable: false, // 小程序默认关闭该配置
         config: {
           removeCursorStyle: true, // 默认为 true
+        },
+      },
+    },
+  },
+}
+```
+
+#### mini.postcss.url
+
+`object`
+
+可以进行 `url` 的配置，默认是 `inline` 配置（config 配置可参考 [postcss-url](https://www.npmjs.com/package/postcss-url)）。例如：
+
+```js
+module.exports = {
+  // ...
+  mini: {
+    // ...
+    postcss: {
+      url: {
+        enable: true,
+        config: {
+          maxSize: 10, // 设定转换尺寸上限（单位 kbytes）
         },
       },
     },
@@ -1508,6 +1531,18 @@ Taro v3.2.4 开始支持。
 
 用于控制在 H5 端是否使用兼容性组件库，详情请看 [React 兼容性组件库](h5#react-兼容性组件库)。
 
+### h5.useDeprecatedAdapterComponent
+
+:::info
+Taro v3.6.3 开始支持。
+:::
+
+`boolean`
+
+默认值：`false`
+
+用于控制在 H5 端是否使用旧版本适配器，旧版本采用全局注册组件，懒加载组件相关依赖；新版本适配器会自动注册相关组件，不再需要引入 `@tarojs/components/loader` 中的全局 `defineCustomElements` 方法。
+
 ### h5.enableExtract
 
 `boolean`
@@ -1612,6 +1647,29 @@ module.exports = {
 
 > 需要 v3.5 以上版本
 
+#### h5.postcss.url
+
+`object`
+
+可以进行 `url` 的配置，默认 `inline` 配置（config 配置可参考 [postcss-url](https://www.npmjs.com/package/postcss-url)）。例如：
+
+```js
+module.exports = {
+  // ...
+  h5: {
+    // ...
+    postcss: {
+      url: {
+        enable: true,
+        config: {
+          maxSize: 10, // 设定转换尺寸上限（单位 kbytes）
+        },
+      },
+    },
+  },
+}
+```
+
 #### h5.postcss.cssModules
 
 `object`
@@ -1636,6 +1694,28 @@ module.exports = {
   },
 }
 ```
+
+### h5.compile
+
+`object`
+
+Web 编译过程的相关配置。
+
+> 需要 v3.6 以上版本
+
+#### h5.compile.exclude
+
+`array`
+
+配置 Web 应用编译过程中**排除不需要经过 Taro 编译的文件**，使用方式与 [mini.compile.exclude](./config-detail#minicompileexclude) 一致，同 [Rule.exclude](https://webpack.js.org/configuration/module/#ruleexclude)。
+
+#### h5.compile.include
+
+`array`
+
+配置额外**需要经过 Taro 编译的文件**，使用方式与 [mini.compile.exclude](./config-detail#minicompileexclude) 一致，同 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude)。
+
+例如 Taro 默认不编译 `node_modules` 中的文件，可以通过这个配置让 Taro 编译 `node_modules` 中的文件。
 
 ### h5.htmlPluginOption
 

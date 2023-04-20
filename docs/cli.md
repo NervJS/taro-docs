@@ -53,6 +53,10 @@ Taro Doctor 就像一个医生一样，可以诊断项目的依赖、设置、�
 
 Taro create --name [页面名称] 能够在当前项目的 pages 目录下快速生成新的页面文件，并填充基础代码，是一个提高开发效率的利器。
 
+### 快速创建插件模版
+
+参考 [插件编写](./plugin-custom.md)
+
 ### CLI 配置
 
 Taro 会在用户根目录下创建 .taro 文件夹，其中 .taro/index.json 用于存放 CLI 相关配置。

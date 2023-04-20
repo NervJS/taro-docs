@@ -12,11 +12,11 @@ Taro 提供了一些官方插件
 
 ## 如何引入插件
 
-你可以从 npm 或者本地中引入插件，引入方式主要通过 [编译配置](./config-detail.md)中的 `plugins` 和 `presets`，使用如下
+你可以从 npm 或者本地中引入插件，引入方式主要通过 [编译配置](./config-detail)中的 `plugins` 和 `presets`，使用如下
 
 ### plugins
 
-插件在 Taro 中，一般通过[编译配置](./config-detail.md)中的 `plugins` 字段进行引入。
+插件在 Taro 中，一般通过[编译配置](./config-detail)中的 `plugins` 字段进行引入。
 
 `plugins` 字段取值为一个数组，配置方式如下：
 
@@ -24,19 +24,22 @@ Taro 提供了一些官方插件
 const config = {
   plugins: [
     // 引入 npm 安装的插件
-    '@tarojs/plugin-mock', 
+    '@tarojs/plugin-mock',
     // 引入 npm 安装的插件，并传入插件参数
-    ['@tarojs/plugin-mock', {
-      mocks: {
-        '/api/user/1': {
-          name: 'judy',
-          desc: 'Mental guy'
-        }
-      }
-    }],
+    [
+      '@tarojs/plugin-mock',
+      {
+        mocks: {
+          '/api/user/1': {
+            name: 'judy',
+            desc: 'Mental guy',
+          },
+        },
+      },
+    ],
     // 从本地绝对路径引入插件，同样如果需要传入参数也是如上
     '/absulute/path/plugin/filename',
-  ]
+  ],
 }
 ```
 
@@ -44,20 +47,23 @@ const config = {
 
 如果你有一系列插件需要配置，而他们通常是组合起来完成特定的事儿，那你可以通过**插件集** `presets` 来进行配置。
 
-配置[编译配置](./config-detail.md)中的 `presets` 字段，如下。
+配置[编译配置](./config-detail)中的 `presets` 字段，如下。
 
 ```js
 const config = {
   presets: [
     // 引入 npm 安装的插件集
-    '@tarojs/preset-sth', 
+    '@tarojs/preset-sth',
     // 引入 npm 安装的插件集，并传入插件参数
-    ['@tarojs/plugin-sth', {
-      arg0: 'xxx'
-    }],
+    [
+      '@tarojs/plugin-sth',
+      {
+        arg0: 'xxx',
+      },
+    ],
     // 从本地绝对路径引入插件集，同样如果需要传入参数也是如上
     '/absulute/path/preset/filename',
-  ]
+  ],
 }
 ```
 
@@ -115,16 +121,14 @@ export default (ctx) => {
     name: 'upload',
     // 执行 taro upload --help 时输出的 options 信息
     optionsMap: {
-      '--remote': '服务器地址'
+      '--remote': '服务器地址',
     },
     // 执行 taro upload --help 时输出的使用例子的信息
-    synopsisList: [
-      'taro upload --remote xxx.xxx.xxx.xxx'
-    ],
-    async fn () {
+    synopsisList: ['taro upload --remote xxx.xxx.xxx.xxx'],
+    async fn() {
       const { remote } = ctx.runOpts
       await uploadDist()
-    }
+    },
   })
 }
 ```
@@ -138,7 +142,7 @@ export default (ctx) => {
 正如前面所述，针对编译过程，有 `onBuildStart`、`onBuildFinish` 两个钩子来分别表示编译开始，编译结束，而除此之外也有更多 API 来对编译过程进行修改，如下：
 
 - `ctx.onBuildStart(() => void)`，编译开始，接收一个回调函数
-- `ctx.modifyWebpackChain(args: { chain: any }) => void)`，编译中修改 webpack 配置，在这个钩子中，你可以对 webpackChain 作出想要的调整，等同于配置 [`webpackChain`](./config-detail.md#miniwebpackchain)
+- `ctx.modifyWebpackChain(args: { chain: any }) => void)`，编译中修改 webpack 配置，在这个钩子中，你可以对 webpackChain 作出想要的调整，等同于配置 [`webpackChain`](./config-detail#miniwebpackchain)
 - `ctx.modifyBuildAssets(args: { assets: any }) => void)`，修改编译后的结果
 - `ctx.modifyBuildTempFileContent(args: { tempFiles: any }) => void)`，修改编译过程中的中间文件，例如修改 app 或页面的 config 配置
 - `ctx.onBuildFinish(() => void)`，编译结束，接收一个回调函数
@@ -150,6 +154,7 @@ export default (ctx) => {
 使用 API `ctx.registerPlatform`，Taro 中内置的平台支持都是通过这个 API 来进行实现。
 
 > 注意：这是未完工的功能，需要依赖代码编译器 `@tarojs/transform-wx` 的改造完成
+
 ## API
 
 通过以上内容，我们已经大致知道 Taro 插件可以实现哪些特性并且可以编写一个简单的 Taro 插件了，但是，为了能够编写更加复杂且标准的插件，我们需要了解 Taro 插件机制中的具体 API 用法。
@@ -200,7 +205,7 @@ Taro 的插件架构基于 [Tapable](https://github.com/webpack/tapable)。
 
 注册一个可供其他插件调用的钩子，接收一个参数，即 Hook 对象。
 
-一个Hook 对象类型如下：
+一个 Hook 对象类型如下：
 
 ```typescript
 interface IHook {
@@ -239,13 +244,13 @@ ctx.registerMethod('methodName', () => {
   // callback
 })
 ctx.registerMethod({
-  name: 'methodName'
+  name: 'methodName',
 })
 ctx.registerMethod({
   name: 'methodName',
   fn: () => {
     // callback
-  }
+  },
 })
 ```
 
@@ -268,11 +273,11 @@ ctx.registerMethod({
 ```typescript
 interface ICommand {
   // 命令别名
-  alias?: string,
+  alias?: string
   // 执行 taro <command> --help 时输出的 options 信息
   optionsMap?: {
     [key: string]: string
-  },
+  }
   // 执行 taro <command> --help 时输出的使用例子的信息
   synopsisList?: string[]
 }
@@ -283,12 +288,8 @@ interface ICommand {
 ```typescript
 ctx.registerCommand({
   name: 'create',
-  fn () {
-    const {
-      type,
-      name,
-      description
-    } = ctx.runOpts
+  fn() {
+    const { type, name, description } = ctx.runOpts
     const { chalk } = ctx.helper
     const { appPath } = ctx.paths
     if (typeof name !== 'string') {
@@ -299,11 +300,11 @@ ctx.registerCommand({
       const page = new Page({
         pageName: name,
         projectDir: appPath,
-        description
+        description,
       })
       page.create()
     }
-  }
+  },
 })
 ```
 
@@ -332,7 +333,7 @@ interface IPlatform extends IHook {
 ctx.registerPlatform({
   name: 'alipay',
   useConfigName: 'mini',
-  async fn ({ config }) {
+  async fn({ config }) {
     const { appPath, nodeModulesPath, outputPath } = ctx.paths
     const { npm, emptyDirectory } = ctx.helper
     emptyDirectory(outputPath)
@@ -347,9 +348,9 @@ ctx.registerPlatform({
         templ: '.awml',
         style: '.acss',
         config: '.json',
-        script: '.js'
+        script: '.js',
       },
-      isUseComponentBuildPage: false
+      isUseComponentBuildPage: false,
     }
     ctx.modifyBuildTempFileContent(({ tempFiles }) => {
       const replaceKeyMap = {
@@ -360,9 +361,9 @@ ctx.registerPlatform({
         text: 'name',
         iconPath: 'icon',
         selectedIconPath: 'activeIcon',
-        color: 'textColor'
+        color: 'textColor',
       }
-      Object.keys(tempFiles).forEach(key => {
+      Object.keys(tempFiles).forEach((key) => {
         const item = tempFiles[key]
         if (item.config) {
           recursiveReplaceObjectKeys(item.config, replaceKeyMap)
@@ -372,7 +373,7 @@ ctx.registerPlatform({
     // build with webpack
     const miniRunner = await npm.getNpmPkg('@tarojs/mini-runner', appPath)
     await miniRunner(appPath, miniRunnerOpts)
-  }
+  },
 })
 ```
 
@@ -392,8 +393,8 @@ const assets = await ctx.applyPlugins({
   name: 'modifyBuildAssets',
   initialVal: assets,
   opts: {
-    assets
-  }
+    assets,
+  },
 })
 ```
 
@@ -404,13 +405,11 @@ const assets = await ctx.applyPlugins({
 使用方式：
 
 ```typescript
-ctx.addPluginOptsSchema(joi => {
+ctx.addPluginOptsSchema((joi) => {
   return joi.object().keys({
-    mocks: joi.object().pattern(
-      joi.string(), joi.object()
-    ),
+    mocks: joi.object().pattern(joi.string(), joi.object()),
     port: joi.number(),
-    host: joi.string()
+    host: joi.string(),
   })
 })
 ```

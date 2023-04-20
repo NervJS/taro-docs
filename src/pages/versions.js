@@ -35,7 +35,7 @@ function Version () {
               <tr>
                 <th>{latestVersion}</th>
                 <td>
-                  <Link to={useBaseUrl('/docs')}>
+                  <Link to={useBaseUrl('/docs/')}>
                     文档
                   </Link>
                 </td>

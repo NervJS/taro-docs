@@ -11,7 +11,7 @@ $ yarn add babel-plugin-transform-runtime --dev
 $ yarn add babel-runtime
 ```
 
-随后修改项目 [`babel` 配置](./config-detail.md#babel)，增加插件 `babel-plugin-transform-runtime`。
+随后修改项目 [`babel` 配置](./config-detail#babel)，增加插件 `babel-plugin-transform-runtime`。
 
 ```js
 babel: {

@@ -186,12 +186,12 @@ Taro.createSelectorQuery().selectViewport().scrollOffset(function(res){
 回调函数，在执行 `SelectorQuery.exec` 方法后，节点信息会在 `callback` 中返回。
 
 ```tsx
-(result: BoundingClientRectCallbackResult) => void
+(result: BoundingClientRectCallbackResult | BoundingClientRectCallbackResult[]) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| result | `BoundingClientRectCallbackResult` |
+| result | BoundingClientRectCallbackResult or BoundingClientRectCallbackResult[] |
 
 ### BoundingClientRectCallbackResult
 

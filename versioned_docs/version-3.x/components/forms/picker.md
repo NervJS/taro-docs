@@ -5,7 +5,7 @@ sidebar_label: Picker
 
 从底部弹起的滚动选择器
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/picker.html)
 
@@ -277,8 +277,8 @@ export default class PagePicker extends Component {
 | --- | --- | :---: | --- |
 | mode | `"time"` | 是 | 选择器类型 |
 | value | `string` | 是 | value 的值表示选择了 range 中的第几个（下标从 0 开始） |
-| start | `string` | 否 | 仅当 mode = timeordate 时有效，表示有效时间范围的开始，字符串格式为"hh:mm" |
-| end | `string` | 否 | 仅当 mode = timeordate 时有效，表示有效时间范围的结束，字符串格式为"hh:mm" |
+| start | `string` | 否 | 仅当 mode 为 "time" 或 "date" 时有效，表示有效时间范围的开始，字符串格式为"hh:mm" |
+| end | `string` | 否 | 仅当 mode 为 "time" 或 "date" 时有效，表示有效时间范围的结束，字符串格式为"hh:mm" |
 | onChange | `CommonEventFunction<ChangeEventDetail>` | 是 | value 改变时触发 change 事件 |
 
 ### API 支持度
@@ -304,8 +304,8 @@ export default class PagePicker extends Component {
 | --- | --- | :---: | :---: | --- |
 | mode | `"date"` |  | 是 | 选择器类型 |
 | value | `string` | `0` | 是 | 表示选中的日期，格式为"YYYY-MM-DD" |
-| start | `string` |  | 否 | 仅当 mode = timeordate 时有效，表示有效时间范围的开始，字符串格式为"hh:mm" |
-| end | `string` |  | 否 | 仅当 mode = timeordate 时有效，表示有效时间范围的结束，字符串格式为"hh:mm" |
+| start | `string` |  | 否 | 仅当 mode 为 "time" 或 "date" 时有效，表示有效时间范围的开始，字符串格式为"YYYY-MM-DD" |
+| end | `string` |  | 否 | 仅当 mode 为 "time" 或 "date" 时有效，表示有效时间范围的结束，字符串格式为"YYYY-MM-DD" |
 | fields | `keyof Fields` | `"day"` | 否 | 有效值 year, month, day，表示选择器的粒度 |
 | onChange | `CommonEventFunction<ChangeEventDetail>` |  | 是 | value 改变时触发 change 事件 |
 
@@ -340,8 +340,9 @@ export default class PagePicker extends Component {
 | 参数 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | :---: | :---: | --- |
 | mode | `"region"` |  | 是 | 选择器类型 |
-| value | `string[]` | `[]` | 是 | 表示选中的省市区，默认选中每一列的第一个值 |
+| value | `string[]` | `[]` | 否 | 表示选中的省市区，默认选中每一列的第一个值 |
 | customItem | `string` |  | 否 | 可为每一列的顶部添加一个自定义的项 |
+| level | `keyof Level` | `"region"` | 否 | 选择器层级 |
 | regionData | `RegionData[]` |  | 否 | 自定义省市区数据 |
 | onChange | `CommonEventFunction<ChangeEventDetail>` |  | 是 | value 改变时触发 change 事件 |
 
@@ -351,6 +352,7 @@ export default class PagePicker extends Component {
 | :---: | :---: | :---: | :---: | :---: |
 | PickerRegionProps.value | ✔️ | ✔️ | ✔️ |  |
 | PickerRegionProps.customItem | ✔️ | ✔️ | ✔️ |  |
+| PickerRegionProps.level | ✔️ |  |  |  |
 | PickerRegionProps.regionData |  |  | ✔️ |  |
 | PickerRegionProps.onChange | ✔️ | ✔️ | ✔️ |  |
 
@@ -369,3 +371,12 @@ export default class PagePicker extends Component {
 | value | `string` | 是 |
 | code | `string` | 是 |
 | postcode | `string` | 否 |
+
+### Level
+
+| 参数 | 说明 |
+| --- | --- |
+| province | 省级选择器 |
+| city | 市级选择器 |
+| region | 区级选择器 |
+| sub-district | 街道选择器 |

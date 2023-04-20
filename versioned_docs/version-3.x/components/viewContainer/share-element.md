@@ -91,7 +91,7 @@ export default function () {
         {
           contacts.map((item, index) => (
             <View key={item.id} className="contact" onClick={e => showNext(e, index)}>
-              <ShareElement duration={300} className="name" mapkey="name" transform={transformIdx === index}>
+              <ShareElement duration={300} className="name" key="name" transform={transformIdx === index}>
                 {item.name}
               </ShareElement>
               <View className="list">
@@ -118,7 +118,7 @@ export default function () {
       >
         <View className="screen screen2">
           <View className="contact">
-            <ShareElement className="name" mapkey="name" duration={300} transform>
+            <ShareElement className="name" key="name" duration={300} transform>
               {contact.name}
             </ShareElement>
             <View className={`paragraph ${show ? 'enter' : ''}`}>
@@ -233,7 +233,6 @@ button {
 | 参数 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | :---: | :---: | --- |
 | key | `string` |  | 否 | 映射标记 |
-| mapkey | `string` |  | 否 | 映射标记 |
 | name | `string` |  | 否 | 映射标记 |
 | transform | `boolean` | `false` | 否 | 是否进行动画 |
 | duration | `number` | `300` | 否 | 动画时长，单位毫秒 |
@@ -244,7 +243,6 @@ button {
 | API | 微信小程序 | 支付宝小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | ShareElementProps.key | ✔️ |  |  |  |  |
-| ShareElementProps.mapkey | ✔️ |  |  |  |  |
 | ShareElementProps.name |  | ✔️ |  |  |  |
 | ShareElementProps.transform | ✔️ | ✔️ |  |  |  |
 | ShareElementProps.duration | ✔️ | ✔️ |  |  |  |

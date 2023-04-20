@@ -109,7 +109,7 @@ function Footer () {
                 </Link>
               </p>
               <p>
-                <Link to="https://aotu.io/join/">
+                <Link to="https://aotu.io/about">
                   <Translate description="The footer content">
                   加入我们
                   </Translate>

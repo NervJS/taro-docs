@@ -82,7 +82,11 @@
       "use-h5",
       "jquery-like",
       "dynamic-import",
-      "plugin",
+      {
+        "label": "插件功能",
+        "type": "category",
+        "items": ["plugin", "plugin-custom"]
+      },
       {
         "label": "性能优化",
         "type": "category",
@@ -107,11 +111,12 @@
         "label": "扩展编译平台",
         "type": "category",
         "items": [
-          "platform-plugin",
-          "platform-plugin-how",
-          "platform-plugin-base",
-          "platform-plugin-template",
-          "platform-plugin-reconciler"
+          "platform-plugin/index",
+          "platform-plugin/how",
+          "platform-plugin/platform-mini",
+          "platform-plugin/reconciler",
+          "platform-plugin/template",
+          "platform-plugin/platform-web"
         ]
       },
       "external-libraries"
@@ -149,6 +154,8 @@
     "视图容器": [
       "components/viewContainer/cover-image",
       "components/viewContainer/cover-view",
+      "components/viewContainer/grid-view",
+      "components/viewContainer/list-view",
       "components/viewContainer/custom-wrapper",
       "components/viewContainer/match-media",
       "components/viewContainer/movable-area",
@@ -158,6 +165,8 @@
       "components/viewContainer/root-portal",
       "components/viewContainer/scroll-view",
       "components/viewContainer/share-element",
+      "components/viewContainer/sticky-header",
+      "components/viewContainer/sticky-section",
       "components/viewContainer/slot",
       "components/viewContainer/swiper",
       "components/viewContainer/swiper-item",
@@ -188,7 +197,7 @@
       "components/forms/textarea"
     ],
     "导航": [
-      "components/navig/Functional-Page-Navigator",
+      "components/navig/functional-page-navigator",
       "components/navig/navigation-bar",
       "components/navig/navigator",
       "components/navig/tab-item",
@@ -200,6 +209,8 @@
       "components/media/ar-camera",
       "components/media/audio",
       "components/media/camera",
+      "components/media/channel-live",
+      "components/media/channel-video",
       "components/media/image",
       "components/media/live-player",
       "components/media/live-pusher",
@@ -442,7 +453,12 @@
       {
         "label": "窗口",
         "type": "category",
-        "items": ["apis/ui/window/setWindowSize", "apis/ui/window/onWindowResize", "apis/ui/window/offWindowResize"]
+        "items": [
+          "apis/ui/window/setWindowSize",
+          "apis/ui/window/onWindowResize",
+          "apis/ui/window/offWindowResize",
+          "apis/ui/window/checkIsPictureInPictureActive"
+        ]
       }
     ],
     "网络": [
@@ -452,7 +468,8 @@
         "items": [
           "apis/network/request/request",
           "apis/network/request/RequestTask",
-          "apis/network/request/addInterceptor"
+          "apis/network/request/addInterceptor",
+          "apis/network/request/cleanInterceptors"
         ]
       },
       {
@@ -469,14 +486,14 @@
         "label": "WebSocket",
         "type": "category",
         "items": [
-          "apis/network/webSocket/sendSocketMessage",
-          "apis/network/webSocket/onSocketOpen",
-          "apis/network/webSocket/onSocketMessage",
-          "apis/network/webSocket/onSocketError",
-          "apis/network/webSocket/onSocketClose",
-          "apis/network/webSocket/connectSocket",
-          "apis/network/webSocket/closeSocket",
-          "apis/network/webSocket/SocketTask"
+          "apis/network/websocket/sendSocketMessage",
+          "apis/network/websocket/onSocketOpen",
+          "apis/network/websocket/onSocketMessage",
+          "apis/network/websocket/onSocketError",
+          "apis/network/websocket/onSocketClose",
+          "apis/network/websocket/connectSocket",
+          "apis/network/websocket/closeSocket",
+          "apis/network/websocket/SocketTask"
         ]
       },
       {
@@ -810,6 +827,11 @@
         "items": ["apis/open-api/favorites/addVideoToFavorites", "apis/open-api/favorites/addFileToFavorites"]
       },
       {
+        "label": "我的小程序",
+        "type": "category",
+        "items": ["apis/open-api/my-miniprogram/checkIsAddedToMyMiniProgram"]
+      },
+      {
         "label": "车牌",
         "type": "category",
         "items": ["apis/open-api/license-plate/chooseLicensePlate"]
@@ -894,14 +916,14 @@
         "label": "蓝牙-信标(Beacon)",
         "type": "category",
         "items": [
-          "apis/device/ibeacon/stopBeaconDiscovery",
-          "apis/device/ibeacon/startBeaconDiscovery",
-          "apis/device/ibeacon/onBeaconUpdate",
-          "apis/device/ibeacon/onBeaconServiceChange",
-          "apis/device/ibeacon/offBeaconUpdate",
-          "apis/device/ibeacon/offBeaconServiceChange",
-          "apis/device/ibeacon/getBeacons",
-          "apis/device/ibeacon/IBeaconInfo"
+          "apis/device/iBeacon/stopBeaconDiscovery",
+          "apis/device/iBeacon/startBeaconDiscovery",
+          "apis/device/iBeacon/onBeaconUpdate",
+          "apis/device/iBeacon/onBeaconServiceChange",
+          "apis/device/iBeacon/offBeaconUpdate",
+          "apis/device/iBeacon/offBeaconServiceChange",
+          "apis/device/iBeacon/getBeacons",
+          "apis/device/iBeacon/IBeaconInfo"
         ]
       },
       {
@@ -1095,6 +1117,7 @@
     "WXML": [
       "apis/wxml/createSelectorQuery",
       "apis/wxml/createIntersectionObserver",
+      "apis/wxml/createMediaQueryObserver",
       "apis/wxml/IntersectionObserver",
       "apis/wxml/MediaQueryObserver",
       "apis/wxml/NodesRef",
@@ -1109,6 +1132,7 @@
     ],
     "云开发": ["apis/cloud/cloud", "apis/cloud/DB"],
     "Alipay": ["apis/alipay/getOpenUserInfo"],
+    "QQ": ["apis/qq/openQzonePublish"],
     "Swan": ["apis/swan/setPageInfo"]
   }
 }

@@ -27,11 +27,10 @@ sidebar_label: createCanvasContext
 ## 示例代码
 
 ```tsx
-import {useReady} from "@tarojs/taro";
+import { useReady } from '@tarojs/taro'
 
 useReady(() => {
   const context = Taro.createCanvasContext('canvas')
-
   context.setStrokeStyle("#00ff00")
   context.setLineWidth(5)
   context.rect(0, 0, 200, 200)

@@ -1734,7 +1734,8 @@ declare module '../../index' {
      * @supported weapp, h5
      * @example
      * ```tsx
-     * import {useReady} from "@tarojs/taro";
+     * import { useReady } from '@tarojs/taro'
+     *
      * useReady(() => {
      *   const context = Taro.createCanvasContext('canvas')
      *   context.setStrokeStyle("#00ff00")
