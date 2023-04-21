@@ -1,4 +1,4 @@
-import Taro from './index'
+import Taro from '../index'
 
 declare module './index' {
   interface TaroStatic {

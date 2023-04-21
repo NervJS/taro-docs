@@ -379,6 +379,7 @@ module.exports = {
         'items': [
           'apis/base/crypto/getUserCryptoManager',
           'apis/base/crypto/UserCryptoManager',
+          'apis/base/crypto/getRandomValues',
         ]
       },
       'apis/base/env/env',

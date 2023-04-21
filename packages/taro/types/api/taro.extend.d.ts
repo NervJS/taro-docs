@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Taro from './index'
+import Taro from '../index'
 
 declare module './index' {
   type MessageType = 'info' | 'success' | 'error' | 'warning'
@@ -9,6 +9,12 @@ declare module './index' {
     message: string
     type?: MessageType
     duration?: number
+  }
+
+  interface AppInfo {
+    platform: string,
+    taroVersion: string
+    designWidth: number
   }
 
   interface RequestParams<T=any> extends request.Option<T, any> {
@@ -76,6 +82,14 @@ declare module './index' {
       targetUnit?: string
       unitPrecision?: number
     }): void
+
+    /** @ignore */
+    initAppInfo(appInfo: AppInfo): void
+
+    /** 小程序获取和 Taro 相关的 App 信息
+     * @supported weapp, alipay, jd, qq, swan, tt
+     */
+    getAppInfo(): AppInfo
 
     /** 小程序引用插件 JS 接口
      * @supported weapp, alipay, h5, rn, jd, qq, swan, tt, quickapp
