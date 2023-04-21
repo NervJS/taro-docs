@@ -558,5 +558,17 @@
   "sidebar.API.category.QQ": {
     "message": "QQ",
     "description": "The label for category QQ in sidebar API"
+  },
+  "sidebar.API.category.Taro": {
+    "message": "Taro",
+    "description": "The label for category Taro in sidebar API"
+  },
+  "sidebar.API.category.拓展": {
+    "message": "Extend",
+    "description": "The label for category 拓展 in sidebar API"
+  },
+  "sidebar.API.category.Hooks": {
+    "message": "Hooks",
+    "description": "The label for category Hooks in sidebar API"
   }
 }
