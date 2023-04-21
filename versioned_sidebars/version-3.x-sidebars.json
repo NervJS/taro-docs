@@ -50,6 +50,7 @@
         "type": "category",
         "items": ["router", "router-extend"]
       },
+      "request",
       "static-reference",
       {
         "label": "多端开发",

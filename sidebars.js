@@ -53,6 +53,7 @@ module.exports = {
           'router-extend'
         ]
       },
+      'request',
       'static-reference',
       {
         label: '多端开发',
