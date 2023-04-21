@@ -1293,6 +1293,43 @@ module.exports = {
     ],
     'Swan': [
       'apis/swan/setPageInfo'
-    ]
+    ],
+    'Taro': {
+      '拓展': [
+        'apis/taro.extend/eventCenter',
+        'apis/taro.extend/getEnv',
+        'apis/taro.extend/pxTransform',
+        'apis/taro.extend/initPxTransform',
+        'apis/taro.extend/getAppInfo',
+        'apis/taro.extend/requirePlugin',
+        'apis/taro.extend/getCurrentInstance',
+        'apis/taro.extend/setGlobalDataPlugin',
+        'apis/taro.extend/getTabBar',
+      ],
+      'Hooks': [
+        'apis/taro.hooks/useDidShow',
+        'apis/taro.hooks/useDidHide',
+        'apis/taro.hooks/usePullDownRefresh',
+        'apis/taro.hooks/useReachBottom',
+        'apis/taro.hooks/usePageScroll',
+        'apis/taro.hooks/useResize',
+        'apis/taro.hooks/useShareAppMessage',
+        'apis/taro.hooks/useTabItemTap',
+        'apis/taro.hooks/useAddToFavorites',
+        'apis/taro.hooks/useShareTimeline',
+        'apis/taro.hooks/useSaveExitState',
+        'apis/taro.hooks/useLaunch',
+        'apis/taro.hooks/useError',
+        'apis/taro.hooks/useUnhandledRejection',
+        'apis/taro.hooks/usePageNotFound',
+        'apis/taro.hooks/useLoad',
+        'apis/taro.hooks/useUnload',
+        'apis/taro.hooks/useReady',
+        'apis/taro.hooks/useRouter',
+        'apis/taro.hooks/useTitleClick',
+        'apis/taro.hooks/useOptionMenuClick',
+        'apis/taro.hooks/usePullIntercept',
+      ],
+    },
   }
 }
