@@ -384,6 +384,7 @@ module.exports = {
       },
       'apis/base/env/env',
       'apis/base/preload',
+      'apis/base/interceptorify',
     ],
     '路由': [
       'apis/route/switchTab',
