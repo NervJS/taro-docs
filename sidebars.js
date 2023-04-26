@@ -1305,6 +1305,7 @@ module.exports = {
         'apis/taro.extend/getCurrentInstance',
         'apis/taro.extend/setGlobalDataPlugin',
         'apis/taro.extend/getTabBar',
+        'apis/taro.extend/interceptorify',
       ],
       'Hooks': [
         'apis/taro.hooks/useDidShow',
