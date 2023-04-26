@@ -10,7 +10,7 @@ sidebar_label: getTabBar
 ## 类型
 
 ```tsx
-<T>(page: Current) => T
+<T>(page: any) => T
 ```
 
 ## 参数
