@@ -289,6 +289,16 @@ a:hover {
   width: 200px;
 }
 
+@media (max-width: 600px) {
+  .footer_link_wechat_img {
+    display: none;
+    position: absolute;
+    left: -50px;
+    top: -10px;
+    width: 200px;
+  }
+}
+
 .footer_link_wechat_img.inline {
   left: 100px;
 }
