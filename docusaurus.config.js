@@ -260,7 +260,7 @@ const siteConfig = {
           {
             tagName: 'meta',
             name: 'theme-color',
-            content: 'rgb(37, 194, 160)',
+            content: 'rgb(0, 0, 194)',
           },
           {
             tagName: 'meta',
