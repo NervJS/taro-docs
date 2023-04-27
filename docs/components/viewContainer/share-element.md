@@ -237,6 +237,11 @@ button {
 | transform | `boolean` | `false` | 否 | 是否进行动画 |
 | duration | `number` | `300` | 否 | 动画时长，单位毫秒 |
 | easingFunction | `string` | `ease-out` | 否 | css缓动函数 |
+| transitionOnGesture | `boolean` | `false` | 否 | 手势返回时是否进行动画 |
+| shuttleOnPush | "from" or "to" | `"to"` | 否 | 指定 push 阶段的飞跃物 |
+| shuttleOnPop | `string` | `"to"` | 否 | 指定 pop 阶段的飞跃物 |
+| rectTweenType | "materialRectArc" or "materialRectCenterArc" or "linear" or "elasticIn" or "elasticOut" or "elasticInOut" or "bounceIn" or "bounceOut" or "bounceInOut" or "cubic-bezier(x1," | `"materialRectArc"` | 否 | 动画插值曲线 |
+| onFrame | `string` |  | 否 | 动画帧回调 |
 
 ### API 支持度
 
@@ -247,3 +252,8 @@ button {
 | ShareElementProps.transform | ✔️ | ✔️ |  |  |  |
 | ShareElementProps.duration | ✔️ | ✔️ |  |  |  |
 | ShareElementProps.easingFunction | ✔️ | ✔️ |  |  |  |
+| ShareElementProps.transitionOnGesture | ✔️ |  |  |  |  |
+| ShareElementProps.shuttleOnPush | ✔️ |  |  |  |  |
+| ShareElementProps.shuttleOnPop | ✔️ |  |  |  |  |
+| ShareElementProps.rectTweenType | ✔️ |  |  |  |  |
+| ShareElementProps.onFrame | ✔️ |  |  |  |  |

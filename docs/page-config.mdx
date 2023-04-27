@@ -96,6 +96,7 @@ export default function Index() {}
 | disableScroll                | Boolean                    | false    | 设置为 true 则页面整体不能上下滚动。<br />只在页面配置中有效，无法在 app.json 中设置  |
 | disableSwipeBack             | Boolean                    | false    | 禁止页面右滑手势返回                                                                  |
 | usingComponents              | Object                     | 否       | 页面自定义组件配置                                                                    |
+| renderer              | String                     | webview       | 渲染后端                                                                    |
 
 其中，`usingComponents` 一般不需要配置，只有在需要与引用原生小程序组件的时候才需要配置。
 
@@ -118,3 +119,4 @@ export default function Index() {}
 | disableScroll                | ✔️                                 | ✘                          | ✘              | ✘            | ✘   | ✔️  |
 | disableSwipeBack             | ✔️                                 | ✘                          | ✘              | ✘            | ✘   | ✘   |
 | usingComponents              | ✔️                                 | ✔️                         | ✔️             | ✔️           | ✘   | ✘   |
+| renderer              | ✔️                                 | ✘                         | ✘             | ✘           | ✘   | ✘   |

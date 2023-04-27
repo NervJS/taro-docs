@@ -58,5 +58,13 @@
   "item.label.京东小程序": {
     "message": "JD Mini Program",
     "description": "Navbar item with label 京东小程序"
+  },
+  "logo.alt": {
+    "message": "Taro logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.CanIUse": {
+    "message": "CanIUse",
+    "description": "Navbar item with label CanIUse"
   }
 }

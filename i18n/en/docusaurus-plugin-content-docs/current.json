@@ -542,5 +542,33 @@
   "sidebar.docs.category.状态管理": {
     "message": "State management",
     "description": "The label for category 状态管理 in sidebar docs"
+  },
+  "sidebar.docs.category.路由功能": {
+    "message": "Routing Ability",
+    "description": "The label for category 路由功能 in sidebar docs"
+  },
+  "sidebar.docs.category.插件功能": {
+    "message": "Plug-in Ability",
+    "description": "The label for category 插件功能 in sidebar docs"
+  },
+  "sidebar.API.category.我的小程序": {
+    "message": "Mine Mini-Program",
+    "description": "The label for category 我的小程序 in sidebar API"
+  },
+  "sidebar.API.category.QQ": {
+    "message": "QQ",
+    "description": "The label for category QQ in sidebar API"
+  },
+  "sidebar.API.category.Taro": {
+    "message": "Taro",
+    "description": "The label for category Taro in sidebar API"
+  },
+  "sidebar.API.category.拓展": {
+    "message": "Extend",
+    "description": "The label for category 拓展 in sidebar API"
+  },
+  "sidebar.API.category.Hooks": {
+    "message": "Hooks",
+    "description": "The label for category Hooks in sidebar API"
   }
 }

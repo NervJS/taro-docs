@@ -137,7 +137,7 @@ interface ScrollViewProps extends StandardProps {
    * @supported weapp
    * @default 'list'
    */
-  type: 'list' | 'custom'
+  type?: 'list' | 'custom'
   /** 是否反向滚动。一般初始滚动位置是在顶部，反向滚动则是在底部。
    * @supported weapp
    * @default false
@@ -176,11 +176,11 @@ interface ScrollViewProps extends StandardProps {
   /** 滚动开始事件
    * @supported weapp
    */
-  onScrollStart?:BaseEventOrigFunction<ScrollViewProps.onScrollDetail>
+  onScrollStart?: BaseEventOrigFunction<ScrollViewProps.onScrollDetail>
   /** 滚动结束事件
    * @supported weapp
    */
-  onScrollEnd?:BaseEventOrigFunction<ScrollViewProps.onScrollDetail>
+  onScrollEnd?: BaseEventOrigFunction<ScrollViewProps.onScrollDetail>
   /** 自定义下拉刷新控件被下拉
    * @supported weapp
    */
