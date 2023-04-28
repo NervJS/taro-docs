@@ -79,6 +79,7 @@ table {
 
 .navbar {
   background-image: linear-gradient(180deg, #0000C2, #0000C2);
+  height: auto;
 }
 
 .html[data-theme="dark"] .navbar {
