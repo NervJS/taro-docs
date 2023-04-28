@@ -166,12 +166,14 @@ a:hover {
   box-sizing: content-box;
   padding-top: 100px;
   height: 350px;
+  padding-left: 20px;
 }
 
 .footer .footer_logo_container {
   display: inline-block;
   box-sizing: border-box;
   width: 390px;
+  position: relative;
 }
 
 .footer .footer_logo {
@@ -183,9 +185,10 @@ a:hover {
 }
 
 .footer .footer_designedby {
-  position: absolute;
+  /* position: absolute;
   left: 0;
-  top: 300px;
+  top: 300px; */
+  margin-top: 20px;
   width: 154px;
   height: 12px;
   background-image: url(//img30.360buyimg.com/ling/jfs/t1/33012/13/70/7004/5c9c2591E9cfedc30/28f3020042757672.png);
