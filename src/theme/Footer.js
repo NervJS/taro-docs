@@ -6,22 +6,19 @@
  */
 
 import Link from '@docusaurus/Link'
-import { useLocation } from '@docusaurus/router'
 import Translate from '@docusaurus/Translate'
 import React from 'react'
 
 import AffixContact from '../components/affix-contact'
 
 function Footer () {
-  const { pathname = '' } = useLocation()
   return (
     <>
-      {pathname && pathname.indexOf('/communicate') < 0 && <AffixContact />}
       <footer className="footer" id="footer">
         <div className="grid_c1 footer_cont">
           <div className="footer_logo_container">
             <div className="footer_logo" />
-            <span className="footer_designedby" />
+            <div className="footer_designedby" />
           </div>
           <div className="footer_link_container">
             <div className="footer_link">
@@ -55,13 +52,13 @@ function Footer () {
               <p>
                 <Link to="https://github.com/NervJS/taro/issues">GitHub</Link>
               </p>
-              <p>
+              {/* <p>
                 <Link to="https://taro-club.jd.com">Taro BBS</Link>
-              </p>
+              </p> */}
               <p className="footer_link_connect_wrap">
                 <span className="footer_link_connect footer_link_wechat">
                   <Translate description="The footer content">
-                 微信
+                  微信
                   </Translate>
                   <span className="wechat_qrcode_icon">
                     <svg
@@ -94,6 +91,16 @@ function Footer () {
                   <img src="https://camo.githubusercontent.com/10834a234b99a5880b5dff7c0ca7235e2a0772e7/687474703a2f2f696d6732302e333630627579696d672e636f6d2f7562612f6a66732f7432303139372f3238332f313638373136383837342f3133363034322f32623464383131662f35623330613635634e39643166303366312e706e67" />
                 </span>
               </p>
+              <p>
+                <Link to="https://github.com/NervJS/taro/discussions">
+                  <Translate description="The footer content">
+                  讨论区
+                  </Translate>
+                </Link>
+              </p>
+              <div>
+                <AffixContact pos={'footer'} />
+              </div>
             </div>
             <div className="footer_link">
               <h3 className="footer_link_tit footer_link_tit3">
@@ -108,13 +115,13 @@ function Footer () {
                   </Translate>
                 </Link>
               </p>
-              <p>
+              {/* <p>
                 <Link to="https://aotu.io/about">
                   <Translate description="The footer content">
                   加入我们
                   </Translate>
                 </Link>
-              </p>
+              </p> */}
               <p>
                 <Link to="mailto:taro@jd.com?subject=【Taro 合作】合作标题">
                   <Translate description="The footer content">

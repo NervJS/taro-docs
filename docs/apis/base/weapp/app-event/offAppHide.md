@@ -12,11 +12,11 @@ sidebar_label: offAppHide
 ## 类型
 
 ```tsx
-(callback: (res: TaroGeneral.CallbackResult) => void) => void
+(callback: (res: onAppHide.CallbackResult) => void) => void
 ```
 
 ## 参数
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| callback | `(res: TaroGeneral.CallbackResult) => void` | 小程序切后台事件的回调函数 |
+| callback | `(res: onAppHide.CallbackResult) => void` | 小程序切后台事件的回调函数 |

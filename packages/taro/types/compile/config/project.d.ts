@@ -3,8 +3,8 @@ import type Chain from 'webpack-chain'
 import type { Compiler } from '../compiler'
 import type { IModifyWebpackChain } from '../hooks'
 import type { ICopyOptions, IOption, ISassOptions, TogglableOptions } from "./util"
-import { IH5Config } from './h5'
-import { IMiniAppConfig } from './mini'
+import type { IH5Config } from './h5'
+import type { IMiniAppConfig } from './mini'
 
 export type PluginItem = string | [string, object]
 
@@ -24,7 +24,7 @@ export interface IProjectBaseConfig {
   port?: number
   projectName?: string
   date?: string
-  designWidth?: number | ((size: number) => number)
+  designWidth?: number | ((size?: string | number) => number)
   deviceRatio?: TaroGeneral.TDeviceRatio
   watcher?: any[]
   sourceRoot?: string

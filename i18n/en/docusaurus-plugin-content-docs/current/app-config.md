@@ -297,6 +297,7 @@ Property that is only supported in WeChat mini-program. <img src="https://storag
 | [themeLocation](#themelocation) |	String | Specify the location of theme.json |
 | [lazyCodeLoading](#lazycodeloading) |	String | Configure custom component code for on-demand injection |
 | [singlePage](#singlepage) |	Object | Single page mode related configuration |
+| [renderer](#renderer)           | String  | The default global render engine              |
 
 ### functionalPages
 
@@ -428,6 +429,16 @@ Single page mode related configuration:
 | Property | Type | Required | Defalult | Description |
 | :--- | :--- | :--- | :--- | :--- |
 | navigationBarFit | String | No | Automatic adjustment by default, `float` if the original page is a custom navigation bar, `squeezed` for No | The intersection status of the navigation bar with the page. A value of `float` means that the navigation bar floats on the page and intersects with the page; a value of `squeezed` means that the page is squeezed by the navigation bar and does not intersect with the page. |
+
+### renderer
+
+Specify the default global render engine.
+
+可选值：`webview`, `skyline`
+
+默认值：`webview`
+
+> Taro offer method `Taro.getRenderer()` to support get which render engine used in page `onLoad` lifecycle.
 
 ## Baidu Smart-program specific Property
 
