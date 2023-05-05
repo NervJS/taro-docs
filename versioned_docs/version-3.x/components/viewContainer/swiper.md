@@ -123,6 +123,8 @@ class App extends Component {
 | adjustHeight | "first" or "current" or "highest" or "none" |  | 否 | 自动以指定滑块的高度为整个容器的高度。当 vertical 为 true 时，默认不调整。可选值为： |
 | adjustVerticalHeight | `string` |  | 否 | vertical 为 true 时强制使 adjust-height 生效。 |
 | disableTouchmove | `string` | `false` | 否 | 是否停止响应用户 touchmove 操作 |
+| scrollWithAnimation | `boolean` | `true` | 否 | 改变 current 时使用动画过渡 |
+| cacheExtent | `number` | `0` | 否 | 缓存区域大小，值为 1 表示提前渲染上下各一屏区域（swiper 容器大小） |
 | onChange | `CommonEventFunction<onChangeEventDetail>` |  | 否 | current 改变时会触发 change 事件 |
 | onTransition | `CommonEventFunction<onTransitionEventDetail>` |  | 否 | swiper-item 的位置发生改变时会触发 transition 事件 |
 | onAnimationFinish | `CommonEventFunction<onChangeEventDetail>` |  | 否 | 动画结束时会触发 animationfinish 事件 |
@@ -160,6 +162,8 @@ class App extends Component {
 | SwiperProps.adjustHeight |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.adjustVerticalHeight |  |  | ✔️ |  |  |  |  |  |  |
 | SwiperProps.disableTouchmove |  | ✔️ |  |  |  |  |  |  |  |
+| SwiperProps.scrollWithAnimation | ✔️ |  |  |  |  |  |  |  |  |
+| SwiperProps.cacheExtent | ✔️ |  |  |  |  |  |  |  |  |
 | SwiperProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | SwiperProps.onTransition | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
 | SwiperProps.onAnimationFinish | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
