@@ -76,7 +76,8 @@ $ taro config delete <key>
 $ taro config list [--json]
 ```
 
-### 全局插件或插件集
+### 全局插件或插件集配置
+
 Taro 会在用户根目录下创建 .taro-global-config 文件夹，用于在执行 CLI 阶段时，如果没有获取到项目的配置文件，可以从该文件夹下读取全局的配置。
 
 目前开发了 插件（plugins）和 插件集（presets）这两个可配置项。
@@ -109,7 +110,7 @@ export default (ctx: IPluginContext) => {
     name: 'custom-init',
     optionsMap: {
       '--name': '项目名称',
-      '--description': '项目描述'
+      '--description': '项目描述',
     },
     // 执行 taro custom-init --help 时输出的使用例子的信息
     synopsisList: ['taro custom-init <projectName> --description <description>'],
@@ -129,20 +130,23 @@ export default (ctx: IPluginContext) => {
             framework: 'react',
             compiler: 'webpack5',
             description: description,
-            projectName: name
-          }
-        }
+            projectName: name,
+          },
+        },
       })
     },
-  });
+  })
 }
 ```
 
 之后，可以把该插件作为全局插件安装，假设该插件名为 taro-custom-init，运行：
+
 ```bash
 $ 'taro global-config add-plugin taro-custom-init'
 ```
+
 之后只需要运行以下命令，即可完成你的自定义 Taro 项目了：
+
 ```bash
 $ 'taro custom-init <projectName> --description <description>'
 ```

@@ -27,14 +27,14 @@ sidebar_label: onAppShow
 ## 类型
 
 ```tsx
-(callback: (result: CallbackResult) => void) => void
+(callback: (res: CallbackResult) => void) => void
 ```
 
 ## 参数
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| callback | `(result: CallbackResult) => void` | 小程序切前台事件的回调函数 |
+| callback | `(res: CallbackResult) => void` | 小程序切前台事件的回调函数 |
 
 ### CallbackResult
 

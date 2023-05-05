@@ -1301,6 +1301,7 @@ module.exports = {
         'apis/taro.extend/pxTransform',
         'apis/taro.extend/initPxTransform',
         'apis/taro.extend/getAppInfo',
+        'apis/taro.extend/getRenderer',
         'apis/taro.extend/requirePlugin',
         'apis/taro.extend/getCurrentInstance',
         'apis/taro.extend/setGlobalDataPlugin',
