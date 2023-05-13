@@ -198,6 +198,13 @@ export default class PagePicker extends Component {
 | date | 日期选择器 |
 | region | 省市区选择器 |
 
+### PickerText
+
+| 参数 | 类型 | 必填 |
+| --- | --- | :---: |
+| okText | `string` | 否 |
+| cancelText | `string` | 否 |
+
 ## PickerSelectorProps
 
 普通选择器：mode = selector
@@ -211,6 +218,7 @@ export default class PagePicker extends Component {
 | itemStyle | `StyleProp<TextStyle>` | `{}` | 否 | mode为 selector 或 multiSelector 时 itemStyle 有效 |
 | indicatorStyle | `StyleProp<ViewStyle>` | `{}` | 否 | mode为 selector 或 multiSelector 时 indicatorStyle 有效 |
 | onChange | `CommonEventFunction<ChangeEventDetail>` |  | 是 | value 改变时触发 change 事件 |
+| textProps | `PickerText` |  | 否 | 用于替换组件内部文本 |
 
 ### API 支持度
 
@@ -222,6 +230,7 @@ export default class PagePicker extends Component {
 | PickerSelectorProps.itemStyle |  |  | ✔️ |  |
 | PickerSelectorProps.indicatorStyle |  |  | ✔️ |  |
 | PickerSelectorProps.onChange | ✔️ | ✔️ | ✔️ |  |
+| PickerSelectorProps.textProps |  | ✔️ |  |  |
 
 ### ChangeEventDetail
 
