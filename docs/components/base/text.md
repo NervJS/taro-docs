@@ -126,16 +126,16 @@ export default {
 | userSelect | `boolean` | `false` | 否 | 文本是否可选，该属性会使文本节点显示为 inline-block |
 | space | `keyof TSpace` |  | 否 | 显示连续空格 |
 | decode | `boolean` | `false` | 否 | 是否解码 |
-| numberOfLines | `string` |  | 否 | 多行省略，值须大于等于 1，表现同 css 的 -webkit-line-clamp 属性一致。 |
+| numberOfLines | `number` |  | 否 | 多行省略，值须大于等于 1，表现同 css 的 -webkit-line-clamp 属性一致。 |
 
 ### API 支持度
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | TextProps.selectable | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| TextProps.userSelect | ✔️ |  |  |  |  |  |  |  |  |
-| TextProps.space | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| TextProps.decode | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| TextProps.userSelect | ✔️ |  |  |  |  |  | ✔️ |  |  |
+| TextProps.space | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
+| TextProps.decode | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | (默认解码，不支持设置) |  |  |
 | TextProps.numberOfLines |  |  | ✔️ |  |  |  |  |  |  |
 
 ### TSpace
