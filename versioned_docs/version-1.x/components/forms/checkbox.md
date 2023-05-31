@@ -21,7 +21,7 @@ sidebar_label: Checkbox
 
 [支付宝小程序 CheckboxGroup](https://docs.alipay.com/mini/component/checkbox)。
 
-[字节跳动小程序 CheckboxGroup](https://developer.toutiao.com/docs/comp/checkbox.html)。
+[抖音小程序 CheckboxGroup](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/list/checkbox-group)。
 
 ### Checkbox
 ##### 多选项目。
@@ -44,7 +44,7 @@ sidebar_label: Checkbox
 
 [支付宝小程序 Checkbox](https://docs.alipay.com/mini/component/checkbox)。
 
-[字节跳动小程序 Checkbox](https://developer.toutiao.com/docs/comp/checkbox.html)。
+[抖音小程序 Checkbox](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/list/checkbox)。
 
 ###### 示例：
 

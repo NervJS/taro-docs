@@ -48,7 +48,7 @@ Taro 内部默认支持 6 大小程序平台，自 [Taro v3.1](/blog/2021-03-10-
 - `@tarojs/plugin-platform-weapp` 微信小程序插件
 - `@tarojs/plugin-platform-alipay` 支付宝小程序插件
 - `@tarojs/plugin-platform-swan` 百度小程序插件
-- `@tarojs/plugin-platform-tt` 字节跳动小程序插件
+- `@tarojs/plugin-platform-tt` 抖音小程序插件
 - `@tarojs/plugin-platform-qq` qq 小程序插件
 - `@tarojs/plugin-platform-jd` 京东小程序插件
 

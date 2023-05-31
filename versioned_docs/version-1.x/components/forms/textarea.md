@@ -38,7 +38,7 @@ sidebar_label: Textarea
 
 [支付宝小程序 Textarea](https://docs.alipay.com/mini/component/textarea)。
 
-[字节跳动小程序 Textarea](https://developer.toutiao.com/docs/comp/textarea.html)。
+[抖音小程序 Textarea](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/list/textarea)。
 
 ###### 示例：
 ```jsx

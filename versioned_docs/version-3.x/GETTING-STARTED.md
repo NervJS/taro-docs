@@ -195,7 +195,7 @@ $ NODE_ENV=production taro build --type alipay --watch # Bash
 - 需要关闭上传代码时样式自动补全，开启可能报错
 - 需要关闭代码压缩上传，开启可能报错
 
-### 字节跳动小程序
+### 抖音小程序
 
 #### 编译命令
 
@@ -223,7 +223,7 @@ $ NODE_ENV=production taro build --type tt --watch # Bash
 
 #### 小程序开发者工具
 
-下载并打开[字节跳动小程序开发者工具](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/developer-instrument/download/developer-instrument-update-and-download/)，并确保已经设置了小程序项目配置文件 [project.tt.json](./project-config)。然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
+下载并打开[抖音小程序开发者工具](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/developer-instrument/download/developer-instrument-update-and-download)，并确保已经设置了小程序项目配置文件 [project.tt.json](./project-config)。然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
 
 需要注意开发者工具的项目设置：
 

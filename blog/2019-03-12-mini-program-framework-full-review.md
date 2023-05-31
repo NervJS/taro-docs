@@ -74,7 +74,7 @@ CSS 方面，所有框架均支持 `SASS`、`LESS`、`Stylus`，Taro 则多一�
 
 #### 多端支持度
 
-只从支持端的数量来看，`Taro` 和 `uni-app` 以六端略微领先（移动端、H5、微信小程序、百度小程序、支付宝小程序、头条小程序），`chameleon ` 少了头条小程序紧随其后。
+只从支持端的数量来看，`Taro` 和 `uni-app` 以六端略微领先（移动端、H5、微信小程序、百度小程序、支付宝小程序、抖音小程序），`chameleon ` 少了抖音小程序紧随其后。
 
 但值得一提的是 `chameleon` 有一套自研[多态协议](//cmljs.org/doc/framework/polymorphism/intro.html)，编写多端代码的体验会好许多，可以说是一个能戳到多端开发痛点的功能。`uni-app` 则有一套独立的[条件编译语法](://uniapp.dcloud.io/platform)，这套语法能同时作用于 `js`、样式和模板文件。`Taro` 可以在业务逻辑中根据环境变量使用条件编译，也可以直接使用[条件编译文件](/docs/envs)（类似 React Native 的方式）。
 

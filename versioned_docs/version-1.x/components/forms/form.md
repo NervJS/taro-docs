@@ -21,7 +21,7 @@ sidebar_label: Form
 
 [支付宝小程序 Form](https://docs.alipay.com/mini/component/form)。
 
-[字节跳动小程序 Form](https://developer.toutiao.com/docs/comp/form.html)。
+[抖音小程序 Form](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/list/form)。
 
 
 ###### 示例：

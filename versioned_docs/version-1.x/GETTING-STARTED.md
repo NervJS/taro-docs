@@ -18,6 +18,7 @@ $ yarn global add @tarojs/cli
 # OR 安装了 cnpm，使用 cnpm 安装 CLI
 $ cnpm install -g @tarojs/cli
 ```
+
 ### 注意事项
 
 值得一提的是，如果安装过程出现`sass`相关的安装错误，请在安装[`mirror-config-china`](https://www.npmjs.com/package/mirror-config-china)后重试。
@@ -68,6 +69,7 @@ $ npm install
 进入项目目录开始开发，目前已经支持 微信/百度/支付宝/字节跳动/QQ 小程序、H5、快应用以及 ReactNative 等端的代码转换，针对不同端的启动以及预览、打包方式并不一致
 
 ## 运行
+
 Taro 需要运行不同的命令，将 Taro 代码编译成不同端的代码，然后在对应的开发工具中查看效果。
 
 ![image](https://storage.360buyimg.com/taro-resource/platforms.jpg)
@@ -135,11 +137,11 @@ $ npx taro build --type alipay --watch
 $ npx taro build --type alipay
 ```
 
-### 字节跳动小程序
+### 抖音小程序
 
-选择字节跳动小程序模式，需要自行下载并打开[字节跳动小程序开发者工具](https://microapp.bytedance.com/docs/devtool/versionUpdate.html)，然后在项目编译完后选择项目根目录下 `dist` 目录进行预览。
+选择抖音小程序模式，需要自行下载并打开[抖音小程序开发者工具](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/developer-instrument/download/developer-instrument-update-and-download)，然后在项目编译完后选择项目根目录下 `dist` 目录进行预览。
 
-字节跳动小程序编译预览及打包（去掉 --watch 将不会监听文件修改，并会对代码进行压缩打包）
+抖音小程序编译预览及打包（去掉 --watch 将不会监听文件修改，并会对代码进行压缩打包）
 
 ```bash
 # yarn
@@ -360,7 +362,7 @@ Taro Doctor 就像一个医生一样，可以诊断项目的依赖、设置、�
 
 ### 快速创建新页面
 
-Taro create --name [页面名称] 能够在当前项目的pages目录下快速生成新的页面文件，并填充基础代码，是一个提高开发效率的利器。
+Taro create --name [页面名称] 能够在当前项目的 pages 目录下快速生成新的页面文件，并填充基础代码，是一个提高开发效率的利器。
 
 ### CLI 配置
 
