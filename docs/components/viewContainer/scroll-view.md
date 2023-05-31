@@ -245,15 +245,15 @@ export default {
 | ScrollViewProps.scrollIntoView | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | ScrollViewProps.scrollWithAnimation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ScrollViewProps.enableBackToTop | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |
-| ScrollViewProps.enableFlex | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.enableFlex | ✔️ |  |  |  |  | ✔️ |  |  |  |
 | ScrollViewProps.scrollAnchoring | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.refresherEnabled | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.refresherThreshold | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.refresherDefaultStyle | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.refresherBackground | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.refresherTriggered | ✔️ |  |  |  |  |  |  |  |  |
-| ScrollViewProps.enhanced | ✔️ |  |  |  |  |  |  |  |  |
-| ScrollViewProps.bounces | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.enhanced | ✔️ | ✔️ |  |  |  |  |  |  |  |
+| ScrollViewProps.bounces | ✔️ | ✔️ |  |  |  |  |  |  |  |
 | ScrollViewProps.showScrollbar | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.pagingEnabled | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.fastDeceleration | ✔️ |  |  |  |  |  |  |  |  |

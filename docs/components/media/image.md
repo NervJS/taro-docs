@@ -95,6 +95,7 @@ export default class PageView extends Component {
 | preview | `string` |  | 否 | 点击后是否预览图片。在不设置的情况下，若 image 未监听点击事件且宽度大于 1/4 屏宽，则默认开启 |
 | originalSrc | `string` |  | 否 | 预览时显示的图片地址 |
 | ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
+| fadeIn | `boolean` | `false` | 否 | 是否渐显 |
 | onError | `CommonEventFunction<onErrorEventDetail>` |  | 否 | 当错误发生时，发布到 AppService 的事件名，事件对象 |
 | onLoad | `CommonEventFunction<onLoadEventDetail>` |  | 否 | 当图片载入完毕时，发布到 AppService 的事件名，事件对象 |
 | onTap | `CommonEventFunction` |  | 否 | 点击图片时触发。 |
@@ -117,6 +118,7 @@ export default class PageView extends Component {
 | ImageProps.preview |  | ✔️ |  |  |  |  |  |  |  |
 | ImageProps.originalSrc |  | ✔️ |  |  |  |  |  |  |  |
 | ImageProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
+| ImageProps.fadeIn | ✔️ |  |  |  |  |  |  |  |  |
 | ImageProps.onError | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ImageProps.onLoad | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ImageProps.onTap |  |  | ✔️ |  |  |  |  |  |  |

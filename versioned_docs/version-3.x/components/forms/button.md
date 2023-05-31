@@ -256,13 +256,13 @@ export default {
 | ButtonProps.hoverStartTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ButtonProps.hoverStayTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ButtonProps.lang | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |
-| ButtonProps.sessionFrom | ✔️ |  |  |  |  |  |  |  |  |
-| ButtonProps.sendMessageTitle | ✔️ |  |  |  |  |  |  |  |  |
-| ButtonProps.sendMessagePath | ✔️ |  |  |  |  |  |  |  |  |
-| ButtonProps.sendMessageImg | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.sessionFrom | ✔️ | ✔️ |  |  |  |  |  |  |  |
+| ButtonProps.sendMessageTitle | ✔️ | ✔️ |  |  |  |  |  |  |  |
+| ButtonProps.sendMessagePath | ✔️ | ✔️ |  |  |  |  |  |  |  |
+| ButtonProps.sendMessageImg | ✔️ | ✔️ |  |  |  |  |  |  |  |
 | ButtonProps.appParameter | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |
 | ButtonProps.scope |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.showMessageCard | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.showMessageCard | ✔️ | ✔️ |  |  |  |  |  |  |  |
 | ButtonProps.publicId |  |  | ✔️ |  | ✔️ |  |  |  |  |
 | ButtonProps.templateId |  | ✔️ |  |  |  |  |  |  |  |
 | ButtonProps.subscribeId |  | ✔️ |  |  |  |  |  |  |  |
@@ -280,7 +280,7 @@ export default {
 | ButtonProps.onContact | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
 | ButtonProps.onGetPhoneNumber | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |  |
 | ButtonProps.onError | ✔️ |  | ✔️ |  | ✔️ | ✔️ |  |  |  |
-| ButtonProps.onOpenSetting | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |  |  |
+| ButtonProps.onOpenSetting | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
 | ButtonProps.onLaunchApp | ✔️ |  |  |  | ✔️ |  |  |  |  |
 | ButtonProps.onChooseAvatar | ✔️ |  |  |  |  |  |  |  |  |
 | ButtonProps.onTap |  |  | ✔️ |  |  |  |  |  |  |

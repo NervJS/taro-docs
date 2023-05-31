@@ -140,7 +140,7 @@ export default class PageView extends Component {
 | TextareaProps.onLineChange | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
 | TextareaProps.onInput | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | TextareaProps.onConfirm | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| TextareaProps.onKeyboardHeightChange | ✔️ |  |  |  |  |  |  |  |  |
+| TextareaProps.onKeyboardHeightChange | ✔️ |  |  | ✔️ |  |  |  |  |  |
 
 ### onFocusEventDetail
 

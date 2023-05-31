@@ -116,7 +116,7 @@ export default {
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | RichTextProps.userSelect | ✔️ |  |  |  |  | ✔️ |  |  |
 | RichTextProps.nodes | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| RichTextProps.space | ✔️ |  | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
+| RichTextProps.space | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | RichTextProps.selectable |  | ✔️ |  |  |  | ✔️ |  |  |
 | RichTextProps.imageMenuPrevent |  | ✔️ |  |  |  |  |  |  |
 | RichTextProps.preview |  | ✔️ |  |  |  |  |  |  |
