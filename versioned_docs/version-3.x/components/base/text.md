@@ -127,6 +127,7 @@ export default {
 | space | `keyof TSpace` |  | 否 | 显示连续空格 |
 | decode | `boolean` | `false` | 否 | 是否解码 |
 | numberOfLines | `number` |  | 否 | 多行省略，值须大于等于 1，表现同 css 的 -webkit-line-clamp 属性一致。 |
+| maxLines | `number` |  | 否 | 限制文本最大行数 |
 
 ### API 支持度
 
@@ -137,6 +138,7 @@ export default {
 | TextProps.space | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | TextProps.decode | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | (默认解码，不支持设置) |  |  |
 | TextProps.numberOfLines |  |  | ✔️ |  |  |  |  |  |  |
+| TextProps.maxLines | ✔️ |  |  |  |  |  |  |  |  |
 
 ### TSpace
 

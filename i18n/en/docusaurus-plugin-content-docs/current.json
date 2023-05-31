@@ -570,5 +570,25 @@
   "sidebar.API.category.Hooks": {
     "message": "Hooks",
     "description": "The label for category Hooks in sidebar API"
+  },
+  "sidebar.API.category.缓存管理器": {
+    "message": "Cache Manager",
+    "description": "The label for category 缓存管理器 in sidebar API"
+  },
+  "sidebar.API.category.音视频通话": {
+    "message": "Device Voip",
+    "description": "The label for category 音视频通话 in sidebar API"
+  },
+  "sidebar.API.category.短信": {
+    "message": "SMS",
+    "description": "The label for category 短信 in sidebar API"
+  },
+  "sidebar.API.category.AI 推理": {
+    "message": "Inference",
+    "description": "The label for category AI 推理 in sidebar API"
+  },
+  "sidebar.API.category.人脸检测": {
+    "message": "Face recognition",
+    "description": "The label for category 人脸检测 in sidebar API"
   }
 }

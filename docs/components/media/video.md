@@ -177,6 +177,9 @@ export default class PageView extends Component {
 | onSeeked | `CommonEventFunction` |  | 否 | 否 |
 | onSeeking | `CommonEventFunction` |  | 否 | 否 |
 | onAdLoad | `CommonEventFunction` |  | 否 | 贴片广告加载成功时触发，event.detail = { adType: 'preRollAd' or 'postRollAd' } |
+| onCastingUserSelect | `CommonEventFunction` |  | 否 | 用户选择投屏设备时触发 detail = { state: "success"/"fail" } |
+| onCastingStateChange | `CommonEventFunction` |  | 否 | 投屏成功/失败时触发 detail = { type, state: "success"/"fail" } |
+| onCastingInterrupt | `CommonEventFunction` |  | 否 | 投屏被中断时触发 |
 
 ### API 支持度
 
@@ -277,6 +280,9 @@ export default class PageView extends Component {
 | VideoProps.onSeeked |  |  |  |  |  | ✔️ |  |  |  |
 | VideoProps.onSeeking |  |  |  |  |  | ✔️ |  |  |  |
 | VideoProps.onAdLoad |  |  |  | ✔️ |  |  |  |  |  |
+| VideoProps.onCastingUserSelect | ✔️ |  |  |  |  |  |  |  |  |
+| VideoProps.onCastingStateChange | ✔️ |  |  |  |  |  |  |  |  |
+| VideoProps.onCastingInterrupt | ✔️ |  |  |  |  |  |  |  |  |
 
 ### direction
 

@@ -100,6 +100,6 @@ export default class PageView extends Component {
 | ProgressProps.backgroundColor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ProgressProps.active | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ProgressProps.activeMode | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ProgressProps.duration | ✔️ | ✔️ |  |  |  | ✔️ | ✔️ |  |  |
+| ProgressProps.duration | ✔️ | ✔️ |  | ✔️ |  | ✔️ | ✔️ |  |  |
 | ProgressProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
-| ProgressProps.onActiveEnd | ✔️ |  |  |  | ✔️ | ✔️ | ✔️ |  |  |
+| ProgressProps.onActiveEnd | ✔️ |  |  | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
