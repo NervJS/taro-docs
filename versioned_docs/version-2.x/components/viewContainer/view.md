@@ -95,7 +95,7 @@ export default class PageView extends Component {
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | H5 | React Native |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | H5 | React Native |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | ViewProps.hoverClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | (由于 RN 不支持 Class，故 RN 端的 View 组件实现了 `hoverStyle`属性，写法和 style 类似，只不过 `hoverStyle` 的样式是指定按下去的样式。) |
 | ViewProps.hoverStyle |  |  |  |  |  | ✔️ |
@@ -105,6 +105,6 @@ export default class PageView extends Component {
 
 ## API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | H5 | React Native |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | H5 | React Native |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | View | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |

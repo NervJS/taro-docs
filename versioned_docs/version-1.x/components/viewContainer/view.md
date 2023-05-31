@@ -17,7 +17,7 @@ sidebar_label: View
 
 >各端支持度
 
-| 属性 | 微信小程序 | H5 | ReactNative | 百度小程序 | 支付宝小程序 | 字节跳动小程序 |
+| 属性 | 微信小程序 | H5 | ReactNative | 百度小程序 | 支付宝小程序 | 抖音小程序 |
 | :-: | :-: | :-: | :- | :- | :- | :- |
 | hoverClass | ✔ | ✔ |  (支持 hoverStyle 属性，但框架未支持 hoverClass)| ✔ | ✔ | ✔ |
 | hoverStartTime | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |

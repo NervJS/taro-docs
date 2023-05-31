@@ -37,7 +37,7 @@ sidebar_label: Input
 
 [支付宝小程序 Input](https://docs.alipay.com/mini/component/input)。
 
-[字节跳动小程序 Input](https://developer.toutiao.com/docs/comp/input.html)。
+[抖音小程序 Input](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/list/input)。
 
 ###### 示例：
 ```jsx

@@ -26,6 +26,6 @@ sidebar_label: Navigator
 
 [支付宝小程序 Navigator](https://docs.alipay.com/mini/component/navigator)。
 
-[字节跳动小程序 Navigator](https://developer.toutiao.com/docs/comp/navigator.html)。
+[抖音小程序 Navigator](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/navigation/navigator)。
 
 
