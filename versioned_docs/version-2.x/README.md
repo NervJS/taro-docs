@@ -10,7 +10,7 @@ title: Taro 介绍
 
 现如今市面上端的形态多种多样，Web、React-Native、微信小程序等各种端大行其道，当业务要求同时在不同的端都要求有所表现的时候，针对不同的端去编写多套代码的成本显然非常高，这时候只编写一套代码就能够适配到多端的能力就显得极为需要。
 
-使用 **Taro**，我们可以只书写一套代码，再通过 **Taro** 的编译工具，将源代码分别编译出可以在不同端（[微信](https://mp.weixin.qq.com/) / [京东](https://mp.jd.com/?entrance=taro) / [百度](https://smartprogram.baidu.com/) / [支付宝](https://mini.open.alipay.com/) / [字节跳动](https://developer.toutiao.com/) 小程序、[快应用](https://www.quickapp.cn/)、H5、React-Native 等）运行的代码。
+使用 **Taro**，我们可以只书写一套代码，再通过 **Taro** 的编译工具，将源代码分别编译出可以在不同端（[微信](https://mp.weixin.qq.com/) / [京东](https://mp.jd.com/?entrance=taro) / [百度](https://smartprogram.baidu.com/) / [支付宝](https://mini.open.alipay.com/) / [字节跳动](https://developer.open-douyin.com/) 小程序、[快应用](https://www.quickapp.cn/)、H5、React-Native 等）运行的代码。
 
 ## 特性
 
@@ -21,16 +21,16 @@ title: Taro 介绍
 代码示例
 
 ```jsx
-import Taro, { Component } from "@tarojs/taro";
-import { View, Button } from "@tarojs/components";
+import Taro, { Component } from '@tarojs/taro'
+import { View, Button } from '@tarojs/components'
 
 export default class Index extends Component {
   constructor() {
-    super(...arguments);
+    super(...arguments)
     this.state = {
-      title: "首页",
-      list: [1, 2, 3]
-    };
+      title: '首页',
+      list: [1, 2, 3],
+    }
   }
 
   componentWillMount() {}
@@ -42,27 +42,27 @@ export default class Index extends Component {
   componentDidUpdate(prevProps, prevState) {}
 
   shouldComponentUpdate(nextProps, nextState) {
-    return true;
+    return true
   }
 
-  add = e => {
+  add = (e) => {
     // dosth
-  };
+  }
 
   render() {
     return (
       <View className="index">
         <View className="title">{this.state.title}</View>
         <View className="content">
-          {this.state.list.map(item => {
-            return <View className="item">{item}</View>;
+          {this.state.list.map((item) => {
+            return <View className="item">{item}</View>
           })}
           <Button className="add" onClick={this.add}>
             添加
           </Button>
         </View>
       </View>
-    );
+    )
   }
 }
 ```
@@ -116,7 +116,6 @@ Taro 已经投入了我们的生产环境中使用，业界也在广泛地使用
 [去提交案例](https://github.com/nervjs/taro-user-cases)
 
 [去查看案例](https://nervjs.github.io/taro-user-cases/)
-
 
 ## 学习资源
 

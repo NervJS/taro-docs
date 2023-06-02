@@ -15,7 +15,7 @@ sidebar_label: Canvas
 
 [支付宝小程序 Canvas](https://docs.alipay.com/mini/component/canvas)。
 
-[字节跳动小程序 Canvas](https://developer.toutiao.com/docs/comp/canvas.html)。
+[抖音小程序 Canvas](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/api/canvas/v2/Canvas/Canvas)。
 
 ```jsx
 import Taro, { Component } from '@tarojs/taro'

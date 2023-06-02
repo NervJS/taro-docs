@@ -8,7 +8,7 @@ Taro 引入了插件化机制，目的是为了让开发者能够通过编写插
 
 ### 官方插件
 
-- [@taro/plugin-mini-ci](./plugin-mini-ci)，小程序持续集成插件。感谢 [@bigmeow](https://github.com/bigmeow) 的贡献！
+- [@tarojs/plugin-mini-ci](./plugin-mini-ci)，小程序持续集成插件。感谢 [@bigmeow](https://github.com/bigmeow) 的贡献！
 - [@tarojs/plugin-mock](https://github.com/NervJS/taro-plugin-mock)，一个简易的数据 mock 插件。
 
 ### 社区优质插件

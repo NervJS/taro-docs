@@ -21,7 +21,7 @@ sidebar_label: Radio
 
 [支付宝小程序 RadioGroup](https://docs.alipay.com/mini/component/radio)。
 
-[字节跳动小程序 RadioGroup](https://developer.toutiao.com/docs/comp/radio.html)。
+[抖音小程序 RadioGroup](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/list/radio)。
 
 
 ### Radio
@@ -44,7 +44,7 @@ sidebar_label: Radio
 
 [支付宝小程序 Radio](https://docs.alipay.com/mini/component/radio)。
 
-[字节跳动小程序 Radio](https://developer.toutiao.com/docs/comp/radio.html)。
+[抖音小程序 Radio](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/list/radio)。
 
 
 ###### 示例：

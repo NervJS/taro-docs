@@ -256,7 +256,7 @@ export default {
 
 - [微信小程序文档](https://developers.weixin.qq.com/miniprogram/dev/framework/subpackages/preload.html)
 - [百度小程序文档](https://smartprogram.baidu.com/docs/develop/framework/subpackages/#%E5%88%86%E5%8C%85%E9%A2%84%E4%B8%8B%E8%BD%BD%E8%A7%84%E5%88%99)
-- [字节跳动小程序文档](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/framework/basic-reference/general-configuration#preloadrule)
+- [抖音小程序文档](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/framework/basic-reference/general-configuration)
 
 ### entryPagePath
 
@@ -305,7 +305,7 @@ export default {
 | [themeLocation](#themelocation)     | String  | 指明 theme.json 的位置                |
 | [lazyCodeLoading](#lazycodeloading) | String  | 配置自定义组件代码按需注入            |
 | [singlePage](#singlepage)           | Object  | 单页模式相关配置                      |
-| [renderer](#renderer)           | String  | 全局默认的渲染后端                      |
+| [renderer](#renderer)               | String  | 全局默认的渲染后端                    |
 
 ### functionalPages
 
