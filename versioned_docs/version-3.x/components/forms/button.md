@@ -101,6 +101,7 @@ export default class PageButton extends Component {
         <Button size='mini' type='primary'>按钮</Button>
         <Button size='mini' >按钮</Button>
         <Button size='mini' type='warn'>按钮</Button>
+        <Button openType='getPhoneNumber' onGetPhoneNumber="callback">按钮</Button>
       </View>
     )
   }
@@ -128,6 +129,7 @@ export default class PageButton extends Component {
     <button size="mini" type="primary">按钮</button>
     <button size="mini" >按钮</button>
     <button size="mini" type="warn">按钮</button>
+    <button open-type="getPhoneNumber" @getphonenumber="callback">按钮</button>
   </view>
 </template>
 
@@ -223,7 +225,7 @@ export default {
 | onGetUserInfo | `CommonEventFunction<onGetUserInfoEventDetail>` |  | 否 | 用户点击该按钮时，会返回获取到的用户信息，回调的detail数据与 Taro.getUserInfo 返回的一致<br /><br />生效时机: `open-type="getUserInfo"` |
 | onGetAuthorize | `CommonEventFunction` |  | 否 | 支付宝获取会员基础信息授权回调<br /><br />生效时机：`open-type="getAuthorize"` |
 | onContact | `CommonEventFunction<onContactEventDetail>` |  | 否 | 客服消息回调<br /><br />生效时机：`open-type="contact"` |
-| onGetPhoneNumber | `CommonEventFunction<onGetPhoneNumberEventDetail>` |  | 否 | 获取用户手机号回调<br /><br />生效时机：`open-type="getphonenumber"` |
+| onGetPhoneNumber | `CommonEventFunction<onGetPhoneNumberEventDetail>` |  | 否 | 获取用户手机号回调<br /><br />生效时机：`open-type="getPhoneNumber"` |
 | onError | `CommonEventFunction` |  | 否 | 当使用开放能力时，发生错误的回调<br /><br />生效时机：`open-type="launchApp"` |
 | onOpenSetting | `CommonEventFunction<onOpenSettingEventDetail>` |  | 否 | 在打开授权设置页后回调<br /><br />生效时机：`open-type="openSetting"` |
 | onLaunchApp | `CommonEventFunction` |  | 否 | 打开 APP 成功的回调<br /><br />生效时机：`open-type="launchApp"` |

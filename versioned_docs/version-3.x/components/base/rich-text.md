@@ -112,19 +112,20 @@ export default {
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | QQ 小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| RichTextProps.userSelect | ✔️ |  |  |  |  |  |  |
-| RichTextProps.space | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |
-| RichTextProps.selectable |  | ✔️ |  |  |  |  |  |
-| RichTextProps.imageMenuPrevent |  | ✔️ |  |  |  |  |  |
-| RichTextProps.preview |  | ✔️ |  |  |  |  |  |
-| RichTextProps.onTap |  |  | ✔️ |  |  |  |  |
-| RichTextProps.onTouchstart |  |  | ✔️ |  |  |  |  |
-| RichTextProps.onTouchmove |  |  | ✔️ |  |  |  |  |
-| RichTextProps.onTouchcancel |  |  | ✔️ |  |  |  |  |
-| RichTextProps.onTouchend |  |  | ✔️ |  |  |  |  |
-| RichTextProps.onLongtap |  |  | ✔️ |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| RichTextProps.userSelect | ✔️ |  |  |  |  | ✔️ |  |  |
+| RichTextProps.nodes | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| RichTextProps.space | ✔️ |  | ✔️ |  | ✔️ | ✔️ | ✔️ |  |
+| RichTextProps.selectable |  | ✔️ |  |  |  | ✔️ |  |  |
+| RichTextProps.imageMenuPrevent |  | ✔️ |  |  |  |  |  |  |
+| RichTextProps.preview |  | ✔️ |  |  |  |  |  |  |
+| RichTextProps.onTap |  |  | ✔️ |  |  |  |  |  |
+| RichTextProps.onTouchstart |  |  | ✔️ |  |  |  |  |  |
+| RichTextProps.onTouchmove |  |  | ✔️ |  |  |  |  |  |
+| RichTextProps.onTouchcancel |  |  | ✔️ |  |  |  |  |  |
+| RichTextProps.onTouchend |  |  | ✔️ |  |  |  |  |  |
+| RichTextProps.onLongtap |  |  | ✔️ |  |  |  |  |  |
 
 ### TSpace
 
