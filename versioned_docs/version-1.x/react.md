@@ -20,24 +20,20 @@ import './app.css'
 const store = configStore()
 
 class App extends Component {
-  componentDidMount () {}
+  componentDidMount() {}
 
   // 对应 onShow
-  componentDidShow () {}
+  componentDidShow() {}
 
   // 对应 onHide
-  componentDidHide () {}
+  componentDidHide() {}
 
   // 对应 onError
-  componentDidCatchError () {}
+  componentDidCatchError() {}
 
-  render () {
+  render() {
     // 在入口组件不会渲染任何内容，但我们可以在这里做类似于状态管理的事情
-    return (
-      <Provider store={store}>
-        {this.props.children} /* this.props.children 是将要被渲染的页面 */
-      </Provider>
-    )
+    return <Provider store={store}>{this.props.children} /* this.props.children 是将要被渲染的页面 */</Provider>
   }
 }
 
@@ -49,15 +45,13 @@ export default App
 ```js
 // app.config.js
 export default {
-  pages: [
-    'pages/index/index'
-  ],
+  pages: ['pages/index/index'],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'WeChat',
-    navigationBarTextStyle: 'black'
-  }
+    navigationBarTextStyle: 'black',
+  },
 }
 ```
 
@@ -73,26 +67,25 @@ export default {
 
 监听程序初始化，初始化完成时触发（全局只触发一次）
 
-
 参数格式如下
 
-| 属性 | 类型 |  说明 | 微信小程序 | 百度小程序 | 字节跳动小程序 | 支付宝小程序 | H5 | RN |
-| - | - | - | - | - | - | - | - | - |
-| path | string | 启动小程序的路径 | ✔️| ✔️| ✔️| ✔️|  ✘ |  ✘ |
-| scene | number | 启动小程序的场景值 | ✔️| ✔️| ✔️|  ✘ |  ✘ |  ✘ |
-| query | Object | 启动小程序的 query 参数 | ✔️| ✔️| ✔️| ✔️|  ✘ |  ✘ |
-| shareTicket | string | shareTicket，详见获取更多转发信息 | ✔️| ✔️| ✔️|  ✘ |  ✘ | ✘ |
-| referrerInfo | Object | 来源信息。从另一个小程序、公众号或 App 进入小程序时返回。否则返回 {} | ✔️| ✔️| ✔️| ✔️ |  ✘ | ✘ |
+| 属性         | 类型   | 说明                                                                 | 微信小程序 | 百度小程序 | 抖音小程序 | 支付宝小程序 | H5  | RN  |
+| ------------ | ------ | -------------------------------------------------------------------- | ---------- | ---------- | ---------- | ------------ | --- | --- |
+| path         | string | 启动小程序的路径                                                     | ✔️         | ✔️         | ✔️         | ✔️           | ✘   | ✘   |
+| scene        | number | 启动小程序的场景值                                                   | ✔️         | ✔️         | ✔️         | ✘            | ✘   | ✘   |
+| query        | Object | 启动小程序的 query 参数                                              | ✔️         | ✔️         | ✔️         | ✔️           | ✘   | ✘   |
+| shareTicket  | string | shareTicket，详见获取更多转发信息                                    | ✔️         | ✔️         | ✔️         | ✘            | ✘   | ✘   |
+| referrerInfo | Object | 来源信息。从另一个小程序、公众号或 App 进入小程序时返回。否则返回 {} | ✔️         | ✔️         | ✔️         | ✔️           | ✘   | ✘   |
 
 其中，场景值 scene，在微信小程序和百度小程序中存在区别，请分别参考 [微信小程序文档](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/scene.html) 和 [百度小程序文档](https://smartprogram.baidu.com/docs/data/scene/)
 
 来源信息 referrerInfo 的数据结构如下
 
-| 属性 | 类型 |  说明 | 微信小程序 | 百度小程序 | 字节跳动小程序 | 支付宝小程序 |
-| - | - | - | - | - | - | - |
-| appId | string | 来源小程序，或者公众号（微信中） | ✔️| ✔️| ✔️| ✔️|
-| extraData | Object | 来源小程序传过来的数据，微信和百度小程序在scene=1037或1038时支持 | ✔️| ✔️| ✔️| ✔️|
-| sourceServiceId | string | 来源插件，当处于插件运行模式时可见 | ✘ | ✘ | ✘| ✔️（基础库版本 1.11.0）|
+| 属性            | 类型   | 说明                                                                 | 微信小程序 | 百度小程序 | 抖音小程序 | 支付宝小程序            |
+| --------------- | ------ | -------------------------------------------------------------------- | ---------- | ---------- | ---------- | ----------------------- |
+| appId           | string | 来源小程序，或者公众号（微信中）                                     | ✔️         | ✔️         | ✔️         | ✔️                      |
+| extraData       | Object | 来源小程序传过来的数据，微信和百度小程序在 scene=1037 或 1038 时支持 | ✔️         | ✔️         | ✔️         | ✔️                      |
+| sourceServiceId | string | 来源插件，当处于插件运行模式时可见                                   | ✘          | ✘          | ✘          | ✔️（基础库版本 1.11.0） |
 
 #### componentDidMount()
 
@@ -108,10 +101,10 @@ export default {
 
 参数与 `componentWillMount` 中获取的基本一致，但**百度小程序**中补充两个参数如下
 
-| 属性 | 类型 |  说明 | 最低版本 |
-| - | - | - | - |
-| entryType | string | 展现的来源标识，取值为 user/ schema /sys :<br />user：表示通过home前后<br/>切换或解锁屏幕等方式调起；<br/>schema：表示通过协议调起;<br />sys：其它 | 2.10.7 |
-| appURL | string | 展现时的调起协议，仅当entryType值为 schema 时存在| 2.10.7 |
+| 属性      | 类型   | 说明                                                                                                                                                 | 最低版本 |
+| --------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| entryType | string | 展现的来源标识，取值为 user/ schema /sys :<br />user：表示通过 home 前后<br/>切换或解锁屏幕等方式调起；<br/>schema：表示通过协议调起;<br />sys：其它 | 2.10.7   |
+| appURL    | string | 展现时的调起协议，仅当 entryType 值为 schema 时存在                                                                                                  | 2.10.7   |
 
 #### componentDidHide()
 
@@ -127,19 +120,18 @@ export default {
 
 #### componentDidNotFound(Object)
 
-> 在微信/字节跳动小程序中这一生命周期方法对应 `onPageNotFound`，其他端尚未实现<br/>
+> 在微信/抖音小程序中这一生命周期方法对应 `onPageNotFound`，其他端尚未实现<br/>
 > 微信小程序中，基础库 1.9.90 开始支持
 
 程序要打开的页面不存在时触发，微信小程序中也可以使用 `Taro.onPageNotFound` 绑定监听
 
 参数如下
 
-| 属性 | 类型 |  说明 |
-| - | - | - |
-| path | string | 不存在页面的路径 |
-| query | Object | 打开不存在页面的 query 参数 |
+| 属性        | 类型    | 说明                                                                           |
+| ----------- | ------- | ------------------------------------------------------------------------------ |
+| path        | string  | 不存在页面的路径                                                               |
+| query       | Object  | 打开不存在页面的 query 参数                                                    |
 | isEntryPage | boolean | 是否本次启动的首个页面（例如从分享等入口进来，首个页面是开发者配置的分享页面） |
-
 
 ## 页面组件
 
@@ -188,12 +180,13 @@ export default Index
 ```
 
 ### 配置文件
+
 和入口组件一样，对于一个页面文件(例如`./pages/index/index.jsx`)而言，我们可以新增一个 `./pages/index/index.config.js` 的文件进行页面配置，`index.config.js` 的默认导出就是[页面配置](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html):
 
 ```js
 // ./pages/index/index.jsx
 export default {
-  navigationBarTitleText: '首页'
+  navigationBarTitleText: '首页',
 }
 ```
 
@@ -266,9 +259,9 @@ export default {
 
 Object 参数说明：
 
-| 参数 | 类型 | 说明 |
-| - | - | - |
-| scrollTop | Number | 页面在垂直方向已滚动的距离（单位px）|
+| 参数      | 类型   | 说明                                  |
+| --------- | ------ | ------------------------------------- |
+| scrollTop | Number | 页面在垂直方向已滚动的距离（单位 px） |
 
 **注意：请只在需要的时候才在 page 中定义此方法，不要定义空方法。以减少不必要的事件派发对渲染层-逻辑层通信的影响。注意：请避免在 onPageScroll 中过于频繁的执行 this.setState() 等引起逻辑层-渲染层通信的操作。尤其是每次传输大量数据，会影响通信耗时。**
 
@@ -280,40 +273,40 @@ Object 参数说明：
 
 Object 参数说明：
 
-| 参数 | 类型 | 说明 |
-| - | - | - |
-| from | String | 转发事件来源。<br />button：页面内转发按钮；<br />menu：右上角转发菜单 |
-| target | Object | 如果 `from` 值是 `button`，则 `target` 是触发这次转发事件的 `button`，否则为 `undefined` |
-| webViewUrl | String | 页面中包含 `WebView` 组件时，返回当前 `WebView` 的url |
+| 参数       | 类型   | 说明                                                                                     |
+| ---------- | ------ | ---------------------------------------------------------------------------------------- |
+| from       | String | 转发事件来源。<br />button：页面内转发按钮；<br />menu：右上角转发菜单                   |
+| target     | Object | 如果 `from` 值是 `button`，则 `target` 是触发这次转发事件的 `button`，否则为 `undefined` |
+| webViewUrl | String | 页面中包含 `WebView` 组件时，返回当前 `WebView` 的 url                                   |
 
 此事件需要 return 一个 Object，用于自定义转发内容，返回内容如下：
 
 自定义转发内容
 
-| 字段 | 类型 | 说明 |
-| - | - | - |
-| title | 转发标题 | 当前小程序名称 |
-| path | 转发路径 | 当前页面 path ，必须是以 / 开头的完整路径 |
-| imageUrl | 自定义图片路径，可以是本地文件路径、代码包文件路径或者网络图片路径。支持 PNG 及 JPG 。显示图片长宽比是 5:4 | 使用默认截图 |
+| 字段     | 类型                                                                                                       | 说明                                      |
+| -------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| title    | 转发标题                                                                                                   | 当前小程序名称                            |
+| path     | 转发路径                                                                                                   | 当前页面 path ，必须是以 / 开头的完整路径 |
+| imageUrl | 自定义图片路径，可以是本地文件路径、代码包文件路径或者网络图片路径。支持 PNG 及 JPG 。显示图片长宽比是 5:4 | 使用默认截图                              |
 
 示例代码
 
 ```jsx
 export default class Index extends Component {
-  onShareAppMessage (res) {
+  onShareAppMessage(res) {
     if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)
     }
     return {
       title: '自定义转发标题',
-      path: '/page/user?id=123'
+      path: '/page/user?id=123',
     }
   }
 
-  render () {
+  render() {
     return (
-      <View className='index'>
+      <View className="index">
         <Text>1</Text>
       </View>
     )
@@ -336,11 +329,11 @@ export default class Index extends Component {
 
 Object 参数说明：
 
-| 参数 | 类型 | 说明 |
-| - | - | - |
-| index | String | 被点击 tabItem 的序号，从 0 开始 |
-| pagePath | String | 被点击 tabItem 的页面路径 |
-| text | String | 被点击 tabItem 的按钮文字 |
+| 参数     | 类型   | 说明                             |
+| -------- | ------ | -------------------------------- |
+| index    | String | 被点击 tabItem 的序号，从 0 开始 |
+| pagePath | String | 被点击 tabItem 的页面路径        |
+| text     | String | 被点击 tabItem 的按钮文字        |
 
 #### componentWillPreload()
 
@@ -376,19 +369,19 @@ Object 参数说明：
 
 页面事件函数各端支持程度如下
 
-| 方法 | 作用 | 微信小程序 | 百度小程序 | 字节跳动小程序 | 支付宝小程序 | H5 | RN |
-| - | - | - | - | - | - | - | - |
-| onPullDownRefresh | 页面相关事件处理函数--监听用户下拉动作 | ✔️ | ✔️|✔️| ✔️ |✘|✘|
-| onReachBottom | 页面上拉触底事件的处理函数 | ✔️ | ✔️|✔️| ✔️ |✘|✘|
-| onShareAppMessage | 用户点击右上角转发 | ✔️ | ✔️|✔️| ✔️ |✘|✘|
-| onPageScroll | 页面滚动触发事件的处理函数 | ✔️ | ✔️|✔️| ✔️ |✘|✘|
-| onTabItemTap | 当前是 tab 页时，点击 tab 时触发 | ✔️ | ✔️|✔️| ✔️ |✘|✘|
-| onResize | 页面尺寸改变时触发，详见 [响应显示区域变化](https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html#%E5%9C%A8%E6%89%8B%E6%9C%BA%E4%B8%8A%E5%90%AF%E7%94%A8%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%E6%94%AF%E6%8C%81) | ✔️ | ✘|✘| ✘ |✘|✘|
-| componentWillPreload | [预加载](best-practice.md#预加载) | ✔️ | ✘|✘| ✘ |✘|✘|
-| onTitleClick | 点击标题触发 | ✘ | ✘|✘| ✔️|✘|✘|
-| onOptionMenuClick | 点击导航栏额外图标触发 | ✘ | ✘|✘| ✔️（基础库 1.3.0）|✘|✘|
-| onPopMenuClick |  | ✘ | ✘|✘| ✔️（基础库 1.3.0）|✘|✘|
-| onPullIntercept | 下拉截断时触发 | ✘ | ✘|✘| ✔️（基础库 1.11.0）|✘|✘|
+| 方法                 | 作用                                                                                                                                                                                                                                     | 微信小程序 | 百度小程序 | 抖音小程序 | 支付宝小程序        | H5  | RN  |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ---------- | ---------- | ------------------- | --- | --- |
+| onPullDownRefresh    | 页面相关事件处理函数--监听用户下拉动作                                                                                                                                                                                                   | ✔️         | ✔️         | ✔️         | ✔️                  | ✘   | ✘   |
+| onReachBottom        | 页面上拉触底事件的处理函数                                                                                                                                                                                                               | ✔️         | ✔️         | ✔️         | ✔️                  | ✘   | ✘   |
+| onShareAppMessage    | 用户点击右上角转发                                                                                                                                                                                                                       | ✔️         | ✔️         | ✔️         | ✔️                  | ✘   | ✘   |
+| onPageScroll         | 页面滚动触发事件的处理函数                                                                                                                                                                                                               | ✔️         | ✔️         | ✔️         | ✔️                  | ✘   | ✘   |
+| onTabItemTap         | 当前是 tab 页时，点击 tab 时触发                                                                                                                                                                                                         | ✔️         | ✔️         | ✔️         | ✔️                  | ✘   | ✘   |
+| onResize             | 页面尺寸改变时触发，详见 [响应显示区域变化](https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html#%E5%9C%A8%E6%89%8B%E6%9C%BA%E4%B8%8A%E5%90%AF%E7%94%A8%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%E6%94%AF%E6%8C%81) | ✔️         | ✘          | ✘          | ✘                   | ✘   | ✘   |
+| componentWillPreload | [预加载](best-practice.md#预加载)                                                                                                                                                                                                        | ✔️         | ✘          | ✘          | ✘                   | ✘   | ✘   |
+| onTitleClick         | 点击标题触发                                                                                                                                                                                                                             | ✘          | ✘          | ✘          | ✔️                  | ✘   | ✘   |
+| onOptionMenuClick    | 点击导航栏额外图标触发                                                                                                                                                                                                                   | ✘          | ✘          | ✘          | ✔️（基础库 1.3.0）  | ✘   | ✘   |
+| onPopMenuClick       |                                                                                                                                                                                                                                          | ✘          | ✘          | ✘          | ✔️（基础库 1.3.0）  | ✘   | ✘   |
+| onPullIntercept      | 下拉截断时触发                                                                                                                                                                                                                           | ✘          | ✘          | ✘          | ✔️（基础库 1.11.0） | ✘   | ✘   |
 
 以上成员方法在 Taro 的页面中同样可以使用，书写同名方法即可，不过需要注意的，目前暂时只有小程序端支持（支持程度如上）这些方法，编译到 H5/RN 端后这些方法均会失效。
 
@@ -400,13 +393,13 @@ Taro 中使用 React，内置组件遵循小程序组件规范，所有内置组
 
 ```jsx
 import { View } from '@tarojs/components'
-<View hoverClass='test' />
+;<View hoverClass="test" />
 ```
 
 对应小程序:
 
 ```html
-<view hover-class='' />
+<view hover-class="" />
 ```
 
 ## 事件
@@ -414,14 +407,14 @@ import { View } from '@tarojs/components'
 在 Taro 中事件遵从小驼峰式命名规范，所有内置事件名以 `on` 开头，在事件处理函数中第一个参数是事件本身，可以通过调用 `stopPropagation` 来阻止冒泡。
 
 ```jsx
-function Comp () {
+function Comp() {
   // 只有 onClick 对应 bindtap
   // 其余内置事件名
-  function clickHandler (e) {
+  function clickHandler(e) {
     e.stopPropagation() // 阻止冒泡
   }
 
-  function scrollHandler () {
+  function scrollHandler() {
     //
   }
   return <ScrollView onClick={clickHandler} onScroll={scrollHandler} />

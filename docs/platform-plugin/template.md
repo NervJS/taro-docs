@@ -311,9 +311,9 @@ getAttrValue (value, key, nodeName) {
 
 ## 例子
 
-### 头条小程序模板
+### 抖音小程序模板
 
-- 头条小程序支持模板递归，所以继承 `RecursiveTemplate` 基类。
+- 抖音小程序支持模板递归，所以继承 `RecursiveTemplate` 基类。
 
 - 因为不需要调整模板内容，所以只用设置 `supportXS` 和 `Adapter` 属性即可。
 

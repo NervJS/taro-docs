@@ -4,7 +4,7 @@ import ts from 'typescript'
 
 import { DocEntry, generateDocumentation } from './ast'
 import envMap from './taro-env'
-  
+
 export default function compile (p: string, n: string, dep: string[], callback?: (routePath: string, doc: DocEntry[]) => void) {
   const route = path.resolve(p, n)
   try {
@@ -24,8 +24,8 @@ export default function compile (p: string, n: string, dep: string[], callback?:
       callback && callback(route, docTree)
     }
   } catch (error) {
-    console.log(error)
+    console.error(error)
   }
 }
 
-export { DocEntry, envMap,generateDocumentation }
+export { DocEntry, envMap, generateDocumentation }

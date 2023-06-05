@@ -274,7 +274,7 @@ module.exports = function (merge) {
 | 参数        | 类型   | 说明                                                                                |
 | :---------- | :----- | :---------------------------------------------------------------------------------- |
 | weapp       | Object | （企业）微信小程序 CI 配置                                                          |
-| tt          | Object | 头条小程序配置                                                                      |
+| tt          | Object | 抖音小程序配置                                                                      |
 | alipay      | Object | 支付宝小程序配置                                                                    |
 | dd          | Object | 钉钉小程序配置（3.6.0 版本开始支持）                                                |
 | swan        | Object | 百度小程序配置                                                                      |
@@ -295,14 +295,14 @@ module.exports = function (merge) {
 
 官方 CI 文档[点这里](https://developers.weixin.qq.com/miniprogram/dev/devtools/ci.html)
 
-### 头条小程序 CI 配置
+### 抖音小程序 CI 配置
 
 | 参数     | 类型   | 说明           |
 | :------- | :----- | :------------- |
 | email    | string | 字节小程序邮箱 |
 | password | string | 字节小程序密码 |
 
-官方 CI 文档[点这里](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/developer-instrument/development-assistance/ide-order-instrument)
+官方 CI 文档[点这里](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/developer-instrument/development-assistance/ide-order-instrument/)
 
 ### 支付宝小程序 CI 配置
 
@@ -376,7 +376,7 @@ export interface CIOptions {
   projectPath?: string
   /** 微信小程序CI配置, 官方文档地址：https://developers.weixin.qq.com/miniprogram/dev/devtools/ci.html */
   weapp?: WeappConfig
-  /** 头条小程序配置, 官方文档地址：https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/developer-instrument/development-assistance/ide-order-instrument */
+  /** 抖音小程序配置, 官方文档地址：https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/developer-instrument/development-assistance/ide-order-instrument/ */
   tt?: TTConfig
   /** 支付宝系列小程序配置，官方文档地址： https://opendocs.alipay.com/mini/miniu/api */
   alipay?: AlipayConfig
@@ -404,7 +404,7 @@ export interface WeappConfig {
   robot?: number
 }
 
-/** 头条小程序配置 */
+/** 抖音小程序配置 */
 export interface TTConfig {
   /** 绑定的邮箱账号 */
   email: string
