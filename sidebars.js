@@ -53,8 +53,8 @@ module.exports = {
           'router-extend'
         ]
       },
-      'request',
       'static-reference',
+      'ref',
       {
         label: '多端开发',
         type: 'category',
@@ -77,6 +77,7 @@ module.exports = {
       'config-detail',
       'html',
       'use-h5',
+      'request',
       'jquery-like',
       'dynamic-import',
       {

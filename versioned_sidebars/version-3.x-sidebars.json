@@ -50,8 +50,8 @@
         "type": "category",
         "items": ["router", "router-extend"]
       },
-      "request",
       "static-reference",
+      "ref",
       {
         "label": "多端开发",
         "type": "category",
@@ -81,6 +81,7 @@
       "config-detail",
       "html",
       "use-h5",
+      "request",
       "jquery-like",
       "dynamic-import",
       {

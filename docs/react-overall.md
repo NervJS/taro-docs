@@ -209,55 +209,7 @@ React 组件的生命周期方法在 Taro 中都支持使用。
 
 ## Ref
 
-在 Taro 中 ref 的用法和 React 完全一致，但是获取到的 “DOM” 和浏览器环境还有小程序环境都有不同。
-
-### React Ref
-
-使用 React Ref 获取到的是 Taro 的虚拟 DOM，和浏览器的 DOM 相似，可以操作它的 `style`，调用它的 API 等。
-
-但是 Taro 的虚拟 DOM 运行在小程序的逻辑层，并不是真实的小程序渲染层节点，它没有尺寸宽高等信息。
-
-```jsx title="示例代码"
-import React, { createRef } from 'react'
-import { View } from '@tarojs/components'
-
-export default class Test extends React.Component {
-  el = createRef()
-
-  componentDidMount() {
-    // 获取到的 DOM 具有类似 HTMLElement 或 Text 等对象的 API
-    console.log(this.el.current)
-  }
-
-  render() {
-    return <View id="only" ref={this.el} />
-  }
-}
-```
-
-### 获取小程序 DOM
-
-获取真实的小程序渲染层节点，需要在 [onReady](react-page#onready-) 生命周期中，调用小程序中用于获取 DOM 的 API。
-
-```jsx title="示例代码"
-import React from 'react'
-import { View } from '@tarojs/components'
-import Taro from '@tarojs/taro'
-
-export default class Test extends React.Component {
-  onReady() {
-    // onReady 触发后才能获取小程序渲染层的节点
-    Taro.createSelectorQuery()
-      .select('#only')
-      .boundingClientRect()
-      .exec((res) => console.log(res))
-  }
-
-  render() {
-    return <View id="only" />
-  }
-}
-```
+[节点获取](./ref.md)
 
 ## Hooks
 
