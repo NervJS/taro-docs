@@ -209,7 +209,7 @@ React 组件的生命周期方法在 Taro 中都支持使用。
 
 ## Ref
 
-[节点获取](./ref.md)
+[节点获取](./ref.mdx)
 
 ## Hooks
 
