@@ -219,6 +219,12 @@ React 组件的生命周期方法在 Taro 中都支持使用。
 
 在小程序端，使用 `dangerouslySetInnerHTML` 时有一些额外的配置选项和需要注意的地方，详情请参考[《渲染 HTML》](html)。
 
+## createPortal
+
+React `createPortal` 支持将组件渲染至特定的 dom 节点中，由于不能在页面组件的 DOM 树之外插入元素，无法实现应用级别的 `<Portal>` 组件。但你仍可以在当前页面中使用 `createPortal`。
+
+示例项目：[taro-react-portal](https://github.com/AdvancedCat/taro-react-portal)
+
 ## Minified React error
 
 因为 development 版本的 React 体积较大，为了减少小程序体积，方便开发时真机预览。Taro 在构建小程序时默认使用 production 版本的 React 相关依赖。
@@ -232,7 +238,6 @@ React 组件的生命周期方法在 Taro 中都支持使用。
 ## 其它限制
 
 - 由于小程序不支持动态引入，因此小程序中无法使用 `React.lazy` API。
-- 不能在页面组件的 DOM 树之外插入元素，因此不支持 `<Portal>`。
 
 ## 常见问题
 
