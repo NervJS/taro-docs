@@ -14,9 +14,6 @@ Taro 支持使用小程序原生的**页面**、**组件**和**插件**。
 1. React：https://github.com/NervJS/taro-sample-weapp/tree/next
 2. Vue：https://github.com/NervJS/taro-sample-weapp/tree/vue
 
-> 注意：如果在 Taro 项目引用了小程序原生的页面、组件和插件，那么该项目将**不再具备多端转换的能力**。
-> 例如，如果使用了微信小程序的原生组件，那么项目只能转换成微信小程序，转义成其他平台会失效，使用其他小程序原生组件同理。
-
 ## 使用原生组件
 
 ### 使用方法
@@ -35,6 +32,56 @@ export default {
 ```
 
 > 注意：Taro3 的组件是没有配置文件的，因此 usingComponents 必须配置在“页面”的配置文件中。
+
+:::note
+如果在 Taro 项目引用了小程序原生的页面、组件和插件，同时希望能够保持多端转换能力，需要通过[多端文件](https://nervjs.github.io/taro-docs/docs/envs#%E7%BB%9F%E4%B8%80%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%A4%9A%E7%AB%AF%E6%96%87%E4%BB%B6)进行兼容。
+
+如下所示，使用了原生组件 ec-canvas。为了确保能够在微信小程序和支付宝小程序中正常使用，需要在对应的页面配置文件（index.config.weapp.js、index.config.alipay.js）中指定对应的原生组件 ec-canvas：
+
+```
+component
+  └── ec-canvas
+      ├── weapp                  ec-canvas 组件的微信小程序版本
+            ├── index.wxml
+            ├── index.wxss
+            ├── index.json
+            └── index.js
+      └── alipay                 ec-canvas 组件的支付宝小程序版本
+            ├── index.axml
+            ├── index.acss
+            ├── index.json
+            └── index.js
+
+page
+  ├── index.config.js 默认的页面配置，编译到微信小程序、支付宝小程序之外的端使用的版本
+  ├── index.config.weapp.js 微信小程序版本使用的页面配置
+  └── index.config.alipay.js 支付宝小程序版本使用的页面配置
+```
+
+````js
+//index.config.js
+export default {
+  usingComponents: {
+  },
+}
+
+//index.config.weapp.js
+export default {
+  usingComponents: {
+    'ec-canvas': '../components/ec-canvas/weapp/index',
+  },
+}
+
+//index.config.alipay.js
+export default {
+  usingComponents: {
+    'ec-canvas': '../components/ec-canvas/alipay/index',
+  },
+}
+
+:::
+
+
 
 #### 2. 使用组件
 
