@@ -243,7 +243,53 @@
     ]
   },
   "API": {
-    "关于API": ["apis/about/desc", "apis/about/env", "apis/about/events", "apis/General"],
+    "关于API": [
+      "apis/about/desc",
+      "apis/about/env",
+      "apis/about/events",
+      "apis/General",
+      {
+        "Hooks": [
+          "apis/taro.hooks/useDidShow",
+          "apis/taro.hooks/useDidHide",
+          "apis/taro.hooks/usePullDownRefresh",
+          "apis/taro.hooks/useReachBottom",
+          "apis/taro.hooks/usePageScroll",
+          "apis/taro.hooks/useResize",
+          "apis/taro.hooks/useShareAppMessage",
+          "apis/taro.hooks/useTabItemTap",
+          "apis/taro.hooks/useAddToFavorites",
+          "apis/taro.hooks/useShareTimeline",
+          "apis/taro.hooks/useSaveExitState",
+          "apis/taro.hooks/useLaunch",
+          "apis/taro.hooks/useError",
+          "apis/taro.hooks/useUnhandledRejection",
+          "apis/taro.hooks/usePageNotFound",
+          "apis/taro.hooks/useLoad",
+          "apis/taro.hooks/useUnload",
+          "apis/taro.hooks/useReady",
+          "apis/taro.hooks/useRouter",
+          "apis/taro.hooks/useTitleClick",
+          "apis/taro.hooks/useOptionMenuClick",
+          "apis/taro.hooks/usePullIntercept"
+        ]
+      },
+      {
+        "拓展": [
+          "apis/taro.extend/eventCenter",
+          "apis/taro.extend/getEnv",
+          "apis/taro.extend/pxTransform",
+          "apis/taro.extend/initPxTransform",
+          "apis/taro.extend/getAppInfo",
+          "apis/taro.extend/getRenderer",
+          "apis/taro.extend/requirePlugin",
+          "apis/taro.extend/getCurrentInstance",
+          "apis/taro.extend/setGlobalDataPlugin",
+          "apis/taro.extend/getTabBar",
+          "apis/taro.extend/interceptorify"
+        ]
+      }
+    ],
     "框架": ["apis/framework/App", "apis/framework/getApp", "apis/framework/getCurrentPages", "apis/framework/Page"],
     "基础": [
       "apis/base/env",
@@ -1139,45 +1185,6 @@
     "云开发": ["apis/cloud/cloud", "apis/cloud/DB"],
     "Alipay": ["apis/alipay/getOpenUserInfo"],
     "QQ": ["apis/qq/openQzonePublish"],
-    "Swan": ["apis/swan/setPageInfo"],
-    "Taro": {
-      "拓展": [
-        "apis/taro.extend/eventCenter",
-        "apis/taro.extend/getEnv",
-        "apis/taro.extend/pxTransform",
-        "apis/taro.extend/initPxTransform",
-        "apis/taro.extend/getAppInfo",
-        "apis/taro.extend/getRenderer",
-        "apis/taro.extend/requirePlugin",
-        "apis/taro.extend/getCurrentInstance",
-        "apis/taro.extend/setGlobalDataPlugin",
-        "apis/taro.extend/getTabBar",
-        "apis/taro.extend/interceptorify"
-      ],
-      "Hooks": [
-        "apis/taro.hooks/useDidShow",
-        "apis/taro.hooks/useDidHide",
-        "apis/taro.hooks/usePullDownRefresh",
-        "apis/taro.hooks/useReachBottom",
-        "apis/taro.hooks/usePageScroll",
-        "apis/taro.hooks/useResize",
-        "apis/taro.hooks/useShareAppMessage",
-        "apis/taro.hooks/useTabItemTap",
-        "apis/taro.hooks/useAddToFavorites",
-        "apis/taro.hooks/useShareTimeline",
-        "apis/taro.hooks/useSaveExitState",
-        "apis/taro.hooks/useLaunch",
-        "apis/taro.hooks/useError",
-        "apis/taro.hooks/useUnhandledRejection",
-        "apis/taro.hooks/usePageNotFound",
-        "apis/taro.hooks/useLoad",
-        "apis/taro.hooks/useUnload",
-        "apis/taro.hooks/useReady",
-        "apis/taro.hooks/useRouter",
-        "apis/taro.hooks/useTitleClick",
-        "apis/taro.hooks/useOptionMenuClick",
-        "apis/taro.hooks/usePullIntercept"
-      ]
-    }
+    "Swan": ["apis/swan/setPageInfo"]
   }
 }
