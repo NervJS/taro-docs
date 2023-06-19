@@ -5,7 +5,7 @@ sidebar_label: Video
 
 视频。相关api：Taro.createVideoContext
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/video.html)
 
@@ -177,10 +177,13 @@ export default class PageView extends Component {
 | onSeeked | `CommonEventFunction` |  | 否 | 否 |
 | onSeeking | `CommonEventFunction` |  | 否 | 否 |
 | onAdLoad | `CommonEventFunction` |  | 否 | 贴片广告加载成功时触发，event.detail = { adType: 'preRollAd' or 'postRollAd' } |
+| onCastingUserSelect | `CommonEventFunction` |  | 否 | 用户选择投屏设备时触发 detail = { state: "success"/"fail" } |
+| onCastingStateChange | `CommonEventFunction` |  | 否 | 投屏成功/失败时触发 detail = { type, state: "success"/"fail" } |
+| onCastingInterrupt | `CommonEventFunction` |  | 否 | 投屏被中断时触发 |
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | VideoProps.src | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.duration | ✔️ |  | ✔️ |  | ✔️ |  | ✔️ | ✔️ |  |
@@ -277,6 +280,9 @@ export default class PageView extends Component {
 | VideoProps.onSeeked |  |  |  |  |  | ✔️ |  |  |  |
 | VideoProps.onSeeking |  |  |  |  |  | ✔️ |  |  |  |
 | VideoProps.onAdLoad |  |  |  | ✔️ |  |  |  |  |  |
+| VideoProps.onCastingUserSelect | ✔️ |  |  |  |  |  |  |  |  |
+| VideoProps.onCastingStateChange | ✔️ |  |  |  |  |  |  |  |  |
+| VideoProps.onCastingInterrupt | ✔️ |  |  |  |  |  |  |  |  |
 
 ### direction
 

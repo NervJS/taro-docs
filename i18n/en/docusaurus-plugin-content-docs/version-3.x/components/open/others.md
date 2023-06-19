@@ -15,4 +15,4 @@ In addition to some components for the navigation list, there are also some diff
 
 [Alipay Mini-Program](https://opendocs.alipay.com/mini/component)。
 
-[ByteDance Micro-App](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/component/all)。
+[ByteDance Micro-App](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/overview)。

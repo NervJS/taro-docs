@@ -33,7 +33,7 @@ title: Taro 仓库概览
 | `@tarojs/plugin-platform-weapp`  | 微信小程序插件                                    |
 | `@tarojs/plugin-platform-alipay` | 支付宝小程序插件                                  |
 | `@tarojs/plugin-platform-swan`   | 百度小程序插件                                    |
-| `@tarojs/plugin-platform-tt`     | 字节跳动小程序插件                                |
+| `@tarojs/plugin-platform-tt`     | 抖音小程序插件                                    |
 | `@tarojs/plugin-platform-qq`     | qq 小程序插件                                     |
 | `@tarojs/plugin-platform-jd`     | 京东小程序插件                                    |
 | `@tarojs/plugin-html`            | 支持使用 HTML 标签的插件                          |

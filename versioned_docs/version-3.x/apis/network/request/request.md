@@ -11,7 +11,7 @@ sidebar_label: request
 - 对于 `POST` 方法且 `header['content-type']` 为 `application/json` 的数据，会对数据进行 JSON 序列化
 - 对于 `POST` 方法且 `header['content-type']` 为 `application/x-www-form-urlencoded` 的数据，会将数据转换成 query string `（encodeURIComponent(k)=encodeURIComponent(v)&encodeURIComponent(k)=encodeURIComponent(v)...）`
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/wx.request.html)
 
@@ -47,18 +47,19 @@ sidebar_label: request
 | success | `(result: SuccessCallbackResult<T>) => void` |  | 否 | 接口调用成功的回调函数 |
 | fail | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用失败的回调函数 |
 | complete | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
-| jsonp | `boolean` | `false` | 否 | 设置 H5 端是否使用jsonp方式获取数据<br />API 支持度: h5 |
-| jsonpCache | `boolean` | `false` | 否 | 设置 H5 端 jsonp 请求 url 是否需要被缓存<br />API 支持度: h5 |
-| mode | `keyof CorsMode` | `"same-origin"` | 否 | 设置 H5 端是否允许跨域请求<br />API 支持度: h5 |
-| credentials | `keyof Credentials` | `"omit"` | 否 | 设置 H5 端是否携带 Cookie<br />API 支持度: h5 |
-| cache | `keyof Cache` | `"default"` | 否 | 设置 H5 端缓存模式<br />API 支持度: h5 |
-| retryTimes | `number` | `2` | 否 | 设置 H5 端请求重试次数<br />API 支持度: h5 |
-| backup | string or string[] |  | 否 | 设置 H5 端请求的兜底接口<br />API 支持度: h5 |
-| dataCheck | `() => boolean` |  | 否 | 设置 H5 端请求响应的数据校验函数，若返回 false，则请求兜底接口，若无兜底接口，则报请求失败<br />API 支持度: h5 |
-| useStore | `boolean` | `false` | 否 | 设置 H5 端请求是否使用缓存<br />API 支持度: h5 |
-| storeCheckKey | `string` |  | 否 | 设置 H5 端请求缓存校验的 key<br />API 支持度: h5 |
-| storeSign | `string` |  | 否 | 设置 H5 端请求缓存签名<br />API 支持度: h5 |
-| storeCheck | `() => boolean` |  | 否 | 设置 H5 端请求校验函数，一般不需要设置<br />API 支持度: h5 |
+| jsonp | string or boolean | `false` | 否 | 设置是否使用 jsonp 方式获取数据<br />API 支持度: h5 |
+| jsonpCache | `RequestCache` |  | 否 | 设置 jsonp 请求 url 是否需要被缓存<br />API 支持度: h5 |
+| mode | `keyof CorsMode` | `"same-origin"` | 否 | 设置是否允许跨域请求<br />API 支持度: h5 |
+| credentials | `keyof Credentials` | `"omit"` | 否 | 设置是否携带 Cookie<br />API 支持度: h5 |
+| cache | `keyof Cache` | `"default"` | 否 | 设置缓存模式<br />API 支持度: h5 |
+| retryTimes | `number` | `2` | 否 | 设置请求重试次数<br />API 支持度: h5 |
+| backup | string or string[] |  | 否 | 设置请求的兜底接口<br />API 支持度: h5 |
+| signal | `AbortSignal` |  | 否 | 设置请求中止信号<br />API 支持度: h5 |
+| dataCheck | `() => boolean` |  | 否 | 设置请求响应的数据校验函数，若返回 false，则请求兜底接口，若无兜底接口，则报请求失败<br />API 支持度: h5 |
+| useStore | `boolean` | `false` | 否 | 设置请求是否使用缓存<br />API 支持度: h5 |
+| storeCheckKey | `string` |  | 否 | 设置请求缓存校验的 key<br />API 支持度: h5 |
+| storeSign | `string` |  | 否 | 设置请求缓存签名<br />API 支持度: h5 |
+| storeCheck | `() => boolean` |  | 否 | 设置请求校验函数，一般不需要设置<br />API 支持度: h5 |
 
 ### SuccessCallbackResult
 

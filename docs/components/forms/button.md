@@ -5,7 +5,7 @@ sidebar_label: Button
 
 按钮
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/button.html)
 
@@ -101,6 +101,7 @@ export default class PageButton extends Component {
         <Button size='mini' type='primary'>按钮</Button>
         <Button size='mini' >按钮</Button>
         <Button size='mini' type='warn'>按钮</Button>
+        <Button openType='getPhoneNumber' onGetPhoneNumber="callback">按钮</Button>
       </View>
     )
   }
@@ -128,6 +129,7 @@ export default class PageButton extends Component {
     <button size="mini" type="primary">按钮</button>
     <button size="mini" >按钮</button>
     <button size="mini" type="warn">按钮</button>
+    <button open-type="getPhoneNumber" @getphonenumber="callback">按钮</button>
   </view>
 </template>
 
@@ -223,7 +225,7 @@ export default {
 | onGetUserInfo | `CommonEventFunction<onGetUserInfoEventDetail>` |  | 否 | 用户点击该按钮时，会返回获取到的用户信息，回调的detail数据与 Taro.getUserInfo 返回的一致<br /><br />生效时机: `open-type="getUserInfo"` |
 | onGetAuthorize | `CommonEventFunction` |  | 否 | 支付宝获取会员基础信息授权回调<br /><br />生效时机：`open-type="getAuthorize"` |
 | onContact | `CommonEventFunction<onContactEventDetail>` |  | 否 | 客服消息回调<br /><br />生效时机：`open-type="contact"` |
-| onGetPhoneNumber | `CommonEventFunction<onGetPhoneNumberEventDetail>` |  | 否 | 获取用户手机号回调<br /><br />生效时机：`open-type="getphonenumber"` |
+| onGetPhoneNumber | `CommonEventFunction<onGetPhoneNumberEventDetail>` |  | 否 | 获取用户手机号回调<br /><br />生效时机：`open-type="getPhoneNumber"` |
 | onError | `CommonEventFunction` |  | 否 | 当使用开放能力时，发生错误的回调<br /><br />生效时机：`open-type="launchApp"` |
 | onOpenSetting | `CommonEventFunction<onOpenSettingEventDetail>` |  | 否 | 在打开授权设置页后回调<br /><br />生效时机：`open-type="openSetting"` |
 | onLaunchApp | `CommonEventFunction` |  | 否 | 打开 APP 成功的回调<br /><br />生效时机：`open-type="launchApp"` |
@@ -239,7 +241,7 @@ export default {
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | ButtonProps.size | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ButtonProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
@@ -254,13 +256,13 @@ export default {
 | ButtonProps.hoverStartTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ButtonProps.hoverStayTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ButtonProps.lang | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |
-| ButtonProps.sessionFrom | ✔️ |  |  |  |  |  |  |  |  |
-| ButtonProps.sendMessageTitle | ✔️ |  |  |  |  |  |  |  |  |
-| ButtonProps.sendMessagePath | ✔️ |  |  |  |  |  |  |  |  |
-| ButtonProps.sendMessageImg | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.sessionFrom | ✔️ | ✔️ |  |  |  |  |  |  |  |
+| ButtonProps.sendMessageTitle | ✔️ | ✔️ |  |  |  |  |  |  |  |
+| ButtonProps.sendMessagePath | ✔️ | ✔️ |  |  |  |  |  |  |  |
+| ButtonProps.sendMessageImg | ✔️ | ✔️ |  |  |  |  |  |  |  |
 | ButtonProps.appParameter | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |
 | ButtonProps.scope |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.showMessageCard | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.showMessageCard | ✔️ | ✔️ |  |  |  |  |  |  |  |
 | ButtonProps.publicId |  |  | ✔️ |  | ✔️ |  |  |  |  |
 | ButtonProps.templateId |  | ✔️ |  |  |  |  |  |  |  |
 | ButtonProps.subscribeId |  | ✔️ |  |  |  |  |  |  |  |
@@ -278,7 +280,7 @@ export default {
 | ButtonProps.onContact | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
 | ButtonProps.onGetPhoneNumber | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |  |
 | ButtonProps.onError | ✔️ |  | ✔️ |  | ✔️ | ✔️ |  |  |  |
-| ButtonProps.onOpenSetting | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |  |  |
+| ButtonProps.onOpenSetting | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
 | ButtonProps.onLaunchApp | ✔️ |  |  |  | ✔️ |  |  |  |  |
 | ButtonProps.onChooseAvatar | ✔️ |  |  |  |  |  |  |  |  |
 | ButtonProps.onTap |  |  | ✔️ |  |  |  |  |  |  |

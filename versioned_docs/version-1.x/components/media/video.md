@@ -29,7 +29,7 @@ sidebar_label: Video
 
 [百度小程序 Video](https://smartprogram.baidu.com/docs/develop/component/media/#video)。
 
-[字节跳动小程序 Video](https://developer.toutiao.com/docs/comp/video.html)。
+[抖音小程序 Video](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/media-component/video)。
 
 
 ###### 示例：

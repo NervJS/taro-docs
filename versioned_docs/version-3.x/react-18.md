@@ -37,4 +37,3 @@ $ taro update project 3.5
 
 - 开发支付宝小程序时，Webpack4 暂不支持使用 React18，[#12134](https://github.com/NervJS/taro/issues/12134#issuecomment-1197904281)。
 - 受小程序环境限制，诸如新 SSR Suspense 等特性将不能在小程序中使用。
-- RN 暂不支持 React v18，需要等待 RN 官方输出支持方案。

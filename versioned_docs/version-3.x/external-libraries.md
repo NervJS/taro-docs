@@ -141,6 +141,7 @@ module.exports = {
   globals: {
     // ...
     window: true,
+    DEPRECATED_ADAPTER_COMPONENT: false,
     ENABLE_INNER_HTML: true,
     ENABLE_ADJACENT_HTML: true,
     ENABLE_SIZE_APIS: true,

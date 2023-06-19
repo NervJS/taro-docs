@@ -100,6 +100,8 @@ class App extends Components {
 | skinSmoothness | `number` | `0` | 否 | 自定义特效磨皮效果，取值 0~1。需要开启 custom-effect |
 | faceThinness | `number` | `0` | 否 | 自定义特效瘦脸效果，取值 0~1。需要开启 custom-effect |
 | eyeBigness | `number` | `0` | 否 | 自定义特效大眼效果，取值 0~1。需要开启 custom-effect |
+| voiceChangerType | `number` | `0` | 否 | 0：关闭变声；1：熊孩子；2：萝莉；3：大叔；4：重金属；6：外国人；7：困兽；8：死肥仔；9：强电流；10：重机械；11：空灵 |
+| fps | `number` | `15` | 否 | 帧率，有效值为 1~30 |
 | onStateChange | `CommonEventFunction<onStateChangeEventDetail>` |  | 否 | 状态变化事件，detail = {code} |
 | onError | `CommonEventFunction<onErrorEventDetail>` |  | 否 | 渲染错误事件，detail = {errMsg, errCode} |
 | onBgmProgress | `CommonEventFunction<onBgmProgressEventDetail>` |  | 否 | 背景音进度变化时触发，detail = {progress, duration} |
@@ -151,6 +153,8 @@ class App extends Components {
 | LivePusherProps.skinSmoothness | ✔️ |  |  |  |  |
 | LivePusherProps.faceThinness | ✔️ |  |  |  |  |
 | LivePusherProps.eyeBigness | ✔️ |  |  |  |  |
+| LivePusherProps.voiceChangerType | ✔️ |  |  |  |  |
+| LivePusherProps.fps | ✔️ |  |  |  |  |
 | LivePusherProps.onStateChange | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.onError | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.onBgmProgress | ✔️ | ✔️ |  |  |  |

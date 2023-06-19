@@ -2,7 +2,7 @@ import './index.css'
 
 import Layout from '@theme/Layout'
 import types from 'miniapp-types/dist/jsonSchema.json'
-import React, { Fragment,useState } from 'react'
+import React, { Fragment, useState } from 'react'
 
 const useList = {}
 types.forEach((e) => {
@@ -76,7 +76,7 @@ function CanIUse () {
             当前支持<strong>组件库</strong>精确查询，可匹配组件名、属性名
           </details>
           <datalist id="use-list">
-            {Object.keys(useList).map((name) => (<option value={name} />))}
+            {Object.keys(useList).map((name, i) => (<option key={`id_${i}`} value={name} />))}
           </datalist>
         </div>
         <div className="w-100">

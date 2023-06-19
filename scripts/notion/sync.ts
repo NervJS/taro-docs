@@ -45,7 +45,7 @@ export async function fetchTechnicalCommittee (list: QueryDatabaseResponse['resu
 
 export async function updateTechnicalCommittee () {
   const list = await fetchTechnicalCommittee()
-  const data = await list.reduce(async (p, member) => {
+  const data = await list.reduce(async (p, member: any) => {
     const members = await p
     const cover = getProperty(member, 'cover') as { url: TextRequest } | null
     const title = getProperty(member.properties, 'title') as Array<RichTextItemResponse>
@@ -65,8 +65,8 @@ export async function updateTechnicalCommittee () {
     }
     members.push(member)
     return members
-  }, Promise.resolve([]))
-  writeFile(`static/data/contributors.json`, JSON.stringify(data.map(e => {
+  }, Promise.resolve([] as QueryDatabaseResponse['results']))
+  writeFile(`static/data/contributors.json`, JSON.stringify(data.map((e: any) => {
     const title = head(e.properties.title?.title)
     title && set(e, ['properties', 'title', 'title'], [title])
     unset(e, ['properties', 'title', 'title', '0', 'annotations'])
@@ -75,4 +75,8 @@ export async function updateTechnicalCommittee () {
   }), undefined, 2))
 }
 
-updateTechnicalCommittee()
+try {
+  updateTechnicalCommittee()
+} catch (error) {
+  console.error('Notion: update technical committee with error', error)
+}

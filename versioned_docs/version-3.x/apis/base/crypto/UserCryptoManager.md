@@ -48,7 +48,7 @@ userCryptoManager.getLatestUserKey({
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/crypto/UserCryptoManager.getRandomValues.html)
 
 ```tsx
-(option: Option) => Promise<SuccessCallbackResult>
+(option: Option) => void
 ```
 
 | 参数 | 类型 |
@@ -58,7 +58,7 @@ userCryptoManager.getLatestUserKey({
 #### 示例代码
 
 ```tsx
-Taro.getRandomValues({
+Taro.getUserCryptoManager().getRandomValues({
   length: 6 // 生成 6 个字节长度的随机数,
   success: res => {
     console.log(Taro.arrayBufferToBase64(res.randomValues)) // 转换为 base64 字符串后打印
@@ -94,7 +94,7 @@ Taro.getRandomValues({
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
 | length | `number` | 是 | 整数，生成随机数的字节数，最大 1048576 |
-| success | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用成功的回调函数 |
+| success | `(res: SuccessCallbackResult) => void` | 否 | 接口调用成功的回调函数 |
 | fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
 | complete | `(res: SuccessCallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
