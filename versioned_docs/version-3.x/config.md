@@ -2,7 +2,7 @@
 title: 编译配置
 ---
 
-编译配置存放于项目根目录下的 `config` 目录中，包含三个文件：
+编译配置存放于项目根目录下的 `config` 目录中，只要确保 `config/index.js` 或者 `config/index.ts` 文件存在，可以作为用户自定义编译配置导出即可。你也可以选择拆分成三个文件（具体见默认配置）：
 
 - `index.js` 是通用配置
 - `dev.js` 是项目预览时的配置
@@ -10,7 +10,9 @@ title: 编译配置
 
 详细的编译配置文档请查阅：[编译配置详情](./config-detail)
 
-### 默认配置
+> 从 Taro v3.6.5 开始， `config/index.ts ` 支持使用 `ts` 文件
+
+## 默认配置
 
 ```js title="config/index.js"
 const config = {
@@ -93,4 +95,76 @@ module.exports = function (merge) {
   }
   return merge({}, config, require('./prod'))
 }
+```
+
+## defineConfig 辅助函数
+
+:::info
+Taro v3.6.9 开始支持
+:::
+
+开发者可以导入 `defineConfig` 函数包裹配置对象， 以获得 类型提示 和 自动补全.
+
+### 基础配置
+
+```ts
+// config/index.ts
+import { defineConfig } from '@tarojs/cli'
+
+export default defineConfig({
+  // ...Taro 配置
+})
+```
+
+同时 `config/index.ts` 支持直接导出对象：
+
+```ts
+// 直接导出对象
+import type { UserConfigExport } from '@tarojs/cli'
+
+export default {
+  // ...Taro 配置
+} satisfies UserConfigExport
+```
+
+### 异步配置
+
+如果配置需要调用一个异步函数，也可以转而导出一个异步函数：
+
+```ts
+import { defineConfig } from '@tarojs/cli'
+
+export default defineConfig(async (mergin, { command, mode }) => {
+  const data = await asyncFunction()
+  return {
+    // Taro 配置
+  }
+})
+```
+
+### 情景配置
+
+如果配置文件需要基于 命令 或者不同的 [模式](./env-mode-config.md) 来决定选项，则可以选择导出这样一个函数：
+
+```ts
+import { defineConfig } from '@tarojs/cli'
+
+export default defineConfig((mergin, { command, mode }) => {
+  // mergin 为webpack-mergin, 兼容以前的配置
+  // 假如执行的命令为: "taro build --type weapp --mode test"
+  // 则 command 的值为 build, mode 的值为 test
+  if (mode === 'development') {
+    return {
+      // dev 独有配置
+    }
+  } else if (mode === 'test') {
+    return {
+      // test 独有配置
+    }
+  } else {
+    return {
+      // build 独有配置
+    }
+  }
+})
 ```
