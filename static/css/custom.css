@@ -18,6 +18,7 @@
 /* -----change the width of main content-----start */
 main > .container {
   max-width: none;
+  line-height: 1.5;
 }
 
 main > .container > .row {
