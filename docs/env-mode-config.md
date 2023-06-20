@@ -2,6 +2,8 @@
 title: 模式和环境变量
 ---
 
+> Taro version 3.5.10 开始支持，之前的版本可参考 [taro-plugin-environment](https://github.com/bigmeow/taro-plugin-environment)
+
 `模式` 在 `Taro cli` 中，是用于给环境变量分组并加载其分组下的环境变量，它是一组环境变量的 `name`。
 它参考了 [vue-cli 中的模式和环境变量加载方式](https://cli.vuejs.org/zh/guide/mode-and-env.html) , 所以若你之前使用过 `vue-cli`，可以更快掌握用法。
 
@@ -94,6 +96,8 @@ JD_APP_TEST="foo"                        # 满足前缀，加载
 但是，有个特殊的环境变量不受自定义前缀配置的影响，始终会被加载，那就是 `TARO_APP_ID`。
 
 ## 特殊环境变量 `TARO_APP_ID`
+
+> Taro version 3.6.9 开始支持
 
 `TARO_APP_ID` 是专门针对小程序的 `appid` 设计的，在构建输出 `dist/project.config.json` 文件前， 会将 `dist/project.config.json` 文件中的 `appid` 字段，修改为 `TARO_APP_ID` 的值。 在不同环境配置不同的小程序 `appid` 时，它特别有用，还能免去开发者在开发者工具上手动修改 `appid` 的麻烦。
 
