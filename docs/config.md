@@ -10,7 +10,7 @@ title: 编译配置
 
 详细的编译配置文档请查阅：[编译配置详情](./config-detail)
 
-> 从 Taro v3.6.5 开始， `config/index.ts ` 支持使用 `ts` 文件
+> 从 Taro v3.6.5 开始， `config/index.ts` 支持使用 `ts` 文件(`react native` 暂不支持)
 
 ## 默认配置
 
@@ -100,7 +100,9 @@ module.exports = function (merge) {
 ## defineConfig 辅助函数
 
 :::info
-Taro Version 3.6.9 开始支持
+Taro v3.6.9 开始支持
+
+react native 暂不支持
 :::
 
 开发者可以导入 `defineConfig` 函数包裹配置对象， 以获得 类型提示 和 自动补全.
