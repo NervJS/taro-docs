@@ -51,11 +51,17 @@ export request;
 
 ## 限制
 
+:::danger 限制
+
 - 暂不支持上传，且插件默认会将全局 `FormData` 、 `Blob` 对象替换成 `undefined`（仅针对小程序环境）
 - 本插件需搭配 taro 主包 3.6.0 及其以上版本使用
 - webpack4 用户需升级插件版本为 `3.6.6` 及其以上
+
+:::
 
 ## 插件发布记录
 
 - `3.6.0` 插件首次发布
 - `3.6.6` [fix: @tarojs/plugin-http 对 webpack4 的兼容](https://github.com/NervJS/taro/pull/13699)
+- `3.6.7` 优化事件属性的实现， [#13824](https://github.com/NervJS/taro/issues/13824)
+- `3.6.8` 修复发送请求时未正确携带包含 `httpOnly` 的 `cookie` 的问题，[#13941](https://github.com/NervJS/taro/issues/13941)
