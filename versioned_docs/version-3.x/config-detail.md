@@ -47,7 +47,7 @@ config = {
 
 `object`
 
-用于配置一些全局变量供代码中进行使用。
+用于配置一些全局变量供业务代码中进行使用。
 
 配置方式可参考 [Webpack DefinePlugin](https://webpack.js.org/plugins/define-plugin/)，例如：
 
@@ -146,7 +146,12 @@ module.exports = {
 }
 ```
 
-这样就能在代码中通过 `process.env.NODE_ENV === 'development'` 来判断环境。
+这样就能在业务代码中通过 `process.env.NODE_ENV === 'development'` 来判断环境。
+
+:::warning 注意
+这里的配置的环境变量只能在 `业务代码` 中使用，无法在 `node环境` 代码中获取到其配置的值， 也不会改变 `node环境` 中 `process.env.NODE_ENV` 的值。
+配置环境变量更推荐使用 [模式和环境变量](./env-mode-config.md)
+:::
 
 ## copy
 
