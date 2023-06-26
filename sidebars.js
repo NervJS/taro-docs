@@ -142,8 +142,8 @@ module.exports = {
           'test-utils/index',
           'test-utils/render',
           'test-utils/queries',
-          'test-utils/fireEvent',
-          'test-utils/lifeCycle',
+          'test-utils/fire-event',
+          'test-utils/life-cycle',
           'test-utils/other'
         ]
       },
