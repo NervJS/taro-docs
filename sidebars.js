@@ -135,6 +135,18 @@ module.exports = {
           'platform-plugin/platform-web'
         ]
       },
+      {
+        label: '测试工具',
+        type: 'category',
+        items: [
+          'test-utils/index',
+          'test-utils/render',
+          'test-utils/queries',
+          'test-utils/fireEvent',
+          'test-utils/lifeCycle',
+          'test-utils/other'
+        ]
+      },
       'external-libraries'
     ],
     社区生态: [
