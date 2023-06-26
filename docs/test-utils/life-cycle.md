@@ -8,7 +8,7 @@ title: 生命周期 API
 
 > APP 生命周期
 
-对应生命周期的说明可以参考官网：[传送门](https://docs.taro.zone/docs/react-entry)
+对应生命周期的说明可以参考官网：[传送门](/docs/react-entry)
 
 ### onLaunch
 
