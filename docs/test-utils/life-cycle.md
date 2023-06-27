@@ -106,11 +106,20 @@ function onUnhandledRejection(): Promise<{ reason: string; promise: Promise<unkn
 ```
 
 回调参数：
+<<<<<<< HEAD
 
 | 属性    | 类型    | 说明                            |
 | ------- | ------- | ------------------------------- |
 | reason  | string  | 拒绝原因，一般是一个 Error 对象 |
 | promise | Promise | 被拒绝的 Promise 对象           |
+
+=======
+| 属性 | 类型 | 说明 |
+| ------- | ------- | ------------------------------- |
+| reason | string | 拒绝原因，一般是一个 Error 对象 |
+| promise | Promise | 被拒绝的 Promise 对象 |
+
+> > > > > > > master
 
 用法：
 
