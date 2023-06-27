@@ -83,10 +83,11 @@ function onPageNotFound(): Promise<{ path: string; query: object; isEntryPage: b
 ```
 
 回调参数：
-| 属性 | 类型 | 说明 |
+
+| 属性        | 类型    | 说明                                                                           |
 | ----------- | ------- | ------------------------------------------------------------------------------ |
-| path | string | 不存在页面的路径 |
-| query | Object | 打开不存在页面的 query 参数 |
+| path        | string  | 不存在页面的路径                                                               |
+| query       | Object  | 打开不存在页面的 query 参数                                                    |
 | isEntryPage | boolean | 是否本次启动的首个页面（例如从分享等入口进来，首个页面是开发者配置的分享页面） |
 
 用法：
@@ -105,10 +106,11 @@ function onUnhandledRejection(): Promise<{ reason: string; promise: Promise<unkn
 ```
 
 回调参数：
-| 属性 | 类型 | 说明 |
+
+| 属性    | 类型    | 说明                            |
 | ------- | ------- | ------------------------------- |
-| reason | string | 拒绝原因，一般是一个 Error 对象 |
-| promise | Promise | 被拒绝的 Promise 对象 |
+| reason  | string  | 拒绝原因，一般是一个 Error 对象 |
+| promise | Promise | 被拒绝的 Promise 对象           |
 
 用法：
 
