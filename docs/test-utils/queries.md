@@ -5,12 +5,13 @@ title: 查询相关 API
 ## 类型说明
 
 TWaitforParams：
-| 参数 | 类型 | 必须 | 默认值 | 说明 |
-| ----------- | ----------- | -------------- |-------------- |-------------- |
-| container | HTMLElement | | | window.document | 查询的 root 节点 |
-| timeout | number | | 1000 | 失效时间 |
-| interval | number | | 50 | 查询间隔 |
-| mutationObserverOptions | MutationObserverInit | | {subtree: true, childList: true, attributes: true, characterData: true }| 监听器参数 |
+
+| 属性                    | 类型                 | 必须 | 默认值                                                                   | 说明            |
+| ----------------------- | -------------------- | ---- | ------------------------------------------------------------------------ | --------------- | ---------------- |
+| container               | HTMLElement          |      |                                                                          | window.document | 查询的 root 节点 |
+| timeout                 | number               |      | 1000                                                                     | 失效时间        |
+| interval                | number               |      | 50                                                                       | 查询间隔        |
+| mutationObserverOptions | MutationObserverInit |      | {subtree: true, childList: true, attributes: true, characterData: true } | 监听器参数      |
 
 ## 按照选择器查询
 

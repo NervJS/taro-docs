@@ -16,13 +16,14 @@ async mount(component, params);
 | params    | TParams                             |      | 参数           |
 
 params 类型 `TParams`
-| 参数 | 类型 | 必须 | 默认值 | 说明 | 备注 |
-| ----------- | ----------- | -------------- |-------------- |-------------- |-------------- |
-| props | Object | | {} | props 入参 |
-| slots | Object | | {} | slots 入参 | vue 特有 |
-| container | HTMLElement | | div | 挂载容器节点 |
-| baseElement | HTMLElement | | document.body |打印出来的节点 |
-| baseElement | HTMLElement | | document.body |打印出来的节点 |
+
+| 参数        | 类型        | 必须 | 默认值        | 说明           | 备注     |
+| ----------- | ----------- | ---- | ------------- | -------------- | -------- |
+| props       | Object      |      | {}            | props 入参     |
+| slots       | Object      |      | {}            | slots 入参     | vue 特有 |
+| container   | HTMLElement |      | div           | 挂载容器节点   |
+| baseElement | HTMLElement |      | document.body | 打印出来的节点 |
+| baseElement | HTMLElement |      | document.body | 打印出来的节点 |
 
 用法：
 
