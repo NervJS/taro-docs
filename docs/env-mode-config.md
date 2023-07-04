@@ -21,8 +21,8 @@ Taro v3.5.10 开始支持，之前的版本可参考 [taro-plugin-environment](h
 假设你有`开发`和`生产`2 个环境，你可以在项目根目录下新建两个`env`环境文件：
 
 ```
-env.development     # 在 development 模式时被载入
-env.production      # 在 production 模式时被载入
+.env.development     # 在 development 模式时被载入
+.env.production      # 在 production 模式时被载入
 ```
 
 环境文件只包含环境变量的“键=值”对：
