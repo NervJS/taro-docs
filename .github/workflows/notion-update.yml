@@ -1,0 +1,47 @@
+name: Notion update
+on:
+  schedule:
+    - cron: '0 0 * * 1,3,6'
+  push:
+    branches:
+      - dev-ci
+
+env:
+  CI: true
+  NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+jobs:
+  noiton-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cache pnpm modules and build
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-types
+          restore-keys: |
+            ${{ runner.os }}-
+
+      - name: Installation Dependencies
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+
+      - name: Fetch notion database
+        run: |
+          pnpm notion:update
+          pnpm run notion
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(date): update contributor member-list"
+          title: "chore(date): update contributor member-list"
+          body: "update contributor member-list"
+          branch: "feat/update-member-list"
