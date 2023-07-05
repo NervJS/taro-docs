@@ -26,9 +26,11 @@ sidebar_label: previewImage
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
 | urls | `string[]` | 是 | 需要预览的图片链接列表。 |
-| current | `string` | 否 | 当前显示图片的链接 |
-| showmenu | `boolean` | 否 | <br />support: weapp 最低版本：2.13.0。是否显示长按菜单，默认值：true |
-| referrerPolicy | `string` | 否 | <br />support: weapp 最低版本：2.13.0。origin: 发送完整的referrer; no-referrer: 不发送。格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本；默认值：no-referrer |
+| current | string or number | 否 | 微信端为当前显示图片的链接，支付宝端为当前显示图片的索引值 |
+| enablesavephoto | `boolean` | 否 | 是否支持长按下载图片<br />API 支持度: alipay 基础库: 1.13.0 |
+| enableShowPhotoDownload | `boolean` | 否 | 是否在右下角显示下载入口<br />API 支持度: alipay 基础库: 1.13.0 |
+| showmenu | `boolean` | 否 | <br />API 支持度: weapp 最低版本：2.13.0。是否显示长按菜单，默认值：true |
+| referrerPolicy | `string` | 否 | <br />API 支持度: weapp 最低版本：2.13.0。origin: 发送完整的referrer; no-referrer: 不发送。格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本；默认值：no-referrer |
 | complete | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
 | success | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用成功的回调函数 |
