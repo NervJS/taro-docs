@@ -552,5 +552,4 @@ Vue.use(registerVirtualList)
 
 ## 相关问题
 
-- 百度小程序暂时不支持使用虚拟列表组件，详见 [#7254](https://github.com/NervJS/taro/issues/7254)
 - 在 `Vue3` 中使用虚拟列表需升级至 v3.6+ 版本
