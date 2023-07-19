@@ -74,7 +74,7 @@ Taro.getUserCryptoManager().getRandomValues({
 
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
-| success | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用成功的回调函数 |
+| success | `(res: SuccessCallbackResult) => void` | 否 | 接口调用成功的回调函数 |
 | fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
 | complete | `(res: SuccessCallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
