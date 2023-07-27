@@ -94,7 +94,8 @@ module.exports = {
         items: [
           'optimized',
           'prerender',
-          'virtual-list'
+          'virtual-list',
+          'virtual-waterfall',
         ]
       },
       {
