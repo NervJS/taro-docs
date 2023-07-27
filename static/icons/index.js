@@ -62,7 +62,7 @@ export function VueIcon ({ version = '' }) {
           d="M781.1 123.6H615.6L512 303 408.4 123.6H242.9L512 589.7z"
         ></path>
       </svg>
-      <span style={{color: VueColor}}>Vue{version ? ` ${version}` : ''}</span>
+      <span style={{ color: VueColor }}>Vue{version ? ` ${version}` : ''}</span>
     </span>
   )
 }

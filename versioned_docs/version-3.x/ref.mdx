@@ -2,10 +2,9 @@
 title: 节点获取
 ---
 
+import { ReactIcon, VueIcon } from '@site/static/icons'
 import TabItem from '@theme/TabItem'
 import Tabs from '@theme/Tabs'
-
-import { ReactIcon, VueIcon } from './guides/index'
 
 在 Web 开发中，常用的节点获取方法包括了 `document.getElementById` 等 DOM API，以及各开发框架的 `ref` 语法。而在 Taro 中，一般情况下建议使用 `ref` 语法来获取节点。但受限于[小程序平台的实现机制](implement-note#运行时)，如果需要获取节点的**尺寸、定位等与渲染有关的信息**，开发者需要使用 `Taro.createSelectorQuery` API 来获取节点。
 
