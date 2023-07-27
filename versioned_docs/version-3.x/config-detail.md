@@ -35,7 +35,7 @@ Taro v3.4.13 开始支持传入**函数**，[#11073](https://github.com/NervJS/t
 ```js title="config/index.js"
 config = {
   designWidth(input) {
-    if (input.file.replace(/\\+/g, '/').indexOf('@nutui/nutui-taro') > -1) {
+    if (input?.file.replace(/\\+/g, '/').indexOf('@nutui/nutui-taro') > -1) {
       return 375
     }
     return 750

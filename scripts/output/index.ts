@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { spawn } from 'child_process'
 import path from 'path'
 import ts from 'typescript'
@@ -251,12 +252,13 @@ export const get = {
       }
     }
     if (hasTabs) {
-      array.unshift(`import Tabs from '@theme/Tabs'
+      array.unshift(`import { ReactIcon, VueIcon } from '@site/static/icons'
+import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 <Tabs
   defaultValue="${defaultTab}"
-  values={${JSON.stringify(tabs.map(e => ({ label: e, value: e })), undefined, 2)}}>`)
+  values={[${tabs.map(e => `{ label: <${e}Icon />, value: "${e}" }`).join(',\n')}]}>`)
       array.push('</Tabs>\n')
     }
 
@@ -341,6 +343,7 @@ export default function docsAPI (
     const changes = spawn('git', ['status', '-z'])
 
     changes.stdout.on('data', (data) => {
+      // eslint-disable-next-line no-control-regex
       const ss = data.toString().trim().split(/\u0000|\s+/ig)
       for (const s of ss) {
         const route = path.resolve(cwd, s)
