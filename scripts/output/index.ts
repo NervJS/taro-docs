@@ -258,7 +258,7 @@ import TabItem from '@theme/TabItem'
 
 <Tabs
   defaultValue="${defaultTab}"
-  values={[${tabs.map(e => `{ label: <${e}Icon />, value: "${e}" }`).join(',\n')}]}>`)
+  values={[${tabs.map(e => `{ label: <${e}Icon />, value: "${e}" }`).join(', ')}]}>`)
       array.push('</Tabs>\n')
     }
 
