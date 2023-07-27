@@ -1385,7 +1385,8 @@ module.exports = {
       'apis/cloud/DB'
     ],
     'Alipay': [
-      'apis/alipay/getOpenUserInfo'
+      'apis/alipay/getOpenUserInfo',
+      'apis/alipay/tradePay',
     ],
     'QQ': [
       'apis/qq/openQzonePublish'
