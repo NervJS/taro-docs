@@ -200,7 +200,7 @@ declare module '../../index' {
      * Taro.downloadFile({
      *   url: 'https://res.wx.qq.com/wxdoc/dist/assets/img/demo.ef5c5bef.jpg',
      *   success: (res) => {
-     *     Taro.showShareImageMenu({
+     *     wx.showShareImageMenu({
      *       path: res.tempFilePath
      *     })
      *   }
