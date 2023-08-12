@@ -55,13 +55,13 @@ sidebar_label: request
 | mode | `keyof CorsMode` | `"same-origin"` | 否 | 设置是否允许跨域请求<br />API 支持度: h5 |
 | credentials | `keyof Credentials` | `"omit"` | 否 | 设置是否携带 Cookie<br />API 支持度: h5 |
 | cache | `keyof Cache` | `"default"` | 否 | 设置缓存模式<br />API 支持度: h5 |
-| retryTimes | `number` | `2` | 否 | 设置请求重试次数<br />API 支持度: h5 |
-| backup | string or string[] |  | 否 | 设置请求的兜底接口<br />API 支持度: h5 |
+| retryTimes | `number` | `2` | 否 | 设置请求重试次数<br />API 支持度: h5<br />h5: 仅在 jsonp 模式下生效 |
+| backup | string or string[] |  | 否 | 设置请求的兜底接口<br />API 支持度: h5<br />h5: 仅在 jsonp 模式下生效 |
 | signal | `AbortSignal` |  | 否 | 设置请求中止信号<br />API 支持度: h5 |
-| dataCheck | `() => boolean` |  | 否 | 设置请求响应的数据校验函数，若返回 false，则请求兜底接口，若无兜底接口，则报请求失败<br />API 支持度: h5 |
-| useStore | `boolean` | `false` | 否 | 设置请求是否使用缓存<br />API 支持度: h5 |
-| storeCheckKey | `string` |  | 否 | 设置请求缓存校验的 key<br />API 支持度: h5 |
-| storeSign | `string` |  | 否 | 设置请求缓存签名<br />API 支持度: h5 |
+| dataCheck | `() => boolean` |  | 否 | 设置请求响应的数据校验函数，若返回 false，则请求兜底接口，若无兜底接口，则报请求失败<br />API 支持度: h5<br />h5: 仅在 jsonp 模式下生效 |
+| useStore | `boolean` | `false` | 否 | 设置请求是否使用缓存<br />API 支持度: h5<br />h5: 仅在 jsonp 模式下生效 |
+| storeCheckKey | `string` |  | 否 | 设置请求缓存校验的 key<br />API 支持度: h5<br />h5: 仅在 jsonp 模式下生效 |
+| storeSign | `string` |  | 否 | 设置请求缓存签名<br />API 支持度: h5<br />h5: 仅在 jsonp 模式下生效 |
 | storeCheck | `() => boolean` |  | 否 | 设置请求校验函数，一般不需要设置<br />API 支持度: h5 |
 
 ### SuccessCallbackResult

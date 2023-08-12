@@ -259,7 +259,7 @@ export default {
 | ScrollViewProps.reverse | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.cacheExtent | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.scrollIntoViewWithinExtent | ✔️ |  |  |  |  |  |  |  |  |
-| ScrollViewProps.scrollIntoViewAlignment | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.scrollIntoViewAlignment | ✔️ |  |  |  |  |  | ✔️ |  |  |
 | ScrollViewProps.onScrollToUpper | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ScrollViewProps.onScrollToLower | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ScrollViewProps.onScroll | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
