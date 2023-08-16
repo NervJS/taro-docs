@@ -115,7 +115,7 @@ type TCustomTemplateInfo = {
 }
 ```
 
-只需要按照 taro 模版的格式，编写好需要的模版（模版编写参考[模版格式](./template.md)，静态模版与动态模版均支持），并且下载到电脑本地任意一个目录下，把该目录的绝对路径赋值给 `customTemplateConfig.customTemplatePath`，如果是动态模版，那么可以根据编写的模版的 template_creator.js，配置需要的其他参数，最后生成完整的 `customTemplateConfig` 对象，作为参数调用 `setCustomTemplateConfig` 即可。
+只需要按照 taro 模版的格式，编写好需要的模版（模版编写参考[模版格式](./template)，静态模版与动态模版均支持），并且下载到电脑本地任意一个目录下，把该目录的绝对路径赋值给 `customTemplateConfig.customTemplatePath`，如果是动态模版，那么可以根据编写的模版的 template_creator.js，配置需要的其他参数，最后生成完整的 `customTemplateConfig` 对象，作为参数调用 `setCustomTemplateConfig` 即可。
 
 通过运行 `taro create plugin-name --type=plugin-template` 会生成一个插件示例，可根据具体需求进行修改。
 

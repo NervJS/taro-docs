@@ -41,7 +41,8 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore(date): update contributor member-list"
-          title: "chore(date): update contributor member-list"
           body: "update contributor member-list"
           branch: "feat/update-member-list"
+          commit-message: "chore(date): update contributor member-list"
+          delete-branch: true
+          title: "chore(date): update contributor member-list"

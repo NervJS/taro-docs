@@ -55,10 +55,11 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "refactor(types): sync components types"
-          title: "refactor(types): sync components types"
           body: "sync components types"
           branch: "refactor/sync-types"
+          commit-message: "refactor(types): sync components types"
+          delete-branch: true
+          title: "refactor(types): sync components types"
           labels: |
             A-typings
             A-components
