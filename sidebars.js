@@ -163,6 +163,7 @@ module.exports = {
       },
       'css-modules',
       'css-in-js',
+      'tailwindcss',
       'ossa',
       'nutui',
       'vant',
