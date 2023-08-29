@@ -456,9 +456,5 @@
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
     "message": "Toggle navigation bar",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
-  },
-  "讨论区": {
-    "message": "Discussion Area",
-    "description": "The footer content"
   }
 }

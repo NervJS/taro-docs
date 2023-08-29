@@ -590,5 +590,9 @@
   "sidebar.API.category.人脸检测": {
     "message": "Face recognition",
     "description": "The label for category 人脸检测 in sidebar API"
+  },
+  "sidebar.docs.category.测试工具": {
+    "message": "Test units",
+    "description": "The label for category 测试工具 in sidebar docs"
   }
 }

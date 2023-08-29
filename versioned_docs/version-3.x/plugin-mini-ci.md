@@ -174,7 +174,7 @@ const config = {
 - --type
   传入平台名称
 - --projectPath
-  传入路径。 此选项优先级为： 终端传入的`--projectPath` > CI 配置的`projectPath` 选项 > [outputRoot 选项](config-detail#outputroot)
+  传入路径。 此选项优先级为： 终端传入的`--projectPath` > CI 配置的`projectPath` 选项 > [outputRoot 选项](./config-detail#outputroot)
 
 ### Hooks 使用（3.6.0 开始支持）
 
