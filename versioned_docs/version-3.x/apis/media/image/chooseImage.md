@@ -23,15 +23,15 @@ sidebar_label: chooseImage
 
 ### Option
 
-| 参数 | 类型 | 必填 | 说明 |
-| --- | --- | :---: | --- |
-| complete | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
-| count | `number` | 否 | 最多可以选择的图片张数 |
-| fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
-| sizeType | `(keyof sizeType)[]` | 否 | 所选的图片的尺寸 |
-| sourceType | `(keyof sourceType)[]` | 否 | 选择图片的来源 |
-| success | `(result: SuccessCallbackResult) => void` | 否 | 接口调用成功的回调函数 |
-| imageId | `string` | 否 | 用来上传的input元素ID（仅h5端）@supported h5 |
+| 参数 | 类型 | 默认值 | 必填 | 说明 |
+| --- | --- | :---: | :---: | --- |
+| count | `number` | `9` | 否 | 最多可以选择的图片张数<br />API 支持度: weapp, alipay, swan, tt, h5, rn |
+| sizeType | `(keyof sizeType)[]` | `['original', 'compressed']` | 否 | 所选的图片的尺寸<br />API 支持度: weapp, alipay, swan, tt, rn |
+| sourceType | `(keyof sourceType)[]` | `['album', 'camera']` | 否 | 选择图片的来源<br />API 支持度: weapp, alipay, swan, tt, h5, rn |
+| complete | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+| fail | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用失败的回调函数 |
+| success | `(result: SuccessCallbackResult) => void` |  | 否 | 接口调用成功的回调函数 |
+| imageId | `string` |  | 否 | 用来上传的input元素ID（仅h5端<br />API 支持度: h5 |
 
 ### sizeType
 

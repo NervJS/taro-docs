@@ -24,7 +24,7 @@ export function getPropertyTitle (properties: Partial<QueryDatabaseResult['prope
   }
 }
 
-export const sleep = (ms = 500) => {
+export const sleep = (ms = 1000) => {
   return new Promise<void>((resolve) => {
     setTimeout(() => {
       resolve()

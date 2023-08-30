@@ -1,5 +1,5 @@
 import { ComponentType } from 'react'
-import { StandardProps, CommonEventFunction, BaseEventOrigFunction } from './common'
+import { BaseEventOrigFunction, CommonEventFunction, StandardProps } from './common'
 interface ScrollViewProps extends StandardProps {
   /** 允许横向滚动
    * @default false
@@ -46,7 +46,7 @@ interface ScrollViewProps extends StandardProps {
    */
   enableBackToTop?: boolean
   /** 启用 flexbox 布局。开启后，当前节点声明了 `display: flex` 就会成为 flex container，并作用于其孩子节点。
-   * @supported weapp
+   * @supported weapp, jd
    * @default false
    */
   enableFlex?: boolean
@@ -81,12 +81,12 @@ interface ScrollViewProps extends StandardProps {
    */
   refresherTriggered?: boolean
   /** 启用 scroll-view 增强特性
-   * @supported weapp
+   * @supported weapp, swan
    * @default false
    */
   enhanced?: boolean
   /** iOS 下 scroll-view 边界弹性控制 (同时开启 enhanced 属性后生效)
-   * @supported weapp
+   * @supported weapp, swan
    * @default true
    */
   bounces?: boolean
@@ -157,7 +157,7 @@ interface ScrollViewProps extends StandardProps {
    * center - 目标节点显示在视口中间
    * end - 目标节点显示在视口结束处
    * nearest - 目标节点在就近的视口边缘显示，若节点已在视口内则不触发滚动
-   * @supported weapp
+   * @supported weapp, h5
    * @default 'start'
    */
   scrollIntoViewAlignment?: 'start' | 'center' | 'end' | 'nearest'

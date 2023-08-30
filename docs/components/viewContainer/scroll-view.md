@@ -21,21 +21,13 @@ ComponentType<ScrollViewProps>
 
 ## 示例代码
 
+import { ReactIcon, VueIcon } from '@site/static/icons'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 <Tabs
   defaultValue="React"
-  values={[
-  {
-    "label": "React",
-    "value": "React"
-  },
-  {
-    "label": "Vue",
-    "value": "Vue"
-  }
-]}>
+  values={[{ label: <ReactIcon />, value: "React" }, { label: <VueIcon />, value: "Vue" }]}>
 <TabItem value="React">
 
 ```tsx
@@ -245,15 +237,15 @@ export default {
 | ScrollViewProps.scrollIntoView | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | ScrollViewProps.scrollWithAnimation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ScrollViewProps.enableBackToTop | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |
-| ScrollViewProps.enableFlex | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.enableFlex | ✔️ |  |  |  |  | ✔️ |  |  |  |
 | ScrollViewProps.scrollAnchoring | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.refresherEnabled | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.refresherThreshold | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.refresherDefaultStyle | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.refresherBackground | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.refresherTriggered | ✔️ |  |  |  |  |  |  |  |  |
-| ScrollViewProps.enhanced | ✔️ |  |  |  |  |  |  |  |  |
-| ScrollViewProps.bounces | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.enhanced | ✔️ | ✔️ |  |  |  |  |  |  |  |
+| ScrollViewProps.bounces | ✔️ | ✔️ |  |  |  |  |  |  |  |
 | ScrollViewProps.showScrollbar | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.pagingEnabled | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.fastDeceleration | ✔️ |  |  |  |  |  |  |  |  |
@@ -267,7 +259,7 @@ export default {
 | ScrollViewProps.reverse | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.cacheExtent | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.scrollIntoViewWithinExtent | ✔️ |  |  |  |  |  |  |  |  |
-| ScrollViewProps.scrollIntoViewAlignment | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.scrollIntoViewAlignment | ✔️ |  |  |  |  |  | ✔️ |  |  |
 | ScrollViewProps.onScrollToUpper | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ScrollViewProps.onScrollToLower | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | ScrollViewProps.onScroll | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |

@@ -2,10 +2,9 @@
 title: 渐进式入门教程
 ---
 
+import { ReactIcon, VueIcon, Wechat } from '@site/static/icons'
 import TabItem from '@theme/TabItem'
 import Tabs from '@theme/Tabs'
-
-import { ReactIcon, VueIcon, Wechat } from './guides/index'
 
 ## 在我们开始之前
 
@@ -1338,7 +1337,7 @@ Vue.use(VirtualList)
 </Tabs>
 
 :::info 了解更多
-在文档[虚拟列表](./virtual-list.md) 你可以找到虚拟列表的一些高级用法，例如：无限滚动、滚动偏移、滚动事件等。
+在文档[虚拟列表](./virtual-list) 你可以找到虚拟列表的一些高级用法，例如：无限滚动、滚动偏移、滚动事件等。
 :::
 
 #### 预渲染
@@ -1622,7 +1621,7 @@ const config = {
 
 #### 使用插件化系统进行拓展
 
-在 [CSS 工具](#CSS 工具) 我们已经使用了名为 `@tarojs/plugin-sass` 的插件来实现对 `Sass` 的支持。比起使用 Webpack 拓展编译，Taro 的插件功能不用在每个端都对 Webpack 进行配置，只用使用插件即可。
+在 [CSS 工具](#CSS-工具) 我们已经使用了名为 `@tarojs/plugin-sass` 的插件来实现对 `Sass` 的支持。比起使用 Webpack 拓展编译，Taro 的插件功能不用在每个端都对 Webpack 进行配置，只用使用插件即可。
 
 除此之外，Taro 的插件化功能还可以拓展 Taro CLI 编译命令，拓展编译流程，拓展编译平台，你可以访问 [插件功能文档](./plugin.md) 了解更多自定义配置的信息。
 

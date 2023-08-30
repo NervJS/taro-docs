@@ -19,21 +19,13 @@ ComponentType<FormProps>
 
 ## 示例代码
 
+import { ReactIcon, VueIcon } from '@site/static/icons'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 <Tabs
   defaultValue="React"
-  values={[
-  {
-    "label": "React",
-    "value": "React"
-  },
-  {
-    "label": "Vue",
-    "value": "Vue"
-  }
-]}>
+  values={[{ label: <ReactIcon />, value: "React" }, { label: <VueIcon />, value: "Vue" }]}>
 <TabItem value="React">
 
 ```tsx
@@ -103,6 +95,8 @@ export default {
 | reportType | `string` | `'default'` | 否 | 模板消息的类型，report-submit 为 true 时填写有效<br />取值：default / subscribe |
 | templateId | string or string[] |  | 否 | 发送订阅类模板消息所用的模板库标题 ID ，可通过 getTemplateLibraryList 获取<br />当参数类型为 Array 时，可传递 1~3 个模板库标题 ID （注：此处填写模板库id。示例：BD0001） |
 | subscribeId | `string` |  | 否 | 发送订阅类模板消息时所使用的唯一标识符，内容由开发者自定义，用来标识订阅场景<br />注意：同一用户在同一 subscribe-id 下的多次授权不累积下发权限，只能下发一条。若要订阅多条，需要不同 subscribe-id |
+| conversionTarget | `number` | `0` | 否 | 用于分发目的。取值：0 或 1，其中 0 表示默认，1 表示留资目标，需要和留资分发配置一起使用，详情见留资分发配置 |
+| clueComponentId | `string` | `""` | 否 | 用于分发目的。开发者在【小程序开发者后台 -> 进入目标小程序 -> 运营 -> 流量配置 -> 抖音 -> 留资分发配置】复制创建的配置 ID，需要和留资分发配置一起使用，详情见留资分发配置 |
 | onSubmit | `CommonEventFunction<onSubmitEventDetail>` |  | 否 | 携带 form 中的数据触发 submit 事件 |
 | onReset | `CommonEventFunction` |  | 否 | 表单重置时会触发 reset 事件 |
 
@@ -115,6 +109,8 @@ export default {
 | FormProps.reportType |  | ✔️ |  |  |  |  |  |  |  |
 | FormProps.templateId |  | ✔️ |  |  |  |  |  |  |  |
 | FormProps.subscribeId |  | ✔️ |  |  |  |  |  |  |  |
+| FormProps.conversionTarget |  |  |  | ✔️ |  |  |  |  |  |
+| FormProps.clueComponentId |  |  |  | ✔️ |  |  |  |  |  |
 | FormProps.onSubmit | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | FormProps.onReset | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 

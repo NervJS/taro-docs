@@ -17,21 +17,13 @@ ComponentType<InputProps>
 
 ## 示例代码
 
+import { ReactIcon, VueIcon } from '@site/static/icons'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 <Tabs
   defaultValue="React"
-  values={[
-  {
-    "label": "React",
-    "value": "React"
-  },
-  {
-    "label": "Vue",
-    "value": "Vue"
-  }
-]}>
+  values={[{ label: <ReactIcon />, value: "React" }, { label: <VueIcon />, value: "Vue" }]}>
 <TabItem value="React">
 
 ```tsx
@@ -120,6 +112,7 @@ class App extends Component {
 | name | `string` |  | 否 | 组件名字，用于表单提交获取数据。 |
 | alwaysSystem | `boolean` | `false` | 否 | 是否强制使用系统键盘和 Web-view 创建的 input 元素。为 true 时，confirm-type、confirm-hold 可能失效。 |
 | ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
+| clueType | `number` | `0` | 否 | 用于分发目的。取值：0 和 1，其中 0 表示默认，1 表示手机号，需要和留资分发配置一起使用，详情见留资分发配置。 |
 | onInput | `CommonEventFunction<inputEventDetail>` |  | 否 | 当键盘输入时，触发input事件，event.detail = {value, cursor, keyCode}，处理函数可以直接 return 一个字符串，将替换输入框的内容。 |
 | onFocus | `CommonEventFunction<inputForceEventDetail>` |  | 否 | 输入框聚焦时触发，event.detail = { value, height }，height 为键盘高度 |
 | onBlur | `CommonEventFunction<inputValueEventDetail>` |  | 否 | 输入框失去焦点时触发 |
@@ -163,11 +156,12 @@ class App extends Component {
 | InputProps.name |  |  | ✔️ |  |  |  |  |  |  |
 | InputProps.alwaysSystem |  |  | ✔️ |  |  |  |  |  |  |
 | InputProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
+| InputProps.clueType |  |  |  | ✔️ |  |  |  |  |  |
 | InputProps.onInput | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.onFocus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.onBlur | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.onConfirm | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| InputProps.onKeyboardHeightChange | ✔️ |  |  |  | ✔️ |  |  |  |  |
+| InputProps.onKeyboardHeightChange | ✔️ |  |  | ✔️ | ✔️ |  |  |  |  |
 | InputProps.onNickNameReview | ✔️ |  |  |  |  |  |  |  |  |
 
 ### Type

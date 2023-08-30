@@ -140,11 +140,11 @@ const config = {
 此 3 个选项在一条命令里不能同时使用（互斥）
 
 - --projectPath
-  指定要操作（打开、预览、上传）的目录路径， 默认情况下是操作构建后目录路径，即 [outputRoot 选项](https://taro-docs.jd.com/taro/docs/next/config-detail#outputroot)；
+  指定要操作（打开、预览、上传）的目录路径， 默认情况下是操作构建后目录路径，即 [outputRoot 选项](./config-detail#outputroot)；
 
 此选项必须搭配上述三个选项之一一起使用；
 
-此选项优先级为： 终端传入的`--projectPath` > CI 配置的`projectPath` 选项 > [outputRoot 选项](https://taro-docs.jd.com/taro/docs/next/config-detail#outputroot)。
+此选项优先级为： 终端传入的`--projectPath` > CI 配置的`projectPath` 选项 > [outputRoot 选项](./config-detail#outputroot)。
 
 ### 作为命令单独使用（3.6.0 开始支持）
 
@@ -174,7 +174,7 @@ const config = {
 - --type
   传入平台名称
 - --projectPath
-  传入路径。 此选项优先级为： 终端传入的`--projectPath` > CI 配置的`projectPath` 选项 > [outputRoot 选项](https://taro-docs.jd.com/taro/docs/next/config-detail#outputroot)
+  传入路径。 此选项优先级为： 终端传入的`--projectPath` > CI 配置的`projectPath` 选项 > [outputRoot 选项](./config-detail#outputroot)
 
 ### Hooks 使用（3.6.0 开始支持）
 

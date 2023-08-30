@@ -20,6 +20,10 @@ main > .container {
   max-width: none;
 }
 
+main > .container p {
+  line-height: 1.5;
+}
+
 main > .container > .row {
   margin: 0;
 }
@@ -157,6 +161,7 @@ a:hover {
 
 .footer {
   position: relative;
+  overflow: hidden;
   z-index: 10;
   border-top: 1px solid rgba(164, 164, 164, 20%);
   height: 500px;

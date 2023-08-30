@@ -231,12 +231,12 @@ class App extends Component {
 
 各类网络请求的超时时间，单位均为毫秒。
 
-| 属性          | 类型   | 必填 | 默认值 | 描述                                                                                    |
-| ------------- | ------ | ---- | ------ | --------------------------------------------------------------------------------------- |
-| request       | Number | 否   | 60000  | [Taro.request](./apis/network/request/request.md) 的超时时间，单位：毫秒                |
-| connectSocket | Number | 否   | 60000  | [Taro.connectSocket](./apis/network/socket/connectSocket.md) 的超时时间，单位：毫秒     |
-| uploadFile    | Number | 否   | 60000  | [Taro.uploadFile](./apis/network/fileTransfer/uploadFile.md) 的超时时间，单位：毫秒     |
-| downloadFile  | Number | 否   | 60000  | [Taro.downloadFile](./apis/network/fileTransfer/downloadFile.md) 的超时时间，单位：毫秒 |
+| 属性          | 类型   | 必填 | 默认值 | 描述                                                                                 |
+| ------------- | ------ | ---- | ------ | ------------------------------------------------------------------------------------ |
+| request       | Number | 否   | 60000  | [Taro.request](./apis/network/request/request) 的超时时间，单位：毫秒                |
+| connectSocket | Number | 否   | 60000  | [Taro.connectSocket](./apis/network/socket/connectSocket) 的超时时间，单位：毫秒     |
+| uploadFile    | Number | 否   | 60000  | [Taro.uploadFile](./apis/network/fileTransfer/uploadFile) 的超时时间，单位：毫秒     |
+| downloadFile  | Number | 否   | 60000  | [Taro.downloadFile](./apis/network/fileTransfer/downloadFile) 的超时时间，单位：毫秒 |
 
 #### debug
 

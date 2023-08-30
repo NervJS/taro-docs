@@ -34,8 +34,8 @@ sidebar_label: request
 | url | `string` |  | 是 | 开发者服务器接口地址 |
 | data | `U` |  | 否 | 请求的参数 |
 | header | `TaroGeneral.IAnyObject` |  | 否 | 设置请求的 header，header 中不能设置 Referer。<br /><br />`content-type` 默认为 `application/json` |
-| timeout | `number` | `2000` | 否 | 超时时间，单位为毫秒<br />API 支持度: weapp, h5, tt |
-| method | `keyof Method` | `GET` | 否 | HTTP 请求方法 |
+| timeout | `number` | `2000` | 否 | 超时时间，单位为毫秒<br />API 支持度: weapp, h5, tt, alipay |
+| method | `keyof Method` | `"GET"` | 否 | HTTP 请求方法 |
 | dataType | `string` |  | 否 | 返回的数据格式 |
 | responseType | `keyof ResponseType` |  | 否 | 响应的数据类型 |
 | enableHttp2 | `boolean` | `false` | 否 | 开启 http2<br />API 支持度: weapp |
@@ -44,21 +44,25 @@ sidebar_label: request
 | enableHttpDNS | `boolean` | `false` | 否 | 是否开启 HttpDNS 服务。如开启，需要同时填入 httpDNSServiceId 。 HttpDNS 用法详见 移动解析HttpDNS<br />API 支持度: weapp |
 | httpDNSServiceId | `string` |  | 否 | HttpDNS 服务商 Id。 HttpDNS 用法详见 移动解析HttpDNS<br />API 支持度: weapp |
 | enableChunked | `boolean` | `false` | 否 | 开启 transfer-encoding chunked。<br />API 支持度: weapp |
+| forceCellularNetwork | `boolean` | `false` | 否 | wifi下使用移动网络发送请求<br />API 支持度: weapp |
+| enableCookie | `boolean` | `false` | 否 | headers 中设置 cookie 字段是否生效。如果为 false，则 headers 中的 cookie 字段将被忽略，请求头中将包含服务端上一次返回的 cookie（如果有）。<br />API 支持度: alipay 支付宝: 10.2.33+ |
+| referrerStrategy | `keyof ReferrerStrategy` | `"querystring"` | 否 | referer 策略，用于控制当前请求 header 对象中 referer 字段格式。该参数默认值可通过 app.json 中的配置进行修改。<br />API 支持度: alipay 支付宝: 10.3.50+ APPX: 2.8.7 开发者工具: 3.5.1<br />[参考地址](https://opendocs.alipay.com/mini/api/owycmh#referrerStrategy%20%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) |
 | success | `(result: SuccessCallbackResult<T>) => void` |  | 否 | 接口调用成功的回调函数 |
 | fail | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用失败的回调函数 |
 | complete | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
-| jsonp | `boolean` | `false` | 否 | 设置 H5 端是否使用jsonp方式获取数据<br />API 支持度: h5 |
-| jsonpCache | `boolean` | `false` | 否 | 设置 H5 端 jsonp 请求 url 是否需要被缓存<br />API 支持度: h5 |
-| mode | `keyof CorsMode` | `"same-origin"` | 否 | 设置 H5 端是否允许跨域请求<br />API 支持度: h5 |
-| credentials | `keyof Credentials` | `"omit"` | 否 | 设置 H5 端是否携带 Cookie<br />API 支持度: h5 |
-| cache | `keyof Cache` | `"default"` | 否 | 设置 H5 端缓存模式<br />API 支持度: h5 |
-| retryTimes | `number` | `2` | 否 | 设置 H5 端请求重试次数<br />API 支持度: h5 |
-| backup | string or string[] |  | 否 | 设置 H5 端请求的兜底接口<br />API 支持度: h5 |
-| dataCheck | `() => boolean` |  | 否 | 设置 H5 端请求响应的数据校验函数，若返回 false，则请求兜底接口，若无兜底接口，则报请求失败<br />API 支持度: h5 |
-| useStore | `boolean` | `false` | 否 | 设置 H5 端请求是否使用缓存<br />API 支持度: h5 |
-| storeCheckKey | `string` |  | 否 | 设置 H5 端请求缓存校验的 key<br />API 支持度: h5 |
-| storeSign | `string` |  | 否 | 设置 H5 端请求缓存签名<br />API 支持度: h5 |
-| storeCheck | `() => boolean` |  | 否 | 设置 H5 端请求校验函数，一般不需要设置<br />API 支持度: h5 |
+| jsonp | string or boolean | `false` | 否 | 设置是否使用 jsonp 方式获取数据<br />API 支持度: h5 |
+| jsonpCache | `RequestCache` |  | 否 | 设置 jsonp 请求 url 是否需要被缓存<br />API 支持度: h5 |
+| mode | `keyof CorsMode` | `"same-origin"` | 否 | 设置是否允许跨域请求<br />API 支持度: h5 |
+| credentials | `keyof Credentials` | `"omit"` | 否 | 设置是否携带 Cookie<br />API 支持度: h5 |
+| cache | `keyof Cache` | `"default"` | 否 | 设置缓存模式<br />API 支持度: h5 |
+| retryTimes | `number` | `2` | 否 | 设置请求重试次数<br />API 支持度: h5<br />h5: 仅在 jsonp 模式下生效 |
+| backup | string or string[] |  | 否 | 设置请求的兜底接口<br />API 支持度: h5<br />h5: 仅在 jsonp 模式下生效 |
+| signal | `AbortSignal` |  | 否 | 设置请求中止信号<br />API 支持度: h5 |
+| dataCheck | `() => boolean` |  | 否 | 设置请求响应的数据校验函数，若返回 false，则请求兜底接口，若无兜底接口，则报请求失败<br />API 支持度: h5<br />h5: 仅在 jsonp 模式下生效 |
+| useStore | `boolean` | `false` | 否 | 设置请求是否使用缓存<br />API 支持度: h5<br />h5: 仅在 jsonp 模式下生效 |
+| storeCheckKey | `string` |  | 否 | 设置请求缓存校验的 key<br />API 支持度: h5<br />h5: 仅在 jsonp 模式下生效 |
+| storeSign | `string` |  | 否 | 设置请求缓存签名<br />API 支持度: h5<br />h5: 仅在 jsonp 模式下生效 |
+| storeCheck | `() => boolean` |  | 否 | 设置请求校验函数，一般不需要设置<br />API 支持度: h5 |
 
 ### SuccessCallbackResult
 
@@ -77,6 +81,9 @@ sidebar_label: request
 | 参数 | 说明 |
 | --- | --- |
 | json | 返回的数据为 JSON，返回后会对返回的数据进行一次 JSON.parse<br />其他: 不对返回的内容进行 JSON.parse |
+| text | 返回的数据为文本字符串<br />API 支持度: alipay |
+| base64 | 返回的数据将转换为 base64 格式字符串<br />API 支持度: alipay |
+| arraybuffer | 返回的数据将保持 ArrayBuffer 数据<br />API 支持度: alipay 支付宝: 10.1.70+ |
 
 ### Method
 
@@ -134,6 +141,16 @@ HTTP 请求方法
 | reload | 浏览器直接从远程服务器获取资源，不查看缓存，然后使用下载的资源更新缓存 |
 | force-cache | 浏览器在其HTTP缓存中寻找匹配的请求 |
 | only-if-cached | 浏览器在其HTTP缓存中寻找匹配的请求 |
+
+### ReferrerStrategy
+
+referer 策略
+
+| 参数 | 说明 |
+| --- | --- |
+| index | referer 值为 https://{appid}.hybrid.alipay-eco.com/{appid}/{version}/index.html |
+| page | 保留 page（pages/xxx/yyy），referer 值为 https://{appid}.hybrid.alipay-eco.com/{appid}/{version}/index.html#{page} |
+| querystring | 默认值。会将发起请求时所在页面的 URL 作为 referer 值，会保留 page（pages/xxx/yyy）和 querystring（x=1&y=2）并可能有框架添加的其他参数，referer 值为 https://{appid}.hybrid.alipay-eco.com/{appid}/{version}/index.html#{page}?{querysrtring}{框架其他参数} |
 
 ## 示例代码
 

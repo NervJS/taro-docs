@@ -17,21 +17,13 @@ ComponentType<TextareaProps>
 
 ## 示例代码
 
+import { ReactIcon, VueIcon } from '@site/static/icons'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 <Tabs
   defaultValue="React"
-  values={[
-  {
-    "label": "React",
-    "value": "React"
-  },
-  {
-    "label": "Vue",
-    "value": "Vue"
-  }
-]}>
+  values={[{ label: <ReactIcon />, value: "React" }, { label: <VueIcon />, value: "Vue" }]}>
 <TabItem value="React">
 
 ```tsx
@@ -92,7 +84,7 @@ export default class PageView extends Component {
 | disableDefaultPadding | `boolean` | `false` | 否 | 是否去掉 iOS 下的默认内边距 |
 | nativeProps | `Record<string, unknown>` |  | 否 | 用于透传 `WebComponents` 上的属性到内部 H5 标签上 |
 | confirmType | "send" or "search" or "next" or "go" or "done" or "return" |  | 否 | 设置键盘右下角按钮的文字 |
-| confirmHold | `string` |  | 否 | 点击键盘右下角按钮时是否保持键盘不收起 |
+| confirmHold | `boolean` |  | 否 | 点击键盘右下角按钮时是否保持键盘不收起 |
 | name | `string` |  | 否 | 组件名字，用于表单提交获取数据。 |
 | showCount | `boolean` | `true` | 否 | 是否渲染字数统计功能（是否删除默认计数器/是否显示字数统计）。 |
 | controlled | `boolean` | `false` | 否 | 是否为受控组件。为 true 时，value 内容会完全受 setData 控制。 |
@@ -140,7 +132,7 @@ export default class PageView extends Component {
 | TextareaProps.onLineChange | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
 | TextareaProps.onInput | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | TextareaProps.onConfirm | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| TextareaProps.onKeyboardHeightChange | ✔️ |  |  |  |  |  |  |  |  |
+| TextareaProps.onKeyboardHeightChange | ✔️ |  |  | ✔️ |  |  |  |  |  |
 
 ### onFocusEventDetail
 

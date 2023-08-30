@@ -25,7 +25,7 @@ sidebar_label: chooseAddress
 
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
-| complete | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+| complete | `(res: SuccessCallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
 | success | `(result: SuccessCallbackResult) => void` | 否 | 接口调用成功的回调函数 |
 
@@ -33,15 +33,16 @@ sidebar_label: chooseAddress
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| cityName | `string` | 国标收货地址第二级地址 |
-| countyName | `string` | 国标收货地址第三级地址 |
-| detailInfo | `string` | 详细收货地址信息 |
-| errMsg | `string` | 错误信息 |
-| nationalCode | `string` | 收货地址国家码 |
+| userName | `string` | 收货人姓名 |
 | postalCode | `string` | 邮编 |
 | provinceName | `string` | 国标收货地址第一级地址 |
+| cityName | `string` | 国标收货地址第二级地址 |
+| countyName | `string` | 国标收货地址第三级地址 |
+| streetName | `string` | 国标收货地址第四级地址 |
+| detailInfo | `string` | 详细收货地址信息 |
+| detailInfoNew | `string` | 新选择器详细收货地址信息 |
+| nationalCode | `string` | 收货地址国家码 |
 | telNumber | `string` | 收货人手机号码 |
-| userName | `string` | 收货人姓名 |
 
 ## 示例代码
 

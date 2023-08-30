@@ -19,21 +19,13 @@ ComponentType<LivePlayerProps>
 
 ## 示例代码
 
+import { ReactIcon, VueIcon } from '@site/static/icons'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 <Tabs
   defaultValue="React"
-  values={[
-  {
-    "label": "React",
-    "value": "React"
-  },
-  {
-    "label": "Vue",
-    "value": "Vue"
-  }
-]}>
+  values={[{ label: <ReactIcon />, value: "React" }, { label: <VueIcon />, value: "Vue" }]}>
 <TabItem value="React">
 
 ```tsx
@@ -78,6 +70,7 @@ class App extends Components {
 | enableMetadata | `string` |  | 否 | 是否回调metadata |
 | id | `string` |  | 否 | live-player 属性的唯一标志符 |
 | enableAutoRotation | `boolean` | `false` | 否 | 是否开启手机横屏时自动全屏，当系统设置开启自动旋转时生效 |
+| enableCasting | `boolean` | `false` | 否 | 是否支持投屏。开启后，可以通过 LivePlayerContext 上相关方法进行操作。 |
 | onStateChange | `CommonEventFunction<onStateChangeEventDetail>` |  | 否 | 播放状态变化事件，detail = {code} |
 | onFullScreenChange | `CommonEventFunction<onFullScreenChangeEventDetail>` |  | 否 | 全屏变化事件，detail = {direction, fullScreen} |
 | onNetStatus | `CommonEventFunction<onNetStatusEventDetail>` |  | 否 | 网络状态通知，detail = {info} |
@@ -86,6 +79,9 @@ class App extends Components {
 | onLeavePictureInPicture | `CommonEventFunction` |  | 否 | 播放器退出小窗 |
 | onError | `CommonEventFunction` |  | 否 | 播放错误事件 |
 | onMetaDataChange | `CommonEventFunction` |  | 否 | metadata通知，detail = {info} |
+| onCastingUserSelect | `CommonEventFunction` |  | 否 | 用户选择投屏设备时触发 detail = { state: "success"/"fail" } |
+| onCastingStateChange | `CommonEventFunction` |  | 否 | 投屏成功/失败时触发 detail = { type, state: "success"/"fail" } |
+| onCastingInterrupt | `CommonEventFunction` |  | 否 | 投屏被中断时触发 |
 
 ### API 支持度
 
@@ -109,6 +105,7 @@ class App extends Components {
 | LivePlayerProps.enableMetadata |  |  |  | ✔️ |  |  |  |  |
 | LivePlayerProps.id |  | ✔️ |  |  |  |  |  |  |
 | LivePlayerProps.enableAutoRotation | ✔️ |  |  |  |  |  |  |  |
+| LivePlayerProps.enableCasting | ✔️ |  |  |  |  |  |  |  |
 | LivePlayerProps.onStateChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | LivePlayerProps.onFullScreenChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | LivePlayerProps.onNetStatus | ✔️ | ✔️ |  | ✔️ |  |  |  |  |
@@ -117,6 +114,9 @@ class App extends Components {
 | LivePlayerProps.onLeavePictureInPicture | ✔️ |  |  |  |  |  |  |  |
 | LivePlayerProps.onError |  |  | ✔️ |  |  |  |  |  |
 | LivePlayerProps.onMetaDataChange |  |  |  | ✔️ |  |  |  |  |
+| LivePlayerProps.onCastingUserSelect | ✔️ |  |  |  |  |  |  |  |
+| LivePlayerProps.onCastingStateChange | ✔️ |  |  |  |  |  |  |  |
+| LivePlayerProps.onCastingInterrupt | ✔️ |  |  |  |  |  |  |  |
 
 ### Mode
 
