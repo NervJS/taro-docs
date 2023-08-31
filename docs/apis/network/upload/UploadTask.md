@@ -48,12 +48,12 @@ sidebar_label: UploadTask
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.offProgressUpdate.html)
 
 ```tsx
-(callback: OffProgressUpdateCallback) => void
+(callback: OnProgressUpdateCallback) => void
 ```
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| callback | `OffProgressUpdateCallback` | 上传进度变化事件的回调函数 |
+| callback | `OnProgressUpdateCallback` | 上传进度变化事件的回调函数 |
 
 ### onHeadersReceived
 
@@ -80,38 +80,14 @@ sidebar_label: UploadTask
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/UploadTask.offHeadersReceived.html)
 
 ```tsx
-(callback: OffHeadersReceivedCallback) => void
+(callback: OnHeadersReceivedCallback) => void
 ```
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| callback | `OffHeadersReceivedCallback` | HTTP Response Header 事件的回调函数 |
+| callback | `OnHeadersReceivedCallback` | HTTP Response Header 事件的回调函数 |
 
 ## 参数
-
-### OffHeadersReceivedCallback
-
-HTTP Response Header 事件的回调函数
-
-```tsx
-(res: TaroGeneral.CallbackResult) => void
-```
-
-| 参数 | 类型 |
-| --- | --- |
-| res | `TaroGeneral.CallbackResult` |
-
-### OffProgressUpdateCallback
-
-上传进度变化事件的回调函数
-
-```tsx
-(res: TaroGeneral.CallbackResult) => void
-```
-
-| 参数 | 类型 |
-| --- | --- |
-| res | `TaroGeneral.CallbackResult` |
 
 ### OnHeadersReceivedCallback
 

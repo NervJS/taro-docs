@@ -102,12 +102,12 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnCanplayCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnCanplayCallback` |
 
 ### onPlay
 
@@ -116,12 +116,12 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnPlayCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnPlayCallback` |
 
 ### onPause
 
@@ -130,12 +130,12 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnPauseCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnPauseCallback` |
 
 ### onStop
 
@@ -144,12 +144,12 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnStopCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnStopCallback` |
 
 ### onEnded
 
@@ -158,12 +158,12 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnEndedCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnEndedCallback` |
 
 ### onTimeUpdate
 
@@ -172,12 +172,12 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnTimeUpdateCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnTimeUpdateCallback` |
 
 ### onError
 
@@ -186,12 +186,12 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: (res: onErrorDetail) => void) => void
+(callback?: OnErrorCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `(res: onErrorDetail) => void` |
+| callback | `OnErrorCallback` |
 
 ### onWaiting
 
@@ -200,12 +200,12 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnWaitingCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnWaitingCallback` |
 
 ### onSeeking
 
@@ -214,12 +214,12 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnSeekingCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnSeekingCallback` |
 
 ### onSeeked
 
@@ -228,152 +228,152 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnSeekedCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnSeekedCallback` |
 
 ### offCanplay
 
-取消监听 onCanplay 事件
+取消监听 canplay 事件
 
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnCanplayCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnCanplayCallback` |
 
 ### offPlay
 
-取消监听 onPlay 事件
+取消监听 play 事件
 
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnPlayCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnPlayCallback` |
 
 ### offPause
 
-取消监听 onPause 事件
+取消监听 pause 事件
 
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnPauseCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnPauseCallback` |
 
 ### offStop
 
-取消监听 onStop 事件
+取消监听 stop 事件
 
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnStopCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnStopCallback` |
 
 ### offEnded
 
-取消监听 onEnded 事件
+取消监听 ended 事件
 
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnEndedCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnEndedCallback` |
 
 ### offTimeUpdate
 
-取消监听 onTimeUpdate 事件
+取消监听 timeUpdate 事件
 
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnTimeUpdateCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnTimeUpdateCallback` |
 
 ### offError
 
-取消监听 onError 事件
+取消监听 error 事件
 
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnErrorCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnErrorCallback` |
 
 ### offWaiting
 
-取消监听 onWaiting 事件
+取消监听 waiting 事件
 
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnWaitingCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnWaitingCallback` |
 
 ### offSeeking
 
-取消监听 onSeeking 事件
+取消监听 seeking 事件
 
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnSeekingCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnSeekingCallback` |
 
 ### offSeeked
 
-取消监听 onSeeked 事件
+取消监听 seeked 事件
 
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 ```tsx
-(callback?: () => void) => void
+(callback?: OnSeekedCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `() => void` |
+| callback | `OnSeekedCallback` |
 
 ## 参数
 
@@ -393,6 +393,126 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 | 10003 | 文件错误 |
 | 10004 | 格式错误 |
 | -1 | 未知错误 |
+
+### OnCanplayCallback
+
+音频进入可以播放状态事件的回调函数
+
+```tsx
+(res: TaroGeneral.CallbackResult) => void
+```
+
+| 参数 | 类型 |
+| --- | --- |
+| res | `TaroGeneral.CallbackResult` |
+
+### OnPlayCallback
+
+音频播放事件的回调函数
+
+```tsx
+(res: TaroGeneral.CallbackResult) => void
+```
+
+| 参数 | 类型 |
+| --- | --- |
+| res | `TaroGeneral.CallbackResult` |
+
+### OnPauseCallback
+
+音频暂停事件的回调函数
+
+```tsx
+(res: TaroGeneral.CallbackResult) => void
+```
+
+| 参数 | 类型 |
+| --- | --- |
+| res | `TaroGeneral.CallbackResult` |
+
+### OnStopCallback
+
+音频停止事件的回调函数
+
+```tsx
+(res: TaroGeneral.CallbackResult) => void
+```
+
+| 参数 | 类型 |
+| --- | --- |
+| res | `TaroGeneral.CallbackResult` |
+
+### OnEndedCallback
+
+音频自然播放结束事件的回调函数
+
+```tsx
+(res: TaroGeneral.CallbackResult) => void
+```
+
+| 参数 | 类型 |
+| --- | --- |
+| res | `TaroGeneral.CallbackResult` |
+
+### OnTimeUpdateCallback
+
+音频播放进度更新事件的回调函数
+
+```tsx
+(res: TaroGeneral.CallbackResult) => void
+```
+
+| 参数 | 类型 |
+| --- | --- |
+| res | `TaroGeneral.CallbackResult` |
+
+### OnErrorCallback
+
+音频播放错误事件的回调函数
+
+```tsx
+(res: onErrorDetail) => void
+```
+
+| 参数 | 类型 |
+| --- | --- |
+| res | `onErrorDetail` |
+
+### OnWaitingCallback
+
+音频加载中事件的回调函数
+
+```tsx
+(res: TaroGeneral.CallbackResult) => void
+```
+
+| 参数 | 类型 |
+| --- | --- |
+| res | `TaroGeneral.CallbackResult` |
+
+### OnSeekingCallback
+
+音频进行 seek 操作事件的回调函数
+
+```tsx
+(res: TaroGeneral.CallbackResult) => void
+```
+
+| 参数 | 类型 |
+| --- | --- |
+| res | `TaroGeneral.CallbackResult` |
+
+### OnSeekedCallback
+
+音频完成 seek 操作事件的回调函数
+
+```tsx
+(res: TaroGeneral.CallbackResult) => void
+```
+
+| 参数 | 类型 |
+| --- | --- |
+| res | `TaroGeneral.CallbackResult` |
 
 ## 示例代码
 
