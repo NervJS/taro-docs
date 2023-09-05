@@ -21,7 +21,9 @@ npm i @tarojs/test-utils-vue3 --save
 npm i @tarojs/test-utils-vue --save
 ```
 
-⚠️ `@tarojs/plugin-platform-h5`为前置 peerDependencies，请勿删除该依赖申明
+:::warning 注意
+`@tarojs/plugin-platform-h5`为前置 peerDependencies，请勿删除该依赖申明
+:::
 
 ## 使用
 
