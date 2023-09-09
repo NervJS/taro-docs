@@ -1056,6 +1056,16 @@ module.exports = {
         ]
       },
       {
+        'label': '隐私信息授权',
+        'type': 'category',
+        'items': [
+          'apis/open-api/privacy/requirePrivacyAuthorize',
+          'apis/open-api/privacy/openPrivacyContract',
+          'apis/open-api/privacy/onNeedPrivacyAuthorization',
+          'apis/open-api/privacy/getPrivacySetting',
+        ]
+      },
+      {
         'label': '微信客服',
         'type': 'category',
         'items': [
