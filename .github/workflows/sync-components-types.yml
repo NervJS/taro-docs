@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Cache pnpm modules and build
         uses: actions/cache@v3
@@ -38,7 +38,7 @@ jobs:
           commit_message: "chore(date): update contributor member-list"
 
       - name: Checkout NervJS/taro
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: NervJS/taro
           fetch-depth: 1
