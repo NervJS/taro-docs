@@ -57,10 +57,10 @@ class App extends Components {
 | type | `string` |  | 否 | 指定 canvas 类型，支持 2d 和 webgl |
 | canvasId | `string` |  | 否 | canvas 组件的唯一标识符，若指定了 type 则无需再指定该属性 |
 | disableScroll | `boolean` | `false` | 否 | 当在 canvas 中移动时且有绑定手势事件时，禁止屏幕滚动以及下拉刷新 |
-| nativeProps | `Record<string, unknown>` |  | 否 | 用于透传 `WebComponents` 上的属性到内部 H5 标签上 |
 | id | `string` |  | 否 | 组件唯一标识符。<br />注意：同一页面中的 id 不可重复。 |
 | width | `string` |  | 否 |  |
 | height | `string` |  | 否 |  |
+| nativeProps | `Record<string, unknown>` |  | 否 | 用于透传 `WebComponents` 上的属性到内部 H5 标签上 |
 | onTouchStart | `CanvasTouchEventFunction` |  | 否 | 手指触摸动作开始 |
 | onTouchMove | `CanvasTouchEventFunction` |  | 否 | 手指触摸后移动 |
 | onTouchEnd | `CanvasTouchEventFunction` |  | 否 | 手指触摸动作结束 |
@@ -77,14 +77,14 @@ class App extends Components {
 | CanvasProps.type | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
 | CanvasProps.canvasId | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | CanvasProps.disableScroll | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
+| CanvasProps.id |  |  | ✔️ |  |  |  | ✔️ |  |  |
+| CanvasProps.width |  |  | ✔️ |  |  |  | ✔️ |  |  |
+| CanvasProps.height |  |  | ✔️ |  |  |  | ✔️ |  |  |
 | CanvasProps.nativeProps |  |  |  |  |  |  | ✔️ |  |  |
-| CanvasProps.id |  |  | ✔️ |  |  |  |  |  |  |
-| CanvasProps.width |  |  | ✔️ |  |  |  |  |  |  |
-| CanvasProps.height |  |  | ✔️ |  |  |  |  |  |  |
-| CanvasProps.onTouchStart | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| CanvasProps.onTouchMove | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| CanvasProps.onTouchEnd | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| CanvasProps.onTouchCancel | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
+| CanvasProps.onTouchStart | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
+| CanvasProps.onTouchMove | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
+| CanvasProps.onTouchEnd | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
+| CanvasProps.onTouchCancel | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | CanvasProps.onLongTap | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |
 | CanvasProps.onError | ✔️ | ✔️ |  |  | ✔️ | ✔️ |  |  |  |
 | CanvasProps.onTap |  |  | ✔️ |  |  |  |  |  |  |
