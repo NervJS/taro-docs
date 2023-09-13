@@ -342,6 +342,11 @@
             "color": "red"
           },
           {
+            "id": "f154527a-8950-4e92-8f3e-49ef5cd3e866",
+            "name": "Plugin 团队",
+            "color": "blue"
+          },
+          {
             "id": "938a3f82-1e7e-4993-8d16-3ee2022706d1",
             "name": "Platform 团队",
             "color": "pink"
