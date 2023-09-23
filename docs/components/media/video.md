@@ -111,10 +111,10 @@ export default class PageView extends Component {
 | showBackgroundPlaybackButton | `boolean` |  | 否 | 是否展示后台音频播放按钮 |
 | backgroundPoster | `string` |  | 否 | 进入后台音频播放后的通知栏图标（Android 独有） |
 | nativeProps | `Record<string, unknown>` |  | 否 | 用于透传 `WebComponents` 上的属性到内部 H5 标签上 |
-| showBottomProgress | `string` |  | 否 | 是否展示底部进度条 |
+| showBottomProgress | `boolean` | `true` | 否 | 是否展示底部进度条 |
 | pictureInPictureShowProgress | `string` |  | 否 | 是否在小窗模式下显示播放进度 |
 | referrerPolicy | "origin" or "no-referrer" |  | 否 | 格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本； |
-| isDrm | `string` |  | 否 | 是否是 DRM 视频源 |
+| isDrm | `boolean` |  | 否 | 是否是 DRM 视频源 |
 | provisionUrl | `string` |  | 否 | DRM 设备身份认证 url，仅 is-drm 为 true 时生效 (Android) |
 | certificateUrl | `string` |  | 否 | DRM 设备身份认证 url，仅 is-drm 为 true 时生效 (iOS) |
 | licenseUrl | `string` |  | 否 | DRM 获取加密信息 url，仅 is-drm 为 true 时生效 |

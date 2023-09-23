@@ -20,12 +20,12 @@ Performance 对象，用于获取性能数据及创建性能监听器
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/base/performance/Performance.createObserver.html)
 
 ```tsx
-(callback: Function) => PerformanceObserver
+(callback: TaroGeneral.TFunc) => PerformanceObserver
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `Function` |
+| callback | `TaroGeneral.TFunc` |
 
 ### getEntries
 
