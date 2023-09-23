@@ -25,12 +25,31 @@ vision kit 会话对象
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKFrame.getCameraTexture.html)
 
 ```tsx
-(ctx: WebGLRenderingContext) => getCameraTextureResult
+(ctx: WebGLRenderingContext) => IGetCameraTextureResult
 ```
 
 | 参数 | 类型 |
 | --- | --- |
 | ctx | `WebGLRenderingContext` |
+
+### getCameraBuffer
+
+获取当前帧 rgba buffer。iOS 端微信在 v8.0.20 开始支持，安卓端微信在 v8.0.30 开始支持。
+按 aspect-fill 规则裁剪，此接口要求在创建 VKSession 对象时必须传入 gl 参数。
+此接口仅建议拿来做帧分析使用，上屏请使用 getCameraTexture 来代替。
+
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKFrame.getCameraBuffer.html)
+
+```tsx
+(widht: number, height: number) => ArrayBuffer
+```
+
+| 参数 | 类型 |
+| --- | --- |
+| widht | `number` |
+| height | `number` |
 
 ### getDisplayTransform
 
@@ -46,7 +65,7 @@ vision kit 会话对象
 
 ## 参数
 
-### getCameraTextureResult
+### IGetCameraTextureResult
 
 帧纹理对象
 
@@ -61,4 +80,5 @@ vision kit 会话对象
 | :---: | :---: | :---: | :---: | :---: |
 | VKFrame | ✔️ |  |  |  |
 | VKFrame.getCameraTexture | ✔️ |  |  |  |
+| VKFrame.getCameraBuffer | ✔️ |  |  |  |
 | VKFrame.getDisplayTransform | ✔️ |  |  |  |
