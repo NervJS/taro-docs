@@ -1,23 +1,22 @@
 ---
 title: Hooks
-
 ---
 
 `Hooks` is an advanced API，which allows you to use state management, lifecycle and other functions of Class, without Class and `state`.
 
 About the overview, motivation and rules of `Hooks`, we strongly recommend that you read the official React documentation. Unlike most other React features, Hooks does not have an RFC introduction. Instead, all the instructions are in the documentation:
 
-* [Introducing Hooks(Introduction)](https://zh-hans.reactjs.org/docs/hooks-intro.html)
-* [Hooks at a Glance(Overview)](https://zh-hans.reactjs.org/docs/hooks-overview.html)
-* [Rules of Hooks(Rules)](https://zh-hans.reactjs.org/docs/hooks-rules.html)
+- [Introducing Hooks(Introduction)](https://zh-hans.reactjs.org/docs/hooks-intro.html)
+- [Hooks at a Glance(Overview)](https://zh-hans.reactjs.org/docs/hooks-overview.html)
+- [Rules of Hooks(Rules)](https://zh-hans.reactjs.org/docs/hooks-rules.html)
 
 This document will only the Hooks API available in Taro and some behaviors that are inconsistent with React. Other contents are generally the same as [Hooks Reference](https://zh-hans.reactjs.org/docs/hooks-reference.html).
 
 You can also refer to the following two demos using Hooks:
 
-* [V2EX](https://github.com/NervJS/taro-v2ex-hooks), mainly show communication with server.
+- [V2EX](https://github.com/NervJS/taro-v2ex-hooks), mainly show communication with server.
 
-* [TodoMVC](https://github.com/NervJS/taro-todomvc-hooks), mainly show communication between components.
+- [TodoMVC](https://github.com/NervJS/taro-todomvc-hooks), mainly show communication between components.
 
 ## API
 
@@ -33,7 +32,7 @@ import { useState, useEffect } from 'react' // Framework Hooks (Basic Hooks）
 ### `useState`
 
 ```js
-const [state, setState] = useState(initialState);
+const [state, setState] = useState(initialState)
 ```
 
 Return a state, and a function which could update the state.
@@ -42,9 +41,8 @@ During the initial rendering, the returned state (`state`) has the same value as
 
 The `setState` function is used to update state. It will receive a new state and add a new re-render of the component to the queue.
 
-
 ```js
-setState(newState);
+setState(newState)
 ```
 
 In subsequent re-rendering, the first value returned by `useState` will always be the latest state after the update.
@@ -57,18 +55,17 @@ In subsequent re-rendering, the first value returned by `useState` will always b
 
 If the new state needs to be calculated using the previous state, we can pass the function to `setState`, which will reveive the previous state and return an updated value. It shows two uses of `setState` in the following counter component example:
 
-
 ```js
-function Counter({initialCount}) {
-  const [count, setCount] = useState(initialCount);
+function Counter({ initialCount }) {
+  const [count, setCount] = useState(initialCount)
   return (
     <View>
       Count: {count}
       <Button onClick={() => setCount(initialCount)}>Reset</Button>
-      <Button onClick={() => setCount(prevCount => prevCount + 1)}>+</Button>
-      <Button onClick={() => setCount(prevCount => prevCount - 1)}>-</Button>
+      <Button onClick={() => setCount((prevCount) => prevCount + 1)}>+</Button>
+      <Button onClick={() => setCount((prevCount) => prevCount - 1)}>-</Button>
     </View>
-  );
+  )
 }
 ```
 
@@ -78,12 +75,11 @@ The "+" and "-" buttons use the form of function, because the updated state must
 >
 > Unlike the `setState` method in the class component, `useState` does not automatically merge and update objects. Combined with the expansion operator, you can use the functional `setState` to achieve the effect of merging and updateing objects.
 
->
 > ```js
-> setState(prevState => {
-> // 也可以使用 Object.assign
-> return {...prevState, ...updatedValues};
-> });
+> setState((prevState) => {
+>   // 也可以使用 Object.assign
+>   return { ...prevState, ...updatedValues }
+> })
 > ```
 >
 > `useReducer` is another alternative, which is more suitable for managing state objects that contain multiple sub-values.
@@ -94,15 +90,15 @@ The `initialState` parameter only works during the initial rendering of the comp
 
 ```js
 const [state, setState] = useState(() => {
-  const initialState = someExpensiveComputation(props);
-  return initialState;
-});
+  const initialState = someExpensiveComputation(props)
+  return initialState
+})
 ```
 
 ### `useEffect`
 
 ```js
-useEffect(didUpdate);
+useEffect(didUpdate)
 ```
 
 The Hook receives a function that contains imperative and possibly side-effect code.
@@ -113,23 +109,21 @@ Use `useEffect` to complete side effects. The function assigned to `useEffect` w
 
 By default, effect will be executed after each round of render. But it's alternative to execute it when only some certain values change.
 
-
 #### Clear effect
 
 Generally, It's needed to clear resources created by effect such as subscriptions or timer IDs, when a component is unmounted. To achieve it, the `useEffect` function needs to return a cleanup function. The following is an example of creating a subscription:
 
 ```js
 useEffect(() => {
-  const subscription = props.source.subscribe();
+  const subscription = props.source.subscribe()
   return () => {
     // clear effect
-    subscription.unsubscribe();
-  };
-});
+    subscription.unsubscribe()
+  }
+})
 ```
 
 To avoid memory leaks, the cleanup function will be executed before the component is unmounted. In addition, if the component is rendered multiple times(usually), **the previous effect will be cleared before the next effect is executed.** In the above example, it means that every update of the component will create a new subscription. If you want to avoid triggering the execution of the effect every time you update, please refer to the next section.
-
 
 #### The execution time of effect
 
@@ -145,36 +139,31 @@ However, doing so may be a bit of overkill in some scenarios. For example, in th
 
 To achieve this, you can pass the second parameter to `useEffect`, which is an array of values ​​that the effect depends on. The updated example is as follows:
 
-
 ```js
-useEffect(
-  () => {
-    const subscription = props.source.subscribe();
-    return () => {
-      subscription.unsubscribe();
-    };
-  },
-  [props.source],
-);
+useEffect(() => {
+  const subscription = props.source.subscribe()
+  return () => {
+    subscription.unsubscribe()
+  }
+}, [props.source])
 ```
 
 At this moment, the subscription will be recreated only when the `props.source` is changed.
 
 > Attention!
 >
->If you want to use this optimization method, please ensure that the array contains **all variables that will change in the external scope and used in the effect**, otherwise your code will reference the old variables in the previous rendering.
+> If you want to use this optimization method, please ensure that the array contains **all variables that will change in the external scope and used in the effect**, otherwise your code will reference the old variables in the previous rendering.
 >
->If you want to execute an effect that only runs once (only executed when the component is mounted and unmounted), you can pass an empty array (`[]`) as the second parameter. It means to Taro that your effect doesn't depend on any value in props or state, so it never needs to be executed repeatedly. This is not a special case, it still follows the approach that pass the array.
+> If you want to execute an effect that only runs once (only executed when the component is mounted and unmounted), you can pass an empty array (`[]`) as the second parameter. It means to Taro that your effect doesn't depend on any value in props or state, so it never needs to be executed repeatedly. This is not a special case, it still follows the approach that pass the array.
 >
->
->If you pass in an empty array (`[]`), the props and state inside the effect will always have their initial values. Although passing in `[]` as the second parameter is a litter similar to the thinking mode of `componentDidMount` and `componentWillUnmount`, we have [better](https://zh-hans.reactjs.org/docs/hooks -faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) [Method](https://zh-hans.reactjs.org/docs/hooks-faq.html #what-can-i-do-if-my-effect-dependencies-change-too-often) to avoid calling effect too frequently. In addition, please remember that Taro will delay the call to `useEffect` after the rendering is complete, so it is very convenient for additional operations.
+> If you pass in an empty array (`[]`), the props and state inside the effect will always have their initial values. Although passing in `[]` as the second parameter is a litter similar to the thinking mode of `componentDidMount` and `componentWillUnmount`, we have [better](https://zh-hans.reactjs.org/docs/hooks -faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) [Method](https://zh-hans.reactjs.org/docs/hooks-faq.html #what-can-i-do-if-my-effect-dependencies-change-too-often) to avoid calling effect too frequently. In addition, please remember that Taro will delay the call to `useEffect` after the rendering is complete, so it is very convenient for additional operations.
 
->Taro will configure [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) in the built-in ESLint [`exhaustive- deps`](https://github.com/facebook/react/issues/14920) rules. This rule will issue a warning when adding a wrong dependency and give repair suggestions.
+> Taro will configure [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) in the built-in ESLint [`exhaustive- deps`](https://github.com/facebook/react/issues/14920) rules. This rule will issue a warning when adding a wrong dependency and give repair suggestions.
 
 ### `useReducer` {#usereducer}
 
 ```js
-const [state, dispatch] = useReducer(reducer, initialArg, init);
+const [state, dispatch] = useReducer(reducer, initialArg, init)
 ```
 
 Alternative to [`useState`](#usestate). It receives a reducer in the form of `(state, action) => newState`, and returns the current state and its related `dispatch` method. (If you are familiar with Redux, you already know how it works.)
@@ -184,34 +173,34 @@ In some scenarios, `useReducer` is more suitable than `useState`, for example, t
 The following is an example of rewriting the counter in the [`useState`](#usestate) section with a reducer:
 
 ```js
-const initialState = {count: 0};
+const initialState = { count: 0 }
 
 function reducer(state, action) {
   switch (action.type) {
     case 'increment':
-      return {count: state.count + 1};
+      return { count: state.count + 1 }
     case 'decrement':
-      return {count: state.count - 1};
+      return { count: state.count - 1 }
     default:
-      throw new Error();
+      throw new Error()
   }
 }
 
-function Counter({initialState}) {
-  const [state, dispatch] = useReducer(reducer, initialState);
+function Counter({ initialState }) {
+  const [state, dispatch] = useReducer(reducer, initialState)
   return (
     <View>
       Count: {state.count}
-      <Button onClick={() => dispatch({type: 'increment'})}>+</Button>
-      <Button onClick={() => dispatch({type: 'decrement'})}>-</Button>
+      <Button onClick={() => dispatch({ type: 'increment' })}>+</Button>
+      <Button onClick={() => dispatch({ type: 'decrement' })}>-</Button>
     </View>
-  );
+  )
 }
 ```
 
->Notice!
+> Notice!
 >
->Taro will ensure that the identity of the `dispatch` function is stable and will not change when the component is re-rendered. This is why it is safe to omit `dispatch` from the dependency list of `useEffect` or `useCallback`.
+> Taro will ensure that the identity of the `dispatch` function is stable and will not change when the component is re-rendered. This is why it is safe to omit `dispatch` from the dependency list of `useEffect` or `useCallback`.
 
 #### Specify the initial state
 
@@ -224,10 +213,9 @@ There are two different ways to initialize the `useReducer` state, you can choos
   );
 ```
 
-
->Attention!
+> Attention!
 >
->Taro does not use `state = initialState` which is a parameter convention popularized by Redux. Sometimes the initial value depends on props, so it needs to be specified when calling Hook. If you have a preference to the above parameter convention, you can simulate Redux's behavior by calling `useReducer(reducer, undefined, reducer)`, but it's usually not recommended to do it.
+> Taro does not use `state = initialState` which is a parameter convention popularized by Redux. Sometimes the initial value depends on props, so it needs to be specified when calling Hook. If you have a preference to the above parameter convention, you can simulate Redux's behavior by calling `useReducer(reducer, undefined, reducer)`, but it's usually not recommended to do it.
 
 #### Lazy initialization
 
@@ -237,54 +225,53 @@ It can extract the logic used to calculate the state outside the reducer, which 
 
 ```js
 function init(initialCount) {
-  return {count: initialCount};
+  return { count: initialCount }
 }
 
 function reducer(state, action) {
   switch (action.type) {
     case 'increment':
-      return {count: state.count + 1};
+      return { count: state.count + 1 }
     case 'decrement':
-      return {count: state.count - 1};
+      return { count: state.count - 1 }
     case 'reset':
-      return init(action.payload);
+      return init(action.payload)
     default:
-      throw new Error();
+      throw new Error()
   }
 }
 
-function Counter({initialCount}) {
-  const [state, dispatch] = useReducer(reducer, initialCount, init);
+function Counter({ initialCount }) {
+  const [state, dispatch] = useReducer(reducer, initialCount, init)
   return (
     <View>
       Count: {state.count}
-      <Button
-        onClick={() => dispatch({type: 'reset', payload: initialCount})}>
-        Reset
-      </Button>
-      <Button onClick={() => dispatch({type: 'increment'})}>+</Button>
-      <Button onClick={() => dispatch({type: 'decrement'})}>-</Button>
+      <Button onClick={() => dispatch({ type: 'reset', payload: initialCount })}>Reset</Button>
+      <Button onClick={() => dispatch({ type: 'increment' })}>+</Button>
+      <Button onClick={() => dispatch({ type: 'decrement' })}>-</Button>
     </View>
-  );
+  )
 }
 ```
 
 ### `useCallback`
 
 ```js
-const memoizedCallback = useCallback(  () => {    doSomething(a, b);  },  [a, b],);
+const memoizedCallback = useCallback(() => {
+  doSomething(a, b)
+}, [a, b])
 ```
+
 It will return a [memoized](https://en.wikipedia.org/wiki/Memoization) callback function.
 
 The inline callback function and the dependency array will be passed as parameters to `useCallback`. It will return the memoized version of the callback function, and the callback function will only be updated when a certain dependency changes. When you pass callback functions to child components that are optimized and use reference equality to avoid unnecessary rendering (such as `shouldComponentUpdate`), it is very useful .
 
-`useCallback(fn, deps)` is equivalent to  `useMemo(() => fn, deps)`。
-
+`useCallback(fn, deps)` is equivalent to `useMemo(() => fn, deps)`。
 
 ### `useMemo` {#usememo}
 
 ```js
-const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b])
 ```
 
 It will return a [memoized](https://en.wikipedia.org/wiki/Memoization).
@@ -298,41 +285,38 @@ If no dependency array is provided, `useMemo` will calculate a new value each ti
 ### `useRef`
 
 ```js
-const refContainer = useRef(initialValue);
+const refContainer = useRef(initialValue)
 ```
 
 `useRef` returns a mutable ref object whose `.current` property is initialized as the passed parameter (`initialValue`). The returned ref object remains unchanged during the entire life cycle of the component.
 
 A common use case is to access subcomponents imperatively:
 
-
 ```js
 function TextInputWithFocusButton() {
-  const inputEl = useRef(null);
+  const inputEl = useRef(null)
   const onButtonClick = () => {
-    // `current` refers to the text input element that has been mounted on the DOM. 
-    inputEl.current.focus();
-  };
+    // `current` refers to the text input element that has been mounted on the DOM.
+    inputEl.current.focus()
+  }
   return (
     <View>
       <Input ref={inputEl} type="text" />
       <Button onClick={onButtonClick}>Focus the input</Button>
     </View>
-  );
+  )
 }
 ```
 
-
 Essentially, `useRef` is like a "box" that can store a variable value in its `.current` property.
 
-You should be familiar with ref which is the main way to [access DOM](ref.md). If you set the ref object like `<View ref={myRef} />`, Taro will set the `.current` property of the ref object to the corresponding DOM node.
+You should be familiar with ref which is the main way to [access DOM](./ref). If you set the ref object like `<View ref={myRef} />`, Taro will set the `.current` property of the ref object to the corresponding DOM node.
 
 However, `useRef()` is more useful than the `ref` attribute. It can [conveniently save any variable value](https://zh-hans.reactjs.org/docs/hooks-faq.html#is-there-something-like-instance-variables), which is similar to the way that using instance fields in class.
 
 This is because it's just an ordinary JavaScript object created. The only difference between `useRef()` and creating a self-built `{current: ...}` object is that `useRef` will return the same ref object every time it is rendered.
 
-Remember, `useRef` will *not* notify you when the content of the ref object changes. Changing the `.current` property will not trigger re-render of the component. If you want to run some code when Taro binds or unbinds the ref of a DOM node, it's  needed to use [callback ref](https://zh-hans.reactjs.org/docs/hooks-faq.html#how- can-i-measure-a-dom-node).
-
+Remember, `useRef` will _not_ notify you when the content of the ref object changes. Changing the `.current` property will not trigger re-render of the component. If you want to run some code when Taro binds or unbinds the ref of a DOM node, it's needed to use [callback ref](https://zh-hans.reactjs.org/docs/hooks-faq.html#how- can-i-measure-a-dom-node).
 
 ### `useLayoutEffect`
 
@@ -342,8 +326,7 @@ Try to use standard `useEffect` whenever possible to avoid blocking visual updat
 
 > Tips
 >
-> If you use Hook to migrate code from a class component to a function component, it must be noted that the calling time of `useLayoutEffect` and `componentDidMount` and `componentDidUpdate` are the same. However, it's recommend that  **using `useEffect` at the beginning**, and try to use `useLayoutEffect` only if something goes wrong.
-
+> If you use Hook to migrate code from a class component to a function component, it must be noted that the calling time of `useLayoutEffect` and `componentDidMount` and `componentDidUpdate` are the same. However, it's recommend that **using `useEffect` at the beginning**, and try to use `useLayoutEffect` only if something goes wrong.
 
 ### `useContext`
 
@@ -353,7 +336,7 @@ const value = useContext(MyContext)
 
 It will reveive a context (the return value of `Taro.createContext`) and return the current value of the context. The current context value is determined by the `value` of `<MyContext.Provider value={value}>` rendered first in the upper-level component.
 
-When the latest `<MyContext.Provider>` of the upper layer of the component is updated, the Hook will trigger a re-rendering and use the latest context `value` value passed to the MyContext provider. 
+When the latest `<MyContext.Provider>` of the upper layer of the component is updated, the Hook will trigger a re-rendering and use the latest context `value` value passed to the MyContext provider.
 
 Don't forget that the parameter of `useContext` must be the context object itself:
 
@@ -368,7 +351,9 @@ The component that calls `useContext` will always re-render when the context val
 ### `useDidShow`
 
 ```jsx
-useDidShow(() => {  console.log('componentDidShow')})
+useDidShow(() => {
+  console.log('componentDidShow')
+})
 ```
 
 `useDidShow` is a Taro's exclusive Hook, which is equivalent to the `componentDidShow` page life cycle hook.
@@ -376,7 +361,9 @@ useDidShow(() => {  console.log('componentDidShow')})
 ### `useDidHide`
 
 ```jsx
-useDidHide(() => {  console.log('componentDidHide')})
+useDidHide(() => {
+  console.log('componentDidHide')
+})
 ```
 
 `useDidHide` is a Taro's exclusive Hook, which is equivalent to the `componentDidHide` page life cycle hook.
@@ -384,7 +371,9 @@ useDidHide(() => {  console.log('componentDidHide')})
 ### `usePullDownRefresh`
 
 ```jsx
-usePullDownRefresh(() => {  console.log('onPullDownRefresh')})
+usePullDownRefresh(() => {
+  console.log('onPullDownRefresh')
+})
 ```
 
 `usePullDownRefresh` is a Taro's exclusive Hook, which is equivalent to the `onPullDownRefresh` page life cycle hook.
@@ -392,7 +381,9 @@ usePullDownRefresh(() => {  console.log('onPullDownRefresh')})
 ### `useReachBottom`
 
 ```jsx
-useReachBottom(() => {  console.log('onReachBottom')})
+useReachBottom(() => {
+  console.log('onReachBottom')
+})
 ```
 
 `useReachBottom` is a Taro's exclusive Hook, which is equivalent to the `onReachBottom` page life cycle hook.
@@ -400,7 +391,7 @@ useReachBottom(() => {  console.log('onReachBottom')})
 ### `usePageScroll`
 
 ```jsx
-usePageScroll(res => {
+usePageScroll((res) => {
   console.log(res.scrollTop)
 })
 ```
@@ -410,8 +401,8 @@ usePageScroll(res => {
 ### `useResize`
 
 ```jsx
-useResize(res => {  
-  console.log(res.size.windowWidth)  
+useResize((res) => {
+  console.log(res.size.windowWidth)
   console.log(res.size.windowHeight)
 })
 ```
@@ -430,21 +421,21 @@ useResize(res => {
 
 ```jsx
 // page.js
-function Index () {
-  useShareAppMessage(res => {
+function Index() {
+  useShareAppMessage((res) => {
     if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)
     }
     return {
       title: '自定义转发标题',
-      path: '/page/user?id=123'
+      path: '/page/user?id=123',
     }
   })
 }
 // page.config.js
 export default {
-  enableShareAppMessage: true
+  enableShareAppMessage: true,
 }
 ```
 
@@ -453,24 +444,23 @@ export default {
 ### `useTabItemTap`
 
 ```jsx
-useTabItemTap(item => {  
-  console.log(item.index)  
-  console.log(item.pagePath)  
+useTabItemTap((item) => {
+  console.log(item.index)
+  console.log(item.pagePath)
   console.log(item.text)
 })
 ```
 
 `useTabItemTap` is a Taro's exclusive Hook, which is equivalent to the `onTabItemTap` page life cycle hook.
 
-
 ### `useAddToFavorites`
 
->It will be supported from Taro 3.0.3.
->It's only the WeChat small program that is supported,and this interface is a Beta versoin, supported from Android 7.0.15, which is only supported on the Android platform for the time being.
+> It will be supported from Taro 3.0.3.
+> It's only the WeChat small program that is supported,and this interface is a Beta versoin, supported from Android 7.0.15, which is only supported on the Android platform for the time being.
 
 ```jsx
-useAddToFavorites(res => {
-  // webview return webviewUrl 
+useAddToFavorites((res) => {
+  // webview return webviewUrl
   console.log('WebviewUrl: ', res.webviewUrl)
   return {
     title: '自定义标题',
@@ -487,7 +477,6 @@ useAddToFavorites(res => {
 > It will be supported from Taro 3.0.3.
 > It's only the WeChat small program that is supported,the basic library 2.11.3 started to support, and this interface is a Beta versoin, which is only supported on the Android platform for the time being.
 
-
 **When using this Hook, it's must be configured with `enableShareTimeline: true` for the page.**
 
 ```jsx
@@ -496,17 +485,16 @@ useAddToFavorites(res => {
 
 ```jsx
 // page.js
-function Index () {
+function Index() {
   useShareTimeline(() => {
     console.log('onShareTimeline')
   })
 }
 // page.config.js
 export default {
-  enableShareTimeline: true
+  enableShareTimeline: true,
 }
 ```
-
 
 `useShareTimeline` is a Hook exclusive to Taro, which is equivalent to `onShareTimeline` page life cycle hook.
 
@@ -521,7 +509,9 @@ const router = useRouter() // { path: '', params: { ... } }
 ### `useReady`
 
 ```js
-useReady(() => {  const query = wx.createSelectorQuery()})
+useReady(() => {
+  const query = wx.createSelectorQuery()
+})
 ```
 
 `useReady` is a Hook exclusive to Taro, which is equivalent to the `onReady` page life cycle hook.
