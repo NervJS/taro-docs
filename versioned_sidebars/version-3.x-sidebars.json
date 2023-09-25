@@ -169,8 +169,6 @@
     "视图容器": [
       "components/viewContainer/cover-image",
       "components/viewContainer/cover-view",
-      "components/viewContainer/grid-view",
-      "components/viewContainer/list-view",
       "components/viewContainer/custom-wrapper",
       "components/viewContainer/match-media",
       "components/viewContainer/movable-area",
@@ -179,9 +177,6 @@
       "components/viewContainer/page-container",
       "components/viewContainer/root-portal",
       "components/viewContainer/scroll-view",
-      "components/viewContainer/share-element",
-      "components/viewContainer/sticky-header",
-      "components/viewContainer/sticky-section",
       "components/viewContainer/slot",
       "components/viewContainer/swiper",
       "components/viewContainer/swiper-item",
@@ -210,6 +205,14 @@
       "components/forms/slider",
       "components/forms/switch",
       "components/forms/textarea"
+    ],
+    "Skyline": [
+      "components/skyline/grid-view",
+      "components/skyline/list-view",
+      "components/skyline/share-element",
+      "components/skyline/snapshot",
+      "components/skyline/sticky-header",
+      "components/skyline/sticky-section"
     ],
     "导航": [
       "components/navig/functional-page-navigator",
@@ -1205,9 +1208,16 @@
         "items": [
           "apis/ai/visionkit/isVKSupport",
           "apis/ai/visionkit/createVKSession",
-          "apis/ai/visionkit/VKAnchor",
+          "apis/ai/visionkit/VKBodyAnchor",
           "apis/ai/visionkit/VKCamera",
+          "apis/ai/visionkit/VKDepthAnchor",
+          "apis/ai/visionkit/VKFaceAnchor",
           "apis/ai/visionkit/VKFrame",
+          "apis/ai/visionkit/VKHandAnchor",
+          "apis/ai/visionkit/VKMarkerAnchor",
+          "apis/ai/visionkit/VKOCRAnchor",
+          "apis/ai/visionkit/VKOSDAnchor",
+          "apis/ai/visionkit/VKPlaneAnchor",
           "apis/ai/visionkit/VKSession"
         ]
       },
@@ -1241,6 +1251,7 @@
       "apis/ad/InterstitialAd",
       "apis/ad/RewardedVideoAd"
     ],
+    "Skyline": ["apis/skyline/Snapshot"],
     "云开发": ["apis/cloud/cloud", "apis/cloud/DB"],
     "Alipay": ["apis/alipay/getOpenUserInfo", "apis/alipay/tradePay"],
     "QQ": ["apis/qq/openQzonePublish"],

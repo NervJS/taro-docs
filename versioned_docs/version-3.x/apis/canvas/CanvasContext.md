@@ -811,6 +811,18 @@ ctx.fill()
 ctx.draw()
 ```
 
+### reset
+
+重置绘图上下文状态
+
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+
+> [参考文档](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/reset)
+
+```tsx
+() => void
+```
+
 ### restore
 
 恢复之前保存的绘图上下文
@@ -1307,11 +1319,13 @@ ctx.stroke()
 ctx.setFontSize(15)
 ctx.setTextAlign('left')
 ctx.fillText('textAlign=left', 150, 60)
+await ctx.draw(true)
 ctx.setTextAlign('center')
 ctx.fillText('textAlign=center', 150, 80)
+await ctx.draw(true)
 ctx.setTextAlign('right')
 ctx.fillText('textAlign=right', 150, 100)
-ctx.draw()
+await ctx.draw(true)
 ```
 
 ### setTextBaseline
@@ -1341,13 +1355,16 @@ ctx.stroke()
 ctx.setFontSize(20)
 ctx.setTextBaseline('top')
 ctx.fillText('top', 5, 75)
+await ctx.draw(true)
 ctx.setTextBaseline('middle')
 ctx.fillText('middle', 50, 75)
+await ctx.draw(true)
 ctx.setTextBaseline('bottom')
 ctx.fillText('bottom', 120, 75)
+await ctx.draw(true)
 ctx.setTextBaseline('normal')
 ctx.fillText('normal', 200, 75)
-ctx.draw()
+await ctx.draw(true)
 ```
 
 ### setTransform
@@ -1594,6 +1611,7 @@ ctx.draw()
 | CanvasContext.moveTo | ✔️ | ✔️ |  |  |
 | CanvasContext.quadraticCurveTo | ✔️ | ✔️ |  |  |
 | CanvasContext.rect | ✔️ | ✔️ |  |  |
+| CanvasContext.reset |  | ✔️ |  |  |
 | CanvasContext.restore | ✔️ | ✔️ |  |  |
 | CanvasContext.rotate | ✔️ | ✔️ |  |  |
 | CanvasContext.save | ✔️ | ✔️ |  |  |

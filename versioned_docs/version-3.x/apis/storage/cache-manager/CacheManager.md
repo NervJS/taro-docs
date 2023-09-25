@@ -150,13 +150,13 @@ sidebar_label: CacheManager
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/cachemanager/CacheManager.off.html)
 
 ```tsx
-(eventName: string, handler: Function) => void
+(eventName: string, handler: TaroGeneral.EventCallback) => void
 ```
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
 | eventName | `string` | 事件名称 |
-| handler | `Function` | 事件监听函数 |
+| handler | `TaroGeneral.EventCallback` | 事件监听函数 |
 
 ### on
 
@@ -167,13 +167,13 @@ sidebar_label: CacheManager
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/cachemanager/CacheManager.on.html)
 
 ```tsx
-(eventName: keyof OnEventName, handler: Function) => void
+(eventName: keyof OnEventName, handler: TaroGeneral.EventCallback) => void
 ```
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
 | eventName | `keyof OnEventName` | 事件名称 |
-| handler | `Function` | 事件监听函数 |
+| handler | `TaroGeneral.EventCallback` | 事件监听函数 |
 
 ### start
 
