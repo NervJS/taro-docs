@@ -594,5 +594,17 @@
   "sidebar.docs.category.测试工具": {
     "message": "Test units",
     "description": "The label for category 测试工具 in sidebar docs"
+  },
+  "sidebar.components.category.Skyline": {
+    "message": "Skyline",
+    "description": "The label for category Skyline in sidebar components"
+  },
+  "sidebar.API.category.隐私信息授权": {
+    "message": "Privacy Information Authorization",
+    "description": "The label for category 隐私信息授权 in sidebar API"
+  },
+  "sidebar.API.category.Skyline": {
+    "message": "Skyline",
+    "description": "The label for category Skyline in sidebar API"
   }
 }
