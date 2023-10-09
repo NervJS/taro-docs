@@ -281,7 +281,7 @@ const Block = (props) => <div>{props.children}</div>
 
 本文列举了一些 Taro 的已解决 bug 例子，阐述了在 Taro 中 debug 的思路，但在实际操作中如果你能更深入地了解 Taro 的实现原理，那无论是对使用 Taro 或是 debug 都会有很大的帮助。以下资源从各个方面都介绍了 Taro 的实现原理：
 
-- 掘金小册：[Taro 多端开发实现原理与实战](https://juejin.im/book/5b73a131f265da28065fb1cd?referrer=5ba228f16fb9a05d3251492d)
 - 博文：[Taro 诞生记](https://aotu.io/notes/2018/06/25/the-birth-of-taro/)
 - 公开演讲: [使用 Taro 快速开发多端项目](https://share.weiyun.com/5nUKYfy)
 - 公开演讲： [基于 Taro 的多端项⽬目实践](https://share.weiyun.com/5lZXV1G)
+- 掘金小册：[Taro 多端开发实现原理与实战](https://juejin.im/book/5b73a131f265da28065fb1cd?referrer=5ba228f16fb9a05d3251492d) (已下架，仅购买用户可阅)
