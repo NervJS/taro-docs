@@ -2258,6 +2258,79 @@
     "cover": {
       "type": "external",
       "external": {
+        "url": "https://avatars.githubusercontent.com/u/147488432?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "qican777",
+              "link": {
+                "url": "https://github.com/qican777"
+              }
+            },
+            "plain_text": "qican777",
+            "href": "https://github.com/qican777"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/qican777"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "`e;@",
+            "name": "生态合作者",
+            "color": "green"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "6439591b-1ff7-494c-b435-ec1682008668",
+            "name": "创新团队",
+            "color": "yellow"
+          }
+        ]
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "8f8e3b5e-edde-43ce-a859-cef192c3eb96",
+            "name": "Open Harmony 工作组",
+            "color": "pink"
+          }
+        ]
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
         "url": "https://avatars.githubusercontent.com/u/26359618?v=4"
       }
     },
@@ -3705,78 +3778,6 @@
             "color": "pink"
           }
         ]
-      },
-      "alumni": {
-        "id": "dtGi",
-        "type": "formula",
-        "formula": {
-          "type": "boolean",
-          "boolean": false
-        }
-      }
-    }
-  },
-  {
-    "cover": {
-      "type": "external",
-      "external": {
-        "url": "https://avatars.githubusercontent.com/u/22173084?v=4"
-      }
-    },
-    "properties": {
-      "title": {
-        "id": "title",
-        "type": "title",
-        "title": [
-          {
-            "type": "text",
-            "text": {
-              "content": "TheKonka",
-              "link": {
-                "url": "https://github.com/TheKonka"
-              }
-            },
-            "plain_text": "TheKonka",
-            "href": "https://github.com/TheKonka"
-          }
-        ]
-      },
-      "github": {
-        "id": "ogpZ",
-        "type": "url",
-        "url": "https://github.com/TheKonka"
-      },
-      "role": {
-        "id": "m%3AAW",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "47959165-618b-4fa7-83a9-6a25a2c82b56",
-            "name": "助手",
-            "color": "purple"
-          },
-          {
-            "id": "7c557d2c-e604-45a3-8680-05867408143c",
-            "name": "个人贡献者",
-            "color": "pink"
-          }
-        ]
-      },
-      "team": {
-        "id": "CBVI",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "e3ff4b01-9ab6-482a-abfe-feb19a421e73",
-            "name": "社区团队",
-            "color": "brown"
-          }
-        ]
-      },
-      "group": {
-        "id": "%5ElK%3A",
-        "type": "multi_select",
-        "multi_select": []
       },
       "alumni": {
         "id": "dtGi",
@@ -16063,67 +16064,6 @@
     "cover": {
       "type": "external",
       "external": {
-        "url": "https://avatars.githubusercontent.com/u/53400960?v=4"
-      }
-    },
-    "properties": {
-      "title": {
-        "id": "title",
-        "type": "title",
-        "title": [
-          {
-            "type": "text",
-            "text": {
-              "content": "DJDIDI",
-              "link": {
-                "url": "https://github.com/DJDIDI"
-              }
-            },
-            "plain_text": "DJDIDI",
-            "href": "https://github.com/DJDIDI"
-          }
-        ]
-      },
-      "github": {
-        "id": "ogpZ",
-        "type": "url",
-        "url": "https://github.com/DJDIDI"
-      },
-      "role": {
-        "id": "m%3AAW",
-        "type": "multi_select",
-        "multi_select": [
-          {
-            "id": "7c557d2c-e604-45a3-8680-05867408143c",
-            "name": "个人贡献者",
-            "color": "pink"
-          }
-        ]
-      },
-      "team": {
-        "id": "CBVI",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "group": {
-        "id": "%5ElK%3A",
-        "type": "multi_select",
-        "multi_select": []
-      },
-      "alumni": {
-        "id": "dtGi",
-        "type": "formula",
-        "formula": {
-          "type": "boolean",
-          "boolean": false
-        }
-      }
-    }
-  },
-  {
-    "cover": {
-      "type": "external",
-      "external": {
         "url": "https://avatars.githubusercontent.com/u/40204108?v=4"
       }
     },
@@ -16820,6 +16760,67 @@
         "id": "ogpZ",
         "type": "url",
         "url": "https://github.com/debugtheworldbot"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "7c557d2c-e604-45a3-8680-05867408143c",
+            "name": "个人贡献者",
+            "color": "pink"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
+        "url": "https://avatars.githubusercontent.com/u/53400960?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "djdidi",
+              "link": {
+                "url": "https://github.com/djdidi"
+              }
+            },
+            "plain_text": "djdidi",
+            "href": "https://github.com/djdidi"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/djdidi"
       },
       "role": {
         "id": "m%3AAW",
@@ -40089,6 +40090,67 @@
         "formula": {
           "type": "boolean",
           "boolean": true
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
+        "url": "https://avatars.githubusercontent.com/u/22173084?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "TheKonka",
+              "link": {
+                "url": "https://github.com/TheKonka"
+              }
+            },
+            "plain_text": "TheKonka",
+            "href": "https://github.com/TheKonka"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/TheKonka"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "e3ff4b01-9ab6-482a-abfe-feb19a421e73",
+            "name": "社区团队",
+            "color": "brown"
+          }
+        ]
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
         }
       }
     }
