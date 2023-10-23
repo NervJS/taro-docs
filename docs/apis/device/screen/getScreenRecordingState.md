@@ -33,11 +33,21 @@ sidebar_label: getScreenRecordingState
 
 | 参数 | 说明 |
 | --- | --- |
-| start | 开始录屏 |
-| stop | 结束录屏 |
+| on | 开启 |
+| off | 关闭 |
 
 ### SuccessCallbackResult
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
 | state | `keyof ScreenRecordingState` | 录屏状态 |
+
+## 示例代码
+
+```tsx
+Taro.getScreenRecordingState({
+    success: function (res) {
+        console.log(res.state)
+    },
+})
+```

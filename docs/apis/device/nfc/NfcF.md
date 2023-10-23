@@ -172,7 +172,7 @@ NfcF 标签
 
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
-| transceive | `ArrayBuffer` | 是 | 需要传递的二进制数据 |
+| data | `ArrayBuffer` | 是 | 需要传递的二进制数据 |
 | complete | `(res: TaroGeneral.NFCError) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | fail | `(res: TaroGeneral.NFCError) => void` | 否 | 接口调用失败的回调函数 |
 | success | `(result: SuccessCallbackResult) => void` | 否 | 接口调用成功的回调函数 |

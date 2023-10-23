@@ -11,7 +11,7 @@ sidebar_label: writeBLECharacteristicValue
 - 若单次写入数据过长，iOS 上存在系统不会有任何回调的情况（包括错误回调）。
 - 安卓平台上，在调用 `notifyBLECharacteristicValueChange` 成功后立即调用 `writeBLECharacteristicValue` 接口，在部分机型上会发生 10008 系统错误
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth-ble/wx.writeBLECharacteristicValue.html)
 
@@ -41,9 +41,17 @@ sidebar_label: writeBLECharacteristicValue
 | deviceId | `string` | 是 | 蓝牙设备 id |
 | serviceId | `string` | 是 | 蓝牙特征值对应服务的 uuid |
 | value | `ArrayBuffer` | 是 | 蓝牙设备特征值对应的二进制值 |
+| writeType | `keyof WriteType` | 否 | 蓝牙特征值的写模式设置，有两种模式，iOS 优先 write，安卓优先 writeNoResponse 。（基础库 2.22.0 开始支持） |
 | complete | `(res: TaroGeneral.BluetoothError) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | fail | `(res: TaroGeneral.BluetoothError) => void` | 否 | 接口调用失败的回调函数 |
 | success | `(res: TaroGeneral.BluetoothError) => void` | 否 | 接口调用成功的回调函数 |
+
+### WriteType
+
+| 参数 | 说明 |
+| --- | --- |
+| write | 强制回复写，不支持时报错 |
+| writeNoResponse | 强制无回复写，不支持时报错 |
 
 ## 示例代码
 
