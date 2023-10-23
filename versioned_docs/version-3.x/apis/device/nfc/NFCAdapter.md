@@ -116,7 +116,7 @@ NFC 实例
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/nfc/NFCAdapter.offDiscovered.html)
 
 ```tsx
-(callback: Callback) => void
+(callback?: Callback) => void
 ```
 
 | 参数 | 类型 | 说明 |
@@ -193,7 +193,7 @@ NFC 实例
 | --- | --- | :---: | --- |
 | techs | `string[]` | 是 | tech 数组，用于匹配NFC卡片具体可以使用什么标准（NfcA等实例）处理 |
 | messages | `NdefMessage[]` | 是 | NdefMessage 数组，消息格式为 {id: ArrayBuffer, type: ArrayBuffer, payload: ArrayBuffer} |
-| uid | `ArrayBuffer` | 否 | NFC标签的UID<br />API 支持度: tt |
+| id | `ArrayBuffer` | 否 | NFC标签的UID<br />API 支持度: tt |
 
 #### NdefMessage
 

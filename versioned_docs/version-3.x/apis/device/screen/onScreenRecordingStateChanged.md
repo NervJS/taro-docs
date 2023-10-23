@@ -39,3 +39,13 @@ sidebar_label: onScreenRecordingStateChanged
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
 | state | `keyof ScreenRecordingState` | 录屏状态 |
+
+## 示例代码
+
+```tsx
+// 监听用户录屏事件
+const handler = function (res) {
+    console.log(res.state)
+}
+Taro.onScreenRecordingStateChanged(handler)
+```
