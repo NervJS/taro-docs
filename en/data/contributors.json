@@ -17162,6 +17162,67 @@
     "cover": {
       "type": "external",
       "external": {
+        "url": "https://avatars.githubusercontent.com/u/7856025?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "ke-ly",
+              "link": {
+                "url": "https://github.com/ke-ly"
+              }
+            },
+            "plain_text": "ke-ly",
+            "href": "https://github.com/ke-ly"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/ke-ly"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "7c557d2c-e604-45a3-8680-05867408143c",
+            "name": "个人贡献者",
+            "color": "pink"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
         "url": "https://avatars.githubusercontent.com/u/20216981?v=4"
       }
     },
@@ -18102,6 +18163,67 @@
         "id": "ogpZ",
         "type": "url",
         "url": "https://github.com/holdenwen"
+      },
+      "role": {
+        "id": "m%3AAW",
+        "type": "multi_select",
+        "multi_select": [
+          {
+            "id": "7c557d2c-e604-45a3-8680-05867408143c",
+            "name": "个人贡献者",
+            "color": "pink"
+          }
+        ]
+      },
+      "team": {
+        "id": "CBVI",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "group": {
+        "id": "%5ElK%3A",
+        "type": "multi_select",
+        "multi_select": []
+      },
+      "alumni": {
+        "id": "dtGi",
+        "type": "formula",
+        "formula": {
+          "type": "boolean",
+          "boolean": false
+        }
+      }
+    }
+  },
+  {
+    "cover": {
+      "type": "external",
+      "external": {
+        "url": "https://avatars.githubusercontent.com/u/29840023?v=4"
+      }
+    },
+    "properties": {
+      "title": {
+        "id": "title",
+        "type": "title",
+        "title": [
+          {
+            "type": "text",
+            "text": {
+              "content": "piexlmax",
+              "link": {
+                "url": "https://github.com/piexlmax"
+              }
+            },
+            "plain_text": "piexlmax",
+            "href": "https://github.com/piexlmax"
+          }
+        ]
+      },
+      "github": {
+        "id": "ogpZ",
+        "type": "url",
+        "url": "https://github.com/piexlmax"
       },
       "role": {
         "id": "m%3AAW",
