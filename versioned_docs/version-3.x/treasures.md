@@ -662,6 +662,22 @@ Taro3 集成图表库 f2。
 
 ---
 
+### taro-vchart
+
+`React`
+
+Taro3 集成图表库 @visactor/vchart。
+
+@visactor 出品。【[物料详情](https://taro-ext.jd.com/plugin/view/6540cbacbbd619b5897f988b)】【[Github](https://github.com/VisActor/VChart)】
+
+<img src="https://img14.360buyimg.com/img/jfs/t1/182617/24/40933/352731/6540cadfF80121018/7a7dce74e748da36.png.webp" width="250px" />
+
+|        | 微信 | 阿里系 | 百度 | 头条 | H5  | RN  |
+| :----: | :--: | :----: | :--: | :--: | :-: | :-: |
+| 支持度 |  ✔️  |      |      |  ✔️    |     |     |
+
+---
+
 ## 工具库
 
 ---
