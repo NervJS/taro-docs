@@ -668,7 +668,7 @@ Taro3 集成图表库 f2。
 
 Taro3 集成图表库 @visactor/vchart。
 
-@visactor 出品。【[物料详情](https://taro-ext.jd.com/plugin/view/6540cbacbbd619b5897f988b)】【[Github](https://github.com/VisActor/VChart)】
+@visactor 出品。【[物料详情](https://taro-ext.jd.com/plugin/view/6540cbacbbd619b5897f988b)】【[Github](https://github.com/VisActor/VChart)】【[使用教程](https://www.visactor.io/vchart/guide/tutorial_docs/Cross-terminal_and_Developer_Ecology/taro)】
 
 <img src="https://img14.360buyimg.com/img/jfs/t1/182617/24/40933/352731/6540cadfF80121018/7a7dce74e748da36.png.webp" width="250px" />
 
