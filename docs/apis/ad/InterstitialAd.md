@@ -30,12 +30,12 @@ sidebar_label: InterstitialAd
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.offClose.html)
 
 ```tsx
-(callback: OffCloseCallback) => void
+(callback: OnCloseCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `OffCloseCallback` |
+| callback | `OnCloseCallback` |
 
 ### offError
 
@@ -46,12 +46,12 @@ sidebar_label: InterstitialAd
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.offError.html)
 
 ```tsx
-(callback: OffErrorCallback) => void
+(callback: OnErrorCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `OffErrorCallback` |
+| callback | `OnErrorCallback` |
 
 ### offLoad
 
@@ -62,12 +62,12 @@ sidebar_label: InterstitialAd
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.offLoad.html)
 
 ```tsx
-(callback: OffLoadCallback) => void
+(callback: OnLoadCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `OffLoadCallback` |
+| callback | `OnLoadCallback` |
 
 ### onClose
 
@@ -154,42 +154,6 @@ sidebar_label: InterstitialAd
 ```
 
 ## 参数
-
-### OffCloseCallback
-
-插屏广告关闭事件的回调函数
-
-```tsx
-(res: TaroGeneral.CallbackResult) => void
-```
-
-| 参数 | 类型 |
-| --- | --- |
-| res | `TaroGeneral.CallbackResult` |
-
-### OffErrorCallback
-
-插屏错误事件的回调函数
-
-```tsx
-(res: TaroGeneral.CallbackResult) => void
-```
-
-| 参数 | 类型 |
-| --- | --- |
-| res | `TaroGeneral.CallbackResult` |
-
-### OffLoadCallback
-
-插屏广告加载事件的回调函数
-
-```tsx
-(res: TaroGeneral.CallbackResult) => void
-```
-
-| 参数 | 类型 |
-| --- | --- |
-| res | `TaroGeneral.CallbackResult` |
 
 ### OnCloseCallback
 

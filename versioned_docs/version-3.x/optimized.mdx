@@ -2,10 +2,9 @@
 title: 小程序性能优化指南
 ---
 
+import { ReactIcon, VueIcon } from '@site/static/icons'
 import TabItem from '@theme/TabItem'
 import Tabs from '@theme/Tabs'
-
-import { ReactIcon, VueIcon } from './guides/index'
 
 Taro 3 为了兼容 React、Vue 等 Web 开发框架，在运行时对浏览器环境进行模拟，实现了 BOM 和 DOM 等一系列 API。相比 Taro 1/2，Taro 3 是一款重运行时、轻编译时的框架，在性能方面会有一定损耗。因此 Taro 3 提供了一系列的性能优化手段，从而提升 Taro 3 应用的性能。
 

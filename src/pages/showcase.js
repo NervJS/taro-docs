@@ -8,8 +8,6 @@
  */
 
 import Link from '@docusaurus/Link'
-import useBaseUrl from '@docusaurus/useBaseUrl'
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Layout from '@theme/Layout'
 import React, { useEffect } from 'react'
 
@@ -28,7 +26,7 @@ function Showcase () {
   return (
     <Layout
       permalink="/showcase"
-      description="Taro 案例页，微信小程序、H5、支付宝小程序、百度小程序、移动端应用、QQ小程序、字节跳动小程序、京东小程序, 如果你也使用 Taro，提交你的案例让我们知道你，以便更好地为你服务，同时也让更多的人了解 Taro 的能力">
+      description="Taro 案例页，微信小程序、H5、支付宝小程序、百度小程序、移动端应用、QQ小程序、抖音小程序、京东小程序, 如果你也使用 Taro，提交你的案例让我们知道你，以便更好地为你服务，同时也让更多的人了解 Taro 的能力">
       <div className="container margin-vert--xl">
         <p className="tip">如果你想要找的是开源的可参考代码案例，点击 <Link to="/docs/composition">Taro 资源合集</Link></p>
         <p className="tip">提交案例，只需二维码和简单的信息，既展示你的作品，也给使用 Taro 的小伙伴信心，给 Taro 贡献者以鼓励，<Link to="https://github.com/NervJS/taro-user-cases/edit/master/index.js">点击提交案例</Link></p>

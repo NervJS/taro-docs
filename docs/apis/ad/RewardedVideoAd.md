@@ -54,12 +54,12 @@ sidebar_label: RewardedVideoAd
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.offClose.html)
 
 ```tsx
-(callback: OffCloseCallback) => void
+(callback: OnCloseCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `OffCloseCallback` |
+| callback | `OnCloseCallback` |
 
 ### offError
 
@@ -70,12 +70,12 @@ sidebar_label: RewardedVideoAd
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.offError.html)
 
 ```tsx
-(callback: OffErrorCallback) => void
+(callback: OnErrorCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `OffErrorCallback` |
+| callback | `OnErrorCallback` |
 
 ### offLoad
 
@@ -86,12 +86,12 @@ sidebar_label: RewardedVideoAd
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.offLoad.html)
 
 ```tsx
-(callback: OffLoadCallback) => void
+(callback: OnLoadCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `OffLoadCallback` |
+| callback | `OnLoadCallback` |
 
 ### onClose
 
@@ -155,42 +155,6 @@ sidebar_label: RewardedVideoAd
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
 | isEnded | `boolean` | 视频是否是在用户完整观看的情况下被关闭的 |
-
-### OffCloseCallback
-
-用户点击 `关闭广告` 按钮的事件的回调函数
-
-```tsx
-(res: TaroGeneral.CallbackResult) => void
-```
-
-| 参数 | 类型 |
-| --- | --- |
-| res | `TaroGeneral.CallbackResult` |
-
-### OffErrorCallback
-
-激励视频错误事件的回调函数
-
-```tsx
-(res: TaroGeneral.CallbackResult) => void
-```
-
-| 参数 | 类型 |
-| --- | --- |
-| res | `TaroGeneral.CallbackResult` |
-
-### OffLoadCallback
-
-激励视频广告加载事件的回调函数
-
-```tsx
-(res: TaroGeneral.CallbackResult) => void
-```
-
-| 参数 | 类型 |
-| --- | --- |
-| res | `TaroGeneral.CallbackResult` |
 
 ### OnCloseCallback
 

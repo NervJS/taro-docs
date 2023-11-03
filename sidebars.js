@@ -17,7 +17,7 @@ module.exports = {
       {
         label: '配置',
         type: 'category',
-        items: ['config', 'size', 'app-config', 'page-config', 'project-config', 'babel-config'],
+        items: ['env-mode-config', 'config', 'size', 'app-config', 'page-config', 'project-config', 'babel-config'],
       },
       {
         label: 'React',
@@ -54,6 +54,7 @@ module.exports = {
         ]
       },
       'static-reference',
+      'ref',
       {
         label: '多端开发',
         type: 'category',
@@ -76,16 +77,25 @@ module.exports = {
       'config-detail',
       'html',
       'use-h5',
+      'request',
       'jquery-like',
       'dynamic-import',
-      'plugin',
+      {
+        label: '插件功能',
+        type: 'category',
+        items: [
+          'plugin',
+          'plugin-custom'
+        ]
+      },
       {
         label: '性能优化',
         type: 'category',
         items: [
           'optimized',
           'prerender',
-          'virtual-list'
+          'virtual-list',
+          'virtual-waterfall',
         ]
       },
       {
@@ -126,6 +136,18 @@ module.exports = {
           'platform-plugin/platform-web'
         ]
       },
+      {
+        label: '测试工具',
+        type: 'category',
+        items: [
+          'test-utils/index',
+          'test-utils/render',
+          'test-utils/queries',
+          'test-utils/fire-event',
+          'test-utils/life-cycle',
+          'test-utils/other'
+        ]
+      },
       'external-libraries'
     ],
     社区生态: [
@@ -141,6 +163,7 @@ module.exports = {
       },
       'css-modules',
       'css-in-js',
+      'tailwindcss',
       'ossa',
       'nutui',
       'vant',
@@ -178,7 +201,6 @@ module.exports = {
       'components/viewContainer/page-container',
       'components/viewContainer/root-portal',
       'components/viewContainer/scroll-view',
-      'components/viewContainer/share-element',
       'components/viewContainer/slot',
       'components/viewContainer/swiper',
       'components/viewContainer/swiper-item',
@@ -208,8 +230,16 @@ module.exports = {
       'components/forms/switch',
       'components/forms/textarea'
     ],
+    'Skyline': [
+      'components/skyline/grid-view',
+      'components/skyline/list-view',
+      'components/skyline/share-element',
+      'components/skyline/snapshot',
+      'components/skyline/sticky-header',
+      'components/skyline/sticky-section',
+    ],
     '导航': [
-      'components/navig/Functional-Page-Navigator',
+      'components/navig/functional-page-navigator',
       'components/navig/navigation-bar',
       'components/navig/navigator',
       'components/navig/tab-item',
@@ -222,6 +252,7 @@ module.exports = {
       'components/media/audio',
       'components/media/camera',
       'components/media/channel-live',
+      'components/media/channel-video',
       'components/media/image',
       'components/media/live-player',
       'components/media/live-pusher',
@@ -260,7 +291,48 @@ module.exports = {
       'apis/about/desc',
       'apis/about/env',
       'apis/about/events',
-      'apis/General'
+      'apis/General',
+      {
+        'Hooks': [
+          'apis/taro.hooks/useDidShow',
+          'apis/taro.hooks/useDidHide',
+          'apis/taro.hooks/usePullDownRefresh',
+          'apis/taro.hooks/useReachBottom',
+          'apis/taro.hooks/usePageScroll',
+          'apis/taro.hooks/useResize',
+          'apis/taro.hooks/useShareAppMessage',
+          'apis/taro.hooks/useTabItemTap',
+          'apis/taro.hooks/useAddToFavorites',
+          'apis/taro.hooks/useShareTimeline',
+          'apis/taro.hooks/useSaveExitState',
+          'apis/taro.hooks/useLaunch',
+          'apis/taro.hooks/useError',
+          'apis/taro.hooks/useUnhandledRejection',
+          'apis/taro.hooks/usePageNotFound',
+          'apis/taro.hooks/useLoad',
+          'apis/taro.hooks/useUnload',
+          'apis/taro.hooks/useReady',
+          'apis/taro.hooks/useRouter',
+          'apis/taro.hooks/useTitleClick',
+          'apis/taro.hooks/useOptionMenuClick',
+          'apis/taro.hooks/usePullIntercept',
+        ],
+      },
+      {
+        '拓展': [
+          'apis/taro.extend/eventCenter',
+          'apis/taro.extend/getEnv',
+          'apis/taro.extend/pxTransform',
+          'apis/taro.extend/initPxTransform',
+          'apis/taro.extend/getAppInfo',
+          'apis/taro.extend/getRenderer',
+          'apis/taro.extend/requirePlugin',
+          'apis/taro.extend/getCurrentInstance',
+          'apis/taro.extend/setGlobalDataPlugin',
+          'apis/taro.extend/getTabBar',
+          'apis/taro.extend/interceptorify',
+        ],
+      },
     ],
     '框架': [
       'apis/framework/App',
@@ -285,6 +357,9 @@ module.exports = {
           'apis/base/system/getSystemInfoSync',
           'apis/base/system/getSystemInfoAsync',
           'apis/base/system/getSystemInfo',
+          'apis/base/system/getSkylineInfoSync',
+          'apis/base/system/getSkylineInfo',
+          'apis/base/system/getRendererUserAgent',
           'apis/base/system/getDeviceInfo',
           'apis/base/system/getAppBaseInfo',
           'apis/base/system/getAppAuthorizeSetting',
@@ -353,6 +428,9 @@ module.exports = {
         'type': 'category',
         'items': [
           'apis/base/performance/reportPerformance',
+          'apis/base/performance/preloadWebview',
+          'apis/base/performance/preloadSkylineView',
+          'apis/base/performance/preloadAssets',
           'apis/base/performance/getPerformance',
           'apis/base/performance/EntryList',
           'apis/base/performance/Performance',
@@ -366,6 +444,7 @@ module.exports = {
         'items': [
           'apis/base/crypto/getUserCryptoManager',
           'apis/base/crypto/UserCryptoManager',
+          'apis/base/crypto/getRandomValues',
         ]
       },
       'apis/base/env/env',
@@ -505,6 +584,7 @@ module.exports = {
           'apis/ui/window/setWindowSize',
           'apis/ui/window/onWindowResize',
           'apis/ui/window/offWindowResize',
+          'apis/ui/window/checkIsPictureInPictureActive',
         ]
       },
     ],
@@ -515,7 +595,8 @@ module.exports = {
         'items': [
           'apis/network/request/request',
           'apis/network/request/RequestTask',
-          'apis/network/request/addInterceptor'
+          'apis/network/request/addInterceptor',
+          'apis/network/request/cleanInterceptors'
         ]
       },
       {
@@ -538,14 +619,14 @@ module.exports = {
         'label': 'WebSocket',
         'type': 'category',
         'items': [
-          'apis/network/webSocket/sendSocketMessage',
-          'apis/network/webSocket/onSocketOpen',
-          'apis/network/webSocket/onSocketMessage',
-          'apis/network/webSocket/onSocketError',
-          'apis/network/webSocket/onSocketClose',
-          'apis/network/webSocket/connectSocket',
-          'apis/network/webSocket/closeSocket',
-          'apis/network/webSocket/SocketTask',
+          'apis/network/websocket/sendSocketMessage',
+          'apis/network/websocket/onSocketOpen',
+          'apis/network/websocket/onSocketMessage',
+          'apis/network/websocket/onSocketError',
+          'apis/network/websocket/onSocketClose',
+          'apis/network/websocket/connectSocket',
+          'apis/network/websocket/closeSocket',
+          'apis/network/websocket/SocketTask',
         ]
       },
       {
@@ -607,6 +688,14 @@ module.exports = {
           'apis/storage/background-fetch/onBackgroundFetchData',
           'apis/storage/background-fetch/getBackgroundFetchToken',
           'apis/storage/background-fetch/getBackgroundFetchData',
+        ]
+      },
+      {
+        'label': '缓存管理器',
+        'type': 'category',
+        'items': [
+          'apis/storage/cache-manager/createCacheManager',
+          'apis/storage/cache-manager/CacheManager',
         ]
       }
     ],
@@ -766,9 +855,11 @@ module.exports = {
           'apis/media/voip/onVoIPChatInterrupted',
           'apis/media/voip/offVoIPVideoMembersChanged',
           'apis/media/voip/offVoIPChatStateChanged',
+          'apis/media/voip/offVoIPChatSpeakersChanged',
           'apis/media/voip/offVoIPChatMembersChanged',
           'apis/media/voip/offVoIPChatInterrupted',
           'apis/media/voip/joinVoIPChat',
+          'apis/media/voip/join1v1Chat',
           'apis/media/voip/exitVoIPChat',
         ]
       },
@@ -925,6 +1016,13 @@ module.exports = {
         ]
       },
       {
+        'label': '我的小程序',
+        'type': 'category',
+        'items': [
+          'apis/open-api/my-miniprogram/checkIsAddedToMyMiniProgram',
+        ]
+      },
+      {
         'label': '车牌',
         'type': 'category',
         'items': [
@@ -940,8 +1038,17 @@ module.exports = {
           'apis/open-api/channels/openChannelsLive',
           'apis/open-api/channels/openChannelsEvent',
           'apis/open-api/channels/openChannelsActivity',
+          'apis/open-api/channels/getChannelsShareKey',
           'apis/open-api/channels/getChannelsLiveNoticeInfo',
           'apis/open-api/channels/getChannelsLiveInfo',
+        ]
+      },
+      {
+        'label': '音视频通话',
+        'type': 'category',
+        'items': [
+          'apis/open-api/device-voip/requestDeviceVoIP',
+          'apis/open-api/device-voip/getDeviceVoIPList',
         ]
       },
       {
@@ -949,6 +1056,16 @@ module.exports = {
         'type': 'category',
         'items': [
           'apis/open-api/group/getGroupEnterInfo',
+        ]
+      },
+      {
+        'label': '隐私信息授权',
+        'type': 'category',
+        'items': [
+          'apis/open-api/privacy/requirePrivacyAuthorize',
+          'apis/open-api/privacy/openPrivacyContract',
+          'apis/open-api/privacy/onNeedPrivacyAuthorization',
+          'apis/open-api/privacy/getPrivacySetting',
         ]
       },
       {
@@ -1015,14 +1132,14 @@ module.exports = {
         'label': '蓝牙-信标(Beacon)',
         'type': 'category',
         'items': [
-          'apis/device/ibeacon/stopBeaconDiscovery',
-          'apis/device/ibeacon/startBeaconDiscovery',
-          'apis/device/ibeacon/onBeaconUpdate',
-          'apis/device/ibeacon/onBeaconServiceChange',
-          'apis/device/ibeacon/offBeaconUpdate',
-          'apis/device/ibeacon/offBeaconServiceChange',
-          'apis/device/ibeacon/getBeacons',
-          'apis/device/ibeacon/IBeaconInfo',
+          'apis/device/iBeacon/stopBeaconDiscovery',
+          'apis/device/iBeacon/startBeaconDiscovery',
+          'apis/device/iBeacon/onBeaconUpdate',
+          'apis/device/iBeacon/onBeaconServiceChange',
+          'apis/device/iBeacon/offBeaconUpdate',
+          'apis/device/iBeacon/offBeaconServiceChange',
+          'apis/device/iBeacon/getBeacons',
+          'apis/device/iBeacon/IBeaconInfo',
         ]
       },
       {
@@ -1125,7 +1242,10 @@ module.exports = {
           'apis/device/screen/setScreenBrightness',
           'apis/device/screen/setKeepScreenOn',
           'apis/device/screen/onUserCaptureScreen',
+          'apis/device/screen/onScreenRecordingStateChanged',
           'apis/device/screen/offUserCaptureScreen',
+          'apis/device/screen/offScreenRecordingStateChanged',
+          'apis/device/screen/getScreenRecordingState',
           'apis/device/screen/getScreenBrightness',
         ]
       },
@@ -1202,6 +1322,13 @@ module.exports = {
         ]
       },
       {
+        'label': '短信',
+        'type': 'category',
+        'items': [
+          'apis/device/sms/sendSms',
+        ]
+      },
+      {
         'label': '震动',
         'type': 'category',
         'items': [
@@ -1212,18 +1339,34 @@ module.exports = {
     ],
     'AI': [
       {
+        'label': 'AI 推理',
+        'type': 'category',
+        'items': [
+          'apis/ai/inference/getInferenceEnvInfo',
+          'apis/ai/inference/createInferenceSession',
+          'apis/ai/inference/InferenceSession',
+        ]
+      },
+      {
         'label': '视觉算法',
         'type': 'category',
         'items': [
           'apis/ai/visionkit/isVKSupport',
           'apis/ai/visionkit/createVKSession',
-          'apis/ai/visionkit/VKAnchor',
+          'apis/ai/visionkit/VKBodyAnchor',
           'apis/ai/visionkit/VKCamera',
+          'apis/ai/visionkit/VKDepthAnchor',
+          'apis/ai/visionkit/VKFaceAnchor',
           'apis/ai/visionkit/VKFrame',
+          'apis/ai/visionkit/VKHandAnchor',
+          'apis/ai/visionkit/VKMarkerAnchor',
+          'apis/ai/visionkit/VKOCRAnchor',
+          'apis/ai/visionkit/VKOSDAnchor',
+          'apis/ai/visionkit/VKPlaneAnchor',
           'apis/ai/visionkit/VKSession',
         ]
       }, {
-        'label': '人脸识别',
+        'label': '人脸检测',
         'type': 'category',
         'items': [
           'apis/ai/face/stopFaceDetect',
@@ -1237,7 +1380,7 @@ module.exports = {
     ],
     'Worker': [
       'apis/worker/createWorker',
-      'apis/worker/Worker'
+      'apis/worker/Worker',
     ],
     'WXML': [
       'apis/wxml/createSelectorQuery',
@@ -1246,27 +1389,34 @@ module.exports = {
       'apis/wxml/IntersectionObserver',
       'apis/wxml/MediaQueryObserver',
       'apis/wxml/NodesRef',
-      'apis/wxml/SelectorQuery'
+      'apis/wxml/SelectorQuery',
     ],
     '第三方平台': [
       'apis/ext/getExtConfigSync',
-      'apis/ext/getExtConfig'
+      'apis/ext/getExtConfig',
     ],
     '广告': [
       'apis/ad/createRewardedVideoAd',
       'apis/ad/createInterstitialAd',
       'apis/ad/InterstitialAd',
-      'apis/ad/RewardedVideoAd'
+      'apis/ad/RewardedVideoAd',
+    ],
+    'Skyline': [
+      'apis/skyline/Snapshot',
     ],
     '云开发': [
       'apis/cloud/cloud',
-      'apis/cloud/DB'
+      'apis/cloud/DB',
     ],
     'Alipay': [
-      'apis/alipay/getOpenUserInfo'
+      'apis/alipay/getOpenUserInfo',
+      'apis/alipay/tradePay',
+    ],
+    'QQ': [
+      'apis/qq/openQzonePublish',
     ],
     'Swan': [
-      'apis/swan/setPageInfo'
-    ]
+      'apis/swan/setPageInfo',
+    ],
   }
 }

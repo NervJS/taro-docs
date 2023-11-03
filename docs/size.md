@@ -172,6 +172,12 @@ REM 单位允许的小数位。
 }
 ```
 
+### `targetUnit` (String)
+
+转换后的单位，可选值为 `rpx`、`vw`、`rem`，当前仅支持小程序 (默认 `rpx`) 和 Web 端 (默认 `rem`)。
+
+> Web 端使用 `rem` 单位时会注入脚本用于设置 body 上的 `font-size` 属性，其他单位无该操作。
+
 ### `baseFontSize` (Number, H5 Only, Default: 20)
 
 H5 字体尺寸大小基准值，开发者可以自行调整单位换算的基准值。
@@ -240,7 +246,7 @@ H5 根节点 `font-size` 的最小值。
 
 #### 忽略样式方法 3 写成行内样式
 
-```HTML {2-9}
+```jsx {2-9}
 <View
   style={{
     display: '-webkit-box',
@@ -248,7 +254,7 @@ H5 根节点 `font-size` 的最小值。
     '-webkit-line-clamp': 2,
     'text-overflow': 'ellipsis',
     overflow: 'hidden',
-    'line-height': 2
+    'line-height': 2,
   }}
 >
   这是要省略的内容这是要省略的内容这是要省略的内容

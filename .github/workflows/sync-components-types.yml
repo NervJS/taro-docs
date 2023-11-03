@@ -8,13 +8,12 @@ on:
 
 env:
   CI: true
-  NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
 jobs:
   sync-components-types:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Cache pnpm modules and build
         uses: actions/cache@v3
@@ -25,17 +24,12 @@ jobs:
             ${{ runner.os }}-
 
       - name: Installation Dependencies
-        uses: pnpm/action-setup@v2.2.2
+        uses: pnpm/action-setup@v2
         with:
           version: 7
           run_install: |
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
-
-      - name: Fetch notion database
-        run: |
-          pnpm notion:update
-          pnpm run notion
 
       - name: Push changes
         id: auto-commit-action
@@ -44,7 +38,7 @@ jobs:
           commit_message: "chore(date): update contributor member-list"
 
       - name: Checkout NervJS/taro
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: NervJS/taro
           fetch-depth: 1
@@ -55,15 +49,18 @@ jobs:
           rm -rf .taro
 
       - name: Generate API document
-        run: pnpm run build:docs-api --verbose
+        run: pnpm run build:docs-api --force --verbose
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "refactor(types): sync components types"
-          title: "refactor(types): sync components types"
+          base: master
           body: "sync components types"
+          branch: "refactor/sync-types"
+          commit-message: "refactor(types): sync components types"
+          delete-branch: true
+          title: "refactor(types): sync components types"
           labels: |
             A-typings
             A-components

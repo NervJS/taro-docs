@@ -184,12 +184,12 @@ export default {
 
 各类网络请求的超时时间，单位均为毫秒。
 
-| 属性          | 类型   | 必填 | 默认值 | 描述                                                                                   |
-| ------------- | ------ | ---- | ------ | -------------------------------------------------------------------------------------- |
-| request       | Number | 否   | 60000  | [Taro.request](./apis/network/request/request.md) 的超时时间，单位：毫秒               |
-| connectSocket | Number | 否   | 60000  | [Taro.connectSocket](./apis/network/webSocket/connectSocket.md) 的超时时间，单位：毫秒 |
-| uploadFile    | Number | 否   | 60000  | [Taro.uploadFile](./apis/network/upload/uploadFile.md) 的超时时间，单位：毫秒          |
-| downloadFile  | Number | 否   | 60000  | [Taro.downloadFile](./apis/network/download/downloadFile.md) 的超时时间，单位：毫秒    |
+| 属性          | 类型   | 必填 | 默认值 | 描述                                                                                |
+| ------------- | ------ | ---- | ------ | ----------------------------------------------------------------------------------- |
+| request       | Number | 否   | 60000  | [Taro.request](./apis/network/request/request) 的超时时间，单位：毫秒               |
+| connectSocket | Number | 否   | 60000  | [Taro.connectSocket](./apis/network/websocket/connectSocket) 的超时时间，单位：毫秒 |
+| uploadFile    | Number | 否   | 60000  | [Taro.uploadFile](./apis/network/upload/uploadFile) 的超时时间，单位：毫秒          |
+| downloadFile  | Number | 否   | 60000  | [Taro.downloadFile](./apis/network/download/downloadFile) 的超时时间，单位：毫秒    |
 
 ### debug
 
@@ -256,7 +256,7 @@ export default {
 
 - [微信小程序文档](https://developers.weixin.qq.com/miniprogram/dev/framework/subpackages/preload.html)
 - [百度小程序文档](https://smartprogram.baidu.com/docs/develop/framework/subpackages/#%E5%88%86%E5%8C%85%E9%A2%84%E4%B8%8B%E8%BD%BD%E8%A7%84%E5%88%99)
-- [字节跳动小程序文档](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/framework/basic-reference/general-configuration#preloadrule)
+- [抖音小程序文档](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/framework/basic-reference/general-configuration)
 
 ### entryPagePath
 
@@ -305,6 +305,7 @@ export default {
 | [themeLocation](#themelocation)     | String  | 指明 theme.json 的位置                |
 | [lazyCodeLoading](#lazycodeloading) | String  | 配置自定义组件代码按需注入            |
 | [singlePage](#singlepage)           | Object  | 单页模式相关配置                      |
+| [renderer](#renderer)               | String  | 全局默认的渲染后端                    |
 
 ### functionalPages
 
@@ -435,6 +436,16 @@ export default {
 | 属性             | 类型   | 必填 | 默认值                                                                | 描述                                                                                                                          |
 | :--------------- | :----- | :--- | :-------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------- |
 | navigationBarFit | String | 否   | 默认自动调整，若原页面是自定义导航栏，则为 `float`，否则为 `squeezed` | 导航栏与页面的相交状态，值为 `float` 时表示导航栏浮在页面上，与页面相交；值为 `squeezed` 时表示页面被导航栏挤压，与页面不相交 |
+
+### renderer
+
+指定小程序全局的默认渲染后端。
+
+可选值：`webview`, `skyline`
+
+默认值：`webview`
+
+> Taro 提供了 `Taro.getRenderer()` 方法，支持在页面 `onLoad` 生命周期中获取到当前页面的渲染引擎类型。
 
 ## 百度小程序特有属性
 

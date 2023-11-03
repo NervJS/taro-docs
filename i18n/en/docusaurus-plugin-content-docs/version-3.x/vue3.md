@@ -2,7 +2,7 @@
 title: Vue3
 ---
 
-Taro can be developed using Vue 3. Developers can use the `taro init` command to create templates for Vue 3, including **default**, **vuex**, and [NutUI3.0](https://nutui.jd.com/#/button). We recommend using NutUI3.0 templates for development.
+Taro can be developed using Vue 3. Developers can use the `taro init` command to create templates for Vue 3, including **default**, **vuex**, and [NutUI](https://nutui.jd.com/). We recommend using NutUI4.0 templates for development.
 
 For details, please refer to the Taro Vue series documentation.
 

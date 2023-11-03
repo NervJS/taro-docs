@@ -18,17 +18,13 @@ ComponentType<RootPortalProps>
 
 ## 示例代码
 
+import { ReactIcon, VueIcon } from '@site/static/icons'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 <Tabs
   defaultValue="React"
-  values={[
-  {
-    "label": "React",
-    "value": "React"
-  }
-]}>
+  values={[{ label: <ReactIcon />, value: "React" }]}>
 <TabItem value="React">
 
 ```tsx
@@ -63,6 +59,6 @@ export default function RootPortalExample {
 
 ### API 支持度
 
-| API | 微信小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: |
-| RootPortalProps.enable | ✔️ |  |  |  |
+| API | 微信小程序 | 支付宝小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| RootPortalProps.enable | ✔️ | ✔️ |  |  |  |

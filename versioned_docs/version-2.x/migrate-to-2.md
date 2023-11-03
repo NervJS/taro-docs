@@ -85,7 +85,7 @@ const config = {
   deviceRatio: {
     640: 2.34 / 2,
     750: 1,
-    828: 1.81 / 2
+    828: 1.81 / 2,
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
@@ -93,47 +93,39 @@ const config = {
   babel: {
     sourceMap: true,
     presets: [['env', { modules: false }]],
-    plugins: [
-      'transform-decorators-legacy',
-      'transform-class-properties',
-      'transform-object-rest-spread'
-    ]
+    plugins: ['transform-decorators-legacy', 'transform-class-properties', 'transform-object-rest-spread'],
   },
   // 小程序配置从 weapp 改为 mini，可以删掉很多小配置
   mini: {
-    webpackChain (chain, webpack) {},
+    webpackChain(chain, webpack) {},
     cssLoaderOption: {},
     postcss: {
       pxtransform: {
         enable: true,
-        config: {}
+        config: {},
       },
       url: {
         enable: true,
         config: {
-          limit: 10240 // 设定转换尺寸上限
-        }
-      }
-    }
+          limit: 10240, // 设定转换尺寸上限
+        },
+      },
+    },
   },
   // 可以删掉很多小配置
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
-    webpackChain (chain, webpack) {},
+    webpackChain(chain, webpack) {},
     postcss: {
       autoprefixer: {
         enable: true,
         config: {
-          browsers: [
-            'last 3 versions',
-            'Android >= 4.1',
-            'ios >= 8'
-          ]
-        }
-      }
-    }
-  }
+          browsers: ['last 3 versions', 'Android >= 4.1', 'ios >= 8'],
+        },
+      },
+    },
+  },
 }
 
 module.exports = function (merge) {
@@ -212,7 +204,7 @@ babel: {
 
 在 2.0 中我们将 RN 端 React 依赖升级到 16.8.0，React Native 依赖升级到 0.59.9。主要原因：
 
-- Google 要求所有 [Google Play](https://play.google.com/) 应用支持 64 位 so 库，而现有 RN 0.55.4 依无法支持 64 位库，为配合 64 位升级，Taro RN  端的 React Native 依赖需要同步升级
+- Google 要求所有 [Google Play](https://play.google.com/) 应用支持 64 位 so 库，而现有 RN 0.55.4 依无法支持 64 位库，为配合 64 位升级，Taro RN 端的 React Native 依赖需要同步升级
 - React 16.8.0 是第一个支持 Hook 的版本，React Native 从 0.59 版本开始支持 Hook，此前社区一直在呼吁对 RN 0.55.4 进行升级以直接支持 Hook 的写法
 
 本次 RN 端属于无缝升级，原有的写法和配置均不变，如果使用 [taro-native-shell](https://github.com/NervJS/taro-native-shell) 的，选择 0.59.9 分支即可；在原生应用集成 RN 的，需要自行升级 React Native 依赖到 0.59.9。
@@ -237,19 +229,19 @@ $ npm i --save regenerator-runtime@0.11.1
 
 在 2.x 中默认会抽离 4 个公共文件，分别为
 
-* `runtime`: webpack 运行时入口
-* `vendors`: node_modules 中文件抽离
-* `taro`: node_modules 中 Taro 相关依赖抽离
-* `common`: 项目中业务代码公共文件抽离
+- `runtime`: webpack 运行时入口
+- `vendors`: node_modules 中文件抽离
+- `taro`: node_modules 中 Taro 相关依赖抽离
+- `common`: 项目中业务代码公共文件抽离
 
 由于 `vendors` 默认是除 Taro 相关依赖之外的所有引用的 node_modules 文件的抽离公共文件，所以如果开发人员自己引入了过多的 npm 包就会导致 `vendors.js` 过大，解决办法可以是尽量少用 npm 包，其二是可以自己配置更细的拆分
 
-例如，如果引入了 lodash，由于 lodash 本身比较大，可以再自行配置 [`mini.webpackChain`](./config-detail.md#miniwebpackchain) 来将 lodash 单独拆分出来，示例配置如下
+例如，如果引入了 lodash，由于 lodash 本身比较大，可以再自行配置 [`mini.webpackChain`](./config-detail#miniwebpackchain) 来将 lodash 单独拆分出来，示例配置如下
 
 ```js
 const config = {
   mini: {
-    webpackChain (chain, webpack) {
+    webpackChain(chain, webpack) {
       chain.merge({
         optimization: {
           splitChunks: {
@@ -257,29 +249,29 @@ const config = {
               lodash: {
                 name: 'lodash',
                 priority: 1000,
-                test (module) {
+                test(module) {
                   return /node_modules[\\/]lodash/.test(module.context)
-                }
-              }
-            }
-          }
-        }
+                },
+              },
+            },
+          },
+        },
       })
-    }
-  }
+    },
+  },
 }
 ```
 
-随后需要再通过 [`mini.commonChunks`](./config-detail.md#minicommonchunks) 配置来添加 `lodash` 公共文件
+随后需要再通过 [`mini.commonChunks`](./config-detail#minicommonchunks) 配置来添加 `lodash` 公共文件
 
 ```js
 const config = {
   mini: {
-    commonChunks (commonChunks) {
+    commonChunks(commonChunks) {
       commonChunks.push('lodash')
       return commonChunks
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -296,16 +288,15 @@ $ npm install webpack-bundle-analyzer -D
 $ yarn add --dev webpack-bundle-analyzer
 ```
 
-随后在  [`mini.webpackChain`](./config-detail.md#minicommonchunks)  中添加如下配置。
+随后在 [`mini.webpackChain`](./config-detail#minicommonchunks) 中添加如下配置。
 
 ```js
 const config = {
   mini: {
-    webpackChain (chain, webpack) {
-      chain.plugin('analyzer')
-        .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin, [])
-    }
-  }
+    webpackChain(chain, webpack) {
+      chain.plugin('analyzer').use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin, [])
+    },
+  },
 }
 ```
 
@@ -323,15 +314,15 @@ const config = {
 
 #### 在 JS 中引入的图片突然变成 base64 格式
 
-在升级到 2.x 后可能会遇到在 JS 中引入的图片突然变成 base64 格式了，是因为 2.x 小程序改用 Webpack 编译后图片都会经过 `url-loader` 进行处理，默认 10kb 大小以下的图片（包含以下格式，png | jpg | jpeg | gif | bmp）都会被转为 base64，如果不想这么做，可以通过配置 [mini.imageUrlLoaderOption](./config-detail.md#miniimageurlloaderoption) 来解决
+在升级到 2.x 后可能会遇到在 JS 中引入的图片突然变成 base64 格式了，是因为 2.x 小程序改用 Webpack 编译后图片都会经过 `url-loader` 进行处理，默认 10kb 大小以下的图片（包含以下格式，png | jpg | jpeg | gif | bmp）都会被转为 base64，如果不想这么做，可以通过配置 [mini.imageUrlLoaderOption](./config-detail#miniimageurlloaderoption) 来解决
 
 ```js
 const config = {
   mini: {
     imageUrlLoaderOption: {
-      limit: 10240 // 大小限制，单位为 b
-    }
-  }
+      limit: 10240, // 大小限制，单位为 b
+    },
+  },
 }
 ```
 
