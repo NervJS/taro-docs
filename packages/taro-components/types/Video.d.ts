@@ -103,7 +103,7 @@ interface VideoProps extends StandardProps {
    * - `bottom`: controls bar 上
    * - `center`: 视频中间
    *
-   * @default 'bottom'
+   * @default "bottom"
    * @supported weapp, tt, qq
    */
   playBtnPosition?: keyof VideoProps.PlayBtnPosition

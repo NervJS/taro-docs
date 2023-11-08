@@ -17,7 +17,7 @@ interface FormProps extends StandardProps {
   reportSubmitTimeout?: number
   /** 模板消息的类型，report-submit 为 true 时填写有效
    * 取值：default / subscribe
-   * @default 'default'
+   * @default "default"
    * @supported swan
    */
   reportType?: string
