@@ -191,7 +191,7 @@ Subcomponents can use Taro's built-in [message system](./apis/about/events) to l
 
   export default {
     mounted () {
-      eventCenter.once(getCurrentInstance().router.onShow, () => {
+      eventCenter.on(getCurrentInstance().router.onShow, () => {
         console.log('onShow')
       })
     }
@@ -216,7 +216,7 @@ Subcomponents can use Taro's built-in [message system](./apis/about/events) to l
 
   export default {
     mounted () {
-      eventCenter.once(getCurrentInstance().router.onHide, () => {
+      eventCenter.on(getCurrentInstance().router.onHide, () => {
         console.log('onHide')
       })
     }
