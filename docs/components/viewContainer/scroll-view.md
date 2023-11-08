@@ -193,8 +193,8 @@ typeof ScrollViewProps
 | scrollAnchoring | `boolean` | `false` | 否 | 开启 scroll anchoring 特性，即控制滚动位置不随内容变化而抖动，仅在 iOS 下生效，安卓下可参考 CSS `overflow-anchor` 属性。 |
 | refresherEnabled | `boolean` | `false` | 否 | 开启自定义下拉刷新 |
 | refresherThreshold | `number` | `45` | 否 | 设置自定义下拉刷新阈值 |
-| refresherDefaultStyle | `string` | `'black'` | 否 | 设置自定义下拉刷新默认样式，支持设置 `black or white or none`， none 表示不使用默认样式 |
-| refresherBackground | `string` | `'#FFF'` | 否 | 设置自定义下拉刷新区域背景颜色 |
+| refresherDefaultStyle | `string` | `"black"` | 否 | 设置自定义下拉刷新默认样式，支持设置 `black or white or none`， none 表示不使用默认样式 |
+| refresherBackground | `string` | `"#FFF"` | 否 | 设置自定义下拉刷新区域背景颜色 |
 | refresherTriggered | `boolean` | `false` | 否 | 设置当前下拉刷新状态，true 表示下拉刷新已经被触发，false 表示下拉刷新未被触发 |
 | enhanced | `boolean` | `false` | 否 | 启用 scroll-view 增强特性 |
 | bounces | `boolean` | `true` | 否 | iOS 下 scroll-view 边界弹性控制 (同时开启 enhanced 属性后生效) |
@@ -207,14 +207,14 @@ typeof ScrollViewProps
 | disableUpperScroll | `string` |  | 否 | 发生滚动前，对滚动方向进行判断，当方向是底部/右边时，如果值为 always 将始终禁止滚动，如果值为 out-of-bounds 且当前已经滚动到底部/右边，禁止滚动。 |
 | ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
 | enablePassive | `boolean` | `false` | 否 | 开启 passive 特性，能优化一定的滚动性能 |
-| type | "list" or "custom" | `'list'` | 否 | 渲染模式<br />list - 列表模式。只会渲染在屏节点，会根据直接子节点是否在屏来按需渲染，若只有一个直接子节点则性能会退化<br />custom - 自定义模式。只会渲染在屏节点，子节点可以是 sticky-section list-view grid-view 等组件 |
+| type | "list" or "custom" | `"list"` | 否 | 渲染模式<br />list - 列表模式。只会渲染在屏节点，会根据直接子节点是否在屏来按需渲染，若只有一个直接子节点则性能会退化<br />custom - 自定义模式。只会渲染在屏节点，子节点可以是 sticky-section list-view grid-view 等组件 |
 | reverse | `boolean` | `false` | 否 | 是否反向滚动。一般初始滚动位置是在顶部，反向滚动则是在底部。 |
 | clip | `boolean` | `true` | 否 | 是否对溢出进行裁剪，默认开启 |
 | cacheExtent | `number` |  | 否 | 指定视口外渲染区域的距离，默认情况下视口外节点不渲染。指定 cache-extent 可优化滚动体验和加载速度，但会提高内存占用且影响首屏速度，可按需启用。 |
 | minDragDistance | `number` | `18` | 否 | 指定 scroll-view 触发滚动的最小拖动距离。仅在 scroll-view 和其他组件存在手势冲突时使用，可通过调整该属性使得滚动更加灵敏。 |
 | padding | `[number, number, number, number]` | `[0,0,0,0]` | 否 | 长度为 4 的数组，按 top、right、bottom、left 顺序指定内边距 |
 | scrollIntoViewWithinExtent | `boolean` | `false` | 否 | 只 scroll-into-view 到 cacheExtent 以内的目标节点，性能更佳 |
-| scrollIntoViewAlignment | "start" or "center" or "end" or "nearest" | `'start'` | 否 | 指定 scroll-into-view 目标节点在视口内的位置。<br />start - 目标节点显示在视口开始处<br />center - 目标节点显示在视口中间<br />end - 目标节点显示在视口结束处<br />nearest - 目标节点在就近的视口边缘显示，若节点已在视口内则不触发滚动 |
+| scrollIntoViewAlignment | "start" or "center" or "end" or "nearest" | `"start"` | 否 | 指定 scroll-into-view 目标节点在视口内的位置。<br />start - 目标节点显示在视口开始处<br />center - 目标节点显示在视口中间<br />end - 目标节点显示在视口结束处<br />nearest - 目标节点在就近的视口边缘显示，若节点已在视口内则不触发滚动 |
 | refresherTwoLevelEnabled | `boolean` | `false` | 否 | 开启下拉二级能力 |
 | refresherTwoLevelTriggered | `boolean` | `false` | 否 | 设置打开/关闭二级 |
 | refresherTwoLevelThreshold | `number` | `150` | 否 | 下拉二级阈值 |

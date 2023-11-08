@@ -67,12 +67,12 @@ interface ScrollViewProps extends StandardProps {
   refresherThreshold?: number
   /** 设置自定义下拉刷新默认样式，支持设置 `black | white | none`， none 表示不使用默认样式
    * @supported weapp
-   * @default 'black'
+   * @default "black"
    */
   refresherDefaultStyle?: string
   /** 设置自定义下拉刷新区域背景颜色
    * @supported weapp
-   * @default '#FFF'
+   * @default "#FFF"
    */
   refresherBackground?: string
   /** 设置当前下拉刷新状态，true 表示下拉刷新已经被触发，false 表示下拉刷新未被触发
@@ -135,7 +135,7 @@ interface ScrollViewProps extends StandardProps {
    * list - 列表模式。只会渲染在屏节点，会根据直接子节点是否在屏来按需渲染，若只有一个直接子节点则性能会退化
    * custom - 自定义模式。只会渲染在屏节点，子节点可以是 sticky-section list-view grid-view 等组件
    * @supported weapp
-   * @default 'list'
+   * @default "list"
    */
   type?: 'list' | 'custom'
   /** 是否反向滚动。一般初始滚动位置是在顶部，反向滚动则是在底部。
@@ -173,7 +173,7 @@ interface ScrollViewProps extends StandardProps {
    * end - 目标节点显示在视口结束处
    * nearest - 目标节点在就近的视口边缘显示，若节点已在视口内则不触发滚动
    * @supported weapp, h5
-   * @default 'start'
+   * @default "start"
    */
   scrollIntoViewAlignment?: 'start' | 'center' | 'end' | 'nearest'
   /** 开启下拉二级能力
