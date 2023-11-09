@@ -6,14 +6,16 @@ sidebar_label: loadFontFace
 动态加载网络字体。文件地址需为下载类型。iOS 仅支持 https 格式文件地址。
 
 注意：
-1. 字体文件返回的 contet-type 参考 [font](https://www.iana.org/assignments/media-types/media-types.xhtml#font)，格式不正确时会解析失败。
+1. 字体文件返回的 context-type 参考 [font](https://www.iana.org/assignments/media-types/media-types.xhtml#font)，格式不正确时会解析失败。
 2. 字体链接必须是https（ios不支持http)
 3. 字体链接必须是同源下的，或开启了cors支持，小程序的域名是`servicewechat.com`
 4. canvas等原生组件不支持使用接口添加的字体
-5. 工具里提示 Faild to load font可以忽略
+5. 工具里提示 Failed to load font 可以忽略
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
+> 支付宝小程序: source 地址格式为 `url('https://...')`，而不是单纯 URL 地址
+>
 > H5: 不支持 global (默认全局加载)
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ui/font/wx.loadFontFace.html)

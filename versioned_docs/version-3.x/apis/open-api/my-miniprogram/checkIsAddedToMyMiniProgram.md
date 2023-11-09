@@ -12,7 +12,7 @@ sidebar_label: checkIsAddedToMyMiniProgram
 ## 类型
 
 ```tsx
-(option?: Option) => Promise<SuccessCallbackResult>
+(option?: Option) => void
 ```
 
 ## 参数
@@ -27,7 +27,7 @@ sidebar_label: checkIsAddedToMyMiniProgram
 | --- | --- | :---: | --- |
 | complete | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
-| success | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用成功的回调函数 |
+| success | `(res: SuccessCallbackResult) => void` | 否 | 接口调用成功的回调函数 |
 
 ### SuccessCallbackResult
 

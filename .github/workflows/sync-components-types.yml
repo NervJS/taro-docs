@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Cache pnpm modules and build
         uses: actions/cache@v3
@@ -38,7 +38,7 @@ jobs:
           commit_message: "chore(date): update contributor member-list"
 
       - name: Checkout NervJS/taro
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: NervJS/taro
           fetch-depth: 1
@@ -52,9 +52,10 @@ jobs:
         run: pnpm run build:docs-api --force --verbose
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v4
+        uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          base: master
           body: "sync components types"
           branch: "refactor/sync-types"
           commit-message: "refactor(types): sync components types"

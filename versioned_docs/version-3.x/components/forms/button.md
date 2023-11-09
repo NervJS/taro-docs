@@ -205,7 +205,7 @@ export default {
 | publicId | `string` |  | 否 | 生活号 id，必须是当前小程序同主体且已关联的生活号，open-type="lifestyle" 时有效。 |
 | templateId | string or string[] |  | 否 | 发送订阅类模板消息所用的模板库标题 ID ，可通过 getTemplateLibraryList 获取<br />当参数类型为 Array 时，可传递 1~3 个模板库标题 ID |
 | subscribeId | `string` |  | 否 | 发送订阅类模板消息时所使用的唯一标识符，内容由开发者自定义，用来标识订阅场景<br />注意：同一用户在同一 subscribe-id 下的多次授权不累积下发权限，只能下发一条。若要订阅多条，需要不同 subscribe-id |
-| groupId | `string` |  | 否 | 打开群资料卡时，传递的群号 |
+| groupId | `string` |  | 否 | 群聊 id |
 | guildId | `string` |  | 否 | 打开频道页面时，传递的频道号 |
 | shareType | `string` | `27` | 否 | 分享类型集合，请参考下面share-type有效值说明。share-type后续将不再维护，请更新为share-mode |
 | shareMode | `string` | `['qq', 'qzone']` | 否 | 分享类型集合，请参考下面share-mode有效值说明 |
@@ -215,6 +215,7 @@ export default {
 | shareMessageTitle | `string` |  | 否 | 转发标题，不传则默认使用当前小程序的昵称。 FriendInfo |
 | shareMessageImg | `string` |  | 否 | 转发显示图片的链接，可以是网络图片路径（仅 QQ CDN 域名路径）或本地图片文件路径或相对代码包根目录的图片文件路径。显示图片长宽比是 5:4FriendInfo |
 | dataAwemeId | `string` |  | 否 | 跳转抖音号个人页，只支持小程序绑定的品牌号、员工号、合作号 |
+| dataIsHalfPage | `boolean` |  | 否 | 是否开启半屏模式 |
 | onGetUserInfo | `CommonEventFunction<onGetUserInfoEventDetail>` |  | 否 | 用户点击该按钮时，会返回获取到的用户信息，回调的detail数据与 Taro.getUserInfo 返回的一致<br /><br />生效时机: `open-type="getUserInfo"` |
 | onGetAuthorize | `CommonEventFunction` |  | 否 | 支付宝获取会员基础信息授权回调<br /><br />生效时机：`open-type="getAuthorize"` |
 | onContact | `CommonEventFunction<onContactEventDetail>` |  | 否 | 客服消息回调<br /><br />生效时机：`open-type="contact"` |
@@ -234,6 +235,7 @@ export default {
 | onAddFriend | `CommonEventFunction` |  | 否 | 添加好友的回调 |
 | onAddGroupApp | `CommonEventFunction` |  | 否 | 添加群应用的回调。errCode 错误码：41004（当前用户非管理员或群主，无权操作），41005（超过可添加群应用的群数量） |
 | onOpenAwemeUserProfile | `CommonEventFunction` |  | 否 | 监听跳转抖音号个人页的回调<br /><br />生效时机：`open-type="openAwemeUserProfile"` |
+| onJoinGroup | `CommonEventFunction<{ errMsg: string; errNo: number; }>` |  | 否 | 加群后触发 |
 
 ### API 支持度
 
@@ -262,7 +264,7 @@ export default {
 | ButtonProps.publicId |  |  | ✔️ |  | ✔️ |  |  |  |  |
 | ButtonProps.templateId |  | ✔️ |  |  |  |  |  |  |  |
 | ButtonProps.subscribeId |  | ✔️ |  |  |  |  |  |  |  |
-| ButtonProps.groupId |  |  |  |  | ✔️ |  |  |  |  |
+| ButtonProps.groupId |  |  |  | ✔️(通过创建聊天群、查询群信息获取) | ✔️(打开群资料卡时，传递的群号) |  |  |  |  |
 | ButtonProps.guildId |  |  |  |  | ✔️ |  |  |  |  |
 | ButtonProps.shareType |  |  |  |  | ✔️ |  |  |  |  |
 | ButtonProps.shareMode |  |  |  |  | ✔️ |  |  |  |  |
@@ -272,6 +274,7 @@ export default {
 | ButtonProps.shareMessageTitle |  |  |  |  | ✔️ |  |  |  |  |
 | ButtonProps.shareMessageImg |  |  |  |  | ✔️ |  |  |  |  |
 | ButtonProps.dataAwemeId |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.dataIsHalfPage |  |  |  | ✔️ |  |  |  |  |  |
 | ButtonProps.onGetUserInfo | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
 | ButtonProps.onGetAuthorize |  |  | ✔️ |  |  |  |  |  |  |
 | ButtonProps.onContact | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
@@ -291,6 +294,7 @@ export default {
 | ButtonProps.onAddFriend |  |  |  |  | ✔️ |  |  |  |  |
 | ButtonProps.onAddGroupApp |  |  |  |  | ✔️ |  |  |  |  |
 | ButtonProps.onOpenAwemeUserProfile |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.onJoinGroup |  |  |  | ✔️ |  |  |  |  |  |
 
 ### Size
 
@@ -330,7 +334,7 @@ open-type 的合法值
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| weapp | `{ contact: any; share: any; getPhoneNumber: any; getRealtimePhoneNumber: any; getUserInfo: any; launchApp: any; openSetting: any; feedback: any; chooseAvatar: any; agreePrivacyAuthorization: any; }` |  |
+| weapp | { contact: any; share: any; getPhoneNumber: any; getRealtimePhoneNumber: any; getUserInfo: any; launchApp: any; openSetting: any; feedback: any; chooseAvatar: any; agreePrivacyAuthorization: any; "getPhoneNumberoragreePrivacyAuthorization": any; "getRealtimePhoneNumberoragreePrivacyAuthorization": any; "getUserInfoorag... |  |
 | alipay | `{ share: any; getAuthorize: any; contactShare: any; lifestyle: any; }` | 支付宝小程序专属的 open-type 合法值<br />[参考地址](https://opendocs.alipay.com/mini/component/button) |
 | qq | `{ share: any; getUserInfo: any; launchApp: any; openSetting: any; feedback: any; openGroupProfile: any; addFriend: any; addColorSign: any; openPublicProfile: any; addGroupApp: any; shareMessageToFriend: any; }` | QQ 小程序专属的 open-type 合法值<br />[参考地址](https://q.qq.com/wiki/develop/miniprogram/component/form/button.html) |
 | tt | `{ share: any; getPhoneNumber: any; im: any; platformIm: any; navigateToVideoView: any; openAwemeUserProfile: any; openWebcastRoom: any; addCalendarEvent: any; addShortcut: any; joinGroup: any; privateMessage: any; authorizePrivateMessage: any; }` | TT 小程序专属的 open-type 合法值<br />[参考地址](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/list/button/#open-type-%E7%9A%84%E5%90%88%E6%B3%95%E5%80%BC) |

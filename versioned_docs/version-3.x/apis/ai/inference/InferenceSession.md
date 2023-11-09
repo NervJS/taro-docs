@@ -26,12 +26,12 @@ sidebar_label: InferenceSession
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ai/inference/InferenceSession.offError.html)
 
 ```tsx
-(callback?: OffErrorCallback) => void
+(callback?: OnErrorCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `OffErrorCallback` |
+| callback | `OnErrorCallback` |
 
 ### offLoad
 
@@ -42,12 +42,12 @@ sidebar_label: InferenceSession
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ai/inference/InferenceSession.offLoad.html)
 
 ```tsx
-(callback?: OffLoadCallback) => void
+(callback?: OnLoadCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `OffLoadCallback` |
+| callback | `OnLoadCallback` |
 
 ### onError
 
@@ -58,12 +58,12 @@ sidebar_label: InferenceSession
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ai/inference/InferenceSession.onError.html)
 
 ```tsx
-(callback: OnLoadCallback) => void
+(callback: OnErrorCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `OnLoadCallback` |
+| callback | `OnErrorCallback` |
 
 ### onLoad
 
@@ -117,21 +117,9 @@ sidebar_label: InferenceSession
 | --- | --- |
 | __index | `__index` |
 
-### OffErrorCallback
+### OnErrorCallback
 
-模型加载失败回调函数。
-
-```tsx
-(res: TaroGeneral.CallbackResult) => void
-```
-
-| 参数 | 类型 |
-| --- | --- |
-| res | `TaroGeneral.CallbackResult` |
-
-### OffLoadCallback
-
-模型加载完成回调函数
+模型加载失败回调函数
 
 ```tsx
 (res: TaroGeneral.CallbackResult) => void
@@ -143,7 +131,7 @@ sidebar_label: InferenceSession
 
 ### OnLoadCallback
 
-模型加载失败回调函数
+模型加载完成回调函数
 
 ```tsx
 (res: TaroGeneral.CallbackResult) => void

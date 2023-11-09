@@ -33,8 +33,17 @@ sidebar_label: addPhoneRepeatCalendar
 | endTime | `string` |  | 否 | 结束时间的 unix 时间戳，默认与开始时间相同 |
 | alarm | `boolean` | `true` | 否 | 是否提醒 |
 | alarmOffset | `number` | `0` | 否 | 提醒提前量，单位秒，默认 0 表示开始时提醒 |
-| repeatInterval | `string` | `"month"` | 否 | 重复周期，默认 month 每月重复 |
+| repeatInterval | `keyof RepeatInterval` | `"month"` | 否 | 重复周期，默认 month 每月重复 |
 | repeatEndTime | `number` |  | 否 | 重复周期结束时间的 unix 时间戳，不填表示一直重复 |
 | complete | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | fail | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用失败的回调函数 |
 | success | `(result: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用成功的回调函数 |
+
+### RepeatInterval
+
+| 参数 | 说明 |
+| --- | --- |
+| day | 每天重复 |
+| week | 每周重复 |
+| month | 每月重复。该模式日期不能大于 28 日 |
+| year | 每年重复 |

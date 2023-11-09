@@ -135,7 +135,7 @@ render () {
       const url = 'https://...'
       dom = <Image src={url} />
   }
-  
+
   return <Container>
     {dom}
   </Container>
@@ -152,7 +152,7 @@ render () {
       url = 'https://...'
       dom = <Image src={url} />
   }
-  
+
   return <Container>
     {dom}
   </Container>
@@ -208,29 +208,29 @@ Prove that Taro is not compatible with this API, such as a small application pla
 
 ### Runtime DOM related errors
 
-In [#1804](https://github.com/NervJS/taro/issues/1804) , as long as you use the ` Block ` components and has a variable control it explicitly, is bound to an error:
+In [#1804](https://github.com/NervJS/taro/issues/1804) , as long as you use the `Block` components and has a variable control it explicitly, is bound to an error:
 
 ```jsx
 export default class Index extends Component {
   config = {
-    navigationBarTitleText: 'Home Page'
-  };
+    navigationBarTitleText: 'Home Page',
+  }
 
   state = {
-    num: 1
-  };
+    num: 1,
+  }
 
   componentDidMount() {
-    console.log('did');
+    console.log('did')
     setTimeout(() => {
       this.setState({
-        num: 0
-      });
-    }, 2000);
+        num: 0,
+      })
+    }, 2000)
   }
 
   render() {
-    const { num } = this.state;
+    const { num } = this.state
     return (
       <View className="container">
         {num === 0 && <View>sold out</View>}
@@ -242,7 +242,7 @@ export default class Index extends Component {
         )}
         {/* {num > 0 && <View>on sale</View>} */}
       </View>
-    );
+    )
   }
 }
 ```
@@ -250,7 +250,7 @@ export default class Index extends Component {
 This time we can locate the problem to the `Block` component, we can see `Block` component source code in `@tarojs/components`:
 
 ```jsx
-const Block = (props) =>  props.children
+const Block = (props) => props.children
 export default Block
 ```
 
@@ -282,7 +282,7 @@ When you have a related problems, we have prepared a quick start sandbox tools, 
 
 This paper lists some Taro has solve bug example, expounds the thinking of the debug in Taro, but in practice if you can understand more deeply the implementation principle of Taro, that whether the use of Taro or debug will have a big help. The following resources from all aspects introduces the implementation of Taro principle:
 
-* The nuggets small volumes: [Taro multiterminal development principle and actual combat](https://juejin.im/book/5b73a131f265da28065fb1cd?referrer=5ba228f16fb9a05d3251492d)
-* Blog: [Taro were born](https://aotu.io/notes/2018/06/25/the-birth-of-taro/)
-* Public speaking: [multiterminal project using Taro fast development](https://share.weiyun.com/5nUKYfy)
-* Public speaking: [on the basis of Taro multiterminal ⽬ item practice](https://share.weiyun.com/5lZXV1G)
+- Blog: [Taro were born](https://aotu.io/notes/2018/06/25/the-birth-of-taro/)
+- Public speaking: [multiterminal project using Taro fast development](https://share.weiyun.com/5nUKYfy)
+- Public speaking: [on the basis of Taro multiterminal ⽬ item practice](https://share.weiyun.com/5lZXV1G)
+- The nuggets small volumes: [Taro multiterminal development principle and actual combat](https://juejin.im/book/5b73a131f265da28065fb1cd?referrer=5ba228f16fb9a05d3251492d) (Off shelve, only available to purchased users)

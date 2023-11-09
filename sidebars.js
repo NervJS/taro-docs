@@ -193,8 +193,6 @@ module.exports = {
     '视图容器': [
       'components/viewContainer/cover-image',
       'components/viewContainer/cover-view',
-      'components/viewContainer/grid-view',
-      'components/viewContainer/list-view',
       'components/viewContainer/custom-wrapper',
       'components/viewContainer/match-media',
       'components/viewContainer/movable-area',
@@ -203,9 +201,6 @@ module.exports = {
       'components/viewContainer/page-container',
       'components/viewContainer/root-portal',
       'components/viewContainer/scroll-view',
-      'components/viewContainer/share-element',
-      'components/viewContainer/sticky-header',
-      'components/viewContainer/sticky-section',
       'components/viewContainer/slot',
       'components/viewContainer/swiper',
       'components/viewContainer/swiper-item',
@@ -234,6 +229,14 @@ module.exports = {
       'components/forms/slider',
       'components/forms/switch',
       'components/forms/textarea'
+    ],
+    'Skyline': [
+      'components/skyline/grid-view',
+      'components/skyline/list-view',
+      'components/skyline/share-element',
+      'components/skyline/snapshot',
+      'components/skyline/sticky-header',
+      'components/skyline/sticky-section',
     ],
     '导航': [
       'components/navig/functional-page-navigator',
@@ -1056,6 +1059,16 @@ module.exports = {
         ]
       },
       {
+        'label': '隐私信息授权',
+        'type': 'category',
+        'items': [
+          'apis/open-api/privacy/requirePrivacyAuthorize',
+          'apis/open-api/privacy/openPrivacyContract',
+          'apis/open-api/privacy/onNeedPrivacyAuthorization',
+          'apis/open-api/privacy/getPrivacySetting',
+        ]
+      },
+      {
         'label': '微信客服',
         'type': 'category',
         'items': [
@@ -1340,9 +1353,16 @@ module.exports = {
         'items': [
           'apis/ai/visionkit/isVKSupport',
           'apis/ai/visionkit/createVKSession',
-          'apis/ai/visionkit/VKAnchor',
+          'apis/ai/visionkit/VKBodyAnchor',
           'apis/ai/visionkit/VKCamera',
+          'apis/ai/visionkit/VKDepthAnchor',
+          'apis/ai/visionkit/VKFaceAnchor',
           'apis/ai/visionkit/VKFrame',
+          'apis/ai/visionkit/VKHandAnchor',
+          'apis/ai/visionkit/VKMarkerAnchor',
+          'apis/ai/visionkit/VKOCRAnchor',
+          'apis/ai/visionkit/VKOSDAnchor',
+          'apis/ai/visionkit/VKPlaneAnchor',
           'apis/ai/visionkit/VKSession',
         ]
       }, {
@@ -1360,7 +1380,7 @@ module.exports = {
     ],
     'Worker': [
       'apis/worker/createWorker',
-      'apis/worker/Worker'
+      'apis/worker/Worker',
     ],
     'WXML': [
       'apis/wxml/createSelectorQuery',
@@ -1369,31 +1389,34 @@ module.exports = {
       'apis/wxml/IntersectionObserver',
       'apis/wxml/MediaQueryObserver',
       'apis/wxml/NodesRef',
-      'apis/wxml/SelectorQuery'
+      'apis/wxml/SelectorQuery',
     ],
     '第三方平台': [
       'apis/ext/getExtConfigSync',
-      'apis/ext/getExtConfig'
+      'apis/ext/getExtConfig',
     ],
     '广告': [
       'apis/ad/createRewardedVideoAd',
       'apis/ad/createInterstitialAd',
       'apis/ad/InterstitialAd',
-      'apis/ad/RewardedVideoAd'
+      'apis/ad/RewardedVideoAd',
+    ],
+    'Skyline': [
+      'apis/skyline/Snapshot',
     ],
     '云开发': [
       'apis/cloud/cloud',
-      'apis/cloud/DB'
+      'apis/cloud/DB',
     ],
     'Alipay': [
       'apis/alipay/getOpenUserInfo',
       'apis/alipay/tradePay',
     ],
     'QQ': [
-      'apis/qq/openQzonePublish'
+      'apis/qq/openQzonePublish',
     ],
     'Swan': [
-      'apis/swan/setPageInfo'
+      'apis/swan/setPageInfo',
     ],
   }
 }

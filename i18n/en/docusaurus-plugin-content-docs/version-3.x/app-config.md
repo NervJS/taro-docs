@@ -165,12 +165,12 @@ Property is only supported in Mini-program, H5 and RN are not supported.
 
 Timeout time for each type of network request, All units are in milliseconds.
 
-| Property      | Type   | Required | Default | Description                                                                                      |
-| ------------- | ------ | -------- | ------- | ------------------------------------------------------------------------------------------------ |
-| request       | Number | No       | 60000   | Timeout for [Taro.request](./apis/network/request/request.md) , unit: milliseconds               |
-| connectSocket | Number | No       | 60000   | Timeout for [Taro.connectSocket](./apis/network/webSocket/connectSocket.md) , unit: milliseconds |
-| uploadFile    | Number | No       | 60000   | Timeout for [Taro.uploadFile](./apis/network/upload/uploadFile.md) , unit: milliseconds          |
-| downloadFile  | Number | No       | 60000   | Timeout for [Taro.downloadFile](./apis/network/download/downloadFile.md) , unit: milliseconds    |
+| Property      | Type   | Required | Default | Description                                                                                   |
+| ------------- | ------ | -------- | ------- | --------------------------------------------------------------------------------------------- |
+| request       | Number | No       | 60000   | Timeout for [Taro.request](./apis/network/request/request) , unit: milliseconds               |
+| connectSocket | Number | No       | 60000   | Timeout for [Taro.connectSocket](./apis/network/webSocket/connectSocket) , unit: milliseconds |
+| uploadFile    | Number | No       | 60000   | Timeout for [Taro.uploadFile](./apis/network/upload/uploadFile) , unit: milliseconds          |
+| downloadFile  | Number | No       | 60000   | Timeout for [Taro.downloadFile](./apis/network/download/downloadFile) , unit: milliseconds    |
 
 ### debug
 

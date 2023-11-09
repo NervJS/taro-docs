@@ -9,7 +9,7 @@ sidebar_label: onBluetoothDeviceFound
 - 若在 Taro.onBluetoothDeviceFound 回调了某个设备，则此设备会添加到 Taro.getBluetoothDevices 接口获取到的数组中。
 - 安卓下部分机型需要有位置权限才能搜索到设备，需留意是否开启了位置权限
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/device/bluetooth/wx.onBluetoothDeviceFound.html)
 
@@ -47,15 +47,16 @@ sidebar_label: onBluetoothDeviceFound
 
 新搜索到的设备
 
-| 参数 | 类型 | 说明 |
-| --- | --- | --- |
-| RSSI | `number` | 当前蓝牙设备的信号强度 |
-| advertisData | `ArrayBuffer` | 当前蓝牙设备的广播数据段中的 ManufacturerData 数据段。 |
-| advertisServiceUUIDs | `string[]` | 当前蓝牙设备的广播数据段中的 ServiceUUIDs 数据段 |
-| deviceId | `string` | 用于区分设备的 id |
-| localName | `string` | 当前蓝牙设备的广播数据段中的 LocalName 数据段 |
-| name | `string` | 蓝牙设备名称，某些设备可能没有 |
-| serviceData | `TaroGeneral.IAnyObject` | 当前蓝牙设备的广播数据段中的 ServiceData 数据段 |
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| RSSI | `number` | 是 | 当前蓝牙设备的信号强度，单位 dBm |
+| advertisData | `ArrayBuffer` | 是 | 当前蓝牙设备的广播数据段中的 ManufacturerData 数据段。 |
+| advertisServiceUUIDs | `string[]` | 是 | 当前蓝牙设备的广播数据段中的 ServiceUUIDs 数据段 |
+| deviceId | `string` | 是 | 用于区分设备的 id |
+| localName | `string` | 是 | 当前蓝牙设备的广播数据段中的 LocalName 数据段 |
+| name | `string` | 是 | 蓝牙设备名称，某些设备可能没有 |
+| serviceData | `TaroGeneral.IAnyObject` | 是 | 当前蓝牙设备的广播数据段中的 ServiceData 数据段 |
+| connectable | `boolean` | 否 | 当前蓝牙设备是否可连接（ Android 8.0 以下不支持返回该值 ） |
 
 ## 示例代码
 

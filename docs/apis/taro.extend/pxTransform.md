@@ -1,5 +1,5 @@
 ---
-title: Taro.pxTransform(size, designWidth)
+title: Taro.pxTransform(size)
 sidebar_label: pxTransform
 ---
 
@@ -10,7 +10,7 @@ sidebar_label: pxTransform
 ## 类型
 
 ```tsx
-(size: number, designWidth?: number) => string
+(size: number) => string
 ```
 
 ## 参数
@@ -18,4 +18,3 @@ sidebar_label: pxTransform
 | 参数 | 类型 |
 | --- | --- |
 | size | `number` |
-| designWidth | `number` |

@@ -12,7 +12,7 @@ sidebar_label: isBluetoothDevicePaired
 ## 类型
 
 ```tsx
-(option: Option) => boolean
+(option: Option) => Promise<TaroGeneral.CallbackResult>
 ```
 
 ## 参数
