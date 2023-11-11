@@ -168,7 +168,7 @@ declare module '../../index' {
       apFilePath: string
       /**
        * 计算文件摘要的算法
-       * @default "md5"
+       * @default 'md5'
        */
       digestAlgorithm?: 'md5' | 'sha1'
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
@@ -608,7 +608,7 @@ declare module '../../index' {
       filePath: string
       /**
        * 计算文件摘要的算法
-       * @default "md5"
+       * @default 'md5'
        */
       digestAlgorithm?: 'md5' | 'sha1'
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
