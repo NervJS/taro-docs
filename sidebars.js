@@ -680,6 +680,10 @@ module.exports = {
       'apis/storage/createBufferURL',
       'apis/storage/clearStorageSync',
       'apis/storage/clearStorage',
+      'apis/storage/batchSetStorageSync',
+      'apis/storage/batchSetStorage',
+      'apis/storage/batchGetStorageSync',
+      'apis/storage/batchGetStorage',
       {
         'label': '周期性更新',
         'type': 'category',
@@ -703,7 +707,8 @@ module.exports = {
       'apis/data-analysis/reportMonitor',
       'apis/data-analysis/reportEvent',
       'apis/data-analysis/reportAnalytics',
-      'apis/data-analysis/getExptInfoSync'
+      'apis/data-analysis/getExptInfoSync',
+      'apis/data-analysis/getCommonConfig',
     ],
     '画布': [
       'apis/canvas/createOffscreenCanvas',
