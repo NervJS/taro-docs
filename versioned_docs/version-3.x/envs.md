@@ -92,7 +92,7 @@ if (TARO_ENV === 'weapp') {}
 
 例如，希望某段模板内容只在 **微信小程序中** 生效，可以如下写法
 
-```scss
+```vue
 /*  #ifdef weapp  */
 模板代码
 /*  #endif  */
