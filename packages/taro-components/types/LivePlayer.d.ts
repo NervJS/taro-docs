@@ -66,7 +66,7 @@ interface LivePlayerProps extends StandardProps {
    */
   autoPauseIfOpenNative?: boolean
   /** 格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html ，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本；
-   * @default "no-referrer"
+   * @default 'no-referrer'
    * @supported weapp
    */
   referrerPolicy?: 'origin' | 'no-referrer'

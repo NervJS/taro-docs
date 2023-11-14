@@ -819,7 +819,7 @@ sidebar_label: FileSystemManager
 | 参数 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | :---: | :---: | --- |
 | filePath | `string` |  | 是 | 要读取的文件路径 |
-| digestAlgorithm | "md5" or "sha1" | `"md5"` | 否 | 计算文件摘要的算法 |
+| digestAlgorithm | "md5" or "sha1" | `'md5'` | 否 | 计算文件摘要的算法 |
 | complete | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | fail | `(result: GetFileInfoFailCallbackResult) => void` |  | 否 | 接口调用失败的回调函数 |
 | success | `(result: GetFileInfoSuccessCallbackResult) => void` |  | 否 | 接口调用成功的回调函数 |

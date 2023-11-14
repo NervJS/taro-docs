@@ -95,7 +95,7 @@ export default class PageView extends Component {
 | poster | `string` |  | 否 | 视频封面的图片网络资源地址，如果 controls 属性值为 false 则设置 poster 无效 |
 | showMuteBtn | `boolean` | `false` | 否 | 是否显示静音按钮 |
 | title | `string` |  | 否 | 视频的标题，全屏时在顶部展示 |
-| playBtnPosition | `keyof PlayBtnPosition` | `"bottom"` | 否 | 播放按钮的位置<br />- `bottom`: controls bar 上<br />- `center`: 视频中间 |
+| playBtnPosition | `keyof PlayBtnPosition` | `'bottom'` | 否 | 播放按钮的位置<br />- `bottom`: controls bar 上<br />- `center`: 视频中间 |
 | enablePlayGesture | `boolean` | `false` | 否 | 是否开启播放手势，即双击切换播放/暂停 |
 | autoPauseIfNavigate | `boolean` | `true` | 否 | 当跳转到其它小程序页面时，是否自动暂停本页面的视频 |
 | autoPauseIfOpenNative | `boolean` | `true` | 否 | 当跳转到其它微信原生页面时，是否自动暂停本页面的视频 |
