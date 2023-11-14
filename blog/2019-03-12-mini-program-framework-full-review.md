@@ -1,7 +1,8 @@
 ---
 slug: 2019-03-12-mini-program-framework-full-review
-title: 小程序框架全面测评 
+title: 小程序框架全面测评
 authors: yuche
+tags: [v1]
 ---
 
 ![image](https://storage.jd.com/taro-resource/review.jpg)
@@ -15,6 +16,7 @@ authors: yuche
 <!--truncate-->
 
 ## 多端
+
 笔者以为，现在流行的多端框架可以大致分为三类：
 
 #### 1. 全包型
@@ -33,12 +35,12 @@ authors: yuche
 
 缺点有：
 
-1. 交互复杂时难以写出高性能的代码，这类框架的设计就必然导致 `JS` 和 `Native`  之间需要通信，类似于手势操作这样频繁地触发通信就很可能使得 UI 无法在 16ms 内及时绘制。React Native 有一些声明式的组件可以避免这个问题，但声明式的写法很难满足复杂交互的需求。
+1. 交互复杂时难以写出高性能的代码，这类框架的设计就必然导致 `JS` 和 `Native` 之间需要通信，类似于手势操作这样频繁地触发通信就很可能使得 UI 无法在 16ms 内及时绘制。React Native 有一些声明式的组件可以避免这个问题，但声明式的写法很难满足复杂交互的需求。
 2. 由于没有渲染引擎，使用各端的原生组件渲染，相同代码渲染的一致性没有第一种高。
 
 #### 3. JavaScript 编译型
 
-这类框架就是我们这篇文章的主角们：`Taro`、`WePY` 、`uni-app`  、 `mpvue` 、 `chameleon`，它们的原理也都大同小异：先以 JavaScript 作为基础选定一个 DSL 框架，以这个 DSL 框架为标准在各端分别编译为不同的代码，各端分别有一个运行时框架或兼容组件库保证代码正确运行。
+这类框架就是我们这篇文章的主角们：`Taro`、`WePY` 、`uni-app` 、 `mpvue` 、 `chameleon`，它们的原理也都大同小异：先以 JavaScript 作为基础选定一个 DSL 框架，以这个 DSL 框架为标准在各端分别编译为不同的代码，各端分别有一个运行时框架或兼容组件库保证代码正确运行。
 
 这类框架最大优点和创造的最大原因就是小程序，因为第一第二种框架其实除了可以跨系统平台之外，也都能编译运行在浏览器中。(Qt 有 Qt for WebAssembly, Flutter 有 Hummingbird，React Native 有 `react-native-web`, Weex 原生支持)
 
@@ -51,13 +53,14 @@ authors: yuche
 如果不管什么 DSL 都能接受，那就可以进入下一个环节：
 
 ## 生态
-以下内容均以各框架现在（2019 年 3 月 11日）已发布稳定版为标准进行讨论。
+
+以下内容均以各框架现在（2019 年 3 月 11 日）已发布稳定版为标准进行讨论。
 
 #### 开发工具
 
 就开发工具而言 `uni-app` 应该是一骑绝尘，它的文档内容最为翔实丰富，还自带了 IDE 图形化开发工具，鼠标点点点就能编译测试发布。
 
-其它的框架都是使用 CLI 命令行工具，但值得注意的是 `chameleon`  有独立的语法检查工具，`Taro` 则单独写了 ESLint 规则和规则集。
+其它的框架都是使用 CLI 命令行工具，但值得注意的是 `chameleon` 有独立的语法检查工具，`Taro` 则单独写了 ESLint 规则和规则集。
 
 在语法支持方面，`mpvue`、`uni-app`、`Taro` 、`WePY` 均支持 TypeScript，四者也都能通过 `typing` 实现编辑器自动补全。除了 API 补全之外，得益于 TypeScript 对于 JSX 的良好支持，Taro 也能对组件进行自动补全。
 
@@ -65,14 +68,13 @@ CSS 方面，所有框架均支持 `SASS`、`LESS`、`Stylus`，Taro 则多一�
 
 所以这一轮比拼的结果应该是：
 
-`uni-app`  > `Taro` >  `chameleon`  > `WePY`、`mpvue`
+`uni-app` > `Taro` > `chameleon` > `WePY`、`mpvue`
 
- ![开发工具](https://storage.jd.com/taro-resource/develop_tools.png)
-
+![开发工具](https://storage.jd.com/taro-resource/develop_tools.png)
 
 #### 多端支持度
 
-只从支持端的数量来看，`Taro` 和 `uni-app` 以六端略微领先（移动端、H5、微信小程序、百度小程序、支付宝小程序、头条小程序），`chameleon ` 少了头条小程序紧随其后。
+只从支持端的数量来看，`Taro` 和 `uni-app` 以六端略微领先（移动端、H5、微信小程序、百度小程序、支付宝小程序、抖音小程序），`chameleon ` 少了抖音小程序紧随其后。
 
 但值得一提的是 `chameleon` 有一套自研[多态协议](//cmljs.org/doc/framework/polymorphism/intro.html)，编写多端代码的体验会好许多，可以说是一个能戳到多端开发痛点的功能。`uni-app` 则有一套独立的[条件编译语法](://uniapp.dcloud.io/platform)，这套语法能同时作用于 `js`、样式和模板文件。`Taro` 可以在业务逻辑中根据环境变量使用条件编译，也可以直接使用[条件编译文件](/docs/envs)（类似 React Native 的方式）。
 
@@ -80,14 +82,13 @@ CSS 方面，所有框架均支持 `SASS`、`LESS`、`Stylus`，Taro 则多一�
 
 H5 方面，`chameleon` 同样是由多态协议实现支持，`uni-app` 和 `Taro` 则是都在 H5 实现了一套兼容的组件库和 API。
 
-`mpvue` 和 `WePY`  都提供了转换各端小程序的功能，但都没有 h5 和移动端的支持。
+`mpvue` 和 `WePY` 都提供了转换各端小程序的功能，但都没有 h5 和移动端的支持。
 
 所以最后一轮对比的结果是：
 
 `chameleon` > `Taro`、`uni-app` > `mpvue` > `WePY`
 
 ![多端支持](https://storage.jd.com/taro-resource/duoduan.png)
-
 
 #### 组件库/工具库/demo
 
@@ -101,7 +102,7 @@ H5 方面，`chameleon` 同样是由多态协议实现支持，`uni-app` 和 `Ta
 
 所以这轮的排序是：
 
-`WePY`  > `uni-app` 、`taro` > `mpvue` > `chameleon`
+`WePY` > `uni-app` 、`taro` > `mpvue` > `chameleon`
 
 ![组件库/工具库/demo](https://storage.jd.com/taro-resource/component.png)
 
@@ -109,7 +110,7 @@ H5 方面，`chameleon` 同样是由多态协议实现支持，`uni-app` 和 `Ta
 
 接入成本有两个方面：
 
-第一是框架接入原有微信小程序生态。由于目前微信小程序已呈一家独大之势，开源的组件和库（例如 `wxparse`、`echart`、`zan-ui`  等）多是基于原生微信小程序框架语法写成的。目前看来 `uni-app` 、`Taro`、`mpvue` 均有文档或 demo 在框架中直接使用原生小程序组件/库，`WePY` 由于运行机制的问题，很多情况需要小改一下目标库的源码，`chameleon` 则是提供了一个按步骤大改目标库源码的迁移方式。
+第一是框架接入原有微信小程序生态。由于目前微信小程序已呈一家独大之势，开源的组件和库（例如 `wxparse`、`echart`、`zan-ui` 等）多是基于原生微信小程序框架语法写成的。目前看来 `uni-app` 、`Taro`、`mpvue` 均有文档或 demo 在框架中直接使用原生小程序组件/库，`WePY` 由于运行机制的问题，很多情况需要小改一下目标库的源码，`chameleon` 则是提供了一个按步骤大改目标库源码的迁移方式。
 
 第二是原有微信小程序项目部分接入框架重构。在这个方面 Taro 在京东购物小程序上进行了大胆的实践，具体可以查看文章[《Taro 在京东购物小程序上的实践》](//aotu.io/notes/2018/09/11/taro-in-jd/)。其它框架则没有提到相关内容。
 
@@ -117,7 +118,7 @@ H5 方面，`chameleon` 同样是由多态协议实现支持，`uni-app` 和 `Ta
 
 所以这轮的排序是：
 
-`Taro` >  `mpvue` 、 `uni-app`  > `WePY` >  `chameleon`  
+`Taro` > `mpvue` 、 `uni-app` > `WePY` > `chameleon`
 
 #### 流行度
 
@@ -129,10 +130,7 @@ H5 方面，`chameleon` 同样是由多态协议实现支持，`uni-app` 和 `Ta
 
 `uni-app` > `Taro`、`WePY`、`mpvue` > `chameleon`
 
-
 ![流行度](https://storage.jd.com/taro-resource/popluar.png)
-
-
 
 #### 开源建设
 
@@ -144,7 +142,7 @@ H5 方面，`chameleon` 同样是由多态协议实现支持，`uni-app` 和 `Ta
 
 那么这一轮的对比结果是：
 
-`Taro` > `WePY` > `mpvue` > `chameleon`  > `uni-app`
+`Taro` > `WePY` > `mpvue` > `chameleon` > `uni-app`
 
 最后补一个总的生态对比图表：
 
@@ -154,7 +152,7 @@ H5 方面，`chameleon` 同样是由多态协议实现支持，`uni-app` 和 `Ta
 
 从各框架已经公布的规划来看：
 
-`WePY`  已经发布了 `v2.0.alpha`  版本，虽然没有公开的文档可以查阅到 `2.0` 版本有什么新功能/特性，但据其作者介绍，`WePY 2.0`  会放大招，是一个「对得起开发者」的版本。笔者也非常期待 2.0 正式发布后 `WePY` 的表现。
+`WePY` 已经发布了 `v2.0.alpha` 版本，虽然没有公开的文档可以查阅到 `2.0` 版本有什么新功能/特性，但据其作者介绍，`WePY 2.0` 会放大招，是一个「对得起开发者」的版本。笔者也非常期待 2.0 正式发布后 `WePY` 的表现。
 
 `mpvue` 已经发布了 `2.0` 的版本，主要是更新了其它端小程序的支持。但从代码提交， issue 的回复/解决率来看，`mpvue` 要想在未来有作为首先要打消社区对于 `mpvue` 不管不顾不更新的质疑。
 
@@ -162,19 +160,19 @@ H5 方面，`chameleon` 同样是由多态协议实现支持，`uni-app` 和 `Ta
 
 `chameleon` 的规划比较宏大，虽然是最后发的框架，但已经在规划或正在实现的功能有：
 
-* 快应用和端拓展协议
-* 通用组件库和垂直类组件库
-* 面向研发的图形化开发工具
-* 面向非研发的图形化页面搭建工具
+- 快应用和端拓展协议
+- 通用组件库和垂直类组件库
+- 面向研发的图形化开发工具
+- 面向非研发的图形化页面搭建工具
 
-如果 `chameleon` 把这些功能都做出来的话，再继续完善生态，争取更多第三方开发者，那么在未来  `chameleon`  将大有可为。
+如果 `chameleon` 把这些功能都做出来的话，再继续完善生态，争取更多第三方开发者，那么在未来 `chameleon` 将大有可为。
 
 `Taro` 的未来也一样值得憧憬。Taro 即将要发布的 `1.3` 版本就会支持以下功能：
 
-* 快应用支持
-* Taro Doctor，自动化检查项目配置和代码合法性
-* 更多的 JSX 语法支持，1.3 之后限制生产力的语法只有 `只能用 map 创造循环组件` 一条
-* H5 打包体积大幅精简
+- 快应用支持
+- Taro Doctor，自动化检查项目配置和代码合法性
+- 更多的 JSX 语法支持，1.3 之后限制生产力的语法只有 `只能用 map 创造循环组件` 一条
+- H5 打包体积大幅精简
 
 同时 `Taro` 也正在对移动端进行大规模重构；开发图形化开发工具；开发组件/物料平台以及图形化页面搭建工具。
 
@@ -182,16 +180,16 @@ H5 方面，`chameleon` 同样是由多态协议实现支持，`uni-app` 和 `Ta
 
 那说了那么多，到底用哪个呢？
 
-如果不介意尝鲜和学习 DSL 的话，完全可以尝试 `WePY` 2.0  和 `chameleon` ，一个是酝酿了很久的 2.0 全新升级，一个有专门针对多端开发的多态协议。
+如果不介意尝鲜和学习 DSL 的话，完全可以尝试 `WePY` 2.0 和 `chameleon` ，一个是酝酿了很久的 2.0 全新升级，一个有专门针对多端开发的多态协议。
 
 `uni-app` 和 `Taro` 相比起来就更像是「水桶型」框架，从工具、UI 库，开发体验、多端支持等各方面来看都没有明显的短板。而 `mpvue` 由于开发一度停滞，现在看来各个方面都不如在小程序端基于它的 `uni-app` 。
 
 当然，Talk is cheap。如果对这个话题有更多兴趣的同学可以去 GitHub 另行研究，有空看代码，没空看提交：
 
-* chameleon: [https://github.com/didi/chameleon](https://github.com/didi/chameleon)
-* mpvue: [https://github.com/Meituan-Dianping/mpvue](https://github.com/Meituan-Dianping/mpvue)
-* Taro: [https://github.com/NervJS/taro](https://github.com/NervJS/taro)
-* uni-app: [https://github.com/dcloudio/uni-app](https://github.com/dcloudio/uni-app)
-* WePY: [https://github.com/Tencent/wepy](https://github.com/Tencent/wepy)
+- chameleon: [https://github.com/didi/chameleon](https://github.com/didi/chameleon)
+- mpvue: [https://github.com/Meituan-Dianping/mpvue](https://github.com/Meituan-Dianping/mpvue)
+- Taro: [https://github.com/NervJS/taro](https://github.com/NervJS/taro)
+- uni-app: [https://github.com/dcloudio/uni-app](https://github.com/dcloudio/uni-app)
+- WePY: [https://github.com/Tencent/wepy](https://github.com/Tencent/wepy)
 
 (按字母顺序排序)

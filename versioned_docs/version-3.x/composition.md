@@ -15,7 +15,7 @@ title: 更多资源
 
 ### Taro2
 
-- 💯 [Hi头像](https://github.com/hi-our/hi-face) 自带[教程小册](https://www.xiaoxili.com/hi-face)
+- 💯 [Hi 头像](https://github.com/hi-our/hi-face) 自带[教程小册](https://www.xiaoxili.com/hi-face)
 - 💯 [基于 Taro2.0 + dva + Taro-ui + immer 开发的电商小程序](https://github.com/jiechud/taro-mall)
 - 💯 [基于 Taro2.0 + TypeScript + 云开发的地图同学录小程序](https://github.com/Mayandev/classmate-map)
 - [基于 Taro + Taro-ui + Typescript + redux 开发的网易云音乐小程序](https://github.com/lsqy/taro-music/tree/feature_taro2.x)
@@ -71,7 +71,7 @@ title: 更多资源
 
 ## 视频教程
 
-- [凹凸极客沙龙《用Webpack打包小程序》2020-04-17](https://www.bilibili.com/video/BV15A411b7cy) by [luckyadam](https://github.com/luckyadam)
+- [凹凸极客沙龙《用 Webpack 打包小程序》2020-04-17](https://www.bilibili.com/video/BV15A411b7cy) by [luckyadam](https://github.com/luckyadam)
 
 ## 开发技巧
 
@@ -84,16 +84,16 @@ title: 更多资源
 ### Taro 3
 
 - [TodoMVC React 版](https://github.com/NervJS/TodoMVC/tree/react) (小程序 / H5)
-- [TodoMVC Vue 版](https://github.com/NervJS/TodoMVC/tree/react) (小程序 / H5)
+- [TodoMVC Vue 版](https://github.com/NervJS/TodoMVC/tree/vue) (小程序 / H5)
 - Taro 组件库示例 [taro-components-sample](https://github.com/NervJS/taro-components-sample) （默认是 React，Vue 请切到 Vue 分支）
 - [仿知乎小程序 React 版](https://github.com/NervJS/taro-zhihu-sample/tree/next)
 - [仿知乎小程序 Vue 版](https://github.com/NervJS/taro-zhihu-sample/tree/vue)
 - [V2ex 小程序（TypeScript） React 版](https://github.com/NervJS/taro-v2ex/tree/next)
 - [V2ex 小程序（TypeScript）Vue 版](https://github.com/NervJS/taro-v2ex/tree/vue)
-- [与微信小程序原生融合的示例（React版）](https://github.com/NervJS/taro-sample-weapp/tree/next)
-- [与微信小程序原生融合的示例（Vue版）](https://github.com/NervJS/taro-sample-weapp/tree/vue)
+- [与微信小程序原生融合的示例（React 版）](https://github.com/NervJS/taro-sample-weapp/tree/next)
+- [与微信小程序原生融合的示例（Vue 版）](https://github.com/NervJS/taro-sample-weapp/tree/vue)
 - [Taro 示例项目(内置 计数器 与 异步请求): Taro + Dva + Typescript + Immutable](https://github.com/didilinkin/tarojs-ts-cli)
-- 💯 [nice-router-taro 脚手架项目，DVA+数据驱动页面+数据驱动表单+数据驱动list](https://github.com/kala888/nice-router-taro)
+- 💯 [nice-router-taro 脚手架项目，DVA+数据驱动页面+数据驱动表单+数据驱动 list](https://github.com/kala888/nice-router-taro)
 
 ### Taro 2
 
@@ -106,7 +106,7 @@ title: 更多资源
 - [V2ex 小程序（TypeScript）](https://github.com/NervJS/taro-v2ex)
 - [与微信小程序原生融合的示例](https://github.com/NervJS/taro-sample-weapp)
 - [记日常小程序 Taro-UI + Rematch + 云开发 + tcb-router](https://github.com/zhixiaoqiang/taroCloud)
-- 💯 [nice-router-taro 脚手架项目，DVA+数据驱动页面+数据驱动表单+数据驱动list](https://github.com/kala888/nice-router-taro/tree/taro2)
+- 💯 [nice-router-taro 脚手架项目，DVA+数据驱动页面+数据驱动表单+数据驱动 list](https://github.com/kala888/nice-router-taro/tree/taro2)
 
 ### Taro 1
 
@@ -129,4 +129,4 @@ title: 更多资源
 - [taro-bdmark - 基于 Taro 的百度小程序 md 解析器](https://github.com/guozimo/taro-bdMark)
 - [Mounted - 一款基于 Taro 的小程序组件库](https://github.com/fjc0k/mounted)
 - [taro-axios - 在 Taro 中使用 axios](https://github.com/fjc0k/taro-axios)
-- 🔨[TaroCreator - 基于Taro UI的小程序可视化设计工具](https://github.com/mpfast/TaroCreator)
+- 🔨[TaroCreator - 基于 Taro UI 的小程序可视化设计工具](https://github.com/mpfast/TaroCreator)

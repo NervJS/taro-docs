@@ -7,7 +7,7 @@ sidebar_label: LivePlayer
 
 需要先通过类目审核，再在小程序管理后台，“设置”-“接口设置”中自助开通该组件权限。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/live-player.html)
 
@@ -19,21 +19,13 @@ ComponentType<LivePlayerProps>
 
 ## 示例代码
 
+import { ReactIcon, VueIcon } from '@site/static/icons'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 <Tabs
   defaultValue="React"
-  values={[
-  {
-    "label": "React",
-    "value": "React"
-  },
-  {
-    "label": "Vue",
-    "value": "Vue"
-  }
-]}>
+  values={[{ label: <ReactIcon />, value: "React" }, { label: <VueIcon />, value: "Vue" }]}>
 <TabItem value="React">
 
 ```tsx
@@ -72,23 +64,28 @@ class App extends Components {
 | soundMode | `keyof soundMode` | `"speaker"` | 否 | 声音输出方式 |
 | autoPauseIfNavigate | `boolean` | `true` | 否 | 当跳转到本小程序的其他页面时，是否自动暂停本页面的实时音视频播放 |
 | pictureInPictureMode | "" or "push" or "pop" or ("push" or "pop")[] |  | 否 | 设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]） |
+| autoPauseIfOpenNative | `string` |  | 否 | 当跳转到其它微信原生页面时，是否自动暂停本页面的实时音视频播放 |
+| referrerPolicy | "origin" or "no-referrer" |  | 否 | 格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本； |
+| signature | `string` |  | 否 | 设置署名水印 |
+| enableMetadata | `string` |  | 否 | 是否回调metadata |
+| id | `string` |  | 否 | live-player 属性的唯一标志符 |
+| enableAutoRotation | `boolean` | `false` | 否 | 是否开启手机横屏时自动全屏，当系统设置开启自动旋转时生效 |
+| enableCasting | `boolean` | `false` | 否 | 是否支持投屏。开启后，可以通过 LivePlayerContext 上相关方法进行操作。 |
 | onStateChange | `CommonEventFunction<onStateChangeEventDetail>` |  | 否 | 播放状态变化事件，detail = {code} |
 | onFullScreenChange | `CommonEventFunction<onFullScreenChangeEventDetail>` |  | 否 | 全屏变化事件，detail = {direction, fullScreen} |
 | onNetStatus | `CommonEventFunction<onNetStatusEventDetail>` |  | 否 | 网络状态通知，detail = {info} |
 | onAudioVolumeNotify | `CommonEventFunction<{}>` |  | 否 | 播放音量大小通知，detail = {} |
 | onEnterPictureInPicture | `CommonEventFunction` |  | 否 | 播放器进入小窗 |
 | onLeavePictureInPicture | `CommonEventFunction` |  | 否 | 播放器退出小窗 |
-| autoPauseIfOpenNative | `string` |  | 否 | 当跳转到其它微信原生页面时，是否自动暂停本页面的实时音视频播放 |
-| referrerPolicy | "origin" or "no-referrer" |  | 否 | 格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本； |
-| signature | `string` |  | 否 | 设置署名水印 |
 | onError | `CommonEventFunction` |  | 否 | 播放错误事件 |
-| enableMetadata | `string` |  | 否 | 是否回调metadata |
 | onMetaDataChange | `CommonEventFunction` |  | 否 | metadata通知，detail = {info} |
-| id | `string` |  | 否 | live-player 属性的唯一标志符 |
+| onCastingUserSelect | `CommonEventFunction` |  | 否 | 用户选择投屏设备时触发 detail = { state: "success"/"fail" } |
+| onCastingStateChange | `CommonEventFunction` |  | 否 | 投屏成功/失败时触发 detail = { type, state: "success"/"fail" } |
+| onCastingInterrupt | `CommonEventFunction` |  | 否 | 投屏被中断时触发 |
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| API | 微信小程序 | 百度小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | LivePlayerProps.src | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | LivePlayerProps.mode | ✔️ |  |  | ✔️ | ✔️ |  |  |  |
@@ -102,19 +99,24 @@ class App extends Components {
 | LivePlayerProps.soundMode | ✔️ |  |  | ✔️ | ✔️ |  |  |  |
 | LivePlayerProps.autoPauseIfNavigate | ✔️ |  |  | ✔️ |  |  |  |  |
 | LivePlayerProps.pictureInPictureMode | ✔️ |  |  |  |  |  |  |  |
+| LivePlayerProps.autoPauseIfOpenNative | ✔️ |  |  | ✔️ |  |  |  |  |
+| LivePlayerProps.referrerPolicy | ✔️ |  |  |  |  |  |  |  |
+| LivePlayerProps.signature |  |  | ✔️ |  |  |  |  |  |
+| LivePlayerProps.enableMetadata |  |  |  | ✔️ |  |  |  |  |
+| LivePlayerProps.id |  | ✔️ |  |  |  |  |  |  |
+| LivePlayerProps.enableAutoRotation | ✔️ |  |  |  |  |  |  |  |
+| LivePlayerProps.enableCasting | ✔️ |  |  |  |  |  |  |  |
 | LivePlayerProps.onStateChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | LivePlayerProps.onFullScreenChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | LivePlayerProps.onNetStatus | ✔️ | ✔️ |  | ✔️ |  |  |  |  |
 | LivePlayerProps.onAudioVolumeNotify | ✔️ |  |  |  |  |  |  |  |
 | LivePlayerProps.onEnterPictureInPicture | ✔️ |  |  |  |  |  |  |  |
 | LivePlayerProps.onLeavePictureInPicture | ✔️ |  |  |  |  |  |  |  |
-| LivePlayerProps.autoPauseIfOpenNative | ✔️ |  |  | ✔️ |  |  |  |  |
-| LivePlayerProps.referrerPolicy | ✔️ |  |  |  |  |  |  |  |
-| LivePlayerProps.signature |  |  | ✔️ |  |  |  |  |  |
 | LivePlayerProps.onError |  |  | ✔️ |  |  |  |  |  |
-| LivePlayerProps.enableMetadata |  |  |  | ✔️ |  |  |  |  |
 | LivePlayerProps.onMetaDataChange |  |  |  | ✔️ |  |  |  |  |
-| LivePlayerProps.id |  | ✔️ |  |  |  |  |  |  |
+| LivePlayerProps.onCastingUserSelect | ✔️ |  |  |  |  |  |  |  |
+| LivePlayerProps.onCastingStateChange | ✔️ |  |  |  |  |  |  |  |
+| LivePlayerProps.onCastingInterrupt | ✔️ |  |  |  |  |  |  |  |
 
 ### Mode
 

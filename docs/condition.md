@@ -7,6 +7,7 @@ title: 条件渲染
 Taro 中的条件渲染和 JavaScript 中的一致，使用 Taro 操作符 if 或条件运算符来创建表示当前状态的元素，然后让 Taro 根据它们来更新 UI。
 
 ## 元素变量
+
 你可以使用变量来储存元素。它可以帮助你有条件的渲染组件的一部分，而输出的其他部分不会更改。
 
 考虑如下代码：
@@ -14,7 +15,7 @@ Taro 中的条件渲染和 JavaScript 中的一致，使用 Taro 操作符 if �
 ```jsx
 // LoginStatus.js
 class LoginStatus extends Component {
-  render () {
+  render() {
     const isLoggedIn = this.props.isLoggedIn
     // 这里最好初始化声明为 `null`，初始化又不赋值的话
     // 小程序可能会报警为变量为 undefined
@@ -25,11 +26,7 @@ class LoginStatus extends Component {
       status = <Text>未登录</Text>
     }
 
-    return (
-      <View>
-        {status}
-      </View>
-    )
+    return <View>{status}</View>
   }
 }
 // app.js
@@ -37,7 +34,7 @@ import LoginStatus from './LoginStatus'
 
 // 这样会渲染 `已登录`
 class App extends Component {
-  render () {
+  render() {
     return (
       <View>
         <LoginStatus isLoggedIn={true} />
@@ -57,7 +54,7 @@ class App extends Component {
 
 ```jsx
 class LoginStatus extends Component {
-  render () {
+  render() {
     const isLoggedIn = this.props.isLoggedIn
 
     return (
@@ -80,17 +77,10 @@ class LoginStatus extends Component {
 
 ```jsx
 class LoginStatus extends Component {
-  render () {
+  render() {
     const isLoggedIn = this.props.isLoggedIn
 
-    return (
-      <View>
-      {isLoggedIn
-        ? <Text>已登录</Text>
-        : <Text>未登录</Text>
-      }
-      </View>
-    )
+    return <View>{isLoggedIn ? <Text>已登录</Text> : <Text>未登录</Text>}</View>
   }
 }
 ```
@@ -104,15 +94,15 @@ class LoginStatus extends Component {
 有时渲染的条件非常多，不管是 `if-else` 还是 `switch-case` 来做条件渲染都会显得太麻烦。这时我们可以使用「表驱动法」：枚举渲染。
 
 ```jsx
-function Loading (props) {
+function Loading(props) {
   const { loadingText, LOADING_STATUS, loadingStatus, onRetry } = props
   return (
-    <View className='loading-status'>
+    <View className="loading-status">
       {
         {
-          'loading': loadingText,
-          'fail': <View onClick={onRetry}> 加载失败, 点击重试 </View>,
-          'no-more': '没有更多了'
+          loading: loadingText,
+          fail: <View onClick={onRetry}> 加载失败, 点击重试 </View>,
+          'no-more': '没有更多了',
         }[loadingStatus] /** loadingStatus 是 `loading`、`fail`、`no-more`  其中一种状态 **/
       }
     </View>

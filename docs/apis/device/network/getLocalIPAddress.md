@@ -31,10 +31,11 @@ sidebar_label: getLocalIPAddress
 
 ### SuccessCallbackResult
 
-| 参数 | 类型 | 说明 |
-| --- | --- | --- |
-| localip | `string` | 本机局域网IP地址 |
-| errMsg | `string` | 调用结果 |
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| localip | `string` | 是 | 本机局域网IP地址 |
+| netmask | `string` | 否 | ，基础库 2.24.0 开始支持 |
+| errMsg | `string` | 是 | 调用结果 |
 
 ## 示例代码
 

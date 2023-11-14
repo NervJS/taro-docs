@@ -2,11 +2,10 @@
 title: React Native 端开发流程
 ---
 
-
 > 本篇主要讲解 Taro React Native 端开发流程，React Native 开发前注意事项请看 [开发前注意](./react-native-remind.md)。
-> 
-> Taro3.x 跨端（h5、weapp、rn）开发可参考项目：[Taro 跨平台demo（React Native + Weapp + h5）](https://github.com/wuba/Taro-Mortgage-Calculator)
-> 
+>
+> Taro3.x 跨端（h5、weapp、rn）开发可参考项目：[Taro 跨平台 demo（React Native + Weapp + h5）](https://github.com/wuba/Taro-Mortgage-Calculator)
+>
 > Taro React Native APP 开发调试工具，请查看 [Taro Playground](https://github.com/wuba/taro-playground) 项目。
 
 ## 简介
@@ -28,26 +27,27 @@ Taro 移动端的开发基于 Facebook 的开源项目 [React Native](https://gi
 Taro 开发 React Native APP，提供了两种模式：
 
 0. 集成模式：JS、iOS、Android 在同一仓库，通过 `taro init` 生成且选择 react-native 模板的项目，会采用此模式。与 `npx react-native init AwesomeProject` 生成的项目结构基本一致。**入门开发者推荐使用此模式**。
-1. 分离模式：JS 代码在一个仓库，iOS 和 Android 代码在另外一个仓库（也称壳工程）。JS代码可通过 `taro init` 选择任意模板生成。壳工程代码可 fork [Taro Native Shell 项目](https://github.com/NervJS/taro-native-shell)。
+1. 分离模式：JS 代码在一个仓库，iOS 和 Android 代码在另外一个仓库（也称壳工程）。JS 代码可通过 `taro init` 选择任意模板生成。壳工程代码可 fork [Taro Native Shell 项目](https://github.com/NervJS/taro-native-shell)。
 
 ## Taro 对 React Native 的版本兼容情况
 
 我们将以 React Native 最新版为主要适配对象，并及时跟进社区发展。
 
-| React Native 版本 | 兼容情况 | 壳工程分支 |
-| - | - | - |
-| < 0.60.0 | 不兼容，可考虑使用 Taro 1.x/2.x 版本 | - |
-| 0.60.x | <= 3.4.2 兼容，但未全面测试，有问题请提供 issue | [0.63.2](https://github.com/NervJS/taro-native-shell/tree/0.63.2)，更改 react-native 版本为 0.60.0 |
-| 0.61.x | <= 3.4.2 兼容，但未全面测试，有问题请提供 issue | [0.63.2](https://github.com/NervJS/taro-native-shell/tree/0.63.2)，更改 react-native 版本为 0.61.0 |
-| 0.62.x | <= 3.4.2 兼容，但未全面测试，有问题请提供 issue | [0.63.2](https://github.com/NervJS/taro-native-shell/tree/0.63.2)，更改 react-native 版本为 0.62.0 |
-| 0.63.x | >= 3.2.0，但 3.2.13 版本以后，需手动添加配置，参考 [PR](https://github.com/NervJS/taro/pull/9540) | [0.63.2](https://github.com/NervJS/taro-native-shell/tree/0.63.2) |
-| 0.64.x | >= 3.2.0 | [0.64.0](https://github.com/NervJS/taro-native-shell/tree/0.64.0) |
-| 0.65.x | >= 3.3.10 | - |
-| 0.66.x | >= 3.3.10 | [0.66.0](https://github.com/NervJS/taro-native-shell/tree/0.66.0) |
-| 0.67.x | >= 3.3.10, unimodules | [0.67.0](https://github.com/NervJS/taro-native-shell/tree/0.67.0) |
-| 0.67.x | >= 3.3.10, expo | [0.67.0-expo](https://github.com/NervJS/taro-native-shell/tree/0.67.0-expo) |
-| 0.68.x | >= 3.5.0，但 3.5.6 版本以后，需要使用 expo-av@~11.2.3 react@17，参考[Discussion](https://github.com/NervJS/taro/discussions/12133) | [0.68.0](https://github.com/NervJS/taro-native-shell/tree/0.68.0) |
-| 0.69.x | >= 3.5.6 | [0.69.0](https://github.com/NervJS/taro-native-shell/tree/0.69.0) |
+| React Native 版本 | 兼容情况                                                                                                                           | 壳工程分支                                                                                         |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| < 0.60.0          | 不兼容，可考虑使用 Taro 1.x/2.x 版本                                                                                               | -                                                                                                  |
+| 0.60.x            | <= 3.4.2 兼容，但未全面测试，有问题请提供 issue                                                                                    | [0.63.2](https://github.com/NervJS/taro-native-shell/tree/0.63.2)，更改 react-native 版本为 0.60.0 |
+| 0.61.x            | <= 3.4.2 兼容，但未全面测试，有问题请提供 issue                                                                                    | [0.63.2](https://github.com/NervJS/taro-native-shell/tree/0.63.2)，更改 react-native 版本为 0.61.0 |
+| 0.62.x            | <= 3.4.2 兼容，但未全面测试，有问题请提供 issue                                                                                    | [0.63.2](https://github.com/NervJS/taro-native-shell/tree/0.63.2)，更改 react-native 版本为 0.62.0 |
+| 0.63.x            | >= 3.2.0，但 3.2.13 版本以后，需手动添加配置，参考 [PR](https://github.com/NervJS/taro/pull/9540)                                  | [0.63.2](https://github.com/NervJS/taro-native-shell/tree/0.63.2)                                  |
+| 0.64.x            | >= 3.2.0                                                                                                                           | [0.64.0](https://github.com/NervJS/taro-native-shell/tree/0.64.0)                                  |
+| 0.65.x            | >= 3.3.10                                                                                                                          | -                                                                                                  |
+| 0.66.x            | >= 3.3.10                                                                                                                          | [0.66.0](https://github.com/NervJS/taro-native-shell/tree/0.66.0)                                  |
+| 0.67.x            | >= 3.3.10, unimodules                                                                                                              | [0.67.0](https://github.com/NervJS/taro-native-shell/tree/0.67.0)                                  |
+| 0.67.x            | >= 3.3.10, expo                                                                                                                    | [0.67.0-expo](https://github.com/NervJS/taro-native-shell/tree/0.67.0-expo)                        |
+| 0.68.x            | >= 3.5.0，但 3.5.6 版本以后，需要使用 expo-av@~11.2.3 react@17，参考[Discussion](https://github.com/NervJS/taro/discussions/12133) | [0.68.0](https://github.com/NervJS/taro-native-shell/tree/0.68.0)                                  |
+| 0.69.x            | >= 3.5.6                                                                                                                           | [0.69.0](https://github.com/NervJS/taro-native-shell/tree/0.69.0)                                  |
+| 0.70.x            | >= 3.6.0                                                                                                                           | [0.70.0](https://github.com/NervJS/taro-native-shell/tree/0.70.0)                                  |
 
 ## 集成模式
 
@@ -56,7 +56,7 @@ Taro 开发 React Native APP，提供了两种模式：
 查看[演示视频](https://wos2.58cdn.com.cn/DeFazYxWvDti/frsupload/6820cfd5e0346eac050e7c3f0df78f65.mp4)。
 
 > 如果需要初始化历史版本的 React-Native 项目，可在 [taro-project-templates](https://github.com/NervJS/taro-project-templates) 仓库中，找到对应版本的分支。
-> 
+>
 > 使用 `taro init --template-source github:NervJS/taro-project-templates#v3.5-RN-0.68` 命令，进行初始化。
 
 ### 常用命令
@@ -83,6 +83,7 @@ $ yarn android
 使用 `taro init` 命令进行初始化，选择默认模板。fork 壳工程代码 [Taro Native Shell 项目](https://github.com/NervJS/taro-native-shell)。
 
 ### 配置 output
+
 由于分离模式下，需要将 JS 工程产物输出到壳工程，合并完成打包工作。
 可通过修改配置 `./config/index.js` 指定资源输出目录，如
 
@@ -139,6 +140,7 @@ $ yarn android
 ### 开发调试
 
 运行如下命令，启动 metro server，并打印二维码：
+
 ```shell
 yarn dev:rn --qr
 ```
@@ -148,6 +150,7 @@ yarn dev:rn --qr
 ### release 调试
 
 运行如下命令，启动 http server，并打印二维码：
+
 ```shell
 yarn build:rn --qr --platform ios
 ```
@@ -179,7 +182,7 @@ yarn build:rn --qr --platform ios
 
 ## 打包发布到 APP Store
 
-先学习 [React Native 如何打包发布iOS包](https://www.react-native.cn/docs/publishing-to-app-store)。Taro 提供的 React Native 模板中集成了 GitHub Action，可使用 GitHub 进行打包，参考 [assemble_ios_release](https://github.com/wuba/taro-playground/blob/main/.github/workflows/assemble_ios_release.yml)。
+先学习 [React Native 如何打包发布 iOS 包](https://www.react-native.cn/docs/publishing-to-app-store)。Taro 提供的 React Native 模板中集成了 GitHub Action，可使用 GitHub 进行打包，参考 [assemble_ios_release](https://github.com/wuba/taro-playground/blob/main/.github/workflows/assemble_ios_release.yml)。
 
 主要包含如下步骤：
 
@@ -216,11 +219,11 @@ Taro 的默认配置为 `const { defaultConfig } = require('@tarojs/rn-runner/di
 - 在浏览器中输入 http://127.0.0.1:8081/status ，可以看到 packager-status:running
 - 在浏览器中输入 http://127.0.0.1:8081/index.bundle?platform=ios&dev=true 会触发构建，此时可以在终端看到以下信息：
 
-BUNDLE  ./index ░░░░░░░░░░░░░░░░ 0.0% (0/173)
+BUNDLE ./index ░░░░░░░░░░░░░░░░ 0.0% (0/173)
 
 过程中如果有报错会在终端中提示，如无报错则显示绿色的信息：
 
-BUNDLE  ./index
+BUNDLE ./index
 
 以上三步都正常，说明 metro server 启动正常。
 
@@ -273,6 +276,7 @@ metro 缓存导致，尝试 `yarn dev:rn --reset-cache`
 0. 修改 `config/index.js` 中的 `rn.appName`
 1. 修改 `MainActivity.java` 中 `getMainComponentName` 方法的返回值
 2. 修改 `AppDelegate.m` 中 `RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"taroDemo" initialProperties:nil];` 的 `moduleName`
+3. `yarn dev:rn --reset-cache`
 
 ### Library not found for -IDoubleConversion
 

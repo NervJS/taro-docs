@@ -45,12 +45,12 @@ Taro chose to take advantage of the fact that mini program `<template>`s can ref
 
 Taro internally supports 6 mini program platforms by default, since [Taro v3.1](/blog/2021-03-10-taro-3-1-lts#1-开放式架构) support for each mini program platform is available as a Taro plugin.
 
-- `@tarojs/plugin-platform-weapp`	Wechat mini program  plugin
-- `@tarojs/plugin-platform-alipay`	Alipay mini program  plugin
-- `@tarojs/plugin-platform-swan`	Baidu smart program  plugin 
-- `@tarojs/plugin-platform-tt`	ByteDance mini program plugin
-- `@tarojs/plugin-platform-qq`	QQ mini program  plugin
-- `@tarojs/plugin-platform-jd`	Jingdong mini program  plugin
+- `@tarojs/plugin-platform-weapp` Wechat mini program plugin
+- `@tarojs/plugin-platform-alipay` Alipay mini program plugin
+- `@tarojs/plugin-platform-swan` Baidu smart program plugin
+- `@tarojs/plugin-platform-tt` ByteDance mini program plugin
+- `@tarojs/plugin-platform-qq` QQ mini program plugin
+- `@tarojs/plugin-platform-jd` Jingdong mini program plugin
 
 Platform plugins are platform specific and inject logic for compile-time and run-time respectively, see [Platform Plug-ins Overview](./platform-plugin) for details。
 

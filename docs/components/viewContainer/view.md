@@ -5,7 +5,7 @@ sidebar_label: View
 
 视图容器
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/view.html)
 
@@ -17,21 +17,13 @@ ComponentType<ViewProps>
 
 ## 示例代码
 
+import { ReactIcon, VueIcon } from '@site/static/icons'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 <Tabs
   defaultValue="React"
-  values={[
-  {
-    "label": "React",
-    "value": "React"
-  },
-  {
-    "label": "Vue",
-    "value": "Vue"
-  }
-]}>
+  values={[{ label: <ReactIcon />, value: "React" }, { label: <VueIcon />, value: "Vue" }]}>
 <TabItem value="React">
 
 ```tsx
@@ -106,9 +98,12 @@ export default class PageView extends Component {
 | hoverStopPropagation | `boolean` | `false` | 否 | 指定是否阻止本节点的祖先节点出现点击态 |
 | hoverStartTime | `number` | `50` | 否 | 按住后多久出现点击态，单位毫秒 |
 | hoverStayTime | `number` | `400` | 否 | 手指松开后点击态保留时间，单位毫秒 |
-| disableScroll | `string` | `false` | 否 | 是否阻止区域内滚动页面。<br />说明： 如果 view 中嵌套 view，外层 view 设置 disable-scroll 为 true 时禁止内部的滚动。 |
+| disableScroll | `boolean` | `false` | 否 | 是否阻止区域内滚动页面。<br />说明： 如果 view 中嵌套 view，外层 view 设置 disable-scroll 为 true 时禁止内部的滚动。 |
 | hidden | `boolean` | `false` | 否 | 是否隐藏。 |
 | animation | `TaroGeneral.IAnyObject` | `{}` | 否 | 用于动画，详见 my.createAnimation 。使用 my.createAnimation 生成的动画是通过过渡（Transition）实现的，只会触发 onTransitionEnd，不会触发 onAnimationStart, onAnimationIteration, onAnimationEnd。 |
+| role | `string` |  | 否 | 表示组件的语义角色。设置为 img 时，组件聚焦后读屏软件会朗读出 图像 ；设置为 button 时，聚焦后读屏软件会朗读出 按钮 。详情请参见 aria-component。 |
+| ariaRole | `string` |  | 否 | 无障碍访问，（角色）标识元素的作用 |
+| ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
 | onTap | `CommonEventFunction` |  | 否 | 点击。 |
 | onTouchStart | `CommonEventFunction` |  | 否 | 触摸动作开始。 |
 | onTouchMove | `CommonEventFunction` |  | 否 | 触摸后移动。 |
@@ -122,13 +117,11 @@ export default class PageView extends Component {
 | onAppear | `CommonEventFunction` |  | 否 | 当前元素可见面积超过50%时触发。 |
 | onDisappear | `CommonEventFunction` |  | 否 | 当前元素不可见面积超过50%时触发。 |
 | onFirstAppear | `CommonEventFunction` |  | 否 | 当前元素首次可见面积达到50%时触发。 |
-| role | `string` |  | 否 | 表示组件的语义角色。设置为 img 时，组件聚焦后读屏软件会朗读出 图像 ；设置为 button 时，聚焦后读屏软件会朗读出 按钮 。详情请参见 aria-component。 |
-| ariaRole | `string` |  | 否 | 无障碍访问，（角色）标识元素的作用 |
-| ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
+| catchMove | `boolean` |  | 否 | 是否以 catch 的形式绑定 touchmove 事件<br />version: 3.1.0+ |
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | ViewProps.hoverClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(由于 RN 不支持 hoverClass，故 RN 端的 View 组件实现了 `hoverStyle`属性，写法和 style 类似，只不过 `hoverStyle` 的样式是指定按下去的样式。) |  |
 | ViewProps.hoverStyle |  |  |  |  |  |  |  | ✔️ |  |
@@ -138,6 +131,9 @@ export default class PageView extends Component {
 | ViewProps.disableScroll |  |  | ✔️ |  |  |  |  |  |  |
 | ViewProps.hidden |  |  | ✔️ |  |  |  |  |  |  |
 | ViewProps.animation |  |  | ✔️ |  |  |  |  |  |  |
+| ViewProps.role |  |  | ✔️ |  |  |  |  |  |  |
+| ViewProps.ariaRole |  |  |  |  | ✔️ |  |  |  |  |
+| ViewProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
 | ViewProps.onTap |  |  | ✔️ |  |  |  |  |  |  |
 | ViewProps.onTouchStart |  |  | ✔️ |  |  |  |  |  |  |
 | ViewProps.onTouchMove |  |  | ✔️ |  |  |  |  |  |  |
@@ -151,6 +147,4 @@ export default class PageView extends Component {
 | ViewProps.onAppear |  |  | ✔️ |  |  |  |  |  |  |
 | ViewProps.onDisappear |  |  | ✔️ |  |  |  |  |  |  |
 | ViewProps.onFirstAppear |  |  | ✔️ |  |  |  |  |  |  |
-| ViewProps.role |  |  | ✔️ |  |  |  |  |  |  |
-| ViewProps.ariaRole |  |  |  |  | ✔️ |  |  |  |  |
-| ViewProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
+| ViewProps.catchMove | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |

@@ -48,6 +48,7 @@ We will be compatible with the latest version React Native mainly, and keep up w
 | 0.67.x | >= 3.3.10, expo | [0.67.0-expo](https://github.com/NervJS/taro-native-shell/tree/0.67.0-expo) |
 | 0.68.x | >= 3.5.0, but after version 3.5.6, you need to use expo-av@~11.2.3 react@17, refer to [Discussion](https://github.com/NervJS/taro/discussions/12133) | [0.68.0](https://github.com/NervJS/taro-native-shell/tree/0.68.0) |
 | 0.69.x | >= 3.5.6 | [0.69.0](https://github.com/NervJS/taro-native-shell/tree/0.69.0) |
+| 0.70.x | >= 3.6.0 | [0.70.0](https://github.com/NervJS/taro-native-shell/tree/0.70.0) |
 
 ## Integration mode
 
@@ -273,6 +274,7 @@ Check if the `config/index.js` file has changed the appName, the default is `tar
 0. modify `rn.appName` in `config/index.js`
 1. modify the return value of the `getMainComponentName` method in `MainActivity.java`
 2. modify `moduleName` of `RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"taroDemo" initialProperties:nil];` in  `AppDelegate.m`
+3. `yarn dev:rn --reset-cache`
 
 ### Library not found for -IDoubleConversion
 

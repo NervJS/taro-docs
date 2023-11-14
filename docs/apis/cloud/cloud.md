@@ -1,9 +1,23 @@
 ---
-title: Cloud
-sidebar_label: Cloud
+title: cloud
+sidebar_label: cloud
 ---
 
+云开发 SDK 实例
+
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/Cloud.html)
+
+## 类型
+
+```tsx
+cloud & Cloud
+```
+
 ## 方法
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| Cloud | `new (options: IOptions) => Cloud` | 声明新的云开发操作实例<br />API 支持度: weapp<br />example: 声明新的操作实例<br /><br />```tsx<br />const c1 = new Taro.cloud.Cloud({<br />  resourceEnv: '我的某个环境ID',<br />})<br />```<br />example: 资源共享时跨账号访问资源<br /><br />```tsx<br />// 声明<br />const c1 = new Taro.cloud.Cloud({<br />  resourceAppid: '资源方 AppID',<br />  resourceEnv: '我的某个环境ID',<br />})<br />// 等待初始化完成<br />await c1.init()<br /><br />// 然后照常访问指定环境下的资源<br />c1.callFunction({<br /> name: '',<br /> data: {},<br />})<br />```<br />[参考地址](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/utils/Cloud.Cloud.html) |
 
 ### init
 
@@ -14,7 +28,7 @@ sidebar_label: Cloud
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/init/client.init.html)
 
 ```tsx
-(config?: IInitConfig) => Promise<void>
+(config?: IInitConfig) => void
 ```
 
 | 参数 | 类型 |
@@ -88,7 +102,7 @@ name: 'add',
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/storage/uploadFile/client.uploadFile.html)
 
 ```tsx
-{ (param: OQ<UploadFileParam>): UploadTask; (param: RQ<UploadFileParam>): Promise<UploadFileResult>; }
+{ (param: OQ<UploadFileParam>): Taro.UploadTask; (param: RQ<UploadFileParam>): Promise<UploadFileResult>; }
 ```
 
 | 参数 | 类型 |
@@ -334,15 +348,226 @@ const r = await c1.callContainer({
 })
 ```
 
+## 参数
+
+### CallFunctionResult
+
+云函数通用返回
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| result | `any` | 云函数返回的结果 |
+| errMsg | `string` | 调用结果 |
+
+### IApiParam
+
+云函数通用参数
+
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| config | `IConfig` | 否 | 配置 |
+| success | `(res: T) => void` | 否 | 接口调用成功的回调函数 |
+| fail | `(err: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
+| complete | `(val: any) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+
+### IInitConfig
+
+初始化配置
+
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| env | string or { database?: string; functions?: string; storage?: string; } | 否 | 默认环境配置，传入字符串形式的环境 ID 可以指定所有服务的默认环境，传入对象可以分别指定各个服务的默认环境 |
+| traceUser | `boolean` | 否 | 是否在将用户访问记录到用户管理中，在控制台中可见 |
+
+### IConfig
+
+配置
+
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| env | `string` | 否 | 使用的环境 ID，填写后忽略 init 指定的环境 |
+| traceUser | `boolean` | 否 | 是否在将用户访问记录到用户管理中，在控制台中可见 |
+
+### ICloudAPIParam
+
+云函数 API 通用参数
+
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| config | `IConfig` | 否 | 配置 |
+
+### CallFunctionParam
+
+调用云函数参数
+
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| name | `string` | 是 | 云函数名 |
+| data | `TaroGeneral.IAnyObject` | 否 | 传递给云函数的参数，在云函数中可通过 event 参数获取 |
+| slow | `boolean` | 否 |  |
+| config | `IConfig` | 否 | 配置 |
+| complete | `(res: any) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+| fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
+| success | `(res: CallFunctionResult) => void` | 否 | 接口调用成功的回调函数 |
+
+### UploadFileResult
+
+上传文件结果
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| fileID | `string` | 文件 ID |
+| statusCode | `number` | 服务器返回的 HTTP 状态码 |
+| errMsg | `string` | 调用结果 |
+
+### UploadFileParam
+
+上传文件参数
+
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| cloudPath | `string` | 是 | 云存储路径，命名限制见[文件名命名限制](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/guide/storage/naming.html) |
+| filePath | `string` | 是 | 要上传文件资源的路径 |
+| header | `TaroGeneral.IAnyObject` | 否 |  |
+| config | `IConfig` | 否 | 配置 |
+| complete | `(res: any) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+| fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
+| success | `(res: UploadFileResult) => void` | 否 | 接口调用成功的回调函数 |
+
+### DownloadFileResult
+
+下载文件结果
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| tempFilePath | `string` | 临时文件路径 |
+| statusCode | `number` | 服务器返回的 HTTP 状态码 |
+| errMsg | `string` | 调用结果 |
+
+### DownloadFileParam
+
+下载文件参数
+
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| fileID | `string` | 是 | 云文件 ID |
+| cloudPath | `string` | 否 |  |
+| config | `IConfig` | 否 | 配置 |
+| complete | `(res: any) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+| fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
+| success | `(res: DownloadFileResult) => void` | 否 | 接口调用成功的回调函数 |
+
+### GetTempFileURLResult
+
+获取临时文件结果
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| fileList | `GetTempFileURLResultItem[]` | 文件列表 |
+| errMsg | `string` | 调用结果 |
+
+### GetTempFileURLResultItem
+
+临时文件列表
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| fileID | `string` | 云文件 ID |
+| tempFileURL | `string` | 临时文件路径 |
+| maxAge | `number` |  |
+| status | `number` | 状态码 |
+| errMsg | `string` | 调用结果 |
+
+### GetTempFileURLParam
+
+获取临时文件参数
+
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| fileList | `string[]` | 是 |  |
+| config | `IConfig` | 否 | 配置 |
+| complete | `(res: any) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+| fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
+| success | `(res: GetTempFileURLResult) => void` | 否 | 接口调用成功的回调函数 |
+
+### DeleteFileResult
+
+删除文件结果
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| fileList | `DeleteFileResultItem[]` | 文件列表 |
+| errMsg | `string` | 调用结果 |
+
+### DeleteFileResultItem
+
+删除文件列表
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| fileID | `string` | 云文件 ID |
+| status | `number` | 状态码 |
+| errMsg | `string` | 调用结果 |
+
+### DeleteFileParam
+
+删除文件参数
+
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| fileList | `string[]` | 是 | 文件列表 |
+| config | `IConfig` | 否 | 配置 |
+| complete | `(res: any) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+| fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
+| success | `(res: DeleteFileResult) => void` | 否 | 接口调用成功的回调函数 |
+
+### IOptions
+
+新建云开发操作实例
+
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| resourceAppid | `string` | 否 | 资源方 AppID, 不填则表示已登录的当前账号（如小程序中） |
+| resourceEnv | `string` | 是 | 资源方云环境 ID |
+
+### CallContainerParam
+
+调用云托管参数
+
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| path | `string` | 是 | 服务路径 |
+| method | string or number or symbol | 否 | HTTP请求方法，默认 GET |
+| data | `P` | 否 | 请求数据 |
+| header | `TaroGeneral.IAnyObject` | 否 | 设置请求的 header，header 中不能设置 Referer。content-type 默认为 application/json |
+| timeout | `number` | 否 | 超时时间，单位为毫秒 |
+| dataType | `request.DataType` | 否 | 返回的数据格式 |
+| responseType | "text" or "arraybuffer" | 否 | 响应的数据类型 |
+| complete | `(res: any) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+| fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
+| success | `(res: CallFunctionResult) => void` | 否 | 接口调用成功的回调函数 |
+
+### CallContainerResult
+
+调用云托管返回值
+
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| data | `R` | 是 | 开发者云托管服务返回的数据 |
+| header | `TaroGeneral.IAnyObject` | 是 | 开发者云托管返回的 HTTP Response Header |
+| statusCode | `number` | 是 | 开发者云托管服务返回的 HTTP 状态码 |
+| cookies | `TaroGeneral.IAnyObject` | 否 | 开发者云托管返回的 cookies，格式为字符串数组，仅小程序端有此字段 |
+
 ## API 支持度
 
 | API | 微信小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: |
-| Cloud.init | ✔️ |  |  |  |
-| Cloud.callFunction | ✔️ |  |  |  |
-| Cloud.uploadFile | ✔️ |  |  |  |
-| Cloud.downloadFile | ✔️ |  |  |  |
-| Cloud.getTempFileURL | ✔️ |  |  |  |
-| Cloud.deleteFile | ✔️ |  |  |  |
-| Cloud.database | ✔️ |  |  |  |
-| Cloud.callContainer | ✔️ |  |  |  |
+| cloud.init | ✔️ |  |  |  |
+| cloud.callFunction | ✔️ |  |  |  |
+| cloud.uploadFile | ✔️ |  |  |  |
+| cloud.downloadFile | ✔️ |  |  |  |
+| cloud.getTempFileURL | ✔️ |  |  |  |
+| cloud.deleteFile | ✔️ |  |  |  |
+| cloud.database | ✔️ |  |  |  |
+| cloud.Cloud | ✔️ |  |  |  |
+| cloud.callContainer | ✔️ |  |  |  |

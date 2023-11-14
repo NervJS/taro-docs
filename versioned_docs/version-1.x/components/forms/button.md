@@ -27,7 +27,7 @@ sidebar_label: Button
 
 [支付宝小程序 Button](https://docs.alipay.com/mini/component/button)。
 
-[字节跳动小程序 Button](https://developer.toutiao.com/docs/comp/button.html)。
+[抖音小程序 Button](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/list/button)。
 
 
 

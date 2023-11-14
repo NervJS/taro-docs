@@ -7,7 +7,7 @@ title: 列表渲染
 如下代码，我们使用 `map()` 函数让数组中的每一项翻倍,我们得到了一个新的数列 `doubled` 。
 
 ```jsx
-const numbers = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5]
 const doubled = numbers.map((number) => number * 2)
 console.log(doubled)
 ```
@@ -16,7 +16,6 @@ console.log(doubled)
 
 在 Taro 中，把数组转化为数列元素的过程是相似的。
 
-
 ## 渲染多个组件
 
 下面，我们使用 JavaScript 中的 `map()` 方法遍历 `numbers` 数组。对数组中的每个元素返回 `<Text>` 标签，最后我们得到一个数组 `listItems`：
@@ -24,7 +23,7 @@ console.log(doubled)
 ```jsx
 const numbers = [...Array(100).keys()] // [0, 1, 2, ..., 98, 99]
 const listItems = numbers.map((number) => {
-  return <Text className='li'> 我是第 {number + 1} 个数字</Text>
+  return <Text className="li"> 我是第 {number + 1} 个数字</Text>
 })
 ```
 
@@ -37,12 +36,11 @@ const listItems = numbers.map((number) => {
 ```jsx
 const numbers = [...Array(100).keys()] // [0, 1, 2, ..., 98, 99]
 const listItems = numbers.map((number) => {
-  return <Text
-    key={String(number)}
-    className='li'
-    >
-    我是第 {number + 1} 个数字
-  </Text>
+  return (
+    <Text key={String(number)} className="li">
+      我是第 {number + 1} 个数字
+    </Text>
+  )
 })
 ```
 
@@ -55,11 +53,8 @@ const numbers = [...Array(100).keys()] // [0, 1, 2, ..., 98, 99]
 const listItems = numbers.map((number) => {
   return (
     // native component
-    <g-list
-      taroKey={String(number)}
-      className='g-list'
-    >
-    我是第 {number + 1} 个数字
+    <g-list taroKey={String(number)} className="g-list">
+      我是第 {number + 1} 个数字
     </g-list>
   )
 })
@@ -73,26 +68,26 @@ const listItems = numbers.map((number) => {
 class App extends Componenet {
   state = {
     posts: [
-      {id: 1, title: 'Hello World', content: 'Welcome to learning Taro!'},
-      {id: 2, title: 'Installation', content: 'You can install Taro from npm.'}
-    ]
+      { id: 1, title: 'Hello World', content: 'Welcome to learning Taro!' },
+      { id: 2, title: 'Installation', content: 'You can install Taro from npm.' },
+    ],
   }
-  render () {
+  render() {
     const { posts } = this.state
     const sidebar = (
       <View>
-        {posts.map((post) =>
-          <Text key={post.id}>
-            {post.title}
-          </Text>
-        )}
+        {posts.map((post) => (
+          <Text key={post.id}>{post.title}</Text>
+        ))}
       </View>
     )
     const content = posts.map((post) => {
-      return <View key={post.id}>
-        <Text>{post.title}</Text>
-        <Text>{post.content}</Text>
-      </View>
+      return (
+        <View key={post.id}>
+          <Text>{post.title}</Text>
+          <Text>{post.content}</Text>
+        </View>
+      )
     })
     return (
       <View>
@@ -109,10 +104,12 @@ key 会作为给 Taro 的提示，但不会传递给你的组件。如果您的�
 
 ```jsx
 const content = posts.map((post) => {
-  return <View key={post.id} id={post.id} >
-    <Text>{post.title}</Text>
-    <Text>{post.content}</Text>
-  </View>
+  return (
+    <View key={post.id} id={post.id}>
+      <Text>{post.title}</Text>
+      <Text>{post.content}</Text>
+    </View>
+  )
 })
 ```
 
@@ -161,35 +158,39 @@ class App extends Components {
 在 React 中，JSX 是会编译成普通的 JS 的执行，每一个 JSX 元素，其实会通过 `createElement` 函数创建成一个 JavaScript 对象（React Element），因此实际上你可以这样写代码 React 也是完全能渲染的：
 
 ```jsx
-const list = this.state.list.map(l => {
-  if (l.selected) {
-    return <li>{l.text}</li>
-  }
-}).filter(React.isValidElement)
+const list = this.state.list
+  .map((l) => {
+    if (l.selected) {
+      return <li>{l.text}</li>
+    }
+  })
+  .filter(React.isValidElement)
 ```
 
 你甚至可以这样写：
 
 ```jsx
-const list = this.state.list.map(l => {
-  if (l.selected) {
-    return {
-      '$$typeof': Symbol(react.element),
-      'props': {
-        children: l.text
-      },
-      'type': 'li'
+const list = this.state.list
+  .map((l) => {
+    if (l.selected) {
+      return {
+        $$typeof: Symbol(react.element),
+        props: {
+          children: l.text,
+        },
+        type: 'li',
+      }
     }
-  }
-}).filter(React.isValidElement)
+  })
+  .filter(React.isValidElement)
 ```
 
 但是 Taro 中，JSX 会编译成微信小程序模板字符串，**因此你不能把 `map` 函数生成的模板当做一个数组来处理**。当你需要这么做时，应该先处理需要循环的数组，再用处理好的数组来调用 map 函数。例如上例应该写成：
 
 ```jsx
 const list = this.state.list
-  .filter(l => l.selected)
-  .map(l => {
+  .filter((l) => l.selected)
+  .map((l) => {
     return <li>{l.text}</li>
   })
 ```

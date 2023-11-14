@@ -12,10 +12,9 @@ authors: luckyadam
 
 ## 让人又爱又恨的微信小程序
 
-自 `2017-1-9` 微信小程序（以下简称小程序）诞生以来，就伴随着赞誉与争议不断。从发布上线时的不被大多数人看好，到如今的逐渐火热，甚至说是如日中天也不为过，小程序用时间与实践证明了自己的价值。同时于开发者来说，小程序的生态不断在完善，许多的坑已被踩平，虽然还是存在一些令人诟病的问题，但已经足见微信的诚意了。这个时候要是还没有上手把玩过小程序，就显得非常OUT了。
+自 `2017-1-9` 微信小程序（以下简称小程序）诞生以来，就伴随着赞誉与争议不断。从发布上线时的不被大多数人看好，到如今的逐渐火热，甚至说是如日中天也不为过，小程序用时间与实践证明了自己的价值。同时于开发者来说，小程序的生态不断在完善，许多的坑已被踩平，虽然还是存在一些令人诟病的问题，但已经足见微信的诚意了。这个时候要是还没有上手把玩过小程序，就显得非常 OUT 了。
 
 小程序对于前端程序员来说应该算得上是福音了，用前端相关的技术，获得丝般顺滑的 `Native` 体验，前端们又可以在产品小姐姐面前硬气一把了。可以说小程序给前端程序员打开了一扇新的大门，大家都应该感谢微信，但是从开发的角度来说，小程序的开发体验就非常值得商榷了，不仅语法上显得有些不伦不类，而且有些莫名其妙的坑也经常让人不经意间感叹一下和谐社会，从市面上层出不穷的小程序开发框架就可见一斑。以下就盘点部分小程序开发的痛点。
-
 
 ### 代码组织与语法
 
@@ -35,7 +34,7 @@ authors: luckyadam
 
 ![](https://img10.360buyimg.com/img/jfs/t23614/365/454746445/128330/71fef006/5b307975Ne1ae5de9.jpg)
 
- `<button />` 组件属性名既有以中划线分割多个单词的情况 `session-form`，也有多个单词连写的情况 `bindgetphonenumber`。当然这也不是最严重的，你可以说事件绑定的规范就是 `bind + 事件名` ，而其他属性的规范就是中划线分割单词，我一度以为小程序就是这个作为标准，直到我看到了 `<progress />` 组件
+`<button />` 组件属性名既有以中划线分割多个单词的情况 `session-form`，也有多个单词连写的情况 `bindgetphonenumber`。当然这也不是最严重的，你可以说事件绑定的规范就是 `bind + 事件名` ，而其他属性的规范就是中划线分割单词，我一度以为小程序就是这个作为标准，直到我看到了 `<progress />` 组件
 
 ![](https://img12.360buyimg.com/img/jfs/t23056/19/454899133/104795/d15cd017/5b307975Nd43ac751.jpg)
 
@@ -49,20 +48,20 @@ authors: luckyadam
 
 小程序官方提供了 `微信开发工具` 作为开发编译工具，而对于代码本身没有提供一个类似 `webpack` 的工程化开发工具，来解决开发中的一些问题，所以小程序原生的开发方式显得不那么现代化，这也是很多小程序开发框架致力于解决的问题。例如，在小程序开发中
 
-- **不能使用 `npm` 管理依赖**，在小程序中需要手动把第三方代码文件下载到本地，然后再 `reuqire` 进行使用，显得不那么优雅
-- **不能使用 Sass 等 CSS 预处理器**，由于没有预编译的概念，小程序开发中无法使用市面上流行的  CSS 预处理器，这样会使得样式代码难以管理
+- **不能使用 `npm` 管理依赖**，在小程序中需要手动把第三方代码文件下载到本地，然后再 `require` 进行使用，显得不那么优雅
+- **不能使用 Sass 等 CSS 预处理器**，由于没有预编译的概念，小程序开发中无法使用市面上流行的 CSS 预处理器，这样会使得样式代码难以管理
 - **不完整的 ES Next 语法支持**，小程序默认只能支持极少一部分 ES6 规范的语法，而 ES 是不断往前发展的，一些非常优秀的新语法特性就不能使用了
 - **手动的文件处理**，像图片压缩、代码压缩等等的一些文件操作，必须手工来处理，显得有些繁琐
 
 以上就是从开发者的角度看到的一些小程序的开发问题，不过纵然有千般困难，我们总要面对，作为新时代的前端开发工程师，我们不能一味忍受问题，要保持技术的头脑，以技术作为武器，用技术手段去提升的我们开发体验。
 
-## 突发奇想：我能不能用React来写小程序
+## 突发奇想：我能不能用 React 来写小程序
 
 目前前端界言及前端框架，必离不开依然保持着统治地位的 `React` 与 `Vue`，这两个都是非常优秀的前端 UI 框架，而且在网上也经常能看到两个框架的粉丝之间热情交流，碰撞出一些思想火花，显得社区异常活跃。
 
-而我们团队也在去年勇敢地抛弃了历史包袱，非常荣幸地引入了 `React` 开发方式，让我们团队丢掉了煤油灯，开始通上了电。而且也研发出了一款优秀的类 `React` 框架 `Nerv` ，让我们和  `React` 开发思想结合得更深。
+而我们团队也在去年勇敢地抛弃了历史包袱，非常荣幸地引入了 `React` 开发方式，让我们团队丢掉了煤油灯，开始通上了电。而且也研发出了一款优秀的类 `React` 框架 `Nerv` ，让我们和 `React` 开发思想结合得更深。
 
-与小程序的开发方式相比，`React` 明显显得更加现代化、规范化，而且 `React` 天生组件化更适合我们的业务开发，`JSX` 也比字符串模板有更强的表现力。那么这时候我们就在思考，我们能不能用 	`React` 来写小程序？
+与小程序的开发方式相比，`React` 明显显得更加现代化、规范化，而且 `React` 天生组件化更适合我们的业务开发，`JSX` 也比字符串模板有更强的表现力。那么这时候我们就在思考，我们能不能用 `React` 来写小程序？
 
 ### 理性地探索
 
@@ -76,13 +75,13 @@ authors: luckyadam
 
 app 及页面的生命周期
 
-| 小程序 | React |
-| - | :-: |
-| onLaunch | componentWillMount |
-| onLoad | componentWillMount | 
-| onReady | componentDidMount |
-| onShow | 不支持，需要特殊处理 |
-| onHide | 不支持，需要特殊处理 |
+| 小程序   |        React         |
+| -------- | :------------------: |
+| onLaunch |  componentWillMount  |
+| onLoad   |  componentWillMount  |
+| onReady  |  componentDidMount   |
+| onShow   | 不支持，需要特殊处理 |
+| onHide   | 不支持，需要特殊处理 |
 | onUnload | componentWillUnmount |
 
 可以看出，对于 `app` 及 `页面` 来说，除了 `onShow` 与 `onHide` 两个方法，其他方法都能在 `React` 中找到对应。
@@ -98,7 +97,7 @@ app 及页面的生命周期
 小程序中绑定事件使用的是 `bind + 事件名` 的方式，例如点击事件，小程序中是 `bindtap`
 
 ```handlebars
-<view bindtap="handlClick">1</view>
+<view bindtap='handlClick'>1</view>
 ```
 
 而在 `React` 里，则是 `on + 事件名` 的方式，例如点击事件， `React` web 中是 `onClick`
@@ -133,10 +132,10 @@ render () {
 小程序模板
 
 ```htmlbars
- <view class="index">
-   <view wx:key={idx} wx:for="{{list}}" wx:for-item="item" wx:for-index="idx">{{item}}</view>
-   <view bindtap="goto">走你</view>
- </view>
+<view class='index'>
+  <view wx:key='{idx}' wx:for='{{list}}' wx:for-item='item' wx:for-index='idx'>{{item}}</view>
+  <view bindtap='goto'>走你</view>
+</view>
 ```
 
 众所周知，`JSX` 其实本质上就是 `JS`，我们可以在里面写任意的逻辑代码，这样一来就比字符串模板的表现力与操作性要强多了，况且，小程序的字符串模板功能比较羸弱，只有一些比较基本的功能。那这样的话，要如何来实现用 `JSX` 来写小程序模板呢。
@@ -189,10 +188,16 @@ render () {
 `JSX` 代码
 
 ```javascript
-<View className='index'>
-  <Button className='add_btn' onClick={this.props.add}>+</Button>
-  <Button className='dec_btn' onClick={this.props.dec}>-</Button>
-  <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
+<View className="index">
+  <Button className="add_btn" onClick={this.props.add}>
+    +
+  </Button>
+  <Button className="dec_btn" onClick={this.props.dec}>
+    -
+  </Button>
+  <Button className="dec_btn" onClick={this.props.asyncAdd}>
+    async
+  </Button>
   <View>{this.props.counter.num}</View>
   <A />
   <Button onClick={this.goto}>走你</Button>
@@ -203,16 +208,16 @@ render () {
 编译生成小程序模板
 
 ```handlebars
-<import src="../../components/A/A.wxml" />
+<import src='../../components/A/A.wxml'></import>
 <block>
-  <view class="index">
-    <button class="add_btn" bindtap="add">+</button>
-    <button class="dec_btn" bindtap="dec">-</button>
-    <button class="dec_btn" bindtap="asyncAdd">async</button>
+  <view class='index'>
+    <button class='add_btn' bindtap='add'>+</button>
+    <button class='dec_btn' bindtap='dec'>-</button>
+    <button class='dec_btn' bindtap='asyncAdd'>async</button>
     <view>{{counter.num}}</view>
-    <template is="A" data="{{...$$A}}"></template>
-    <button bindtap="goto">走你</button>
-    <image src="{{sd}}" />
+    <template is='A' data='{{...$$A}}'></template>
+    <button bindtap='goto'>走你</button>
+    <image src='{{sd}}' />
   </view>
 </block>
 ```
@@ -223,7 +228,7 @@ render () {
 - 理解数组 `map` 语法，例如 `map` 的使用 `abc.map(item => <View>item</View>)` 需要编译成 `<view wx:for="{{abc}}" wx:for-item="item">item</view>`
 - 等等
 
-以上仅仅是我们转换规则的冰山一角，`JSX` 的写法极其灵活多变，我们只能通过穷举的方式，将常用的、React 官方推荐的写法作为转换规则加以支持，而一些比较生僻的，或者是不那么推荐的写的写法则不做支持，转而以 `eslint` 插件的方式，提示用户进行修改。目前我们支持的 `JSX` 转换规则，大致能覆盖到 `JSX`  80% 的写法操作。
+以上仅仅是我们转换规则的冰山一角，`JSX` 的写法极其灵活多变，我们只能通过穷举的方式，将常用的、React 官方推荐的写法作为转换规则加以支持，而一些比较生僻的，或者是不那么推荐的写的写法则不做支持，转而以 `eslint` 插件的方式，提示用户进行修改。目前我们支持的 `JSX` 转换规则，大致能覆盖到 `JSX` 80% 的写法操作。
 
 关于 JSX 转小程序模板这一部分，我们将在后续的技术原理分析系列文章中，详细为大家介绍。
 
@@ -251,7 +256,7 @@ render () {
 
 ![](https://img14.360buyimg.com/img/jfs/t21535/241/1645070830/74027/775c8a15/5b307976Nce466138.jpg)
 
-既然组件库以及端能力都是依靠不同的端做不同实现来抹平差异，那么同样的，如果我们想为 Taro 引入更多的功能支持的话，有时候也需要按照这个套路来。例如，为了提升开发便利性，我们为 Taro 加入了 `Redux` 支持，我们的做法就是，在小程序端，我们实现了 `@tarojs/redux` 这个库来作为小程序的 `Redux` 辅助库，并且以他作为基准库，它具有和 `react-redux` 一致的 API，在书写代码的时候，引用的都是  `@tarojs/redux` ，经过编译后，在 H5 端会替换成 `nerv-redux`（`Nerv`的 `Redux` 辅助库），在 RN 端会替换成 `react-redux`。这样就实现了 `Redux` 在 Taro 中的多端支持。
+既然组件库以及端能力都是依靠不同的端做不同实现来抹平差异，那么同样的，如果我们想为 Taro 引入更多的功能支持的话，有时候也需要按照这个套路来。例如，为了提升开发便利性，我们为 Taro 加入了 `Redux` 支持，我们的做法就是，在小程序端，我们实现了 `@tarojs/redux` 这个库来作为小程序的 `Redux` 辅助库，并且以他作为基准库，它具有和 `react-redux` 一致的 API，在书写代码的时候，引用的都是 `@tarojs/redux` ，经过编译后，在 H5 端会替换成 `nerv-redux`（`Nerv`的 `Redux` 辅助库），在 RN 端会替换成 `react-redux`。这样就实现了 `Redux` 在 Taro 中的多端支持。
 
 ![](https://img30.360buyimg.com/uba/jfs/t22360/120/839096197/151922/229ceba4/5b1a6fcdNed7d4039.jpg)
 

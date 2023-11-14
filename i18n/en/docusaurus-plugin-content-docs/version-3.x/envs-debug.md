@@ -15,7 +15,3 @@ Multi-terminal synchronous debugging requires opening multiple Tabs in the termi
 The compiled directory is as follows, with two directories `weapp` and `alipay` under the `dist` directory.
 
 ![Simultaneous debugging of compiled results](https://img20.360buyimg.com/ling/jfs/t1/74046/26/8491/148076/5d663baaEf2ed8064/33fbb1d365053d1c.png)
-
-## React Native Debugging
-
-Refer [React Native Development Process](./react-native.md)

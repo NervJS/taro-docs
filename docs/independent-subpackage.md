@@ -29,7 +29,6 @@ Taro 支持使用微信小程序的独立分包功能，配置方法和微信小
     |   └── app.js
     └── package.json
 
-
 开发者通过在 `app.json` 的 `subpackages` 字段中，给对应的分包配置项中定义的 `independent` 字段声明对应分包为独立分包：
 
 ```js title="app.json" {18}

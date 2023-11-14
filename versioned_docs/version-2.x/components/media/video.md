@@ -5,8 +5,6 @@ sidebar_label: Video
 
 视频。相关api：Taro.createVideoContext
 
-备注：h5上因为没有测试，所以暂时写了“待定”，需要`Video`来确认。
-
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/video.html)
 
 ## 类型
@@ -305,7 +303,7 @@ export default class PageView extends Component {
       <td><code>BaseEventOrigFunction&lt;onWaitingEventDetail&gt;</code></td>
       <td style={{ textAlign: "center"}}></td>
       <td style={{ textAlign: "center"}}>否</td>
-      <td>当视频进入和退出全屏时触发<br /><br />event.detail = {`{fullScreen, direction}`}，direction 取为 vertical 或 horizontal</td>
+      <td>视频出现缓冲时触发<br /><br />event.detail = {`{fullScreen, direction}`}，direction 取为 vertical 或 horizontal</td>
     </tr>
     <tr>
       <td>onError</td>
@@ -333,7 +331,7 @@ export default class PageView extends Component {
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | H5 | React Native |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | H5 | React Native |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | VideoProps.src | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.duration | ✔️ | ✔️ | ✔️ |  | (待定) |  |
@@ -544,6 +542,6 @@ playBtnPosition 的合法值
 
 ## API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | H5 | React Native |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | H5 | React Native |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Video | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |

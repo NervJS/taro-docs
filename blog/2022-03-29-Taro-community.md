@@ -11,7 +11,7 @@ description: ''
 
 ![晋升角色路线图](https://storage.360buyimg.com/aotu-team/zakary-blog/2022-03-29-Taro-community/RoadMap.png)
 
-如图包含4个晋升角色：个人贡献者&生态个人贡献者、助手、合作者&生态合作者、技术委员会委员，晋升机制通过提名+投票的方式进行共识决策，晋升路径如下：
+如图包含 4 个晋升角色：个人贡献者&生态个人贡献者、助手、合作者&生态合作者、技术委员会委员，晋升机制通过提名+投票的方式进行共识决策，晋升路径如下：
 
 - 个人贡献者 → 助手 → 合作者 → 技术委员会委员
 - 个人贡献者 → 合作者 → 技术委员会委员
@@ -31,23 +31,23 @@ description: ''
 
 - 目的
 
-    旨在减少 issue 列表，保持 issue 及时跟踪，促进新人参与及贡献 pull request。
+  旨在减少 issue 列表，保持 issue 及时跟踪，促进新人参与及贡献 pull request。
 
 - 权益
 
-    Github NervJS 组 Member 权限，相关项目 Triage 权限，可以管理 issues 和 pull requests（没有写权限）。
+  Github NervJS 组 Member 权限，相关项目 Triage 权限，可以管理 issues 和 pull requests（没有写权限）。
 
 - 申请方法
 
-    对 Taro 项目有全面了解和深度开发经验的任何人，可以在 NervJS/taro README.md 中提交一个 pull request，说明申请成为助手的动机并同意本项目的行为守则，经 2 名合作者同意即可通过。
+  对 Taro 项目有全面了解和深度开发经验的任何人，可以在 NervJS/taro README.md 中提交一个 pull request，说明申请成为助手的动机并同意本项目的行为守则，经 2 名合作者同意即可通过。
 
-    申请 pull request 参考模版如下：
+  申请 pull request 参考模版如下：
 
-    ![PR 模板](https://storage.360buyimg.com/aotu-team/zakary-blog/2022-03-29-Taro-community/PR-Triage.png)
+  ![PR 模板](https://storage.360buyimg.com/aotu-team/zakary-blog/2022-03-29-Taro-community/PR-Triage.png)
 
 - 退出机制
 
-    对 6 个月不活跃的小助手进行定期移除。
+  对 6 个月不活跃的小助手进行定期移除。
 
 ### 合作者 & 生态合作者（Collaborator）
 
@@ -55,23 +55,23 @@ description: ''
 
 - 目的
 
-    旨在不断丰富 Taro 特性、性能、安全等。
+  旨在不断丰富 Taro 特性、性能、安全等。
 
 - 权益
 
-    Github NervJS 组 Member 权限，Github Write 权限，可以提交 commit 到 [NervJS/taro](https://github.com/NervJS/taro) 仓库，可以配置持续集成任务，负责 pull request 评审及合并，1个 PR 合并需至少2名合作者或1名技术委员会成员同意即可进入观察期，观察期3个月即可正式成为合作者。
+  Github NervJS 组 Member 权限，Github Write 权限，可以提交 commit 到 [NervJS/taro](https://github.com/NervJS/taro) 仓库，可以配置持续集成任务，负责 pull request 评审及合并，1 个 PR 合并需至少 2 名合作者或 1 名技术委员会成员同意即可进入观察期，观察期 3 个月即可正式成为合作者。
 
 - 申请方法
 
-    合作者提名有突出贡献的个人贡献者，通过投票机制决定是否可以成为合作者。一名合格的合作者需具备：技术精进，业务精湛；沟通无障碍，至少读写无阻碍；人品优良，能钻研，不轻易半途而废；态度谦逊，能接受他人意见；Owner 心态，积极主动。
+  合作者提名有突出贡献的个人贡献者，通过投票机制决定是否可以成为合作者。一名合格的合作者需具备：技术精进，业务精湛；沟通无障碍，至少读写无阻碍；人品优良，能钻研，不轻易半途而废；态度谦逊，能接受他人意见；Owner 心态，积极主动。
 
-    申请 pull request 参考模版如下：
+  申请 pull request 参考模版如下：
 
-    ![PR 模板](https://storage.360buyimg.com/aotu-team/zakary-blog/2022-03-29-Taro-community/PR-Collaborator.png)
+  ![PR 模板](https://storage.360buyimg.com/aotu-team/zakary-blog/2022-03-29-Taro-community/PR-Collaborator.png)
 
 - 退出机制
 
-    对不活跃的合作者，技术委员会有权进行移除或设置为荣休状态，荣休成员可以重新向技术委员会申请为活跃状态。如果一个合作者超过6个月无任何贡献，会自动设置成荣休状态。
+  对不活跃的合作者，技术委员会有权进行移除或设置为荣休状态，荣休成员可以重新向技术委员会申请为活跃状态。如果一个合作者超过 6 个月无任何贡献，会自动设置成荣休状态。
 
 ### 技术委员会成员（Technical Steering Committee）
 
@@ -79,23 +79,23 @@ description: ''
 
 - 目的
 
-    解决难以达成共识的技术难题、新方向等。
+  解决难以达成共识的技术难题、新方向等。
 
 - 权益
 
-    Github NervJS 组 Owner 权限。
+  Github NervJS 组 Owner 权限。
 
 - 申请方法
 
-    新增 TSC 成员需要由其他 TSC 成员提名并讨论投票。
+  新增 TSC 成员需要由其他 TSC 成员提名并讨论投票。
 
-    申请 pull request 参考模版如下：
+  申请 pull request 参考模版如下：
 
-    ![PR 模板](https://storage.360buyimg.com/aotu-team/zakary-blog/2022-03-29-Taro-community/PR-Committee.png)
+  ![PR 模板](https://storage.360buyimg.com/aotu-team/zakary-blog/2022-03-29-Taro-community/PR-Committee.png)
 
 - 退出机制
 
-    在一季度内，缺席75%的活动，且未参与任何一次投票，自动除名。成员可提出暂时”荣休“。
+  在一季度内，缺席 75%的活动，且未参与任何一次投票，自动除名。成员可提出暂时”荣休“。
 
 ## 运行机制
 
@@ -106,6 +106,7 @@ description: ''
 ### 团队
 
 - Core 团队
+
   - Cli 工作组
 
         主要负责 Taro 命令行工具的开发和维护工作。
@@ -120,7 +121,7 @@ description: ''
 
 - **Plugin** 团队
 
-    负责维护各 Taro 插件，包括端平台插件，React、Vue DevTools 等。
+  负责维护各 Taro 插件，包括端平台插件，React、Vue DevTools 等。
 
   - 端平台插件工作组
 
@@ -132,7 +133,7 @@ description: ''
 
 - Platform 团队
 
-    负责 App、Web、Open Harmony 等跨平台开发。
+  负责 App、Web、Open Harmony 等跨平台开发。
 
   - H5 工作组
 
@@ -147,9 +148,10 @@ description: ''
         负责鸿蒙适配核心、组件库、API 库等部分的开发。
 
   - 快应用工作组
+
 - **创新团队**
 
-    Taro 创新特新、新方向探索，如 wasm、rust、vite、flutter、electron 等。
+  Taro 创新特新、新方向探索，如 wasm、rust、vite、flutter、electron 等。
 
   - UI 框架兴趣组
 
@@ -157,7 +159,7 @@ description: ''
 
 - 社区团队
 
-    负责 Taro 生态与运营，和 Taro 社区的运营推广工作。
+  负责 Taro 生态与运营，和 Taro 社区的运营推广工作。
 
 ### 技术委员会双周会
 

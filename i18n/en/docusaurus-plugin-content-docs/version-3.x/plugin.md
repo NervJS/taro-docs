@@ -24,25 +24,26 @@ The `plugins` field takes the value of an array and is configured as follows.
 const config = {
   plugins: [
     // Introducing the npm installed plugins
-    '@tarojs/plugin-mock', 
+    '@tarojs/plugin-mock',
     // Introduce the npm installed plugin and pass in the plugin parameters
-    ['@tarojs/plugin-mock', {
-      mocks: {
-        '/api/user/1': {
-          name: 'judy',
-          desc: 'Mental guy'
-        }
-      }
-    }],
+    [
+      '@tarojs/plugin-mock',
+      {
+        mocks: {
+          '/api/user/1': {
+            name: 'judy',
+            desc: 'Mental guy',
+          },
+        },
+      },
+    ],
     // The plugin is introduced from the local absolute path, and also if you need to pass in parameters as above
     '/absulute/path/plugin/filename',
-  ]
+  ],
 }
 ```
 
 ### presets
-
-
 
 If you have a series of plugins that need to be configured, and they are usually combined to do a specific thing, then you can configure them via the **plugin set** `presets`.
 
@@ -51,12 +52,15 @@ Configure [compile configuration](./config-detail.md) with the `presets` field, 
 ```js title="/config/index.js"
 const config = {
   presets: [
-    '@tarojs/preset-sth', 
-    ['@tarojs/plugin-sth', {
-      arg0: 'xxx'
-    }],
+    '@tarojs/preset-sth',
+    [
+      '@tarojs/plugin-sth',
+      {
+        arg0: 'xxx',
+      },
+    ],
     '/absulute/path/preset/filename',
-  ]
+  ],
 }
 ```
 
@@ -74,6 +78,9 @@ export default (ctx, options) => {
   })
   ctx.onBuildFinish(() => {
     console.log('compile end')
+  })
+  ctx.onBuildComplete(() => {
+    console.log('Taro build complete')
   })
 }
 ```
@@ -113,16 +120,14 @@ export default (ctx) => {
     name: 'upload',
     // The options information output when executing taro upload --help
     optionsMap: {
-      '--remote': 'server address'
+      '--remote': 'server address',
     },
     // Example of usage output when executing taro upload --help
-    synopsisList: [
-      'taro upload --remote xxx.xxx.xxx.xxx'
-    ],
-    async fn () {
+    synopsisList: ['taro upload --remote xxx.xxx.xxx.xxx'],
+    async fn() {
       const { remote } = ctx.runOpts
       await uploadDist()
-    }
+    },
   })
 }
 ```
@@ -133,14 +138,13 @@ After configuring this plugin to the medium project, you can upload the compiled
 
 You can also extend the code build process through plugins.
 
-As mentioned earlier, there are `onBuildStart` and `onBuildFinish` hooks for the build process to indicate the start and finish of the build respectively, and there are more APIs to modify the build process as follows.
-
+As mentioned earlier, there are `onBuildStart`, `onBuildFinish` and `onBuildComplete` hooks for the build process to indicate the start, finish and complete of the build respectively, and there are more APIs to modify the build process as follows.
 
 - `ctx.onBuildStart(() => void)`, compile start, receive a callback function
 - `ctx.modifyWebpackChain(args: { chain: any }) => void)`, In this hook, you can make the desired adjustments to the webpackChain, which is equivalent to configuring [`webpackChain`](./config-detail.md#miniwebpackchain)
 - `ctx.modifyBuildAssets(args: { assets: any }) => void)`, Modify the compiled result
-- `ctx.modifyBuildTempFileContent(args: { tempFiles: any }) => void)`, Modify intermediate files during the compilation process, such as the configuration of an app or page
-- `ctx.onBuildFinish(() => void)`, the compilation ends and a callback function is received
+- `ctx.onBuildFinish(() => void)`, the compilation ends and a callback function is received. It is triggered after every Webpack compilation. So in watch mode, it will trigger this callback function on every detected file change, which implies there may be multiple calls to this callback function.
+- `ctx.onBuildComplete(() => void)`, build complete and a callback function is received. It is only triggered when the Taro build process is fully completed. So it differs from `onBuildFinish` in that it is triggered only once.
 
 #### Compiler Platform Expansion
 
@@ -148,8 +152,8 @@ You can also extend the compilation platform with plugin functionality.
 
 Use the API `ctx.registerPlatform`, the platform support built into Taro is implemented through this API.
 
-
 > Note: This is an unfinished feature that relies on the code compiler `@tarojs/transform-wx` to complete the transformation
+
 ## API
 
 With the above, we have a general idea of what features the Taro plugin can implement and can write a simple Taro plugin, but in order to be able to write more complex and standard plugins, we need to understand the specific API usage in the Taro plugin mechanism.
@@ -217,8 +221,7 @@ interface IHook {
 
 Hooks registered by `ctx.register` need to be triggered by method `ctx.applyPlugins`.
 
-We agree to distinguish Hook types according to the `name` of the incoming Hook object, which are mainly of the following three types: 
-
+We agree to distinguish Hook types according to the `name` of the incoming Hook object, which are mainly of the following three types:
 
 - Hook of event type, Hook name starts with `on`, e.g. `onStart`, this type of Hook only cares about triggering but not the value of Hook callback fn, Hook's callback fn receives a parameter `opts`, which is the parameter passed in when triggering the hook
 - Hook name starts with `modify`, e.g. `modifyBuildAssets`, this type of Hook will return the value after making a modification after triggering, Hook's callback fn receives two parameters `opts` and `arg`, which are the parameters passed in when triggering the hook and the result of the previous callback respectively.
@@ -240,13 +243,13 @@ ctx.registerMethod('methodName', () => {
   // callback
 })
 ctx.registerMethod({
-  name: 'methodName'
+  name: 'methodName',
 })
 ctx.registerMethod({
   name: 'methodName',
   fn: () => {
     // callback
-  }
+  },
 })
 ```
 
@@ -254,7 +257,7 @@ where the method name must be specified, and there are two cases for callback fu
 
 ##### Specify the callback function
 
-methodName` will execute the callback function specified in `registerMethod` when it is called.
+methodName`will execute the callback function specified in`registerMethod` when it is called.
 
 ##### No callback function specified
 
@@ -277,17 +280,13 @@ interface ICommand {
 }
 ```
 
-Usage : 
+Usage :
 
 ```typescript
 ctx.registerCommand({
   name: 'create',
-  fn () {
-    const {
-      type,
-      name,
-      description
-    } = ctx.runOpts
+  fn() {
+    const { type, name, description } = ctx.runOpts
     const { chalk } = ctx.helper
     const { appPath } = ctx.paths
     if (typeof name !== 'string') {
@@ -298,11 +297,11 @@ ctx.registerCommand({
       const page = new Page({
         pageName: name,
         projectDir: appPath,
-        description
+        description,
       })
       page.create()
     }
-  }
+  },
 })
 ```
 
@@ -325,13 +324,13 @@ interface IPlatform extends IHook {
 }
 ```
 
-Usage : 
+Usage :
 
 ```typescript
 ctx.registerPlatform({
   name: 'alipay',
   useConfigName: 'mini',
-  async fn ({ config }) {
+  async fn({ config }) {
     const { appPath, nodeModulesPath, outputPath } = ctx.paths
     const { npm, emptyDirectory } = ctx.helper
     emptyDirectory(outputPath)
@@ -346,32 +345,14 @@ ctx.registerPlatform({
         templ: '.awml',
         style: '.acss',
         config: '.json',
-        script: '.js'
+        script: '.js',
       },
-      isUseComponentBuildPage: false
+      isUseComponentBuildPage: false,
     }
-    ctx.modifyBuildTempFileContent(({ tempFiles }) => {
-      const replaceKeyMap = {
-        navigationBarTitleText: 'defaultTitle',
-        navigationBarBackgroundColor: 'titleBarColor',
-        enablePullDownRefresh: 'pullRefresh',
-        list: 'items',
-        text: 'name',
-        iconPath: 'icon',
-        selectedIconPath: 'activeIcon',
-        color: 'textColor'
-      }
-      Object.keys(tempFiles).forEach(key => {
-        const item = tempFiles[key]
-        if (item.config) {
-          recursiveReplaceObjectKeys(item.config, replaceKeyMap)
-        }
-      })
-    })
     // build with webpack
     const miniRunner = await npm.getNpmPkg('@tarojs/mini-runner', appPath)
     await miniRunner(appPath, miniRunnerOpts)
-  }
+  },
 })
 ```
 
@@ -391,8 +372,8 @@ const assets = await ctx.applyPlugins({
   name: 'modifyBuildAssets',
   initialVal: assets,
   opts: {
-    assets
-  }
+    assets,
+  },
 })
 ```
 
@@ -403,13 +384,11 @@ Adds a checksum to the plugin input, accepting a function type parameter, the fu
 Usage :
 
 ```typescript
-ctx.addPluginOptsSchema(joi => {
+ctx.addPluginOptsSchema((joi) => {
   return joi.object().keys({
-    mocks: joi.object().pattern(
-      joi.string(), joi.object()
-    ),
+    mocks: joi.object().pattern(joi.string(), joi.object()),
     port: joi.number(),
-    host: joi.string()
+    host: joi.string(),
   })
 })
 ```
@@ -431,6 +410,5 @@ Generate the compilation information file .frameworkinfo, with the following par
 
 Generate the final project configuration based on the current project configuration with the following parameters.
 
-
 - srcConfigName: the name of the configuration in the source code
-- distConfigName:  the name of the final generated configuration
+- distConfigName: the name of the final generated configuration

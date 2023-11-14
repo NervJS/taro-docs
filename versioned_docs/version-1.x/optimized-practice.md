@@ -8,7 +8,7 @@ title: 性能优化实践
 
 ### 预加载
 
-在**微信小程序**、**支付宝小程序**、**字节跳动小程序**和**QQ轻应用**中，从调用 `Taro.navigateTo`、`Taro.redirectTo` 或 `Taro.switchTab` 后，到页面触发 componentWillMount 会有一定延时。因此一些网络请求可以提前到发起跳转前一刻去请求。
+在**微信小程序**、**支付宝小程序**、**抖音小程序**和**QQ 轻应用**中，从调用 `Taro.navigateTo`、`Taro.redirectTo` 或 `Taro.switchTab` 后，到页面触发 componentWillMount 会有一定延时。因此一些网络请求可以提前到发起跳转前一刻去请求。
 
 Taro 提供了 `componentWillPreload` 钩子，它接收页面跳转的参数作为参数。可以把需要预加载的内容通过 `return` 返回，然后在页面触发 componentWillMount 后即可通过 `this.$preloadData` 获取到预加载的内容。
 
@@ -120,7 +120,7 @@ function areEqual(prevProps, nextProps) {
   否则返回 false
   */
 }
-export default Taro.memo(MyComponent, areEqual);
+export default Taro.memo(MyComponent, areEqual)
 ```
 
 > 注意
@@ -158,13 +158,13 @@ const state = {
   list: [1],
   arr: [1, 'a', true, null, 66],
   obj: {
-    x: 5
+    x: 5,
   },
   foo: {
     x: 8,
     y: 10,
-    z: 0
-  }
+    z: 0,
+  },
 }
 
 // 旧值
@@ -176,12 +176,12 @@ const data = {
   arr: [1, 2, 3],
   obj: {
     x: 10,
-    y: 8
+    y: 8,
   },
   foo: {
     x: 'xxx',
-    y: 10
-  }
+    y: 10,
+  },
 }
 
 diff(data, state)

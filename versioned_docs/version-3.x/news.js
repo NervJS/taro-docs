@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 
 /**
  * Taro介绍 - 新闻资讯
@@ -7,12 +7,12 @@ import React, { useEffect } from 'react';
  * http://tls-pre.jd.com/distribute-sdk-docs/docs/
  */
 
-function Index() {
+function Index () {
   const newsStyle = {
     width: '100%',
-    height: '400px',
+    height: 'auto',
     cursor: 'pointer',
-  };
+  }
 
   useEffect(() => {
     if (!window.LRT) return
@@ -27,14 +27,14 @@ function Index() {
       backupLink: 'https://mp.weixin.qq.com/s/Hud405mLileIEzHX3Z-ueQ',  // 兜底链接
       onClick (e, { url }) {
         // 点击时的回调
-        window.open(url);
+        window.open(url)
       },
-    });
-  }, []);
+    })
+  }, [])
 
   return (
     <div id="news" style={newsStyle}></div>
-  );
+  )
 }
 
 export default Index

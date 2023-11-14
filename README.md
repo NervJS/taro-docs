@@ -16,7 +16,7 @@
 ├── versioned_docs # 版本文档
 ├── versioned_sidebars # 版本文档导航
 ├── versions.json
-└── yarn.lock
+└── pnpm-lock.yaml
 ```
 
 ## 开发流程

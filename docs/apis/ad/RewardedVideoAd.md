@@ -13,7 +13,7 @@ sidebar_label: RewardedVideoAd
 
 加载激励视频广告。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.load.html)
 
@@ -25,7 +25,7 @@ sidebar_label: RewardedVideoAd
 
 显示激励视频广告。激励视频广告将从屏幕下方推入。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.show.html)
 
@@ -37,7 +37,7 @@ sidebar_label: RewardedVideoAd
 
 销毁激励视频广告实例。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.destroy.html)
 
@@ -49,55 +49,55 @@ sidebar_label: RewardedVideoAd
 
 取消监听用户点击 `关闭广告` 按钮的事件
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.offClose.html)
 
 ```tsx
-(callback: OffCloseCallback) => void
+(callback: OnCloseCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `OffCloseCallback` |
+| callback | `OnCloseCallback` |
 
 ### offError
 
 取消监听激励视频错误事件
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.offError.html)
 
 ```tsx
-(callback: OffErrorCallback) => void
+(callback: OnErrorCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `OffErrorCallback` |
+| callback | `OnErrorCallback` |
 
 ### offLoad
 
 取消监听激励视频广告加载事件
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.offLoad.html)
 
 ```tsx
-(callback: OffLoadCallback) => void
+(callback: OnLoadCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `OffLoadCallback` |
+| callback | `OnLoadCallback` |
 
 ### onClose
 
 监听用户点击 `关闭广告` 按钮的事件。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.onClose.html)
 
@@ -113,7 +113,7 @@ sidebar_label: RewardedVideoAd
 
 监听激励视频错误事件。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.onError.html)
 
@@ -129,7 +129,7 @@ sidebar_label: RewardedVideoAd
 
 监听激励视频广告加载事件。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/RewardedVideoAd.onLoad.html)
 
@@ -147,7 +147,7 @@ sidebar_label: RewardedVideoAd
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| errCode | string or number or symbol | 错误码<br />[参考地址](/docs/apis/General#aderrcode) |
+| errCode | string or number or symbol | 错误码<br />[参考地址]( /docs/apis/General#aderrcode) |
 | errMsg | `string` | 错误信息 |
 
 ### OnCloseCallbackResult
@@ -155,42 +155,6 @@ sidebar_label: RewardedVideoAd
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
 | isEnded | `boolean` | 视频是否是在用户完整观看的情况下被关闭的 |
-
-### OffCloseCallback
-
-用户点击 `关闭广告` 按钮的事件的回调函数
-
-```tsx
-(res: TaroGeneral.CallbackResult) => void
-```
-
-| 参数 | 类型 |
-| --- | --- |
-| res | `TaroGeneral.CallbackResult` |
-
-### OffErrorCallback
-
-激励视频错误事件的回调函数
-
-```tsx
-(res: TaroGeneral.CallbackResult) => void
-```
-
-| 参数 | 类型 |
-| --- | --- |
-| res | `TaroGeneral.CallbackResult` |
-
-### OffLoadCallback
-
-激励视频广告加载事件的回调函数
-
-```tsx
-(res: TaroGeneral.CallbackResult) => void
-```
-
-| 参数 | 类型 |
-| --- | --- |
-| res | `TaroGeneral.CallbackResult` |
 
 ### OnCloseCallback
 
@@ -230,14 +194,14 @@ sidebar_label: RewardedVideoAd
 
 ## API 支持度
 
-| API | 微信小程序 | H5 | React Native |
-| :---: | :---: | :---: | :---: |
-| RewardedVideoAd.load | ✔️ |  |  |
-| RewardedVideoAd.show | ✔️ |  |  |
-| RewardedVideoAd.destroy | ✔️ |  |  |
-| RewardedVideoAd.offClose | ✔️ |  |  |
-| RewardedVideoAd.offError | ✔️ |  |  |
-| RewardedVideoAd.offLoad | ✔️ |  |  |
-| RewardedVideoAd.onClose | ✔️ |  |  |
-| RewardedVideoAd.onError | ✔️ |  |  |
-| RewardedVideoAd.onLoad | ✔️ |  |  |
+| API | 微信小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: |
+| RewardedVideoAd.load | ✔️ |  |  |  |
+| RewardedVideoAd.show | ✔️ |  |  |  |
+| RewardedVideoAd.destroy | ✔️ |  |  |  |
+| RewardedVideoAd.offClose | ✔️ |  |  |  |
+| RewardedVideoAd.offError | ✔️ |  |  |  |
+| RewardedVideoAd.offLoad | ✔️ |  |  |  |
+| RewardedVideoAd.onClose | ✔️ |  |  |  |
+| RewardedVideoAd.onError | ✔️ |  |  |  |
+| RewardedVideoAd.onLoad | ✔️ |  |  |  |

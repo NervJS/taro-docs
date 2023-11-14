@@ -2,9 +2,9 @@
 title: 从原生小程序迁移过来？
 ---
 
-import Tabs from '@theme/Tabs'
+import { ReactIcon, VueIcon } from '@site/static/icons'
 import TabItem from '@theme/TabItem'
-import { VueIcon, ReactIcon } from './guides/index'
+import Tabs from '@theme/Tabs'
 
 本篇将讲述 Taro 开发和原生小程序开发的主要差异。希望能帮助掌握原生小程序开发，但不太了解 Taro 的同学快速进行迁移。
 
@@ -24,7 +24,7 @@ import { VueIcon, ReactIcon } from './guides/index'
 class App extends Component {
   // 设置全局变量 "x"
   taroGlobalData = {
-    x: 1
+    x: 1,
   }
 
   // ...
@@ -32,7 +32,7 @@ class App extends Component {
 ```
 
 ```jsx title="index.js"
-function Index () {
+function Index() {
   // 获取并使用全局变量 "x"
   const app = Taro.getApp()
   console.log(app.x)
@@ -58,9 +58,9 @@ App.use(setGlobalDataPlugin, {
 
 ```html title="index.vue"
 <script>
-// 获取并使用全局变量 "x"
-const app = Taro.getApp()
-console.log(app.x)
+  // 获取并使用全局变量 "x"
+  const app = Taro.getApp()
+  console.log(app.x)
 </script>
 ```
 
@@ -74,7 +74,7 @@ console.log(app.x)
 
 ### 1. 层级过深
 
-对于[模板不支持递归](platform-plugin-template#递归与非递归模板)的小程序（微信、QQ、京东小程序等），当页面元素嵌套层级超过一定层数（默认为 16 层，可以通过配置 [baseLevel](config-detail#minibaselevel) 修改），会创建一个自定义组件协助递归。
+对于[模板不支持递归](./platform-plugin/template#递归与非递归模板)的小程序（微信、QQ、京东小程序等），当页面元素嵌套层级超过一定层数（默认为 16 层，可以通过配置 [baseLevel](config-detail#minibaselevel) 修改），会创建一个自定义组件协助递归。
 
 此自定义组件的 `scope` 没有暴露给开发者，因此层级过深且需要调用此类 API 时，需要使用 `<CustomWrapper>` 组件包裹。
 
@@ -83,6 +83,8 @@ console.log(app.x)
 ### 2. 使用了 `<CustomWrapper>`
 
 [`<CustomWrapper>`](optimized#2-customwrapper-组件) 组件常用于优化更新性能。它本质上是一个小程序自定义组件。
+
+Taro v3.6.3+ 推荐使用以下方式获取：
 
 <Tabs
   defaultValue="React"
@@ -93,7 +95,60 @@ console.log(app.x)
 <TabItem value="React">
 
 ```jsx title="示例代码"
-<CustomWrapper id='demo' />
+class Index extends React.Component {
+  onReady () {
+    // 获取到 CustomWrapper 这个自定义组件对象，也就是所说的 scope
+    const ctx = document.getElementById('demo').ctx
+  }
+
+  render () {
+    return (
+      <View className='index'>
+        <CustomWrapper id='demo'>
+          <Text>Hello world!</Text>
+        </CustomWrapper>
+      </View>
+    )
+  }
+}
+```
+
+</TabItem>
+
+<TabItem value="Vue">
+
+```html title="示例代码"
+<template>
+  <custom-wrapper id="demo" />
+</template>
+
+<script>
+  import Taro from '@tarojs/taro'
+
+  export default {
+    onReady() {
+      // 获取到 CustomWrapper 这个自定义组件对象，也就是所说的 scope
+      const ctx = document.getElementById('demo').ctx
+    },
+  }
+</script>
+```
+
+</TabItem>
+</Tabs>
+
+Taro v3.6.2 及以下版本可以通过以下方式获取（需要对应小程序平台支持 `selectComponent` API）：
+
+<Tabs
+  defaultValue="React"
+  values={[
+    {label:  <ReactIcon />, value: 'React'},
+    {label: <VueIcon />, value: 'Vue'}
+  ]}>
+<TabItem value="React">
+
+```jsx title="示例代码"
+<CustomWrapper id="demo" />
 
 const page = Taro.getCurrentInstance().page
 // 获取到 CustomWrapper 这个自定义组件对象，也就是所说的 scope
@@ -110,15 +165,15 @@ const scope = page.selectComponent('#demo')
 </template>
 
 <script>
-import Taro from '@tarojs/taro'
+  import Taro from '@tarojs/taro'
 
-export default {
-  onReady () {
-    const page = Taro.getCurrentInstance().page
-    // 获取到 CustomWrapper 这个自定义组件对象，也就是所说的 scope
-    const scope = page.selectComponent('#demo')
+  export default {
+    onReady() {
+      const page = Taro.getCurrentInstance().page
+      // 获取到 CustomWrapper 这个自定义组件对象，也就是所说的 scope
+      const scope = page.selectComponent('#demo')
+    },
   }
-}
 </script>
 ```
 
@@ -129,5 +184,5 @@ export default {
 
 小程序的 `dataset` 概念在 Taro 中得到部分实现，详细请看：
 
-- [React dataset](react-overall#dataset)
-- [Vue dataset](vue-overall#dataset)
+- [React dataset](./react-overall#dataset)
+- [Vue dataset](./vue-overall#dataset)

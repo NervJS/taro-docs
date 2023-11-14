@@ -48,24 +48,24 @@ Taro 中可以使用小程序规范的内置组件进行开发，如 `<View>`、
 ```jsx
 import { Swiper, SwiperItem } from '@tarojs/components'
 
-function Index () {
+function Index() {
   return (
     <Swiper
-      className='box'
+      className="box"
       autoplay
       interval={1000}
-      indicatorColor='#999'
+      indicatorColor="#999"
       onClick={() => {}}
       onAnimationFinish={() => {}}
     >
       <SwiperItem>
-        <View className='text'>1</View>
+        <View className="text">1</View>
       </SwiperItem>
       <SwiperItem>
-        <View className='text'>2</View>
+        <View className="text">2</View>
       </SwiperItem>
       <SwiperItem>
-        <View className='text'>3</View>
+        <View className="text">3</View>
       </SwiperItem>
     </Swiper>
   )
@@ -86,12 +86,12 @@ function Index () {
 ### 示例代码
 
 ```jsx
-function Comp () {
-  function clickHandler (e) {
+function Comp() {
+  function clickHandler(e) {
     e.stopPropagation() // 阻止冒泡
   }
 
-  function scrollHandler () {}
+  function scrollHandler() {}
 
   // 只有小程序的 bindtap 对应 Taro 的 onClick
   // 其余小程序事件名把 bind 换成 on 即是 Taro 事件名（支付宝小程序除外，它的事件就是以 on 开头）
@@ -157,17 +157,20 @@ function Comp () {
 ```js title="config/index.js"
 const config = {
   plugins: [
-    ['@tarojs/plugin-inject', {
-      components: {
-        View: {
-          'data-index': "'dataIndex'"
+    [
+      '@tarojs/plugin-inject',
+      {
+        components: {
+          View: {
+            'data-index': "'dataIndex'",
+          },
+          ScrollView: {
+            'data-observe': "'dataObserve'",
+          },
         },
-        ScrollView: {
-          'data-observe': "'dataObserve'",
-        }
-      }
-    }]
-  ]
+      },
+    ],
+  ],
 }
 ```
 
@@ -201,63 +204,12 @@ React 组件的生命周期方法在 Taro 中都支持使用。
 
 **注意：**
 
-* 小程序页面方法在各端的支持程度不一。
-* 使用了 HOC 包裹的小程序页面组件，必须处理 forwardRef 或使用继承组件的方式而不是返回组件的方式，否则小程序页面方法可能不会被触发。
+- 小程序页面方法在各端的支持程度不一。
+- 使用了 HOC 包裹的小程序页面组件，必须处理 forwardRef 或使用继承组件的方式而不是返回组件的方式，否则小程序页面方法可能不会被触发。
 
 ## Ref
 
-在 Taro 中 ref 的用法和 React 完全一致，但是获取到的 “DOM” 和浏览器环境还有小程序环境都有不同。
-
-### React Ref
-
-使用 React Ref 获取到的是 Taro 的虚拟 DOM，和浏览器的 DOM 相似，可以操作它的 `style`，调用它的 API 等。
-
-但是 Taro 的虚拟 DOM 运行在小程序的逻辑层，并不是真实的小程序渲染层节点，它没有尺寸宽高等信息。
-
-```jsx title="示例代码"
-import React, { createRef } from 'react'
-import { View } from '@tarojs/components'
-
-export default class Test extends React.Component {
-  el = createRef()
-
-  componentDidMount () {
-    // 获取到的 DOM 具有类似 HTMLElement 或 Text 等对象的 API
-    console.log(this.el.current)
-  }
-
-  render () {
-    return (
-      <View id='only' ref={this.el} />
-    )
-  }
-}
-```
-
-### 获取小程序 DOM
-
-获取真实的小程序渲染层节点，需要在 [onReady](react-page#onready-) 生命周期中，调用小程序中用于获取 DOM 的 API。
-
-```jsx title="示例代码"
-import React from 'react'
-import { View } from '@tarojs/components'
-import Taro from '@tarojs/taro'
-
-export default class Test extends React.Component {
-  onReady () {
-    // onReady 触发后才能获取小程序渲染层的节点
-    Taro.createSelectorQuery().select('#only')
-      .boundingClientRect()
-      .exec(res => console.log(res))
-  }
-
-  render () {
-    return (
-      <View id='only' />
-    )
-  }
-}
-```
+[节点获取](./ref.mdx)
 
 ## Hooks
 
@@ -266,6 +218,12 @@ export default class Test extends React.Component {
 ## dangerouslySetInnerHTML
 
 在小程序端，使用 `dangerouslySetInnerHTML` 时有一些额外的配置选项和需要注意的地方，详情请参考[《渲染 HTML》](html)。
+
+## createPortal
+
+React `createPortal` 支持将组件渲染至特定的 dom 节点中，由于不能在页面组件的 DOM 树之外插入元素，无法实现应用级别的 `<Portal>` 组件。但你仍可以在当前页面中使用 `createPortal`。
+
+示例项目：[taro-react-portal](https://github.com/AdvancedCat/taro-react-portal)
 
 ## Minified React error
 
@@ -279,12 +237,11 @@ export default class Test extends React.Component {
 
 ## 其它限制
 
-* 由于小程序不支持动态引入，因此小程序中无法使用 `React.lazy` API。
-* 不能在页面组件的 DOM 树之外插入元素，因此不支持 `<Portal>`。
+- 由于小程序不支持动态引入，因此小程序中无法使用 `React.lazy` API。
 
 ## 常见问题
 
-* `useEffect`、`componentDidMount` 中获取不到渲染层元素信息，[7116](https://github.com/NervJS/taro/issues/7116)
-* `useEffect` 或 `useLayoutEffect` 中获取不到组件最新的宽高，[#7491](https://github.com/NervJS/taro/issues/7491)
-* 嵌套层级较深时，使用 `selectorQuery` 无法查询到子元素，[#7411](https://github.com/NervJS/taro/issues/7411)
-* Taro React 支持使用 Recoil，如果使用中遇到 `ReferenceError: Window is not defined` 的报错，请参考 [#11429](https://github.com/NervJS/taro/issues/11429) 以绕过。
+- `useEffect`、`componentDidMount` 中获取不到渲染层元素信息，[7116](https://github.com/NervJS/taro/issues/7116)
+- `useEffect` 或 `useLayoutEffect` 中获取不到组件最新的宽高，[#7491](https://github.com/NervJS/taro/issues/7491)
+- 嵌套层级较深时，使用 `selectorQuery` 无法查询到子元素，[#7411](https://github.com/NervJS/taro/issues/7411)
+- Taro React 支持使用 Recoil，如果使用中遇到 `ReferenceError: Window is not defined` 的报错，请参考 [#11429](https://github.com/NervJS/taro/issues/11429) 以绕过。

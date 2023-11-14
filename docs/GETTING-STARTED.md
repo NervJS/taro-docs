@@ -27,6 +27,7 @@ $ cnpm install -g @tarojs/cli
 ```bash
 $ npm install -g mirror-config-china
 ```
+
 :::
 
 #### 查看 Taro 全部版本信息
@@ -117,9 +118,10 @@ $ NODE_ENV=production taro build --type weapp --watch # Bash
 下载并打开[微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)，然后选择**项目根目录**进行预览。
 
 需要注意开发者工具的项目设置：
-  * 需要设置关闭 ES6 转 ES5 功能，开启可能报错
-  * 需要设置关闭上传代码时样式自动补全，开启可能报错
-  * 需要设置关闭代码压缩上传，开启可能报错
+
+- 需要设置关闭 ES6 转 ES5 功能，开启可能报错
+- 需要设置关闭上传代码时样式自动补全，开启可能报错
+- 需要设置关闭代码压缩上传，开启可能报错
 
 ### 百度小程序
 
@@ -152,9 +154,10 @@ $ NODE_ENV=production taro build --type swan --watch # Bash
 下载并打开[百度开发者工具](https://smartprogram.baidu.com/docs/develop/devtools/show_sur/)，并确保已经设置了小程序项目配置文件 [project.swan.json](./project-config)。然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
 
 需要注意开发者工具的项目设置：
-  * 需要关闭 ES6 转 ES5 功能，开启可能报错
-  * 需要关闭上传代码时样式自动补全，开启可能报错
-  * 需要关闭代码压缩上传，开启可能报错
+
+- 需要关闭 ES6 转 ES5 功能，开启可能报错
+- 需要关闭上传代码时样式自动补全，开启可能报错
+- 需要关闭代码压缩上传，开启可能报错
 
 ### 支付宝小程序
 
@@ -187,11 +190,12 @@ $ NODE_ENV=production taro build --type alipay --watch # Bash
 下载并打开[支付宝小程序开发者工具](https://docs.alipay.com/mini/developer/getting-started/)，然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
 
 需要注意开发者工具的项目设置：
-  * 需要关闭 ES6 转 ES5 功能，开启可能报错
-  * 需要关闭上传代码时样式自动补全，开启可能报错
-  * 需要关闭代码压缩上传，开启可能报错
 
-### 字节跳动小程序
+- 需要关闭 ES6 转 ES5 功能，开启可能报错
+- 需要关闭上传代码时样式自动补全，开启可能报错
+- 需要关闭代码压缩上传，开启可能报错
+
+### 抖音小程序
 
 #### 编译命令
 
@@ -219,12 +223,13 @@ $ NODE_ENV=production taro build --type tt --watch # Bash
 
 #### 小程序开发者工具
 
-下载并打开[字节跳动小程序开发者工具](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/developer-instrument/download/developer-instrument-update-and-download/)，并确保已经设置了小程序项目配置文件 [project.tt.json](./project-config)。然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
+下载并打开[抖音小程序开发者工具](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/developer-instrument/download/developer-instrument-update-and-download)，并确保已经设置了小程序项目配置文件 [project.tt.json](./project-config)。然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
 
 需要注意开发者工具的项目设置：
-  * 需要关闭 ES6 转 ES5 功能，开启可能报错
-  * 需要关闭上传代码时样式自动补全，开启可能报错
-  * 需要关闭代码压缩上传，开启可能报错
+
+- 需要关闭 ES6 转 ES5 功能，开启可能报错
+- 需要关闭上传代码时样式自动补全，开启可能报错
+- 需要关闭代码压缩上传，开启可能报错
 
 ### QQ 小程序
 
@@ -257,9 +262,10 @@ $ NODE_ENV=production taro build --type qq --watch # Bash
 下载并打开 [QQ 小程序开发者工具](https://q.qq.com/wiki/#_4-%E7%BC%96%E7%A0%81%E5%BC%80%E5%8F%91%E5%B0%8F%E7%A8%8B%E5%BA%8F)，然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
 
 需要注意开发者工具的项目设置：
-  * 需要关闭 ES6 转 ES5 功能，开启可能报错
-  * 需要关闭上传代码时样式自动补全，开启可能报错
-  * 需要关闭代码压缩上传，开启可能报错
+
+- 需要关闭 ES6 转 ES5 功能，开启可能报错
+- 需要关闭上传代码时样式自动补全，开启可能报错
+- 需要关闭代码压缩上传，开启可能报错
 
 ### 京东小程序
 
@@ -292,9 +298,10 @@ $ NODE_ENV=production taro build --type jd --watch # Bash
 下载并打开京东小程序开发者工具（前往https://mp.jd.com 注册，申请成功后将会获得开发者工具），然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
 
 需要注意开发者工具的项目设置：
-  * 需要关闭 ES6 转 ES5 功能，开启可能报错
-  * 需要关闭上传代码时样式自动补全，开启可能报错
-  * 需要关闭代码压缩上传，开启可能报错
+
+- 需要关闭 ES6 转 ES5 功能，开启可能报错
+- 需要关闭上传代码时样式自动补全，开启可能报错
+- 需要关闭代码压缩上传，开启可能报错
 
 #### 京东小程序相关阅读
 
@@ -320,9 +327,7 @@ yarn add @tarojs/plugin-platform-weapp-qy
 ```js title="Taro 项目配置"
 config = {
   // ...
-  plugins: [
-    '@tarojs/plugin-platform-weapp-qy'
-  ]
+  plugins: ['@tarojs/plugin-platform-weapp-qy'],
 }
 ```
 
@@ -379,9 +384,7 @@ yarn add @tarojs/plugin-platform-alipay-dd
 ```js title="Taro 项目配置"
 config = {
   // ...
-  plugins: [
-    '@tarojs/plugin-platform-alipay-dd'
-  ]
+  plugins: ['@tarojs/plugin-platform-alipay-dd'],
 }
 ```
 
@@ -432,9 +435,7 @@ yarn add @tarojs/plugin-platform-alipay-iot
 ```js title="Taro 项目配置"
 config = {
   // ...
-  plugins: [
-    '@tarojs/plugin-platform-alipay-iot'
-  ]
+  plugins: ['@tarojs/plugin-platform-alipay-iot'],
 }
 ```
 
@@ -485,9 +486,7 @@ yarn add @tarojs/plugin-platform-lark
 ```js title="Taro 项目配置"
 config = {
   // ...
-  plugins: [
-    '@tarojs/plugin-platform-lark'
-  ]
+  plugins: ['@tarojs/plugin-platform-lark'],
 }
 ```
 
@@ -516,10 +515,12 @@ $ NODE_ENV=production taro build --type lark --watch # Bash
 ```
 
 #### 小程序开发者工具
-[飞书小程序](https://open.feishu.cn/document/uYjL24iN/uMjNzUjLzYzM14yM2MTN?from=taro)能运行在飞书客户端上，且一套代码多端运行(包括PC端和移动端)。你需要下载并打开[飞书小程序开发者工具](https://open.feishu.cn/document/uYjL24iN/ucDOzYjL3gzM24yN4MjN?from=taro)，并确保已经设置了小程序项目配置文件。然后选择项目根目录下 `dist` 目录进行预览。
+
+[飞书小程序](https://open.feishu.cn/document/uYjL24iN/uMjNzUjLzYzM14yM2MTN?from=taro)能运行在飞书客户端上，且一套代码多端运行(包括 PC 端和移动端)。你需要下载并打开[飞书小程序开发者工具](https://open.feishu.cn/document/uYjL24iN/ucDOzYjL3gzM24yN4MjN?from=taro)，并确保已经设置了小程序项目配置文件。然后选择项目根目录下 `dist` 目录进行预览。
 
 需要注意开发者工具的项目配置
-- 需要关闭ES6转ES5功能，开启可能报错
+
+- 需要关闭 ES6 转 ES5 功能，开启可能报错
 - 需要关闭上传代码时样式自动补全，开启可能报错
 - 需要关闭代码压缩上传，开启可能报错
 
@@ -551,9 +552,7 @@ yarn add @tarojs/plugin-platform-kwai
 ```js title="Taro 项目配置"
 config = {
   // ...
-  plugins: [
-    '@tarojs/plugin-platform-kwai'
-  ]
+  plugins: ['@tarojs/plugin-platform-kwai'],
 }
 ```
 
@@ -632,10 +631,11 @@ $ taro update self
 # 使用Taro 升级命令更新CLI版本到指定版本
 $ taro update self [版本号]
 # 使用Taro 升级命令将项目依赖升级到与@tarojs/cli一致的版本
-$ taro update project 
+$ taro update project
 # 使用Taro 升级命令将项目依赖升级到指定版本
 $ taro update project [版本号]
 ```
+
 如果你所使用的 Taro CLI 版本为 3.0.9，而项目里使用的依赖版本为 3.0.10，则有可能会出现问题，这时请将你的 Taro CLI 版本更新至项目依赖版本号相同的版本，如果还是出现问题，请向我们提出 [Issue](https://nervjs.github.io/taro-issue-helper/)。
 
 ### Taro 多版本共存问题

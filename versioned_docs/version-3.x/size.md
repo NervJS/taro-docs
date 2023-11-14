@@ -21,21 +21,22 @@ const config = {
 
 ```jsx
 const DEVICE_RATIO = {
-  '640': 2.34 / 2,
-  '750': 1,
-  '828': 1.81 / 2
+  640: 2.34 / 2,
+  750: 1,
+  828: 1.81 / 2,
 }
 ```
 
 建议使用 Taro 时，设计稿以 iPhone 6 `750px` 作为设计尺寸标准。
 
 如果你的设计稿是 `375` ，不在以上三种之中，那么你需要把 `designWidth` 配置为 `375`，同时在 `DEVICE_RATIO` 中添加换算规则如下：
+
 ```jsx {5}
 const DEVICE_RATIO = {
-  '640': 2.34 / 2,
-  '750': 1,
-  '828': 1.81 / 2,
-  '375': 2 / 1
+  640: 2.34 / 2,
+  750: 1,
+  828: 1.81 / 2,
+  375: 2 / 1,
 }
 ```
 
@@ -171,6 +172,12 @@ REM 单位允许的小数位。
 }
 ```
 
+### `targetUnit` (String)
+
+转换后的单位，可选值为 `rpx`、`vw`、`rem`，当前仅支持小程序 (默认 `rpx`) 和 Web 端 (默认 `rem`)。
+
+> Web 端使用 `rem` 单位时会注入脚本用于设置 body 上的 `font-size` 属性，其他单位无该操作。
+
 ### `baseFontSize` (Number, H5 Only, Default: 20)
 
 H5 字体尺寸大小基准值，开发者可以自行调整单位换算的基准值。
@@ -190,15 +197,15 @@ H5 根节点 `font-size` 的最小值。
 当前忽略单个属性的最简单的方法，就是 px 单位使用大写字母。
 
 ```css
- /* `px` is converted to `rem` */
+/* `px` is converted to `rem` */
 .convert {
   font-size: 16px; // converted to 1rem
 }
 
- /* `Px` or `PX` is ignored by `postcss-pxtorem` but still accepted by browsers */
+/* `Px` or `PX` is ignored by `postcss-pxtorem` but still accepted by browsers */
 .ignore {
-  border: 1Px solid; // ignored
-  border-width: 2PX; // ignored
+  border: 1px solid; // ignored
+  border-width: 2px; // ignored
 }
 ```
 
@@ -214,7 +221,7 @@ H5 根节点 `font-size` 的最小值。
 .textHide {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp:2;
+  -webkit-line-clamp: 2;
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -239,15 +246,15 @@ H5 根节点 `font-size` 的最小值。
 
 #### 忽略样式方法 3 写成行内样式
 
-```HTML {2-9}
-<View 
+```jsx {2-9}
+<View
   style={{
     display: '-webkit-box',
     '-webkit-box-orient': 'vertical',
     '-webkit-line-clamp': 2,
     'text-overflow': 'ellipsis',
     overflow: 'hidden',
-    'line-height': 2
+    'line-height': 2,
   }}
 >
   这是要省略的内容这是要省略的内容这是要省略的内容
@@ -256,4 +263,4 @@ H5 根节点 `font-size` 的最小值。
 
 ### 相关链接
 
-- [Taro多行文本省略不生效](https://taro-club.jd.com/topic/2270/taro%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9C%81%E7%95%A5%E4%B8%8D%E7%94%9F%E6%95%88)
+- [Taro 多行文本省略不生效](https://taro-club.jd.com/topic/2270/taro%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC%E7%9C%81%E7%95%A5%E4%B8%8D%E7%94%9F%E6%95%88)

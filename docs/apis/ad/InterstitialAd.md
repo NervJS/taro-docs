@@ -13,7 +13,7 @@ sidebar_label: InterstitialAd
 
 销毁插屏广告实例。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.destroy.html)
 
@@ -25,55 +25,55 @@ sidebar_label: InterstitialAd
 
 取消监听插屏广告关闭事件
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.offClose.html)
 
 ```tsx
-(callback: OffCloseCallback) => void
+(callback: OnCloseCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `OffCloseCallback` |
+| callback | `OnCloseCallback` |
 
 ### offError
 
 取消监听插屏错误事件
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.offError.html)
 
 ```tsx
-(callback: OffErrorCallback) => void
+(callback: OnErrorCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `OffErrorCallback` |
+| callback | `OnErrorCallback` |
 
 ### offLoad
 
 取消监听插屏广告加载事件
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.offLoad.html)
 
 ```tsx
-(callback: OffLoadCallback) => void
+(callback: OnLoadCallback) => void
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| callback | `OffLoadCallback` |
+| callback | `OnLoadCallback` |
 
 ### onClose
 
 监听插屏广告关闭事件。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.onClose.html)
 
@@ -89,7 +89,7 @@ sidebar_label: InterstitialAd
 
 监听插屏错误事件。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.onError.html)
 
@@ -105,7 +105,7 @@ sidebar_label: InterstitialAd
 
 监听插屏广告加载事件。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.onLoad.html)
 
@@ -121,7 +121,7 @@ sidebar_label: InterstitialAd
 
 加载插屏广告。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.load.html)
 
@@ -145,7 +145,7 @@ sidebar_label: InterstitialAd
 | 2004  | 广告渲染失败  | 该项错误不是开发者的异常情况，或因小程序页面切换导致广告渲染失败 |
 | 2005  | 广告调用异常  | 插屏广告实例不允许跨页面调用 |
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ad/InterstitialAd.show.html)
 
@@ -154,42 +154,6 @@ sidebar_label: InterstitialAd
 ```
 
 ## 参数
-
-### OffCloseCallback
-
-插屏广告关闭事件的回调函数
-
-```tsx
-(res: TaroGeneral.CallbackResult) => void
-```
-
-| 参数 | 类型 |
-| --- | --- |
-| res | `TaroGeneral.CallbackResult` |
-
-### OffErrorCallback
-
-插屏错误事件的回调函数
-
-```tsx
-(res: TaroGeneral.CallbackResult) => void
-```
-
-| 参数 | 类型 |
-| --- | --- |
-| res | `TaroGeneral.CallbackResult` |
-
-### OffLoadCallback
-
-插屏广告加载事件的回调函数
-
-```tsx
-(res: TaroGeneral.CallbackResult) => void
-```
-
-| 参数 | 类型 |
-| --- | --- |
-| res | `TaroGeneral.CallbackResult` |
 
 ### OnCloseCallback
 
@@ -231,19 +195,19 @@ sidebar_label: InterstitialAd
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| errCode | string or number or symbol | 错误码<br />[参考地址](/docs/apis/General#aderrcode) |
+| errCode | string or number or symbol | 错误码<br />[参考地址]( /docs/apis/General#aderrcode) |
 | errMsg | `string` | 错误信息 |
 
 ## API 支持度
 
-| API | 微信小程序 | H5 | React Native |
-| :---: | :---: | :---: | :---: |
-| InterstitialAd.destroy | ✔️ |  |  |
-| InterstitialAd.offClose | ✔️ |  |  |
-| InterstitialAd.offError | ✔️ |  |  |
-| InterstitialAd.offLoad | ✔️ |  |  |
-| InterstitialAd.onClose | ✔️ |  |  |
-| InterstitialAd.onError | ✔️ |  |  |
-| InterstitialAd.onLoad | ✔️ |  |  |
-| InterstitialAd.load | ✔️ |  |  |
-| InterstitialAd.show | ✔️ |  |  |
+| API | 微信小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: |
+| InterstitialAd.destroy | ✔️ |  |  |  |
+| InterstitialAd.offClose | ✔️ |  |  |  |
+| InterstitialAd.offError | ✔️ |  |  |  |
+| InterstitialAd.offLoad | ✔️ |  |  |  |
+| InterstitialAd.onClose | ✔️ |  |  |  |
+| InterstitialAd.onError | ✔️ |  |  |  |
+| InterstitialAd.onLoad | ✔️ |  |  |  |
+| InterstitialAd.load | ✔️ |  |  |  |
+| InterstitialAd.show | ✔️ |  |  |  |

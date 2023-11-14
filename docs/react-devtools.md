@@ -24,9 +24,7 @@ $ yarn add --dev @tarojs/plugin-react-devtools
 
 ```js title="config/dev.js"
 config = {
-  plugins: [
-    '@tarojs/plugin-react-devtools'
-  ],
+  plugins: ['@tarojs/plugin-react-devtools'],
   // ...
 }
 ```
@@ -48,6 +46,14 @@ $ taro build --type weapp --watch
 默认值：`true`
 
 控制是否连接 `react-devtools`，开启后会注入 backend 的代码到开发者的应用中。
+
+### hostname
+
+`string`
+
+默认值：`localhost`
+
+当 localhost 不可用时，自定义 `taro` 连接 `react-devtools` 的主机名，多用于局域网或远程调试时使用。
 
 ### port
 

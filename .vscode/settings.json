@@ -11,6 +11,10 @@
       "autoFix": true
     }
   ],
-  "jest.autoEnable": false,
+  "markdownlint.config": {
+    "MD033": {
+      "no-inline-html": false
+    }
+  },
   "typescript.tsdk": "node_modules/typescript/lib"
 }

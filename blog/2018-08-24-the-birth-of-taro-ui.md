@@ -13,6 +13,7 @@ author_image_url: https://avatars3.githubusercontent.com/u/13499146?s=460&u=a5a6
 <!--truncate-->
 
 ## Taro UI
+
 Taro UI 是一款由凹凸实验室打造、基于 Taro 编写的多端 UI 组件库。除了高颜值，Taro UI 最大的亮点就是支持多端运行。Taro UI 借助 Taro 支持多端运行的特点，只需解决不同平台 CSS 的表现差异问题，就可以在微信小程序/ H5 / ReactNative 等多端适配运行。
 
 **Github**：https://github.com/NervJS/taro-ui
@@ -78,6 +79,7 @@ $ npm i taro-ui
 ### 示例
 
 在 `/myApp/src/pages/index/index.jsx` 文件添加以下代码
+
 ```jsx
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View } from '@tarojs/components'
@@ -86,17 +88,16 @@ import './index.scss'
 
 export default class Index extends Component {
   config: Config = {
-    navigationBarTitleText: '首页'
+    navigationBarTitleText: '首页',
   }
-  render () {
+  render() {
     return (
-      <View className='index'>
-         <AtButton type='primary'>按钮文案</AtButton>
+      <View className="index">
+        <AtButton type="primary">按钮文案</AtButton>
       </View>
     )
   }
 }
-
 ```
 
 ### 编译并预览
@@ -114,7 +115,7 @@ $ taro build --type weapp --watch
 $ npx taro build --type weapp --watch
 ```
 
-**H5编译预览模式**
+**H5 编译预览模式**
 
 ```bash
 # npm script
@@ -126,4 +127,5 @@ $ npx taro build --type h5 --watch
 ```
 
 ## 意见反馈
+
 如果有任何的意见或者建议，欢迎在 [Github](https://github.com/NervJS/taro-ui) 创建 issue，感谢你的支持和贡献。
