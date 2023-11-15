@@ -2,9 +2,9 @@
 title: 使用 HTML 标签
 ---
 
-import Tabs from '@theme/Tabs'
+import { ReactIcon, VueIcon } from '@site/static/icons'
 import TabItem from '@theme/TabItem'
-import { VueIcon, ReactIcon } from './guides/index'
+import Tabs from '@theme/Tabs'
 
 > Taro v3.3+ 开始支持
 
@@ -26,7 +26,7 @@ yarn add @tarojs/plugin-html
 // config/index.js
 config = {
   // ...
-  plugins: ['@tarojs/plugin-html']
+  plugins: ['@tarojs/plugin-html'],
 }
 ```
 
@@ -41,10 +41,8 @@ config = {
 <TabItem value="React">
 
 ```jsx title="示例代码"
-function Index () {
-  return (
-    <div>Hello World!</div>
-  )
+function Index() {
+  return <div>Hello World!</div>
 }
 ```
 
@@ -82,7 +80,7 @@ W3C HTML4 的内置样式。只有 HTML4 标签样式，体积较小，兼容性
 用法：
 
 ```js title="app.js"
-import '@tarojs/taro/html.css';
+import '@tarojs/taro/html.css'
 ```
 
 #### 2. HTML5
@@ -92,7 +90,7 @@ Chrome(Blink) HTML5 的内置样式。内置样式丰富，包括了大多数 HT
 用法：
 
 ```js title="app.js"
-import '@tarojs/taro/html5.css';
+import '@tarojs/taro/html5.css'
 ```
 
 ### 第三方组件库的尺寸变小了一倍
@@ -160,9 +158,10 @@ console.log(res)
 
 ```js title="小程序"
 const query = Taro.createSelectorQuery()
-query.select('#inner')
+query
+  .select('#inner')
   .boundingClientRect()
-  .exec(res => {
+  .exec((res) => {
     console.log(res)
   })
 ```
@@ -226,11 +225,14 @@ Taro 使用 **React Reconciler** 实现了自定义的渲染器，相对于 Reac
 ```js title="config/index.js"
 config = {
   plugins: [
-    ['@tarojs/plugin-html', {
-      // 包含 `demo-`、`van-` 的类名选择器中的 px 单位不会被解析
-      pxtransformBlackList: [/demo-/, /van-/]
-    }]
-  ]
+    [
+      '@tarojs/plugin-html',
+      {
+        // 包含 `demo-`、`van-` 的类名选择器中的 px 单位不会被解析
+        pxtransformBlackList: [/demo-/, /van-/],
+      },
+    ],
+  ],
 }
 ```
 
@@ -245,16 +247,19 @@ config = {
 ```ts title="config/index.js"
 config = {
   plugins: [
-    ['@tarojs/plugin-html', {
-      modifyElements (inline: string[], block: string[]) {
-        // 行内元素增加 <xxx>
-        inline.push('xxx')
-        // 行内元素添加 <span>，块级元素删除 <span>
-        inline.push('span')
-        block.splice(block.indexOf('span'), 1)
-      }
-    }]
-  ]
+    [
+      '@tarojs/plugin-html',
+      {
+        modifyElements(inline: string[], block: string[]) {
+          // 行内元素增加 <xxx>
+          inline.push('xxx')
+          // 行内元素添加 <span>，块级元素删除 <span>
+          inline.push('span')
+          block.splice(block.indexOf('span'), 1)
+        },
+      },
+    ],
+  ],
 }
 ```
 
@@ -271,11 +276,14 @@ config = {
 ```js title="config/index.js"
 config = {
   plugins: [
-    ['@tarojs/plugin-html', {
-      // 这些异步 API 的代码将会从运行时代码中删除
-      enableSizeAPIs: false
-    }]
-  ]
+    [
+      '@tarojs/plugin-html',
+      {
+        // 这些异步 API 的代码将会从运行时代码中删除
+        enableSizeAPIs: false,
+      },
+    ],
+  ],
 }
 ```
 
@@ -305,10 +313,12 @@ config = {
     postcss: {
       htmltransform: {
         enable: true,
-        removeCursorStyle: false
-      }
-    }
-  }
+        config: {
+          removeCursorStyle: false,
+        },
+      },
+    },
+  },
 }
 ```
 
@@ -320,124 +330,101 @@ RFC 文档：[《0004-rendering-html》](https://github.com/NervJS/taro-rfcs/blo
 
 ### 一、标签名映射规则
 
-| HTML 标签 | 小程序组件 |
-| :------- | :-------- |
-|  块级标签  |   view   |
-|  内联标签  |   text   |
-|   span   |    view  |
-|   img    |   image  |
-|     a    | navigator |
-|a["href=javascript;"]| view |
-|  input   |  input   |
-|input["type=checkbox"]| checkbox |
-|input["type=radio"]| radio |
-|  button  |  button  |
-| textarea | textarea |
-| progress | progress |
-|  label   |  label   |
-|   form   |   form   |
-|  audio   |  audio   |
-|  canvas  |  canvas  |
-|  video   |  video   |
-|  iframe  | web-view |
-|   slot   |   slot   |
+| HTML 标签              | 小程序组件 |
+| :--------------------- | :--------- |
+| 块级标签               | view       |
+| 内联标签               | text       |
+| span                   | view       |
+| img                    | image      |
+| a                      | navigator  |
+| a["href=javascript;"]  | view       |
+| input                  | input      |
+| input["type=checkbox"] | checkbox   |
+| input["type=radio"]    | radio      |
+| button                 | button     |
+| textarea               | textarea   |
+| progress               | progress   |
+| label                  | label      |
+| form                   | form       |
+| audio                  | audio      |
+| canvas                 | canvas     |
+| video                  | video      |
+| iframe                 | web-view   |
+| slot                   | slot       |
 
 ### 二、属性名映射规则
 
 #### 1. HTML `<a>` 标签
 
 | `<a>` 属性 | `<Navigator>` 属性 |
-| :----------- | :----------- |
-|     href     |      url     |
-|    target    |   openType   |
+| :--------- | :----------------- |
+| href       | url                |
+| target     | openType           |
 
 1.1 `<a>` 标签的 `target` 属性值对应关系：
 
 | `a[target]` 属性值 | `Navigator[open-type]` 属性值 |
-| :----------- | :----------- |
-|    _blank    |   navigate   |
-|    _self     |   redirect   |
+| :----------------- | :---------------------------- |
+| \_blank            | navigate                      |
+| \_self             | redirect                      |
 
 #### 2. HTML `<input>` 标签
 
 | `<input>` 属性 | `<Input>` 属性 |
-| :----------- | :----------- |
-|  autofocus   |    focus     |
-|   readonly   |   disabled   |
+| :------------- | :------------- |
+| autofocus      | focus          |
+| readonly       | disabled       |
 
 2.1 `<input>` 标签的 `type` 属性值对应关系：
 
-| `input[type]` 属性值 | `Input[type]` 属性值 |
-| :----------- | :----------- |
-|    tel    |   number   |
+| `input[type]` 属性值   | `Input[type]` 属性值   |
+| :--------------------- | :--------------------- |
+| tel                    | number                 |
 | `input[type=password]` | `input[password=true]` |
 
 #### 3. HTML `<textarea>` 标签
 
 | `<textarea>` 属性 | `<Textarea>` 属性 |
-| :----------- | :----------- |
-|  autofocus   |    focus     |
-|   readonly   |   disabled   |
+| :---------------- | :---------------- |
+| autofocus         | focus             |
+| readonly          | disabled          |
 
 #### 4. HTML `<progress>` 标签
 
-| `<progress>` 属性 | `<Progress>` 属性 |
-| :----------- | :----------- |
-|   value / max * 100   |   precent   |
+| `<progress>` 属性  | `<Progress>` 属性 |
+| :----------------- | :---------------- |
+| value / max \* 100 | precent           |
 
 #### 5. HTML `<button>` 标签的 `type` 属性值对应关系
 
-| `button[type]` | `Button[form-type]` |
-| :----------- | :----------- |
+| `button[type]`        | `Button[form-type]`        |
+| :-------------------- | :------------------------- |
 | `button[type=submit]` | `Button[form-type=submit]` |
-| `button[type=reset]`  | `Button[form-type=reset]` |
+| `button[type=reset]`  | `Button[form-type=reset]`  |
 
 ### 三、事件映射规则
 
 #### 1. 通用规则
 
 | HTML 事件 | 小程序组件事件 |
-| :------- | :----------- |
-|  click   |      tap     |
+| :-------- | :------------- |
+| click     | tap            |
 
 #### 2. HTML `<input>` 标签
 
 | `<input>` 事件 | `<Input>` 事件 |
-| :----------- | :----------- |
-|   onChange   |    onInput   |
-|   keypress   |   onConfirm  |
+| :------------- | :------------- |
+| onChange       | onInput        |
+| keypress       | onConfirm      |
 
 #### 2. HTML checkbox 控件
 
 | `input[type=checkbox]` 事件 | `<Checkbox>` 事件 |
-| :----------- | :----------- |
-|   onChange   |    bindtap   |
+| :-------------------------- | :---------------- |
+| onChange                    | bindtap           |
 
 #### 3. HTML radio 控件
 
 | `input[type=radio]` 事件 | `<Radio>` 事件 |
-| :----------- | :----------- |
-|   onChange   |    bindtap   |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+| :----------------------- | :------------- |
+| onChange                 | bindtap        |

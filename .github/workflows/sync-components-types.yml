@@ -1,0 +1,67 @@
+name: Sync Components types
+on:
+  schedule:
+    - cron: '0 0 * * 1,3,6'
+  push:
+    branches:
+      - dev-ci
+
+env:
+  CI: true
+jobs:
+  sync-components-types:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cache pnpm modules and build
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-types
+          restore-keys: |
+            ${{ runner.os }}-
+
+      - name: Installation Dependencies
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+
+      - name: Push changes
+        id: auto-commit-action
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore(date): update contributor member-list"
+
+      - name: Checkout NervJS/taro
+        uses: actions/checkout@v4
+        with:
+          repository: NervJS/taro
+          fetch-depth: 1
+          path: .taro
+      - run : |
+          cp -r .taro/packages/taro-components/types/* packages/taro-components/types
+          cp -r .taro/packages/taro/types/* packages/taro/types
+          rm -rf .taro
+
+      - name: Generate API document
+        run: pnpm run build:docs-api --force --verbose
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: master
+          body: "sync components types"
+          branch: "refactor/sync-types"
+          commit-message: "refactor(types): sync components types"
+          delete-branch: true
+          title: "refactor(types): sync components types"
+          labels: |
+            A-typings
+            A-components
+

@@ -12,9 +12,9 @@ Taro React Native 重大更新来了，全方位降低上手成本，提升开�
 
 Taro 3.2.0 正式版本发布至今，已过去半年。在此期间，有不少社区开发者已经使用上 Taro 来开发 APP 了。看到社区的使用量越来越多，开发团队也是收获满满。
 
-同时我们也收到了很多来自开发者的反馈，主要集中于开发环境配置复杂、组件和 API 的完善度不够及使用上的 BUG 等。对于组件和 API 的完善度及使用上的 BUG，我们都是尽可能地及时地处理并发布新版本。然而，对于开发者反馈的开发环境配置的问题，却很难复现及解决。
+同时我们也收到了很多来自开发者的反馈， 主要集中于开发环境配置复杂、组件和 API 的完善度不够及使用上的 BUG 等。对于组件和 API 的完善度及使用上的 BUG，我们都是尽可能地及时地处理并发布新版本。然而，对于开发者反馈的开发环境配置的问题，却很难复现及解决。
 
-首先 Android + iOS + React Native + Taro，4个技术的各种环境配置，会让很多开发者望而却步。其次开发者面对的环境问题千奇百怪，很多问题难以通过远程协助解决。不少开发者在调研阶段，因为无法顺利运行，便放弃了使用。对于一个跨平台框架来说，主要目的是提效，而非给开发者带来更多困难。开发环境配置问题的解决，显得尤为重要。
+首先 Android + iOS + React Native + Taro，4 个技术的各种环境配置，会让很多开发者望而却步。其次开发者面对的环境问题千奇百怪，很多问题难以通过远程协助解决。不少开发者在调研阶段，因为无法顺利运行，便放弃了使用。对于一个跨平台框架来说，主要目的是提效，而非给开发者带来更多困难。开发环境配置问题的解决，显得尤为重要。
 
 这次我们从以下三个方向去优化整个开发流程，全面降低上手成本，让 Taro 开发 APP，变得无比轻松。
 
@@ -81,22 +81,23 @@ GitHub Actions 功能非常强大，Taro 就用它来做打包发布等工作，
 
 - 配置打包的环境变量
 
-    ```yml
-    env:
-        APP_ID: com.taro.demo  # 应用 ID
-        APP_NAME: Taro Demo  # 应用名称
-        VERSION_NAME: 1.0.0 # 应用版本号
-        VERSION_CODE: 10 # 用于应用市场、程序内部识别版本，判断新旧版本，一般递增处理
-        KEYSTORE_FILE: debug.keystore # 签名文件
-        KEYSTORE_PASSWORD: android # 密码
-        KEYSTORE_KEY_ALIAS: androiddebugkey # 别名
-        KEYSTORE_KEY_PASSWORD: android # 别名的密码
-    ```
+  ```yml
+  env:
+    APP_ID: com.taro.demo # 应用 ID
+    APP_NAME: Taro Demo # 应用名称
+    VERSION_NAME: 1.0.0 # 应用版本号
+    VERSION_CODE: 10 # 用于应用市场、程序内部识别版本，判断新旧版本，一般递增处理
+    KEYSTORE_FILE: debug.keystore # 签名文件
+    KEYSTORE_PASSWORD: android # 密码
+    KEYSTORE_KEY_ALIAS: androiddebugkey # 别名
+    KEYSTORE_KEY_PASSWORD: android # 别名的密码
+  ```
+
 - 通过 github secrets 管理秘钥配置
 
     <img  referrerPolicy="no-referrer"   referrerPolicy="no-referrer"   referrerPolicy="no-referrer"  src="https://pic8.58cdn.com.cn/nowater/fangfe/n_v257e556d325fa4ee99a96e3a46a976f18.png" width="600px" />
 
-    通常我们不应该把密钥等敏感信息直接写在配置文件中，而是置于加密信息中。在 GitHub Actions 中，可以使用加密机制进行处理[4]。如图，在 `setting` -> `secret` 配上 CI 需要的 secret。然后在 workflow 中通过相应变量进行使用，如 `${{secrets.DEBUG_KEYSTORE_PASSWORD}}`。
+  通常我们不应该把密钥等敏感信息直接写在配置文件中，而是置于加密信息中。在 GitHub Actions 中，可以使用加密机制进行处理[4]。如图，在 `setting` -> `secret` 配上 CI 需要的 secret。然后在 workflow 中通过相应变量进行使用，如 `${{secrets.DEBUG_KEYSTORE_PASSWORD}}`。
 
 ## 壳工程 GitHub Actions 方案
 
@@ -104,79 +105,85 @@ GitHub Actions 功能非常强大，Taro 就用它来做打包发布等工作，
 
 1. 壳工程和业务项目合并
 
-    因为 GitHub Actions 只能在当前项目下进行操作，所以需要将壳工程（taro-native-shell）合并到项目工程下。
+   因为 GitHub Actions 只能在当前项目下进行操作，所以需要将壳工程（taro-native-shell）合并到项目工程下。
 
 2. 合并项目和壳工程的 package.json
 
-    在有原生依赖的情况下，必须保证壳工程和业务项目的原生依赖版本一致，不然打包可能会报错。
+   在有原生依赖的情况下，必须保证壳工程和业务项目的原生依赖版本一致，不然打包可能会报错。
 
 3. 安装依赖
 
-    在业务项目工程下安装合并后的 package.json 依赖。
+   在业务项目工程下安装合并后的 package.json 依赖。
 
 4. 软链依赖
 
-    将安装到业务项目下的依赖软链至壳工程项目 node_module 下。
-    ```sh
-    ln -s ./node_modules ./taro-native-shell/node_modules
-    ```
+   将安装到业务项目下的依赖软链至壳工程项目 node_module 下。
+
+   ```sh
+   ln -s ./node_modules ./taro-native-shell/node_modules
+   ```
 
 5. 业务项目编译
 
-    执行 `taro/cli build:rn` 编译命令，打包生成 jsbundle 与静态资源。
+   执行 `taro/cli build:rn` 编译命令，打包生成 jsbundle 与静态资源。
 
 6. 将编译产物移动到原生壳工程
-    
-    ```js
-    rn: {
-      appName: 'taroDemo',
-      output: {
-        ios: './ios/main.jsbundle',
-        iosAssetsDest: './ios',
-        android: './android/app/src/main/assets/index.android.bundle',
-        androidAssetsDest: './android/app/src/main/res',
-        iosSourcemapOutput: './ios/main.map',
-        androidSourcemapOutput: './android/app/src/main/assets/index.android.map',
-      },
-    }
-    ```
-    taro 编译 rn 输出静态资源，需要将资源移到原生项目中。
+
+   ```js
+   rn: {
+     appName: 'taroDemo',
+     output: {
+       ios: './ios/main.jsbundle',
+       iosAssetsDest: './ios',
+       android: './android/app/src/main/assets/index.android.bundle',
+       androidAssetsDest: './android/app/src/main/res',
+       iosSourcemapOutput: './ios/main.map',
+       androidSourcemapOutput: './android/app/src/main/assets/index.android.map',
+     },
+   }
+   ```
+
+   taro 编译 rn 输出静态资源，需要将资源移到原生项目中。
 
 7. 编译原生 APP
 
-    到 ios 和 android 目录里分别执行对应的打包命令。
+   到 ios 和 android 目录里分别执行对应的打包命令。
 
 8. 上传 APP
-    
-    将打包后的 APP 进行上传，提供下载链接。
-    ```yml
-    # iOS
-    - name: Upload iOS Products
-      uses: actions/upload-artifact@v2
-      with:
-        name: app-${{ env.BUILD_TYPE }}
-        path: |
-          ${{ github.workspace }}/ios/taroDemo.ipa
-          ${{ github.workspace }}/ios/taroDemo.app.dSYM.zip
-    ```
-    ```yml
-    # Android
-    - name: Upload Android Products
-      uses: actions/upload-artifact@v2
-      with:
-        name: app-${{ env.BUILD_TYPE }}
-        path: ${{ github.workspace }}/android/app/build/outputs/apk/${{ env.BUILD_TYPE }}/app-${{ env.BUILD_TYPE }}.apk
-    ```
-    在 iOS 侧，release workflow 还集成了上传至 APP Store 命令：
-    ```yml
-    - name: Upload app to App Store Connect
-      env:
-        APP_STORE_CONNECT_USERNAME: ${{ env.APP_STORE_CONNECT_USERNAME }}
-        APP_STORE_CONNECT_PASSWORD: ${{ env.APP_STORE_CONNECT_PASSWORD }}
-      run: |
-        cd ios
-        xcrun altool --upload-app -t ios -f "taroDemo.ipa" -u "$APP_STORE_CONNECT_USERNAME" -p "$APP_STORE_CONNECT_PASSWORD"
-    ```
+
+   将打包后的 APP 进行上传，提供下载链接。
+
+   ```yml
+   # iOS
+   - name: Upload iOS Products
+     uses: actions/upload-artifact@v2
+     with:
+       name: app-${{ env.BUILD_TYPE }}
+       path: |
+         ${{ github.workspace }}/ios/taroDemo.ipa
+         ${{ github.workspace }}/ios/taroDemo.app.dSYM.zip
+   ```
+
+   ```yml
+   # Android
+   - name: Upload Android Products
+     uses: actions/upload-artifact@v2
+     with:
+       name: app-${{ env.BUILD_TYPE }}
+       path: ${{ github.workspace }}/android/app/build/outputs/apk/${{ env.BUILD_TYPE }}/app-${{ env.BUILD_TYPE }}.apk
+   ```
+
+   在 iOS 侧，release workflow 还集成了上传至 APP Store 命令：
+
+   ```yml
+   - name: Upload app to App Store Connect
+     env:
+       APP_STORE_CONNECT_USERNAME: ${{ env.APP_STORE_CONNECT_USERNAME }}
+       APP_STORE_CONNECT_PASSWORD: ${{ env.APP_STORE_CONNECT_PASSWORD }}
+     run: |
+       cd ios
+       xcrun altool --upload-app -t ios -f "taroDemo.ipa" -u "$APP_STORE_CONNECT_USERNAME" -p "$APP_STORE_CONNECT_PASSWORD"
+   ```
 
 上面整个流程对于开发者来说理解成本太高，配置过于繁琐，所以我们将前 6 个步骤封装成一个 GitHub action[5]，开发者只需要添加一些配置项就能完成上面的流程。
 
@@ -196,6 +203,7 @@ GitHub Actions 功能非常强大，Taro 就用它来做打包发布等工作，
 ```
 
 对应的需要拉取的另一个仓库的配置：
+
 ```yml
 env:
   # 壳工程
@@ -207,6 +215,7 @@ env:
 ```
 
 配置介绍:
+
 - REPO： 壳工程地址
 - REPO_REF： 壳工程分支
 - SHELL_REPO_PATH： 壳工程目录
@@ -228,21 +237,21 @@ Release 证书的导入过程如下：
 
 1. 将证书的 `p12` 文件转成 `base64` 字符串。
 
-    ```shell
-    cat Certificates.p12 | base64 | pbcopy
-    ```
+   ```shell
+   cat Certificates.p12 | base64 | pbcopy
+   ```
 
 2. 将第一步内容保存在项目的 `secret` 中，`key` 为 `RELEASE_SIGNING_CERTIFICATE_P12_DATA`
 3. 将 `p12` 文件的密码保存在项目的 `secret` 中，`key` 为 `RELEASE_SIGNING_CERTIFICATE_PASSWORD`
 4. 将 `secret` 内配置的相关信息导入到主机中。
 
-    ```shell
-    security import <(echo $SIGNING_CERTIFICATE_P12_DATA | base64 --decode) \
-        -f pkcs12 \
-        -k build.keychain \
-        -P $SIGNING_CERTIFICATE_PASSWORD \
-        -T /usr/bin/codesign
-    ```
+   ```shell
+   security import <(echo $SIGNING_CERTIFICATE_P12_DATA | base64 --decode) \
+       -f pkcs12 \
+       -k build.keychain \
+       -P $SIGNING_CERTIFICATE_PASSWORD \
+       -T /usr/bin/codesign
+   ```
 
 描述文件的导入过程，与证书的导入过程类似，均已封装在 workflow 中。
 
@@ -255,6 +264,7 @@ Release 证书的导入过程如下：
 Android 的打包过程相对简单，直接调用 `gradlew` 命令即可。除了配置 APP 的基础信息，还需要为应用进行签名。可参考 Android 应用签名相关文档[9]，生成签名文件，置于 `android/app` 目录中。
 
 签名文件也可通过命令行工具生成：
+
 ```shell
 keytool -genkey -alias android -keyalg RSA -validity 99999 -keystore release.keystore
 ```
@@ -269,8 +279,8 @@ keytool -genkey -alias android -keyalg RSA -validity 99999 -keystore release.key
 
 开发者可以在 Taro Playground 仓库的 Releases 页面进行安装包下载[11]，也可扫描以下二维码安装 APP。
 
-| Android | iOS |
-| - | - |
+| Android                                                                                | iOS                                                                                       |
+| -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | ![](https://pic3.58cdn.com.cn/nowater/fangfe/n_v295dd481b6b2f446592350e3187716d03.png) | ![](https://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/pic_d3137b5937U5d1XdWcU735Xd7b5a5a37.png) |
 
 Taro 工程中通过 `yarn dev:rn --qr` 启动 bundler server，打印包含 IP 及端口信息的二维码。通过 Taro Playground APP 扫描该二维码，即可加载 jsbundle 进行调试，需要保证手机与电脑处于同一个局域网中。
@@ -290,7 +300,7 @@ Taro Playground 项目提供了较全面的示例代码，开发者可以参考�
 
 通过上述多方面的优化，极大地降低了使用 Taro 开发 APP 的成本。大部分场景下，只需要掌握 Taro 和 React Native，再加上一些配置，即可完成 APP 的开发与发布。
 
-使用过程中，如遇任何问题，可添加 "58技术小秘书" 或 "Taro 小助手" 为好友，备注 "Taro RN"，加入官方交流群寻求帮助。
+使用过程中，如遇任何问题，可添加 "58 技术小秘书" 或 "Taro 小助手" 为好友，备注 "Taro RN"，加入官方交流群寻求帮助。
 
 <img  referrerPolicy="no-referrer"   referrerPolicy="no-referrer"   referrerPolicy="no-referrer"  src="https://wos.58cdn.com.cn/IjGfEdCbIlr/ishare/pic_13XUU513XUVaU5U7U5Wc3559U75aXUVa.jpg" width="300px" />
 <img  referrerPolicy="no-referrer"   referrerPolicy="no-referrer"   referrerPolicy="no-referrer"  src="https://pic8.58cdn.com.cn/nowater/fangfe/n_v282625210493c4a3fac202d6cf372458e.png" width="300px" />
@@ -311,7 +321,7 @@ Taro Playground 项目提供了较全面的示例代码，开发者可以参考�
 
 [5] Taro React Native Publish Action：https://github.com/shinken008/taro-native-publish
 
-[6] fastlane官网：https://docs.fastlane.tools
+[6] fastlane 官网：https://docs.fastlane.tools
 
 [7] AppleID 密码生成：https://support.apple.com/en-us/HT204397
 

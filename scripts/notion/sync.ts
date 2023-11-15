@@ -1,37 +1,38 @@
-import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints'
 import 'dotenv/config'
+
+import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints'
+import { head,pick, set, unset } from 'lodash'
 import { RichTextItemResponse, TextRequest } from 'notion'
-import { pick, set, unset, head } from 'lodash'
 
 import writeFile from '../write'
 import { databaseId, getProperty, notion, sleep } from './common'
 import { fetchUser } from './github'
 import { updateMember } from './update-utils'
 
-export async function fetchTechnicalCommittee(list: QueryDatabaseResponse['results'] = [], start_cursor?: string) {
+export async function fetchTechnicalCommittee (list: QueryDatabaseResponse['results'] = [], start_cursor?: string) {
   const response = await notion.databases.query({
     database_id: databaseId,
     sorts: [{
-      "property": "role",
-      "direction": "ascending"
+      'property': 'role',
+      'direction': 'ascending'
     }, {
-      "property": "alumni",
-      "direction": "ascending"
+      'property': 'alumni',
+      'direction': 'ascending'
     }, {
-      "property": "team",
-      "direction": "ascending"
+      'property': 'team',
+      'direction': 'ascending'
     }, {
-      "property": "group",
-      "direction": "ascending"
+      'property': 'group',
+      'direction': 'ascending'
     }, {
-      "property": "contributions",
-      "direction": "descending"
+      'property': 'contributions',
+      'direction': 'descending'
     }, {
-      "property": "remarks",
-      "direction": "ascending"
+      'property': 'remarks',
+      'direction': 'ascending'
     }, {
-      "property": "github",
-      "direction": "ascending"
+      'property': 'github',
+      'direction': 'ascending'
     }],
     start_cursor
   })
@@ -42,9 +43,9 @@ export async function fetchTechnicalCommittee(list: QueryDatabaseResponse['resul
   return list
 }
 
-export async function updateTechnicalCommittee() {
+export async function updateTechnicalCommittee () {
   const list = await fetchTechnicalCommittee()
-  const data = await list.reduce(async (p, member) => {
+  const data = await list.reduce(async (p, member: any) => {
     const members = await p
     const cover = getProperty(member, 'cover') as { url: TextRequest } | null
     const title = getProperty(member.properties, 'title') as Array<RichTextItemResponse>
@@ -64,8 +65,8 @@ export async function updateTechnicalCommittee() {
     }
     members.push(member)
     return members
-  }, [])
-  writeFile(`static/data/contributors.json`, JSON.stringify(data.map(e => {
+  }, Promise.resolve([] as QueryDatabaseResponse['results']))
+  writeFile(`static/data/contributors.json`, JSON.stringify(data.map((e: any) => {
     const title = head(e.properties.title?.title)
     title && set(e, ['properties', 'title', 'title'], [title])
     unset(e, ['properties', 'title', 'title', '0', 'annotations'])
@@ -74,4 +75,8 @@ export async function updateTechnicalCommittee() {
   }), undefined, 2))
 }
 
-updateTechnicalCommittee()
+try {
+  updateTechnicalCommittee()
+} catch (error) {
+  console.error('Notion: update technical committee with error', error)
+}

@@ -2,11 +2,11 @@
 title: Global Configuration
 ---
 
-The `app.config.js` file in the root directory is used for global configuration of the  mini-program. The configuration items follow the **WeChat mini-program specification** and are unified for all platforms.
+The `app.config.js` file in the root directory is used for global configuration of the mini-program. The configuration items follow the **WeChat mini-program specification** and are unified for all platforms.
 
 Attention.
 
-1. The js file referenced by require or import in `app.config.js` currently **does not go through the Babel compilation syntax**. 
+1. The js file referenced by require or import in `app.config.js` currently **does not go through the Babel compilation syntax**.
 2. Differentiation logic can be implemented using the `process.env.TARO_ENV` variable as a conditional judgment.
 3. `app.config.js` does not support multi-terminated files like `app.weapp.js`, which does not work.
 
@@ -14,16 +14,16 @@ Attention.
 
 Configurations supported in H5, React Native, and all Mini-program.
 
-| Propery | Type | Required | Description |
-| :--- | :--- | :--- | :--- |
-| [pages](#pages) | String Array | yes | List of page paths |
-| [window](#window) | Object | no | Global default window |
-| [tabBar](#tabbar) | Object | no | Bottom tab bar |
-| [subPackages](#subpackages) | Object Array | no | Subcontract  configuration |
+| Propery                     | Type         | Required | Description               |
+| :-------------------------- | :----------- | :------- | :------------------------ |
+| [pages](#pages)             | String Array | yes      | List of page paths        |
+| [window](#window)           | Object       | no       | Global default window     |
+| [tabBar](#tabbar)           | Object       | no       | Bottom tab bar            |
+| [subPackages](#subpackages) | Object Array | no       | Subcontract configuration |
 
 ### pages
 
-Used to specify which pages the mini program consists of, each corresponding to a page ` path + file name ` information. The file name does not need to write the file suffix, the framework will automatically go to find the corresponding location of the file for processing.
+Used to specify which pages the mini program consists of, each corresponding to a page `path + file name` information. The file name does not need to write the file suffix, the framework will automatically go to find the corresponding location of the file for processing.
 
 **The first item of the array represents the initial page of the mini-program (home page). If you add/drop pages in the mini-program, you need to modify the pages array.**
 
@@ -47,10 +47,7 @@ you need to write in the entry file configuration
 
 ```jsx title="app.config.js"
 export default {
-  pages: [
-    'pages/index/index',
-    'pages/logs/logs'
-  ]
+  pages: ['pages/index/index', 'pages/logs/logs'],
 }
 ```
 
@@ -58,95 +55,92 @@ export default {
 
 Set the status bar, navigation bar, title, and window background color of the mini-program with the following configuration items:
 
-| Proerty | Type | Defalut | Description |
-| - | - | - | - |
-| navigationBarBackgroundColor | HexColor | #000000 | Navigation bar background color,eg: #000000 |
-| navigationBarTextStyle | String | white | Navigation bar header color, supported only black / white |
-| navigationBarTitleText | String |  | Navigation bar title text |
-| navigationStyle | String | default | Navigation bar style, only the following values are supported: default: defalut style, custom: Customize the navigation bar, keeping only the top-right corner button |
-| backgroundColor | String |  | Background color of the window |
-| backgroundTextStyle | String | dark | The drop-down loading style,  only  supported  dark / light |
-| backgroundColorTop | String | #ffffff | Background color for top window, supported on iOS only |
-| backgroundColorBottom | String | #ffffff | Background color for the bottom window, supported on iOS only |
-| enablePullDownRefresh | boolean | false | Whether to enable drop-down refresh of the current page |
-| onReachBottomDistance | Number | 50 | The distance from the bottom of the page when the page pull-up bottom event is triggered, the unit is px |
-|pageOrientation | String | portrait | Screen rotation settings, support auto / portrait / landscape |
+| Proerty                      | Type     | Defalut  | Description                                                                                                                                                           |
+| ---------------------------- | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| navigationBarBackgroundColor | HexColor | #000000  | Navigation bar background color,eg: #000000                                                                                                                           |
+| navigationBarTextStyle       | String   | white    | Navigation bar header color, supported only black / white                                                                                                             |
+| navigationBarTitleText       | String   |          | Navigation bar title text                                                                                                                                             |
+| navigationStyle              | String   | default  | Navigation bar style, only the following values are supported: default: defalut style, custom: Customize the navigation bar, keeping only the top-right corner button |
+| backgroundColor              | String   |          | Background color of the window                                                                                                                                        |
+| backgroundTextStyle          | String   | dark     | The drop-down loading style, only supported dark / light                                                                                                              |
+| backgroundColorTop           | String   | #ffffff  | Background color for top window, supported on iOS only                                                                                                                |
+| backgroundColorBottom        | String   | #ffffff  | Background color for the bottom window, supported on iOS only                                                                                                         |
+| enablePullDownRefresh        | boolean  | false    | Whether to enable drop-down refresh of the current page                                                                                                               |
+| onReachBottomDistance        | Number   | 50       | The distance from the bottom of the page when the page pull-up bottom event is triggered, the unit is px                                                              |
+| pageOrientation              | String   | portrait | Screen rotation settings, support auto / portrait / landscape                                                                                                         |
 
 #### Support as follows
 
-| Property | WeChat Mini-Program | Baidu Smart-Program | ByteDance Mini-Program | Alipay Mini-Program | H5 | React Native |
-| - | - | - | - | - | - | - |
-| navigationBarBackgroundColor | ✔️ | ✔️|✔️|✔️|✔️|✔️|
-| navigationBarTextStyle | ✔️ | ✔️|✔️|  ✘ |✔️|✔️|
-| navigationBarTitleText | ✔️ | ✔️|✔️| ✔️ |✔️|✔️|
-| navigationStyle | ✔️ (WeChat App 6.6.0) | ✔️（Baidu App 11.1.0）|✔️|  ✘ | ✘| ✘|
-| backgroundColor | ✔️ | ✔️|✔️| ✘ |✘|✘|
-| backgroundTextStyle | ✔️ | ✔️|✔️| ✘ |✘|✘|
-| backgroundColorTop |✔️ (WeChat App 6.5.16） | ✘|✔️| ✘ |✘|✘|
-| backgroundColorBottom |✔️ (WeChat App 6.5.16） | ✘|✔️| ✘ |✘|✘|
-| enablePullDownRefresh | ✔️ | ✔️|✔️| ✔️ |✘|✘|
-| onReachBottomDistance | ✔️ | ✔️|✔️| ✘ |✘|✘|
-|pageOrientation | ✔️ 2.4.0 (auto) / 2.5.0 (landscape) | ✘|✘| ✘ |✘|✘|
+| Property                     | WeChat Mini-Program                 | Baidu Smart-Program    | ByteDance Mini-Program | Alipay Mini-Program | H5  | React Native |
+| ---------------------------- | ----------------------------------- | ---------------------- | ---------------------- | ------------------- | --- | ------------ |
+| navigationBarBackgroundColor | ✔️                                  | ✔️                     | ✔️                     | ✔️                  | ✔️  | ✔️           |
+| navigationBarTextStyle       | ✔️                                  | ✔️                     | ✔️                     | ✘                   | ✔️  | ✔️           |
+| navigationBarTitleText       | ✔️                                  | ✔️                     | ✔️                     | ✔️                  | ✔️  | ✔️           |
+| navigationStyle              | ✔️ (WeChat App 6.6.0)               | ✔️（Baidu App 11.1.0） | ✔️                     | ✘                   | ✘   | ✘            |
+| backgroundColor              | ✔️                                  | ✔️                     | ✔️                     | ✘                   | ✘   | ✘            |
+| backgroundTextStyle          | ✔️                                  | ✔️                     | ✔️                     | ✘                   | ✘   | ✘            |
+| backgroundColorTop           | ✔️ (WeChat App 6.5.16）             | ✘                      | ✔️                     | ✘                   | ✘   | ✘            |
+| backgroundColorBottom        | ✔️ (WeChat App 6.5.16）             | ✘                      | ✔️                     | ✘                   | ✘   | ✘            |
+| enablePullDownRefresh        | ✔️                                  | ✔️                     | ✔️                     | ✔️                  | ✘   | ✘            |
+| onReachBottomDistance        | ✔️                                  | ✔️                     | ✔️                     | ✘                   | ✘   | ✘            |
+| pageOrientation              | ✔️ 2.4.0 (auto) / 2.5.0 (landscape) | ✘                      | ✘                      | ✘                   | ✘   | ✘            |
 
 #### Code example
 
 ```jsx title="app.config.js"
 export default {
-  pages: [
-    'pages/index/index',
-    'pages/logs/logs'
-  ],
+  pages: ['pages/index/index', 'pages/logs/logs'],
   window: {
     navigationBarBackgroundColor: '#ffffff',
     navigationBarTextStyle: 'black',
     navigationBarTitleText: 'WeChat interface function demo',
     backgroundColor: '#eeeeee',
-    backgroundTextStyle: 'light'
-  }
+    backgroundTextStyle: 'light',
+  },
 }
 ```
 
 ### tabBar
 
-If the mini-program is a multi-tab application, The tabBar configuration item allows you to specify how the tab bar should behave and the corresponding page to be displayed when the tab is switched. 
+If the mini-program is a multi-tab application, The tabBar configuration item allows you to specify how the tab bar should behave and the corresponding page to be displayed when the tab is switched.
 
 The configuration items are as follows:
 
-| Property | Type |  Required | Default | Description |
-| - | - | - | - | - |
-| color | HexColor(Hexadecimal color values) | Yes |  | Default color for text on tab, only support  Hexadecimal color value|
-| selectedColor | HexColor | Yes |  | Text selection color on tab, only support  Hexadecimal color value |
-| backgroundColor | HexColor | Yes |  | tab backgroundColor , only support  Hexadecimal color value |
-| borderStyle | String | Yes | black | tabbar border color， only support black / white |
-| list | Array | Yes |  | tab list of at least 2 and at most 5 tabs |
-| position | String | No | bottom | tabBar position, only support bottom / top |
-| custom | Boolean | No | false | custom tabBar |
+| Property        | Type                               | Required | Default | Description                                                         |
+| --------------- | ---------------------------------- | -------- | ------- | ------------------------------------------------------------------- |
+| color           | HexColor(Hexadecimal color values) | Yes      |         | Default color for text on tab, only support Hexadecimal color value |
+| selectedColor   | HexColor                           | Yes      |         | Text selection color on tab, only support Hexadecimal color value   |
+| backgroundColor | HexColor                           | Yes      |         | tab backgroundColor , only support Hexadecimal color value          |
+| borderStyle     | String                             | Yes      | black   | tabbar border color， only support black / white                    |
+| list            | Array                              | Yes      |         | tab list of at least 2 and at most 5 tabs                           |
+| position        | String                             | No       | bottom  | tabBar position, only support bottom / top                          |
+| custom          | Boolean                            | No       | false   | custom tabBar                                                       |
 
 where list accepts an array of at least 2 and at most 5 tabs.
 The tabs are sorted in the order of the array and each item is an object with the following Property values.
 
-| Property | Type |  Required |  Description	 |
-| - | - | - | - |
-| pagePath | String | Yes |  The page path, must be defined first in the pages |
-| text | String | Yes |  Button text on tab |
-| iconPath | String | No |   Image path, icon size limit is 40kb, recommended size is 81px * 81px, web images are not supported. <br/>When position is top, the icon is not displayed. |
-| selectedIconPath | String | No |  Image path when selected, icon size limit is 40kb, recommended size is 81px * 81px, web images are not supported.<br/>When position is top, the icon is not displayed.  |
+| Property         | Type   | Required | Description                                                                                                                                                             |
+| ---------------- | ------ | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| pagePath         | String | Yes      | The page path, must be defined first in the pages                                                                                                                       |
+| text             | String | Yes      | Button text on tab                                                                                                                                                      |
+| iconPath         | String | No       | Image path, icon size limit is 40kb, recommended size is 81px \* 81px, web images are not supported. <br/>When position is top, the icon is not displayed.              |
+| selectedIconPath | String | No       | Image path when selected, icon size limit is 40kb, recommended size is 81px \* 81px, web images are not supported.<br/>When position is top, the icon is not displayed. |
 
 #### Support as follows
 
-| Property | WeChat Mini-Program |  Baidu Smart-Program  | ByteDance Mini-Program |  Alipay Mini-Program  | H5 | RN |
-| - | - | - | - | - | - | - |
-| color | ✔️ | ✔️|✔️|✔️|✔️|✔️|
-| selectedColor | ✔️ | ✔️|✔️|  ✔️ |✔️|✔️|
-| backgroundColor | ✔️ | ✔️|✔️| ✔️ |✔️|✔️|
-| borderStyle | ✔️ | ✔️|✔️|  ✘ | ✔️| ✔️|
-| list | ✔️ | ✔️|✔️| ✔️ |✔️|✔️|
-| position | ✔️ | ✘|✔️| ✘ |✘|✘|
-| custom |✔ (Base library 2.5.0 or higher) | ✘|✘| ✘ |✘|✘|
+| Property        | WeChat Mini-Program              | Baidu Smart-Program | ByteDance Mini-Program | Alipay Mini-Program | H5  | RN  |
+| --------------- | -------------------------------- | ------------------- | ---------------------- | ------------------- | --- | --- |
+| color           | ✔️                               | ✔️                  | ✔️                     | ✔️                  | ✔️  | ✔️  |
+| selectedColor   | ✔️                               | ✔️                  | ✔️                     | ✔️                  | ✔️  | ✔️  |
+| backgroundColor | ✔️                               | ✔️                  | ✔️                     | ✔️                  | ✔️  | ✔️  |
+| borderStyle     | ✔️                               | ✔️                  | ✔️                     | ✘                   | ✔️  | ✔️  |
+| list            | ✔️                               | ✔️                  | ✔️                     | ✔️                  | ✔️  | ✔️  |
+| position        | ✔️                               | ✘                   | ✔️                     | ✘                   | ✘   | ✘   |
+| custom          | ✔ (Base library 2.5.0 or higher) | ✘                   | ✘                      | ✘                   | ✘   | ✘   |
 
 ### subPackages
 
-> H5 and RN can merge  `subPackages` into  `pages`
+> H5 and RN can merge `subPackages` into `pages`
 
 When enable [Subpackage Loading](https://developers.weixin.qq.com/miniprogram/dev/framework/subpackages.html), declare the project subcontract structure
 
@@ -154,65 +148,62 @@ When enable [Subpackage Loading](https://developers.weixin.qq.com/miniprogram/de
 
 Property is only supported in Mini-program, H5 and RN are not supported.
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
-| [networkTimeout](#networktimeout) | Object | Network timeout time |
-| [debug](#debug) | Boolean | Whether to enable debug mode, default off |
-| [permission](#permission) | Object | Mini-program interface permission-related settings |
-| [requiredBackgroundModes](#requiredbackgroundmodes) | String Array | Capabilities that need to be used in the background, such as "Music Play" |
-| [preloadRule](#preloadrule) | Object | Subpackage pre-download rules |
-| [entryPagePath](#entrypagepath) | String | Default Launch Home |
-| [workers](#workers) | String | Worker code directory |
-| [navigateToMiniProgramAppIdList](#navigatetominiprogramappidlist) | String Array | For a list of jumping mini-program, see wx.navigateToMiniProgram |
+| Property                                                          | Type         | Description                                                               |
+| :---------------------------------------------------------------- | :----------- | :------------------------------------------------------------------------ |
+| [networkTimeout](#networktimeout)                                 | Object       | Network timeout time                                                      |
+| [debug](#debug)                                                   | Boolean      | Whether to enable debug mode, default off                                 |
+| [permission](#permission)                                         | Object       | Mini-program interface permission-related settings                        |
+| [requiredBackgroundModes](#requiredbackgroundmodes)               | String Array | Capabilities that need to be used in the background, such as "Music Play" |
+| [preloadRule](#preloadrule)                                       | Object       | Subpackage pre-download rules                                             |
+| [entryPagePath](#entrypagepath)                                   | String       | Default Launch Home                                                       |
+| [workers](#workers)                                               | String       | Worker code directory                                                     |
+| [navigateToMiniProgramAppIdList](#navigatetominiprogramappidlist) | String Array | For a list of jumping mini-program, see wx.navigateToMiniProgram          |
 
 ### networkTimeout
 
-<img src="https://storage.jd.com/cjj-pub-images/icon_%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} /> <img src="https://storage.jd.com/cjj-pub-images/icon_%E7%99%BE%E5%BA%A6%E8%BD%BB%E5%BA%94%E7%94%A8.png" width="25px" style={{verticalAlign: 'middle' }} /> <img src="https://storage.jd.com/cjj-pub-images/icon_%E5%AD%97%E8%8A%82.png" width="25px" style={{verticalAlign: 'middle' }} />  <img src="https://storage.jd.com/cjj-pub-images/icon_QQ%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} />
+<img src="https://storage.jd.com/cjj-pub-images/icon_%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} /> <img src="https://storage.jd.com/cjj-pub-images/icon_%E7%99%BE%E5%BA%A6%E8%BD%BB%E5%BA%94%E7%94%A8.png" width="25px" style={{verticalAlign: 'middle' }} /> <img src="https://storage.jd.com/cjj-pub-images/icon_%E5%AD%97%E8%8A%82.png" width="25px" style={{verticalAlign: 'middle' }} /> <img src="https://storage.jd.com/cjj-pub-images/icon_QQ%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} />
 
 Timeout time for each type of network request, All units are in milliseconds.
 
-| Property | Type |  Required | Default | Description |
-| - | - | - | - | - |
-| request | Number | No | 60000 | Timeout for [Taro.request](./apis/network/request/request.md) , unit: milliseconds |
-| connectSocket | Number | No | 60000 | Timeout for [Taro.connectSocket](./apis/network/webSocket/connectSocket.md) , unit: milliseconds |
-| uploadFile | Number | No | 60000 | Timeout for [Taro.uploadFile](./apis/network/upload/uploadFile.md) , unit: milliseconds |
-| downloadFile | Number | No | 60000 | Timeout for [Taro.downloadFile](./apis/network/download/downloadFile.md) , unit: milliseconds |
+| Property      | Type   | Required | Default | Description                                                                                   |
+| ------------- | ------ | -------- | ------- | --------------------------------------------------------------------------------------------- |
+| request       | Number | No       | 60000   | Timeout for [Taro.request](./apis/network/request/request) , unit: milliseconds               |
+| connectSocket | Number | No       | 60000   | Timeout for [Taro.connectSocket](./apis/network/webSocket/connectSocket) , unit: milliseconds |
+| uploadFile    | Number | No       | 60000   | Timeout for [Taro.uploadFile](./apis/network/upload/uploadFile) , unit: milliseconds          |
+| downloadFile  | Number | No       | 60000   | Timeout for [Taro.downloadFile](./apis/network/download/downloadFile) , unit: milliseconds    |
 
 ### debug
 
-Support situation： <img src="https://storage.jd.com/cjj-pub-images/icon_%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} />  <img src="https://storage.jd.com/cjj-pub-images/icon_%E4%BA%AC%E4%B8%9C%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} />  <img src="https://storage.jd.com/cjj-pub-images/icon_QQ%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} /> 
+Support situation： <img src="https://storage.jd.com/cjj-pub-images/icon_%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} /> <img src="https://storage.jd.com/cjj-pub-images/icon_%E4%BA%AC%E4%B8%9C%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} /> <img src="https://storage.jd.com/cjj-pub-images/icon_QQ%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} />
 
 You can enable `debug` mode in developer tools. In the console panel of developer tools, debug information is given in the form of `info`, which includes `Page` registration, page routing, data update, event triggering, etc. It can help developers to quickly locate some common problems.
 
 ### permission
 
-Support situation:  <img src="https://storage.jd.com/cjj-pub-images/icon_%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} /> <img src="https://storage.jd.com/cjj-pub-images/icon_%E7%99%BE%E5%BA%A6%E8%BD%BB%E5%BA%94%E7%94%A8.png" width="25px" style={{verticalAlign: 'middle' }} /> <img src="https://storage.jd.com/cjj-pub-images/icon_%E5%AD%97%E8%8A%82.png" width="25px" style={{verticalAlign: 'middle' }} />  <img src="https://storage.jd.com/cjj-pub-images/icon_QQ%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} /> 
+Support situation: <img src="https://storage.jd.com/cjj-pub-images/icon_%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} /> <img src="https://storage.jd.com/cjj-pub-images/icon_%E7%99%BE%E5%BA%A6%E8%BD%BB%E5%BA%94%E7%94%A8.png" width="25px" style={{verticalAlign: 'middle' }} /> <img src="https://storage.jd.com/cjj-pub-images/icon_%E5%AD%97%E8%8A%82.png" width="25px" style={{verticalAlign: 'middle' }} /> <img src="https://storage.jd.com/cjj-pub-images/icon_QQ%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} />
 
-Mini-program[Interface Permissions](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html)related settings. The field type is `Object` and the structure as follow: 
+Mini-program[Interface Permissions](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html)related settings. The field type is `Object` and the structure as follow:
 
-| Property | Type |  Required | Defalut | Description |
-| - | - | - | - | - |
-| scope.userLocation | PermissionObject | No |  | Location-related permission statement |
+| Property           | Type             | Required | Defalut | Description                           |
+| ------------------ | ---------------- | -------- | ------- | ------------------------------------- |
+| scope.userLocation | PermissionObject | No       |         | Location-related permission statement |
 
 `PermissionObject` structure:
 
-| Property | Type |  Required | Defalut | Description |
-| - | - | - | - | - |
-| desc | string | Yes |  | Description of the interface usage displayed when obtaining permissions. Maximum 30 characters |
+| Property | Type   | Required | Defalut | Description                                                                                    |
+| -------- | ------ | -------- | ------- | ---------------------------------------------------------------------------------------------- |
+| desc     | string | Yes      |         | Description of the interface usage displayed when obtaining permissions. Maximum 30 characters |
 
 #### Code Examples
 
 ```js title="app.config.js"
 export default {
-  pages: [
-    'pages/index/index',
-    'pages/logs/logs'
-  ],
+  pages: ['pages/index/index', 'pages/logs/logs'],
   permission: {
     'scope.userLocation': {
-      desc: 'Your location information will be used to show the effect of the mini-program location interface'
-    }
-  }
+      desc: 'Your location information will be used to show the effect of the mini-program location interface',
+    },
+  },
 }
 ```
 
@@ -231,8 +222,8 @@ Declare the ability to require background operation, of type array. The followin
 
 ```js title="app.config.js"
 export default {
-  "pages": ["pages/index/index"],
-  "requiredBackgroundModes": ["audio", "location"]
+  pages: ['pages/index/index'],
+  requiredBackgroundModes: ['audio', 'location'],
 }
 ```
 
@@ -246,22 +237,21 @@ Declare the rules for subcontracting pre-downloads.
 
 - [Wechat Mini-program Documents](https://developers.weixin.qq.com/miniprogram/dev/framework/subpackages/preload.html)
 - [Baidu Smart-Program Documents](https://smartprogram.baidu.com/docs/develop/framework/subpackages/#%E5%88%86%E5%8C%85%E9%A2%84%E4%B8%8B%E8%BD%BD%E8%A7%84%E5%88%99)
-- [ByteDance Mini-Program Documents](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/framework/basic-reference/general-configuration#preloadrule)
+- [ByteDance Mini-Program Documents](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/framework/basic-reference/general-configuration)
 
 ### entryPagePath
 
-Support situation: <img src="https://storage.jd.com/cjj-pub-images/icon_%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} />  <img src="https://storage.jd.com/cjj-pub-images/icon_%E5%AD%97%E8%8A%82.png" width="25px" style={{verticalAlign: 'middle' }} />
+Support situation: <img src="https://storage.jd.com/cjj-pub-images/icon_%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} /> <img src="https://storage.jd.com/cjj-pub-images/icon_%E5%AD%97%E8%8A%82.png" width="25px" style={{verticalAlign: 'middle' }} />
 
-Set the default launch path (home page) of the mini-program, common scenario is to launch from WeChat list page dropdown,  mini-program list launch, etc.  If not filled, it will default to the first item in the `pages` list. The parameter with page path is not supported.
+Set the default launch path (home page) of the mini-program, common scenario is to launch from WeChat list page dropdown, mini-program list launch, etc. If not filled, it will default to the first item in the `pages` list. The parameter with page path is not supported.
 
 #### Code Examples
 
 ```js title="app.config.js"
 export default {
-  "entryPagePath": "pages/index/index"
+  entryPagePath: 'pages/index/index',
 }
 ```
-
 
 ### workers
 
@@ -274,29 +264,30 @@ Set the directory where Worker code is placed when using Worker to handle multi-
 
 ### navigateToMiniProgramAppIdList
 
-Support situation: <img src="https://storage.jd.com/cjj-pub-images/icon_%E5%AD%97%E8%8A%82.png" width="25px" style={{verticalAlign: 'middle' }} />  <img src="https://storage.jd.com/cjj-pub-images/icon_QQ%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} />
+Support situation: <img src="https://storage.jd.com/cjj-pub-images/icon_%E5%AD%97%E8%8A%82.png" width="25px" style={{verticalAlign: 'middle' }} /> <img src="https://storage.jd.com/cjj-pub-images/icon_QQ%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} />
 
-When the mini-program needs to jump to other mini-program using the  [Taro.navigateToMiniProgram](https://developers.weixin.qq.com/miniprogram/dev/api/wx.navigateToMiniProgram.html) interface, 
+When the mini-program needs to jump to other mini-program using the [Taro.navigateToMiniProgram](https://developers.weixin.qq.com/miniprogram/dev/api/wx.navigateToMiniProgram.html) interface,
 you need to declare the list of appId of the mini-program you want to jump to in the configuration file, you can fill in up to 10
 
 ## WeChat Mini-program specific Property
 
 Property that is only supported in WeChat mini-program. <img src="https://storage.jd.com/cjj-pub-images/icon_%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} />
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
-| [functionalPages](#functionalpages) | Boolean | Whether to enable the plugin function page, default off |
-| [plugins](#plugins) | Object | Plugins used |
-| [resizable](#resizable) | Boolean | Whether the iPad mini-program supports screen rotation, the default is off |
-| [usingComponents](#usingcomponents) | Object | Global custom component configuration |
-| [sitemapLocation](#sitemaplocation) |	String |  Specify the location of sitemap.json  |
-| [style](#style) |	String | Specify the use of the upgraded weui style |
-| [useExtendedLib](#useextendedlib) |	Object | Specify the extension library to be referenced |
-| [entranceDeclare](#entrancedeclare) |	Object |  WeChat messages open with mini-program |
-| [darkmode](#darkmode) |	boolean | Mini-program support DarkMode |
-| [themeLocation](#themelocation) |	String | Specify the location of theme.json |
-| [lazyCodeLoading](#lazycodeloading) |	String | Configure custom component code for on-demand injection |
-| [singlePage](#singlepage) |	Object | Single page mode related configuration |
+| Property                            | Type    | Description                                                                |
+| :---------------------------------- | :------ | :------------------------------------------------------------------------- |
+| [functionalPages](#functionalpages) | Boolean | Whether to enable the plugin function page, default off                    |
+| [plugins](#plugins)                 | Object  | Plugins used                                                               |
+| [resizable](#resizable)             | Boolean | Whether the iPad mini-program supports screen rotation, the default is off |
+| [usingComponents](#usingcomponents) | Object  | Global custom component configuration                                      |
+| [sitemapLocation](#sitemaplocation) | String  | Specify the location of sitemap.json                                       |
+| [style](#style)                     | String  | Specify the use of the upgraded weui style                                 |
+| [useExtendedLib](#useextendedlib)   | Object  | Specify the extension library to be referenced                             |
+| [entranceDeclare](#entrancedeclare) | Object  | WeChat messages open with mini-program                                     |
+| [darkmode](#darkmode)               | boolean | Mini-program support DarkMode                                              |
+| [themeLocation](#themelocation)     | String  | Specify the location of theme.json                                         |
+| [lazyCodeLoading](#lazycodeloading) | String  | Configure custom component code for on-demand injection                    |
+| [singlePage](#singlepage)           | Object  | Single page mode related configuration                                     |
+| [renderer](#renderer)               | String  | The default global render engine                                           |
 
 ### functionalPages
 
@@ -350,9 +341,9 @@ The rc tools version supports subpackage references. The usage is as follows.
 
 ```js title="app.config.js"
 export default {
-  "useExtendedLib": {
-    "weui": true
-  }
+  useExtendedLib: {
+    weui: true,
+  },
 }
 ```
 
@@ -366,12 +357,12 @@ Chat location messages are opened with taxi-like mini-program,[refer to details]
 
 ```js title="app.config.js"
 export default {
-  "entranceDeclare": {
-    "locationMessage": {
-        "path": "pages/index/index",
-        "query": "foo=bar"
-    }
-  }
+  entranceDeclare: {
+    locationMessage: {
+      path: 'pages/index/index',
+      query: 'foo=bar',
+    },
+  },
 }
 ```
 
@@ -387,7 +378,7 @@ After the configuration, please follow the [DarkMode Adaptation Guide](https://d
 
 ```js title="app.config.js"
 export default {
-  "darkmode": true
+  darkmode: true,
 }
 ```
 
@@ -399,7 +390,7 @@ Customize the path to [theme.json](https://developers.weixin.qq.com/miniprogram/
 
 ```js title="app.config.js"
 export default {
-  "themeLocation": "/path/to/theme.json"
+  themeLocation: '/path/to/theme.json',
 }
 ```
 
@@ -409,13 +400,13 @@ export default {
 
 Normally, during the launch of the mini-program, the code of all pages and custom components are injected, and custom components and pages that are not used in the current page are not actually used after the injection.
 
-Since the base library version `2.11.1`, mini-program support selective injection of code necessary to reduce the mini-program  startup time and runtime memory.
+Since the base library version `2.11.1`, mini-program support selective injection of code necessary to reduce the mini-program startup time and runtime memory.
 
 #### Code Example
 
 ```js title="app.config.js"
 export default {
-  "lazyCodeLoading": "requiredComponents"
+  lazyCodeLoading: 'requiredComponents',
 }
 ```
 
@@ -425,18 +416,28 @@ export default {
 
 Single page mode related configuration:
 
-| Property | Type | Required | Defalult | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| navigationBarFit | String | No | Automatic adjustment by default, `float` if the original page is a custom navigation bar, `squeezed` for No | The intersection status of the navigation bar with the page. A value of `float` means that the navigation bar floats on the page and intersects with the page; a value of `squeezed` means that the page is squeezed by the navigation bar and does not intersect with the page. |
+| Property         | Type   | Required | Defalult                                                                                                    | Description                                                                                                                                                                                                                                                                      |
+| :--------------- | :----- | :------- | :---------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| navigationBarFit | String | No       | Automatic adjustment by default, `float` if the original page is a custom navigation bar, `squeezed` for No | The intersection status of the navigation bar with the page. A value of `float` means that the navigation bar floats on the page and intersects with the page; a value of `squeezed` means that the page is squeezed by the navigation bar and does not intersect with the page. |
+
+### renderer
+
+Specify the default global render engine.
+
+可选值：`webview`, `skyline`
+
+默认值：`webview`
+
+> Taro offer method `Taro.getRenderer()` to support get which render engine used in page `onLoad` lifecycle.
 
 ## Baidu Smart-program specific Property
 
 Properties that are only supported in Baidu smart-program. <img src="https://storage.jd.com/cjj-pub-images/icon_%E7%99%BE%E5%BA%A6%E8%BD%BB%E5%BA%94%E7%94%A8.png" width="25px" style={{verticalAlign: 'middle' }} />
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
-| [routes](#routes) | Array Object | Custom routing-related settings |
-| [dynamicLib](#dynamiclib) | Object | Introducing dynamic libraries |
+| Property                  | Type         | Description                     |
+| :------------------------ | :----------- | :------------------------------ |
+| [routes](#routes)         | Array Object | Custom routing-related settings |
+| [dynamicLib](#dynamiclib) | Object       | Introducing dynamic libraries   |
 
 ### routes
 
@@ -446,45 +447,36 @@ For more details, see [Custom Routes](https://smartprogram.baidu.com/docs/develo
 
 routes is an array, each item in the array represents a set of routing rules, specifically containing the following fields.
 
-| Property | Type | Required | Description | Example |
-| :--- | :--- | :--- | :--- | :--- |
-| path | String | Yes | Access Path | "home" |
-| page | String | Yes | Page source code file paths, starting from the root of the mini-program package | "pages/home/index" |
+| Property | Type   | Required | Description                                                                     | Example            |
+| :------- | :----- | :------- | :------------------------------------------------------------------------------ | :----------------- |
+| path     | String | Yes      | Access Path                                                                     | "home"             |
+| page     | String | Yes      | Page source code file paths, starting from the root of the mini-program package | "pages/home/index" |
 
 #### Code Example
 
 ```js title="app.config.js"
 export default {
-  "pages": [
-      "pages/home/home",
-      "pages/list/list",
-      "pages/detail/detail"
+  pages: ['pages/home/home', 'pages/list/list', 'pages/detail/detail'],
+  subPackage: [
+    {
+      root: 'packageA',
+      pages: ['pages/home/home', 'pages/list/list', 'pages/detail/detail'],
+    },
   ],
-  "subPackage": [
-      {
-          "root": "packageA",
-          "pages": [
-              "pages/home/home",
-              "pages/list/list",
-              "pages/detail/detail"
-          ]
-      }
+  routes: [
+    {
+      path: 'home',
+      page: 'pages/home/home',
+    },
+    {
+      path: 'list',
+      page: 'pages/list/list',
+    },
+    {
+      path: 'foo/bar',
+      page: 'pages/list/list',
+    },
   ],
-  "routes": [
-      {
-          
-          "path": "home", 
-          "page": "pages/home/home" 
-      },
-      {
-          "path": "list",
-          "page": "pages/list/list"
-      },
-      {
-          "path": "foo/bar",
-          "page": "pages/list/list"
-      }
-  ]
 }
 ```
 
@@ -496,8 +488,8 @@ For more information, please refer to [Using dynamic libraries](https://smartpro
 
 Properties that are only supported in QQ mini-program. <img src="https://storage.jd.com/cjj-pub-images/icon_QQ%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} />
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
+| Property                    | Type          | Description                                                           |
+| :-------------------------- | :------------ | :-------------------------------------------------------------------- |
 | [groupIdList](#groupidlist) | String Object | You need to open the list of group numbers for the group profile card |
 
 ### groupIdList
@@ -508,9 +500,9 @@ For more information, please refer to [Button](https://q.qq.com/wiki/develop/min
 
 Properties that are only supported in Jingdong mini-program.<img src="https://storage.jd.com/cjj-pub-images/icon_%E4%BA%AC%E4%B8%9C%E5%B0%8F%E7%A8%8B%E5%BA%8F.png" width="25px" style={{verticalAlign: 'middle' }} />
 
-| Property | Type | Description |
-| :--- | :--- | :--- |
-| [pageAlias](#pagealias) | Object | Page alias |
+| Property                | Type   | Description                  |
+| :---------------------- | :----- | :--------------------------- |
+| [pageAlias](#pagealias) | Object | Page alias                   |
 | [quickMenu](#quickmenu) | Object | In-button menu configuration |
 
 ### pageAlias
@@ -521,27 +513,27 @@ Page alias, you can configure an alias for pages inside `pages`, which can be us
 
 ```js title="app.config.js"
 export default {
-  "pages": [
-    "pages/index/index",
-    "pages/my/my"
-  ],
-  "window": {
-    "navigationBarTitleText": "京东小程序 Demo"
+  pages: ['pages/index/index', 'pages/my/my'],
+  window: {
+    navigationBarTitleText: '京东小程序 Demo',
   },
-  "tabBar": {
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页"
-    }, {
-      "pagePath": "pages/my/my",
-      "text": "个人中心"
-    }]
+  tabBar: {
+    list: [
+      {
+        pagePath: 'pages/index/index',
+        text: '首页',
+      },
+      {
+        pagePath: 'pages/my/my',
+        text: '个人中心',
+      },
+    ],
   },
-  "debug": true,
-  "pageAlias":{
-    "index":"pages/index/index",
-    "my":"pages/my/my"
-  }
+  debug: true,
+  pageAlias: {
+    index: 'pages/index/index',
+    my: 'pages/my/my',
+  },
 }
 ```
 
@@ -559,11 +551,11 @@ Note: The page path in `pageAlias` must exist in `pages`; multiple aliases can c
 
 Some of the menus inside the buttons can be shown and hidden by configuring switches, the default is `true` display state. The configurable menus as follow:
 
-| Property | Type | Required | Defalut | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| share | Boolean | No | true | Whether to show the push to friends (share) menu |
-| favorite | Boolean | No | true | Whether to show the focus menu |
-| sendToDesktop | Boolean | No | true | Whether to show send to desktop menu, only available for Android |
+| Property      | Type    | Required | Defalut | Description                                                      |
+| :------------ | :------ | :------- | :------ | :--------------------------------------------------------------- |
+| share         | Boolean | No       | true    | Whether to show the push to friends (share) menu                 |
+| favorite      | Boolean | No       | true    | Whether to show the focus menu                                   |
+| sendToDesktop | Boolean | No       | true    | Whether to show send to desktop menu, only available for Android |
 
 In the following example, the Send to Friends, Follow and Send to Desktop menus will all be hidden and will not be displayed, as follows.
 
@@ -571,18 +563,15 @@ In the following example, the Send to Friends, Follow and Send to Desktop menus 
 
 ```js title="app.config.js"
 export default {
-  "pages": [
-    "pages/index/index",
-    "pages/my/my"
-  ],
-  "window": {
-    "navigationBarTitleText": "京东小程序 Demo"
+  pages: ['pages/index/index', 'pages/my/my'],
+  window: {
+    navigationBarTitleText: '京东小程序 Demo',
   },
-  "quickMenu":{
-    "share":false,
-    "favorite":false,
-    "sendToDesktop":false
-  }
+  quickMenu: {
+    share: false,
+    favorite: false,
+    sendToDesktop: false,
+  },
 }
 ```
 

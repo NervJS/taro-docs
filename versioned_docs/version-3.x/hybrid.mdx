@@ -2,9 +2,9 @@
 title: Taro 使用原生模块
 ---
 
-import Tabs from '@theme/Tabs'
+import { ReactIcon, VueIcon } from '@site/static/icons'
 import TabItem from '@theme/TabItem'
-import { VueIcon, ReactIcon } from './guides/index'
+import Tabs from '@theme/Tabs'
 
 Taro 支持使用小程序原生的**页面**、**组件**和**插件**。
 
@@ -28,8 +28,8 @@ export default {
     // 定义需要引入的第三方组件
     // 1. key 值指定第三方组件名字，以小写开头
     // 2. value 值指定第三方组件 js 文件的相对路径
-    'ec-canvas': '../../components/ec-canvas/ec-canvas'
-  }
+    'ec-canvas': '../../components/ec-canvas/ec-canvas',
+  },
 }
 ```
 
@@ -72,21 +72,21 @@ export default class Index extends Component {
 
 ```html
 <template>
-  <view class='echarts'>
-    <ec-canvas id='mychart-dom-area' canvas-id='mychart-area' :ec="ec"></ec-canvas>
+  <view class="echarts">
+    <ec-canvas id="mychart-dom-area" canvas-id="mychart-area" :ec="ec"></ec-canvas>
   </view>
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      ec: {
-        onInit: function () {}
+  export default {
+    data() {
+      return {
+        ec: {
+          onInit: function () {},
+        },
       }
-    }
+    },
   }
-}
 </script>
 ```
 
@@ -106,7 +106,9 @@ export default {
 <TabItem value="React">
 
 ```jsx
-<van-button type='primary' loading loading-text='ing'>Button</van-button>
+<van-button type="primary" loading loading-text="ing">
+  Button
+</van-button>
 ```
 
 </TabItem>
@@ -114,7 +116,7 @@ export default {
 <TabItem value="Vue">
 
 ```html
-<van-button type='primary' :loading='true' loading-text='ing'>Button</van-button>
+<van-button type="primary" :loading="true" loading-text="ing">Button</van-button>
 ```
 
 </TabItem>
@@ -128,14 +130,14 @@ export default {
 
 > 可以看出，小程序原生组件派发的事件名区分大小写，并且支持 `-`。
 
-| 模板绑定语法 | 事件名称 |
-| :--- | :--- |
-| bindmyevent / bind:myevent | myevent |
-| bindmyEvent / bind:myEvent | myEvent |
-| bindMyEvent / bind:MyEvent | MyEvent |
-| bind:my-event | my-event |
-| bind:my-Event | my-Event |
-| bind:My-Event | My-Event |
+| 模板绑定语法               | 事件名称 |
+| :------------------------- | :------- |
+| bindmyevent / bind:myevent | myevent  |
+| bindmyEvent / bind:myEvent | myEvent  |
+| bindMyEvent / bind:MyEvent | MyEvent  |
+| bind:my-event              | my-event |
+| bind:my-Event              | my-Event |
+| bind:My-Event              | My-Event |
 
 #### React
 
@@ -143,27 +145,27 @@ export default {
 
 因此 Taro 只能根据开发者 JSX 的事件绑定语法，遵循以下规则生成对应的模板绑定语法（在区分原生组件派发的事件名大小写的情况下，需要使用一个 `bind` 属性进行 hack 处理）：
 
-| JSX 事件绑定语法 | 模板绑定语法 | 事件名称 |
-| :--- | :--- | :--- |
-| `<Comp onMyevent={} />` | bindmyevent | myevent |
-| `<Comp onMyEvent={} bindmyEvent />` | bindmyEvent | myEvent |
-| `<Comp onMyEvent={} bindMyEvent />` | bindMyEvent | MyEvent |
-| `<Comp onMyEvent={} />` | bind:my-event | my-event |
-| - | - | my-Event |
-| - | - | My-Event |
+| JSX 事件绑定语法                    | 模板绑定语法  | 事件名称 |
+| :---------------------------------- | :------------ | :------- |
+| `<Comp onMyevent={} />`             | bindmyevent   | myevent  |
+| `<Comp onMyEvent={} bindmyEvent />` | bindmyEvent   | myEvent  |
+| `<Comp onMyEvent={} bindMyEvent />` | bindMyEvent   | MyEvent  |
+| `<Comp onMyEvent={} />`             | bind:my-event | my-event |
+| -                                   | -             | my-Event |
+| -                                   | -             | My-Event |
 
 #### Vue
 
 **Vue** 绑定事件时虽然支持 `-`，但对大小写不敏感。因此针对不同的事件名需要编写不同的 Vue Template 语法，大小写敏感时同样也需要使用 `bind` 属性进行 hack 处理：
 
-| Vue Template 语法 | 模板绑定语法 | 事件名称 |
-| :--- | :--- | :--- |
-| `<comp @myevent='' />` | bindmyevent | myevent |
-| `<comp @myevent='' bindmyEvent />` | bindmyEvent | myEvent |
-| `<comp @myevent='' bindMyEvent />` | bindMyEvent | MyEvent |
-| `<comp @my-event='' />` | bind:my-event | my-event |
-| - | - | my-Event |
-| - | - | My-Event |
+| Vue Template 语法                  | 模板绑定语法  | 事件名称 |
+| :--------------------------------- | :------------ | :------- |
+| `<comp @myevent='' />`             | bindmyevent   | myevent  |
+| `<comp @myevent='' bindmyEvent />` | bindmyEvent   | myEvent  |
+| `<comp @myevent='' bindMyEvent />` | bindMyEvent   | MyEvent  |
+| `<comp @my-event='' />`            | bind:my-event | my-event |
+| -                                  | -             | my-Event |
+| -                                  | -             | My-Event |
 
 #### 例子
 
@@ -188,9 +190,9 @@ export default {
 
 ```html
 <!-- 对应 bind:click 事件 -->
-<van-button type='primary' @click='handleClick'>Button</van-button>
+<van-button type="primary" @click="handleClick">Button</van-button>
 <!-- 对应 bind:after-read 事件 -->
-<van-uploader :fileList='[]' @after-read='onAfterRead' />
+<van-uploader :fileList="[]" @after-read="onAfterRead" />
 ```
 
 </TabItem>
@@ -215,11 +217,11 @@ import React, { Component } from 'react'
 import { View, Slot } from '@tarojs/components'
 
 export default class Index extends Component {
-  render () {
+  render() {
     return (
       <View>
         <van-calendar poppable show>
-          <Slot name='title'>
+          <Slot name="title">
             <View>Hello world</View>
           </Slot>
         </van-calendar>
@@ -236,7 +238,7 @@ export default class Index extends Component {
 ```html
 <template>
   <view>
-    <van-calendar :poppable='true' :show='true'>
+    <van-calendar :poppable="true" :show="true">
       <slot-view :name='"title"'>
         <view>Hello world</view>
       </slot-view>
@@ -245,9 +247,9 @@ export default class Index extends Component {
 </template>
 
 <script>
-export default {
-  name: 'index'
-}
+  export default {
+    name: 'index',
+  }
 </script>
 ```
 
@@ -287,9 +289,7 @@ page.selectComponent('#mychart-dom-area')
 
 ```js title="app.config.js"
 export default {
-  pages: [
-    'pages/native/native'
-  ]
+  pages: ['pages/native/native'],
 }
 ```
 
@@ -304,9 +304,9 @@ export default {
   plugins: {
     myPlugin: {
       version: '1.0.0',
-      provider: 'wxidxxxxxxxxxxxxxxxx'
-    }
-  }
+      provider: 'wxidxxxxxxxxxxxxxxxx',
+    },
+  },
 }
 ```
 
@@ -322,8 +322,8 @@ export default {
 export default {
   // 定义需要引入的插件
   usingComponents: {
-    'hello-component': 'plugin://myPlugin/hello-component'
-  }
+    'hello-component': 'plugin://myPlugin/hello-component',
+  },
 }
 ```
 
@@ -345,9 +345,7 @@ export default {
 需要跳转到插件页面时，url 使用 `plugin://` 前缀，形如 `plugin://PLUGIN_NAME//PLUGIN_PAGE`， 如：
 
 ```jsx
-<Navigator url='plugin://myPlugin/hello-page'>
-  Go to pages/hello-page!
-</Navigator>
+<Navigator url="plugin://myPlugin/hello-page">Go to pages/hello-page!</Navigator>
 ```
 
 ### 使用 js 接口

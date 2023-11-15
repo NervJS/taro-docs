@@ -34,12 +34,12 @@ Taro v3.4.13 开始支持传入**函数**，[#11073](https://github.com/NervJS/t
 
 ```js title="config/index.js"
 config = {
-  designWidth (input) {
-    if (input.file.replace(/\\+/g, '/').indexOf('@nutui/nutui-taro') > -1) {
+  designWidth(input) {
+    if (input?.file.replace(/\\+/g, '/').indexOf('@nutui/nutui-taro') > -1) {
       return 375
     }
     return 750
-  }
+  },
 }
 ```
 
@@ -47,7 +47,7 @@ config = {
 
 `object`
 
-用于配置一些全局变量供代码中进行使用。
+用于配置一些全局变量供业务代码中进行使用。
 
 配置方式可参考 [Webpack DefinePlugin](https://webpack.js.org/plugins/define-plugin/)，例如：
 
@@ -55,8 +55,8 @@ config = {
 module.exports = {
   // ...
   defineConstants: {
-    A: '"a"' // JSON.stringify('a')
-  }
+    A: '"a"', // JSON.stringify('a')
+  },
 }
 ```
 
@@ -85,7 +85,7 @@ module.exports = {
     '@/utils': path.resolve(__dirname, '..', 'src/utils'),
     '@/package': path.resolve(__dirname, '..', 'package.json'),
     '@/project': path.resolve(__dirname, '..', 'project.config.json'),
-  }
+  },
 }
 ```
 
@@ -108,7 +108,7 @@ import projectConfig from '@/project'
       "@/components/*": ["./src/components/*"],
       "@/utils/*": ["./src/utils/*"],
       "@/package": ["./package.json"],
-      "@/project": ["./project.config.json"],
+      "@/project": ["./project.config.json"]
     }
   }
 }
@@ -130,8 +130,8 @@ import projectConfig from '@/project'
 module.exports = {
   // ...
   env: {
-    NODE_ENV: '"development"' // JSON.stringify('development')
-  }
+    NODE_ENV: '"development"', // JSON.stringify('development')
+  },
 }
 ```
 
@@ -141,12 +141,17 @@ module.exports = {
 module.exports = {
   // ...
   env: {
-    NODE_ENV: '"production"' // JSON.stringify('production')
-  }
+    NODE_ENV: '"production"', // JSON.stringify('production')
+  },
 }
 ```
 
-这样就能在代码中通过 `process.env.NODE_ENV === 'development'` 来判断环境。
+这样就能在业务代码中通过 `process.env.NODE_ENV === 'development'` 来判断环境。
+
+:::warning 注意
+这里的配置的环境变量只能在 `业务代码` 中使用，无法在 `node环境` 代码中获取到其配置的值， 也不会改变 `node环境` 中 `process.env.NODE_ENV` 的值。
+配置环境变量更推荐使用 [模式和环境变量](./env-mode-config.md)
+:::
 
 ## copy
 
@@ -170,9 +175,9 @@ module.exports = {
   copy: {
     patterns: [
       { from: 'src/asset/tt/', to: 'dist/asset/tt/', ignore: ['*.js'] }, // 指定需要 copy 的目录
-      { from: 'src/asset/tt/sd.jpg', to: 'dist/asset/tt/sd.jpg' } // 指定需要 copy 的文件
-    ]
-  }
+      { from: 'src/asset/tt/sd.jpg', to: 'dist/asset/tt/sd.jpg' }, // 指定需要 copy 的文件
+    ],
+  },
 }
 ```
 
@@ -187,9 +192,9 @@ module.exports = {
   // ...
   copy: {
     options: {
-      ignore: ['*.js', '*.css'] // 全局的 ignore
-    }
-  }
+      ignore: ['*.js', '*.css'], // 全局的 ignore
+    },
+  },
 }
 ```
 
@@ -210,8 +215,8 @@ module.exports = {
     // 引入 npm 安装的插件
     '@tarojs/plugin-mock',
     ['@tarojs/plugin-mock'],
-    ['@tarojs/plugin-mock', {}]
-  ]
+    ['@tarojs/plugin-mock', {}],
+  ],
 }
 ```
 
@@ -222,15 +227,18 @@ module.exports = {
   // ...
   plugins: [
     // 引入 npm 安装的插件，并传入插件参数
-    ['@tarojs/plugin-mock', {
-      mocks: {
-        '/api/user/1': {
-          name: 'judy',
-          desc: 'Mental guy'
-        }
-      }
-    }]
-  ]
+    [
+      '@tarojs/plugin-mock',
+      {
+        mocks: {
+          '/api/user/1': {
+            name: 'judy',
+            desc: 'Mental guy',
+          },
+        },
+      },
+    ],
+  ],
 }
 ```
 
@@ -238,21 +246,24 @@ module.exports = {
 
 `array`
 
-一个 preset 是一系列 Taro 插件的集合，配置语法同 [plugins](./config-detail.md#plugins)。
+一个 preset 是一系列 Taro 插件的集合，配置语法同 [plugins](./config-detail#plugins)。
 
 ```js
 module.exports = {
   // ...
   presets: [
     // 引入 npm 安装的插件集
-    '@tarojs/preset-sth', 
+    '@tarojs/preset-sth',
     // 引入 npm 安装的插件集，并传入插件参数
-    ['@tarojs/plugin-sth', {
-      arg0: 'xxx'
-    }],
+    [
+      '@tarojs/plugin-sth',
+      {
+        arg0: 'xxx',
+      },
+    ],
     // 从本地绝对路径引入插件集，同样如果需要传入参数也是如上
     '/absulute/path/preset/filename',
-  ]
+  ],
 }
 ```
 
@@ -295,8 +306,8 @@ module.exports = {
     enable: true,
     config: {
       // 配置项同 https://github.com/terser/terser#minify-options
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -338,10 +349,10 @@ module.exports = {
       enable: true,
       config: {
         // 配置项同 https://github.com/privatenumber/esbuild-loader#minifyplugin
-        target: 'es5' // target 默认值为 es5
-      }
-    }
-  }
+        target: 'es5', // target 默认值为 es5
+      },
+    },
+  },
 }
 ```
 
@@ -387,9 +398,9 @@ module.exports = {
   csso: {
     enable: true,
     config: {
-      // 配置项同 https://github.com/css/csso#minifysource-options
-    }
-  }
+      // 配置项同 https://cssnano.co/docs/what-are-optimisations/
+    },
+  },
 }
 ```
 
@@ -415,7 +426,7 @@ module.exports = {
 
 `string`
 
-项目根目录的绝对地址(若为小程序云开发模板，则应该是client目录)。
+项目根目录的绝对地址(若为小程序云开发模板，则应该是 client 目录)。
 
 ### sass.data
 
@@ -433,8 +444,8 @@ module.exports = {
 module.exports = {
   // ...
   sass: {
-    resource: path.resolve(__dirname, '..', 'src/styles/variable.scss')
-  }
+    resource: path.resolve(__dirname, '..', 'src/styles/variable.scss'),
+  },
 }
 ```
 
@@ -448,9 +459,9 @@ module.exports = {
   sass: {
     resource: [
       path.resolve(__dirname, '..', 'src/styles/variable.scss'),
-      path.resolve(__dirname, '..', 'src/styles/mixins.scss')
-    ]
-  }
+      path.resolve(__dirname, '..', 'src/styles/mixins.scss'),
+    ],
+  },
 }
 ```
 
@@ -462,12 +473,9 @@ module.exports = {
 module.exports = {
   // ...
   sass: {
-    resource: [
-      'src/styles/variable.scss',
-      'src/styles/mixins.scss'
-    ],
-    projectDirectory: path.resolve(__dirname, '..')
-  }
+    resource: ['src/styles/variable.scss', 'src/styles/mixins.scss'],
+    projectDirectory: path.resolve(__dirname, '..'),
+  },
 }
 ```
 
@@ -479,13 +487,10 @@ data 中声明的 $nav-height 变量优先级最高。
 module.exports = {
   // ...
   sass: {
-    resource: [
-      'src/styles/variable.scss',
-      'src/styles/mixins.scss'
-    ],
+    resource: ['src/styles/variable.scss', 'src/styles/mixins.scss'],
     projectDirectory: path.resolve(__dirname, '..'),
-    data: '$nav-height: 48px;'
-  }
+    data: '$nav-height: 48px;',
+  },
 }
 ```
 
@@ -625,9 +630,9 @@ Taro 遵循 Webpack **“构建安全比构建速度重要”**的理念，默�
 webpackConfig = {
   cache: {
     buildDependencies: {
-      config: [path.join(appPath, 'config/index.js')]
-    }
-  }
+      config: [path.join(appPath, 'config/index.js')],
+    },
+  },
 }
 ```
 
@@ -703,11 +708,9 @@ module.exports = {
   mini: {
     // ...
     compile: {
-      exclude: [
-        path.resolve(__dirname, '..', 'src/pages/index/vod-wx-sdk-v2.js')
-      ]
-    }
-  }
+      exclude: [path.resolve(__dirname, '..', 'src/pages/index/vod-wx-sdk-v2.js')],
+    },
+  },
 }
 ```
 
@@ -719,11 +722,9 @@ module.exports = {
   mini: {
     // ...
     compile: {
-      exclude: [
-        modulePath => modulePath.indexOf('vod-wx-sdk-v2') >= 0
-      ]
-    }
-  }
+      exclude: [(modulePath) => modulePath.indexOf('vod-wx-sdk-v2') >= 0],
+    },
+  },
 }
 ```
 
@@ -733,7 +734,7 @@ module.exports = {
 
 配置额外**需要经过 Taro 编译的文件**，使用方式与 [mini.compile.exclude](./config-detail#minicompileexclude) 一致，同 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude)。
 
-例如 Taro 默认不编译 `node_modules` 中的文件，可以通过这个配置让 Taro 编译  `node_modules` 中的文件。
+例如 Taro 默认不编译 `node_modules` 中的文件，可以通过这个配置让 Taro 编译 `node_modules` 中的文件。
 
 ### mini.webpackChain
 
@@ -751,7 +752,7 @@ export enum PARSE_AST_TYPE {
   PAGE = 'PAGE',
   COMPONENT = 'COMPONENT',
   NORMAL = 'NORMAL',
-  STATIC = 'STATIC'
+  STATIC = 'STATIC',
 }
 ```
 
@@ -763,22 +764,24 @@ module.exports = {
   // ...
   mini: {
     // ...
-    webpackChain (chain, webpack) {
+    webpackChain(chain, webpack) {
       chain.merge({
         module: {
           rule: {
             myloader: {
               test: /\.md$/,
-              use: [{
-                loader: 'raw-loader',
-                options: {}
-              }]
-            }
-          }
-        }
+              use: [
+                {
+                  loader: 'raw-loader',
+                  options: {},
+                },
+              ],
+            },
+          },
+        },
       })
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -788,26 +791,28 @@ module.exports = {
   // ...
   mini: {
     // ...
-    webpackChain (chain, webpack) {
+    webpackChain(chain, webpack) {
       chain.merge({
         plugin: {
           install: {
             plugin: require('npm-install-webpack-plugin'),
-            args: [{
-              // Use --save or --save-dev
-              dev: false,
-              // Install missing peerDependencies
-              peerDependencies: true,
-              // Reduce amount of console logging
-              quiet: false,
-              // npm command used inside company
-              npm: 'cnpm'
-            }]
-          }
-        }
+            args: [
+              {
+                // Use --save or --save-dev
+                dev: false,
+                // Install missing peerDependencies
+                peerDependencies: true,
+                // Reduce amount of console logging
+                quiet: false,
+                // npm command used inside company
+                npm: 'cnpm',
+              },
+            ],
+          },
+        },
       })
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -892,35 +897,35 @@ module.exports = {
         enable: true,
         config: {
           // autoprefixer 配置项
-        }
+        },
       },
       pxtransform: {
         enable: true,
         config: {
           // pxtransform 配置项，参考尺寸章节
-          selectorBlackList: ['body']
-        }
+          selectorBlackList: ['body'],
+        },
       },
       // 小程序端样式引用本地资源内联
       url: {
         enable: true,
         config: {
-          limit: 10240 // 设定转换尺寸上限
-        }
+          maxSize: 10, // 设定转换尺寸上限（单位：kbytes）
+        },
       },
       // css modules 功能开关与相关配置
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
-          generateScopedName: '[name]__[local]___[hash:base64:5]'
-        }
-      }
-    }
-  }
+          generateScopedName: '[name]__[local]___[hash:base64:5]',
+        },
+      },
+    },
+  },
 }
 ```
 
-#### h5.postcss.htmltransform
+#### mini.postcss.htmltransform
 
 `object`
 
@@ -935,11 +940,34 @@ module.exports = {
       htmltransform: {
         enable: false, // 小程序默认关闭该配置
         config: {
-          removeCursorStyle: true // 默认为 true
-        }
-      }
-    }
-  }
+          removeCursorStyle: true, // 默认为 true
+        },
+      },
+    },
+  },
+}
+```
+
+#### mini.postcss.url
+
+`object`
+
+可以进行 `url` 的配置，默认是 `inline` 配置（config 配置可参考 [postcss-url](https://www.npmjs.com/package/postcss-url)）。例如：
+
+```js
+module.exports = {
+  // ...
+  mini: {
+    // ...
+    postcss: {
+      url: {
+        enable: true,
+        config: {
+          maxSize: 10, // 设定转换尺寸上限（单位 kbytes）
+        },
+      },
+    },
+  },
 }
 ```
 
@@ -968,17 +996,17 @@ module.exports = {
   // ...
   mini: {
     // ...
-    commonChunks: ['runtime', 'vendors', 'taro', 'common']
-  }
+    commonChunks: ['runtime', 'vendors', 'taro', 'common'],
+  },
 }
 ```
 
 这几个公共文件分别表示：
 
-* `runtime`: webpack 运行时入口
-* `taro`: node_modules 中 Taro 相关依赖
-* `vendors`: node_modules 除 Taro 外的公共依赖
-* `common`: 项目中业务代码公共逻辑
+- `runtime`: webpack 运行时入口
+- `taro`: node_modules 中 Taro 相关依赖
+- `vendors`: node_modules 除 Taro 外的公共依赖
+- `common`: 项目中业务代码公共逻辑
 
 #### 函数方式
 
@@ -989,12 +1017,12 @@ module.exports = {
   // ...
   mini: {
     // ...
-    commonChunks (commonChunks) {
+    commonChunks(commonChunks) {
       // commonChunks 的取值即为默认的公共文件名数组
       commonChunks.push('yourCustomCommonChunkName')
       return commonChunks
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -1008,8 +1036,8 @@ module.exports = {
 
 `mini.addChunkPages` 配置为一个函数，接受两个参数
 
-* `pages` 参数为 Map 类型，用于为页面添加公共文件
-* `pagesNames` 参数为当前应用的所有页面标识列表，可以通过打印的方式进行查看页面的标识
+- `pages` 参数为 Map 类型，用于为页面添加公共文件
+- `pagesNames` 参数为当前应用的所有页面标识列表，可以通过打印的方式进行查看页面的标识
 
 例如，为 `pages/index/index` 页面添加 `eating` 和 `morning` 两个抽离的公共文件：
 
@@ -1018,10 +1046,10 @@ module.exports = {
   // ...
   mini: {
     // ...
-    addChunkPages (pages: Map<string, string[]>, pagesNames: string[]) {
+    addChunkPages(pages: Map<string, string[]>, pagesNames: string[]) {
       pages.set('pages/index/index', ['eating', 'morning'])
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -1031,27 +1059,14 @@ module.exports = {
 
 优化主包的体积大小
 
-像下面这样简单配置之后，可以避免主包没有引入的module不被提取到`commonChunks`中，该功能会在打包时分析module和chunk的依赖关系，筛选出主包没有引用到的module把它提取到分包内，下面是提取的两种类型的`分包公共模块`：
+像下面这样简单配置之后，可以避免主包没有引入的 module 不被提取到`commonChunks`中，该功能会在打包时分析 module 和 chunk 的依赖关系，筛选出主包没有引用到的 module 把它提取到分包内，下面是提取的两种类型的`分包公共模块`：
 
-* `分包根目录/sub-vendors.(js|wxss)`
-  * 如果该module只被`单个分包`内的多个page引用，则提取到该分包根目录的sub-vendors文件中。
+- `分包根目录/sub-vendors.(js|wxss)`
 
-* `分包根目录/sub-common/*.(js|wxss)`
-  * 如果该module被`多个分包`内的page引用，正常情况下会被提取到主包的公共模块中，这里为了保证主包的体积最优，则会先提取成一个公共模块，然后分别复制到对应分包的sub-common文件夹下（因为小程序无法跨分包引入文件，所以这里需要每个分包都复制一份），需要注意的是，这样会导致总包的体积变大一些。
+  - 如果该 module 只被`单个分包`内的多个 page 引用，则提取到该分包根目录的 sub-vendors 文件中。
 
-```js
-module.exports = {
-  // ...
-  mini: {
-    // ...
-    optimizeMainPackage: {
-      enable: true
-    }
-  }
-}
-```
-
-如果有不想走分包提取规则的module，可以在exclude中配置，这样该module就会走原来提取的方案，提取到主包中，比如像下面这样（支持绝对路径和函数）：
+- `分包根目录/sub-common/*.(js|wxss)`
+  - 如果该 module 被`多个分包`内的 page 引用，正常情况下会被提取到主包的公共模块中，这里为了保证主包的体积最优，则会先提取成一个公共模块，然后分别复制到对应分包的 sub-common 文件夹下（因为小程序无法跨分包引入文件，所以这里需要每个分包都复制一份），需要注意的是，这样会导致总包的体积变大一些。
 
 ```js
 module.exports = {
@@ -1060,12 +1075,23 @@ module.exports = {
     // ...
     optimizeMainPackage: {
       enable: true,
-      exclude: [
-        path.resolve(__dirname, 'moduleName.js'),
-        (module) => module.resource.indexOf('moduleName') >= 0
-      ]
-    }
-  }
+    },
+  },
+}
+```
+
+如果有不想走分包提取规则的 module，可以在 exclude 中配置，这样该 module 就会走原来提取的方案，提取到主包中，比如像下面这样（支持绝对路径和函数）：
+
+```js
+module.exports = {
+  // ...
+  mini: {
+    // ...
+    optimizeMainPackage: {
+      enable: true,
+      exclude: [path.resolve(__dirname, 'moduleName.js'), (module) => module.resource.indexOf('moduleName') >= 0],
+    },
+  },
 }
 ```
 
@@ -1081,9 +1107,9 @@ module.exports = {
   mini: {
     // ...
     styleLoaderOption: {
-      insertAt: 'top'
-    }
-  }
+      insertAt: 'top',
+    },
+  },
 }
 ```
 
@@ -1099,9 +1125,9 @@ module.exports = {
   mini: {
     // ...
     cssLoaderOption: {
-      localIdentName: '[hash:base64]'
-    }
-  }
+      localIdentName: '[hash:base64]',
+    },
+  },
 }
 ```
 
@@ -1117,9 +1143,9 @@ module.exports = {
   mini: {
     // ...
     sassLoaderOption: {
-      implementation: require("node-sass")
-    }
-  }
+      implementation: require('node-sass'),
+    },
+  },
 }
 ```
 
@@ -1141,10 +1167,10 @@ module.exports = {
     lessLoaderOption: {
       lessOptions: {
         strictMath: true,
-        noIeCompat: true
-      }
-    }
-  }
+        noIeCompat: true,
+      },
+    },
+  },
 }
 ```
 
@@ -1167,9 +1193,9 @@ module.exports = {
     // ...
     miniCssExtractPluginOption: {
       filename: '[name].css',
-      chunkFilename: '[name].css'
-    }
-  }
+      chunkFilename: '[name].css',
+    },
+  },
 }
 ```
 
@@ -1191,9 +1217,9 @@ module.exports = {
   mini: {
     // ...
     mediaUrlLoaderOption: {
-      limit: 8192
-    }
-  }
+      limit: 8192,
+    },
+  },
 }
 ```
 
@@ -1221,9 +1247,9 @@ module.exports = {
     entry: {
       home: ['./home.js'],
       about: ['./about.js'],
-      contact: ['./contact.js']
-    }
-  }
+      contact: ['./contact.js'],
+    },
+  },
 }
 ```
 
@@ -1240,9 +1266,9 @@ module.exports = {
     // ...
     output: {
       filename: 'js/[name].[hash:8].js',
-      chunkFilename: 'js/[name].[chunkhash:8].js'
-    }
-  }
+      chunkFilename: 'js/[name].[chunkhash:8].js',
+    },
+  },
 }
 ```
 
@@ -1286,9 +1312,9 @@ module.exports = {
   h5: {
     // ...
     devServer: {
-      port: 10086
-    }
-  }
+      port: 10086,
+    },
+  },
 }
 ```
 
@@ -1300,9 +1326,9 @@ module.exports = {
   h5: {
     // ...
     devServer: {
-      https: true
-    }
-  }
+      https: true,
+    },
+  },
 }
 ```
 
@@ -1322,22 +1348,24 @@ module.exports = {
   // ...
   h5: {
     // ...
-    webpackChain (chain, webpack) {
+    webpackChain(chain, webpack) {
       chain.merge({
         module: {
           rule: {
             myloader: {
               test: /\.md$/,
-              use: [{
-                loader: 'raw-loader',
-                options: {}
-              }]
-            }
-          }
-        }
+              use: [
+                {
+                  loader: 'raw-loader',
+                  options: {},
+                },
+              ],
+            },
+          },
+        },
       })
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -1347,26 +1375,28 @@ module.exports = {
   // ...
   h5: {
     // ...
-    webpackChain (chain, webpack) {
+    webpackChain(chain, webpack) {
       chain.merge({
         plugin: {
           install: {
             plugin: require('npm-install-webpack-plugin'),
-            args: [{
-              // Use --save or --save-dev
-              dev: false,
-              // Install missing peerDependencies
-              peerDependencies: true,
-              // Reduce amount of console logging
-              quiet: false,
-              // npm command used inside company
-              npm: 'cnpm'
-            }]
-          }
-        }
+            args: [
+              {
+                // Use --save or --save-dev
+                dev: false,
+                // Install missing peerDependencies
+                peerDependencies: true,
+                // Reduce amount of console logging
+                quiet: false,
+                // npm command used inside company
+                npm: 'cnpm',
+              },
+            ],
+          },
+        },
       })
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -1392,23 +1422,23 @@ module.exports = {
   h5: {
     // ...
     router: {
-      mode: 'hash' // 或者是 'browser'
-    }
-  }
+      mode: 'hash', // 或者是 'browser'
+    },
+  },
 }
 ```
 
 针对上面的配置，调用 `Taro.navigateTo({ url: '/pages/index/index' })` 后，浏览器地址栏将被变为：
 
-* `https://{{domain}}/#/pages/index/index`（**hash** 模式）
-* `https://{{domain}}/pages/index/index`（**browser** 模式）
+- `https://{{domain}}/#/pages/index/index`（**hash** 模式）
+- `https://{{domain}}/pages/index/index`（**browser** 模式）
 
 'multi' 对应多页面应用路由模式，需要注意的是很多小程序的组件或 API 都是基于 SPA 设计使用的，在 MPA 模式下并不适用，所以使用该模式可能会导致以下隐患：
 
-* TabBar 会多次加载，且不支持路由动画
-* App 生命周期会多次触发（暂未修复），onPageNotFound 事件不支持
-* 生产环境需要额外配置路由映射（根目录跳转、404 页面……）
-* getCurrentPages 等相关方法不支持
+- TabBar 会多次加载，且不支持路由动画
+- App 生命周期会多次触发（暂未修复），onPageNotFound 事件不支持
+- 生产环境需要额外配置路由映射（根目录跳转、404 页面……）
+- getCurrentPages 等相关方法不支持
 
 #### h5.router.basename
 
@@ -1424,16 +1454,16 @@ module.exports = {
   h5: {
     // ...
     router: {
-      basename: '/myapp'
-    }
-  }
+      basename: '/myapp',
+    },
+  },
 }
 ```
 
 针对上面的配置，调用 `Taro.navigateTo({ url: '/pages/index/index' })` 后，浏览器地址栏将被变为：
 
-* `https://{{domain}}/#/myapp/pages/index/index`（**hash** 模式）
-* `https://{{domain}}/myapp/pages/index/index`（**browser** 模式）
+- `https://{{domain}}/#/myapp/pages/index/index`（**hash** 模式）
+- `https://{{domain}}/myapp/pages/index/index`（**browser** 模式）
 
 #### h5.router.customRoutes
 
@@ -1452,17 +1482,17 @@ module.exports = {
       customRoutes: {
         // "页面路径": "自定义路由"
         '/pages/index/index': '/index',
-        '/pages/detail/index': ['/detail'] // 可以通过数组为页面配置多个自定义路由
-      }
-    }
-  }
+        '/pages/detail/index': ['/detail'], // 可以通过数组为页面配置多个自定义路由
+      },
+    },
+  },
 }
 ```
 
 针对上面的配置，调用 `Taro.navigateTo({ url: '/pages/index/index' })` 后，浏览器地址栏将被变为：
 
-* `https://{{domain}}/#/index`（**hash** 模式）
-* `https://{{domain}}/myapp/index`（**browser** 模式）
+- `https://{{domain}}/#/index`（**hash** 模式）
+- `https://{{domain}}/myapp/index`（**browser** 模式）
 
 :::info
 Taro v3.3.18+ 开始支持传入数组配置自定义路由。
@@ -1506,6 +1536,18 @@ Taro v3.2.4 开始支持。
 
 用于控制在 H5 端是否使用兼容性组件库，详情请看 [React 兼容性组件库](h5#react-兼容性组件库)。
 
+### h5.useDeprecatedAdapterComponent
+
+:::info
+Taro v3.6.3 开始支持。
+:::
+
+`boolean`
+
+默认值：`false`
+
+用于控制在 H5 端是否使用旧版本适配器，旧版本采用全局注册组件，懒加载组件相关依赖；新版本适配器会自动注册相关组件，不再需要引入 `@tarojs/components/loader` 中的全局 `defineCustomElements` 方法。
+
 ### h5.enableExtract
 
 `boolean`
@@ -1528,8 +1570,8 @@ module.exports = {
   h5: {
     // ...
     // 经过这一配置之后，代码中引入的处于 `node_modules/taro-ui/` 路径下的样式文件均会经过 postcss 的编译处理。
-    esnextModules: ['taro-ui']
-  }
+    esnextModules: ['taro-ui'],
+  },
 }
 ```
 
@@ -1555,10 +1597,10 @@ module.exports = {
         enable: true,
         config: {
           /* autoprefixer 配置项 */
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 }
 ```
 
@@ -1578,10 +1620,10 @@ module.exports = {
         enable: true,
         config: {
           /* pxtransform 配置项 */
-        }
-      }
-    }
-  }
+        },
+      },
+    },
+  },
 }
 ```
 
@@ -1600,15 +1642,38 @@ module.exports = {
       htmltransform: {
         enable: true, // H5 默认开启该配置
         config: {
-          removeCursorStyle: false // 默认为 false
-        }
-      }
-    }
-  }
+          removeCursorStyle: false, // 默认为 false
+        },
+      },
+    },
+  },
 }
 ```
 
 > 需要 v3.5 以上版本
+
+#### h5.postcss.url
+
+`object`
+
+可以进行 `url` 的配置，默认 `inline` 配置（config 配置可参考 [postcss-url](https://www.npmjs.com/package/postcss-url)）。例如：
+
+```js
+module.exports = {
+  // ...
+  h5: {
+    // ...
+    postcss: {
+      url: {
+        enable: true,
+        config: {
+          maxSize: 10, // 设定转换尺寸上限（单位 kbytes）
+        },
+      },
+    },
+  },
+}
+```
 
 #### h5.postcss.cssModules
 
@@ -1627,13 +1692,35 @@ module.exports = {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
           namingPattern: 'module',
-          generateScopedName: '[name]__[local]___[hash:base64:5]'
-        }
-      }
-    }
-  }
+          generateScopedName: '[name]__[local]___[hash:base64:5]',
+        },
+      },
+    },
+  },
 }
 ```
+
+### h5.compile
+
+`object`
+
+Web 编译过程的相关配置。
+
+> 需要 v3.6 以上版本
+
+#### h5.compile.exclude
+
+`array`
+
+配置 Web 应用编译过程中**排除不需要经过 Taro 编译的文件**，使用方式与 [mini.compile.exclude](./config-detail#minicompileexclude) 一致，同 [Rule.exclude](https://webpack.js.org/configuration/module/#ruleexclude)。
+
+#### h5.compile.include
+
+`array`
+
+配置额外**需要经过 Taro 编译的文件**，使用方式与 [mini.compile.exclude](./config-detail#minicompileexclude) 一致，同 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude)。
+
+例如 Taro 默认不编译 `node_modules` 中的文件，可以通过这个配置让 Taro 编译 `node_modules` 中的文件。
 
 ### h5.htmlPluginOption
 
@@ -1650,7 +1737,7 @@ module.exports = {
   // ...
   htmlPluginOption: {
     // 配置项同 https://github.com/jantimon/html-webpack-plugin#options
-  }
+  },
 }
 ```
 
@@ -1666,9 +1753,9 @@ module.exports = {
   h5: {
     // ...
     styleLoaderOption: {
-      insertAt: 'top'
-    }
-  }
+      insertAt: 'top',
+    },
+  },
 }
 ```
 
@@ -1684,9 +1771,9 @@ module.exports = {
   h5: {
     // ...
     cssLoaderOption: {
-      localIdentName: '[hash:base64]'
-    }
-  }
+      localIdentName: '[hash:base64]',
+    },
+  },
 }
 ```
 
@@ -1702,9 +1789,9 @@ module.exports = {
   h5: {
     // ...
     sassLoaderOption: {
-      implementation: require("node-sass")
-    }
-  }
+      implementation: require('node-sass'),
+    },
+  },
 }
 ```
 
@@ -1726,10 +1813,10 @@ module.exports = {
     lessLoaderOption: {
       lessOptions: {
         strictMath: true,
-        noIeCompat: true
-      }
-    }
-  }
+        noIeCompat: true,
+      },
+    },
+  },
 }
 ```
 
@@ -1754,9 +1841,9 @@ module.exports = {
     // ...
     miniCssExtractPluginOption: {
       filename: 'css/[name].css',
-      chunkFilename: 'css/[id].css'
-    }
-  }
+      chunkFilename: 'css/[id].css',
+    },
+  },
 }
 ```
 
@@ -1778,9 +1865,9 @@ module.exports = {
   h5: {
     // ...
     mediaUrlLoaderOption: {
-      limit: 8192
-    }
-  }
+      limit: 8192,
+    },
+  },
 }
 ```
 
@@ -1798,15 +1885,15 @@ module.exports = {
 
 `string`
 
-设置RN bundle中注册应用的名称
+设置 RN bundle 中注册应用的名称
 
 ```js
 module.exports = {
   // ...
   rn: {
     // ...
-    appName: 'TaroDemo'
-  }
+    appName: 'TaroDemo',
+  },
 }
 ```
 
@@ -1814,15 +1901,15 @@ module.exports = {
 
 `string`
 
-entry利用模块查找规则{name}.{platform}.{ext}自动区分平台
+entry 利用模块查找规则{name}.{platform}.{ext}自动区分平台
 
 ```js
 module.exports = {
   // ...
   rn: {
     // ...
-    entry: 'index.android.tsx'
-  }
+    entry: 'index.android.tsx',
+  },
 }
 ```
 
@@ -1830,7 +1917,7 @@ module.exports = {
 
 `object`
 
-设置Metro打包生成bundle的输出路径，默认 dist 目录下
+设置 Metro 打包生成 bundle 的输出路径，默认 dist 目录下
 
 ```js
 module.exports = {
@@ -1847,9 +1934,9 @@ module.exports = {
       ios: '../taro-native-shell/ios/main.jsbundle',
       iosAssetsDest: '../taro-native-shell/ios',
       android: '../taro-native-shell/android/app/src/main/assets/index.android.bundle',
-      androidAssetsDest: '../taro-native-shell/android/app/src/main/res'
+      androidAssetsDest: '../taro-native-shell/android/app/src/main/res',
     },
-  }
+  },
 }
 ```
 
@@ -1857,7 +1944,7 @@ module.exports = {
 
 `object`
 
- `postcss` 相关配置，其他样式语言预处理后经过此配置。
+`postcss` 相关配置，其他样式语言预处理后经过此配置。
 
 ```js
 module.exports = {
@@ -1866,15 +1953,19 @@ module.exports = {
     // ...
     postcss: {
       // postcss 配置，参考 https://github.com/postcss/postcss#options
-      options: { /* ... */ },
+      options: {
+        /* ... */
+      },
       // 默认true，控制是否对 css value 进行 scalePx2dp 转换，pxtransform配置 enable 才生效
       scalable: boolean,
       pxtransform: {
         enable: boolean, // 默认true
-        config: { /* ... */ } // 插件 pxtransform 配置项，参考尺寸章节
+        config: {
+          /* ... */
+        }, // 插件 pxtransform 配置项，参考尺寸章节
       },
     },
-  }
+  },
 }
 ```
 
@@ -1882,7 +1973,7 @@ module.exports = {
 
 `object`
 
- `sass` 相关配置。`options` 配置项参考[官方文档](https://github.com/sass/node-sass#options)。
+`sass` 相关配置。`options` 配置项参考[官方文档](https://github.com/sass/node-sass#options)。
 
 ```js
 module.exports = {
@@ -1890,11 +1981,13 @@ module.exports = {
   rn: {
     // ...
     sass: {
-      options: { /* ... */ },
-     // 加入到脚本注入的每个 sass 文件头部，在 config.sass 之前
+      options: {
+        /* ... */
+      },
+      // 加入到脚本注入的每个 sass 文件头部，在 config.sass 之前
       additionalData: '', // {String|Function}
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -1910,10 +2003,12 @@ module.exports = {
   rn: {
     // ...
     less: {
-      options: { /* ... */ },
+      options: {
+        /* ... */
+      },
       additionalData: '', // {String|Function}
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -1921,7 +2016,7 @@ module.exports = {
 
 `object`
 
- `stylus` 相关配置。`stylus.options` 配置项参考[文档](https://github.com/NervJS/taro/tree/next/packages/taro-rn-style-transformer/README.md#rnstylus)。
+`stylus` 相关配置。`stylus.options` 配置项参考[文档](https://github.com/NervJS/taro/tree/next/packages/taro-rn-style-transformer/README.md#rnstylus)。
 
 ```js
 module.exports = {
@@ -1929,10 +2024,12 @@ module.exports = {
   rn: {
     // ...
     stylus: {
-      options: { /* ... */ },
+      options: {
+        /* ... */
+      },
       additionalData: '', // {String|Function}
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -1947,9 +2044,9 @@ module.exports = {
 module.exports = {
   rn: {
     resolve: {
-      include: ['taro-ui'] // 处理引用 node_modules/taro-ui 的依赖。
-    }
-  }
+      include: ['taro-ui'], // 处理引用 node_modules/taro-ui 的依赖。
+    },
+  },
 }
 ```
 
@@ -1962,8 +2059,8 @@ module.exports = {
 ```js
 module.exports = {
   rn: {
-    enableMultipleClassName: false
-  }
+    enableMultipleClassName: false,
+  },
 }
 ```
 
@@ -1976,8 +2073,8 @@ module.exports = {
 ```js
 module.exports = {
   rn: {
-    enableMergeStyle: false // https://github.com/shinken008/babel-plugin-jsx-attributes-array-to-object#example
-  }
+    enableMergeStyle: false, // https://github.com/shinken008/babel-plugin-jsx-attributes-array-to-object#example
+  },
 }
 ```
 
@@ -1990,7 +2087,7 @@ module.exports = {
 ```js
 module.exports = {
   rn: {
-    enableSvgTransform: false
-  }
+    enableSvgTransform: false,
+  },
 }
 ```

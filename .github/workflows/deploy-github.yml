@@ -6,45 +6,36 @@ on:
     branches:
       - master
   schedule:
-    - cron: '0 21 * * *'
+    - cron: "0 21 * * *"
 
 env:
   CI: true
-  NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
 jobs:
   publish:
     name: Publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with :
-          ref : ${{ github.head_ref }}
-
-      - name: Cache pnpm modules
-        uses: actions/cache@v2
+      - uses: actions/checkout@v4
         with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+          ref: ${{ github.head_ref }}
+
+      - name: Cache pnpm modules and build
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+            build/taro-docs
+          key: ${{ runner.os }}-github
           restore-keys: |
             ${{ runner.os }}-
 
       - name: install
-        uses: pnpm/action-setup@v2.2.2
+        uses: pnpm/action-setup@v2
         with:
           version: 7
           run_install: |
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
-
-      - name: Fetch notion database
-        run: |
-          pnpm run notion
-
-      - name: Push changes
-        id: auto-commit-action
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "chore(date): update contributor member-list"
 
       - name: Build
         run: pnpm run build:github

@@ -25,10 +25,17 @@ sidebar_label: getFuzzyLocation
 
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
-| type | "wgs84" or "gcj02" | 否 | wgs84 返回 gps 坐标，gcj02 返回可用于 Taro.openLocation 的坐标 |
+| type | `keyof Type` | 否 | wgs84 返回 gps 坐标，gcj02 返回可用于 Taro.openLocation 的坐标 |
 | complete | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
 | success | `(result: SuccessCallbackResult) => void` | 否 | 接口调用成功的回调函数 |
+
+### Type
+
+| 参数 | 说明 |
+| --- | --- |
+| wgs84 | 返回 gps 坐标 |
+| gcj02 | 返回 gcj02 坐标 |
 
 ### SuccessCallbackResult
 

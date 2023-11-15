@@ -37,7 +37,7 @@ Handles compile-related operations such as Webpack configuration, template gener
 
 ### 一、Writing Taro plugins
 
-Pre-reading: [[How to Write a Taro Plugin]](./plugin#如何编写一个插件)。
+Pre-reading: [[How to Write a Taro Plugin]](./plugin-custom)。
 
 First we need to write a Taro plugin to register our compilation platform, eg.
 
@@ -46,9 +46,9 @@ export default (ctx) => {
   ctx.registerPlatform({
     name: 'weapp',
     useConfigName: 'mini',
-    async fn (arg) {
+    async fn(arg) {
       // ...
-    }
+    },
   })
 }
 ```
@@ -105,11 +105,11 @@ export default (ctx) => {
   ctx.registerPlatform({
     name: 'weapp',
     useConfigName: 'mini',
-    async fn (arg) {
+    async fn(arg) {
       // Call the start function of the custom platform class to start platform compilation
       const program = new Weapp(ctx, config)
       await program.start()
-    }
+    },
   })
 }
 ```
@@ -141,8 +141,8 @@ export const hostConfig = {}
 
 `runtime.ts` responsibilities:
 
-* Use the `mergeReconciler` function to merge the custom `hostConfig` into the global [Reconciler](./platform-plugin-reconciler).
-* Use the `mergeInternalComponents` function to merge custom component information [components.ts](./platform-plugin-base#31-write-componentsts) into the global `internalComponents` component information object.
+- Use the `mergeReconciler` function to merge the custom `hostConfig` into the global [Reconciler](./platform-plugin-reconciler).
+- Use the `mergeInternalComponents` function to merge custom component information [components.ts](./platform-plugin-base#31-write-componentsts) into the global `internalComponents` component information object.
 
 > The runtime-utils.ts is extracted to make it easier for other plugins to reference
 
@@ -177,14 +177,10 @@ The original `@tarojs/taro` package only provides the built-in API, we need to a
 // When additional native APIs need to be added, splitting a separate `apis-list.ts` file can be beneficial for maintenance.
 
 // Synchronization API
-export const noPromiseApis = new Set([
-  'getAccountInfoSync'
-])
+export const noPromiseApis = new Set(['getAccountInfoSync'])
 
 // Asynchronous APIs, which can set `success`, `fail`, and `complete` callbacks, need to be Promiseized.
-export const needPromiseApis = new Set([
-  'addCard'
-])
+export const needPromiseApis = new Set(['addCard'])
 ```
 
 ```js title="apis.ts"
@@ -213,18 +209,18 @@ export const hostConfig = { initNativeApi }
 
 ##### Parameters
 
-| Parameters | Type | Description |
-| :--- | :--- | :--- |
-| taro | object | Taro Object |
-| global | object | Mini Program global objects, such as WeChat wx |
-| options | object | Configuration items |
+| Parameters | Type   | Description                                    |
+| :--------- | :----- | :--------------------------------------------- |
+| taro       | object | Taro Object                                    |
+| global     | object | Mini Program global objects, such as WeChat wx |
+| options    | object | Configuration items                            |
 
 ###### options
 
-| Parameters | Type | Description |
-| :--- | :--- | :--- |
-| noPromiseApis | Set`<string>` | New Synchronization API |
-| needPromiseApis | Set`<string>` | New Asynchronous API |
+| Parameters      | Type          | Description             |
+| :-------------- | :------------ | :---------------------- |
+| noPromiseApis   | Set`<string>` | New Synchronization API |
+| needPromiseApis | Set`<string>` | New Asynchronous API    |
 
 The above `processApis` function helps us do three things.
 
@@ -236,12 +232,12 @@ The above `processApis` function helps us do three things.
 
 The plugin is packaged using `Rollup` and requires the following files to be packaged out.
 
-| Entry file | Mode | Required | Description |
-| :--- | :--- | :--- | :--- |
-| src/index.ts | cjs | YES | Plugin entry for Taro CLI parsing |
-| src/runtime.ts | es | YES | Runtime entry |
-| src/runtime-utils.ts | es | NO | Collection of runtime tools for reference by inherited subclasses |
-| src/components-react.ts | es |  NO | Need to be implemented when there are new components for React to reference |
+| Entry file              | Mode | Required | Description                                                                 |
+| :---------------------- | :--- | :------- | :-------------------------------------------------------------------------- |
+| src/index.ts            | cjs  | YES      | Plugin entry for Taro CLI parsing                                           |
+| src/runtime.ts          | es   | YES      | Runtime entry                                                               |
+| src/runtime-utils.ts    | es   | NO       | Collection of runtime tools for reference by inherited subclasses           |
+| src/components-react.ts | es   | NO       | Need to be implemented when there are new components for React to reference |
 
 Note that Taro-related packages need to be configured with `external` to avoid repackaging.
 
@@ -264,7 +260,7 @@ import Taro from '@tarojs/taro'
 
 declare module '@tarojs/taro' {
   namespace ix {
-    function onCashierEventReceive (cb: any): void
+    function onCashierEventReceive(cb: any): void
   }
 }
 
@@ -284,5 +280,5 @@ declare module '@tarojs/components' {
 The developer can simply introduce this file in the type definition file.
 
 ```ts title="global.d.ts"
-/// <reference path="node_modules/@tarojs/plugin-platform-alipay-iot/types/shims-iot.d.ts" />
+/// <reference types="@tarojs/plugin-platform-alipay-iot/types/shims-iot" />
 ```

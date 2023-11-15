@@ -2,9 +2,8 @@
 title: 页面组件
 ---
 
-import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
-import { VueIcon, ReactIcon } from './guides/index'
+import Tabs from '@theme/Tabs'
 
 每一个 Taro 应用都至少包括一个页面组件，页面组件可以通过 Taro 路由进行跳转，也可以访问小程序页面的生命周期。
 
@@ -58,7 +57,7 @@ export default {
 
 <TabItem value="vue3">
 
-```jsx  title="page.vue"
+```jsx title="page.vue"
 <template>
   <view class="index">
     <text>{{ msg }}</text>
@@ -145,16 +144,17 @@ Taro v3.4.7 开始支持。
   import Taro, { eventCenter, getCurrentInstance } from '@tarojs/taro'
 
   export default {
-    mounted () {
+    mounted() {
       eventCenter.once(getCurrentInstance().router.onReady, () => {
         console.log('onReady')
 
         // onReady 触发后才能获取小程序渲染层的节点
-        Taro.createSelectorQuery().select('#only')
+        Taro.createSelectorQuery()
+          .select('#only')
           .boundingClientRect()
-          .exec(res => console.log('res: ', res))
+          .exec((res) => console.log('res: ', res))
       })
-    }
+    },
   }
 </script>
 ```
@@ -170,14 +170,15 @@ Taro v3.4.7 开始支持。
   import Taro from '@tarojs/taro'
 
   export default {
-    mounted () {
+    mounted() {
       Taro.nextTick(() => {
         // 使用 Taro.nextTick 模拟 setData 已结束，节点已完成渲染
-        Taro.createSelectorQuery().select('#only')
+        Taro.createSelectorQuery()
+          .select('#only')
           .boundingClientRect()
-          .exec(res => console.log('res: ', res))
+          .exec((res) => console.log('res: ', res))
       })
-    }
+    },
   }
 </script>
 ```
@@ -198,7 +199,7 @@ Taro v3.4.7 开始支持。
 
   export default {
     mounted () {
-      eventCenter.once(getCurrentInstance().router.onShow, () => {
+      eventCenter.on(getCurrentInstance().router.onShow, () => {
         console.log('onShow')
       })
     }
@@ -222,7 +223,7 @@ Taro v3.4.7 开始支持。
 
   export default {
     mounted () {
-      eventCenter.once(getCurrentInstance().router.onHide, () => {
+      eventCenter.on(getCurrentInstance().router.onHide, () => {
         console.log('onHide')
       })
     }
@@ -257,10 +258,9 @@ Taro v3.4.7 开始支持。
 
 ##### Object
 
-| 参数 | 类型 | 说明 |
-| - | - | - |
-| scrollTop | Number | 页面在垂直方向已滚动的距离（单位px）|
-
+| 参数      | 类型   | 说明                                  |
+| --------- | ------ | ------------------------------------- |
+| scrollTop | Number | 页面在垂直方向已滚动的距离（单位 px） |
 
 ### onAddToFavorites (Object)
 
@@ -273,17 +273,17 @@ Taro v3.4.7 开始支持。
 
 ##### Object
 
-| 参数 | 类型 | 说明 |
-| - | - | - |
-| webviewUrl | String | 页面中包含web-view组件时，返回当前web-view的url |
+| 参数       | 类型   | 说明                                                 |
+| ---------- | ------ | ---------------------------------------------------- |
+| webviewUrl | String | 页面中包含 web-view 组件时，返回当前 web-view 的 url |
 
 此事件处理函数需要 return 一个 Object，用于自定义收藏内容：
 
-| 字段 | 说明 | 默认值 |
-| - | - | - |
-| title	| 自定义标题 | 页面标题或账号名称 |
-| imageUrl | 自定义图片，显示图片长宽比为 1：1 | 页面截图 |
-| query | 自定义query字段 | 当前页面的query |
+| 字段     | 说明                              | 默认值             |
+| -------- | --------------------------------- | ------------------ |
+| title    | 自定义标题                        | 页面标题或账号名称 |
+| imageUrl | 自定义图片，显示图片长宽比为 1：1 | 页面截图           |
+| query    | 自定义 query 字段                 | 当前页面的 query   |
 
 #### 示例代码
 
@@ -313,21 +313,21 @@ Taro v3.4.7 开始支持。
 
 ##### Object
 
-| 参数 | 类型 | 说明 |
-| - | - | - |
-| from | String | 转发事件来源。<br />button：页面内转发按钮；<br />menu：右上角转发菜单 |
-| target | Object | 如果 `from` 值是 `button`，则 `target` 是触发这次转发事件的 `button`，否则为 `undefined` |
-| webViewUrl | String | 页面中包含 `WebView` 组件时，返回当前 `WebView` 的url |
+| 参数       | 类型   | 说明                                                                                     |
+| ---------- | ------ | ---------------------------------------------------------------------------------------- |
+| from       | String | 转发事件来源。<br />button：页面内转发按钮；<br />menu：右上角转发菜单                   |
+| target     | Object | 如果 `from` 值是 `button`，则 `target` 是触发这次转发事件的 `button`，否则为 `undefined` |
+| webViewUrl | String | 页面中包含 `WebView` 组件时，返回当前 `WebView` 的 url                                   |
 
 此事件需要 return 一个 Object，用于自定义转发内容，返回内容如下：
 
 自定义转发内容
 
-| 字段 | 类型 | 说明 |
-| - | - | - |
-| title | 转发标题 | 当前小程序名称 |
-| path | 转发路径 | 当前页面 path ，必须是以 / 开头的完整路径 |
-| imageUrl | 自定义图片路径，可以是本地文件路径、代码包文件路径或者网络图片路径。支持 PNG 及 JPG 。显示图片长宽比是 5:4 | 使用默认截图 |
+| 字段     | 类型                                                                                                       | 说明                                      |
+| -------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| title    | 转发标题                                                                                                   | 当前小程序名称                            |
+| path     | 转发路径                                                                                                   | 当前页面 path ，必须是以 / 开头的完整路径 |
+| imageUrl | 自定义图片路径，可以是本地文件路径、代码包文件路径或者网络图片路径。支持 PNG 及 JPG 。显示图片长宽比是 5:4 | 使用默认截图                              |
 
 #### 示例代码
 
@@ -361,11 +361,11 @@ Taro v3.4.7 开始支持。
 
 事件处理函数可以返回一个 Object，用于自定义分享内容，不支持自定义页面路径，返回内容如下：
 
-| 字段 | 说明 | 默认值 |
-| - | - | - |
-| title	| 自定义标题 | 当前小程序名称 |
-| query | 自定义页面路径中携带的参数 | 当前页面路径携带的参数 |
-| imageUrl | 自定义图片路径，可以是本地文件或者网络图片。支持 PNG 及 JPG，显示图片长宽比是 1:1。 | 默认使用小程序 Logo |
+| 字段     | 说明                                                                                | 默认值                 |
+| -------- | ----------------------------------------------------------------------------------- | ---------------------- |
+| title    | 自定义标题                                                                          | 当前小程序名称         |
+| query    | 自定义页面路径中携带的参数                                                          | 当前页面路径携带的参数 |
+| imageUrl | 自定义图片路径，可以是本地文件或者网络图片。支持 PNG 及 JPG，显示图片长宽比是 1:1。 | 默认使用小程序 Logo    |
 
 #### 示例代码
 
@@ -393,11 +393,12 @@ Taro v3.4.7 开始支持。
 
 ##### Object
 
-| 参数 | 类型 | 说明 |
-| - | - | - |
-| index | String | 被点击 tabItem 的序号，从 0 开始 |
-| pagePath | String | 被点击 tabItem 的页面路径 |
-| text | String | 被点击 tabItem 的按钮文字 |
+| 参数     | 类型   | 说明                             |
+| -------- | ------ | -------------------------------- |
+| index    | String | 被点击 tabItem 的序号，从 0 开始 |
+| pagePath | String | 被点击 tabItem 的页面路径        |
+| text     | String | 被点击 tabItem 的按钮文字        |
+
 ### onSaveExitState
 
 :::info

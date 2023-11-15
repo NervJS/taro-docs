@@ -23,7 +23,7 @@ Mobx 异常监听。
 ```jsx
 import { onError } from '@tarojs/mobx'
 
-onError(error => {
+onError((error) => {
   console.log('mobx global error listener:', error)
 })
 ```
@@ -64,7 +64,7 @@ useStaticRendering(false)
 ```jsx
 import Taro from '@tarojs/taro'
 import { View, Text, Button } from '@tarojs/components'
-import { useLocalStore,  observer } from '@tarojs/mobx'
+import { useLocalStore, observer } from '@tarojs/mobx'
 
 import './index.scss'
 
@@ -79,10 +79,10 @@ function Index() {
     },
     incrementAsync() {
       setTimeout(() => store.counter++, 1000)
-    }
+    },
   }))
 
-  const { counter, increment, decrement, incrementAsync } = store;
+  const { counter, increment, decrement, incrementAsync } = store
   return (
     <View>
       <Button onClick={increment}>+</Button>
@@ -102,8 +102,8 @@ export default observer(Index)
 
 与 `useLocalStore` 的区别是，它将纯（不包含 `getter` 或方法）对象转换为 `observable`，主要使用场景为：
 
-* 如果对象某个属性的值需经过复杂运算才能获得，可通过该方法进行包装，这样在组件的生命周期中该运算只需要运算一次。
-* 一般情况下 `useLocalStore` 仅用于组件内部，如果 `useLocalStore` 中的对象需要依赖外部传递的属性，那么可通过
+- 如果对象某个属性的值需经过复杂运算才能获得，可通过该方法进行包装，这样在组件的生命周期中该运算只需要运算一次。
+- 一般情况下 `useLocalStore` 仅用于组件内部，如果 `useLocalStore` 中的对象需要依赖外部传递的属性，那么可通过
   `useAsObservableSource` 将这些属性进行转换，而后在 `useLocalStore` 对象中进行引用，这样在外部属性改变时自动通知
   `useLocalStore` 对象对变化进行响应，比如：
 
@@ -121,13 +121,15 @@ export default observer(Index)
       },
       increment() {
         store.counter += 1
-      }
+      },
     }))
     const { multiplier } = observableProps
     const { multiplied, counter, increment } = store
     return (
       <View>
-        <Text>multiplier({multiplier}) * counter({counter}) = {multiplied}</Text>
+        <Text>
+          multiplier({multiplier}) * counter({counter}) = {multiplied}
+        </Text>
         <Button onClick={increment}>Increment Counter</Button>
       </View>
     )
@@ -144,24 +146,29 @@ export default observer(Index)
   import { useLocalStore, observer } from '@tarojs/mobx'
 
   function Multiplier(props) {
-    const store = useLocalStore(source => ({
-      counter: 1,
+    const store = useLocalStore(
+      (source) => ({
+        counter: 1,
 
-      get multiplier() {
-        return source.multiplier
-      },
+        get multiplier() {
+          return source.multiplier
+        },
 
-      get multiplied() {
-        return source.multiplier * store.counter
-      },
-      increment() {
-        store.counter += 1
-      }
-    }), props)
+        get multiplied() {
+          return source.multiplier * store.counter
+        },
+        increment() {
+          store.counter += 1
+        },
+      }),
+      props
+    )
     const { multiplied, counter, increment, multiplier } = store
     return (
       <View>
-        <Text>multiplier({multiplier}) * counter({counter}) = {multiplied}</Text>
+        <Text>
+          multiplier({multiplier}) * counter({counter}) = {multiplied}
+        </Text>
         <Button onClick={increment}>Increment Counter</Button>
       </View>
     )
@@ -176,34 +183,32 @@ export default observer(Index)
 
 注：
 
-* 不要在 `JSX` 中对可观察对象进行引用，比如：
+- 不要在 `JSX` 中对可观察对象进行引用，比如：
 
   ```jsx
   // 错误，在小程序中值改变后将无法触发重新渲染
   const { counterStore } = this.props
-  return (
-    <Text>{counterStore.counter}</Text>
-  )
+  return <Text>{counterStore.counter}</Text>
 
   // 正确
-  const { counterStore: { counter } } = this.props
-  return (
-    <Text>{counter}</Text>
-  )
+  const {
+    counterStore: { counter },
+  } = this.props
+  return <Text>{counter}</Text>
   ```
 
   > 这是因为 `@tarojs/mobx` 通过监听组件的 `render`（小程序编译后为 `_createData`）方法来触发更新；在小程序中，`JSX`
   > 的代码会被编译到 `wxml` 文件中，此时对可观察对象的引用（比如：`counterStore.counter`）早已脱离了
   > `@tarojs/mobx` 的监控，故此对该属性的更改并不会触发更新操作。
 
-* 如使用 `@observable` 装饰器来定义可观察对象时，请确保该属性已经初始化，比如：
+- 如使用 `@observable` 装饰器来定义可观察对象时，请确保该属性已经初始化，比如：
 
   ```js
   @observable counter // 错误，值改变后将无法触发重新渲染
   @observable counter = 0 // 正确
   ```
 
-* 如果 `isUsingStaticRendering` 为 `true`，该方法不做任何事情。
+- 如果 `isUsingStaticRendering` 为 `true`，该方法不做任何事情。
 
 ### Provider
 
@@ -216,23 +221,21 @@ import Index from './pages/index'
 import counterStore from './store/counter'
 
 const store = {
-  counterStore
+  counterStore,
 }
 
 class App extends Component {
   config = {
-    pages: [
-      'pages/index/index'
-    ],
+    pages: ['pages/index/index'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
-    }
+      navigationBarTextStyle: 'black',
+    },
   }
 
-  render () {
+  render() {
     return (
       <Provider store={store}>
         <Index />
@@ -246,9 +249,9 @@ Taro.render(<App />, document.getElementById('app'))
 
 注：
 
-* `Provider` 必须作用于入口文件（即：`src/app.js`），在其他地方使用无效。
-* 不支持嵌套，即全局只能存在一个 `Provider`。
-* 在 `mobx-react` 中，可通过以下方式设置 `store`：
+- `Provider` 必须作用于入口文件（即：`src/app.js`），在其他地方使用无效。
+- 不支持嵌套，即全局只能存在一个 `Provider`。
+- 在 `mobx-react` 中，可通过以下方式设置 `store`：
 
   ```jsx
   <Provider store1={xxxx} store2={xxxx}>
@@ -267,7 +270,6 @@ Taro.render(<App />, document.getElementById('app'))
     <XXX />
   </Provider>
   ```
-
 
 ### inject
 
@@ -297,7 +299,7 @@ import { observer, inject } from '@tarojs/mobx'
 import './index.scss'
 
 @inject((stores, props) => ({
-  counterStore: stores.counterStore
+  counterStore: stores.counterStore,
 }))
 @observer
 class Index extends Component {
@@ -309,8 +311,8 @@ export default Index
 
 注：
 
-* 无论以何种方式使用 `inject`，其后的 `observer` 均不能省略。
-* 不要在 `inject` 中引用可观察对象，这将导致属性改变后页面不更新，比如：
+- 无论以何种方式使用 `inject`，其后的 `observer` 均不能省略。
+- 不要在 `inject` 中引用可观察对象，这将导致属性改变后页面不更新，比如：
 
   ```jsx
   // 错误
@@ -330,13 +332,13 @@ export default Index
 
 `@tarojs/mobx` 提供了以下 `PropTypes` 来验证 Mobx 的结构：
 
-* observableArray
-* observableArrayOf
-* observableMap
-* observableObject
-* arrayOrObservableArray
-* arrayOrObservableArrayOf
-* objectOrObservableObject
+- observableArray
+- observableArrayOf
+- observableMap
+- observableObject
+- arrayOrObservableArray
+- arrayOrObservableArrayOf
+- objectOrObservableObject
 
 ## 资源
 

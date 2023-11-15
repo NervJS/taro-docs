@@ -19,6 +19,11 @@ declare module '../../index' {
        * @supported h5
        */
       fileName?: string
+      /** 是否应使用传出凭据 (cookie) 发送此请求
+       * @default true
+       * @supported h5
+       */
+      withCredentials?: boolean
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
       complete?: (res: TaroGeneral.CallbackResult) => void
       /** 接口调用失败的回调函数 */
@@ -52,14 +57,6 @@ declare module '../../index' {
 
   namespace UploadTask {
     /** HTTP Response Header 事件的回调函数 */
-    type OffHeadersReceivedCallback = (
-      res: TaroGeneral.CallbackResult,
-    ) => void
-    /** 上传进度变化事件的回调函数 */
-    type OffProgressUpdateCallback = (
-      res: TaroGeneral.CallbackResult,
-    ) => void
-    /** HTTP Response Header 事件的回调函数 */
     type OnHeadersReceivedCallback = (
       result: OnHeadersReceivedCallbackResult,
     ) => void
@@ -81,7 +78,7 @@ declare module '../../index' {
     }
 
     type UploadTaskPromise = Promise<uploadFile.SuccessCallbackResult> & UploadTask & {
-      headersReceive: UploadTask['onHeadersReceived'],
+      headersReceive: UploadTask['onHeadersReceived']
       progress: UploadTask['onProgressUpdate']
     }
   }
@@ -133,7 +130,7 @@ declare module '../../index' {
      */
     offProgressUpdate(
       /** 上传进度变化事件的回调函数 */
-      callback: UploadTask.OffProgressUpdateCallback,
+      callback: UploadTask.OnProgressUpdateCallback,
     ): void
     /** 监听 HTTP Response Header 事件。会比请求完成事件更早
      * @supported weapp, h5
@@ -149,7 +146,7 @@ declare module '../../index' {
      */
     offHeadersReceived(
       /** HTTP Response Header 事件的回调函数 */
-      callback: UploadTask.OffHeadersReceivedCallback,
+      callback: UploadTask.OnHeadersReceivedCallback,
     ): void
   }
 

@@ -11,7 +11,7 @@ sidebar_label: Picker
 
 [支付宝小程序 Picker](https://docs.alipay.com/mini/component/picker)。
 
-[字节跳动小程序 Picker](https://developer.toutiao.com/docs/comp/picker.htmll)。
+[抖音小程序 Picker](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/list/picker)。
 
 ##### 普通选择器：mode = selector
 

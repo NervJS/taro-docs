@@ -20,7 +20,7 @@ module.exports = {
   resolve: {
     mainFields: ['main:h5', 'browser', 'module', 'jsnext:main', 'main'],
     alias: {
-      '@tarojs/taro': '@tarojs/taro-h5'
+      '@tarojs/taro': '@tarojs/taro-h5',
     },
   },
   // ...
@@ -38,22 +38,25 @@ Taro-H5 实际并没有在 Taro 对象上挂载所有的 API，这是为了避�
 以 `StoryBook: 6.4.13` 为例，在 Taro 中使用需要在 StoryBook 安装完成之后，更新以下配置：
 
 ```js title=".storybook/main.js"
-const webpack = require('webpack');
+const webpack = require('webpack')
 const path = require('path')
 
 module.exports = {
   // ...
-  babel: options => ({
+  babel: (options) => ({
     ...options,
     plugins: [
       ...options.plugins,
-      [require('babel-plugin-transform-taroapi').default, {
-        apis: require(require.resolve('@tarojs/taro-h5/dist/taroApis', { basedir: path.resolve(__dirname, '..') })),
-        packageName: '@tarojs/taro'
-      }],
-    ]
+      [
+        require('babel-plugin-transform-taroapi').default,
+        {
+          apis: require(require.resolve('@tarojs/taro-h5/dist/taroApis', { basedir: path.resolve(__dirname, '..') })),
+          packageName: '@tarojs/taro',
+        },
+      ],
+    ],
   }),
-  webpackFinal: config => ({
+  webpackFinal: (config) => ({
     ...config,
     resolve: {
       ...config.resolve,
@@ -61,7 +64,8 @@ module.exports = {
       alias: {
         ...config.resolve.alias,
         '@tarojs/taro': '@tarojs/taro-h5',
-        ['@tarojs/components$']: '@tarojs/components/dist-h5/react',
+        // Note: 3.6 之前，请使用 '@tarojs/components$': '@tarojs/components/dist-h5/react',
+        ['@tarojs/components$']: '@tarojs/components/lib/react',
       },
     },
     plugins: [
@@ -76,47 +80,47 @@ module.exports = {
         ENABLE_CONTAINS: JSON.stringify(false),
         ENABLE_MUTATION_OBSERVER: JSON.stringify(false),
       }),
-    ]
-  })
+    ],
+  }),
   // ...
 }
 ```
 
 :::caution 请注意
 该方法不适用 `pxTransform` 方法，如果需要使用请先调用自行调用 `initPxTransform` 初始化配置 (目前 Taro 使用 webpack4 构建项目，无法在 StoryBook 中直接引用 `@tarojs/webpack-runner` 提供的方法引入所有配置，等升级到 webpack5 之后会提供替代解决方案)。
-目前解决办法是在.storybook/preview.js中预先执行`initPxTransform`并载入相关样式。
+目前解决办法是在.storybook/preview.js 中预先执行`initPxTransform`并载入相关样式。
 :::
 
 ```js title=".storybook/preview.js"
-import { DecoratorFn } from '@storybook/react';
+import { DecoratorFn } from '@storybook/react'
 
-import { defineCustomElements, applyPolyfills } from '@tarojs/components/loader';
-import Taro from '@tarojs/taro';
+import { defineCustomElements, applyPolyfills } from '@tarojs/components/loader'
+import Taro from '@tarojs/taro'
 
-import '@tarojs/components/dist/taro-components/taro-components.css';
+import '@tarojs/components/dist/taro-components/taro-components.css'
 
 export const decorators = [
   (Story) => {
     applyPolyfills().then(function () {
-      defineCustomElements(window);
-    });
+      defineCustomElements(window)
+    })
 
     Taro.initPxTransform({
       designWidth: 750,
       deviceRatio: {
-        '640': 2.34 / 2,
-        '750': 1,
-        '828': 1.81 / 2,
+        640: 2.34 / 2,
+        750: 1,
+        828: 1.81 / 2,
       },
-    });
-    return <Story />;
+    })
+    return <Story />
   },
-];
+]
 
 //...
 ```
 
-:::解决storybook中渲染结果与设计稿大小不一致的问题（以designWidth: 750px为例)
+:::解决 storybook 中渲染结果与设计稿大小不一致的问题（以 designWidth: 750px 为例)
 :::
 
 ```html title=".storybook/preview-body.html"
@@ -137,6 +141,7 @@ module.exports = {
   globals: {
     // ...
     window: true,
+    DEPRECATED_ADAPTER_COMPONENT: false,
     ENABLE_INNER_HTML: true,
     ENABLE_ADJACENT_HTML: true,
     ENABLE_SIZE_APIS: true,
@@ -148,11 +153,11 @@ module.exports = {
   moduleNameMapper: {
     // ...
     '@tarojs/taro': '@tarojs/taro-h5',
-    // '@tarojs/components': '@tarojs/components/dist-h5/react',
+    // '@tarojs/components': '@tarojs/components/lib/react',
     // '@tarojs/plugin-framework-react/dist/runtime': '<rootDir>/__mocks__/taro-framework',
     // '@tarojs/plugin-framework-vue2/dist/runtime': '<rootDir>/__mocks__/taro-framework',
     // '@tarojs/plugin-framework-vue3/dist/runtime': '<rootDir>/__mocks__/taro-framework',
-  }
+  },
 }
 ```
 
@@ -174,22 +179,26 @@ describe('tabbar', () => {
     buildApp()
   })
 
-  it('should be able to set/removeTabBarBadge', done => {
-    Taro.eventCenter.once('__taroSetTabBarBadge', res => res.successHandler({
-      errMsg: 'setTabBarBadge:ok'
-    }))
-    Taro.eventCenter.once('__taroRemoveTabBarBadge', res => res.successHandler({
-      errMsg: 'removeTabBarBadge:ok'
-    }))
+  it('should be able to set/removeTabBarBadge', (done) => {
+    Taro.eventCenter.once('__taroSetTabBarBadge', (res) =>
+      res.successHandler({
+        errMsg: 'setTabBarBadge:ok',
+      })
+    )
+    Taro.eventCenter.once('__taroRemoveTabBarBadge', (res) =>
+      res.successHandler({
+        errMsg: 'removeTabBarBadge:ok',
+      })
+    )
     Taro.setTabBarBadge({
       index: 0,
-      text: 'text'
-    }).then(res => {
+      text: 'text',
+    }).then((res) => {
       expect(res.errMsg).toBe('setTabBarBadge:ok')
 
       Taro.removeTabBarBadge({
-        index: 0
-      }).then(res => {
+        index: 0,
+      }).then((res) => {
         expect(res.errMsg).toBe('removeTabBarBadge:ok')
         done()
       })
@@ -205,45 +214,45 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-test-renderer'
 
 const appConfig: any = {
-  pages: [
-    'pages/index/index',
-    'pages/about/index'
-  ],
+  pages: ['pages/index/index', 'pages/about/index'],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'WeChat',
-    navigationBarTextStyle: 'black'
+    navigationBarTextStyle: 'black',
   },
   tabBar: {
     color: '#333',
     selectedColor: '#409EFF',
     backgroundColor: '#fff',
     borderStyle: 'black',
-    list: [{
-      pagePath: '/pages/index/index', text: '首页'
-    }, {
-      pagePath: '/pages/about/about', text: '关于'
-    }],
+    list: [
+      {
+        pagePath: '/pages/index/index',
+        text: '首页',
+      },
+      {
+        pagePath: '/pages/about/about',
+        text: '关于',
+      },
+    ],
     mode: 'hash',
     basename: '/test/app',
     customRoutes: {
-      '/pages/about/index': '/about'
-    }
+      '/pages/about/index': '/about',
+    },
   },
-  router: { mode: 'hash' }
+  router: { mode: 'hash' },
 }
 
-export function buildApp () {
+export function buildApp() {
   const config: any = { ...appConfig }
   class App extends Component {
-    render () {
+    render() {
       return this.props.children
     }
   }
-  config.routes = [
-    config.pages?.map(path => ({ path, load: () => null }))
-  ]
+  config.routes = [config.pages?.map((path) => ({ path, load: () => null }))]
   const inst = createReactApp(App, React, ReactDOM, config)
   createRouter(inst, config, 'React')
 }
@@ -251,9 +260,15 @@ export function buildApp () {
 
 ```js title="__mocks__/taro-framework.js"
 const App = {}
-export function createReactApp () { return { ...App } }
-export function createVueApp () { return { ...App } }
-export function createVue3App () { return { ...App } }
+export function createReactApp() {
+  return { ...App }
+}
+export function createVueApp() {
+  return { ...App }
+}
+export function createVue3App() {
+  return { ...App }
+}
 ```
 
 #### Hooks

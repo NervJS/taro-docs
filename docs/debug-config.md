@@ -10,7 +10,7 @@ title: 单步调测配置
 
 ### 1. 安装 Node.js
 
-建议安装 `10.15` 以上版本，官方下载地址：[Node.js](https://nodejs.org/dist/v12.14.0/node-v12.14.0-x64.msi " node.js")
+建议安装 `14.20` 及以上版本，官方下载地址：[Node.js](https://nodejs.org/dist/v12.14.0/node-v12.14.0-x64.msi 'node.js')
 
 ### 2. 安装 VSCode
 
@@ -21,7 +21,7 @@ title: 单步调测配置
 
 ### 3. Taro 源码下载
 
-下载地址：[Taro](https://github.com/NervJS/taro.git "Taro")，默认为 `next` 分支。
+下载地址：[Taro](https://github.com/NervJS/taro.git 'Taro')，默认为 `next` 分支。
 
 ### 4. 源码依赖安装
 
@@ -61,9 +61,7 @@ launch.json 的详细配置请见 [VSCode 文档](https://code.visualstudio.com/
       //   "weapp",
       //   "--watch"
       // ],
-      "skipFiles": [
-        "<node_internals>/**"
-      ]
+      "skipFiles": ["<node_internals>/**"]
     }
   ]
 }
@@ -85,12 +83,7 @@ launch.json 的详细配置请见 [VSCode 文档](https://code.visualstudio.com/
     {
       // ...
       "cwd": "/Users/User/Desktop/test",
-      "args": [
-        "build",
-        "--type",
-        "weapp",
-        "--watch"
-      ]
+      "args": ["build", "--type", "weapp", "--watch"]
     }
   ]
 }
@@ -110,10 +103,7 @@ launch.json 的详细配置请见 [VSCode 文档](https://code.visualstudio.com/
     {
       // ...
       "cwd": "/Users/User/Desktop",
-      "args": [
-        "init",
-        "projectName"
-      ]
+      "args": ["init", "projectName"]
     }
   ]
 }

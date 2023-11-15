@@ -6,7 +6,7 @@ sidebar_label: LivePusher
 实时音视频录制。需要用户授权 scope.camera、scope.record
 需要先通过类目审核，再在小程序管理后台，「开发」-「接口设置」中自助开通该组件权限。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/live-pusher.html)
 
@@ -18,21 +18,13 @@ ComponentType<LivePusherProps>
 
 ## 示例代码
 
+import { ReactIcon, VueIcon } from '@site/static/icons'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 <Tabs
   defaultValue="React"
-  values={[
-  {
-    "label": "React",
-    "value": "React"
-  },
-  {
-    "label": "Vue",
-    "value": "Vue"
-  }
-]}>
+  values={[{ label: <ReactIcon />, value: "React" }, { label: <VueIcon />, value: "Vue" }]}>
 <TabItem value="React">
 
 ```tsx
@@ -66,6 +58,7 @@ class App extends Components {
 | url | `string` |  | 否 | 推流地址。目前仅支持 rtmp 格式 |
 | mode | "SD" or "HD" or "FHD" or "RTC" | `"RTC"` | 否 | SD（标清）, HD（高清）, FHD（超清）, RTC（实时通话） |
 | autopush | `boolean` | `false` | 否 | 自动推流 |
+| enableVideoCustomRender | `boolean` | `false` | 否 | 自定义渲染，允许开发者自行处理所采集的视频帧 |
 | muted | `boolean` | `false` | 否 | 是否静音。即将废弃，可用 enable-mic 替代<br />**不推荐使用** |
 | enableCamera | `boolean` | `true` | 否 | 开启摄像头 |
 | autoFocus | `boolean` | `true` | 否 | 自动聚集 |
@@ -93,12 +86,19 @@ class App extends Components {
 | videoHeight | `number` | `640` | 否 | 上推的视频流的分辨率高度 |
 | beautyStyle | `keyof BeautyStyleType` | `smooth` | 否 | 设置美颜类型 |
 | filter | `keyof FilterType` | `standard` | 否 | 设置色彩滤镜 |
+| pictureInPictureMode | string or any[] |  | 否 | 设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]） |
+| customEffect | `boolean` | `false` | 否 | 是否启动自定义特效，设定后不能更改 |
+| skinWhiteness | `number` | `0` | 否 | 自定义特效美白效果，取值 0~1。需要开启 custom-effect |
+| skinSmoothness | `number` | `0` | 否 | 自定义特效磨皮效果，取值 0~1。需要开启 custom-effect |
+| faceThinness | `number` | `0` | 否 | 自定义特效瘦脸效果，取值 0~1。需要开启 custom-effect |
+| eyeBigness | `number` | `0` | 否 | 自定义特效大眼效果，取值 0~1。需要开启 custom-effect |
+| voiceChangerType | `number` | `0` | 否 | 0：关闭变声；1：熊孩子；2：萝莉；3：大叔；4：重金属；6：外国人；7：困兽；8：死肥仔；9：强电流；10：重机械；11：空灵 |
+| fps | `number` | `15` | 否 | 帧率，有效值为 1~30 |
 | onStateChange | `CommonEventFunction<onStateChangeEventDetail>` |  | 否 | 状态变化事件，detail = {code} |
 | onError | `CommonEventFunction<onErrorEventDetail>` |  | 否 | 渲染错误事件，detail = {errMsg, errCode} |
 | onBgmProgress | `CommonEventFunction<onBgmProgressEventDetail>` |  | 否 | 背景音进度变化时触发，detail = {progress, duration} |
 | onBgmComplete | `CommonEventFunction` |  | 否 | 背景音播放完成时触发 |
 | onAudioVolumeNotify | `CommonEventFunction` |  | 否 | 返回麦克风采集的音量大小 |
-| pictureInPictureMode | string or any[] |  | 否 | 设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]） |
 | onNetStatus | `CommonEventFunction` |  | 否 | 网络状态通知，detail = {info} |
 | onEnterPictureInPicture | `string` |  | 否 | 进入小窗 |
 | onLeavePictureInPicture | `string` |  | 否 | 退出小窗 |
@@ -111,6 +111,7 @@ class App extends Components {
 | LivePusherProps.url | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.mode | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.autopush | ✔️ | ✔️ |  |  |  |
+| LivePusherProps.enableVideoCustomRender | ✔️ |  |  |  |  |
 | LivePusherProps.muted | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.enableCamera | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.autoFocus | ✔️ | ✔️ |  |  |  |
@@ -138,12 +139,19 @@ class App extends Components {
 | LivePusherProps.videoHeight | ✔️ |  |  |  |  |
 | LivePusherProps.beautyStyle | ✔️ |  |  |  |  |
 | LivePusherProps.filter | ✔️ |  |  |  |  |
+| LivePusherProps.pictureInPictureMode | ✔️ |  |  |  |  |
+| LivePusherProps.customEffect | ✔️ |  |  |  |  |
+| LivePusherProps.skinWhiteness | ✔️ |  |  |  |  |
+| LivePusherProps.skinSmoothness | ✔️ |  |  |  |  |
+| LivePusherProps.faceThinness | ✔️ |  |  |  |  |
+| LivePusherProps.eyeBigness | ✔️ |  |  |  |  |
+| LivePusherProps.voiceChangerType | ✔️ |  |  |  |  |
+| LivePusherProps.fps | ✔️ |  |  |  |  |
 | LivePusherProps.onStateChange | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.onError | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.onBgmProgress | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.onBgmComplete | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.onAudioVolumeNotify | ✔️ |  |  |  |  |
-| LivePusherProps.pictureInPictureMode | ✔️ |  |  |  |  |
 | LivePusherProps.onNetStatus | ✔️ | ✔️ |  |  |  |
 | LivePusherProps.onEnterPictureInPicture | ✔️ |  |  |  |  |
 | LivePusherProps.onLeavePictureInPicture | ✔️ |  |  |  |  |
@@ -189,6 +197,7 @@ audioVolumeType 的合法值
 
 | 参数 | 说明 |
 | --- | --- |
+| auto | 自动 |
 | media | 媒体音量 |
 | voicecall | 通话音量 |
 

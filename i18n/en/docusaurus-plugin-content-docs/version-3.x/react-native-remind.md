@@ -133,7 +133,7 @@ const config = {
 
 # 三、Navigation
 
-React Native Navigation is encapsulated in React-Navigation 5.x. To better facilitate business customization, the configuration of React Navigation is passed through in the global and page configuration, but note that the following navigation-related settings Taro 3.x are in effect.
+React Native Navigation is encapsulated in React-Navigation [6.x](https://github.com/NervJS/taro/pull/11344). To better facilitate business customization, the configuration of React Navigation is passed through in the global and page configuration, but note that the following navigation-related settings Taro 3.x are in effect.
 
 ### Global Configuration  
 

@@ -8,7 +8,7 @@ title: 生命周期 & State
 
 ```jsx
 class Clock extends Component {
-  render () {
+  render() {
     return (
       <View>
         <Text>Hello, world!</Text>
@@ -27,12 +27,12 @@ Clock 现在被定义为一个类，使用类就允许我们使用其它特性�
 
 ```jsx
 class Clock extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = { date: new Date() }
   }
 
-  render () {
+  render() {
     return (
       <View>
         <Text>Hello, world!</Text>
@@ -67,20 +67,16 @@ constructor (props) {
 
 ```jsx
 class Clock extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = { date: new Date() }
   }
 
-  componentDidMount() {
+  componentDidMount() {}
 
-  }
+  componentWillUnmount() {}
 
-  componentWillUnmount() {
-
-  }
-
-  render () {
+  render() {
     return (
       <View>
         <Text>Hello, world!</Text>
@@ -126,26 +122,23 @@ componentWillUnmount () {
 import Taro, { Component } from '@tarojs/taro'
 
 class Clock extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = { date: new Date() }
   }
 
-  componentDidMount () {
-    this.timerID = setInterval(
-      () => this.tick(),
-      1000
-    );
+  componentDidMount() {
+    this.timerID = setInterval(() => this.tick(), 1000)
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     clearInterval(this.timerID)
   }
 
-  tick () {
+  tick() {
     this.setState({
-      date: new Date()
-    });
+      date: new Date(),
+    })
   }
 
   render() {

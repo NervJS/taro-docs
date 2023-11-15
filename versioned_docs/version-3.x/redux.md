@@ -30,26 +30,25 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import rootReducer from '../reducers'
 
-const composeEnhancers = typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
-    // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
-  })
-  : compose
+const composeEnhancers =
+  typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+        // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+      })
+    : compose
 
-const middlewares = [
-  thunkMiddleware
-]
+const middlewares = [thunkMiddleware]
 
 if (process.env.NODE_ENV === 'development') {
   middlewares.push(require('redux-logger').createLogger())
 }
 
 const enhancer = composeEnhancers(
-  applyMiddleware(...middlewares),
+  applyMiddleware(...middlewares)
   // other store enhancers if any
 )
 
-export default function configStore () {
+export default function configStore() {
   const store = createStore(rootReducer, enhancer)
   return store
 }
@@ -65,12 +64,8 @@ import configStore from './store'
 const store = configStore()
 
 class App extends Component {
-  render () {
-    return (
-      <Provider store={store}>
-        {this.props.children}
-      </Provider>
-    )
+  render() {
+    return <Provider store={store}>{this.props.children}</Provider>
   }
 }
 
@@ -98,20 +93,20 @@ export const MINUS = 'MINUS'
 import { ADD, MINUS } from '../constants/counter'
 
 const INITIAL_STATE = {
-  num: 0
+  num: 0,
 }
 
-export default function counter (state = INITIAL_STATE, action) {
+export default function counter(state = INITIAL_STATE, action) {
   switch (action.type) {
     case ADD:
       return {
         ...state,
-        num: state.num + 1
+        num: state.num + 1,
       }
     case MINUS:
       return {
         ...state,
-        num: state.num - 1
+        num: state.num - 1,
       }
     default:
       return state
@@ -124,32 +119,29 @@ import { combineReducers } from 'redux'
 import counter from './counter'
 
 export default combineReducers({
-  counter
+  counter,
 })
 ```
 
 ### 新增 `actions`
 
 ```jsx title="src/actions/counter.js"
-import {
-  ADD,
-  MINUS
-} from '../constants/counter'
+import { ADD, MINUS } from '../constants/counter'
 
 export const add = () => {
   return {
-    type: ADD
+    type: ADD,
   }
 }
 export const minus = () => {
   return {
-    type: MINUS
+    type: MINUS,
   }
 }
 
 // 异步的 action
-export function asyncAdd () {
-  return dispatch => {
+export function asyncAdd() {
+  return (dispatch) => {
     setTimeout(() => {
       dispatch(add())
     }, 2000)
@@ -167,27 +159,38 @@ import { connect } from 'react-redux'
 import { View, Button, Text } from '@tarojs/components'
 import { add, minus, asyncAdd } from '../../actions/counter'
 
-@connect(({ counter }) => ({
-  counter
-}), (dispatch) => ({
-  add () {
-    dispatch(add())
-  },
-  dec () {
-    dispatch(minus())
-  },
-  asyncAdd () {
-    dispatch(asyncAdd())
-  }
-}))
+@connect(
+  ({ counter }) => ({
+    counter,
+  }),
+  (dispatch) => ({
+    add() {
+      dispatch(add())
+    },
+    dec() {
+      dispatch(minus())
+    },
+    asyncAdd() {
+      dispatch(asyncAdd())
+    },
+  })
+)
 class Index extends Component {
-  render () {
+  render() {
     return (
-      <View className='index'>
-        <Button className='add_btn' onClick={this.props.add}>+</Button>
-        <Button className='dec_btn' onClick={this.props.dec}>-</Button>
-        <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-        <View><Text>{this.props.counter.num}</Text></View>
+      <View className="index">
+        <Button className="add_btn" onClick={this.props.add}>
+          +
+        </Button>
+        <Button className="dec_btn" onClick={this.props.dec}>
+          -
+        </Button>
+        <Button className="dec_btn" onClick={this.props.asyncAdd}>
+          async
+        </Button>
+        <View>
+          <Text>{this.props.counter.num}</Text>
+        </View>
       </View>
     )
   }
@@ -217,9 +220,9 @@ selector 函数大致相当于 `connect` 函数的 `mapStateToProps` 参数。se
 
 但 `useSelector` 还是和 `mapStateToProps` 有一些不同：
 
-* 不像 `mapStateToProps` 只返回对象一样，selector 可能会返回任何值。
-* 当一个 action dispatch 时，`useSelector` 会把 selector 的前后返回值做一次浅对比，如果不同，组件会强制更新。
-* selector 函数不接受 `ownProps` 参数。但 selector 可以通过闭包访问函数式组件传递下来的 props。
+- 不像 `mapStateToProps` 只返回对象一样，selector 可能会返回任何值。
+- 当一个 action dispatch 时，`useSelector` 会把 selector 的前后返回值做一次浅对比，如果不同，组件会强制更新。
+- selector 函数不接受 `ownProps` 参数。但 selector 可以通过闭包访问函数式组件传递下来的 props。
 
 #### 使用案例
 
@@ -230,7 +233,7 @@ import { Component } from 'react'
 import { useSelector } from 'react-redux'
 
 export const CounterComponent = () => {
-  const counter = useSelector(state => state.counter)
+  const counter = useSelector((state) => state.counter)
   return <View>{counter}</View>
 }
 ```
@@ -238,8 +241,8 @@ export const CounterComponent = () => {
 使用闭包决定如何 select 数据：
 
 ```jsx
-export const TodoListItem = props => {
-  const todo = useSelector(state => state.todos[props.id])
+export const TodoListItem = (props) => {
+  const todo = useSelector((state) => state.todos[props.id])
   return <View>{todo.text}</View>
 }
 ```
@@ -247,7 +250,6 @@ export const TodoListItem = props => {
 进阶使用：
 
 你还可以访问 [react-redux 文档](https://react-redux.js.org/api/hooks#using-memoizing-selectors) 了解如何使用 `reselect` 缓存 selector。
-
 
 ### `useDispatch`
 
@@ -269,9 +271,7 @@ export const CounterComponent = ({ value }) => {
   return (
     <View>
       <Text>{value}</Text>
-      <Button onClick={() => dispatch({ type: 'increment-counter' })}>
-        Increment counter
-      </Button>
+      <Button onClick={() => dispatch({ type: 'increment-counter' })}>Increment counter</Button>
     </View>
   )
 }
@@ -283,10 +283,7 @@ export const CounterComponent = ({ value }) => {
 // CounterComponent.js
 export const CounterComponent = ({ value }) => {
   const dispatch = useDispatch()
-  const incrementCounter = useCallback(
-    () => dispatch({ type: 'increment-counter' }),
-    [dispatch]
-  )
+  const incrementCounter = useCallback(() => dispatch({ type: 'increment-counter' }), [dispatch])
 
   return (
     <View>
@@ -297,9 +294,7 @@ export const CounterComponent = ({ value }) => {
 }
 
 // IncrementButton.js
-const MyIncrementButton = ({ onIncrement }) => (
-  <Button onClick={onIncrement}>Increment counter</Button>
-)
+const MyIncrementButton = ({ onIncrement }) => <Button onClick={onIncrement}>Increment counter</Button>
 
 export default Taro.memo(MyIncrementButton)
 ```
@@ -335,5 +330,5 @@ export const CounterComponent = ({ value }) => {
 
 用法及相关讨论请参考 [#6548](https://github.com/NervJS/taro/issues/6548)，其中有两个需要注意的点：
 
-- 配置 `persistConfig` 把  storage API 替换为 Taro Storage API，请参考 [redux-persist-taro-storage](https://github.com/imtcn/redux-persist-taro-storage)。
+- 配置 `persistConfig` 把 storage API 替换为 Taro Storage API，请参考 [redux-persist-taro-storage](https://github.com/imtcn/redux-persist-taro-storage)。
 - `<PersistGate>` 的使用，请参考 [@ryougifujino 的回答](https://github.com/NervJS/taro/issues/6548#issuecomment-816529998)。

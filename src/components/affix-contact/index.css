@@ -1,0 +1,94 @@
+.affix-contact-container {
+  width: fit-content;
+  border-radius: 40px;
+  z-index: 300;
+}
+.affix-contact-container.affix {
+  position: fixed;
+  right: 1.3rem;
+  bottom: 5rem; 
+}
+.affix-contact-container.inline {
+  position: relative;
+}
+.affix-title-inline {
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+}
+.affix-contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 48px;
+  z-index: 300;
+  background: #fff;
+  transition: .3s;
+  border: 2px  solid #f1f1f1;
+  box-shadow: 0 6px 16px 0 rgb(0 0 0 / 8%), 0 3px 6px -4px rgb(0 0 0 / 12%), 0 9px 28px 8px rgb(0 0 0 / 5%);
+}
+.affix-contact-btn:hover,
+.affix-contact-btn-show {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px 0 rgb(0 0 0 / 18%), 0 3px 6px -4px rgb(0 0 0 / 12%), 0 9px 28px 8px rgb(0 0 0 / 5%);
+}
+.affix-contact-content-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 300;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.1);
+  display: none;
+}
+.affix-contact-content-wrap.active{
+  display: block;
+}
+.affix-contact-content {
+  /* position: fixed;
+  right: calc(1.3rem + 20px);
+  bottom: calc(5rem + 48px); */
+  width: 300px;
+  min-width: calc(148px + 40px);
+  max-height: calc(100vh - 5rem - 48px - 40px);
+  overflow-y: auto;
+  background: #FFF;
+  padding: 12px 12px;
+  z-index: 300;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px 0 rgb(0 0 0 / 8%), 0 3px 6px -4px rgb(0 0 0 / 12%), 0 9px 28px 8px rgb(0 0 0 / 5%);
+  -webkit-overflow-scrolling: touch;
+  transform: scale(0.8);
+  transition: .3s cubic-bezier(.175,.885,.32,1.275);
+  transform-origin: bottom right;
+  visibility: hidden;
+  color: #333;
+}
+.affix-contact-content.affix {
+  position: fixed;
+  right: calc(1.3rem + 20px);
+  bottom: calc(5rem + 48px);
+}
+.affix-contact-content.inline {
+  width: 50vw;
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+}
+.affix-contact-content.active {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+.affix-contact-content-tips {
+  margin-bottom: 20px;
+}
+.affix-contact-content > div > div {
+  padding: 20px 10px;
+}

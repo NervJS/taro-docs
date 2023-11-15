@@ -5,7 +5,7 @@ sidebar_label: RichText
 
 富文本
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/rich-text.html)
 
@@ -17,21 +17,13 @@ ComponentType<RichTextProps>
 
 ## 示例代码
 
+import { ReactIcon, VueIcon } from '@site/static/icons'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 <Tabs
   defaultValue="React"
-  values={[
-  {
-    "label": "React",
-    "value": "React"
-  },
-  {
-    "label": "Vue",
-    "value": "Vue"
-  }
-]}>
+  values={[{ label: <ReactIcon />, value: "React" }, { label: <VueIcon />, value: "Vue" }]}>
 <TabItem value="React">
 
 ```tsx
@@ -100,31 +92,32 @@ export default {
 | userSelect | `boolean` | `false` | 否 | 文本是否可选，该属性会使节点显示为 block |
 | nodes | `Nodes` |  | 否 | 节点列表/ HTML String |
 | space | `keyof TSpace` |  | 否 | 显示连续空格 |
+| selectable | `string` | `false（基础库 3.150.1 以前版本）true（基础库 3.150.1 及以后版本）` | 否 | 富文本是否可以长按选中，可用于复制，粘贴，长按搜索等场景 |
+| imageMenuPrevent | `string` | `false` | 否 | 阻止长按图片时弹起默认菜单（将该属性设置为image-menu-prevent或image-menu-prevent="true"），只在初始化时有效，不能动态变更；若不想阻止弹起默认菜单，则不需要设置此属性 |
+| preview | `string` |  | 否 | 富文本中的图片是否可点击预览。在不设置的情况下，若 rich-text 未监听点击事件，则默认开启。未显示设置 preview 时会进行点击默认预览判断，建议显示设置 preview |
 | onTap | `CommonEventFunction` |  | 否 | 触摸。 |
 | onTouchstart | `CommonEventFunction` |  | 否 | 触摸动作开始。 |
 | onTouchmove | `CommonEventFunction` |  | 否 | 触摸移动事件。 |
 | onTouchcancel | `CommonEventFunction` |  | 否 | 触摸动作被打断。 |
 | onTouchend | `CommonEventFunction` |  | 否 | 触摸动作结束。 |
 | onLongtap | `CommonEventFunction` |  | 否 | 触摸后，超过 500ms 再离开。 |
-| selectable | `string` | `false（基础库 3.150.1 以前版本）true（基础库 3.150.1 及以后版本）` | 否 | 富文本是否可以长按选中，可用于复制，粘贴，长按搜索等场景 |
-| imageMenuPrevent | `string` | `false` | 否 | 阻止长按图片时弹起默认菜单（将该属性设置为image-menu-prevent或image-menu-prevent="true"），只在初始化时有效，不能动态变更；若不想阻止弹起默认菜单，则不需要设置此属性 |
-| preview | `string` |  | 否 | 富文本中的图片是否可点击预览。在不设置的情况下，若 rich-text 未监听点击事件，则默认开启。未显示设置 preview 时会进行点击默认预览判断，建议显示设置 preview |
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | QQ 小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| RichTextProps.userSelect | ✔️ |  |  |  |  |  |  |
-| RichTextProps.space | ✔️ |  |  | ✔️ |  | ✔️ |  |
-| RichTextProps.onTap |  |  | ✔️ |  |  |  |  |
-| RichTextProps.onTouchstart |  |  | ✔️ |  |  |  |  |
-| RichTextProps.onTouchmove |  |  | ✔️ |  |  |  |  |
-| RichTextProps.onTouchcancel |  |  | ✔️ |  |  |  |  |
-| RichTextProps.onTouchend |  |  | ✔️ |  |  |  |  |
-| RichTextProps.onLongtap |  |  | ✔️ |  |  |  |  |
-| RichTextProps.selectable |  | ✔️ |  |  |  |  |  |
-| RichTextProps.imageMenuPrevent |  | ✔️ |  |  |  |  |  |
-| RichTextProps.preview |  | ✔️ |  |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| RichTextProps.userSelect | ✔️ |  |  |  |  | ✔️ |  |  |
+| RichTextProps.nodes | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| RichTextProps.space | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| RichTextProps.selectable |  | ✔️ |  |  |  | ✔️ |  |  |
+| RichTextProps.imageMenuPrevent |  | ✔️ |  |  |  |  |  |  |
+| RichTextProps.preview |  | ✔️ |  |  |  |  |  |  |
+| RichTextProps.onTap |  |  | ✔️ |  |  |  |  |  |
+| RichTextProps.onTouchstart |  |  | ✔️ |  |  |  |  |  |
+| RichTextProps.onTouchmove |  |  | ✔️ |  |  |  |  |  |
+| RichTextProps.onTouchcancel |  |  | ✔️ |  |  |  |  |  |
+| RichTextProps.onTouchend |  |  | ✔️ |  |  |  |  |  |
+| RichTextProps.onLongtap |  |  | ✔️ |  |  |  |  |  |
 
 ### TSpace
 

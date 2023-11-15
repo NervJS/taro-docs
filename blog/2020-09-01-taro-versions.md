@@ -12,7 +12,7 @@ description: 你是否对 Taro 辣么多版本感到非常困惑？你是否对�
 
 <!--truncate-->
 
- 自从 Taro 在今年 7 月份推出 [3.0 版本](https://juejin.im/post/6844904205367377933)，宣布同时支持 React 和 Vue 来开发跨端应用之后，Taro 的关注度得到了进一步地提升，很多开发者开始尝试升级自身项目到 3.0 来体验新的特性，同时，Taro 社区也开始迎来一些新朋友，业界有很多 Vue 开发者在做技术选型时开始将目光投向 Taro。
+自从 Taro 在今年 7 月份推出 [3.0 版本](https://juejin.im/post/6844904205367377933)，宣布同时支持 React 和 Vue 来开发跨端应用之后，Taro 的关注度得到了进一步地提升，很多开发者开始尝试升级自身项目到 3.0 来体验新的特性，同时，Taro 社区也开始迎来一些新朋友，业界有很多 Vue 开发者在做技术选型时开始将目光投向 Taro。
 
 但由于 Taro 大版本之间差异较大，而社区内很多关于 Taro 的教程文章以及示例项目目前还停留 Taro 1/2 时代，导致很多开发者使用 Taro 3.0 尝试时出现奇怪的问题，所以 Taro 团队想通过本文帮助大家理解 Taro 各个版本之间的联系，协助大家更好地完成版本迁移，避免出现一些难以解决的奇怪问题。
 
@@ -76,6 +76,7 @@ Taro 1/2 升级到 Taro 3 则相对来说要麻烦许多，但是[迁移指南](
 #### 文件调整
 
 文件调整主要如下：
+
 - **babel 配置**，在项目目录下新增了 [`babel.config.js`](https://github.com/NervJS/taro/blob/next/packages/babel-preset-taro/README.md) 配置文件来配置 babel，为此，请去掉编译配置（config/index.js）中的 `babel` 配置，[请参见说明](/docs/migration/#%E7%BC%96%E8%AF%91%E4%BE%9D%E8%B5%96%E5%BA%93)
 - **项目/页面配置**，新增项目/页面同名的配置文件 `*.config.js`（或者 `*.config.ts`）, `*` 代表页面/项目文件的文件名，`config` 文件必须和页面/项目文件在同一文件夹，[请参见说明](/docs/migration/#%E9%A1%B9%E7%9B%AE%E9%A1%B5%E9%9D%A2%E9%85%8D%E7%BD%AE)
 
@@ -87,32 +88,33 @@ Taro 1/2 升级到 Taro 3 则相对来说要麻烦许多，但是[迁移指南](
 
 在 Taro 3 中有很多旧的项目依赖已经不再需要了，例如之前做平台运行时兼容的 `@tarojs/taro-weapp`、`@tarojs/taro-alipay` 等等，而同时也新增了一些新依赖项，例如 `@tarojs/runtime` 等，具体 Taro 3 会需要哪些依赖，可以通过创建 Taro 示例项目看到，在这里我们列出了 Taro 3 目前仍需使用的 NPM 包名及其具体作用。
 
-| NPM 包           |   描述 |
-| ------------- |:------------- |
-| [`babel-preset-taro`](https://www.npmjs.com/package/babel-preset-taro)      |  给 Taro 项目使用的 babel preset |
-| [`@tarojs/taro`](https://www.npmjs.com/package/@tarojs/taro)      |  暴露给应用开发者的 Taro 核心 API  |
-| [`@tarojs/shared`](https://www.npmjs.com/package/@tarojs/shared)      |  Taro 内部使用的 utils  |
-| [`@tarojs/api`](https://www.npmjs.com/package/@tarojs/api)      |  暴露给 @tarojs/taro 的所有端的公有 API  |
-| [`@tarojs/taro-h5`](https://www.npmjs.com/package/@tarojs/taro-h5) |  暴露给 @tarojs/taro 的 H5 端 API  |
-| [`@tarojs/router`](https://www.npmjs.com/package/@tarojs/router) |  Taro H5 路由  |
-| [`@tarojs/react`](https://www.npmjs.com/package/@tarojs/react) | 基于 react-reconciler 的小程序专用 React 渲染器  |
-| [`@tarojs/cli`](https://www.npmjs.com/package/@tarojs/cli) | Taro 开发工具   |
-| [`@tarojs/extend`](https://www.npmjs.com/package/@tarojs/extend) | Taro 扩展，包含 jQuery API 等   |
-| [`@tarojs/helper`](https://www.npmjs.com/package/@tarojs/helper) | 内部给 CLI 和 runner 使用辅助方法集  |
-| [`@tarojs/service`](https://www.npmjs.com/package/@tarojs/service) | Taro 插件化内核  |
-| [`@tarojs/taro-loader`](https://www.npmjs.com/package/@tarojs/taro-loader) | 露给 @tarojs/mini-runner 和 @tarojs/webpack-runner 使用的 Webpack loader  |
-| [`@tarojs/runner-utils`](https://www.npmjs.com/package/@tarojs/runner-utils) | 暴露给 @tarojs/mini-runner 和 @tarojs/webpack-runner 的公用工具函数  |
-| [`@tarojs/webpack-runner`](https://www.npmjs.com/package/@tarojs/webpack-runner) |  Taro H5 端 Webpack 打包编译工具  |
-| [`@tarojs/mini-runner`](https://www.npmjs.com/package/@tarojs/mini-runner) |  Taro 小程序 端 Webpack 打包编译工具  |
-| [`@tarojs/components`](https://www.npmjs.com/package/@tarojs/components) | Taro 标准组件库，H5 版 |
-| [`@tarojs/taroize`](https://www.npmjs.com/package/@tarojs/taroize) | Taro 小程序反向编译器  |
-| [`@tarojs/with-weapp`](https://www.npmjs.com/package/@tarojs/with-weapp) | 反向转换的运行时适配器  |
-| [`eslint-config-taro`](https://www.npmjs.com/package/eslint-config-taro)      |  Taro ESLint 规则  |
-| [`eslint-plugin-taro`](https://www.npmjs.com/package/eslint-plugin-taro)      |  Taro ESLint 插件  |
+| NPM 包                                                                           | 描述                                                                     |
+| -------------------------------------------------------------------------------- | :----------------------------------------------------------------------- |
+| [`babel-preset-taro`](https://www.npmjs.com/package/babel-preset-taro)           | 给 Taro 项目使用的 babel preset                                          |
+| [`@tarojs/taro`](https://www.npmjs.com/package/@tarojs/taro)                     | 暴露给应用开发者的 Taro 核心 API                                         |
+| [`@tarojs/shared`](https://www.npmjs.com/package/@tarojs/shared)                 | Taro 内部使用的 utils                                                    |
+| [`@tarojs/api`](https://www.npmjs.com/package/@tarojs/api)                       | 暴露给 @tarojs/taro 的所有端的公有 API                                   |
+| [`@tarojs/taro-h5`](https://www.npmjs.com/package/@tarojs/taro-h5)               | 暴露给 @tarojs/taro 的 H5 端 API                                         |
+| [`@tarojs/router`](https://www.npmjs.com/package/@tarojs/router)                 | Taro H5 路由                                                             |
+| [`@tarojs/react`](https://www.npmjs.com/package/@tarojs/react)                   | 基于 react-reconciler 的小程序专用 React 渲染器                          |
+| [`@tarojs/cli`](https://www.npmjs.com/package/@tarojs/cli)                       | Taro 开发工具                                                            |
+| [`@tarojs/extend`](https://www.npmjs.com/package/@tarojs/extend)                 | Taro 扩展，包含 jQuery API 等                                            |
+| [`@tarojs/helper`](https://www.npmjs.com/package/@tarojs/helper)                 | 内部给 CLI 和 runner 使用辅助方法集                                      |
+| [`@tarojs/service`](https://www.npmjs.com/package/@tarojs/service)               | Taro 插件化内核                                                          |
+| [`@tarojs/taro-loader`](https://www.npmjs.com/package/@tarojs/taro-loader)       | 露给 @tarojs/mini-runner 和 @tarojs/webpack-runner 使用的 Webpack loader |
+| [`@tarojs/runner-utils`](https://www.npmjs.com/package/@tarojs/runner-utils)     | 暴露给 @tarojs/mini-runner 和 @tarojs/webpack-runner 的公用工具函数      |
+| [`@tarojs/webpack-runner`](https://www.npmjs.com/package/@tarojs/webpack-runner) | Taro H5 端 Webpack 打包编译工具                                          |
+| [`@tarojs/mini-runner`](https://www.npmjs.com/package/@tarojs/mini-runner)       | Taro 小程序 端 Webpack 打包编译工具                                      |
+| [`@tarojs/components`](https://www.npmjs.com/package/@tarojs/components)         | Taro 标准组件库，H5 版                                                   |
+| [`@tarojs/taroize`](https://www.npmjs.com/package/@tarojs/taroize)               | Taro 小程序反向编译器                                                    |
+| [`@tarojs/with-weapp`](https://www.npmjs.com/package/@tarojs/with-weapp)         | 反向转换的运行时适配器                                                   |
+| [`eslint-config-taro`](https://www.npmjs.com/package/eslint-config-taro)         | Taro ESLint 规则                                                         |
+| [`eslint-plugin-taro`](https://www.npmjs.com/package/eslint-plugin-taro)         | Taro ESLint 插件                                                         |
 
 #### 代码调整
 
 代码调整主要如下：
+
 - **API 引入**，前端框架（React/Nerv/Vue）自身的 API 直接从框架引入，与 Web 保持一致，只有 Taro 提供的相关 API，还是从 `@tarojs/taro` 引入，[请参见说明](/docs/migration/#api)
 - **App 代码调整**，对于 React/Nerv 项目，项目入口 App 的 render 函数固定修改为返回 `this.props.children`，如下
 
@@ -162,14 +164,14 @@ CLI 与项目依赖版本不一致是导致很多问题出现的源头之一。�
 
 在 Taro 3 中使用路由在前文的版本迁移部分已有提及，同时需要了解更多内容可以前往[官方文档](/docs/router)查看。
 
-非常值得注意的是，无论是获取项目传入参数还是页面入参，都是通过  `getCurrentInstance().router` 来获取的，具体使用如下。
+非常值得注意的是，无论是获取项目传入参数还是页面入参，都是通过 `getCurrentInstance().router` 来获取的，具体使用如下。
 
 ```javascript
 import { getCurrentInstance } from '@tarojs/taro'
 import React, { Component } from 'react'
 
 export default class C extends Component {
-  componentDidMount () {
+  componentDidMount() {
     console.log(getCurrentInstance().router.params)
   }
 }
@@ -223,21 +225,17 @@ import { View, Text, Slot } from '@tarojs/components'
 export default class Index extends Component {
   state = {
     show: false,
-    date: ''
+    date: '',
   }
-  render () {
+  render() {
     const { show, date } = this.state
     return (
-      <View className='index'>
-        <van-button type='primary' onClick={this.showCalendar}>显示日历</van-button>
-        <van-calendar
-          show={show}
-          showConfirm
-          type='range'
-          onClose={this.closeCalendar}
-          onConfirm={this.onConfirm}
-          >
-          <Slot name='title'>
+      <View className="index">
+        <van-button type="primary" onClick={this.showCalendar}>
+          显示日历
+        </van-button>
+        <van-calendar show={show} showConfirm type="range" onClose={this.closeCalendar} onConfirm={this.onConfirm}>
+          <Slot name="title">
             <View>Hello world</View>
           </Slot>
         </van-calendar>
@@ -248,7 +246,6 @@ export default class Index extends Component {
 ```
 
 具体使用情况可以参考项目 [taro3-vant-sample](https://github.com/NervJS/taro3-vant-sample)。
-
 
 ### 有哪些 Taro 官方的示例项目
 
@@ -272,7 +269,6 @@ Taro 社区及官方团队目前主要在集中人力做以下几项工作
 
 可以看出「开放式跨端跨框架解决方案」包含了多端统一开发的特性，同时支持跨框架开发，而且更重要的是能够成为一个开放式的解决方案，我们希望开发者可以根据 Taro 提供的 API 开发一个插件就能实现自己去为 Taro 扩展更多平台与前端框架的支持，例如未来有些新的平台推出小程序，或者有人希望能在 Taro 中使用 Angular 等更多的前端框架，那么就可以通过 Taro 的开放式机制来自行扩展，而不用等待 Taro 官方来进行支持，Taro 将只作为一个跨端适配的平台，所有的可能性都可以让社区自己去自由发掘。
 
-
 ### 实现小程序与 Web 的同构
 
 在当前 Taro 的设计下，使用 Taro 开发必须使用 Taro 标准组件库中的组件，而不能直接使用大家熟悉的 HTML 标签。我们正在努力打破这一藩篱，寻求支持让开发人员可以直接使用 HTML 标签来开发小程序的方案。
@@ -286,7 +282,6 @@ Taro 社区及官方团队目前主要在集中人力做以下几项工作
 Taro 3 没有支持 RN 适配，让很多使用 Taro 开发 RN 应用的朋友措手不及，经常在群里能看到上述灵魂拷问。
 
 事实上 Taro 并没有抛弃 RN，目前 Taro 3 RN 适配工作已经由 「58 同城」开发团队接管，进行适配支持，目前这项工作已经正在紧锣密鼓进行，相信不久的将来就能看到在 Taro 3 中 RN 的支持王者归来。而这一次的通力协作也意味着 Taro 核心团队正不断成长为一个跨公司的团队，在未来一定会有更多灵感的碰撞，为社区开发者带来更多精彩的功能。
-
 
 ## 总结一下
 

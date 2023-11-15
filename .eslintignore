@@ -1,0 +1,11 @@
+.docusaurus
+*.d.ts
+
+build
+lib
+node_modules
+
+**/apis/**
+!**/apis/about
+**/components/**
+*.mdx

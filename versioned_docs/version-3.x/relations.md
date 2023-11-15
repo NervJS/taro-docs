@@ -10,21 +10,21 @@ import { View } from '@tarojs/components'
 
 export default class Menu extends Component {
   static defaultProps = {
-    data: []
+    data: [],
   }
 
   constructor(props) {
     super(props)
     this.state = {
-      checked: props.checked
+      checked: props.checked,
     }
   }
 
-  componentWillMount () {
+  componentWillMount() {
     console.log(this) // this -> 组件 Menu 的实例
   }
 
-  render () {
+  render() {
     return <View />
   }
 }

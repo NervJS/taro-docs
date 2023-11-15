@@ -134,7 +134,7 @@ render () {
       const url = 'https://...'
       dom = <Image src={url} />
   }
-  
+
   return <Container>
     {dom}
   </Container>
@@ -151,7 +151,7 @@ render () {
       url = 'https://...'
       dom = <Image src={url} />
   }
-  
+
   return <Container>
     {dom}
   </Container>
@@ -212,24 +212,24 @@ Taro 小程序端的 API 只是对小程序原生 API 简单地进行了 promise
 ```jsx
 export default class Index extends Component {
   config = {
-    navigationBarTitleText: '首页'
-  };
+    navigationBarTitleText: '首页',
+  }
 
   state = {
-    num: 1
-  };
+    num: 1,
+  }
 
   componentDidMount() {
-    console.log('did');
+    console.log('did')
     setTimeout(() => {
       this.setState({
-        num: 0
-      });
-    }, 2000);
+        num: 0,
+      })
+    }, 2000)
   }
 
   render() {
-    const { num } = this.state;
+    const { num } = this.state
     return (
       <View className="container">
         {num === 0 && <View>已卖完</View>}
@@ -241,7 +241,7 @@ export default class Index extends Component {
         )}
         {/* {num > 0 && <View>正在销售</View>} */}
       </View>
-    );
+    )
   }
 }
 ```
@@ -249,7 +249,7 @@ export default class Index extends Component {
 这个时候我们可以把问题定位到 `Block` 组件中，我们可以查看 `@tarojs/components` 的 `Block` 组件源码：
 
 ```jsx
-const Block = (props) =>  props.children
+const Block = (props) => props.children
 export default Block
 ```
 
@@ -262,6 +262,7 @@ const Block = (props) => <div>{props.children}</div>
 当你遇到了相关问题时，我们准备了一个快速起步的沙盒工具，你可以直接在这个工具里编辑、调试、复现问题：
 
 [![Edit Taro sandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/50nzv622z4?fontsize=14)
+
 ## 组件
 
 ### jsEnginScriptError
@@ -272,7 +273,7 @@ const Block = (props) => <div>{props.children}</div>
 
 2、检查编译后的文件是否正确
 
-3、步骤 1 和 步骤 2 如果检查没有问题，重启开发者工具，否则跳到步骤 4 
+3、步骤 1 和 步骤 2 如果检查没有问题，重启开发者工具，否则跳到步骤 4
 
 4、提供具体编译报错信息与编译后文件信息的截图
 
@@ -280,7 +281,7 @@ const Block = (props) => <div>{props.children}</div>
 
 本文列举了一些 Taro 的已解决 bug 例子，阐述了在 Taro 中 debug 的思路，但在实际操作中如果你能更深入地了解 Taro 的实现原理，那无论是对使用 Taro 或是 debug 都会有很大的帮助。以下资源从各个方面都介绍了 Taro 的实现原理：
 
-* 掘金小册：[Taro 多端开发实现原理与实战](https://juejin.im/book/5b73a131f265da28065fb1cd?referrer=5ba228f16fb9a05d3251492d)
-* 博文：[Taro 诞生记](https://aotu.io/notes/2018/06/25/the-birth-of-taro/)
-* 公开演讲: [使用 Taro 快速开发多端项目](https://share.weiyun.com/5nUKYfy)
-* 公开演讲： [基于 Taro 的多端项⽬目实践](https://share.weiyun.com/5lZXV1G)
+- 博文：[Taro 诞生记](https://aotu.io/notes/2018/06/25/the-birth-of-taro/)
+- 公开演讲: [使用 Taro 快速开发多端项目](https://share.weiyun.com/5nUKYfy)
+- 公开演讲： [基于 Taro 的多端项⽬目实践](https://share.weiyun.com/5lZXV1G)
+- 掘金小册：[Taro 多端开发实现原理与实战](https://juejin.im/book/5b73a131f265da28065fb1cd?referrer=5ba228f16fb9a05d3251492d) (已下架，仅购买用户可阅)

@@ -58,9 +58,9 @@ module.exports = {
       'babel-preset-taro-dynamic-import-weapp',
       {
         // ...
-      }
-    ]
-  ]
+      },
+    ],
+  ],
 }
 
 // Taro v3.4.5+
@@ -70,10 +70,10 @@ module.exports = {
       'taro',
       {
         // ...
-        'dynamic-import-node': false
-      }
-    ]
-  ]
+        'dynamic-import-node': false,
+      },
+    ],
+  ],
 }
 ```
 
@@ -95,9 +95,9 @@ module.exports = {
       'taro',
       {
         // ...
-        'dynamic-import-node': true
-      }
-    ]
-  ]
+        'dynamic-import-node': true, // 如果使用时遇到问题，可尝试将 devServer 配置项中的 hot 设置为 false
+      },
+    ],
+  ],
 }
 ```

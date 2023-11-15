@@ -1,6 +1,6 @@
 ---
 slug: 2020-02-13-taro-next-alpha
-title: Taro Next 发布预览版：同时支持 React / Vue / Nerv 
+title: Taro Next 发布预览版：同时支持 React / Vue / Nerv
 authors: yuche
 ---
 
@@ -26,9 +26,9 @@ authors: yuche
 
 ```jsx
 import { View } from '@tarojs/components'
-function Page (props) {
-    const view = React.createElement(View, null, props.text)
-    return [view, React.Children.only(this.props.children)]
+function Page(props) {
+  const view = React.createElement(View, null, props.text)
+  return [view, React.Children.only(this.props.children)]
 }
 ```
 
@@ -52,19 +52,19 @@ function Page (props) {
 
 ```html
 <template>
-    <view>{{ title }}</view>
-    <view>{{ text }}</view>
-    <input v-model='text' />
+  <view>{{ title }}</view>
+  <view>{{ text }}</view>
+  <input v-model="text" />
 </template>
 
 <script lang="coffee">
-export default
-    props:
-        title:
-        type: String
-        required: true
-    data: ->
-        text: 'text'
+  export default
+      props:
+          title:
+          type: String
+          required: true
+      data: ->
+          text: 'text'
 </script>
 ```
 
@@ -90,10 +90,10 @@ export default
 
 在做到以上各项特性的同时，我们也没有丢掉原来就已经支持的特性：
 
-* 支持微信小程序、百度智能小程序、支付宝小程序、QQ 小程序、字节跳动小程序
-* 使用原生小程序第三方组件/插件
-* 多端条件编译
-* 跨端 API 和样式处理
+- 支持微信小程序、百度智能小程序、支付宝小程序、QQ 小程序、抖音小程序
+- 使用原生小程序第三方组件/插件
+- 多端条件编译
+- 跨端 API 和样式处理
 
 这些特性基本涉及到了小程序开发的方方面面，虽然是预览版，但 Taro Next 已经具备了开发生产级小程序的准备，在 Taro 团队内部和兄弟团队也有多款小程序正在使用 Taro Next 进行开发。而在 Taro Next 的 H5 端和移动端，我们还在进行紧张的开发。当 Taro Next 测试（beta）版发布时，使用 Taro Next 构建的一套代码，就可以同时运行在各种小程序、快应用、H5 和移动端当中。在未来，我们还会把 Taro Next 的能力开放出去，让开发者只要写少量的接入代码，就可以使用自己喜欢的任意框架（Angular, Flutter, svelte...）开发小程序或多端应用。
 
@@ -113,12 +113,12 @@ export default
 
 ## 参考资料
 
-1. 小程序跨框架开发的探索与实践: https://www.infoq.cn/article/TMqBzVFTSiQTUbgxydPm
+1. [小程序跨框架开发的探索与实践](/blog/2020-01-02-gmtc)
 
 2. [Taro Next 旧版本迁移指南](/docs/migration)
 
 3. [Prerender](/docs/prerender)
 
-4. 性能测试：https://github.com/NervJS/taro-benchmark/tree/next
+4. [性能测试](https://github.com/NervJS/taro-benchmark/tree/next)
 
 5. [与其它新型小程序的对比](/docs/difference-to-others)

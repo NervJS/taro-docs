@@ -10,7 +10,7 @@ title: 组件化 & Props
 
 ```jsx
 class Welcome extends Component {
-  render () {
+  render() {
     return <View>Hello, {this.props.name}</View>
   }
 }
@@ -37,14 +37,18 @@ const element = <Welcome name="Wallace" />
 ```jsx
 // welcome.js
 class Welcome extends Component {
-  render () {
-    return <View><Text>Hello, {this.props.name}</Text></View>
+  render() {
+    return (
+      <View>
+        <Text>Hello, {this.props.name}</Text>
+      </View>
+    )
   }
 }
 
 // app.js
 class App extends Component {
-  render () {
+  render() {
     return <Welcome name="Wallace" />
   }
 }
@@ -55,7 +59,7 @@ class App extends Component {
 一个声明的组件决不能修改它自己的 `props`。来看这个 `sum` 函数：
 
 ```jsx
-function sum (a, b) {
+function sum(a, b) {
   return a + b
 }
 ```
@@ -65,7 +69,7 @@ function sum (a, b) {
 与之相对的是非纯函数，它会改变它自身的输入值：
 
 ```jsx
-function withdraw (account, amount) {
+function withdraw(account, amount) {
   account.total -= amount
 }
 ```
@@ -81,20 +85,18 @@ Taro 和 React 一样，也有一个严格的规则：
 随着应用日渐庞大，你可以通过类型检查捕获大量错误。要检查组件的属性，你需要配置特殊的 `propTypes` 属性：
 
 ```jsx
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 class Greeting extends Component {
   render() {
-    return (
-      <h1>Hello, {this.props.name}</h1>
-    );
+    return <h1>Hello, {this.props.name}</h1>
   }
 }
 
 Greeting.propTypes = {
-  name: PropTypes.string
-};
+  name: PropTypes.string,
+}
 ```
 
-如上例，Taro 与 React 一样，也支持 `PropTypes` 检查类型，*目前在小程序端还有些问题*，但在 H5 端可以使用，用法和在 React 里一样。
+如上例，Taro 与 React 一样，也支持 `PropTypes` 检查类型，_目前在小程序端还有些问题_，但在 H5 端可以使用，用法和在 React 里一样。
 更多可参照 [React 的相关文档](https://reactjs.org.cn/doc/typechecking-with-proptypes.html)。

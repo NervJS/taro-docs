@@ -12,7 +12,7 @@ Taro 在编译时提供了一些内置的环境变量来帮助用户做一些特
 
 用于判断当前的编译平台类型。
 
-取值：`weapp` / `swan` / `alipay` / `tt` / `qq` / `jd` / `h5` / `rn` 
+取值：`weapp` / `swan` / `alipay` / `tt` / `qq` / `jd` / `h5` / `rn`
 
 可以通过这个变量来区分不同环境，从而使用不同的逻辑。在编译阶段，**会移除不属于当前编译类型的代码，只保留当前编译类型下的代码**，例如：
 
@@ -60,12 +60,15 @@ if (true) {
 
 ```js
 // 正确写法
-if (process.env.TARO_ENV === 'weapp') {}
+if (process.env.TARO_ENV === 'weapp') {
+}
 
 // 错误写法
 const { TARO_ENV = 'weapp' } = process.env
-if (TARO_ENV === 'weapp') {}
+if (TARO_ENV === 'weapp') {
+}
 ```
+
 :::
 
 ### 组件文件中跨平台支持
@@ -133,8 +136,7 @@ if (TARO_ENV === 'weapp') {}
 
 ```jsx
 import Test from '../../components/test'
-
-<Test argA={1} argA={2} />
+;<Test argA={1} argA={2} />
 ```
 
 ### 多端脚本逻辑
@@ -147,9 +149,9 @@ import Test from '../../components/test'
 
 ```js title="set_title.weapp.js"
 import Taro from '@tarojs/taro'
-export default function setTitle (title) {
+export default function setTitle(title) {
   Taro.setNavigationBarTitle({
-    title
+    title,
   })
 }
 ```
@@ -157,7 +159,7 @@ export default function setTitle (title) {
 2. 编写 `set_title.h5.js`：
 
 ```js title="set_title.h5.js"
-export default function setTitle (title) {
+export default function setTitle(title) {
   document.title = title
 }
 ```
@@ -178,19 +180,15 @@ setTitle('页面标题')
 let pages = []
 
 if (process.env.TARO_ENV === 'weapp') {
-  pages = [
-    '/pages/index/index'
-  ]
+  pages = ['/pages/index/index']
 }
 
 if (process.env.TARO_ENV === 'swan') {
-  pages = [
-    '/pages/indexswan/indexswan'
-  ]
+  pages = ['/pages/indexswan/indexswan']
 }
 
 export default {
-  pages
+  pages,
 }
 ```
 
@@ -242,9 +240,9 @@ rn: {
 
 [Taro Playground](https://github.com/wuba/taro-playground) 项目支持 RN、微信小程序、web 可供参考。
 
-| Android | iOS | Web | Mini Program |
-| - | - | - | - |
+| Android                                                                                | iOS                                                                                    | Web                                                                                 | Mini Program                                                                        |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | ![](https://pic3.58cdn.com.cn/nowater/fangfe/n_v295dd481b6b2f446592350e3187716d03.png) | ![](https://pic1.58cdn.com.cn/nowater/fangfe/n_v224532e5560314106b6ab32b0a1534a9d.png) | ![](https://pic5.58cdn.com.cn/nowater/frs/n_v2d585527f52e640679cdd37123a418fe3.png) | ![](https://pic3.58cdn.com.cn/nowater/frs/n_v23ec2613515c6458aaa44f01d459cea8b.jpg) |
-| https://github.com/wuba/taro-playground/releases | https://apps.apple.com/cn/app/taro-playground/id1576830673 | https://wuba.github.io/taro-playground/ | https://github.com/wuba/taro-playground |
+| https://github.com/wuba/taro-playground/releases                                       | https://apps.apple.com/cn/app/taro-playground/id1576830673                             | https://wuba.github.io/taro-playground/                                             | https://github.com/wuba/taro-playground                                             |
 
-同时该项目集成了[Github Workflows](https://github.com/wuba/taro-playground/tree/main/.github/workflows)，实现了安卓、iOS、微信小程序、web的自动化发布。
+同时该项目集成了[Github Workflows](https://github.com/wuba/taro-playground/tree/main/.github/workflows)，实现了安卓、iOS、微信小程序、web 的自动化发布。

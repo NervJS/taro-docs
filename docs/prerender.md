@@ -35,15 +35,15 @@ module.exports = config
 
 完整 Prerender 配置可参看下表：
 
-| 参数 | 类型  | 默认值  | 必填  | 说明 |
-| ------------ | ------------ | ------------ | ------------ | ------------ |
-| match  | `string` `string[]`  |   | 否 | glob 字符串或 glob 字符串数组，能匹配到本参数的页面会加入 prerender |
-|  include | `Array<string>` `Array<PageConfig>`  | `[]` | 否 | 页面路径与数组中字符串完全一致的会加入 prerender
-|  exclude | `string[]`  | `[]` | 否 | 页面路径与数组中字符串完全一致的**不会**加入 prerender
-| mock  | `Record<string, unknown>`  |   |  否 | 在 prerender 环境中运行的全局变量，键名为变量名，键值为变量值
-|  console | `boolean`  | `false`  |  否 | 在 prerender 过程中 `console` 打印语句是否执行
-|  transformData | `Function`  |   |  否 | 自定义虚拟 DOM 树处理函数，函数返回值会作为 `transformXML` 的参数
-|  transformXML | `Function`  |   |  否 | 自定义 XML 处理函数，函数返回值是 Taro 运行时初始化结束前要渲染的 wxml
+| 参数          | 类型                                | 默认值  | 必填 | 说明                                                                   |
+| ------------- | ----------------------------------- | ------- | ---- | ---------------------------------------------------------------------- |
+| match         | `string` `string[]`                 |         | 否   | glob 字符串或 glob 字符串数组，能匹配到本参数的页面会加入 prerender    |
+| include       | `Array<string>` `Array<PageConfig>` | `[]`    | 否   |  页面路径与数组中字符串完全一致的会加入 prerender                      |
+| exclude       | `string[]`                          | `[]`    | 否   |  页面路径与数组中字符串完全一致的**不会**加入 prerender                |
+| mock          | `Record<string, unknown>`           |         | 否   | 在 prerender 环境中运行的全局变量，键名为变量名，键值为变量值          |
+| console       | `boolean`                           | `false` | 否   | 在 prerender 过程中 `console` 打印语句是否执行                         |
+| transformData | `Function`                          |         | 否   | 自定义虚拟 DOM 树处理函数，函数返回值会作为 `transformXML` 的参数      |
+| transformXML  | `Function`                          |         | 否   | 自定义 XML 处理函数，函数返回值是 Taro 运行时初始化结束前要渲染的 wxml |
 
 在表中有用到的类型：
 
@@ -56,11 +56,11 @@ interface PageConfig {
 
 // DOM 树数据，Taro 通过遍历它动态渲染数据
 interface MiniData {
-  ["cn" /* ChildNodes */]: MiniData[]
-  ["nn" /* NodeName */]: string
-  ["cl" /* Class */]: string
-  ["st" /* Style */]: string
-  ["v" /* NodeValue */]: string
+  ['cn' /* ChildNodes */]: MiniData[]
+  ['nn' /* NodeName */]: string
+  ['cl' /* Class */]: string
+  ['st' /* Style */]: string
+  ['v' /* NodeValue */]: string
   uid: string
   [prop: string]: unknown
 }
@@ -68,7 +68,7 @@ interface MiniData {
 type transformData = (data: MiniData, config: PageConfig) => MiniData
 
 type transformXML = (
-  data: MiniData, 
+  data: MiniData,
   config: PageConfig,
   xml: string // 内置 xml 转换函数已经处理好了的 xml 字符串
 ) => string
@@ -78,9 +78,9 @@ Prerender 的所有配置选项都是选填的，就多数情况而言只需要�
 
 和所有技术一样，Prerender 并不是银弹，使用 Prerender 之后将会有以下的 trade-offs 或限制：
 
-* 页面打包的体积会增加。Prerender 本质是一种以空间换时间的技术，体积增加的多寡取决于预渲染 wxml 的数量。
-* 在 Taro 运行时把真实 DOM 和事件挂载之前（这个过程在服务端渲染被称之为 `hydrate`），预渲染的页面不会相应任何操作。
-* Prerender 不会执行例如 `componentDidMount()`(React)/`ready()`(Vue) 这样的生命周期，这点和服务端渲染一致。如果有处理数据的需求，可以把生命周期提前到 `static getDerivedStateFromProps()`(React) 或 `created()`(Vue)。
+- 页面打包的体积会增加。Prerender 本质是一种以空间换时间的技术，体积增加的多寡取决于预渲染 wxml 的数量。
+- 在 Taro 运行时把真实 DOM 和事件挂载之前（这个过程在服务端渲染被称之为 `hydrate`），预渲染的页面不会相应任何操作。
+- Prerender 不会执行例如 `componentDidMount()`(React)/`ready()`(Vue) 这样的生命周期，这点和服务端渲染一致。如果有处理数据的需求，可以把生命周期提前到 `static getDerivedStateFromProps()`(React) 或 `created()`(Vue)。
 
 ## 进阶说明和使用
 
@@ -89,7 +89,8 @@ Prerender 的所有配置选项都是选填的，就多数情况而言只需要�
 在预渲染容器有一个名为 `PRERENDER` 的全局变量，它的值为 `true`。你可以通过判断这个变量是否存在，给预渲染时期单独编写业务逻辑：
 
 ```javascript
-if (typeof PRERENDER !== 'undefined') { // 以下代码只会在预渲染中执行
+if (typeof PRERENDER !== 'undefined') {
+  // 以下代码只会在预渲染中执行
   // do something
 }
 ```
@@ -162,30 +163,36 @@ const config = {
 ```jsx
 class SomePage extends Component {
   state = {
-    mounted: false
+    mounted: false,
   }
 
-  componentDidMount () {
+  componentDidMount() {
     // 等待组件载入，先渲染了首屏我们再渲染其它内容，降低首次渲染的数据量
     // 当 mounted 为 true 时，CompA, B, C 的 DOM 树才会作为 data 参与小程序渲染
     // 注意我们需要在 `componentDidMount()` 这个周期做这件事（对应 Vue 的 `ready()`），更早的生命周期 `setState()` 会与首次渲染的数据一起合并更新
     // 使用 nextTick 确保本次 setState 不会和首次渲染合并更新
     Taro.nextTick(() => {
       this.setState({
-        mounted: true
+        mounted: true,
       })
     })
   }
 
-  render () {
-    return <View>
-      <FirstScreen /> /* 假设我们知道这个组件会把用户的屏幕全部占据 */
-      {this.state.mounted && <React.Fragment> /* CompA, B, C 一开始并不会在首屏中显示 */
-        <CompA />
-        <CompB />
-        <CompC />
-      </React.Fragment>}
-    </View>
+  render() {
+    return (
+      <View>
+        <FirstScreen /> /* 假设我们知道这个组件会把用户的屏幕全部占据 */
+        {this.state.mounted && (
+          <React.Fragment>
+            {' '}
+            /* CompA, B, C 一开始并不会在首屏中显示 */
+            <CompA />
+            <CompB />
+            <CompC />
+          </React.Fragment>
+        )}
+      </View>
+    )
   }
 }
 ```
@@ -217,11 +224,11 @@ const config = {
       // 使用 mock 参数自行模拟 wx.clearStorageSync
       mock: {
         wx: {
-          clearStorageSync: () => 'cjj'
-        }
-      }
-    }
-  }
+          clearStorageSync: () => 'cjj',
+        },
+      },
+    },
+  },
 }
 ```
 

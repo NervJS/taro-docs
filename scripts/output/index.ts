@@ -1,8 +1,10 @@
-import * as path from 'path'
+/* eslint-disable no-console */
 import { spawn } from 'child_process'
-import * as ts from 'typescript'
+import path from 'path'
+import ts from 'typescript'
+
 import compile, { DocEntry, envMap } from '../parser'
-import { splicing, parseLineFeed, isShowMembers, isShowAPI, isNotAPI, isFunction, isOptional } from '../parser/utils'
+import { isFunction, isNotAPI, isOptional,isShowAPI, isShowMembers, parseLineFeed, splicing } from '../parser/utils'
 
 export const taro_apis: (string | undefined)[] = []
 
@@ -48,7 +50,7 @@ export const get = {
     sidebar_label: string
     [key: string]: string
   }) => splicing(['---', ...Object.keys(data).map(key => `${key}: ${data[key]}`), '---', '']),
-  title: (name: string, params: DocEntry[], flags: number = -1) => `${
+  title: (name: string, params: DocEntry[], flags = -1) => `${
     TaroMethod.includes(flags) ? 'Taro.' : ''
   }${name}${
     isFunction(flags) ? `(${params.map(param => param.name).join(', ')})` : ''
@@ -57,7 +59,7 @@ export const get = {
   since: (data?: ts.JSDocTagInfo) => data ? splicing([`> 最低 Taro 版本: ${data.text?.map(e => e.text).join('') || ''}`, '']) : undefined,
   type: (data?: string, level = 0) => data && !isntShowType.includes(data) ?
     splicing([level !== 0 ? `${'#'.repeat(level)} 类型\n` : undefined, '```tsx', data, '```', '']) : undefined,
-  members: (data?: DocEntry[], title = '方法', level: number = 2, name = 'Taro', isComp = false) => {
+  members: (data?: DocEntry[], title = '方法', level = 2, name = 'Taro', isComp = false) => {
     if (!data) return undefined
     const methods: (string | undefined)[] = []
     const paramTabs: DocEntry[] = []
@@ -90,7 +92,7 @@ export const get = {
           let name = v.name || ''
           let type = v.type || ''
           const isMethod = TaroMethod.includes(v.flags || -1)
-          const vTags = v.jsTags || [];
+          const vTags = v.jsTags || []
           const def = vTags.find(tag => tag.name === 'default')?.text?.map(e => e.text).join('') || ''
           const readonly = vTags.find(tag => tag.name === 'readonly')
           const illustrate = vTags.find(tag => tag.name === 'illustrate')?.text?.map(e => e.text).join('') || ''
@@ -134,21 +136,24 @@ export const get = {
                     if (!isComp) return `<br />API 支持度: ${text}`
                   } else if (name === 'deprecated') {
                     return text ? `<br />不推荐: ${text}` : '<br />**不推荐使用**'
+                  } else if (name === 'unique') {
+                    // Note: 跳过该标签
+                    return ''
                   } else {
                     if (!isComp || !Object.values(envMap).find(env => env.name === name)) {
                       return `<br />${name}: ${parseLineFeed(text)}`
                     }
                   }
                 }).join('')
-            }` : ''
-          } |` :''
-        }${
+              }` : ''
+            } |` :''
+          }${
             hasCodeRate? ` ${parseLineFeed(codeRate, true)} |` :''
           }${
             hasRemarks? ` ${parseLineFeed(remarks, true)} |` :''
           }`
         }),
-      '']))
+        '']))
     }
     const componentApis = {}
     methods.push(...data.map(param => {
@@ -216,7 +221,7 @@ export const get = {
 
     return splicing(methods) || undefined
   },
-  example: (tags: ts.JSDocTagInfo[], level: number = 2) => {
+  example: (tags: ts.JSDocTagInfo[], level = 2) => {
     const array: string[] = []
     const tabs: string[] = []
     let hasTabs = false
@@ -247,12 +252,13 @@ export const get = {
       }
     }
     if (hasTabs) {
-      array.unshift(`import Tabs from '@theme/Tabs'
+      array.unshift(`import { ReactIcon, VueIcon } from '@site/static/icons'
+import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 <Tabs
   defaultValue="${defaultTab}"
-  values={${JSON.stringify(tabs.map(e => ({ label: e, value: e })), undefined, 2)}}>`)
+  values={[${tabs.map(e => `{ label: <${e}Icon />, value: "${e}" }`).join(', ')}]}>`)
       array.push('</Tabs>\n')
     }
 
@@ -260,7 +266,7 @@ import TabItem from '@theme/TabItem'
 
     return array.length > 0 ? splicing(array) : undefined
   },
-  api: (data: {[name: string]: ts.JSDocTagInfo[]}, level: number = 2) => {
+  api: (data: {[name: string]: ts.JSDocTagInfo[]}, level = 2) => {
     const hasSupportedList = [true, undefined, undefined, undefined, undefined, undefined, true, true, undefined, true]
     for (const name of Object.keys(data)) {
       const tags = data[name]
@@ -324,19 +330,20 @@ import TabItem from '@theme/TabItem'
 }
 
 export default function docsAPI (
-  base: string = '.',
+  base = '.',
   out: string,
   files: string[],
   callback: TCallback = () => {},
   withLog = true,
   diff = true,
 ) {
-  const cwd: string = process.cwd();
+  const cwd: string = process.cwd()
 
   if (diff) {
     const changes = spawn('git', ['status', '-z'])
 
     changes.stdout.on('data', (data) => {
+      // eslint-disable-next-line no-control-regex
       const ss = data.toString().trim().split(/\u0000|\s+/ig)
       for (const s of ss) {
         const route = path.resolve(cwd, s)

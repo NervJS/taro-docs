@@ -6,24 +6,21 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+import Link from '@docusaurus/Link'
+import useBaseUrl from '@docusaurus/useBaseUrl'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import Layout from '@theme/Layout'
+import React from 'react'
 
-import React from 'react';
+import versions from '../../versions.json'
 
-import Layout from '@theme/Layout';
-
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Link from '@docusaurus/Link';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
-import versions from '../../versions.json';
-
-function Version() {
-  const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
-  const latestVersion = versions[0];
+function Version () {
+  const context = useDocusaurusContext()
+  const {siteConfig = {}} = context
+  const latestVersion = versions[0]
   const taroNextVersions = versions.filter(version => version.startsWith('3'))
-  const pastVersions = versions.filter((version) => version !== latestVersion && !taroNextVersions.includes(version));
-  const repoUrl = `https://github.com/${siteConfig.organizationName}/${siteConfig.projectName}`;
+  const pastVersions = versions.filter((version) => version !== latestVersion && !taroNextVersions.includes(version))
+  const repoUrl = `https://github.com/${siteConfig.organizationName}/${siteConfig.projectName}`
   return (
     <Layout
       permalink="/versions"
@@ -38,7 +35,7 @@ function Version() {
               <tr>
                 <th>{latestVersion}</th>
                 <td>
-                  <Link to={useBaseUrl('/docs')}>
+                  <Link to={useBaseUrl('/docs/')}>
                     文档
                   </Link>
                 </td>
@@ -126,7 +123,7 @@ function Version() {
         )}
       </div>
     </Layout>
-  );
+  )
 }
 
-export default Version;
+export default Version

@@ -5,26 +5,26 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
-import Layout from '@theme/Layout';
-import { useLocation, Redirect } from "@docusaurus/router";
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import { Redirect,useLocation } from '@docusaurus/router'
+import useBaseUrl from '@docusaurus/useBaseUrl'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import Layout from '@theme/Layout'
+import React from 'react'
 
-function pathJoin(parts, sep){
-  let separator = sep || '/';
-  let replace   = new RegExp(separator+'{1,}', 'g');
-  return parts.join(separator).replace(replace, separator);
+function pathJoin (parts, sep){
+  const separator = sep || '/'
+  const replace   = new RegExp(separator+'{1,}', 'g')
+  return parts.join(separator).replace(replace, separator)
 }
 
-function NotFound() {
+function NotFound () {
   const { pathname = '' } = useLocation()
 
   const {
     siteConfig: {
       baseUrl = ''
     },
-  } = useDocusaurusContext();
+  } = useDocusaurusContext()
 
   const url = useBaseUrl(pathname)
 
@@ -48,7 +48,7 @@ function NotFound() {
         </div>
       </div>
     </Layout>
-  );
+  )
 }
 
-export default NotFound;
+export default NotFound

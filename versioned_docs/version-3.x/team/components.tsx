@@ -1,3 +1,4 @@
+import Link from '@docusaurus/Link'
 import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints'
 import members from '@site/static/data/contributors.json'
 import o2logo from '@site/static/img/o2logo@2x.png'
@@ -14,14 +15,13 @@ export function TeamList ({
   height = 88
 }) {
   return <div style={{ display: 'flex', flexFlow: 'row wrap', alignItems: 'center', justifyContent: 'center' }}>
-    {list.map((item: ITeam, index) => <a
+    {list.map((item: ITeam, index) => <Link
       key={index}
-      href={item.href || '#'}
-      target="_blank"
+      to={item.href || '#'}
       style={{ display: 'inline-block', margin: '0 10px 10px 0' }}
     >
       <img src={item.image || o2logo} style={{ height }} />
-    </a>)}
+    </Link>)}
   </div>
 }
 
@@ -37,7 +37,7 @@ export function ListPage ({ type = 'role', name = '', alumni = false, full = fal
       return false
     if (data instanceof Array) {
       return data.find(e => e.id === props[type] || (name && e.name.includes(name)))
-    } else if (!!data) {
+    } else if (data) {
       return data.id === props[type] || data.name.includes(name)
     }
     return false
@@ -49,10 +49,10 @@ export function ListPage ({ type = 'role', name = '', alumni = false, full = fal
       const properties = item.properties || {}
       const title = properties?.title?.title?.find(e => e?.type === 'text')?.text
       if (!full && index > 5) return
-      return <a
-        href={properties?.github?.url || '#'}
-        target="_blank"
-        style={{ display: "flex", flexDirection: "column", alignItems: 'center', justifyContent: 'center', margin: "0 10px 10px 0" }}
+      return <Link
+        key={index}
+        to={properties?.github?.url || '#'}
+        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: '0 10px 10px 0' }}
       >
         <div
           style={{
@@ -64,7 +64,7 @@ export function ListPage ({ type = 'role', name = '', alumni = false, full = fal
           }}
         />
         <span style={{ width: 88, textAlign: 'center', textOverflow: 'ellipsis', whiteSpace: 'nowrap', overflow: 'hidden' }}>{title?.content || 'Taro 贡献者'}</span>
-      </a>
+      </Link>
     })}
     {!full && <span style={{ margin: 44 }}>...</span>}
   </div>
