@@ -61,12 +61,6 @@ function Index () {
 <template>
   <page-meta
     :page-style="myPageStyle"
-    @scroll="handleScroll"
-  >
-    <navigation-bar :title="title" />
-  </page-meta>
-</template>
-```
 </TabItem>
 </Tabs>
 
