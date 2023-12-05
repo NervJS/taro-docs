@@ -26,7 +26,7 @@ sidebar_label: getSavedFileInfo
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
 | filePath | `string` | 是 | 文件路径 |
-| apFilePath | `string` | 是 | 文件路径<br />API 支持度: alipay |
+| apFilePath | `string` | 否 | 文件路径<br />API 支持度: alipay |
 | complete | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
 | success | `(result: SuccessCallbackResult) => void` | 否 | 接口调用成功的回调函数 |

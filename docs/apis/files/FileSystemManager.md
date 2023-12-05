@@ -996,7 +996,7 @@ FailCallbackResult | SuccessCallbackResult
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
 | filePath | `string` | 是 | 需要删除的文件路径 |
-| apFilePath | `string` | 是 | 本地缓存文件路径<br />API 支持度: alipay |
+| apFilePath | `string` | 否 | 本地缓存文件路径<br />API 支持度: alipay |
 | complete | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | fail | `(result: RemoveSavedFileFailCallbackResult) => void` | 否 | 接口调用失败的回调函数 |
 | success | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用成功的回调函数 |

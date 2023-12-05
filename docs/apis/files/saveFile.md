@@ -29,7 +29,7 @@ sidebar_label: saveFile
 | complete | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | fail | `(result: FailCallbackResult) => void` | 否 | 接口调用失败的回调函数 |
 | filePath | `string` | 否 | 要存储的文件路径 |
-| apFilePath | `string` | 是 | 要保存的本地临时文件路径<br />API 支持度: alipay |
+| apFilePath | `string` | 否 | 要保存的本地临时文件路径<br />API 支持度: alipay |
 | success | `(result: SuccessCallbackResult) => void` | 否 | 接口调用成功的回调函数 |
 
 ### FailCallbackResult
