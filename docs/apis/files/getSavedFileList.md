@@ -40,12 +40,12 @@ sidebar_label: getSavedFileList
 
 文件数组
 
-| 参数 | 类型 | 说明 |
-| --- | --- | --- |
-| createTime | `number` | 文件保存时的时间戳，从1970/01/01 08:00:00 到当前时间的秒数 |
-| filePath | `string` | 本地路径 |
-| apFilePath | `string` | 文件路径<br />API 支持度: alipay |
-| size | `number` | 本地文件大小，以字节为单位 |
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| createTime | `number` | 是 | 文件保存时的时间戳，从1970/01/01 08:00:00 到当前时间的秒数 |
+| filePath | `string` | 是 | 本地路径 |
+| apFilePath | `string` | 否 | 文件路径<br />API 支持度: alipay |
+| size | `number` | 是 | 本地文件大小，以字节为单位 |
 
 ## 示例代码
 
