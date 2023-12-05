@@ -1,18 +1,20 @@
 ---
-title: Taro.getFuzzyLocation(option)
-sidebar_label: getFuzzyLocation
+title: Taro.batchSetStorage(option)
+sidebar_label: batchSetStorage
 ---
 
-获取当前的模糊地理位置
+将数据批量存储在本地缓存中指定的 key 中。会覆盖掉原来该 key 对应的内容。
+除非用户主动删除或因存储空间原因被系统清理，否则数据都一直可用。
+单个 key 允许存储的最大数据长度为 1MB，所有数据存储上限为 10MB。
 
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
-> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.getFuzzyLocation.html)
+> [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.batchGetStorage.html)
 
 ## 类型
 
 ```tsx
-(option: Option) => Promise<SuccessCallbackResult>
+(option: Option) => Promise<TaroGeneral.CallbackResult>
 ```
 
 ## 参数
@@ -25,33 +27,25 @@ sidebar_label: getFuzzyLocation
 
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
-| type | `keyof Type` | 否 | wgs84 返回 gps 坐标，gcj02 返回可用于 Taro.openLocation 的坐标 |
+| kvList | `kv[]` | 是 | [{ key, value }] |
 | complete | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
-| success | `(result: SuccessCallbackResult) => void` | 否 | 接口调用成功的回调函数 |
+| success | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用成功的回调函数 |
 
-### Type
-
-| 参数 | 说明 |
-| --- | --- |
-| wgs84 | 返回 gps 坐标 |
-| gcj02 | 返回 gcj02 坐标 |
-
-### SuccessCallbackResult
+### kv
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| latitude | `number` | 纬度，范围为 -90~90，负数表示南纬 |
-| longitude | `number` | 经度，范围为 -180~180，负数表示西经 |
+| key | `string` | key 本地缓存中指定的 key |
+| value | `any` | data 需要存储的内容。只支持原生类型、Date、及能够通过JSON.stringify序列化的对象。 |
 
 ## 示例代码
 
 ```tsx
-Taro.getFuzzyLocation({
-  type: 'wgs84',
-  success (res) {
-    const latitude = res.latitude
-    const longitude = res.longitude
-  },
+Taro.batchGetStorage({
+  keyList: ['key']
+  success(res) {
+    console.log(res)
+  }
 })
 ```

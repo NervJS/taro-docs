@@ -210,6 +210,7 @@ listener.start()
 | high | 高质量 |
 | normal | 普通质量 |
 | low | 低质量 |
+| original | 原图 |
 
 ## API 支持度
 
