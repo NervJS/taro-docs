@@ -121,7 +121,7 @@ import { View } from '@tarojs/components'
 import Taro, { useReady } from '@tarojs/taro'
 
 export default function Index () {
-  useReady(() => {
+  onReady(() => {
     // 初次渲染时，在小程序触发 onReady 后，才能获取小程序的渲染层节点
     Taro.createSelectorQuery()
       .select('#target')
