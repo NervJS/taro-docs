@@ -3,7 +3,7 @@ title: 鸿蒙 & OpenHarmony
 ---
 
 :::info
-Taro v3.8+ 开始支持
+Taro v4.0.0-beta.0+ 开始支持
 :::
 
 随着鸿蒙系统的日渐完善，众多应用厂商都期待着把自家应用移植到鸿蒙平台上。借助 Taro，可以实现快速开发鸿蒙应用、把小程序快速转换为鸿蒙应用等功能。
@@ -56,7 +56,7 @@ Taro v3.8+ 开始支持
 
 （2）进入  [HUAWEI DevEco Studio 套件货架中心](https://developer.harmonyos.com/deveco-developer-suite/)，申请白名单，由于目前最新版本的 OpenHarmony SDK 和 IDE 仍未对外开发，因此个人开发者若想尝鲜，需要先申请白名单成为合作伙伴后才能继续进行下面的步骤。
 
-（3）白名单申请通过后，进入货架，下载 **IDE 版本为 DevEco Studio 4.0.3.600 的 DevEcoStudio4.0-API10** 开发套件。
+（3）白名单申请通过后，进入货架，下载 **IDE 版本为 DevEco Studio 4.0.3.700 的 DevEcoStudio4.0-API10** 开发套件。
 
 （4）下载完成后，打开 IDE 安装包进行安装，安装成功后启动 DevEco Studio，根据[引导](https://developer.harmonyos.com/cn/docs/documentation/doc-guides-V4/sdk-prepar-0000001573170041-V4)解压套件里附带的 SDK 压缩包，并根据[引导](https://developer.harmonyos.com/cn/docs/documentation/doc-guides-V4/sdk-prepar-0000001573170041-V4)在 IDE 中配置好 SDK 的使用路径。
 
@@ -80,13 +80,13 @@ a. [使用预览器 previewer](https://developer.harmonyos.com/cn/docs/documenta
 
 b. [使用模拟器](https://developer.harmonyos.com/cn/docs/documentation/doc-guides-V4/ide_debug_emulator-0000001115721921-V4?catalogVersion=V4)
 
-c. [使用本地真机](https://developer.harmonyos.com/cn/docs/documentation/doc-guides-V4/ide_debug_device-0000001053822404-V4?catalogVersion=V4) 用户真机与电脑相连，打开开发者模式，即可在真机看到效果
+c. [使用本地真机](https://developer.harmonyos.com/cn/docs/documentation/doc-guides-V4/ide_debug_device-0000001053822404-V4?catalogVersion=V4) 用户真机与电脑相连，打开开发者模式，即可在真机看到效果，这里需要注意的是，真机需要使用华为侧提供的测试机，测试机中会安装纯鸿蒙的系统镜像，能够体验到完整的鸿蒙系统功能，纯鸿蒙应用目前还不能完美地在 HarmonyOS 4.0 的商用机侧跑起来。
 
 (2) DevEco Studio 真机进行调试
 
 链接上真机后，选择好对应的入口模块，在项目代码中打上断点等信息，在编译器中启动调试即可。
 
-![示例图](https://img11.360buyimg.com/imagetools/jfs/t1/158561/21/21509/1769838/61b05362Ed0878669/35ee0cb64465d229.jpg)
+![示例图](https://img20.360buyimg.com/img/jfs/t1/102571/34/33232/150214/6582b637F9d4860f7/4cf399a59a316520.png)
 
 ### 相关阅读
 
@@ -95,29 +95,29 @@ c. [使用本地真机](https://developer.harmonyos.com/cn/docs/documentation/do
 
 ## 使用 Taro 开发鸿蒙 ArkUI
 
-### 1. 安装 Taro v3.8
+### 1. 安装 Taro v4.0.0-beta.0
 
 #### CLI
 
-安装 `v3.8.0` 版本的 Taro CLI：
+安装 `v4.0.0-beta.0` 版本的 Taro CLI：
 
 ```bash
-npm i -g @tarojs/cli@3.8.0
+npm i -g @tarojs/cli@4.0.0-beta.0
 ```
 
 #### 项目依赖
 
 如您是新项目，创建项目时选择鸿蒙模板即可；
 
-旧项目需要把  `package.json`  文件中 Taro 相关依赖的版本修改为  `~3.8.0`，再重新安装依赖。
+旧项目需要把  `package.json`  文件中 Taro 相关依赖的版本修改为  `~4.0.0-beta.0`，再重新安装依赖。
 
 > 如果安装失败或打开项目失败，可以删除  **node_modules**、**yarn.lock**、**package-lock.json**  后重新安装依赖再尝试。
 
 ### 2. 安装 Taro 适配鸿蒙插件和 Vite 编译插件
 
 ```bash
-$ npm i @tarojs/plugin-platform-harmony@3.8.0
-$ npm i @tarojs/vite-runner@3.8.0
+$ npm i @tarojs/plugin-platform-harmony@4.0.0-beta.0
+$ npm i @tarojs/vite-runner@4.0.0-beta.0
 ```
 
 ### 3. 修改 Taro 编译配置
@@ -126,15 +126,15 @@ $ npm i @tarojs/vite-runner@3.8.0
 config = {
   // 配置使用插件
   plugins: ['@tarojs/plugin-platform-harmony'],
-  // 将编译方式设置为使用 Vite 编译
-  compiler: 'vite',
   // harmony 相关配置
   harmony: {
+    // 将编译方式设置为使用 Vite 编译
+    compiler: 'vite',
     // 【必填】鸿蒙主应用的绝对路径，例如：
     projectPath: path.resolve(process.cwd(), '../MyApplication'),
     // 【可选】HAP 的名称，默认为 'entry'
     hapName: 'entry',
-    // 【可选】JS FA 的名称，默认为 'default'
+    // 【可选】modules 的入口名称，默认为 'default'
     name: 'default',
   },
 }
@@ -195,19 +195,36 @@ $ taro build —-type harmony —-watch
 
 ### 样式
 
-#### 通用样式与组件样式
-
 #### 布局
 
-鸿蒙没有实现盒子模型，开发者可以使用 **flex** 或 **grid** 进行布局。
+鸿蒙没有实现盒子模型，因此目前在实现上是使用鸿蒙的 `Flex` 和 `Column` 实现的，
 
 #### 尺寸单位
 
+目前 Taro 转鸿蒙只支持使用 `px` 作为数据的单位，诸如 `rem`、`em`、`vw`、`vh` 等单位则暂时不支持。
+
 ### 调试
 
-### SDK 版本问题
+#### 真机调试
+
+当前，真机调试需要使用华为侧提供的测试机，测试机中会安装纯鸿蒙的系统镜像，能够体验到完整的鸿蒙系统功能，纯鸿蒙应用目前还不能完美地在 HarmonyOS 4.0 的商用机侧跑起来。
+
+#### SDK 版本问题
+
+由于鸿蒙侧迭代 SDK 的速度较快，目前 Taro 适配的 SDK 版本为最新的 API 10 版本，对于 API 版本为 9 的鸿蒙项目可能会存在组件和 API 的不兼容和不支持。
 
 ### 与小程序的差异
 
-- Taro 虽然尽可能遵循小程序规范适配了组件和 API 库，但还有部分功能依赖底层的能力暂时不实现或实现不了。
-- 只有在 `<Text>` 组件中，才能渲染文本。
+当下，虽然 Taro 适配鸿蒙 ArkTS 的工作已经基本完成，但在适配过程中，我们也发现了一些暂时无法解决或者计划后续解决的遗留问题。
+
+#### 组件和 API
+
+由于鸿蒙平台和小程序平台本身就存在着较大的差异，因此一些小程序的组件和 API 规范，在鸿蒙平台会没有办法重新实现，如与登录和账号信息相关的 API 以及 live-player 等和直播相关的组件。
+
+#### 样式解析存在一定的限制
+
+由于在 ArkTS 中，会使用声明式 UI 来对 UI 的样式进行描述，因此不存在 sass 和 css 等样式文件，因此 Taro 在适配鸿蒙 ArkTS 时，会在编译时去解析这些样式文件。并将这些样式以内联的方式写入到组件的 TS/JS 代码中。
+
+正常的样式基于 W3C 规范，存在着**类名级联**和**样式继承**的行为，由于开发者在代码中的写法各异，Taro 没有办法在编译时获取准确的节点结构以及节点类名信息，因此无法支持这两种行为。
+
+另外，由于样式的解析是基于组件文件的纬度的，因此样式文件只能应用于被其引用的组件文件中，而**不能跨文件应用，并且样式文件也只支持类选择器。**
