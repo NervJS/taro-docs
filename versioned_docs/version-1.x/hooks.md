@@ -8,17 +8,17 @@ title: Hooks
 
 关于 `Hooks` 的概述、动机和规则，我们强烈建议你阅读 React 的官方文档。和其它大部分 React 特性不同，Hooks 没有 RFC 介绍，相反，所有说明都在文档中：
 
-* [Introducing Hooks(简介)](https://zh-hans.reactjs.org/docs/hooks-intro.html)
-* [Hooks at a Glance(概览)](https://zh-hans.reactjs.org/docs/hooks-overview.html)
-* [Rules of Hooks(规则)](https://zh-hans.reactjs.org/docs/hooks-rules.html)
+- [Introducing Hooks(简介)](https://zh-hans.reactjs.org/docs/hooks-intro.html)
+- [Hooks at a Glance(概览)](https://zh-hans.reactjs.org/docs/hooks-overview.html)
+- [Rules of Hooks(规则)](https://zh-hans.reactjs.org/docs/hooks-rules.html)
 
 本篇文档只会介绍在 Taro 中可用的 Hooks API 和部分与 React 不一致的行为，其它内容大体的内容和 [Hooks Reference](https://zh-hans.reactjs.org/docs/hooks-reference.html) 相同。
 
 你还可以参考这两个使用 Hooks 的 Demo：
 
-* [V2EX](https://github.com/NervJS/taro-v2ex-hooks)，主要展示与服务器通信
+- [V2EX](https://github.com/NervJS/taro-v2ex-hooks)，主要展示与服务器通信
 
-* [TodoMVC](https://github.com/NervJS/taro-todomvc-hooks)，主要展示组件间通信
+- [TodoMVC](https://github.com/NervJS/taro-todomvc-hooks)，主要展示组件间通信
 
 ## API
 
@@ -31,7 +31,7 @@ import { useEffect, useLayoutEffect, useReducer, useState, useRef, useCallback, 
 ### `useState`
 
 ```js
-const [state, setState] = useState(initialState);
+const [state, setState] = useState(initialState)
 ```
 
 返回一个 state，以及更新 state 的函数。
@@ -41,30 +41,30 @@ const [state, setState] = useState(initialState);
 `setState` 函数用于更新 state。它接收一个新的 state 值并将组件的一次重新渲染加入队列。
 
 ```js
-setState(newState);
+setState(newState)
 ```
 
 在后续的重新渲染中，`useState` 返回的第一个值将始终是更新后最新的 state。
 
 > 注意
 >
->Taro 会确保 `setState` 函数的标识是稳定的，并且不会在组件重新渲染时发生变化。这就是为什么可以安全地从 `useEffect` 或 `useCallback` 的依赖列表中省略 `setState`。
+> Taro 会确保 `setState` 函数的标识是稳定的，并且不会在组件重新渲染时发生变化。这就是为什么可以安全地从 `useEffect` 或 `useCallback` 的依赖列表中省略 `setState`。
 
 #### 函数式更新
 
 如果新的 state 需要通过使用先前的 state 计算得出，那么可以将函数传递给 `setState`。该函数将接收先前的 state，并返回一个更新后的值。下面的计数器组件示例展示了 `setState` 的两种用法：
 
 ```js
-function Counter({initialCount}) {
-  const [count, setCount] = useState(initialCount);
+function Counter({ initialCount }) {
+  const [count, setCount] = useState(initialCount)
   return (
     <View>
       Count: {count}
       <Button onClick={() => setCount(initialCount)}>Reset</Button>
-      <Button onClick={() => setCount(prevCount => prevCount + 1)}>+</Button>
-      <Button onClick={() => setCount(prevCount => prevCount - 1)}>-</Button>
+      <Button onClick={() => setCount((prevCount) => prevCount + 1)}>+</Button>
+      <Button onClick={() => setCount((prevCount) => prevCount - 1)}>-</Button>
     </View>
-  );
+  )
 }
 ```
 
@@ -75,10 +75,10 @@ function Counter({initialCount}) {
 > 与 class 组件中的 `setState` 方法不同，`useState` 不会自动合并更新对象。你可以用函数式的 `setState` 结合展开运算符来达到合并更新对象的效果。
 >
 > ```js
-> setState(prevState => {
+> setState((prevState) => {
 >   // 也可以使用 Object.assign
->   return {...prevState, ...updatedValues};
-> });
+>   return { ...prevState, ...updatedValues }
+> })
 > ```
 >
 > `useReducer` 是另一种可选方案，它更适合用于管理包含多个子值的 state 对象。
@@ -89,15 +89,15 @@ function Counter({initialCount}) {
 
 ```js
 const [state, setState] = useState(() => {
-  const initialState = someExpensiveComputation(props);
-  return initialState;
-});
+  const initialState = someExpensiveComputation(props)
+  return initialState
+})
 ```
 
 ### `useEffect`
 
 ```js
-useEffect(didUpdate);
+useEffect(didUpdate)
 ```
 
 该 Hook 接收一个包含命令式、且可能有副作用代码的函数。
@@ -114,12 +114,12 @@ useEffect(didUpdate);
 
 ```js
 useEffect(() => {
-  const subscription = props.source.subscribe();
+  const subscription = props.source.subscribe()
   return () => {
     // 清除订阅
-    subscription.unsubscribe();
-  };
-});
+    subscription.unsubscribe()
+  }
+})
 ```
 
 为防止内存泄漏，清除函数会在组件卸载前执行。另外，如果组件多次渲染（通常如此），则**在执行下一个 effect 之前，上一个 effect 就已被清除**。在上述示例中，意味着组件的每一次更新都会创建新的订阅。若想避免每次更新都触发 effect 的执行，请参阅下一小节。
@@ -139,35 +139,30 @@ useEffect(() => {
 要实现这一点，可以给 `useEffect` 传递第二个参数，它是 effect 所依赖的值数组。更新后的示例如下：
 
 ```js
-useEffect(
-  () => {
-    const subscription = props.source.subscribe();
-    return () => {
-      subscription.unsubscribe();
-    };
-  },
-  [props.source],
-);
+useEffect(() => {
+  const subscription = props.source.subscribe()
+  return () => {
+    subscription.unsubscribe()
+  }
+}, [props.source])
 ```
 
 此时，只有当 `props.source` 改变后才会重新创建订阅。
 
->注意
+> 注意
 >
->如果你要使用此优化方式，请确保数组中包含了**所有外部作用域中会发生变化且在 effect 中使用的变量**，否则你的代码会引用到先前渲染中的旧变量。
+> 如果你要使用此优化方式，请确保数组中包含了**所有外部作用域中会发生变化且在 effect 中使用的变量**，否则你的代码会引用到先前渲染中的旧变量。
 >
->如果想执行只运行一次的 effect（仅在组件挂载和卸载时执行），可以传递一个空数组（`[]`）作为第二个参数。这就告诉 Taro 你的 effect 不依赖于 props 或 state 中的任何值，所以它永远都不需要重复执行。这并不属于特殊情况 —— 它依然遵循输入数组的工作方式。
+> 如果想执行只运行一次的 effect（仅在组件挂载和卸载时执行），可以传递一个空数组（`[]`）作为第二个参数。这就告诉 Taro 你的 effect 不依赖于 props 或 state 中的任何值，所以它永远都不需要重复执行。这并不属于特殊情况 —— 它依然遵循输入数组的工作方式。
 >
->如果你传入了一个空数组（`[]`），effect 内部的 props 和 state 就会一直拥有其初始值。尽管传入 `[]` 作为第二个参数有点类似于 `componentDidMount` 和 `componentWillUnmount` 的思维模式，但我们有 [更好的](https://zh-hans.reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) [方式](https://zh-hans.reactjs.org/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often) 来避免过于频繁的重复调用 effect。除此之外，请记得 Taro 会等待渲染完毕之后才会延迟调用 `useEffect`，因此会使得额外操作很方便。
+> 如果你传入了一个空数组（`[]`），effect 内部的 props 和 state 就会一直拥有其初始值。尽管传入 `[]` 作为第二个参数有点类似于 `componentDidMount` 和 `componentWillUnmount` 的思维模式，但我们有 [更好的](https://zh-hans.reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies) [方式](https://zh-hans.reactjs.org/docs/hooks-faq.html#what-can-i-do-if-my-effect-dependencies-change-too-often) 来避免过于频繁的重复调用 effect。除此之外，请记得 Taro 会等待渲染完毕之后才会延迟调用 `useEffect`，因此会使得额外操作很方便。
 >
->
->Taro 会在自带的 ESLint 中配置 [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) 中的 [`exhaustive-deps`](https://github.com/facebook/react/issues/14920) 规则。此规则会在添加错误依赖时发出警告并给出修复建议。
-
+> Taro 会在自带的 ESLint 中配置 [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks#installation) 中的 [`exhaustive-deps`](https://github.com/facebook/react/issues/14920) 规则。此规则会在添加错误依赖时发出警告并给出修复建议。
 
 ### `useReducer` {#usereducer}
 
 ```js
-const [state, dispatch] = useReducer(reducer, initialArg, init);
+const [state, dispatch] = useReducer(reducer, initialArg, init)
 ```
 
 [`useState`](#usestate) 的替代方案。它接收一个形如 `(state, action) => newState` 的 reducer，并返回当前的 state 以及与其配套的 `dispatch` 方法。（如果你熟悉 Redux 的话，就已经知道它如何工作了。）
@@ -177,32 +172,32 @@ const [state, dispatch] = useReducer(reducer, initialArg, init);
 以下是用 reducer 重写 [`useState`](#usestate) 一节的计数器示例：
 
 ```js
-const initialState = {count: 0};
+const initialState = { count: 0 }
 
 function reducer(state, action) {
   switch (action.type) {
     case 'increment':
-      return {count: state.count + 1};
+      return { count: state.count + 1 }
     case 'decrement':
-      return {count: state.count - 1};
+      return { count: state.count - 1 }
     default:
-      throw new Error();
+      throw new Error()
   }
 }
 
-function Counter({initialState}) {
-  const [state, dispatch] = useReducer(reducer, initialState);
+function Counter({ initialState }) {
+  const [state, dispatch] = useReducer(reducer, initialState)
   return (
     <View>
       Count: {state.count}
-      <Button onClick={() => dispatch({type: 'increment'})}>+</Button>
-      <Button onClick={() => dispatch({type: 'decrement'})}>-</Button>
+      <Button onClick={() => dispatch({ type: 'increment' })}>+</Button>
+      <Button onClick={() => dispatch({ type: 'decrement' })}>-</Button>
     </View>
-  );
+  )
 }
 ```
 
->注意
+> 注意
 >
 > Taro 会确保 `dispatch` 函数的标识是稳定的，并且不会在组件重新渲染时改变。这就是为什么可以安全地从 `useEffect` 或 `useCallback` 的依赖列表中省略 `dispatch`。
 
@@ -217,7 +212,7 @@ function Counter({initialState}) {
   );
 ```
 
->注意
+> 注意
 >
 > Taro 不使用 `state = initialState` 这一由 Redux 推广开来的参数约定。有时候初始值依赖于 props，因此需要在调用 Hook 时指定。如果你特别喜欢上述的参数约定，可以通过调用 `useReducer(reducer, undefined, reducer)` 来模拟 Redux 的行为，但我们不鼓励你这么做。
 
@@ -264,12 +259,9 @@ function Counter({initialCount}) {
 ### `useCallback`
 
 ```js
-const memoizedCallback = useCallback(
-  () => {
-    doSomething(a, b);
-  },
-  [a, b],
-);
+const memoizedCallback = useCallback(() => {
+  doSomething(a, b)
+}, [a, b])
 ```
 
 返回一个 [memoized](https://en.wikipedia.org/wiki/Memoization) 回调函数。
@@ -278,11 +270,10 @@ const memoizedCallback = useCallback(
 
 `useCallback(fn, deps)` 相当于 `useMemo(() => fn, deps)`。
 
-
 ### `useMemo` {#usememo}
 
 ```js
-const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b])
 ```
 
 返回一个 [memoized](https://en.wikipedia.org/wiki/Memoization) 值。
@@ -293,11 +284,10 @@ const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
 
 如果没有提供依赖项数组，`useMemo` 在每次渲染时都会计算新的值。
 
-
 ### `useRef`
 
 ```js
-const refContainer = useRef(initialValue);
+const refContainer = useRef(initialValue)
 ```
 
 `useRef` 返回一个可变的 ref 对象，其 `.current` 属性被初始化为传入的参数（`initialValue`）。返回的 ref 对象在组件的整个生命周期内保持不变。
@@ -306,23 +296,23 @@ const refContainer = useRef(initialValue);
 
 ```js
 function TextInputWithFocusButton() {
-  const inputEl = useRef(null);
+  const inputEl = useRef(null)
   const onButtonClick = () => {
     // `current` 指向已挂载到 DOM 上的文本输入元素
-    inputEl.current.focus();
-  };
+    inputEl.current.focus()
+  }
   return (
     <View>
       <Input ref={inputEl} type="text" />
       <Button onClick={onButtonClick}>Focus the input</Button>
     </View>
-  );
+  )
 }
 ```
 
 本质上，`useRef` 就像是可以在其 `.current` 属性中保存一个可变值的“盒子”。
 
-你应该熟悉 ref 这一种[访问 DOM](ref.md) 的主要方式。如果你将 ref 对象以 `<View ref={myRef} />` Taro 都会将 ref 对象的 `.current` 属性设置为相应的 DOM 节点。
+你应该熟悉 ref 这一种[访问 DOM](./ref) 的主要方式。如果你将 ref 对象以 `<View ref={myRef} />` Taro 都会将 ref 对象的 `.current` 属性设置为相应的 DOM 节点。
 
 然而，`useRef()` 比 `ref` 属性更有用。它可以[很方便地保存任何可变值](https://zh-hans.reactjs.org/docs/hooks-faq.html#is-there-something-like-instance-variables)，其类似于在 class 中使用实例字段的方式。
 
@@ -339,7 +329,6 @@ function TextInputWithFocusButton() {
 > 提示
 >
 > 如果你正在将代码从 class 组件迁移到使用 Hook 的函数组件，则需要注意 `useLayoutEffect` 与 `componentDidMount`、`componentDidUpdate` 的调用阶段是一样的。但是，我们推荐你**一开始先用 `useEffect`**，只有当它出问题的时再尝试使用 `useLayoutEffect`。
-
 
 ### `useContext`
 
@@ -414,7 +403,7 @@ useReachBottom(() => {
 > 自 `1.3.14` 开始支持
 
 ```jsx
-usePageScroll(res => {
+usePageScroll((res) => {
   console.log(res.scrollTop)
 })
 ```
@@ -426,7 +415,7 @@ usePageScroll(res => {
 > 自 `1.3.14` 开始支持
 
 ```jsx
-useResize(res => {
+useResize((res) => {
   console.log(res.size.windowWidth)
   console.log(res.size.windowHeight)
 })
@@ -439,14 +428,14 @@ useResize(res => {
 > 自 `1.3.14` 开始支持
 
 ```jsx
-useShareAppMessage(res => {
+useShareAppMessage((res) => {
   if (res.from === 'button') {
     // 来自页面内转发按钮
     console.log(res.target)
   }
   return {
     title: '自定义转发标题',
-    path: '/page/user?id=123'
+    path: '/page/user?id=123',
   }
 })
 ```
@@ -458,7 +447,7 @@ useShareAppMessage(res => {
 > 自 `1.3.14` 开始支持
 
 ```jsx
-useTabItemTap(item => {
+useTabItemTap((item) => {
   console.log(item.index)
   console.log(item.pagePath)
   console.log(item.text)
@@ -486,23 +475,23 @@ const router = useRouter() // { path: '', params: { ... } }
 为页面设置 `config`
 
 ```jsx
-export default function Index () {
+export default function Index() {
   return <View></View>
 }
 
 Index.config = {
-  navigationBarTitleText: '首页'
+  navigationBarTitleText: '首页',
 }
 ```
 
 为组件设置 `options`
 
 ```jsx
-export default function Com () {
+export default function Com() {
   return <View></View>
 }
 
 Com.options = {
-  addGlobalClass: true
+  addGlobalClass: true,
 }
 ```

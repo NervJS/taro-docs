@@ -27,6 +27,7 @@ If the installation process results in `sass`-related installation errors, pleas
 ```bash
 $ npm install -g mirror-config-china
 ```
+
 :::
 
 #### View all Taro releases
@@ -75,7 +76,7 @@ $ npm install
 
 ## Compiling and Running
 
-Using the Taro `build` command compile Taro code into different platform code, and then  check the effect in the corresponding development tool.
+Using the Taro `build` command compile Taro code into different platform code, and then check the effect in the corresponding development tool.
 
 Taro has `dev` and `build` modes：
 
@@ -100,7 +101,7 @@ $ npm run build:weapp
 $ taro build --type weapp --watch
 $ taro build --type weapp
 
-# npx users can also use 
+# npx users can also use
 $ npx taro build --type weapp --watch
 $ npx taro build --type weapp
 
@@ -114,9 +115,10 @@ $ NODE_ENV=production taro build --type weapp --watch # Bash
 Download and open [WeChat Developer Tools](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)，, then select **Project Directory** for preview.
 
 Developers need to pay attention to the project settings of the developer tools：
-  * Need to set off ES6 to ES5 function,turn on may lead to error
-  * Need to set off the style auto-completion when uploading code, turn on may lead to error
-  * Need to set off the code compression upload, turn on may lead to error
+
+- Need to set off ES6 to ES5 function,turn on may lead to error
+- Need to set off the style auto-completion when uploading code, turn on may lead to error
+- Need to set off the code compression upload, turn on may lead to error
 
 ### Baidu smart program
 
@@ -135,7 +137,7 @@ $ npm run build:swan
 $ taro build --type swan --watch
 $ taro build --type swan
 
-# npx users can also use 
+# npx users can also use
 $ npx taro build --type swan --watch
 $ npx taro build --type swan
 
@@ -149,9 +151,10 @@ $ NODE_ENV=production taro build --type swan --watch # Bash
 Download and open [Baidu Developer Tools](https://smartprogram.baidu.com/docs/develop/devtools/show_sur/), and make sure you have set up the mini-program project configuration [project.swan.json](./project-config). Then select the `dist` directory in the project root directory to preview it.
 
 Developers need to pay attention to the project settings of the developer tools：
-  * Need to set off ES6 to ES5 function,turn on may lead to error
-  * Need to set off the style auto-completion when uploading code, turn on may lead to error
-  * Need to set off the code compression upload, turn on may lead to error
+
+- Need to set off ES6 to ES5 function,turn on may lead to error
+- Need to set off the style auto-completion when uploading code, turn on may lead to error
+- Need to set off the code compression upload, turn on may lead to error
 
 ### Alipay Mini-Program
 
@@ -170,7 +173,7 @@ $ npm run build:alipay
 $ taro build --type alipay --watch
 $ taro build --type alipay
 
-# npx users can also use 
+# npx users can also use
 $ npx taro build --type alipay --watch
 $ npx taro build --type alipay
 
@@ -184,9 +187,10 @@ $ NODE_ENV=production taro build --type alipay --watch # Bash
 Download and open [Alipay Developer Tools](https://docs.alipay.com/mini/developer/getting-started/), Then select the `dist` directory in the project root directory to preview it.
 
 Developers need to pay attention to the project settings of the developer tools：
-  * Need to set off ES6 to ES5 function,turn on may lead to error
-  * Need to set off the style auto-completion when uploading code, turn on may lead to error
-  * Need to set off the code compression upload, turn on may lead to error
+
+- Need to set off ES6 to ES5 function,turn on may lead to error
+- Need to set off the style auto-completion when uploading code, turn on may lead to error
+- Need to set off the code compression upload, turn on may lead to error
 
 ### ByteDance Mini-Program
 
@@ -205,7 +209,7 @@ $ npm run build:tt
 $ taro build --type tt --watch
 $ taro build --type tt
 
-# npx users can also use 
+# npx users can also use
 $ npx taro build --type tt --watch
 $ npx taro build --type tt
 
@@ -214,14 +218,15 @@ $ set NODE_ENV=production && taro build --type tt --watch # CMD
 $ NODE_ENV=production taro build --type tt --watch # Bash
 ```
 
-####  Developer Tools
+#### Developer Tools
 
-Download and open [ByteDance Developer Tools](https://microapp.bytedance.com/docs/devtool/versionUpdate.html)，, and make sure you have set up the mini-program project configuration [project.tt.json](./project-config). Then select the `dist` directory in the project root directory to preview it.
+Download and open [ByteDance Developer Tools](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/developer-instrument/download/developer-instrument-update-and-download)，, and make sure you have set up the mini-program project configuration [project.tt.json](./project-config). Then select the `dist` directory in the project root directory to preview it.
 
 Developers need to pay attention to the project settings of the developer tools：
-  * Need to set off ES6 to ES5 function,turn on may lead to error
-  * Need to set off the style auto-completion when uploading code, turn on may lead to error
-  * Need to set off the code compression upload, turn on may lead to error
+
+- Need to set off ES6 to ES5 function,turn on may lead to error
+- Need to set off the style auto-completion when uploading code, turn on may lead to error
+- Need to set off the code compression upload, turn on may lead to error
 
 ### QQ Mini-Program
 
@@ -240,7 +245,7 @@ $ npm run build:qq
 $ taro build --type qq --watch
 $ taro build --type qq
 
-# npx users can also use 
+# npx users can also use
 $ npx taro build --type qq --watch
 $ npx taro build --type qq
 
@@ -254,9 +259,10 @@ $ NODE_ENV=production taro build --type qq --watch # Bash
 Download and open [QQ Mini-Program Developer Tools ](https://q.qq.com/wiki/#_4-%E7%BC%96%E7%A0%81%E5%BC%80%E5%8F%91%E5%B0%8F%E7%A8%8B%E5%BA%8F)，and then select the `dist` directory in the project root directory to preview it.
 
 Developers need to pay attention to the project settings of the developer tools：
-  * Need to set off ES6 to ES5 function,turn on may lead to error
-  * Need to set off the style auto-completion when uploading code, turn on may lead to error
-  * Need to set off the code compression upload, turn on may lead to error
+
+- Need to set off ES6 to ES5 function,turn on may lead to error
+- Need to set off the style auto-completion when uploading code, turn on may lead to error
+- Need to set off the code compression upload, turn on may lead to error
 
 ### Jingdong Mini-program
 
@@ -275,7 +281,7 @@ $ npm run build:jd
 $ taro build --type jd --watch
 $ taro build --type jd
 
-# npx users can also use 
+# npx users can also use
 $ npx taro build --type jd --watch
 $ npx taro build --type jd
 
@@ -289,9 +295,10 @@ $ NODE_ENV=production taro build --type jd --watch # Bash
 Download and open Jingdong mini-program Developer Tools（Go to https://mp.jd.com to register and you will be provided with developer tools upon successful application）, and then select the `dist` directory in the project root directory to preview it.
 
 Developers need to pay attention to the project settings of the developer tools：
-  * Need to set off ES6 to ES5 function,turn on may lead to error
-  * Need to set off the style auto-completion when uploading code, turn on may lead to error
-  * Need to set off the code compression upload, turn on may lead to error
+
+- Need to set off ES6 to ES5 function,turn on may lead to error
+- Need to set off the style auto-completion when uploading code, turn on may lead to error
+- Need to set off the code compression upload, turn on may lead to error
 
 #### Jingdong Mini-program related reading
 
@@ -315,9 +322,7 @@ yarn add @tarojs/plugin-platform-weapp-qy
 ```js title="Taro Project Configuration"
 config = {
   // ...
-  plugins: [
-    '@tarojs/plugin-platform-weapp-qy'
-  ]
+  plugins: ['@tarojs/plugin-platform-weapp-qy'],
 }
 ```
 
@@ -336,7 +341,7 @@ $ npm run build:qywx
 $ taro build --type qywx --watch
 $ taro build --type qywx
 
-# npx users can also use 
+# npx users can also use
 $ npx taro build --type qywx --watch
 $ npx taro build --type qywx
 
@@ -366,9 +371,7 @@ yarn add @tarojs/plugin-platform-alipay-dd
 ```js title="Taro Project Configuration"
 config = {
   // ...
-  plugins: [
-    '@tarojs/plugin-platform-alipay-dd'
-  ]
+  plugins: ['@tarojs/plugin-platform-alipay-dd'],
 }
 ```
 
@@ -387,7 +390,7 @@ $ npm run build:dd
 $ taro build --type dd --watch
 $ taro build --type dd
 
-# npx users can also use 
+# npx users can also use
 $ npx taro build --type dd --watch
 $ npx taro build --type dd
 
@@ -417,9 +420,7 @@ yarn add @tarojs/plugin-platform-alipay-iot
 ```js title="Taro Project Configuration"
 config = {
   // ...
-  plugins: [
-    '@tarojs/plugin-platform-alipay-iot'
-  ]
+  plugins: ['@tarojs/plugin-platform-alipay-iot'],
 }
 ```
 
@@ -464,11 +465,10 @@ yarn add @tarojs/plugin-platform-lark
 ```js title="Taro project configuration"
 config = {
   // ...
-  plugins: [
-    '@tarojs/plugin-platform-lark'
-  ]
+  plugins: ['@tarojs/plugin-platform-lark'],
 }
 ```
+
 #### Compile command
 
 ```bash
@@ -494,13 +494,14 @@ $ NODE_ENV=production taro build --type lark --watch # Bash
 ```
 
 #### Developer tool
+
 [FeiShu mini program](https://open.feishu.cn/document/uYjL24iN/uMjNzUjLzYzM14yM2MTN) can run on Fishu client and one set of code runs on multiple ends (including PC and mobile). You need to download and open [FeiShu mini program developer tool](https://open.feishu.cn/document/uYjL24iN/ucDOzYjL3gzM24yN4MjN), and make sure you have set up the mini program project configuration file. Then select the `dist` directory in the project root directory for preview.
 
 Need to pay attention to the project configuration of developer tools
+
 - You need to turn off the ES6 to ES5 feature, it may report an error if you turn it on.
 - Need to turn off the style auto-completion when uploading code, it may report an error if you turn it on.
 - You need to turn off the code compression upload, it may report an error if you turn it on.
-
 
 ### KuaiShou Mini Program
 
@@ -531,11 +532,10 @@ yarn add @tarojs/plugin-platform-kwai
 ```js title="Taro project configuration"
 config = {
   // ...
-  plugins: [
-    '@tarojs/plugin-platform-kwai'
-  ]
+  plugins: ['@tarojs/plugin-platform-kwai'],
 }
 ```
+
 #### 编译命令
 
 ```bash
@@ -605,18 +605,17 @@ If you find inconsistencies you can use the Taro upgrade command taro update sel
 
 Alternatively, you can manually install the appropriate version of the CLI, modify the package.json dependency version number, and reinstall the dependency to resolve it.
 
-
-
 ```bash
 # Use the Taro upgrade command to update the CLI version to the latest version
 $ taro update self [version number]
 # Use the Taro upgrade command to update the CLI version to the specified version
 $ taro update self
 # Use the Taro upgrade command to upgrade project dependencies to a version consistent with @tarojs/cli
-$ taro update project 
+$ taro update project
 # Use the Taro upgrade command to upgrade project dependencies to the specified version
 $ taro update project [version number]
 ```
+
 If you are using Taro CLI version 3.0.9 and the dependency version used in your project is 3.0.10, you may have problems. In this case, please update your Taro CLI version to the same version as the project dependency version number, and if you still have problems, please [Issue](https://nervjs.github.io/taro-issue-helper/) to the community.
 
 ### Taro multi-version coexistence issue

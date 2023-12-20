@@ -73,37 +73,35 @@ const CIPluginFn = async () => {
    * @type {CIOptions}
    */
   return {
-      weapp: {
-          appid: "微信小程序appid",
-          privateKeyPath: "密钥文件相对项目根目录的相对路径，例如 key/private.appid.key"
-      },
-      tt: {
-          email: "字节小程序邮箱",
-          password: "字节小程序密码"
-      },
-      alipay: {
-        appid: "支付宝小程序appid",
-        toolId: "工具id",
-        privateKeyPath: "密钥文件相对项目根目录的相对路径，例如 key/pkcs8-private-pem"
-      },
-      dd: {
-        appid: "钉钉小程序appid,即钉钉开放平台后台应用管理的 MiniAppId 选项"
-        token: "令牌，从钉钉后台获取"
-      },
-      swan: {
-        token: "鉴权需要的token令牌"
-      },
-      // 版本号
-      version: "1.0.0",
-      // 版本发布描述
-      desc: "版本描述"
+    weapp: {
+      appid: '微信小程序appid',
+      privateKeyPath: '密钥文件相对项目根目录的相对路径，例如 key/private.appid.key',
+    },
+    tt: {
+      email: '字节小程序邮箱',
+      password: '字节小程序密码',
+    },
+    alipay: {
+      appid: '支付宝小程序appid',
+      toolId: '工具id',
+      privateKeyPath: '密钥文件相对项目根目录的相对路径，例如 key/pkcs8-private-pem',
+    },
+    dd: {
+      appid: '钉钉小程序appid,即钉钉开放平台后台应用管理的 MiniAppId 选项',
+      token: '令牌，从钉钉后台获取',
+    },
+    swan: {
+      token: '鉴权需要的token令牌',
+    },
+    // 版本号
+    version: '1.0.0',
+    // 版本发布描述
+    desc: '版本描述',
   }
 }
 
 const config = {
-  plugins: [
-    [ "@tarojs/plugin-mini-ci", CIPluginFn ]
-  ]
+  plugins: [['@tarojs/plugin-mini-ci', CIPluginFn]],
 }
 ```
 
@@ -142,11 +140,11 @@ const config = {
 此 3 个选项在一条命令里不能同时使用（互斥）
 
 - --projectPath
-  指定要操作（打开、预览、上传）的目录路径， 默认情况下是操作构建后目录路径，即 [outputRoot 选项](https://taro-docs.jd.com/taro/docs/next/config-detail#outputroot)；
+  指定要操作（打开、预览、上传）的目录路径， 默认情况下是操作构建后目录路径，即 [outputRoot 选项](./config-detail#outputroot)；
 
 此选项必须搭配上述三个选项之一一起使用；
 
-此选项优先级为： 终端传入的`--projectPath` > CI 配置的`projectPath` 选项 > [outputRoot 选项](https://taro-docs.jd.com/taro/docs/next/config-detail#outputroot)。
+此选项优先级为： 终端传入的`--projectPath` > CI 配置的`projectPath` 选项 > [outputRoot 选项](./config-detail#outputroot)。
 
 ### 作为命令单独使用（3.6.0 开始支持）
 
@@ -176,7 +174,7 @@ const config = {
 - --type
   传入平台名称
 - --projectPath
-  传入路径。 此选项优先级为： 终端传入的`--projectPath` > CI 配置的`projectPath` 选项 > [outputRoot 选项](https://taro-docs.jd.com/taro/docs/next/config-detail#outputroot)
+  传入路径。 此选项优先级为： 终端传入的`--projectPath` > CI 配置的`projectPath` 选项 > [outputRoot 选项](./config-detail#outputroot)
 
 ### Hooks 使用（3.6.0 开始支持）
 
@@ -244,7 +242,7 @@ const config = {
     // 应用自己写的插件
     require('path').join(__dirname, './test'),
   ],
-  ...其他配置省略,
+  // 其他配置省略
 }
 
 module.exports = function (merge) {
@@ -276,7 +274,7 @@ module.exports = function (merge) {
 | 参数        | 类型   | 说明                                                                                |
 | :---------- | :----- | :---------------------------------------------------------------------------------- |
 | weapp       | Object | （企业）微信小程序 CI 配置                                                          |
-| tt          | Object | 头条小程序配置                                                                      |
+| tt          | Object | 抖音小程序配置                                                                      |
 | alipay      | Object | 支付宝小程序配置                                                                    |
 | dd          | Object | 钉钉小程序配置（3.6.0 版本开始支持）                                                |
 | swan        | Object | 百度小程序配置                                                                      |
@@ -297,14 +295,14 @@ module.exports = function (merge) {
 
 官方 CI 文档[点这里](https://developers.weixin.qq.com/miniprogram/dev/devtools/ci.html)
 
-### 头条小程序 CI 配置
+### 抖音小程序 CI 配置
 
 | 参数     | 类型   | 说明           |
 | :------- | :----- | :------------- |
 | email    | string | 字节小程序邮箱 |
 | password | string | 字节小程序密码 |
 
-官方 CI 文档[点这里](https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/developer-instrument/development-assistance/ide-order-instrument)
+官方 CI 文档[点这里](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/developer-instrument/development-assistance/ide-order-instrument/)
 
 ### 支付宝小程序 CI 配置
 
@@ -378,7 +376,7 @@ export interface CIOptions {
   projectPath?: string
   /** 微信小程序CI配置, 官方文档地址：https://developers.weixin.qq.com/miniprogram/dev/devtools/ci.html */
   weapp?: WeappConfig
-  /** 头条小程序配置, 官方文档地址：https://microapp.bytedance.com/docs/zh-CN/mini-app/develop/developer-instrument/development-assistance/ide-order-instrument */
+  /** 抖音小程序配置, 官方文档地址：https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/developer-instrument/development-assistance/ide-order-instrument/ */
   tt?: TTConfig
   /** 支付宝系列小程序配置，官方文档地址： https://opendocs.alipay.com/mini/miniu/api */
   alipay?: AlipayConfig
@@ -406,7 +404,7 @@ export interface WeappConfig {
   robot?: number
 }
 
-/** 头条小程序配置 */
+/** 抖音小程序配置 */
 export interface TTConfig {
   /** 绑定的邮箱账号 */
   email: string
@@ -416,30 +414,18 @@ export interface TTConfig {
 
 /** 终端类型 */
 export type AlipayClientType =
-  /** 支付宝 */
-  | 'alipay'
-  /** AMPE */
-  | 'ampe'
-  /** 高德 */
-  | 'amap'
-  /** 天猫精灵 */
-  | 'genie'
-  /** ALIOS */
-  | 'alios'
-  /** UC */
-  | 'uc'
-  /** 夸克 */
-  | 'quark'
-  /** 口碑 */
-  | 'koubei'
-  /** loT */
-  | 'alipayiot'
-  /** 菜鸟 */
-  | 'cainiao'
-  /** 阿里健康(医蝶谷) */
-  | 'alihealth'
-  /** 阿里医院 */
-  | 'health'
+  | 'alipay' /** 支付宝 */
+  | 'ampe' /** AMPE */
+  | 'amap' /** 高德 */
+  | 'genie' /** 天猫精灵 */
+  | 'alios' /** ALIOS */
+  | 'uc' /** UC */
+  | 'quark' /** 夸克 */
+  | 'koubei' /** 口碑 */
+  | 'alipayiot' /** loT */
+  | 'cainiao' /** 菜鸟 */
+  | 'alihealth' /** 阿里健康(医蝶谷) */
+  | 'health' /** 阿里医院 */
 
 /** 支付宝系列小程序配置 */
 export interface AlipayConfig {

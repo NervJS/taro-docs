@@ -183,9 +183,9 @@
     "message": "Search",
     "description": "The ARIA label and placeholder for search button"
   },
-  "相关资源": {
-    "message": "Resources",
-    "description": "The homepage main heading"
+  "Taro 贡献者们": {
+    "message": "Taro Contributors",
+    "description": "The footer content"
   },
   "社区": {
     "message": "Community",
@@ -203,6 +203,10 @@
     "message": "Aotu Lab",
     "description": "The footer content"
   },
+  "用户体验设计部": {
+    "message": "UX Design Department",
+    "description": "The footer content"
+  },
   "加入我们": {
     "message": "Join us",
     "description": "The footer content"
@@ -211,16 +215,16 @@
     "message": "Contact us",
     "description": "The footer content"
   },
+  "相关资源": {
+    "message": "Resources",
+    "description": "The homepage main heading"
+  },
   "感谢": {
     "message": "Thanks",
     "description": "The footer content"
   },
-  "用户体验设计部": {
-    "message": "UX Design Department",
-    "description": "The footer content"
-  },
-  "Taro 贡献者们": {
-    "message": "Taro Contributors",
+  "讨论区": {
+    "message": "Discussion Area",
     "description": "The footer content"
   },
   "theme.ErrorPageContent.title": {
@@ -229,7 +233,7 @@
   },
   "theme.ErrorPageContent.tryAgain": {
     "message": "Try again",
-    "description": "The label of the button to try again when the page crashed"
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
     "message": "Scroll back to top",
@@ -436,5 +440,21 @@
   "theme.SearchModal.placeholder": {
     "message": "Search docs",
     "description": "The placeholder of the input of the DocSearch pop-up modal"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
   }
 }

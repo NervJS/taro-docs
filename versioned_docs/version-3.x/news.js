@@ -10,7 +10,7 @@ import React, { useEffect } from 'react'
 function Index () {
   const newsStyle = {
     width: '100%',
-    height: '400px',
+    height: 'auto',
     cursor: 'pointer',
   }
 

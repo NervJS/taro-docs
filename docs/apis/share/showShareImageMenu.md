@@ -36,7 +36,7 @@ sidebar_label: showShareImageMenu
 Taro.downloadFile({
   url: 'https://res.wx.qq.com/wxdoc/dist/assets/img/demo.ef5c5bef.jpg',
   success: (res) => {
-    wx.showShareImageMenu({
+    Taro.showShareImageMenu({
       path: res.tempFilePath
     })
   }

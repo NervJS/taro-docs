@@ -9,7 +9,7 @@
 | [`@tarojs/taro-rn`](https://www.npmjs.com/package/@tarojs/taro-rn)                 | Taro React Native 运行时框架     |
 | [`@tarojs/taro-weapp`](https://www.npmjs.com/package/@tarojs/taro-weapp)           | Taro 微信小程序运行时框架        |
 | [`@tarojs/taro-swan`](https://www.npmjs.com/package/@tarojs/taro-swan)             | Taro 百度智能小程序运行时框架    |
-| [`@tarojs/taro-tt`](https://www.npmjs.com/package/@tarojs/taro-tt)                 | Taro 字节跳动小程序运行时框架    |
+| [`@tarojs/taro-tt`](https://www.npmjs.com/package/@tarojs/taro-tt)                 | Taro 抖音小程序运行时框架        |
 | [`@tarojs/taro-alipay`](https://www.npmjs.com/package/@tarojs/taro-alipay)         | Taro 支付宝小程序运行时框架      |
 | [`@tarojs/taro-qq`](https://www.npmjs.com/package/@tarojs/taro-qq)                 | Taro QQ 小程序运行时框架         |
 | [`@tarojs/taro-jd`](https://www.npmjs.com/package/@tarojs/taro-jd)                 | Taro 京东小程序运行时框架        |

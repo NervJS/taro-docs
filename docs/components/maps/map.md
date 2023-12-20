@@ -5,7 +5,7 @@ sidebar_label: Map
 
 地图。相关api Taro.createMapContext。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="字节跳动小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/map.html#map)
 
@@ -17,21 +17,13 @@ ComponentType<MapProps>
 
 ## 示例代码
 
+import { ReactIcon, VueIcon } from '@site/static/icons'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 <Tabs
   defaultValue="React"
-  values={[
-  {
-    "label": "React",
-    "value": "React"
-  },
-  {
-    "label": "Vue",
-    "value": "Vue"
-  }
-]}>
+  values={[{ label: <ReactIcon />, value: "React" }, { label: <VueIcon />, value: "Vue" }]}>
 <TabItem value="React">
 
 ```tsx
@@ -113,7 +105,7 @@ export default {
 | minScale | `number` | `3` | 否 | 最小缩放级别 3-20 |
 | maxScale | `number` | `20` | 否 | 最大缩放级别 3-20 |
 | markers | `marker[]` |  | 否 | 标记点 |
-| covers | `any[]` |  | 否 | 标记点 |
+| covers | `any[]` |  | 否 | **即将移除，请使用 markers**<br />**不推荐使用** |
 | polyline | `polyline[]` |  | 否 | 路线 |
 | circles | `circle[]` |  | 否 | 圆 |
 | controls | `control[]` |  | 否 | 控件（即将废弃，建议使用 cover-view 代替）<br />**不推荐使用** |
@@ -134,15 +126,15 @@ export default {
 | enableTraffic | `boolean` | `false` | 否 | 是否开启实时路况 |
 | setting | MapProps or { [key: string]: any; } |  | 否 | 配置项<br /><br />提供 setting 对象统一设置地图配置。同时对于一些动画属性如 rotate 和 skew，通过 setData 分开设置时无法同时生效，需通过 settting 统一修改。 |
 | includePadding | { left: string or number; right: string or number; top: string or number; bottom: string or number; } |  | 否 | 视野在地图 padding 范围内展示 |
-| groundOverlays | `any[]` |  | 否 | 覆盖物，自定义贴图 |
-| tileOverlay | `any[]` |  | 否 | 覆盖物，网格贴图 |
-| enablePoi | `string` |  | 否 | 是否展示 POI 点 |
-| enableBuilding | `string` |  | 否 | 是否展示建筑物 |
-| polygon | `string` |  | 否 | 覆盖物，多边形。 |
+| groundOverlays | `groundOverlays[]` |  | 否 | 覆盖物，自定义贴图 |
+| tileOverlay | `tileOverlay` |  | 否 | 覆盖物，网格贴图 |
+| enablePoi | `boolean` | `true` | 否 | 是否展示 POI 点 |
+| enableBuilding | `boolean` | `true` | 否 | 是否展示建筑物 |
+| polygon | `polygon[]` |  | 否 | 覆盖物，多边形。 |
 | customMapStyle | `string` |  | 否 | 设置地图样式。<br /><br />default：默认样式<br />light：精简样式 |
-| panels | `string` |  | 否 | 基于 map 高级定制渲染，设置覆盖在地图上的 view。 |
+| panels | `panels[]` |  | 否 | 基于 map 高级定制渲染，设置覆盖在地图上的 view。 |
 | theme | `string` |  | 否 | 否 |
-| optimize | `string` |  | 否 | 内联样式。 |
+| optimize | `boolean` | `false` | 否 | 保持缩放比例不变 |
 | enableAutoMaxOverlooking | `boolean` | `false` | 否 | 开启最大俯视角，俯视角度从 45 度拓展到 75 度 |
 | enable3D | `boolean` | `false` | 否 | 展示3D楼块 |
 | onTap | `CommonEventFunction` |  | 否 | 点击地图时触发 |
@@ -153,14 +145,20 @@ export default {
 | onUpdated | `CommonEventFunction` |  | 否 | 在地图渲染更新完成时触发 |
 | onRegionChange | CommonEventFunction<onRegionEventDetail<"begin"> or onRegionEventDetail<"end">> |  | 否 | 视野发生变化时触发 |
 | onPoiTap | `CommonEventFunction<onPoiTapEventDetail>` |  | 否 | 点击地图poi点时触发，e.detail = {name, longitude, latitude} |
-| onCallOutTap | `CommonEventFunction` |  | 否 | 点击标记点对应的气泡时触发e.detail = {markerId} |
-| onAnchorPointTap | `CommonEventFunction` |  | 否 | 点击定位标时触发，e.detail = {longitude, latitude} |
+| onPolylineTap | `CommonEventFunction<onPolylineTapEventDetail>` |  | 否 | 点击地图路线时触发，e.detail = {longitude, latitude} |
+| onAbilitySuccess | `CommonEventFunction<onAbilityEventDetail>` |  | 否 | 地图能力生效时触发，e.detail = {ability, errCode, errMsg} |
+| onAbilityFailed | `CommonEventFunction<onAbilityEventDetail>` |  | 否 | 地图能力失败时触发，e.detail = {ability, errCode, errMsg} |
+| onAuthSuccess | `CommonEventFunction<{ errCode: number; errMsg: string; }>` |  | 否 | 地图鉴权结果成功时触发，e.detail = {errCode, errMsg} |
+| onInterpolatePoint | `CommonEventFunction<onInterpolatePointEventDetail>` |  | 否 | MapContext.moveAlong 插值动画时触发。e.detail = {markerId, longitude, latitude, animationStatus: "interpolating" or "complete"} |
+| onError | `CommonEventFunction<point>` |  | 是 | 组件错误时触发，例如创建或鉴权失败，e.detail = {longitude, latitude} |
+| onCallOutTap | `CommonEventFunction<onCalloutTapEventDetail>` |  | 否 | 点击标记点对应的气泡时触发e.detail = {markerId} |
+| onAnchorPointTap | `CommonEventFunction<point>` |  | 否 | 点击定位标时触发，e.detail = {longitude, latitude} |
 | onPanelTap | `CommonEventFunction<{ panelId: any; layoutId: any; }>` |  | 否 | 点击 panel 时触发。 |
 | onInitComplete | `CommonEventFunction` |  | 否 | 地图初始化完成即将开始渲染第一帧时触发。 |
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 字节跳动小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | MapProps.longitude | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | MapProps.latitude | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
@@ -208,6 +206,12 @@ export default {
 | MapProps.onUpdated | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
 | MapProps.onRegionChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | MapProps.onPoiTap | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
+| MapProps.onPolylineTap | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
+| MapProps.onAbilitySuccess | ✔️ |  |  |  |  |  |  |  |  |
+| MapProps.onAbilityFailed | ✔️ |  |  |  |  |  |  |  |  |
+| MapProps.onAuthSuccess | ✔️ |  |  |  |  |  |  |  |  |
+| MapProps.onInterpolatePoint | ✔️ |  |  |  |  |  |  |  |  |
+| MapProps.onError | ✔️ |  |  |  |  |  |  |  |  |
 | MapProps.onCallOutTap | ✔️ | ✔️ |  | ✔️ |  | ✔️ |  |  |  |
 | MapProps.onAnchorPointTap | ✔️ |  |  | ✔️ |  |  |  |  |  |
 | MapProps.onPanelTap |  |  | ✔️ |  |  |  |  |  |  |
@@ -303,13 +307,28 @@ marker 上的气泡 label
 
 指定一系列坐标点，根据 points 坐标数据生成闭合多边形
 
-| 参数 | 类型 | 必填 | 说明 | 备注 |
-| --- | --- | :---: | --- | --- |
-| points | `point[]` | 是 | 经纬度数组 | `[{latitude: 0, longitude: 0}]` |
-| strokeWidth | `number` | 否 | 描边的宽度 |  |
-| strokeColor | `string` | 否 | 描边的颜色 | `十六进制` |
-| fillColor | `string` | 否 | 填充颜色 | `十六进制` |
-| zIndex | `number` | 否 | 设置多边形Z轴数值 |  |
+| 参数 | 类型 | 默认值 | 必填 | 说明 | 备注 |
+| --- | --- | :---: | :---: | --- | --- |
+| dashArray | `number[]` | `[0,0]` | 否 | 边线虚线 | `默认值 [0, 0] 为实线，[10, 10]表示十个像素的实线和十个像素的空白（如此反复）组成的虚线` |
+| points | `point[]` |  | 是 | 经纬度数组 | `[{latitude: 0, longitude: 0}]` |
+| color | `string` |  | 否 | 线的颜色，用 8 位十六进制表示，后两位表示 alpha 值，如：#eeeeeeAA。 | `当前 Android 与 iOS 上此属性默认值存在差异（分别为 transparent 与 #ff0000ff ），建议在代码中统一显式设置。` |
+| strokeWidth | `number` |  | 否 | 描边的宽度 |  |
+| strokeColor | `string` |  | 否 | 描边的颜色 | `十六进制` |
+| fillColor | `string` |  | 否 | 填充颜色 | `十六进制` |
+| width | `number` |  | 否 | 线的宽度 | `当前 Android 与 iOS 上此属性默认值存在差异（分别为 0 与 5），建议在代码中统一显式设置。` |
+| zIndex | `number` |  | 否 | 设置多边形Z轴数值 |  |
+| level | `string` |  | 否 | 压盖关系 | `默认为 abovelabels` |
+| displayRanges | `[{ from: number; to: number; }]` |  | 否 | 标明在特定地图缩放级别下展示。 | `[{ from: 12, to: 17}]` |
+
+#### API 支持度
+
+| API | 微信小程序 | 支付宝小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| polygon.dashArray | ✔️ |  |  |  |  |
+| polygon.color |  | ✔️ |  |  |  |
+| polygon.width |  | ✔️ |  |  |  |
+| polygon.level | ✔️ |  |  |  |  |
+| polygon.displayRanges |  | ✔️ |  |  |  |
 
 ### circle
 
@@ -350,6 +369,34 @@ marker 上的气泡 label
 | top | `number` | `0` | 距离地图的上边界多远 |
 | width | `number` | `图片宽度` | 控件宽度 |
 | height | `number` | `图片宽度` | 控件高度 |
+
+### groundOverlays
+
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| id | `string` | 刷新的时候需要变更id值 |
+| include-points | `[{ latitude: number; longitude: number; }, { latitude: number; longitude: number; }]` | 右上 左下 |
+| image | `string` |  |
+| alpha | `number` |  |
+| zIndex | `number` |  |
+
+### tileOverlay
+
+| 参数 | 类型 |
+| --- | --- |
+| url | `string` |
+| type | `number` |
+| tileWidth | `number` |
+| tileHeight | `number` |
+| zIndex | `number` |
+
+### panels
+
+| 参数 | 类型 |
+| --- | --- |
+| id | `number` |
+| layout | `{ src: string; }` |
+| position | `position` |
 
 ### onMarkerTapEventDetail
 
@@ -421,3 +468,28 @@ marker 上的气泡 label
 | name | `string` |
 | longitude | `number` |
 | latitude | `number` |
+
+### onPolylineTapEventDetail
+
+| 参数 | 类型 |
+| --- | --- |
+| polylineId | `number` |
+| longitude | `number` |
+| latitude | `number` |
+
+### onAbilityEventDetail
+
+| 参数 | 类型 |
+| --- | --- |
+| ability | `string` |
+| errCode | `number` |
+| errMsg | `string` |
+
+### onInterpolatePointEventDetail
+
+| 参数 | 类型 |
+| --- | --- |
+| markerId | `number` |
+| longitude | `number` |
+| latitude | `number` |
+| animationStatus | "interpolating" or "complete" |

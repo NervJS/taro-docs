@@ -51,6 +51,14 @@ Default value: `true`
 
 Controls whether to connect to `vue-devtools`, which will inject backend code into the developer's app when turned on.
 
+### hostname
+
+`string`
+
+Default value：`localhost`
+
+When localhost is not available, customize the host name of `taro` connection `vue-devtools`, which is mostly used for LAN or remote debugging.
+
 ### port
 
 `number`

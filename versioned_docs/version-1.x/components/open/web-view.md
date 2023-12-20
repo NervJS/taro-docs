@@ -20,7 +20,7 @@ sidebar_label: WebView
 
 [支付宝小程序 WebView](https://docs.alipay.com/mini/component/web-view)。
 
-[字节跳动小程序 WebView](https://developer.toutiao.com/docs/comp/web-view.html)。
+[抖音小程序 WebView](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/component/open-capacity/web-view/)。
 
 ```jsx
 import Taro, { Component } from '@tarojs/taro'

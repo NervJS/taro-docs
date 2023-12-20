@@ -28,17 +28,20 @@ const config = {
     // 引入 npm 安装的插件
     '@tarojs/plugin-mock',
     // 引入 npm 安装的插件，并传入插件参数
-    ['@tarojs/plugin-mock', {
-      mocks: {
-        '/api/user/1': {
-          name: 'judy',
-          desc: 'Mental guy'
-        }
-      }
-    }],
+    [
+      '@tarojs/plugin-mock',
+      {
+        mocks: {
+          '/api/user/1': {
+            name: 'judy',
+            desc: 'Mental guy',
+          },
+        },
+      },
+    ],
     // 从本地绝对路径引入插件，同样如果需要传入参数也是如上
     '/absulute/path/plugin/filename',
-  ]
+  ],
 }
 ```
 
@@ -46,20 +49,23 @@ const config = {
 
 如果你有一系列插件需要配置，而他们通常是组合起来完成特定的事儿，那你可以通过**插件集** `presets` 来进行配置。
 
-配置[编译配置](./config-detail.md)中的 `presets` 字段，如下。
+配置[编译配置](./config-detail)中的 `presets` 字段，如下。
 
 ```js
 const config = {
   presets: [
     // 引入 npm 安装的插件集
-    '@tarojs/preset-sth', 
+    '@tarojs/preset-sth',
     // 引入 npm 安装的插件集，并传入插件参数
-    ['@tarojs/plugin-sth', {
-      arg0: 'xxx'
-    }],
+    [
+      '@tarojs/plugin-sth',
+      {
+        arg0: 'xxx',
+      },
+    ],
     // 从本地绝对路径引入插件集，同样如果需要传入参数也是如上
     '/absulute/path/preset/filename',
-  ]
+  ],
 }
 ```
 
@@ -130,7 +136,7 @@ csso: {
 
 用来配置 `sass` 工具，设置打包过程中的 SCSS 代码编译。  
 具体配置可以参考[node-sass](https://www.npmjs.com/package/node-sass)  
-当需要全局注入scss文件时，可以添加三个额外参数：`resource` 、 `projectDirectory` (v1.2.25开始支持)、`data`（v1.3.0开始支持），具体配置方式如下：
+当需要全局注入 scss 文件时，可以添加三个额外参数：`resource` 、 `projectDirectory` (v1.2.25 开始支持)、`data`（v1.3.0 开始支持），具体配置方式如下：
 
 #### 单文件路径形式
 
@@ -150,7 +156,7 @@ sass: {
 sass: {
   resource: [
     path.resolve(__dirname, '..', 'src/styles/variable.scss'),
-    path.resolve(__dirname, '..', 'src/styles/mixins.scss')
+    path.resolve(__dirname, '..', 'src/styles/mixins.scss'),
   ]
 }
 ```
@@ -182,9 +188,9 @@ sass: {
 }
 ```
 
-* resource: 如果要引入多个文件，支持数组形式传入
-* projectDirectory: 项目根目录的绝对地址(若为小程序云开发模板，则应该是client目录)
-* data: 全局 scss 变量，若 data 与 resource 中设置了同样的变量，则 data 的优先级高于 resource
+- resource: 如果要引入多个文件，支持数组形式传入
+- projectDirectory: 项目根目录的绝对地址(若为小程序云开发模板，则应该是 client 目录)
+- data: 全局 scss 变量，若 data 与 resource 中设置了同样的变量，则 data 的优先级高于 resource
 
 ## env
 
@@ -279,13 +285,13 @@ import projectConfig from '@/project'
       "@/components/*": ["./src/components/*"],
       "@/utils/*": ["./src/utils/*"],
       "@/package": ["./package.json"],
-      "@/project": ["./project.config.json"],
+      "@/project": ["./project.config.json"]
     }
   }
 }
 ```
 
-*建议别名使用 `@/` 开头而非仅用 `@` 开头，因为有小概率会与某些 `scoped` 形式的 `npm` 包（行如：[@tarojs/taro](https://npm.im/@tarojs/taro), [@babel/core](https://npm.im/@babel/core)）产生命名冲突。*
+_建议别名使用 `@/` 开头而非仅用 `@` 开头，因为有小概率会与某些 `scoped` 形式的 `npm` 包（行如：[@tarojs/taro](https://npm.im/@tarojs/taro), [@babel/core](https://npm.im/@babel/core)）产生命名冲突。_
 
 ## copy
 
@@ -338,11 +344,9 @@ copy: {
 const config = {
   mini: {
     compile: {
-      exclude: [
-        path.resolve(__dirname, '..', 'src/pages/index/vod-wx-sdk-v2.js')
-      ]
-    }
-  }
+      exclude: [path.resolve(__dirname, '..', 'src/pages/index/vod-wx-sdk-v2.js')],
+    },
+  },
 }
 ```
 
@@ -355,16 +359,16 @@ const config = {
       exclude: [
         function (modulePath) {
           return modulePath.indexOf('vod-wx-sdk-v2') >= 0
-        }
-      ]
-    }
-  }
+        },
+      ],
+    },
+  },
 }
 ```
 
 #### mini.compile.include
 
-配置额外需要经过 Taro 编译的文件，例如 Taro 默认不编译 `node_modules` 包中文件，可以通过这个配置让 Taro 编译  `node_modules` 包中文件，使用方式与 `mini.compile.exclude` 一致，同 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude)。
+配置额外需要经过 Taro 编译的文件，例如 Taro 默认不编译 `node_modules` 包中文件，可以通过这个配置让 Taro 编译 `node_modules` 包中文件，使用方式与 `mini.compile.exclude` 一致，同 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude)。
 
 ### mini.webpackChain
 
@@ -426,7 +430,7 @@ export enum PARSE_AST_TYPE {
   PAGE = 'PAGE',
   COMPONENT = 'COMPONENT',
   NORMAL = 'NORMAL',
-  STATIC = 'STATIC'
+  STATIC = 'STATIC',
 }
 ```
 
@@ -441,34 +445,33 @@ export enum PARSE_AST_TYPE {
 ```js
 const config = {
   mini: {
-    commonChunks: ['runtime', 'vendors', 'taro', 'common']
-  }
+    commonChunks: ['runtime', 'vendors', 'taro', 'common'],
+  },
 }
 ```
 
 这几个公共文件分别表示：
 
-* `runtime`: webpack 运行时入口
-* `vendors`: node_modules 中文件抽离
-* `taro`: node_modules 中 Taro 相关依赖抽离
-* `common`: 项目中业务代码公共文件抽离
+- `runtime`: webpack 运行时入口
+- `vendors`: node_modules 中文件抽离
+- `taro`: node_modules 中 Taro 相关依赖抽离
+- `common`: 项目中业务代码公共文件抽离
 
 其二是函数，通过对入参的默认公共文件数组进行操作，返回新的数组来进行配置，如下
 
 ```js
 const config = {
   mini: {
-    commonChunks (commonChunks) {
+    commonChunks(commonChunks) {
       // commonChunks 的取值即为默认的公共文件名数组
       commonChunks.push('yourCustomCommonChunkName')
       return commonChunks
-    }
-  }
+    },
+  },
 }
 ```
 
 `commonChunks` 的配置值主要依据 webpack 配置 [`optimization.runtimeChunk`](https://webpack.js.org/configuration/optimization/#optimizationruntimechunk) 和 [`optimization.splitChunks`](https://webpack.js.org/plugins/split-chunks-plugin/)，Taro 中默认的配置分别为
-
 
 ```javascript
 optimization: {
@@ -520,18 +523,18 @@ optimization: {
 
 `mini.addChunkPages` 配置为一个函数，接受两个参数
 
-* `pages` 参数为 Map 类型，用于为页面添加公共文件
-* `pagesNames` 参数为当前应用的所有页面标识列表，可以通过打印的方式进行查看页面的标识
+- `pages` 参数为 Map 类型，用于为页面添加公共文件
+- `pagesNames` 参数为当前应用的所有页面标识列表，可以通过打印的方式进行查看页面的标识
 
 例如，为 `pages/index/index` 页面添加 `eating` 和 `morning` 两个抽离的公共文件
 
 ```js
 const config = {
   mini: {
-    addChunkPages (pages, pagesNames) {
+    addChunkPages(pages, pagesNames) {
       pages.set('pages/index/index', ['eating', 'morning'])
-    }
-  }
+    },
+  },
 }
 ```
 
@@ -568,7 +571,7 @@ sass-loader 的附加配置。配置项参考[官方文档](https://github.com/w
 ```jsx
 {
   sassLoaderOption: {
-    implementation: require("dart-sass")
+    implementation: require('dart-sass')
   }
 }
 ```
@@ -836,7 +839,8 @@ sourceMap 开关，影响 js、css 的 sourceMap 配置。
 dev 状态默认 **开**，prod 状态默认 **关**。
 
 ### h5.sourceMapType
-sourceMap格式, 默认cheap-module-eval-source-map。[具体配置](https://webpack.js.org/configuration/devtool/#devtool)
+
+sourceMap 格式, 默认 cheap-module-eval-source-map。[具体配置](https://webpack.js.org/configuration/devtool/#devtool)
 
 ### h5.enableExtract
 
@@ -889,7 +893,7 @@ sass-loader 的附加配置。配置项参考[官方文档](https://github.com/w
 ```jsx
 {
   sassLoaderOption: {
-    implementation: require("dart-sass")
+    implementation: require('dart-sass')
   }
 }
 ```
@@ -1022,11 +1026,9 @@ RN 编译过程的相关配置。
 const config = {
   rn: {
     compile: {
-      exclude: [
-        path.resolve(__dirname, '..', 'src/pages/index/vod-wx-sdk-v2.js')
-      ]
-    }
-  }
+      exclude: [path.resolve(__dirname, '..', 'src/pages/index/vod-wx-sdk-v2.js')],
+    },
+  },
 }
 ```
 
@@ -1039,16 +1041,16 @@ const config = {
       exclude: [
         function (modulePath) {
           return modulePath.indexOf('vod-wx-sdk-v2') >= 0
-        }
-      ]
-    }
-  }
+        },
+      ],
+    },
+  },
 }
 ```
 
 #### rn.compile.include
 
-配置额外需要经过 Taro 编译的文件，例如 Taro 默认不编译 `node_modules` 包中文件，可以通过这个配置让 Taro 编译  `node_modules` 包中文件，使用方式与 `rn.compile.exclude` 一致，同 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude)。
+配置额外需要经过 Taro 编译的文件，例如 Taro 默认不编译 `node_modules` 包中文件，可以通过这个配置让 Taro 编译 `node_modules` 包中文件，使用方式与 `rn.compile.exclude` 一致，同 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude)。
 
 ### rn.webpackChain
 
@@ -1110,7 +1112,7 @@ export enum PARSE_AST_TYPE {
   PAGE = 'PAGE',
   COMPONENT = 'COMPONENT',
   NORMAL = 'NORMAL',
-  STATIC = 'STATIC'
+  STATIC = 'STATIC',
 }
 ```
 
@@ -1147,7 +1149,7 @@ sass-loader 的附加配置。配置项参考[官方文档](https://github.com/w
 ```jsx
 {
   sassLoaderOption: {
-    implementation: require("dart-sass")
+    implementation: require('dart-sass')
   }
 }
 ```

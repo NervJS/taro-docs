@@ -22,7 +22,7 @@ Taro 3 支持将 Web 框架直接运行在各平台，开发者使用的是真�
 ## 内置组件
 
 :::note
-自 Taro v3.3+，支持使用 H5 标签进行开发，详情请见 [使用 HTML 标签](use-h5)
+自 Taro v3.3+，支持使用 H5 标签进行开发，详情请见 [使用 HTML 标签](./use-h5)
 :::
 
 Taro 中可以使用小程序规范的内置组件进行开发，如 `<view>`、`<text>`、`<button>` 等。
@@ -234,127 +234,7 @@ Vue 组件的生命周期方法在 Taro 中都支持使用。
 
 ## Ref
 
-在 Taro 中 ref 的用法和 Vue 完全一致，但是获取到的 “DOM” 和浏览器环境还有小程序环境都有不同。
-
-### Vue Ref
-
-使用 Vue Ref 获取到的是 Taro 的虚拟 DOM，和浏览器的 DOM 相似，可以操作它的 `style`，调用它的 API 等。
-
-但是 Taro 的虚拟 DOM 运行在小程序的逻辑层，并不是真实的小程序渲染层节点，它没有尺寸宽高等信息。
-
-<Tabs
-  defaultValue="vue"
-  values={[
-    {label: 'Vue2', value: 'vue'},
-    {label: 'Vue3', value: 'vue3'}
-  ]}>
-<TabItem value="vue">
-
-```html title="示例代码"
-<template>
-  <view id="only" ref="el" />
-</template>
-
-<script>
-  export default {
-    mounted() {
-      // 获取到的 DOM 具有类似 HTMLElement 或 Text 等对象的 API
-      console.log(this.$refs.el)
-    },
-  }
-</script>
-```
-
-</TabItem>
-
-<TabItem value="vue3">
-
-```html title="示例代码"
-<template>
-  <view id="only" ref="el" />
-</template>
-
-<script>
-  import { ref, onMounted } from 'vue'
-
-  export default {
-    setup() {
-      const el = ref(null)
-
-      onMounted(() => {
-        // 获取到的 DOM 具有类似 HTMLElement 或 Text 等对象的 API
-        console.log(el.value)
-      })
-
-      return { el }
-    },
-  }
-</script>
-```
-
-</TabItem>
-</Tabs>
-
-### 获取小程序 DOM
-
-获取真实的小程序渲染层节点，需要在 [onReady](vue-page#onready-) 生命周期中，调用小程序中用于获取 DOM 的 API。
-
-<Tabs
-  defaultValue="vue"
-  values={[
-    {label: 'Vue2', value: 'vue'},
-    {label: 'Vue3', value: 'vue3'}
-  ]}>
-<TabItem value="vue">
-
-```html title="示例代码"
-<template>
-  <view id="only" />
-</template>
-
-<script>
-  import Taro from '@tarojs/taro'
-
-  export default {
-    onReady() {
-      // onReady 触发后才能获取小程序渲染层的节点
-      Taro.createSelectorQuery()
-        .select('#only')
-        .boundingClientRect()
-        .exec((res) => console.log(res))
-    },
-  }
-</script>
-```
-
-</TabItem>
-
-<TabItem value="vue3">
-
-```html title="示例代码"
-<template>
-  <view id="only" />
-</template>
-
-<script>
-  import Taro from '@tarojs/taro'
-
-  export default {
-    onReady() {
-      // onReady 触发后才能获取小程序渲染层的节点，Vue3 需要使用 Taro.nextTick 确保已经渲染完成
-      Taro.nextTick(() => {
-        Taro.createSelectorQuery()
-          .select('#only')
-          .boundingClientRect()
-          .exec((res) => console.log(res))
-      })
-    },
-  }
-</script>
-```
-
-</TabItem>
-</Tabs>
+[节点获取](./ref.mdx)
 
 ## v-html
 
