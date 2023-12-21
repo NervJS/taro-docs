@@ -122,7 +122,7 @@ $ npm i @tarojs/vite-runner@4.0.0-beta.0
 ### 2. 安装 Taro 适配鸿蒙插件
 
 ```bash
-$ npm i @tarojs/plugin-platform-harmony@4.0.0-beta.0
+$ npm i @tarojs/plugin-platform-harmony-ets@4.0.0-beta.0
 ```
 
 ### 3. 修改 Taro 编译配置
@@ -130,7 +130,7 @@ $ npm i @tarojs/plugin-platform-harmony@4.0.0-beta.0
 ```js title="config/index.ts"
 config = {
   // 配置使用插件
-  plugins: ['@tarojs/plugin-platform-harmony'],
+  plugins: ['@tarojs/plugin-platform-harmony-ets'],
   // harmony 相关配置
   harmony: {
     // 将编译方式设置为使用 Vite 编译
