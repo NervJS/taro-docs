@@ -25,5 +25,5 @@ if (process.env.TARO_ENV === 'weapp') {
 } else if (process.env.TARO_ENV === 'h5') {
    createMediaQueryObserver= Taro.createMediaQueryObserver
 }
-const mediaQueryObserver = createMediaQueryObserver() 
+const mediaQueryObserver = createMediaQueryObserver()
 ```
