@@ -3,7 +3,8 @@ title: 鸿蒙 & OpenHarmony
 ---
 
 :::info
-Taro v4.0.0-beta.0+ 开始支持
+Taro v3.5+ 开始支持。
+**当前 JS UI 版本的鸿蒙适配已停止更新**，Taro 4.0.0-beta.0 开始支持 Harmony ArkUI，推荐开发者升级 Taro 并根据新的[鸿蒙适配文档](/docs/4.x/harmony)进行鸿蒙应用的开发。
 :::
 
 随着鸿蒙系统的日渐完善，众多应用厂商都期待着把自家应用移植到鸿蒙平台上。借助 Taro，可以实现快速开发鸿蒙应用、把小程序快速转换为鸿蒙应用等功能。
@@ -20,31 +21,49 @@ Taro v4.0.0-beta.0+ 开始支持
 
 1、**鸿蒙操作系统**是华为研发的智能终端操作系统。
 
-2、华为已把该智能终端操作系统的基础能力全部捐献给开放原子开源基金会，由开放原子开源基金会整合其他参与者的贡献，形成 [OpenHarmony](https://gitee.com/openharmony) 开源项目，最新的版本为 OpenHarmony 4.0+。
+2、华为已把该智能终端操作系统的基础能力全部捐献给开放原子开源基金会，由开放原子开源基金会整合其他参与者的贡献，形成 [OpenHarmony](https://gitee.com/openharmony) 开源项目，最新的版本为 OpenHarmony 3.0。
 
 3、[HarmonyOS](https://developer.harmonyos.com/) 是华为基于开源项目 OpenHarmony 开发的商用版本。
 
 ### 鸿蒙应用开发导读
 
-建议开发前首先阅读 [《鸿蒙应用开发导读》](https://developer.harmonyos.com/cn/docs/documentation/doc-guides-V3/start-with-ets-stage-0000001477980905-V3?catalogVersion=V3) 部分，有助于对鸿蒙整体结构有一定了解。
+建议开发前首先阅读 [《鸿蒙应用开发导读》](https://developer.harmonyos.com/cn/docs/documentation/doc-guides/document-outline-0000001064589184) 部分，有助于对鸿蒙整体结构有一定了解。
 
-鸿蒙应用程序包结构（Stage 模型）：
+鸿蒙应用程序包结构：
 
-![](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20230821150835.75065627467290629243023494212142:50001231000000:2800:5EB57405CFA7AEA5D52F21AFDFF9B174880C6BB02D98FC4CB34C490B82D97AC1.png?needInitFileName=true?needInitFileName=true)
+![](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20211022162223.15380198014131508266643108297125:50521021083943:2800:715DAE3A069F85E3220BE8D812C4A282C948D63E7D4AF7192CB335DA55C4A983.png?needInitFileName=true?needInitFileName=true)
 
 ### 鸿蒙与小程序
 
-鸿蒙 Stage 模型支持使用 ArkTS 来声明式地开发 UI（ArkUI）。ArkTS 是 HarmonyOS 优选的主力应用开发语言。ArkTS 围绕应用开发 [TypeScript](https://www.typescriptlang.org/)（简称 TS）生态基础上做了进一步扩展，继承了 TS 的所有特性，是 TS 的超集。
+鸿蒙 FA（Feature Ability）支持使用 JS 或 JAVA 开发 UI。而 JS UI 的开发范式类似于小程序，这也给 Taro 适配鸿蒙提供了一个很好的切入点。
 
-#### 鸿蒙 ArkUI 与小程序写法的主要异同
+#### 鸿蒙 JS UI 与小程序写法的主要异同
 
-1. 开发语言
+1. 项目组织
 
-鸿蒙的开发语言 ArkTS 在语法方面由于是 TypeScript 的超集，因此能完美兼容小程序上的 JavaScript/TypeScript 语法。
+鸿蒙的项目组织和小程序类似，有入口文件 `app.js`、页面、自定义组件。
 
-2. 渲染 UI
+其中页面、自定义组件均由三类文件组成：
 
-小程序可以通过 `template` 模板来动态地拼接和生成页面的 UI，而鸿蒙可以通过系统提供的自定义组件来递归地渲染出页面 UI。
+- `.hml` 用来描述布局结构。与小程序的模板文件相比，语法、支持的能力有少许区别。
+- `.css` 用来描述页面样式。
+- `.js` 用于处理页面和用户的交互，默认支持 ES6 语法。
+
+2. 配置文件
+
+和小程序规定的入口文件、页面文件、自定义组件各自对应一份配置文件不一样，鸿蒙 JS UI 的配置文件只有一份。
+
+鸿蒙的**路由**和小程序一样是配置式的，需要在 JS UI 的配置文件中进行配置。
+
+3. 样式
+
+CSS 方面，鸿蒙和 RN 一样有着诸多限制。例如不支持盒子模型、各组件只支持部分 CSS 属性等。
+
+4. 组件 & API
+
+鸿蒙提供了一系列功能丰富的组件，与小程序的组件相比，命名、功能上略有差别。
+
+API 也是一样，两者的 API 有部分交集，可用法、功能上也有差别。
 
 ## 配置鸿蒙环境
 
@@ -54,130 +73,98 @@ Taro v4.0.0-beta.0+ 开始支持
 
 （1）登录  [HarmonysOS 应用开发门户](https://link.juejin.cn/?target=https%3A%2F%2Fdeveloper.harmonyos.com%2Fcn%2Fhome)，点击右上角注册按钮，注册开发者帐号。
 
-（2）进入  [HUAWEI DevEco Studio 套件货架中心](https://developer.harmonyos.com/deveco-developer-suite/)，申请白名单，由于目前最新版本的 OpenHarmony SDK 和 IDE 仍未对外开发，因此个人开发者若想尝鲜，需要先申请白名单成为合作伙伴后才能继续进行下面的步骤。
+（2）进入  [HUAWEI DevEco Studio 产品页](https://link.juejin.cn/?target=https%3A%2F%2Fdeveloper.harmonyos.com%2Fcn%2Fdevelop%2Fdeveco-studio)，登录华为开发者账号后下载 DevEco Studio 安装包并进行安装。
 
-（3）白名单申请通过后，进入货架，下载 **IDE 版本为 DevEco Studio 4.0.3.700 的 DevEcoStudio4.0-API10** 开发套件。
+（3）启动 DevEco Studio，根据工具引导下载 HarmonyOS SDK。
 
-（4）下载完成后，打开 IDE 安装包进行安装，安装成功后启动 DevEco Studio，根据[引导](https://developer.harmonyos.com/cn/docs/documentation/doc-guides-V4/sdk-prepar-0000001573170041-V4)解压套件里附带的 SDK 压缩包，并根据[引导](https://developer.harmonyos.com/cn/docs/documentation/doc-guides-V4/sdk-prepar-0000001573170041-V4)在 IDE 中配置好 SDK 的使用路径。
-
-（5）SDK 配置成功后，看到设置面板中各个 SDK 的版本号与下面的图片中相同，则标识配置成功了。
-
-![](https://img20.360buyimg.com/img/jfs/t1/185512/33/41206/63059/6544a44dFf833680e/4f8bbc23804e737a.png)
+（4）下载 HarmonyOS SDK 成功后打开设置窗口，选择 JS SDK 进行下载，可多选，目前已更新支持到 API 7。
 
 ### 2. 创建 Harmony 主项目
 
-（1）创建新项目，选择需要开发的设备，然后 `Mode` 选择 `Stage` 模型，`Compile SDK` 选择 `4.0.0(API 10)`，按照引导操作后一个新的项目就被创建出来了。
+（1）创建新项目，选择需要开发的设备，然后选择 Empty Featrue Ability(JS)，按照引导操作后一个新的项目就被创建出来了。
 
-（2）关注目录 `entry/src/main/ets/pages/Index.ets` 下面的文件，熟悉文件结构。`pages` 目录下为页面入口，新建项目的页面目录会包含若干个 `.ets` 文件，应用级配置信息位于 `build-profile.json5`，当前的模块信息 、编译信息配置项位于 `entry/build-profile.json5`。[项目结构详情](https://developer.harmonyos.com/cn/docs/documentation/doc-guides-V2/start-with-ets-stage-0000001558077129-V2)。
-
-（3） 创建好项目后，根据[配置插件指引](https://developer.harmonyos.com/cn/docs/documentation/doc-releases-V2/import-plugin-0000001515948586-V2)，将下载的套件附带的插件配置在项目配置中。
+（2）关注目录 `entry/src/main/js/default` 下面的文件，熟悉文件结构。`pages` 目录下为页面入口，每个页面包含 `.hml`、`.css`、`.js` 文件。全局配置位于 `entry/src/main/config.json`，[配置详情](https://developer.harmonyos.com/cn/docs/documentation/doc-guides/basic-config-file-elements-0000000000034463)。
 
 ### 3. 预览 & 调试
 
 （1）DevEco Studio 支持下述方式查看运行效果，链接到鸿蒙官网查看具体步骤
 
-a. [使用预览器 previewer](https://developer.harmonyos.com/cn/docs/documentation/doc-guides-V4/ide_debug_previewer-0000001658306077-V4?catalogVersion=V4) 该功能与真机效果可能存在差异，主要用于 UI 样式的预览，开发时不推荐使用。
+a. [使用预览器 previewer](https://developer.harmonyos.com/cn/docs/documentation/doc-guides/previewer-0000001054328973) 该功能与真机效果可能存在差异，不推荐
 
-b. [使用模拟器](https://developer.harmonyos.com/cn/docs/documentation/doc-guides-V4/ide_debug_emulator-0000001115721921-V4?catalogVersion=V4)
+b. [使用模拟器](https://developer.harmonyos.com/cn/docs/documentation/doc-guides/run_simulator-0000001053303709)
 
-c. [使用本地真机](https://developer.harmonyos.com/cn/docs/documentation/doc-guides-V4/ide_debug_device-0000001053822404-V4?catalogVersion=V4) 用户真机与电脑相连，打开开发者模式，即可在真机看到效果，这里需要注意的是，真机需要使用华为侧提供的测试机，测试机中会安装纯鸿蒙的系统镜像，能够体验到完整的鸿蒙系统功能，纯鸿蒙应用目前还不能完美地在 HarmonyOS 4.0 的商用机侧跑起来。
+c. [使用远程真机](https://developer.harmonyos.com/cn/docs/documentation/doc-guides/ide-remote-real-device-0000001167977777) 提供远程真机设备供开发者使用，解决开发者没有真机的问题
 
-(2) DevEco Studio 真机进行调试
+c. [使用本地真机](https://developer.harmonyos.com/cn/docs/documentation/doc-guides/run_phone_tablat-0000001064774652) 用户真机与电脑相连，打开开发者模式，即可在真机看到效果
 
-链接上真机后，选择好对应的入口模块，在项目代码中打上断点等信息，在编译器中启动调试即可。
+![示例图](https://img13.360buyimg.com/imagetools/jfs/t1/172857/29/21648/2058072/61b02582Eabe79722/80378acc6479d312.png)
 
-![示例图](https://img20.360buyimg.com/img/jfs/t1/102571/34/33232/150214/6582b637F9d4860f7/4cf399a59a316520.png)
+(2) DevEco Studio 支持模拟器或真机进行调试
+
+在编译器中打开 Run -> Edit Configurations 设置调试代码为 JS, 检查 config.json 中配置的属性，设置 Hap 包安装方式之后启动调试
+
+![示例图](https://img11.360buyimg.com/imagetools/jfs/t1/158561/21/21509/1769838/61b05362Ed0878669/35ee0cb64465d229.jpg)
 
 ### 相关阅读
 
-- [《DevEco Studio 使用指南》](https://developer.harmonyos.com/cn/docs/documentation/doc-guides-V4/tools-overview-0000001558763037-V4)
-- [《构建第一个 ArkTS 应用（stage 模型）》](https://developer.harmonyos.com/cn/docs/documentation/doc-guides-V3/start-with-ets-stage-0000001477980905-V3?catalogVersion=V3)
+- [《初窥鸿蒙》](https://juejin.cn/post/6972109475347955749)
+- [《华为开发者工具》](https://developer.harmonyos.com/cn/develop/deveco-studio)
+- [《鸿蒙开发文档》](https://developer.harmonyos.com/cn/documentation)
 
-## 使用 Taro 开发鸿蒙 ArkUI
+## 使用 Taro 开发鸿蒙 JS UI
 
-### 1. 安装 Taro v4.0.0-beta.0
+### 1. 安装 Taro v3.5
 
 #### CLI
 
-安装 `v4.0.0-beta.0` 版本的 Taro CLI：
+安装 `v3.5.0-canary.0` 版本的 Taro CLI：
 
 ```bash
-npm i -g @tarojs/cli@4.0.0-beta.0
+npm i -g @tarojs/cli@canary
 ```
 
 #### 项目依赖
 
 如您是新项目，创建项目时选择鸿蒙模板即可；
 
-旧项目需要把  `package.json`  文件中 Taro 相关依赖的版本修改为  `~4.0.0-beta.0`，再重新安装依赖。
+旧项目需要把  `package.json`  文件中 Taro 相关依赖的版本修改为  `~3.5.0-canary.0`，再重新安装依赖。
 
 > 如果安装失败或打开项目失败，可以删除  **node_modules**、**yarn.lock**、**package-lock.json**  后重新安装依赖再尝试。
 
-### 2. 安装 Taro 适配鸿蒙插件和 Vite 编译插件
+### 2. 安装 Taro 适配鸿蒙插件
 
 ```bash
-$ npm i @tarojs/plugin-platform-harmony@4.0.0-beta.0
-$ npm i @tarojs/vite-runner@4.0.0-beta.0
+$ npm i @tarojs/plugin-platform-harmony
 ```
 
 ### 3. 修改 Taro 编译配置
 
-```js title="config/index.ts"
+```js title="config/index.js"
 config = {
   // 配置使用插件
   plugins: ['@tarojs/plugin-platform-harmony'],
+  mini: {
+    // 如果使用开发者工具的预览器（previewer）进行预览的话，需要使用 development 版本的 react-reconciler。
+    // 因为 previewer 对长串的压缩文本解析有问题。（真机/远程真机没有此问题）
+    debugReact: true,
+    // 如果需要真机断点调试，需要关闭 sourcemap 的生成
+    enableSourceMap: false,
+  },
   // harmony 相关配置
   harmony: {
-    // 将编译方式设置为使用 Vite 编译
-    compiler: 'vite',
     // 【必填】鸿蒙主应用的绝对路径，例如：
     projectPath: path.resolve(process.cwd(), '../MyApplication'),
     // 【可选】HAP 的名称，默认为 'entry'
     hapName: 'entry',
-    // 【可选】modules 的入口名称，默认为 'default'
-    name: 'default',
+    // 【可选】JS FA 的名称，默认为 'default'
+    jsFAName: 'default',
   },
 }
 ```
 
-### 4. 修改鸿蒙主项目的权限配置
+### 4. 修改鸿蒙主项目的配置
 
-根据项目需要在鸿蒙主项目 `entry/src/main/module.json5` 中所需要使用到的机器权限。
-
-```json
-{
-  //...
-  "requestPermissions": [
-    {
-      "name": "ohos.permission.VIBRATE"
-    },
-    {
-      "name": "ohos.permission.GET_WIFI_INFO"
-    },
-    {
-      "name": "ohos.permission.GET_NETWORK_INFO"
-    },
-    {
-      "name": "ohos.permission.SET_NETWORK_INFO"
-    },
-    {
-      "name": "ohos.permission.INTERNET"
-    },
-    {
-      "name": "ohos.permission.GET_BUNDLE_INFO"
-    },
-    {
-      "name": "ohos.permission.LOCATION"
-    },
-    {
-      "name": "ohos.permission.APPROXIMATELY_LOCATION"
-    },
-    {
-      "name": "ohos.permission.LOCATION_IN_BACKGROUND"
-    }
-  ]
-}
-```
+根据项目需要在鸿蒙主项目 `entry/src/main/config.json` 中配置信息，如页面路径信息，系统能力特性等等。
 
 ### 5. 编译运行
 
@@ -195,36 +182,46 @@ $ taro build —-type harmony —-watch
 
 ### 样式
 
+#### 通用样式与组件样式
+
+鸿蒙目前只支持部分 CSS 属性。[通用样式](https://developer.harmonyos.com/cn/docs/documentation/doc-references/js-components-common-styles-0000001050791158)指所有组件都支持的样式，而各组件又支持各种不同的样式属性。
+
 #### 布局
 
-鸿蒙没有实现盒子模型，因此目前在实现上是使用鸿蒙的 `Flex` 和 `Column` 实现的，
+鸿蒙没有实现盒子模型，开发者可以使用 **flex** 或 **grid** 进行布局。
 
 #### 尺寸单位
 
-目前 Taro 转鸿蒙只支持使用 `px` 作为数据的单位，诸如 `rem`、`em`、`vw`、`vh` 等单位则暂时不支持。
+鸿蒙的尺寸单位有 `px`、`vp`、`fp`，其中 `px` 在不同配置下有不同表现。
+
+各端尺寸单位对比：
+
+| 平台                              | 逻辑像素单位 | 自适应单位 | 尺寸基准 |
+| :-------------------------------- | :----------- | :--------- | :------- |
+| H5                                | px           | rem        |          |
+| 小程序                            | px           | rpx        | 750      |
+| Harmony（autoDesignWidth：false） | vp           | px         | 720      |
+| Harmony（autoDesignWidth：true）  | px/vp        |            | 720      |
+
+为了更好地兼容现有生态，Taro 在编译鸿蒙时会把鸿蒙配置中的 `autoDesignWidth` 设置为 `false`，把 `designWidth` 设置为 `750`。开发者和过去编写 Taro 应用一样：如果拿到的是 `750` 的设计稿，对于设计稿上 `200px` 的元素：如果样式中直接书写 `200px` 会被 Taro 编译为 `200px`，**尺寸随屏幕宽度变化而自适应**；如果样式中书写 `100PX` 会被 Taro 编译为 `100vp`，在 750 的屏幕上等于 `200px`，**尺寸不会随屏幕宽度变化而改变**。
 
 ### 调试
 
-#### 真机调试
+- 报错时 `previewer` 往往会白屏，因此推荐使用 `previewer` 调试样式，而使用真机调试逻辑问题。
+- `console.log` 不能打印对象，需要使用 `JSON.stringify` 先转换为字符串，较复杂的问题建议使用真机断点调试。
 
-当前，真机调试需要使用华为侧提供的测试机，测试机中会安装纯鸿蒙的系统镜像，能够体验到完整的鸿蒙系统功能，纯鸿蒙应用目前还不能完美地在 HarmonyOS 4.0 的商用机侧跑起来。
+### SDK 版本问题
 
-#### SDK 版本问题
+鸿蒙 JS UI 主要有三个 SDK 版本：API5、API6、API7。（可以理解为小程序基础库）
 
-由于鸿蒙侧迭代 SDK 的速度较快，目前 Taro 适配的 SDK 版本为最新的 API 10 版本，对于 API 版本为 9 的鸿蒙项目可能会存在组件和 API 的不兼容和不支持。
+Taro 支持 **API6** 和 **API7** 版本，但两者各有一些问题：
+
+- API6 重复跳转同一页面会白屏（API7 不存在）
+- API7 点击存在问题（API6 不存在，正在沟通解决）
 
 ### 与小程序的差异
 
-当下，虽然 Taro 适配鸿蒙 ArkTS 的工作已经基本完成，但在适配过程中，我们也发现了一些暂时无法解决或者计划后续解决的遗留问题。
-
-#### 组件和 API
-
-由于鸿蒙平台和小程序平台本身就存在着较大的差异，因此一些小程序的组件和 API 规范，在鸿蒙平台会没有办法重新实现，如与登录和账号信息相关的 API 以及 live-player 等和直播相关的组件。
-
-#### 样式解析存在一定的限制
-
-由于在 ArkTS 中，会使用声明式 UI 来对 UI 的样式进行描述，因此不存在 sass 和 css 等样式文件，因此 Taro 在适配鸿蒙 ArkTS 时，会在编译时去解析这些样式文件。并将这些样式以内联的方式写入到组件的 TS/JS 代码中。
-
-正常的样式基于 W3C 规范，存在着**类名级联**和**样式继承**的行为，由于开发者在代码中的写法各异，Taro 没有办法在编译时获取准确的节点结构以及节点类名信息，因此无法支持这两种行为。
-
-另外，由于样式的解析是基于组件文件的纬度的，因此样式文件只能应用于被其引用的组件文件中，而**不能跨文件应用，并且样式文件也只支持类选择器。**
+- Taro 虽然尽可能遵循小程序规范适配了组件和 API 库，但还有部分功能依赖底层的能力暂时不实现或实现不了。详细信息可查阅 [Harmony Project](https://github.com/NervJS/taro/projects/2)
+- 只有在 `<Text>` 组件中，才能渲染文本。
+- 鸿蒙没有提供原生的导航栏，因此只能去模拟实现，目前右上角胶囊按钮的对应功能还没实现。
+- 鸿蒙没有提供原生的 Tabbar，也是只能去进行模拟。由因为性能问题，目前使用了 `navigateTo` 代替 `SwitchTab`。
