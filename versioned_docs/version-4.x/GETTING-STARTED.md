@@ -2,6 +2,9 @@
 title: 安装及使用
 ---
 
+import TabItem from '@theme/TabItem'
+import Tabs from '@theme/Tabs'
+
 ## 安装
 
 Taro 项目基于 node，请确保已具备较新的 node 环境（>=12.0.0），推荐使用 node 版本管理工具 [nvm](https://github.com/creationix/nvm) 来管理 node，这样不仅可以很方便地切换 node 版本，而且全局安装时候也不用加 sudo 了。
@@ -72,22 +75,41 @@ $ npx @tarojs/cli init myApp
 
 在创建完项目之后，Taro 会默认开始安装项目所需要的依赖，安装使用的工具按照 yarn > cnpm > npm 顺序进行检测。一般来说，依赖安装会比较顺利，但某些情况下可能会安装失败，这时候你可以在项目目录下自己使用安装命令进行安装：
 
+<Tabs
+  defaultValue="npm"
+  values={[
+    {label: 'npm', value: 'npm'},
+    {label: 'yarn', value: 'yarn'},
+    {label: 'pnpm', value: 'pnpm'}
+  ]}>
+<TabItem value="npm">
+```bash
+# 进入项目根目录
+$ cd myApp
+
+# 使用 npm 安装依赖
+$ npm install
+```
+</TabItem>
+<TabItem value="yarn">
 ```bash
 # 进入项目根目录
 $ cd myApp
 
 # 使用 yarn 安装依赖
 $ yarn
-
-# OR 使用 npm 安装依赖
-$ npm install
-
-# OR 使用 pnpm 安装依赖
-$ pnpm install
-
-# OR 使用 cnpm 安装依赖
-$ cnpm install
 ```
+</TabItem>
+<TabItem value="pnpm">
+```bash
+# 进入项目根目录
+$ cd myApp
+
+# 使用 pnpm 安装依赖
+$ pnpm install
+```
+</TabItem>
+</Tabs>
 
 ## 编译运行
 
