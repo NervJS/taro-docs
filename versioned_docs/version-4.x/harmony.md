@@ -107,17 +107,22 @@ npm i -g @tarojs/cli@4.0.0-beta.0
 
 #### 项目依赖
 
-如您是新项目，创建项目时选择鸿蒙模板即可；
+如您是新项目，创建项目时推荐创建编译器为 `vite` 的模板，若创建项目选择了 `webpack` 或 `webpack5` 的模板，则需要手动安装 `vite`、`terser` 以及 `@tarojs/vite-runner`;
 
-旧项目需要把  `package.json`  文件中 Taro 相关依赖的版本修改为  `~4.0.0-beta.0`，再重新安装依赖。
+```bash
+$ npm i vite@^4.2.0
+$ npm i terser@^5.4.0
+$ npm i @tarojs/vite-runner@4.0.0-beta.0
+```
+
+旧项目需要把  `package.json`  文件中 Taro 相关依赖的版本修改为  `~4.0.0-beta.0`，再重新安装依赖，并添加上述三个和 `vite` 相关的依赖。
 
 > 如果安装失败或打开项目失败，可以删除  **node_modules**、**yarn.lock**、**package-lock.json**  后重新安装依赖再尝试。
 
-### 2. 安装 Taro 适配鸿蒙插件和 Vite 编译插件
+### 2. 安装 Taro 适配鸿蒙插件
 
 ```bash
 $ npm i @tarojs/plugin-platform-harmony@4.0.0-beta.0
-$ npm i @tarojs/vite-runner@4.0.0-beta.0
 ```
 
 ### 3. 修改 Taro 编译配置
