@@ -32,6 +32,7 @@ sidebar_label: openEmbeddedMiniProgram
 | shortLink | `string` | 否 | 小程序链接，当传递该参数后，可以不传 appId 和 path。链接可以通过【小程序菜单】->【复制链接】获取。 |
 | verify | `keyof Verify` | 否 | 校验方式 。默认为binding |
 | noRelaunchIfPathUnchanged | `boolean` | 否 | 不 reLaunch 目标小程序，直接打开目标跳转的小程序退后台时的页面，需满足以下条件：1. 目标跳转的小程序生命周期未被销毁；2. 且目标当次启动的path、query、apiCategory与上次启动相同。默认值为 false 。 |
+| allowFullScreen | `boolean` | 否 | 打开的小程序是否支持全屏 |
 | success | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用成功的回调函数 |
 | fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
 | complete | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |

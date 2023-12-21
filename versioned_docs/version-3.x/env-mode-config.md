@@ -14,7 +14,7 @@ Taro v3.5.10 开始支持，之前的版本可参考 [taro-plugin-environment](h
 默认情况下, `模式` `Taro cli` 有 2 个模式：
 
 - `development` 模式用于开发时 `taro build --type weapp --watch`，它等价于 `taro build --type weapp --watch --mode development`
-- `production` 模式用于生产时 `taro build --type weapp`， ，它等价于 `taro build --type weapp --mode production`
+- `production` 模式用于生产时 `taro build --type weapp`， 它等价于 `taro build --type weapp --mode production`
 
 可以发现，默认情况下 `模式` 的值，取决于 `NODE_ENV` 的值（但是反过来说模式的值无法改变 `NODE_ENV` 的值）。
 

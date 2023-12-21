@@ -5,6 +5,13 @@ sidebar_label: CacheManager
 
 ## 方法
 
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| mode | `keyof Mode` | 当前缓存模式 |
+| origin | `string` | 全局 origin |
+| maxAge | `number` | 全局缓存有效时间 |
+| state | `keyof State` | 当前缓存管理器状态 |
+
 ### addRule
 
 添加规则
@@ -20,6 +27,34 @@ sidebar_label: CacheManager
 | 参数 | 类型 |
 | --- | --- |
 | option | `AddRuleOption` |
+
+#### 示例代码
+
+```tsx
+const ruleId = cacheManager.addRule({
+  id: 'haha-rule',
+  method: 'GET',
+  url: '/haha',
+  maxAge: 123455,
+  dataSchema: [
+    // data 字段的匹配，默认为空，表示不匹配
+    // 类型可以是：string、number、boolean、null、object、any（表示任意类型均可），以及这些类型的数组表示方式
+    {name: 'aaa', schema: {type: 'string'}}, // 类型为 string
+    {name: 'bbb', schema: [{type: 'number'}, {type: 'string'}]}, // 类型为 number, string
+    {name: 'ccc', schema: {type: 'string', value: 'abc'}}, // 值为 abc
+    {name: 'ddd', schema: {type: 'string', value: /(abc|cba)/ig}}, // 值符合该正则匹配，如果该值不是字符串类型，则会被尝试转成字符串后再进行比较
+    {name: 'ddd', schema: {type: 'string', value: val => val === '123'}}, // 传入函数来校验值
+    {name: 'eee', schema: {type: 'object', value: [{ // 类型为对象，则通过嵌套的方式来逐层校验
+      name: 'aaa', schema: {type: 'string'},
+      // ...
+      // 嵌套 dataSchema，同上面的方式一样来匹配嵌套的对象
+    }]}},
+    {name: 'fff', schema: {type: 'string[]'}}, // 类型为 string 数组
+    {name: 'ggg', schema: {type: 'any'}}, // 类型为任意类型
+    {name: 'hhh', schema: {type: 'any[]'}}, // 类型为任意类型的数组
+  ]
+})
+```
 
 ### addRules
 
@@ -201,6 +236,22 @@ sidebar_label: CacheManager
 
 ## 参数
 
+### Mode
+
+| 参数 | 说明 |
+| --- | --- |
+| weakNetwork | 默认值，弱网/离线使用缓存返回 |
+| always | 总是使用缓存返回 |
+| none | 不开启，后续可手动开启/停止使用缓存返回 |
+
+### State
+
+| 参数 | 说明 |
+| --- | --- |
+| 0 | 不使用缓存返回 |
+| 1 | 使用缓存返回 |
+| 2 | 未知 |
+
 ### DataSchema
 
 | 参数 | 类型 | 必填 | 说明 |
@@ -235,9 +286,9 @@ sidebar_label: CacheManager
 
 ### AddRulesOption
 
-| 参数 | 类型 |
-| --- | --- |
-| rules | `Rule[]` |
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| rules | `Rule[]` | 规则列表 |
 
 ### MatchOption
 

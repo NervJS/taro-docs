@@ -22,4 +22,4 @@ Taro.getBatteryInfo 的同步版本
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
 | isCharging | `boolean` | 是否正在充电中 |
-| level | `string` | 设备电量，范围 1 - 100 |
+| level | `number` | 设备电量，范围 1 - 100 |
