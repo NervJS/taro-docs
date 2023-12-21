@@ -10,23 +10,35 @@ Taro 项目基于 node，请确保已具备较新的 node 环境（>=12.0.0）�
 
 首先，你需要使用 npm 或者 yarn 全局安装 `@tarojs/cli`，或者直接使用 [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b):
 
+<Tabs
+  defaultValue="npm"
+  values={[
+    {label: 'npm', value: 'npm'},
+    {label: 'yarn', value: 'yarn'},
+    {label: 'pnpm', value: 'pnpm'}
+  ]}>
+<TabItem value="npm">
 ```bash
 # 使用 npm 安装 CLI
 $ npm install -g @tarojs/cli
-
-# OR 使用 yarn 安装 CLI
-$ yarn global add @tarojs/cli
-
-# OR 安装了 cnpm，使用 cnpm 安装 CLI
-$ cnpm install -g @tarojs/cli
 ```
+</TabItem>
+<TabItem value="yarn">
+```bash
+# 使用 yarn 安装 CLI
+$ yarn global add @tarojs/cli
+```
+</TabItem>
+<TabItem value="pnpm">
+```bash
+# 使用 pnpm 安装 CLI
+$ pnpm install -g @tarojs/cli
+```
+</TabItem>
+</Tabs>
 
 :::caution 请注意
-值得一提的是，如果安装过程出现`sass`相关的安装错误，请在安装 [mirror-config-china](https://www.npmjs.com/package/mirror-config-china) 后重试。
-
-```bash
-$ npm install -g mirror-config-china
-```
+由于 Taro 部分能力使用 Rust 开发，在 Windows上，请确保安装了 Microsoft Visual C++ Redistributable。请查看：https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist。
 
 :::
 
