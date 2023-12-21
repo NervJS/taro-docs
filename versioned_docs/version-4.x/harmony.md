@@ -186,10 +186,13 @@ config = {
 
 ### 5. 编译运行
 
-执行下面命令，Taro 可将打包结果生成到配置的鸿蒙主项目路径中。
+ 在 `package.json` 里添加以下的 `scripts` 命令，运行命令，Taro 可将打包结果生成到配置的鸿蒙主项目路径中。
 
-```bash
-$ taro build —-type harmony —-watch
+```json
+"scripts": {
+    "build:harmony": "taro build --type harmony",
+    "dev:harmony": "npm run build:harmony -- --watch"
+}
 ```
 
 ### 6. 预览 & 调试
