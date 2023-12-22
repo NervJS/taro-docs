@@ -14,7 +14,7 @@ When creating a project using the Taro CLI's `taro init` command, the CLI has al
 
 ## Template Source
 
-The template source is the **templateSource** field of the CLI configuration entry, which can be manipulated using the [taro config](./GETTING-STARTED.md#cli-%E9%85%8D%E7%BD%AE) command to manipulate it.
+The template source is the **templateSource** field of the CLI configuration entry, which can be manipulated using the [taro config](./GETTING-STARTED#cli-%E9%85%8D%E7%BD%AE) command to manipulate it.
 
 ### Default tTemplate Source
 
