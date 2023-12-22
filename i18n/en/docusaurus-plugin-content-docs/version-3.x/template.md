@@ -14,7 +14,7 @@ When creating a project using the Taro CLI's `taro init` command, the CLI has al
 
 ## Template Source
 
-The template source is the **templateSource** field of the CLI configuration entry, which can be manipulated using the [taro config](./GETTING-STARTED.md#cli-%E9%85%8D%E7%BD%AE) command to manipulate it.
+The template source is the **templateSource** field of the CLI configuration entry, which can be manipulated using the [taro config](./GETTING-STARTED#cli-%E9%85%8D%E7%BD%AE) command to manipulate it.
 
 ### Default tTemplate Source
 
@@ -26,9 +26,9 @@ The template source supports two formats, **git template source** and **url temp
 
 #### git template source
 
-* GitHub - github:owner/name
-* GitLab - gitlab:owner/name
-* Direct - direct:url
+- GitHub - github:owner/name
+- GitLab - gitlab:owner/name
+- Direct - direct:url
 
 ```sh
 # The --clone option can be used when initializing a project to specify the remote template to be pulled
@@ -89,29 +89,26 @@ In many cases it is necessary to add some logic to the template to generate diff
 Developers can add a **template_creator.js** file to the template root directory, which contains objects for the handler and basePageFiles fields in the external exports.
 
 ```js {5,16} title="template_creator.js"
-function createWhenTs (params) {
+function createWhenTs(params) {
   return params.typescript ? true : false
 }
 
 const handler = {
   '/global.d.ts': createWhenTs,
   '/tsconfig.json': createWhenTs,
-  '/src/pages/index/index.jsx' ({ pageName }) {
+  '/src/pages/index/index.jsx'({ pageName }) {
     return { setPageName: `/src/pages/${pageName}/${pageName}.jsx` }
   },
-  '/src/pages/index/index.css' ({ pageName}) {
+  '/src/pages/index/index.css'({ pageName }) {
     return { setPageName: `/src/pages/${pageName}/${pageName}.css` }
-  }
+  },
 }
 
-const basePageFiles = [
-  '/src/pages/index/index.jsx',
-  '/src/pages/index/index.css'
-]
+const basePageFiles = ['/src/pages/index/index.jsx', '/src/pages/index/index.css']
 
 module.exports = {
   handler,
-  basePageFiles
+  basePageFiles,
 }
 ```
 
@@ -121,17 +118,17 @@ Please use [ejs](https://ejs.co/) as the template language, each template file w
 
 ##### Default global template parameters (variables that can be used directly in the template)
 
-| Variables | Type | Description |
-| :--------- | :------- | :------- |
-| projectName | string | project name |
-| description | string | Project description |
-| version | string | Taro CLI version |
-| date | string | Template creation timestamp |
-| css | 'none' or 'sass' or 'stylus' or 'less' | Style preprocessor |
-| cssExt | string | Style file suffix |
-| typescript | boolean | whether to use TS |
-| pageName | string | The name of the page passed in during `taro create`, default 'index' |
-| template | string | The name of the template |
+| Variables   | Type                                   | Description                                                          |
+| :---------- | :------------------------------------- | :------------------------------------------------------------------- |
+| projectName | string                                 | project name                                                         |
+| description | string                                 | Project description                                                  |
+| version     | string                                 | Taro CLI version                                                     |
+| date        | string                                 | Template creation timestamp                                          |
+| css         | 'none' or 'sass' or 'stylus' or 'less' | Style preprocessor                                                   |
+| cssExt      | string                                 | Style file suffix                                                    |
+| typescript  | boolean                                | whether to use TS                                                    |
+| pageName    | string                                 | The name of the page passed in during `taro create`, default 'index' |
+| template    | string                                 | The name of the template                                             |
 
 ##### Example
 
@@ -151,8 +148,8 @@ The handler is used to control whether a file is generated or not, or to pass sp
 
 ##### handler: object
 
-| property | type | value |
-| :----- | :--- | :----- |
+| property  | type     | value   |
+| :-------- | :------- | :------ |
 | file path | function | handler |
 
 > The file path starts with "/", representing the root of the template folder
@@ -161,49 +158,49 @@ The handler is used to control whether a file is generated or not, or to pass sp
 
 params: object
 
-| Properties | Type | Description |
-| :--------- | :------- | :------- |
-| projectName | string | project name |
-| description | string | Project description |
-| version | string | Taro CLI version |
-| date | string | Template creation timestamp |
-| css | 'none' or 'sass' or 'stylus' or 'less' | style preprocessor |
-| typescript | boolean | whether to use TS |
-| pageName | string | pageName |
-| template | string | template name |
-| templatePath | string | template path |
-| projectPath | string | target path |
-| period | 'createApp' or 'createPage' | `taro init` to create a project or `taro create` to create a page |
+| Properties   | Type                                   | Description                                                       |
+| :----------- | :------------------------------------- | :---------------------------------------------------------------- |
+| projectName  | string                                 | project name                                                      |
+| description  | string                                 | Project description                                               |
+| version      | string                                 | Taro CLI version                                                  |
+| date         | string                                 | Template creation timestamp                                       |
+| css          | 'none' or 'sass' or 'stylus' or 'less' | style preprocessor                                                |
+| typescript   | boolean                                | whether to use TS                                                 |
+| pageName     | string                                 | pageName                                                          |
+| template     | string                                 | template name                                                     |
+| templatePath | string                                 | template path                                                     |
+| projectPath  | string                                 | target path                                                       |
+| period       | 'createApp' or 'createPage'            | `taro init` to create a project or `taro create` to create a page |
 
 return: boolean/object
 
 Return Value Description
 
-| Return Value | Description |
-| :------ | :------- |
-| true | create file |
-| false | do not create file |
-| object | Creates a file, the fields of the returned object will be merged into the global template parameter. | object
+| Return Value | Description                                                                                          |
+| :----------- | :--------------------------------------------------------------------------------------------------- | ------ |
+| true         | create file                                                                                          |
+| false        | do not create file                                                                                   |
+| object       | Creates a file, the fields of the returned object will be merged into the global template parameter. | object |
 
 If the returned value is object, some of the attributes have special roles.
 
-| attribute | type | description |
-| :-------------- | :------ | :-------------------- |
-| setPageName | string | will replace the output path of the current file |
-| changeExt | boolean | Whether to automatically replace the file suffix |
+| attribute   | type    | description                                      |
+| :---------- | :------ | :----------------------------------------------- |
+| setPageName | string  | will replace the output path of the current file |
+| changeExt   | boolean | Whether to automatically replace the file suffix |
 
 ##### Example
 
 The **global.d.ts** and **tsconfig.json** files are generated only when the user has chosen to use typescript.
 
 ```js title="template_creator.js"
-function createWhenTs (params) {
+function createWhenTs(params) {
   return params.typescript ? true : false
 }
 
 const handler = {
   '/global.d.ts': createWhenTs,
-  '/tsconfig.json': createWhenTs
+  '/tsconfig.json': createWhenTs,
 }
 
 module.exports = { handler }
@@ -221,49 +218,18 @@ When the user uses the command `taro create --page=detail`, two files **/src/pag
 
 ```js title="template_creator.js"
 const handler = {
-  '/src/pages/index/index.jsx' ({ pageName }) {
+  '/src/pages/index/index.jsx'({ pageName }) {
     return { setPageName: `/src/pages/${pageName}/${pageName}.jsx` }
   },
-  '/src/pages/index/index.css' ({ pageName}) {
+  '/src/pages/index/index.css'({ pageName }) {
     return { setPageName: `/src/pages/${pageName}/${pageName}.css` }
-  }
+  },
 }
 
-const basePageFiles = [
-  '/src/pages/index/index.jsx',
-  '/src/pages/index/index.css'
-]
+const basePageFiles = ['/src/pages/index/index.jsx', '/src/pages/index/index.css']
 
 module.exports = {
   handler,
-  basePageFiles
+  basePageFiles,
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

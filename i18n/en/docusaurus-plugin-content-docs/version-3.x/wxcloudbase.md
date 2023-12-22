@@ -9,13 +9,13 @@ The cloud-based development can invoke all the open capabilities of WeChat witho
 
 ## Develop project templates using Mini Program Cloud
 
-In version 1.2.20, a new mini program cloud development project template has been added. To use it, please update the CLI to version `1.2.20` or above. [Update](./GETTING-STARTED.md#更新)
+In version 1.2.20, a new mini program cloud development project template has been added. To use it, please update the CLI to version `1.2.20` or above. [Update](./GETTING-STARTED#更新)
 
 ## Templates Directory
 
 ```
 ├── client                                  Mini program Directory
-│   ├── config                              Project compilation configuration 
+│   ├── config                              Project compilation configuration
 │   │   ├── dev.js                          Development environment configuration
 │   │   ├── index.js                        Default Configuration
 │   │   └── prod.js                         Production environment configuration
@@ -36,11 +36,10 @@ In version 1.2.20, a new mini program cloud development project template has bee
 │       └── login                           Login cloud function
 │           ├── index.js                    Login function logic
 │           └── package.json
-└── project.config.json                    Mini program configuration  
+└── project.config.json                    Mini program configuration
 ```
 
 ### Usage Points
 
 1. When developing, go to the client directory and run the relevant compile preview or package command in this directory
 2. To debug the project using WeChat Developer Tools, please use the project **whole folder** as the run directory. Note: Not the dist folder generated in the client
-
