@@ -44,7 +44,7 @@ const siteConfig = {
           // sidebars file relative to website dir.
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/nervjs/taro-docs/edit/master/',
-          lastVersion: '3.x',
+          lastVersion: '4.x',
           versions: {
             current: {
               label: '下个版本',
@@ -169,18 +169,18 @@ const siteConfig = {
           label: '博客',
           position: 'left',
         },
-        {href: 'https://github.com/NervJS/taro/issues', label: '问题反馈', position: 'left'},
-        {href: 'https://deco-preview.jd.com?from=taro-docs', label: '设计稿生成代码', position: 'left'},
+        { href: 'https://github.com/NervJS/taro/issues', label: '问题反馈', position: 'left' },
+        { href: 'https://deco-preview.jd.com?from=taro-docs', label: '设计稿生成代码', position: 'left' },
         {
           label: '生态系统',
           position: 'right',
           items:[
-            {href: 'https://github.com/NervJS/taro/discussions', label: '论坛'},
-            {href: 'https://taro-ext.jd.com', label: '物料市场'},
-            {to: 'showcase', label: '案例'},
-            {href: 'https://nutui.jd.com/#/', label: 'NutUI'},
-            {href: 'https://taro-ui.jd.com', label: 'Taro UI'},
-            {href: 'https://taro.jd.com/jdmp/index.html', label: '京东小程序'},
+            { href: 'https://github.com/NervJS/taro/discussions', label: '论坛' },
+            { href: 'https://taro-ext.jd.com', label: '物料市场' },
+            { to: 'showcase', label: '案例' },
+            { href: 'https://nutui.jd.com/#/', label: 'NutUI' },
+            { href: 'https://taro-ui.jd.com', label: 'Taro UI' },
+            { href: 'https://taro.jd.com/jdmp/index.html', label: '京东小程序' },
           ]
         },
         {

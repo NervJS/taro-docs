@@ -9,7 +9,7 @@
     "build:github": "cross-env NODE_OPTIONS=--max-old-space-size=20480 BASE=taro docusaurus build --out-dir build/taro-docs",
     "build:independent": "cross-env NODE_OPTIONS=--max-old-space-size=20480 docusaurus build --out-dir dist",
     "build:zone": "cross-env NODE_OPTIONS=--max-old-space-size=20480 BASE=zone docusaurus build --out-dir dist",
-    "build:jd": "cross-env NODE_OPTIONS=--max-old-space-size=5120 BASE=jd docusaurus build --out-dir dist",
+    "build:jd": "cross-env NODE_OPTIONS=--max-old-space-size=20480 BASE=jd docusaurus build --out-dir dist",
     "clear": "docusaurus clear && rimraf node_modules/.cache",
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
