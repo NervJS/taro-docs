@@ -7,20 +7,51 @@
 
 // See https://docusaurus.io/docs/site-config.html for all the possible
 // site configuration options.
+const uniqueCommitId = require('unique-commit-id')
 const versions = require('./versions.json')
 const path = require('path')
 
+const BASE_DOMAIN = process.env.BASE || 'taro'
 const url = {
-  zone: 'https://docs.taro.zone',
   jd: 'https://taro-docs.jd.com',
-  taro: 'https://nervjs.github.io'
+  taro: 'https://nervjs.github.io',
+  zone: 'https://docs.taro.zone',
 }
 const baseUrl = {
+  jd: '/',
+  taro: '/taro-docs/',
   zone: '/',
-  jd: '/taro/',
-  taro: '/taro-docs/'
 }
-const BASE_DOMAIN = process.env.BASE || 'taro'
+const imgBaseUrl = {
+  jd: `https://storage.360buyimg.com/pubfree-bucket/taro-docs/${uniqueCommitId.latest()}/img`,
+  taro: 'img',
+  zone: 'img',
+}
+const SCOPE_PLUGIN = {
+  jd: [
+    async function runtimeMainPlugin () {
+      return {
+        name: 'runtime-main-plugin',
+        /* 其他生命周期 API */
+        configureWebpack (_, isServer) {
+          if (!isServer) {
+            return {
+              optimization: {
+                runtimeChunk: {
+                  // Note: 修改入口名，OSS 不支持默认的 ～ 符号
+                  name: entrypoint => `runtime-${entrypoint.name}`,
+                }
+              },
+              output: {
+                publicPath: `https://storage.360buyimg.com/pubfree-bucket/taro-docs/${uniqueCommitId.latest()}/`
+              }
+            }
+          }
+        },
+      }
+    }
+  ]
+}
 
 const siteConfig = {
   title: 'Taro 文档' /* title for your website */,
@@ -118,8 +149,8 @@ const siteConfig = {
       title: 'Taro',
       logo: {
         alt: 'Taro logo',
-        src: 'img/logo-taro.png',
-        srcDark: 'img/logo-taro.png'
+        src: `${imgBaseUrl[BASE_DOMAIN]}/logo-taro.png`,
+        srcDark: `${imgBaseUrl[BASE_DOMAIN]}/logo-taro.png`
       },
       items: [
         {
@@ -250,7 +281,7 @@ const siteConfig = {
           {
             tagName: 'link',
             rel: 'icon',
-            href: 'img/taroLogo180.png',
+            href: 'img/taro-logo_180.png',
           },
           {
             tagName: 'link',
@@ -275,18 +306,18 @@ const siteConfig = {
           {
             tagName: 'link',
             rel: 'apple-touch-icon',
-            href: 'img/taroLogo180.png',
+            href: 'img/taro-logo_180.png',
           },
           {
             tagName: 'link',
             rel: 'mask-icon',
-            href: 'img/taroLogo180.png',
+            href: 'img/taro-logo_180.png',
             color: 'rgb(62, 204, 94)',
           },
           {
             tagName: 'meta',
             name: 'msapplication-TileImage',
-            content: 'img/taroLogo180.png',
+            content: 'img/taro-logo_180.png',
           },
           {
             tagName: 'meta',
@@ -316,6 +347,10 @@ const siteConfig = {
       },
     }),
   },
+}
+
+if (SCOPE_PLUGIN[BASE_DOMAIN]) {
+  siteConfig.plugins = siteConfig.plugins.concat(SCOPE_PLUGIN[BASE_DOMAIN])
 }
 
 module.exports = siteConfig
