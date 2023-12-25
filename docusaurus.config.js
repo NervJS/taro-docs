@@ -74,7 +74,7 @@ const siteConfig = {
           // sidebars file relative to website dir.
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/nervjs/taro-docs/edit/master/',
-          lastVersion: '4.x',
+          lastVersion: '3.x',
           versions: {
             current: {
               label: '下个版本',
