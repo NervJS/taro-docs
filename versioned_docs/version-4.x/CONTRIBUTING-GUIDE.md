@@ -45,7 +45,7 @@ $ pnpm run start
 ### 环境准备
 
 :::note
-需要安装 [Node.js](https://nodejs.org/en/)（建议安装 `14.20` 及以上版本）及 [pnpm](https://pnpm.io/zh/installation)
+需要安装 [Node.js](https://nodejs.org/en/)（建议安装 `16.20.0` 及以上版本）及 [pnpm](https://pnpm.io/zh/installation)
 
 各版本 pnpm 与各版本 Node.js 之间的支持情况见 [pnpm 兼容性](https://pnpm.io/zh/installation#%E5%85%BC%E5%AE%B9%E6%80%A7)
 :::

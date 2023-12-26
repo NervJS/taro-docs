@@ -16,28 +16,39 @@ Taro 提供了命令来一键检测 Taro 环境及依赖的版本等信息，方
 
 ```bash
 $ taro info
-👽 Taro v3.0.7
+👽 Taro v4.0.0-beta.0
 
-
-
-  Taro CLI 3.0.7 environment info:
+  Taro CLI 4.0.0-beta.0 environment info:
     System:
-      OS: macOS High Sierra 10.13.6
-      Shell: 5.3 - /bin/zsh
+      OS: macOS 12.1
+      Shell: 5.8 - /bin/zsh
     Binaries:
-      Node: 13.14.0 - ~/.nvm/versions/node/v13.14.0/bin/node
-      Yarn: 1.22.4 - ~/.nvm/versions/node/v13.14.0/bin/yarn
-      npm: 6.14.4 - ~/.nvm/versions/node/v13.14.0/bin/npm
+      Node: 16.20.0 - ~/.nvm/versions/node/v16.20.0/bin/node
+      Yarn: 1.22.15 - /usr/local/bin/yarn
+      npm: 8.19.4 - ~/.nvm/versions/node/v16.20.0/bin/npm
     npmPackages:
-      @tarojs/components: 1.3.27 => 1.3.27
-      @tarojs/router: 1.3.27 => 1.3.27
-      @tarojs/taro: 1.3.27 => 1.3.27
-      @tarojs/taro-h5: 1.3.27 => 1.3.27
-      @tarojs/webpack-runner: 1.3.27 => 1.3.27
-      eslint-config-taro: 1.3.27 => 1.3.27
-      eslint-plugin-taro: 1.3.27 => 1.3.27
-      nerv-devtools: 1.5.5 => 1.5.5
-      nervjs: 1.5.5 => 1.5.5
+      @tarojs/cli: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/components: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/helper: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/mini-runner: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/plugin-framework-react: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/plugin-platform-alipay: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/plugin-platform-h5: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/plugin-platform-jd: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/plugin-platform-qq: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/plugin-platform-swan: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/plugin-platform-tt: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/plugin-platform-weapp: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/react: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/router: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/runtime: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/shared: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/taro: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/webpack-runner: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/webpack5-runner: 4.0.0-beta.0 => 4.0.0-beta.0
+      babel-preset-taro: 4.0.0-beta.0 => 4.0.0-beta.0
+      eslint-config-taro: 4.0.0-beta.0 => 4.0.0-beta.0
+      react: ^18.0.0 => 18.2.0
 
 ```
 
