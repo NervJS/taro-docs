@@ -152,35 +152,37 @@ config = {
 ```json
 {
   //...
-  "requestPermissions": [
-    {
-      "name": "ohos.permission.VIBRATE"
-    },
-    {
-      "name": "ohos.permission.GET_WIFI_INFO"
-    },
-    {
-      "name": "ohos.permission.GET_NETWORK_INFO"
-    },
-    {
-      "name": "ohos.permission.SET_NETWORK_INFO"
-    },
-    {
-      "name": "ohos.permission.INTERNET"
-    },
-    {
-      "name": "ohos.permission.GET_BUNDLE_INFO"
-    },
-    {
-      "name": "ohos.permission.LOCATION"
-    },
-    {
-      "name": "ohos.permission.APPROXIMATELY_LOCATION"
-    },
-    {
-      "name": "ohos.permission.LOCATION_IN_BACKGROUND"
-    }
-  ]
+  "module": {
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.VIBRATE"
+      },
+      {
+        "name": "ohos.permission.GET_WIFI_INFO"
+      },
+      {
+        "name": "ohos.permission.GET_NETWORK_INFO"
+      },
+      {
+        "name": "ohos.permission.SET_NETWORK_INFO"
+      },
+      {
+        "name": "ohos.permission.INTERNET"
+      },
+      {
+        "name": "ohos.permission.GET_BUNDLE_INFO"
+      },
+      {
+        "name": "ohos.permission.LOCATION"
+      },
+      {
+        "name": "ohos.permission.APPROXIMATELY_LOCATION"
+      },
+      {
+        "name": "ohos.permission.LOCATION_IN_BACKGROUND"
+      }
+    ]
+  }
 }
 ```
 
