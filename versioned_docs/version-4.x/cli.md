@@ -16,9 +16,9 @@ Taro 提供了命令来一键检测 Taro 环境及依赖的版本等信息，方
 
 ```bash
 $ taro info
-👽 Taro v4.0.0-beta.0
+👽 Taro v4.0.0-beta.1
 
-  Taro CLI 4.0.0-beta.0 environment info:
+  Taro CLI 4.0.0-beta.1 environment info:
     System:
       OS: macOS 12.1
       Shell: 5.8 - /bin/zsh
@@ -27,27 +27,27 @@ $ taro info
       Yarn: 1.22.15 - /usr/local/bin/yarn
       npm: 8.19.4 - ~/.nvm/versions/node/v16.20.0/bin/npm
     npmPackages:
-      @tarojs/cli: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/components: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/helper: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/mini-runner: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/plugin-framework-react: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/plugin-platform-alipay: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/plugin-platform-h5: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/plugin-platform-jd: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/plugin-platform-qq: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/plugin-platform-swan: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/plugin-platform-tt: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/plugin-platform-weapp: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/react: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/router: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/runtime: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/shared: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/taro: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/webpack-runner: 4.0.0-beta.0 => 4.0.0-beta.0
-      @tarojs/webpack5-runner: 4.0.0-beta.0 => 4.0.0-beta.0
-      babel-preset-taro: 4.0.0-beta.0 => 4.0.0-beta.0
-      eslint-config-taro: 4.0.0-beta.0 => 4.0.0-beta.0
+      @tarojs/cli: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/components: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/helper: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/mini-runner: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/plugin-framework-react: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/plugin-platform-alipay: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/plugin-platform-h5: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/plugin-platform-jd: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/plugin-platform-qq: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/plugin-platform-swan: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/plugin-platform-tt: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/plugin-platform-weapp: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/react: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/router: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/runtime: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/shared: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/taro: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/webpack-runner: 4.0.0-beta.1 => 4.0.0-beta.1
+      @tarojs/webpack5-runner: 4.0.0-beta.1 => 4.0.0-beta.1
+      babel-preset-taro: 4.0.0-beta.1 => 4.0.0-beta.1
+      eslint-config-taro: 4.0.0-beta.1 => 4.0.0-beta.1
       react: ^18.0.0 => 18.2.0
 
 ```
