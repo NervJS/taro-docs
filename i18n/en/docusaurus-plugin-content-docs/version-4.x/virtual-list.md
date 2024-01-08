@@ -15,10 +15,10 @@ If we follow this logic, we may have serious performance issues when the amount 
 
 ## React/Nerv
 
-With React/Nerv we can introduce the VirtualList component directly from `@tarojs/components/virtual-list`.
+With React/Nerv we can introduce the VirtualList component directly from `@tarojs/components-advanced/dist/components/virtual-list`.
 
 ```js
-import VirtualList from '@tarojs/components/virtual-list'
+import VirtualList from '@tarojs/components-advanced/dist/components/virtual-list'
 ```
 
 The simplest long list component would look like this, with all 5 properties of `VirtualList` as required fields.
@@ -292,7 +292,7 @@ To use virtual lists in Vue, we need to declare in the entry file the use of.
 ```js
 // app.js entry file
 import Vue from 'vue'
-import VirtualList from '@tarojs/components/virtual-list'
+import VirtualList from '@tarojs/components-advanced/dist/components/virtual-list'
 
 Vue.use(VirtualList)
 ```

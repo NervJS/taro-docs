@@ -31,10 +31,10 @@ import Tabs from '@theme/Tabs'
 ]}>
 <TabItem value="React">
 
-在 React Like 框架中我们可以直接从 `@tarojs/components/virtual-list` 引入虚拟列表（VirtualList）组件：
+在 React Like 框架中我们可以直接从 `@tarojs/components-advanced/dist/components/virtual-list` 引入虚拟列表（VirtualList）组件：
 
 ```js
-import VirtualList from '@tarojs/components/virtual-list'
+import VirtualList from '@tarojs/components-advanced/dist/components/virtual-list'
 ```
 
 一个最简单的长列表组件会像这样，`VirtualList` 的 6 个属性都是必填项：
@@ -83,7 +83,7 @@ export default class Index extends Component {
 ```js
 // app.js 入口文件
 import Vue from 'vue'
-import registerVirtualList from '@tarojs/components/virtual-list'
+import registerVirtualList from '@tarojs/components-advanced/dist/components/virtual-list'
 // Note: 使用以下路径导出插件可以在 vue 中获得更好的类型支持
 // import registerVirtualList from '@tarojs/components-advanced/dist/components/virtual-list/vue'
 

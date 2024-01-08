@@ -13,20 +13,21 @@ If we follow this logic, we may have serious performance issues when the amount 
 
 ![virtual-list](https://img20.360buyimg.com/ling/jfs/t1/125645/6/13305/50138/5f6aaaa4E2f20eba7/d70a2d2da2d68de1.jpg)
 
-
 ## React/Nerv
 
-With React/Nerv we can introduce the VirtualList component directly from `@tarojs/components/virtual-list`.
+With React/Nerv we can introduce the VirtualList component directly from `@tarojs/components-advanced/dist/components/virtual-list`.
 
 ```js
-import VirtualList from '@tarojs/components/virtual-list'
+import VirtualList from '@tarojs/components-advanced/dist/components/virtual-list'
 ```
 
 The simplest long list component would look like this, with all 5 properties of `VirtualList` as required fields.
 
 ```jsx
-function buildData (offset = 0) {
-  return Array(100).fill(0).map((_, i) => i + offset);
+function buildData(offset = 0) {
+  return Array(100)
+    .fill(0)
+    .map((_, i) => i + offset)
 }
 
 const Row = React.memo(({ id, index, style, data }) => {
@@ -34,7 +35,7 @@ const Row = React.memo(({ id, index, style, data }) => {
     <View id={id} className={index % 2 ? 'ListItemOdd' : 'ListItemEven'} style={style}>
       Row {index} : {data[index]}
     </View>
-  );
+  )
 })
 
 export default class Index extends Component {
@@ -48,14 +49,14 @@ export default class Index extends Component {
     return (
       <VirtualList
         height={500} /* list height */
-        width='100%' /* list width */
+        width="100%" /* list width */
         itemData={data} /* rendering data for the list */
         itemCount={dataLen} /*  length of rendering list */
         itemSize={100} /* height of list item  */
       >
         {Row} /* List single component, where only one component can be passed in */
       </VirtualList>
-    );
+    )
   }
 }
 ```
@@ -70,12 +71,13 @@ const Row = React.memo(({ id, index, style, data }) => {
     <View id={id} className={index % 2 ? 'ListItemOdd' : 'ListItemEven'} style={style}>
       Row {index} : {data[index]}
     </View>
-  );
+  )
 })
 
-
-function buildData (offset = 0) {
-  return Array(100).fill(0).map((_, i) => i + offset);
+function buildData(offset = 0) {
+  return Array(100)
+    .fill(0)
+    .map((_, i) => i + offset)
 }
 
 export default class Index extends Component {
@@ -92,12 +94,15 @@ export default class Index extends Component {
     this.loading = true
     setTimeout(() => {
       const { data } = this.state
-      this.setState({
-        data: data.concat(buildData(data.length))
-      }, () => {
-        this.loading = false;
-        Taro.hideLoading()
-      })
+      this.setState(
+        {
+          data: data.concat(buildData(data.length)),
+        },
+        () => {
+          this.loading = false
+          Taro.hideLoading()
+        }
+      )
     }, 1000)
   }
 
@@ -107,12 +112,12 @@ export default class Index extends Component {
     const itemSize = 100
     return (
       <VirtualList
-        className='List'
+        className="List"
         height={500}
         itemData={data}
         itemCount={dataLen}
         itemSize={itemSize}
-        width='100%'
+        width="100%"
         onScroll={({ scrollDirection, scrollOffset }) => {
           if (
             // 避免重复加载数据
@@ -121,7 +126,7 @@ export default class Index extends Component {
             scrollDirection === 'forward' &&
             // 5 = (列表高度 / 单项列表高度)
             // 100 = 滚动提前加载量，可根据样式情况调整
-            scrollOffset > ((dataLen - 5) * itemSize + 100)
+            scrollOffset > (dataLen - 5) * itemSize + 100
           ) {
             this.listReachBottom()
           }
@@ -129,10 +134,9 @@ export default class Index extends Component {
       >
         {Row}
       </VirtualList>
-    );
+    )
   }
 }
-
 ```
 
 ### props
@@ -141,13 +145,12 @@ export default class Index extends Component {
 
 The single component of the list to be rendered. The component's `props` has 4 properties.
 
-* `style`: the style of the single item, the style must be passed into the component's `style`
-* `data`: the data rendered by the component, same as the virtual list `itemData`
-* `index`: the index of the data rendered by the component
-* `isScrolling`: whether the component is scrolling, returns a boolean value when `useIsScrolling` is `true`, otherwise returns `undefined`
+- `style`: the style of the single item, the style must be passed into the component's `style`
+- `data`: the data rendered by the component, same as the virtual list `itemData`
+- `index`: the index of the data rendered by the component
+- `isScrolling`: whether the component is scrolling, returns a boolean value when `useIsScrolling` is `true`, otherwise returns `undefined`
 
-PureComponent` or use `shouldComponentUpdate()` to optimize this component and avoid unnecessary rendering.
-
+PureComponent`or use`shouldComponentUpdate()` to optimize this component and avoid unnecessary rendering.
 
 #### `itemCount: number`
 
@@ -197,9 +200,9 @@ Scrolling direction. `vertical` is vertical scrolling, `horizontal` is parallel 
 
 The function is called when the list is scrolled. The first argument of the function is an object, consisting of three properties.
 
-* `scrollDirection`, the scroll direction, possible values are `forward` forward, `backward` backward.
-* `scrollOffset`, the scroll distance
-* `scrollUpdateWasRequested`, returns `true` when scrolling is called by `scrollTo()` or `scrollToItem()`, otherwise returns `false`
+- `scrollDirection`, the scroll direction, possible values are `forward` forward, `backward` backward.
+- `scrollOffset`, the scroll distance
+- `scrollUpdateWasRequested`, returns `true` when scrolling is called by `scrollTo()` or `scrollToItem()`, otherwise returns `false`
 
 #### `onScrollNative: Function`
 
@@ -252,16 +255,16 @@ export default class Index extends Component {
     const dataLen = data.length
     return (
       <VirtualList
-         height={500} /* list height */
-        width='100%' /* list width */
+        height={500} /* list height */
+        width="100%" /* list width */
         itemData={data} /* rendering data for the list */
         itemCount={dataLen} /*  length of rendering list */
         itemSize={100} /* height of list item  */
         ref={this.list}
       >
-        {Row} 
+        {Row}
       </VirtualList>
-    );
+    )
   }
 }
 ```
@@ -276,12 +279,11 @@ Scrolls to the specified entry.
 
 The second parameter `align` may have the following values.
 
-
-* `auto`: the minimum possible scrolling distance to ensure that the entry is in the visible area, or not scrolling if it is already in the visible area
-* `smart`: if the item is already in the visible area, don't scroll; if it is partially in the visible area, scroll as far as possible to keep the item in the visible area; if the item is not in the visible area at all, then scroll until the item is centered in the visible area
-* `center`: center the item in the visible area
-* `end`: make the entry appear at the end of the viewable area
-* `start`: puts the item at the end of the viewable area
+- `auto`: the minimum possible scrolling distance to ensure that the entry is in the visible area, or not scrolling if it is already in the visible area
+- `smart`: if the item is already in the visible area, don't scroll; if it is partially in the visible area, scroll as far as possible to keep the item in the visible area; if the item is not in the visible area at all, then scroll until the item is centered in the visible area
+- `center`: center the item in the visible area
+- `end`: make the entry appear at the end of the viewable area
+- `start`: puts the item at the end of the viewable area
 
 ## Vue
 
@@ -290,7 +292,7 @@ To use virtual lists in Vue, we need to declare in the entry file the use of.
 ```js
 // app.js entry file
 import Vue from 'vue'
-import VirtualList from '@tarojs/components/virtual-list'
+import VirtualList from '@tarojs/components-advanced/dist/components/virtual-list'
 
 Vue.use(VirtualList)
 ```
@@ -298,23 +300,18 @@ Vue.use(VirtualList)
 The simplest long list component would look like this, with all 5 properties of `virtual-list` as required fields.
 
 ```html
-<! –– row.vue Single-item components ––> 
+<! –– row.vue Single-item components ––>
 <template>
-  <view
-    :class="index % 2 ? 'ListItemOdd' : 'ListItemEven'"
-    :style="css"
-  >
-    Row {{ index }} : {{ data[index] }}
-  </view>
+  <view :class="index % 2 ? 'ListItemOdd' : 'ListItemEven'" :style="css"> Row {{ index }} : {{ data[index] }} </view>
 </template>
 
 <script>
-export default {
-  props: ['index', 'data', 'css']
-}
+  export default {
+    props: ['index', 'data', 'css'],
+  }
 </script>
 
-<! –– page.vue page component ––> 
+<! –– page.vue page component ––>
 <template>
   <virtual-list
     wclass="List"
@@ -328,22 +325,23 @@ export default {
 </template>
 
 <script>
-import Row from './row.vue'
+  import Row from './row.vue'
 
-function buildData (offset = 0) {
-  return Array(100).fill(0).map((_, i) => i + offset)
-}
+  function buildData(offset = 0) {
+    return Array(100)
+      .fill(0)
+      .map((_, i) => i + offset)
+  }
 
-export default {
-  data() {
-    return {
-      Row,
-      list: buildData(0)
-    }
-  },
-}
+  export default {
+    data() {
+      return {
+        Row,
+        list: buildData(0),
+      }
+    },
+  }
 </script>
-
 ```
 
 ### infinite scrolling
@@ -365,57 +363,61 @@ Implementing infinite scrolling is also very simple, we just need to append data
 </template>
 
 <script>
-import Row from './row.vue'
+  import Row from './row.vue'
 
-function buildData (offset = 0) {
-  return Array(100).fill(0).map((_, i) => i + offset)
-}
-
-export default {
-  data() {
-    return {
-      Row,
-      list: buildData(0),
-      loading: false,
-      itemHeight: 100
-    }
-  },
-  computed: {
-    dataLen () {
-      return this.list.length
-    }
-  },
-  methods: {
-    listReachBottom() {
-      Taro.showLoading()
-      this.loading = true
-      setTimeout(() => {
-        const { data } = this.state
-        this.setState({
-          data: data.concat(buildData(data.length))
-        }, () => {
-          this.loading = false;
-          Taro.hideLoading()
-        })
-      }, 1000)
-    },
-    onScroll({ scrollDirection, scrollOffset }) {
-      if (
-        // Avoid duplicate data loading
-        !this.loading &&
-        // Only scrolling forward we trigger
-        scrollDirection === 'forward' &&
-        // 5 = (List height / Single item list height)
-        // 100 = Rolling advance loading amount, adjustable according to the style
-        scrollOffset > ((this.dataLen - 5) * this.itemHeight + 100)
-      ) {
-        this.listReachBottom()
-      }
-    }
+  function buildData(offset = 0) {
+    return Array(100)
+      .fill(0)
+      .map((_, i) => i + offset)
   }
-}
-</script>
 
+  export default {
+    data() {
+      return {
+        Row,
+        list: buildData(0),
+        loading: false,
+        itemHeight: 100,
+      }
+    },
+    computed: {
+      dataLen() {
+        return this.list.length
+      },
+    },
+    methods: {
+      listReachBottom() {
+        Taro.showLoading()
+        this.loading = true
+        setTimeout(() => {
+          const { data } = this.state
+          this.setState(
+            {
+              data: data.concat(buildData(data.length)),
+            },
+            () => {
+              this.loading = false
+              Taro.hideLoading()
+            }
+          )
+        }, 1000)
+      },
+      onScroll({ scrollDirection, scrollOffset }) {
+        if (
+          // Avoid duplicate data loading
+          !this.loading &&
+          // Only scrolling forward we trigger
+          scrollDirection === 'forward' &&
+          // 5 = (List height / Single item list height)
+          // 100 = Rolling advance loading amount, adjustable according to the style
+          scrollOffset > (this.dataLen - 5) * this.itemHeight + 100
+        ) {
+          this.listReachBottom()
+        }
+      },
+    },
+  }
+</script>
 ```
 
 ### props
@@ -424,11 +426,10 @@ export default {
 
 The single component of the list to be rendered. The component's `props` has 4 properties.
 
-* `css`: the style of the single item, the style must be passed into the component's `style`
-* `data`: the data rendered by the component, same as the virtual list `itemData`
-* `index`: the index of the data rendered by the component
-* `isScrolling`: whether the component is scrolling or not, returns a boolean value when `useIsScrolling` is `true`, otherwise returns `undefined`
-
+- `css`: the style of the single item, the style must be passed into the component's `style`
+- `data`: the data rendered by the component, same as the virtual list `itemData`
+- `index`: the index of the data rendered by the component
+- `isScrolling`: whether the component is scrolling or not, returns a boolean value when `useIsScrolling` is `true`, otherwise returns `undefined`
 
 #### `itemCount: number`
 
@@ -474,9 +475,9 @@ Scrolling direction. `vertical` is vertical scrolling, `horizontal` is parallel 
 
 The function is called when the list is scrolled. The first argument of the function is an object, consisting of three properties.
 
-* `scrollDirection`, the scroll direction, possible values are `forward` forward, `backward` backward.
-* `scrollOffset`, the scroll distance
-* `scrollUpdateWasRequested`, returns `true` when scrolling is called by `scrollTo()` or `scrollToItem()`, otherwise returns `false`
+- `scrollDirection`, the scroll direction, possible values are `forward` forward, `backward` backward.
+- `scrollOffset`, the scroll distance
+- `scrollUpdateWasRequested`, returns `true` when scrolling is called by `scrollTo()` or `scrollToItem()`, otherwise returns `false`
 
 #### `scrollNative: Function`
 
@@ -506,5 +507,5 @@ Whether to inject the `isScrolling` property into the `item` component. This par
 
 ## Related Questions
 
-* Baidu smart program temporarily does not support the use of virtual list components, see [#7254](https://github.com/NervJS/taro/issues/7254)
-* The virtual list component needs to implement a version of `Vue3` (to be implemented), see [Vue3 Other Restrictions](/docs/vue3#Other Limitations)
+- Baidu smart program temporarily does not support the use of virtual list components, see [#7254](https://github.com/NervJS/taro/issues/7254)
+- The virtual list component needs to implement a version of `Vue3` (to be implemented), see [Vue3 Other Restrictions](/docs/vue3#Other Limitations)
