@@ -156,6 +156,7 @@ export default {
 | value | `string` |  | 是 | `<Checkbox/>`标识，选中时触发`<CheckboxGroup/>`的 change 事件，并携带 `<Checkbox/>` 的 value |
 | disabled | `boolean` | `false` | 否 | 是否禁用 |
 | checked | `boolean` | `false` | 否 | 当前是否选中，可用来设置默认选中 |
+| defaultChecked | `boolean` |  | 否 | 设置在 React 非受控状态下，当前是否选中 |
 | color | `string` |  | 否 | checkbox的颜色，同 css 的 color |
 | name | `string` |  | 否 | Checkbox 的名字 |
 | nativeProps | `Record<string, unknown>` |  | 否 | 用于透传 `WebComponents` 上的属性到内部 H5 标签上 |
@@ -169,6 +170,7 @@ export default {
 | CheckboxProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | CheckboxProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | CheckboxProps.checked | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| CheckboxProps.defaultChecked | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | CheckboxProps.color | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | CheckboxProps.name |  |  |  |  |  |  | ✔️ |  | ✔️ |
 | CheckboxProps.nativeProps |  |  |  |  |  |  | ✔️ |  |  |

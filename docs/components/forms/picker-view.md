@@ -167,6 +167,7 @@ export default class Picks extends Component {
 | 参数 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | :---: | :---: | --- |
 | value | `number[]` |  | 否 | 数组中的数字依次表示 picker-view 内的 picker-view-column 选择的第几项（下标从 0 开始），数字大于 picker-view-column 可选项长度时，选择最后一项。 |
+| defaultValue | `number[]` |  | 否 | 设置 React 非受控状态下的初始取值 |
 | indicatorStyle | `string` |  | 否 | 设置选择器中间选中框的样式 |
 | indicatorClass | `string` |  | 否 | 设置选择器中间选中框的类名 |
 | maskStyle | `string` |  | 否 | 设置蒙层的样式 |
@@ -183,6 +184,7 @@ export default class Picks extends Component {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | PickerViewProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
+| PickerViewProps.defaultValue | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
 | PickerViewProps.indicatorStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
 | PickerViewProps.indicatorClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | PickerViewProps.maskStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |

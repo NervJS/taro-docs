@@ -73,6 +73,7 @@ export default class PageView extends Component {
 | step | `number` | `1` | 否 | 步长，取值必须大于 0，并且可被(max - min)整除 |
 | disabled | `boolean` | `false` | 否 | 是否禁用 |
 | value | `number` | `0` | 否 | 当前取值 |
+| defaultValue | `string` |  | 否 | 设置 React 非受控状态下的初始取值 |
 | color | `string` | `"#e9e9e9"` | 否 | 背景条的颜色（请使用 backgroundColor） |
 | selectedColor | `string` | `"#1aad19"` | 否 | 已选择的颜色（请使用 activeColor） |
 | activeColor | `string` | `"#1aad19"` | 否 | 已选择的颜色 |
@@ -97,6 +98,7 @@ export default class PageView extends Component {
 | SliderProps.step | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | SliderProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | SliderProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| SliderProps.defaultValue | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | SliderProps.color | ✔️ |  |  | ✔️ | ✔️ | ✔️ |  |  |  |
 | SliderProps.selectedColor | ✔️ |  |  | ✔️ | ✔️ | ✔️ |  |  |  |
 | SliderProps.activeColor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
