@@ -69,6 +69,7 @@ export default class PageView extends Component {
 | 参数 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | :---: | :---: | --- |
 | checked | `boolean` | `false` | 否 | 是否选中 |
+| defaultChecked | `boolean` |  | 否 | 设置在 React 非受控状态下，当前是否选中 |
 | disabled | `boolean` | `false` | 否 | 是否禁用 |
 | type | "switch" or "checkbox" | `"switch"` | 否 | 样式，有效值：switch, checkbox |
 | color | `string` | `"#04BE02"` | 否 | switch 的颜色，同 css 的 color |
@@ -83,6 +84,7 @@ export default class PageView extends Component {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | SwitchProps.checked | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| SwitchProps.defaultChecked | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | SwitchProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
 | SwitchProps.type | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | SwitchProps.color | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
