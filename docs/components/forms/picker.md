@@ -207,9 +207,10 @@ export default class PagePicker extends Component {
 | range | string[] or number[] or Record<string, any>[] | `[]` | 是 | mode为 selector 或 multiSelector 时，range 有效 |
 | rangeKey | `string` |  | 否 | 当 range 是一个 Object Array 时，通过 rangeKey 来指定 Object 中 key 的值作为选择器显示内容 |
 | value | `number` | `0` | 否 | 表示选择了 range 中的第几个（下标从 0 开始） |
+| defaultValue | `number` |  | 否 | 设置 React 非受控状态下的初始取值 |
 | itemStyle | `StyleProp<TextStyle>` | `{}` | 否 | mode为 selector 或 multiSelector 时 itemStyle 有效 |
 | indicatorStyle | `StyleProp<ViewStyle>` | `{}` | 否 | mode为 selector 或 multiSelector 时 indicatorStyle 有效 |
-| onChange | `CommonEventFunction<ChangeEventDetail>` |  | 是 | value 改变时触发 change 事件 |
+| onChange | `CommonEventFunction<ChangeEventDetail>` |  | 否 | value 改变时触发 change 事件 |
 | textProps | `PickerText` |  | 否 | 用于替换组件内部文本 |
 
 ### API 支持度
@@ -219,6 +220,7 @@ export default class PagePicker extends Component {
 | PickerSelectorProps.range | ✔️ | ✔️ | ✔️ |  |
 | PickerSelectorProps.rangeKey | ✔️ | ✔️ | ✔️ |  |
 | PickerSelectorProps.value | ✔️ | ✔️ | ✔️ |  |
+| PickerSelectorProps.defaultValue | ✔️ | ✔️ | ✔️ |  |
 | PickerSelectorProps.itemStyle |  |  | ✔️ |  |
 | PickerSelectorProps.indicatorStyle |  |  | ✔️ |  |
 | PickerSelectorProps.onChange | ✔️ | ✔️ | ✔️ |  |

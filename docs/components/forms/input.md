@@ -81,6 +81,7 @@ class App extends Component {
 | 参数 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | :---: | :---: | --- |
 | value | `string` |  | 否 | 输入框的初始内容 |
+| defaultValue | `string` |  | 否 | 设置 React 非受控输入框的初始内容 |
 | type | `keyof Type` | `"text"` | 否 | input 的类型 |
 | password | `boolean` | `false` | 否 | 是否是密码类型 |
 | placeholder | `string` |  | 否 | 输入框为空时占位符 |
@@ -125,6 +126,7 @@ class App extends Component {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | InputProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| InputProps.defaultValue | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.password | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | InputProps.placeholder | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
