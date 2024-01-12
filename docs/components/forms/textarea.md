@@ -65,6 +65,7 @@ export default class PageView extends Component {
 | 参数 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | :---: | :---: | --- |
 | value | `string` |  | 否 | 输入框的内容 |
+| defaultValue | `string` |  | 否 | 设置 React 非受控输入框的初始内容 |
 | placeholder | `string` |  | 否 | 输入框为空时占位符 |
 | placeholderStyle | `string` |  | 否 | 指定 placeholder 的样式 |
 | placeholderClass | `string` | `"textarea-placeholder"` | 否 | 指定 placeholder 的样式类 |
@@ -102,6 +103,7 @@ export default class PageView extends Component {
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | TextareaProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| TextareaProps.defaultValue | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | TextareaProps.placeholder | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | TextareaProps.placeholderStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | TextareaProps.placeholderClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |

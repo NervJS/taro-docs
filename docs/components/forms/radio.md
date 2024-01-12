@@ -174,6 +174,7 @@ export default {
 | --- | --- | :---: | :---: | --- |
 | value | `string` |  | 否 | `<Radio/>` 标识。当该`<Radio/>` 选中时，`<RadioGroup/>`的 change 事件会携带`<Radio/>`的 value |
 | checked | `boolean` | `false` | 否 | 当前是否选中 |
+| defaultChecked | `boolean` |  | 否 | 设置在 React 非受控状态下，当前是否选中 |
 | disabled | `boolean` | `false` | 否 | 是否禁用 |
 | color | `string` | `"#09BB07"` | 否 | Radio 的颜色，同 css 的 color |
 | name | `string` |  | 否 | Radio 的名字 |
@@ -187,6 +188,7 @@ export default {
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | RadioProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | RadioProps.checked | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
+| RadioProps.defaultChecked | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | RadioProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | RadioProps.color | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
 | RadioProps.name |  |  |  |  |  |  | ✔️ |  | ✔️ |
