@@ -8,9 +8,86 @@ import Tabs from '@theme/Tabs'
 
 Taro 3 为了兼容 React、Vue 等 Web 开发框架，在运行时对浏览器环境进行模拟，实现了 BOM 和 DOM 等一系列 API。相比 Taro 1/2，Taro 3 是一款重运行时、轻编译时的框架，在性能方面会有一定损耗。因此 Taro 3 提供了一系列的性能优化手段，从而提升 Taro 3 应用的性能。
 
+## 半编译模式 —— CompileMode
+
+:::info
+Taro v3.6.23 开始支持，目前只支持 **React**，暂不支持 Vue。底层实现原理请参考 [RFC 文档](https://github.com/NervJS/taro/discussions/14708)。
+:::
+
+在节点数量增多到一定量级时，Taro3 的渲染性能会大幅下降，出现白屏时间长、交互延时等问题。经排查发现是目前 Taro 的 `<template>` 模板语法所造成的，为此我们参考 Taro 1/2 的思路，提供了 **CompileMode** 渲染模式。`CompileMode` 适合长列表 Item 这类会被重复渲染多次的组件使用，在长列表场景能提升 **30%** 以上的首开速度，同时能有效减少节点过多时产生的交互延时问题。CompileMode 可以说是应对复杂页面性能优化的“银弹”。
+
+### 使用方法
+
+首先在 Taro 编译配置中开启使用半编译模式：
+
+```js title="config/index.js"
+const config = {
+  mini: {
+    experimental: {
+      compileMode: true
+    }
+  }
+  // ...
+}
+```
+
+然后只需要给 Taro 基础组件添加 `compileMode` 属性，该组件及其 children 将会被编译为单独的小程序模板：
+
+```jsx
+function GoodsItem () {
+  return (
+    <View compileMode>
+      ...
+    </View>
+  )
+}
+```
+
+### 常见问题
+
+#### 1. 编译出的模板文件会增加包体积
+
+半编译模式使用了空间来换时间，编译出模板会令包体积增大。增加的文件大小视 JSX 写法而定，可以在编译后的页面目录下找到对应的模板文件，如 `pages/index/index.jsx` 编译出的模板位置在 `dist/pages/index/index-templates.wxml`。因此开发者应权衡后使用。
+
+#### 2. 只能优化部分语法
+
+编译阶段只能识别、优化部分语法，不支持的语法会自动回退到 Taro3 默认的渲染模式，具体支持的语法可以查阅 [RFC 文档](https://github.com/NervJS/taro/discussions/14708)。
+
+有一种常见语法需要注意：编译阶段只能识别 Taro 基础组件，而 React、Vue 组件的渲染会自动回退到旧的渲染模式。如果这些 React、Vue 组件也需要使用半编译模式，需要在组件内部再次添加 `compileMode` 属性：
+
+```jsx
+function Index () {
+  return (
+    <View compileMode>
+      <Text>Hello</Text> {/* 能被编译阶段识别 */}
+      <Foo /> {/*会自动回退到 Taro3 默认的渲染模式*/}
+    </View>
+  )
+}
+
+function Foo () {
+  return (
+    // 如果希望 Foo 组件也使用半编译模式，需要在 Foo 组件内部再次添加 compileMode 属性
+    <View compileMode>
+      ...
+    </View>
+  )
+}
+```
+
+## 优化初次渲染性能
+
+:::tip
+一般情况下不需要开启，请根据实际情况进行使用。
+:::
+
+当初次渲染的数据量非常大时，可能会导致页面白屏一段时间。因此 Taro 提供了[预渲染](prerender)功能来解决此问题。
+
 ## 优化更新性能
 
-> 经验证明，此项优化能大大减少 Taro3 的更新卡顿问题，尤其是在低端机上。
+:::tip
+经验证明，此项优化能大大减少 Taro3 的更新卡顿问题，尤其是在低端机上。
+:::
 
 Taro3 使用小程序的 `template` 进行渲染，一般情况下并不会使用原生自定义组件。这会导致一个问题，所有的 `setData` 更新都是由页面对象调用，如果我们的页面结构比较复杂，更新的性能就会下降。
 
@@ -102,12 +179,6 @@ export default function () {
 </TabItem>
 </Tabs>
 
-## 优化初次渲染性能
-
-> 一般情况下不需要开启，请根据实际情况进行使用。
-
-当初次渲染的数据量非常大时，可能会导致页面白屏一段时间。因此 Taro 提供了[预渲染](prerender)功能来解决此问题。
-
 ## 优化长列表性能
 
 针对长列表的场景，Taro 提供了 [VirtualList](virtual-list) 组件辅助开发者进行优化。
@@ -116,7 +187,9 @@ export default function () {
 
 ## 跳转预加载
 
-> Taro 1 / 2 中提供的 componentWillPreload 钩子在 Taro 3 中已废弃。
+:::info
+Taro 1 / 2 中提供的 componentWillPreload 钩子在 Taro 3 中已废弃。
+:::
 
 在小程序中，从调用 `Taro.navigateTo` 等路由跳转 API 后，到小程序页面触发 `onLoad` 会有一定延时，因此一些网络请求可以提前到发起跳转的前一刻去请求。
 
