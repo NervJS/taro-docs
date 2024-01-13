@@ -34,3 +34,33 @@ sidebar_label: requestDeviceVoIP
 | complete | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
 | success | `(result: TaroGeneral.CallbackResult) => void` | 否 | 接口调用成功的回调函数 |
+
+## 示例代码
+
+```tsx
+// 授权单台设备
+Taro.requestDeviceVoIP({
+  sn: 'xxxx',
+  snTicket: 'xxxxx',
+  modelId: 'xxx',
+  deviceName: 'xxx',
+  success(res) {
+    console.log(res)
+  },
+  fail(res) {
+    console.log(res)
+  }
+})
+
+// 批量授权（授权设备组）
+Taro.requestDeviceVoIP({
+  isGroup: true,
+  groupId: '设备组 ID',
+  success(res) {
+    console.log(res)
+  },
+  fail(res) {
+    console.log(res)
+  }
+})
+```
