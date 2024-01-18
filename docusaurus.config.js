@@ -55,7 +55,7 @@ const SCOPE_PLUGIN = {
 
 const siteConfig = {
   title: 'Taro 文档' /* title for your website */,
-  tagline: 'Taro 是一个开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv 等框架来开发微信/京东/百度/支付宝/字节跳动/ QQ 小程序/H5/React Native 等应用。',
+  tagline: 'Taro 是一个开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv/Svelte 等框架来开发微信/京东/百度/支付宝/字节跳动/ QQ 小程序/H5/React Native 等应用。',
   url: url[BASE_DOMAIN], /* your website url */
   baseUrl: baseUrl[BASE_DOMAIN], /* base url for your project */
   onBrokenLinks: 'warn',
