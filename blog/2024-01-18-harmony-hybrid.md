@@ -1,8 +1,8 @@
 ---
-title: 使用harmony-hybrid平台插件开发鸿蒙应用
+title: 使用 harmony-hybrid 平台插件开发鸿蒙应用
 authors: [tangcq, guoenxuan]
 tags: [v3]
-description: '基于web的混合开发模式--harmony-hybrid平台发布'
+description: '基于 web 的混合开发模式 -- harmony-hybrid 平台发布'
 ---
 
 ## 一、背景
@@ -36,11 +36,11 @@ $ npm run build:harmony-hybrid
 $ pnpm build:harmony-hybrid
 ```
 
-生成的 Web 资源使用 Web 服务器加载运行或者内置于鸿蒙应用的 resources/rawfile 目录下。
+生成的 Web 资源使用 Web 服务器加载运行或者内置于鸿蒙应用的 `resources/rawfile` 目录下。
 
 #### 创建鸿蒙应用
 
-@hybrid/web-container 三方模块提供自定义鸿蒙组件`TaroWebContainer`，为运行其中的 harmony-hybrid 应用提供运行时访问系统设备的能力。
+`@hybrid/web-container` 三方模块提供自定义鸿蒙组件 `TaroWebContainer`，为运行其中的 harmony-hybrid 应用提供运行时访问系统设备的能力。
 
 在鸿蒙应用中使用 `TaroWebContainer` 组件的示例代码如下：
 
@@ -48,7 +48,7 @@ $ pnpm build:harmony-hybrid
 
 ```json
 "dependencies": {
-    "@hybrid/web-container": "1.0.0"
+  "@hybrid/web-container": "1.0.0"
 }
 ```
 
@@ -56,34 +56,41 @@ $ pnpm build:harmony-hybrid
 
 ```ts
 import { TaroWebContainer, HostPageState, TaroWebController } from '@hybrid/web-container';
+
 @Entry
 @Component
 struct HarmonyHybridSample {
   @State pageState: HostPageState = HostPageState.PageInit;
   @State taroWebController: TaroWebController = new TaroWebController();
+
   build() {
     Column() {
-        TaroWebContainer({
-            webUrl: 'https://域名/index.html',
-            webUrlPrefix: 'https://域名/',
-            taroWebController: this.taroWebController,
-            pageState: this.pageState,
-          })
-        .width('100%')
-        .height('100%')
+      TaroWebContainer({
+        webUrl: 'https://域名/index.html',
+        webUrlPrefix: 'https://域名/',
+        taroWebController: this.taroWebController,
+        pageState: this.pageState,
+      })
+      .width('100%')
+      .height('100%')
     }
   }
 }
 ```
 
-具体的使用方式可以参考 @hybrid/web-container 的`README.md`文档。
+具体的使用方式可以参考 `@hybrid/web-container` 的 `README.md` 文档。
+
+#### 环境要求
+
+- Taro: 3.6.23 以上版本
+- 鸿蒙集成开发环境: `DevEco Studio NEXT Developer Preview1` 及以上版本
 
 ## 三、其他
 
-对于具备小程序版本的产品，可以使用[@tarojs/cli-convertor](https://docs.taro.zone/docs/taroize/)命令行工具转化成 Taro 工程，再编译成 harmony-hybrid 来加快适配流程。
+对于具备小程序版本的产品，可以使用 [@tarojs/cli-convertor](https://docs.taro.zone/docs/taroize/) 命令行工具转化成 Taro 项目，再编译成 `harmony-hybrid` 来加快适配流程。
 
-相关阅读
+### 相关阅读
 
-[《华为开发者工具 DevEco Studio》](https://developer.harmonyos.com/cn/develop/deveco-studio)
+- [《华为开发者工具 DevEco Studio》](https://developer.harmonyos.com/cn/develop/deveco-studio)
 
-[《鸿蒙开发文档》](https://developer.harmonyos.com/cn/documentation)
+- [《鸿蒙开发文档》](https://developer.harmonyos.com/cn/documentation)
