@@ -85,9 +85,13 @@ struct HarmonyHybridSample {
 - Taro: 3.6.23 以上版本
 - 鸿蒙集成开发环境: `DevEco Studio NEXT Developer Preview1` 及以上版本
 
-## 三、其他
+## 三、转换补充说明
 
 对于具备小程序版本的产品，可以使用 [@tarojs/cli-convertor](https://docs.taro.zone/docs/taroize/) 命令行工具转化成 Taro 项目，再编译成 `harmony-hybrid` 来加快适配流程。
+
+## 最后
+
+后续我们会继续完善对 `harmony-hybrid` 平台的适配工作，并根据最新鸿蒙系统能力来补齐和完善 `harmony-hybrid` 平台能力，同时也希望广大的开发者和参与到 Taro 开源生态共建的同学们，能够一起参与`harmony-hybrid` 平台的构建和完善，助力鸿蒙生态和 Taro 开源生态的发展。
 
 ### 相关阅读
 
