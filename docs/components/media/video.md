@@ -242,7 +242,7 @@ export default class PageView extends Component {
 | VideoProps.onPause | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.onEnded | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.onTimeUpdate | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.onFullscreenChange |  |  | ✔️ |  |  |  | ✔️ | ✔️ |  |
+| VideoProps.onFullscreenChange |  |  |  |  |  |  | ✔️ | ✔️ |  |
 | VideoProps.onWaiting | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
 | VideoProps.onError | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.onProgress | ✔️ |  |  | ✔️ | ✔️ |  | ✔️ |  |  |
