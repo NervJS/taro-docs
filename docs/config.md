@@ -95,7 +95,7 @@ module.exports = function (merge) {
 :::info
 Taro v3.6.9 开始支持
 
-Taro v3.7.0 之后支持范型，可以传入编译器类型 'webpack4 | 'webpack5 |  'vite'
+Taro v4.0.0 之后支持范型，可以传入编译器类型 'webpack4 | 'webpack5 |  'vite'
 
 react native 暂不支持
 :::
