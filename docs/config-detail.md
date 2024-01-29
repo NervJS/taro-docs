@@ -504,13 +504,16 @@ module.exports = {
 
 :::info
 Taro v3.5 开始支持。
+
+
+Taro v4.0.0 开始支持 `vite` 值。
 :::
 
 `string | object`
 
 默认值：`'webpack4'`
 
-使用的编译工具。可选值：`webpack4`、`webpack5`。
+使用的编译工具。可选值：`webpack4`、`webpack5`、`vite`。
 
 取值也可以是对象，此时可以对针对特定的编译器作额外的配置：
 
@@ -518,7 +521,7 @@ Taro v3.5 开始支持。
 
 `string`
 
-使用的编译工具。可选值：`webpack4`、`webpack5`。
+使用的编译工具。可选值：`webpack4`、`webpack5`、`vite`。
 
 ### compiler.errorLevel
 
@@ -608,6 +611,14 @@ webpack 编译过程中的错误类型主要如下两类：1、致命的 wepback
 默认值：[]
 
 不需要执行预编译的依赖。
+
+### compiler.vitePlugins
+
+> 只有 vite 支持
+
+`array`
+
+vite 插件
 
 ## cache
 
@@ -917,13 +928,13 @@ module.exports = {
           selectorBlackList: ['body'],
         },
       },
-      // 小程序端样式引用本地资源内联
-      url: {
-        enable: true,
-        config: {
-          maxSize: 10, // 设定转换尺寸上限（单位：kbytes）
-        },
-      },
+      // 小程序端样式引用本地资源内联 该属性在 v4.0.0 版本已废弃，小程序端默认全部转换
+      // url: {
+      //   enable: true,
+      //   config: {
+      //     maxSize: 10, // 设定转换尺寸上限（单位：kbytes）
+      //   },
+      // },
       // css modules 功能开关与相关配置
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
@@ -1268,7 +1279,10 @@ module.exports = {
 
 `object`
 
-可用于修改、拓展 Webpack 的 **output** 选项，配置项参考[官方文档](https://webpack.js.org/configuration/output/)。
+可用于修改、拓展 Webpack 的 **output** 选项，配置项参考[webpack官方文档](https://webpack.js.org/configuration/output/)。
+
+vite 编译环境下用于修改、扩展 rollup 的 output，目前仅适配 chunkFileNames 和 assetFileNames 两个配置，修改其他配置请使用 vite 插件进行修改。配置想参考[官方文档](https://rollupjs.org/configuration-options/)
+
 
 ```js
 module.exports = {
@@ -1887,6 +1901,18 @@ module.exports = {
 `object`
 
 针对 `woff | woff2 | eot | ttf | otf` 文件的 `url-loader` 配置。配置项参考[官方文档](https://github.com/webpack-contrib/url-loader)。
+
+### h5.legacy
+
+:::info
+Taro v4.0.0 开始支持。
+:::
+
+`boolean`
+
+默认值 `false`
+
+选择 `vite` 编译器的情况下才会使用到该字段。生成的代码是否要兼容旧版浏览器，值为 true 时，会去读取 package.json 的 browserslist 字段。
 
 ## rn
 

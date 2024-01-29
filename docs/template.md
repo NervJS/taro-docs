@@ -83,21 +83,35 @@ zip 包解压出单文件夹，文件夹内包含若干模板。
 
 很多情况下需要为模板加入一些逻辑，从而根据不同的环境生成不同的模板内容。
 
-开发者可以在模板根目录加入 **template_creator.js** 文件，文件对外 exports 包含 handler 与 basePageFiles 字段的对象：
+开发者可以在模板根目录加入 **template_creator.js** 文件，文件对外 exports 包含 handler 、 basePageFiles 与 compiler 字段的对象：
 
 ```js {5,16} title="template_creator.js"
-function createWhenTs(params) {
+const path = require('path')
+
+function normalizePath (path) {
+  return path.replace(/\\/g, '/').replace(/\/{2,}/g, '/')
+}
+
+function createWhenTs(err, params) {
   return params.typescript ? true : false
 }
+const SOURCE_ENTRY = '/src'
+const PAGES_ENTRY = '/src/pages'
 
 const handler = {
   '/global.d.ts': createWhenTs,
   '/tsconfig.json': createWhenTs,
-  '/src/pages/index/index.jsx'({ pageName }) {
-    return { setPageName: `/src/pages/${pageName}/${pageName}.jsx` }
+  '/src/pages/index/index.jsx' (err, { pageName = '', pageDir = '', subPkg = '' }) {
+    return {
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, 'index.jsx')),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.jsx'))
+    }
   },
-  '/src/pages/index/index.css'({ pageName }) {
-    return { setPageName: `/src/pages/${pageName}/${pageName}.css` }
+  '/src/pages/index/index.css' (err, { pageName = '', pageDir = '', subPkg = '' }) {
+    return {
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, 'index.css')),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.css'))
+    }
   },
 }
 
@@ -106,12 +120,13 @@ const basePageFiles = ['/src/pages/index/index.jsx', '/src/pages/index/index.css
 module.exports = {
   handler,
   basePageFiles,
+  compiler: ['Webpack5', 'Webpack4', 'Wite']
 }
 ```
 
 #### 模板语言
 
-请使用 [ejs](https://ejs.co/) 作为模板语言，各模板文件都将接收到全局模板参数。
+请使用 [Handlebars](https://handlebarsjs.com/) 作为模板语言，各模板文件都将接收到全局模板参数。
 
 ##### 默认全局模板参数（模板中可直接使用的变量）
 
@@ -121,22 +136,18 @@ module.exports = {
 | description | string                                 | 项目描述                                     |
 | version     | string                                 | Taro CLI 版本                                |
 | date        | string                                 | 模板创建时间戳                               |
-| css         | 'none' or 'sass' or 'stylus' or 'less' | 样式预处理工具                               |
+| css         | 'None' or 'Sass' or 'Stylus' or 'Less' | 样式预处理工具                               |
 | cssExt      | string                                 | 样式文件后缀                                 |
 | typescript  | boolean                                | 是否使用 TS                                  |
 | pageName    | string                                 | `taro create` 时传入的页面名称，默认 'index' |
 | template    | string                                 | 模板名称                                     |
-
+| framework   | 'React' or 'Preact' or 'Vue' or 'Vue3' | 框架名称                                     |
+| compiler    | 'Webpack4' or 'Webpack5' or 'Vite'     | 编译模式名称                                 |
 ##### 例子
 
-```ejs title="index.js"
-<%if (typescript) {-%>
-import Taro, { Component, Config } from '@tarojs/taro'
-<%} else { -%>
-import Taro, { Component } from '@tarojs/taro'
-<%}-%>
-import { View, Text } from '@tarojs/components'
-import './<%= pageName %>.<%= cssExt %>'
+```handlebars
+import { defineConfig{{#if typescript }}, type UserConfigExport{{/if}} } from '@tarojs/cli'
+{{#if typescript }}import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'{{/if}}
 ```
 
 #### handler 字段
@@ -155,6 +166,12 @@ handler 用于控制是否生成某文件，或给文件传入特定参数。
 
 params: object
 
+:::info
+`params.pageDir` Taro v4.0.0+ 开始支持
+
+`params.subPkg` Taro v4.0.0+ 开始支持
+:::
+
 | 属性         | 类型                                   | 说明                                          |
 | :----------- | :------------------------------------- | :-------------------------------------------- |
 | projectName  | string                                 | 项目名                                        |
@@ -164,12 +181,18 @@ params: object
 | css          | 'none' or 'sass' or 'stylus' or 'less' | 样式预处理工具                                |
 | typescript   | boolean                                | 是否使用 TS                                   |
 | pageName     | string                                 | 页面名称                                      |
+| pageDir      | string                                 | 页面路径（相对于「页面目录」的相对路径） taro create 时 --dir 传入的值|
+| subPkg       | string                                 | 分包页面路径（相对于「src目录」的相对路径） taro create 时 --subpkg 传入的值|
 | template     | string                                 | 模板名称                                      |
 | templatePath | string                                 | 模板路径                                      |
 | projectPath  | string                                 | 目标路径                                      |
 | period       | 'createApp' or 'createPage'            | `taro init` 创建项目或 `taro create` 创建页面 |
 
 return: boolean/object
+
+:::info
+`object.setSubPkgName` Taro v4.0.0+ 开始支持
+:::
 
 返回值说明
 
@@ -191,7 +214,7 @@ return: boolean/object
 当用户选择了使用 typescript 时，才生成 **global.d.ts** 和 **tsconfig.json** 文件。
 
 ```js title="template_creator.js"
-function createWhenTs(params) {
+function createWhenTs(err, params) {
   return params.typescript ? true : false
 }
 
@@ -214,12 +237,24 @@ basePageFiles 告诉 CLI，当用户使用 `taro create` 命令创建页面时�
 当用户使用命令 `taro create --page=detail` 时，会创建 **/src/pages/detail/detail.jsx** 与 **/src/pages/detail/detail.css** 两个文件。
 
 ```js title="template_creator.js"
+const path = require('path')
+
+function normalizePath (path) {
+  return path.replace(/\\/g, '/').replace(/\/{2,}/g, '/')
+}
+
 const handler = {
-  '/src/pages/index/index.jsx'({ pageName }) {
-    return { setPageName: `/src/pages/${pageName}/${pageName}.jsx` }
+  '/src/pages/index/index.jsx' (err, { pageName = '', pageDir = '', subPkg = '' }) {
+    return {
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, 'index.jsx')),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.jsx'))
+    }
   },
-  '/src/pages/index/index.css'({ pageName }) {
-    return { setPageName: `/src/pages/${pageName}/${pageName}.css` }
+  '/src/pages/index/index.css' (err, { pageName = '', pageDir = '', subPkg = '' }) {
+    return {
+      setPageName: normalizePath(path.join(PAGES_ENTRY, pageDir, pageName, 'index.css')),
+      setSubPkgName: normalizePath(path.join(SOURCE_ENTRY, subPkg, pageDir, pageName, 'index.css'))
+    }
   },
 }
 
@@ -230,3 +265,11 @@ module.exports = {
   basePageFiles,
 }
 ```
+
+### compiler 字段
+
+:::info
+Taro v4.0.0+ 开始支持
+:::
+
+compiler 告诉 cli 当前模版支持的编译器类型，该值是一个 `string[]`，目前 taro 支持的编译器类型有 `Webpack4、Webpack5、Vite`
