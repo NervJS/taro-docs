@@ -1905,7 +1905,7 @@ module.exports = {
 ### h5.legacy
 
 :::info
-Taro v3.7.0 开始支持。
+Taro v4.0.0 开始支持。
 :::
 
 `boolean`

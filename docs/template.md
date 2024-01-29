@@ -83,7 +83,7 @@ zip 包解压出单文件夹，文件夹内包含若干模板。
 
 很多情况下需要为模板加入一些逻辑，从而根据不同的环境生成不同的模板内容。
 
-开发者可以在模板根目录加入 **template_creator.js** 文件，文件对外 exports 包含 handler 、 basePageFiles 于 compiler 字段的对象：
+开发者可以在模板根目录加入 **template_creator.js** 文件，文件对外 exports 包含 handler 、 basePageFiles 与 compiler 字段的对象：
 
 ```js {5,16} title="template_creator.js"
 const path = require('path')
@@ -120,7 +120,7 @@ const basePageFiles = ['/src/pages/index/index.jsx', '/src/pages/index/index.css
 module.exports = {
   handler,
   basePageFiles,
-  compiler: ['webpack5', 'webpack4', 'vite']
+  compiler: ['Webpack5', 'Webpack4', 'Wite']
 }
 ```
 
@@ -272,4 +272,4 @@ module.exports = {
 Taro v4.0.0+ 开始支持
 :::
 
-compiler 告诉 cli 当前模版支持的编译器类型，该值是一个 `string[]`，目前 taro 支持的编译器类型有 `webpack4、webpack5、vite`
+compiler 告诉 cli 当前模版支持的编译器类型，该值是一个 `string[]`，目前 taro 支持的编译器类型有 `Webpack4、Webpack5、Vite`
