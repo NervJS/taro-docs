@@ -33,7 +33,7 @@ const config = {
 
 2. 修改 Babel 配置：
 
-```js title="babel.config.js" {4}
+```js title="babel.config.js" {6}
 module.exports = {
   presets: [
     [
@@ -74,7 +74,7 @@ const config = {
 }
 ```
 
-```js title="babel.config.js" {5}
+```js title="babel.config.js" {7}
 module.exports = {
   presets: [
     [

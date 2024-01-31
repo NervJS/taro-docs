@@ -16,7 +16,7 @@ import versions from '../../versions.json'
 
 function Version () {
   const context = useDocusaurusContext()
-  const {siteConfig = {}} = context
+  const { siteConfig = {} } = context
   const latestVersion = versions[0]
   const taroNextVersions = versions.filter(version => version.startsWith('3'))
   const pastVersions = versions.filter((version) => version !== latestVersion && !taroNextVersions.includes(version))
