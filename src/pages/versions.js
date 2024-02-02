@@ -54,7 +54,7 @@ function Version () {
           <table>
             <tbody>
               <tr>
-                <th>Latest</th>
+                <th>4.x</th>
                 <td>
                   <Link to={useBaseUrl('/docs/next')}>
                     文档
