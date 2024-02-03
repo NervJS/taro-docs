@@ -166,6 +166,7 @@ export default class PagePicker extends Component {
 
 | 参数 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | :---: | :---: | --- |
+| headerText | `string` |  | 否 | 选择器的标题，微信小程序中仅安卓可用 |
 | mode | `keyof Mode` | `"selector"` | 否 | 选择器类型，默认是普通选择器 |
 | disabled | `boolean` | `false` | 否 | 是否禁用 |
 | onCancel | `CommonEventFunction` |  | 否 | 取消选择或点遮罩层收起 picker 时触发 |
@@ -174,6 +175,7 @@ export default class PagePicker extends Component {
 
 | API | 微信小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: |
+| PickerStandardProps.headerText | ✔️ |  |  |  |
 | PickerStandardProps.mode | ✔️ | ✔️ | ✔️ |  |
 | PickerStandardProps.disabled | ✔️ | ✔️ | ✔️ |  |
 | PickerStandardProps.onCancel | ✔️ | ✔️ | ✔️ |  |
