@@ -15,7 +15,7 @@ title: 使用 Tailwind CSS
 ### 1. 使用包管理器安装 `tailwindcss`
 
 ```bash
-# 使用你喜欢的宝管理器 npm / yarn / pnpm
+# 使用你喜欢的包管理器 npm / yarn / pnpm
 npm install -D tailwindcss postcss autoprefixer
 # 初始化 tailwind.config.js 文件
 npx tailwindcss init

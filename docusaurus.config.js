@@ -77,7 +77,7 @@ const siteConfig = {
           lastVersion: '3.x',
           versions: {
             current: {
-              label: '下个版本',
+              label: '4.x',
             }
           }
         },
