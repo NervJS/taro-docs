@@ -664,7 +664,7 @@ $ npx taro build --type h5
 
 ### Harmony-hybrid
 
-> Taro v3.6.23+ 开始支持
+> Taro v3.6.24+ 开始支持
 
 #### 编译命令
 

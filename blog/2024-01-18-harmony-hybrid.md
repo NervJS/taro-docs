@@ -82,7 +82,7 @@ struct HarmonyHybridSample {
 
 #### 环境要求
 
-- Taro: 3.6.23 以上版本
+- Taro: 3.6.24 以上版本
 - 鸿蒙集成开发环境: `DevEco Studio NEXT Developer Preview1` 及以上版本
 
 ## 三、转换补充说明
