@@ -115,7 +115,7 @@ component.setData({
 
 对于不支持模板递归的小程序（微信、QQ、京东小程序），在 DOM 层级达到一定数量后，Taro 会使用原生自定义组件协助递归。
 
-简单理解就是 DOM 结构超过 N 层后，会使用原生自定义组件进行渲染。N 默认是 16 层，可以通过修改配置项 [baseLevel](/docs/next/config-detail#minibaselevel) 修改 N。
+简单理解就是 DOM 结构超过 N 层后，会使用原生自定义组件进行渲染。N 默认是 16 层，可以通过修改配置项 [baseLevel](/docs/config-detail#minibaselevel) 修改 N。
 
 把 `baseLevel` 设置为 `8` 甚至 `4` 层，能非常有效地提升更新时的性能。但是设置是全局性的，会带来若干问题：
 
