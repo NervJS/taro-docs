@@ -461,7 +461,7 @@ Taro v3.5.7 开始支持
 <Tabs
   defaultValue="React"
   values={[
-    {label:  <ReactIcon />, value: 'React'},
+    {label: <ReactIcon />, value: 'React'},
     {label: <VueIcon />, value: 'Vue'}
   ]}>
 <TabItem value="React">
@@ -505,7 +505,7 @@ Taro v3.6.13 开始支持使用 React 开发。
 :::
 
 ### 模式介绍
-新的混合模式在项目打包过程中会同时处理 `Taro组件编译为原生自定义组件` 的任务，该模式适用于同时需要用到 `页面混合模式` 以及 `Taro组件编译为原生自定义组件` 的场景。  
+新的混合模式在项目打包过程中会同时处理 `Taro组件编译为原生自定义组件` 的任务，该模式适用于同时需要用到 `页面混合模式` 以及 `Taro组件编译为原生自定义组件` 的场景。
 
 > 以往使用`taro build native-components` 命令编译的自定义组件会额外包含一套Taro运行时，而这个特性可以帮助你在编译原生自定义组件的同时与taro页面共享同一套运行时代码，避免了两套运行时导致包体增大的问题。通过这种优化，我们能够更加高效地使用混合模式，并减少包体积的增长。
 
@@ -513,15 +513,15 @@ Taro v3.6.13 开始支持使用 React 开发。
 [new-blended](https://github.com/NervJS/taro/tree/next/examples/new-blended)
 
 ### 使用方法
-#### 1. 以新混合模式进行项目打包 
+#### 1. 以新混合模式进行项目打包
 
-编译项目时使用 --new-blended 参数替代老的 --blended 以输出新混合模式的代码。  
+编译项目时使用 --new-blended 参数替代老的 --blended 以输出新混合模式的代码。
 ```bash
-$ taro build --type [platform] --new-blended 
+$ taro build --type [platform] --new-blended
 ```
 #### 2. 把 Taro 组件编译为原生自定义组件(可选)
 
-配置组件路径  
+配置组件路径
 修改 `app.config.js`，增加 `components` 配置，指向组件入口文件的路径：
 ```js title="app.config.js"
 export default {
@@ -530,7 +530,7 @@ export default {
 }
 ```
 
-#### 3. 其他用法同 [普通混合模式](#基础混合用法). 
+#### 3. 其他用法同 [普通混合模式](#基础混合用法).
 
 ### 注意事项
 该特性已集成 `@tarojs/plugin-indie` 插件能力，不需要再启用该插件，即可把 Taro 项目作为一个完整分包使用。

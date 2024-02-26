@@ -7,7 +7,7 @@ import Tabs from '@theme/Tabs'
 
 ## 安装
 
-Taro 项目基于 node，请确保已具备较新的 node 环境（>=12.0.0），推荐使用 node 版本管理工具 [nvm](https://github.com/creationix/nvm) 来管理 node，这样不仅可以很方便地切换 node 版本，而且全局安装时候也不用加 sudo 了。
+Taro 项目基于 node，请确保已具备较新的 node 环境（>=16.20.0），推荐使用 node 版本管理工具 [nvm](https://github.com/creationix/nvm) 来管理 node，这样不仅可以很方便地切换 node 版本，而且全局安装时候也不用加 sudo 了。
 
 ### CLI 工具安装
 
@@ -49,7 +49,7 @@ $ pnpm install -g @tarojs/cli
 </Tabs>
 
 :::caution 请注意
-由于 Taro 部分能力使用 Rust 开发，在 Windows 上，请确保安装了 Microsoft Visual C++ Redistributable。请查看：https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist。
+由于 Taro 部分能力使用 Rust 开发，在 Windows 上，请确保安装了 Microsoft Visual C++ Redistributable。请查看：https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist
 
 :::
 

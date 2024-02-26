@@ -1,9 +1,8 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "../node_modules/@tsconfig/node18/tsconfig.json",
   "compilerOptions": {
-    "module": "umd",
-    "moduleResolution": "Node",
-    "rootDir": ".",
-    "resolveJsonModule": false,
+    "strict": false
   },
+  "experimentalSpecifierResolution": "node",
+  "require": ["tsconfig-paths/register"]
 }

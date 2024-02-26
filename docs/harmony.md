@@ -52,7 +52,7 @@ Taro v4.0.0-beta.0+ 开始支持
 
 ### 1. 安装、配置 DevEco Studio
 
-（1）登录  [HarmonysOS 应用开发门户](https://link.juejin.cn/?target=https%3A%2F%2Fdeveloper.harmonyos.com%2Fcn%2Fhome)，点击右上角注册按钮，注册开发者帐号。
+（1）登录  [HarmonysOS 应用开发门户](https://developer.harmonyos.com/cn/home)，点击右上角注册按钮，注册开发者帐号。
 
 （2）进入  [HUAWEI DevEco Studio 套件货架中心](https://developer.harmonyos.com/deveco-developer-suite/)，申请白名单，由于目前最新版本的 OpenHarmony SDK 和 IDE 仍未对外开发，因此个人开发者若想尝鲜，需要先申请白名单成为合作伙伴后才能继续进行下面的步骤。
 
@@ -99,10 +99,10 @@ c. [使用本地真机](https://developer.harmonyos.com/cn/docs/documentation/do
 
 #### CLI
 
-安装 `v4.0.0-beta.0` 版本的 Taro CLI：
+安装 `v4.0.0-beta.x` 版本的 Taro CLI：
 
 ```bash
-npm i -g @tarojs/cli@4.0.0-beta.0
+npm i -g @tarojs/cli@beta
 ```
 
 #### 项目依赖
@@ -112,7 +112,7 @@ npm i -g @tarojs/cli@4.0.0-beta.0
 ```bash
 $ npm i vite@^4.2.0
 $ npm i terser@^5.4.0
-$ npm i @tarojs/vite-runner@4.0.0-beta.0
+$ npm i @tarojs/vite-runner@beta
 ```
 
 旧项目需要把  `package.json`  文件中 Taro 相关依赖的版本修改为  `~4.0.0-beta.0`，再重新安装依赖，并添加上述三个和 `vite` 相关的依赖。
@@ -122,7 +122,7 @@ $ npm i @tarojs/vite-runner@4.0.0-beta.0
 ### 2. 安装 Taro 适配鸿蒙插件
 
 ```bash
-$ npm i @tarojs/plugin-platform-harmony-ets@4.0.0-beta.0
+$ npm i @tarojs/plugin-platform-harmony-ets@beta
 ```
 
 ### 3. 修改 Taro 编译配置
@@ -152,41 +152,43 @@ config = {
 ```json
 {
   //...
-  "requestPermissions": [
-    {
-      "name": "ohos.permission.VIBRATE"
-    },
-    {
-      "name": "ohos.permission.GET_WIFI_INFO"
-    },
-    {
-      "name": "ohos.permission.GET_NETWORK_INFO"
-    },
-    {
-      "name": "ohos.permission.SET_NETWORK_INFO"
-    },
-    {
-      "name": "ohos.permission.INTERNET"
-    },
-    {
-      "name": "ohos.permission.GET_BUNDLE_INFO"
-    },
-    {
-      "name": "ohos.permission.LOCATION"
-    },
-    {
-      "name": "ohos.permission.APPROXIMATELY_LOCATION"
-    },
-    {
-      "name": "ohos.permission.LOCATION_IN_BACKGROUND"
-    }
-  ]
+  "module": {
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.VIBRATE"
+      },
+      {
+        "name": "ohos.permission.GET_WIFI_INFO"
+      },
+      {
+        "name": "ohos.permission.GET_NETWORK_INFO"
+      },
+      {
+        "name": "ohos.permission.SET_NETWORK_INFO"
+      },
+      {
+        "name": "ohos.permission.INTERNET"
+      },
+      {
+        "name": "ohos.permission.GET_BUNDLE_INFO"
+      },
+      {
+        "name": "ohos.permission.LOCATION"
+      },
+      {
+        "name": "ohos.permission.APPROXIMATELY_LOCATION"
+      },
+      {
+        "name": "ohos.permission.LOCATION_IN_BACKGROUND"
+      }
+    ]
+  }
 }
 ```
 
 ### 5. 编译运行
 
- 在 `package.json` 里添加以下的 `scripts` 命令，运行命令，Taro 可将打包结果生成到配置的鸿蒙主项目路径中。
+在 `package.json` 里添加以下的 `scripts` 命令，运行命令，Taro 可将打包结果生成到配置的鸿蒙主项目路径中。
 
 ```json
 "scripts": {

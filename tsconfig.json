@@ -10,7 +10,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "types": ["@types/node"]
+    "types": ["node"]
   },
   "include": ["blog", "docs", "i18n", "packages", "scripts", "src", "versioned_docs", "typings"],
   "exclude": ["src/sw.js"]

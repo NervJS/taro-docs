@@ -49,13 +49,6 @@ const config = {
       autoprefixer: {
         enable: true,
       },
-      // 小程序端样式引用本地资源内联配置
-      url: {
-        enable: true,
-        config: {
-          limit: 10240,
-        },
-      },
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
@@ -102,6 +95,8 @@ module.exports = function (merge) {
 :::info
 Taro v3.6.9 开始支持
 
+Taro v4.0.0 之后支持范型，可以传入编译器类型 'webpack4 | 'webpack5 |  'vite'
+
 react native 暂不支持
 :::
 
@@ -113,7 +108,7 @@ react native 暂不支持
 // config/index.ts
 import { defineConfig } from '@tarojs/cli'
 
-export default defineConfig({
+export default defineConfig<T>({
   // ...Taro 配置
 })
 ```
@@ -126,7 +121,7 @@ import type { UserConfigExport } from '@tarojs/cli'
 
 export default {
   // ...Taro 配置
-} satisfies UserConfigExport
+} satisfies UserConfigExport<T>
 ```
 
 ### 异步配置

@@ -34,7 +34,7 @@ sidebar_label: request
 | url | `string` |  | 是 | 开发者服务器接口地址 |
 | data | `U` |  | 否 | 请求的参数 |
 | header | `TaroGeneral.IAnyObject` |  | 否 | 设置请求的 header，header 中不能设置 Referer。<br /><br />`content-type` 默认为 `application/json` |
-| timeout | `number` | `2000` | 否 | 超时时间，单位为毫秒<br />API 支持度: weapp, h5, tt, alipay |
+| timeout | `number` | `60000` | 否 | 超时时间，单位为毫秒<br />API 支持度: weapp, h5, tt, alipay, rn |
 | method | `keyof Method` | `"GET"` | 否 | HTTP 请求方法 |
 | dataType | `string` |  | 否 | 返回的数据格式 |
 | responseType | `keyof ResponseType` |  | 否 | 响应的数据类型 |

@@ -33,7 +33,7 @@ import Tabs from '@theme/Tabs'
 
 目前 Taro 仅提供一种开发方式：安装 Taro 命令行工具（Taro CLI）进行开发。
 
-Taro CLI 依赖于 Node.js 环境，所以在你的机器上必须安装 Node.js 环境。安装 Node.js 环境有很多种方法，如果你完全不了解 Node.js 可以访问 [Node.js 官网](https://nodejs.org/en/) 下载一个可执行程序进行安装。我们推荐安装 LTS 版本的 Node.js（目前 LTS 版本是 v12）。
+Taro CLI 依赖于 Node.js 环境，所以在你的机器上必须安装 Node.js 环境。安装 Node.js 环境有很多种方法，如果你完全不了解 Node.js 可以访问 [Node.js 官网](https://nodejs.org/en/) 下载一个可执行程序进行安装。请确保已具备较新的 node 环境（>=16.20.0）。
 
 当你的机器已经存在了 Node.js 环境，可以通过在终端输入命令 `npm i -g @tarojs/cli` 安装 Taro CLI。安装完毕之后，在终端输入命令 `taro`，如果出现类似内容就说明安装成功了：
 
@@ -1202,7 +1202,7 @@ import React from 'react'
 import { View, Text } from '@tarojs/components'
 import { Thread } from './thread'
 import { Loading } from './loading'
-import VirtualList from '@tarojs/components/virtual-list'
+import VirtualList from '@tarojs/components-advanced/dist/components/virtual-list'
 
 import './thread.css'
 
@@ -1258,7 +1258,7 @@ export { ThreadList }
 
 ```js title="app.js"
 // 在入口文件新增使用插件
-import VirtualList from '@tarojs/components/virtual-list'
+import VirtualList from '@tarojs/components-advanced/dist/components/virtual-list'
 Vue.use(VirtualList)
 ```
 

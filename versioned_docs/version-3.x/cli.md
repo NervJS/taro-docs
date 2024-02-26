@@ -16,28 +16,39 @@ Taro 提供了命令来一键检测 Taro 环境及依赖的版本等信息，方
 
 ```bash
 $ taro info
-👽 Taro v3.0.7
+👽 Taro v3.6.21
 
-
-
-  Taro CLI 3.0.7 environment info:
+  Taro CLI 3.6.21 environment info:
     System:
-      OS: macOS High Sierra 10.13.6
-      Shell: 5.3 - /bin/zsh
+      OS: macOS 12.1
+      Shell: 5.8 - /bin/zsh
     Binaries:
-      Node: 13.14.0 - ~/.nvm/versions/node/v13.14.0/bin/node
-      Yarn: 1.22.4 - ~/.nvm/versions/node/v13.14.0/bin/yarn
-      npm: 6.14.4 - ~/.nvm/versions/node/v13.14.0/bin/npm
+      Node: 16.20.0 - ~/.nvm/versions/node/v16.20.0/bin/node
+      Yarn: 1.22.15 - /usr/local/bin/yarn
+      npm: 8.19.4 - ~/.nvm/versions/node/v16.20.0/bin/npm
     npmPackages:
-      @tarojs/components: 1.3.27 => 1.3.27
-      @tarojs/router: 1.3.27 => 1.3.27
-      @tarojs/taro: 1.3.27 => 1.3.27
-      @tarojs/taro-h5: 1.3.27 => 1.3.27
-      @tarojs/webpack-runner: 1.3.27 => 1.3.27
-      eslint-config-taro: 1.3.27 => 1.3.27
-      eslint-plugin-taro: 1.3.27 => 1.3.27
-      nerv-devtools: 1.5.5 => 1.5.5
-      nervjs: 1.5.5 => 1.5.5
+      @tarojs/cli: 3.6.21 => 3.6.21
+      @tarojs/components: 3.6.21 => 3.6.21
+      @tarojs/helper: 3.6.21 => 3.6.21
+      @tarojs/mini-runner: 3.6.21 => 3.6.21
+      @tarojs/plugin-framework-react: 3.6.21 => 3.6.21
+      @tarojs/plugin-platform-alipay: 3.6.21 => 3.6.21
+      @tarojs/plugin-platform-h5: 3.6.21 => 3.6.21
+      @tarojs/plugin-platform-jd: 3.6.21 => 3.6.21
+      @tarojs/plugin-platform-qq: 3.6.21 => 3.6.21
+      @tarojs/plugin-platform-swan: 3.6.21 => 3.6.21
+      @tarojs/plugin-platform-tt: 3.6.21 => 3.6.21
+      @tarojs/plugin-platform-weapp: 3.6.21 => 3.6.21
+      @tarojs/react: 3.6.21 => 3.6.21
+      @tarojs/router: 3.6.21 => 3.6.21
+      @tarojs/runtime: 3.6.21 => 3.6.21
+      @tarojs/shared: 3.6.21 => 3.6.21
+      @tarojs/taro: 3.6.21 => 3.6.21
+      @tarojs/webpack-runner: 3.6.21 => 3.6.21
+      @tarojs/webpack5-runner: 3.6.21 => 3.6.21
+      babel-preset-taro: 3.6.21 => 3.6.21
+      eslint-config-taro: 3.6.21 => 3.6.21
+      react: ^18.0.0 => 18.2.0
 
 ```
 

@@ -9,7 +9,7 @@ The cloud-based development can invoke all the open capabilities of WeChat witho
 
 ## Develop project templates using Mini Program Cloud
 
-In version 1.2.20, a new mini program cloud development project template has been added. To use it, please update the CLI to version `1.2.20` or above. [Update](./GETTING-STARTED.md#更新)
+In version 1.2.20, a new mini program cloud development project template has been added. To use it, please update the CLI to version `1.2.20` or above. [Update](./GETTING-STARTED#更新)
 
 ## Templates Directory
 

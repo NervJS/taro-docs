@@ -1,4 +1,4 @@
-import o2logo from '@site/static/img/o2logo@2x.png'
+import o2logo from '@site/static/img/o2logo.png'
 import React from 'react'
 
 interface Item {
