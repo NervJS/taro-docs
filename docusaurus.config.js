@@ -23,7 +23,7 @@ const baseUrl = {
   zone: '/',
 }
 const imgBaseUrl = {
-  jd: `https://storage.360buyimg.com/pubfree-bucket/taro-docs/${uniqueCommitId.latest()}/img`,
+  jd: `//storage.360buyimg.com/pubfree-bucket/taro-docs/${uniqueCommitId.latest()}/img`,
   taro: 'img',
   zone: 'img',
 }
@@ -43,7 +43,7 @@ const SCOPE_PLUGIN = {
                 }
               },
               output: {
-                publicPath: `https://storage.360buyimg.com/pubfree-bucket/taro-docs/${uniqueCommitId.latest()}/`
+                publicPath: `//storage.360buyimg.com/pubfree-bucket/taro-docs/${uniqueCommitId.latest()}/`
               }
             }
           }
