@@ -18,23 +18,32 @@ jobs:
         with:
           ref : ${{ github.ref || github.head_ref || github.ref_name }}
 
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
       - name: Cache pnpm modules and build
         uses: actions/cache@v3
         with:
           path: |
-            node_modules
+            ${{ env.STORE_PATH }}
             build/taro-docs
-          key: ${{ runner.os }}-github
+          key: ${{ runner.os }}-pnpm-store-nodejs
           restore-keys: |
-            ${{ runner.os }}-
-
-      - name: install
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7
-          run_install: |
-            - recursive: true
-              args: [--frozen-lockfile, --strict-peer-dependencies]
+            ${{ runner.os }}-pnpm-store-
 
       - name: Build
         run: pnpm run build:github

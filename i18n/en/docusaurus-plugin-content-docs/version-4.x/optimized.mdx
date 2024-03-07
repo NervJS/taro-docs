@@ -38,7 +38,7 @@ There are two ways for developers to implement this optimization.
 
 For mini program that do not support template recursion (WeChat, QQ, Jingdong mini-program), Taro will use native custom components to assist recursion after the DOM level reaches a certain number.
 
-The simple understanding is that after the DOM structure exceeds N levels, the native custom component will be used for rendering. N is 16 levels by default, and can be changed by modifying the configuration item [baseLevel](/docs/next/config-detail#minibaselevel) to modify N.
+The simple understanding is that after the DOM structure exceeds N levels, the native custom component will be used for rendering. N is 16 levels by default, and can be changed by modifying the configuration item [baseLevel](/docs/config-detail#minibaselevel) to modify N.
 
 Setting `baseLevel` to `8` or even `4` layers can be very effective in improving performance during updates. However, the setting is global and can cause several problems.
 
