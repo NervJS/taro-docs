@@ -75,6 +75,42 @@ function Foo () {
 }
 ```
 
+## 使用 WXS
+
+:::info
+Taro v3.6.25 开始支持。目前只支持在 Taro React 小程序中使用，暂不支持 Taro Vue，暂不支持在其他端使用。
+:::
+
+借助 **CompileMode**，Taro 可以支持使用各类小程序的视图层脚步语言，如微信小程序的 `wxs`、支付宝小程序的 `sjs`、京东小程序的 `jds`、头条小程序的 `sjs` 等。
+
+用法：
+
+```jsx title="pages/index/index.jsx"
+import { View, ScrollView, Script } from '@tarojs/components'
+
+export default function Index() {
+  return (
+    {/* 首先需要开启编译模式 */}
+    <View compileMode>
+
+      {/* <Script> 组件等于小程序 <wxs> 组件，需要填写 src 和 module 属性，详情请参考小程序官方文档 */}
+      <Script src='./animation.wxs' module='ani'></Script>
+
+      {/* 访问 WXS 的导出值 */}
+      <View>{ani.msg}</View>
+      <View>{ani.getMsg()}</View>
+      <View hoverClass={ani.hoverClass}></View>
+      <View hoverClass={ani.getHoverClass()}></View>
+
+      {/* WXS 响应事件 */}
+      <ScrollView onScrollToUpper={ani.toupper}>
+        <View onTouchStart={ani.touchstart} onTouchMove={ani.touchmove} onTouchEnd={ani.touchend}></View>
+      </ScrollView>
+    </View>
+  )
+}
+```
+
 ## 优化初次渲染性能
 
 :::tip
