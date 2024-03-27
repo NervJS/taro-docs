@@ -9,4 +9,5 @@ export default [
   { name: 'rn', label: 'React Native', icon: "require('@site/static/img/platform/rn.png').default" },
   { name: 'quickapp', label: '快应用', icon: "require('@site/static/img/platform/quickapp.png').default" },
   { name: 'harmony', label: 'Harmony', icon: "require('@site/static/img/platform/harmony.png').default" },
+  { name: 'harmony_hybrid', label: 'Harmony hybrid', icon: "require('@site/static/img/platform/harmonyHybrid.png').default" },
 ]
