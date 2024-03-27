@@ -5,7 +5,7 @@ sidebar_label: Input
 
 输入框。该组件是原生组件，使用时请注意相关限制
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/input.html)
 
@@ -123,48 +123,48 @@ class App extends Component {
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| InputProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| InputProps.defaultValue | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| InputProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| InputProps.password | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| InputProps.placeholder | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| InputProps.placeholderStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
-| InputProps.placeholderClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| InputProps.placeholderTextColor |  |  |  |  |  |  |  | ✔️ |  |
-| InputProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| InputProps.maxlength | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| InputProps.cursorSpacing | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
-| InputProps.autoFocus | ✔️ |  |  |  | ✔️ | ✔️ | ✔️ |  |  |
-| InputProps.focus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| InputProps.confirmType | ✔️ | ✔️ | ✔️(confirm-type 与 enableNative 属性冲突，若希望 confirm-type 生效，enableNative 不能设定为 false，而且不能设定 always-system) | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
-| InputProps.confirmHold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| InputProps.cursor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
-| InputProps.selectionStart | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
-| InputProps.selectionEnd | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |
-| InputProps.adjustPosition | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
-| InputProps.holdKeyboard | ✔️ |  |  | ✔️ |  |  |  |  |  |
-| InputProps.alwaysEmbed | ✔️ |  |  |  |  |  |  |  |  |
-| InputProps.safePasswordCertPath | ✔️ |  |  |  |  |  |  |  |  |
-| InputProps.safePasswordLength | ✔️ |  |  |  |  |  |  |  |  |
-| InputProps.safePasswordTimeStamp | ✔️ |  |  |  |  |  |  |  |  |
-| InputProps.safePasswordNonce | ✔️ |  |  |  |  |  |  |  |  |
-| InputProps.safePasswordSalt | ✔️ |  |  |  |  |  |  |  |  |
-| InputProps.safePasswordCustomHash | ✔️ |  |  |  |  |  |  |  |  |
-| InputProps.randomNumber |  |  | ✔️ |  |  |  |  |  |  |
-| InputProps.controlled |  |  | ✔️ |  |  |  |  |  |  |
-| InputProps.nativeProps |  |  |  |  |  |  | ✔️ |  |  |
-| InputProps.name |  |  | ✔️ |  |  |  |  |  |  |
-| InputProps.alwaysSystem |  |  | ✔️ |  |  |  |  |  |  |
-| InputProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
-| InputProps.clueType |  |  |  | ✔️ |  |  |  |  |  |
-| InputProps.onInput | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| InputProps.onFocus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| InputProps.onBlur | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| InputProps.onConfirm | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| InputProps.onKeyboardHeightChange | ✔️ |  |  | ✔️ | ✔️ |  |  |  |  |
-| InputProps.onNickNameReview | ✔️ |  |  |  |  |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| InputProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InputProps.defaultValue | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InputProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InputProps.password | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InputProps.placeholder | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InputProps.placeholderStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
+| InputProps.placeholderClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| InputProps.placeholderTextColor |  |  |  |  |  |  |  | ✔️ |  |  |
+| InputProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InputProps.maxlength | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InputProps.cursorSpacing | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| InputProps.autoFocus | ✔️ |  |  |  | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| InputProps.focus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InputProps.confirmType | ✔️ | ✔️ | ✔️(confirm-type 与 enableNative 属性冲突，若希望 confirm-type 生效，enableNative 不能设定为 false，而且不能设定 always-system) | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
+| InputProps.confirmHold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| InputProps.cursor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
+| InputProps.selectionStart | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
+| InputProps.selectionEnd | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
+| InputProps.adjustPosition | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| InputProps.holdKeyboard | ✔️ |  |  | ✔️ |  |  |  |  |  |  |
+| InputProps.alwaysEmbed | ✔️ |  |  |  |  |  |  |  |  |  |
+| InputProps.safePasswordCertPath | ✔️ |  |  |  |  |  |  |  |  |  |
+| InputProps.safePasswordLength | ✔️ |  |  |  |  |  |  |  |  |  |
+| InputProps.safePasswordTimeStamp | ✔️ |  |  |  |  |  |  |  |  |  |
+| InputProps.safePasswordNonce | ✔️ |  |  |  |  |  |  |  |  |  |
+| InputProps.safePasswordSalt | ✔️ |  |  |  |  |  |  |  |  |  |
+| InputProps.safePasswordCustomHash | ✔️ |  |  |  |  |  |  |  |  |  |
+| InputProps.randomNumber |  |  | ✔️ |  |  |  |  |  |  |  |
+| InputProps.controlled |  |  | ✔️ |  |  |  |  |  |  |  |
+| InputProps.nativeProps |  |  |  |  |  |  | ✔️ |  |  | ✔️ |
+| InputProps.name |  |  | ✔️ |  |  |  |  |  |  |  |
+| InputProps.alwaysSystem |  |  | ✔️ |  |  |  |  |  |  |  |
+| InputProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |  |
+| InputProps.clueType |  |  |  | ✔️ |  |  |  |  |  |  |
+| InputProps.onInput | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InputProps.onFocus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InputProps.onBlur | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InputProps.onConfirm | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InputProps.onKeyboardHeightChange | ✔️ |  |  | ✔️ | ✔️ |  |  |  |  |  |
+| InputProps.onNickNameReview | ✔️ |  |  |  |  |  |  |  |  |  |
 
 ### Type
 
@@ -184,17 +184,17 @@ Input 类型
 
 #### API 支持度
 
-| API | 微信小程序 | 支付宝小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| Type.text | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| Type.number | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| Type.idcard | ✔️ | ✔️ |  | ✔️ |  |
-| Type.digit | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| Type.safe-password | ✔️ | ✔️ |  |  |  |
-| Type.nickname | ✔️ | ✔️ |  |  |  |
-| Type.numberpad |  | ✔️ |  |  |  |
-| Type.digitpad |  | ✔️ |  |  |  |
-| Type.idcardpad |  | ✔️ |  |  |  |
+| API | 微信小程序 | 支付宝小程序 | H5 | React Native | Harmony | Harmony hybrid |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Type.text | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| Type.number | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| Type.idcard | ✔️ | ✔️ |  | ✔️ |  |  |
+| Type.digit | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| Type.safe-password | ✔️ | ✔️ |  |  |  |  |
+| Type.nickname | ✔️ | ✔️ |  |  |  |  |
+| Type.numberpad |  | ✔️ |  |  |  |  |
+| Type.digitpad |  | ✔️ |  |  |  |  |
+| Type.idcardpad |  | ✔️ |  |  |  |  |
 
 ### ConfirmType
 
