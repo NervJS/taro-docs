@@ -69,7 +69,7 @@ module.exports = {
       {
         label: 'React Native',
         type: 'category',
-        items: ['react-native', 'react-native-remind'],
+        items: ['react-native', 'react-native-remind','react-native-harmony'],
       },
       'harmony'
     ],
