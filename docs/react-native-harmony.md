@@ -94,7 +94,6 @@ function hasNodeModulePathHarmonyCode(nodeModulePath) {
 | react-native-screens                      | https://react-native-oh-library.gitee.io/usage-docs/#/zh-cn/react-native-screens                     |
 | react-native-webview                      | https://react-native-oh-library.gitee.io/usage-docs/#/zh-cn/react-native-webview                     |
 | react-native-svg                          | https://react-native-oh-library.gitee.io/usage-docs/#/zh-cn/react-native-svg                         |
-| @react-native-masked-view/masked-view     | https://react-native-oh-library.gitee.io/usage-docs/#/zh-cn/react-native-masked-view-masked-view     |
 
 更多第三库的安装请参考 [React Native OpenHarmony](https://react-native-oh-library.gitee.io/usage-docs/#/)
 
@@ -104,6 +103,14 @@ function hasNodeModulePathHarmonyCode(nodeModulePath) {
 
 ```bash
 hdc rport tcp:8081 tcp:8081
+```
+
+#### 2.4 修改 moduleName
+
+原生工程中使用的 moduleName 需要与 config 中的 rn.appName 保持一致，如'taroDemo'
+
+```bash
+private moduleName = 'taroDemo'
 ```
 
 ## 常见问题
@@ -159,9 +166,3 @@ hdc rport tcp:8081 tcp:8081
 ### 3.第三方库未生效
 
 会看到信息：**No harmony-specific third-party packages have been detected pnpm install** 等操作，导致 node_modules 修改被覆盖。查看**node_modules/react-native-harmony/metro.config.js** **lstatSync** 是否改成了**statSync**。
-
-<!-- ## 问题：
-
-<!-- 步骤 2	新建文件夹，分别命名为react-native-harmony和react-native-harmony-cli。
- 是直接给放在安装包里边还是
- --> -->
