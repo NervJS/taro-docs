@@ -2,7 +2,7 @@
 title: OpenHarmony React Native 开发流程
 ---
 
-:::tip Taro v4.0.0-beta.0+ 开始支持  
+:::tip Taro v4.0.0-beta.36+ 开始支持  
 :::
 // todo 具体版本待定
 随着鸿蒙系统的日渐完善，鸿蒙与 React Native 进行合作，React Native 会推出对鸿蒙的适配。
@@ -34,7 +34,7 @@ title: OpenHarmony React Native 开发流程
 #### 1.1 通过 CLI 创建 JS 工程
 
 ```bash
-npx @tarojs/cli@canary init
+npx @tarojs/cli@beta init
 ```
 
 #### 1.2 模版选择
