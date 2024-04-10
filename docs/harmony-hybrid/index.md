@@ -7,7 +7,15 @@ Taro v3.6.8+ 开始支持
 :::
 
 ## 简介
-@华为-漆灿，@58-刘阳
+@华为-漆灿
+@58-刘阳 Done
+
+Taro Harmony Hybrid容器是为让Taro小程序代码可以完整的运行在鸿蒙单内核系统里，在Taro H5平台的基础上，基于原生壳工程的jsbridge能力，扩展H5平台不支持的小程序Api能力，让Taro小程序0成本运行在鸿蒙系统。
+
+此方案不同于Taro的Harmony原生方案，其运行时还是Webview，重点解决Api切换的问题。
+
+![taroharmonyhybrid](@site/static/img/taroharmonyhybrid.jpg)
+
 
 ## 快速编译运行
 
@@ -17,18 +25,127 @@ Taro v3.6.8+ 开始支持
 ### 壳工程编译运行
 @华为-漆灿
 
-## 添加现有鸿蒙工程
+## 集成到现有鸿蒙工程
 
 ### 简单集成（TaroWebContainer）
 @华为-漆灿
 
 ### 多容器和容器共用集成（TaroHybrid）
-@58-刘阳
+@58-刘阳 Done
+
+**使用方法：**
+```typescript
+// windowStage.loadContent里初始化 和 预加载
+windowStage.loadContent('xxx', storage, (err, data) => {
+    // 全局初始化
+    TaroHybridManager.init({
+        uiAbilityContex: this.context,
+        domain: 'https://customer.domain.com', // 小程序的域名，注意：此处不添加/结尾
+        injectNativeMethod: (uiAbilityContext: common.UIAbilityContext) => { // 扩展原生API
+            ...
+        }
+    })
+    // 预加载，可选，不是必须
+    TaroHybridManager.preLoader(
+        windowStage.getMainWindowSync().getUIContext(),
+        "/xx/index.html", // html的path路由
+        "/pages/index/index" // Taro小程序的Page路径
+    )
+})
+
+// 创建TaroHybrid页面（例子是基于Entry实现）
+export interface TaroHybridRouterParams {
+    indexHtmlPath: string,
+    taroPath: string
+}
+export const RouterToTaroHybrid = (params: TaroHybridRouterParams) => {
+    // 跳转之前先加载url，目的是为了提升新页面的打开速度
+    TaroHybridManager.loadUrl(params.indexHtmlPath, params.taroPath);
+
+    setTimeout(()=>{
+        router.pushUrl({
+            url: 'xxx/TaroHybridPage', // 鸿蒙原生Page的路径，不是Taro小程序的Page
+            params: params
+        }, router.RouterMode.Standard)
+    }, 200)
+}
+
+@Entry
+@Component
+struct TaroHybridPage {
+  @State pageState: HostPageState = HostPageState.PageInit;
+  private indexHtmlPath: string = (router.getParams() as TaroHybridRouterParams).indexHtmlPath
+  private taroPath: string = (router.getParams() as TaroHybridRouterParams).taroPath
+
+  onPageShow(): void {
+    this.pageState = HostPageState.PageOnShow
+  }
+  onPageHide(): void {
+    this.pageState = HostPageState.PageOnHide
+  }
+  onBackPress(): boolean | void {
+    const instance = TaroHybridManager.getCoreInstance(this.indexHtmlPath)
+    if (!instance) {
+      return false;
+    }
+    return TaroHybridManager.onBack(instance.builderData.taroWebController)
+  }
+
+  build() {
+    Stack({alignContent: Alignment.TopStart}){
+      SafeArea(){
+        TaroHybrid({
+          indexHtmlPath: this.indexHtmlPath,
+          taroPath: this.taroPath,
+          pageState: this.pageState
+        })
+      }
+    }
+  }
+}
+
+```
+
+**TaroHybrid的设计思路：** 
+1. 多容器的判断依据：html的Path路径为判断依赖，相同则共用，不同则新建载体页
+2. 容器共用的思路：通过鸿蒙的NodeContainer + NodeController实现
+3. 注意：
+   1. 容器共用存在一个问题：相邻两个原生Page之间如何共用容器，页面切换动画时，会有一个页面白屏，进入和退出时都会出现，尽量避免相邻两个原生Page之间共用容器。
 
 ## 进阶教程
 
 ### 混合路由
-@58-刘阳
+@58-刘阳 Done
+
+在原生与TaroHybrid混合鸿蒙应用中，如果使用了容器共用，用户的路由栈会比较复杂，当在Taro Hybrid页面时，用户使用原生的物理返回时，需要区分是Web容器的返回，还是原生的返回。
+
+TaroHybrid组件已经解决了此问题，其思路为：
+1. 原生跳转打开的taro页面，添加query参数from=native
+2. 原生的onBackPress逻辑里，获取当前url，判断有没有参数from=native，如果有则走原生路由返回，如果没有则走Web组件的backward逻辑
+
+```typescript
+static onBack(taroWebController: TaroWebController): boolean {
+    let curUrl = taroWebController.webController.getUrl();
+
+    if (curUrl?.endsWith('?from=native')) {  //web回退到原生
+      // Web先返回
+      if (taroWebController.accessBackward()) {
+        setTimeout(()=>{
+          taroWebController.backward();
+        }, 200)
+      }
+      // 回退到原生
+      return false;
+    }
+    if (taroWebController?.accessBackward()) { // web回退
+      taroWebController?.backward();
+      // 保留在当前Web页面
+      return true;
+    }
+    // 回退到原生
+    return false;
+  }
+```
 
 ### 小程序内置及热更新
 @58-张志新
@@ -36,7 +153,9 @@ Taro v3.6.8+ 开始支持
 ### 扩展原生Api
 @58-孔校军
 
-### 鸿蒙折叠屏适配指导
+### 鸿蒙一多适配指导
+
+#### 鸿蒙折叠屏适配指导
 @58-刘阳 Done
 
 默认情况下，设计尺寸是750px，Taro适配不同手机分辨率的方式是等比缩放，在鸿蒙折叠屏展开的状态下，等比放大的效果不满足华为应用商店上架要求。
