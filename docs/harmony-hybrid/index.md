@@ -306,7 +306,7 @@ nativeUpdater.update(new NativeApiPair("youMethodName1",["param1",123],"myField"
 @华为-漆灿
 
 ### 同层渲染
-@华为-漆灿
+预计后续530支持
 
 ## FAQ
 
