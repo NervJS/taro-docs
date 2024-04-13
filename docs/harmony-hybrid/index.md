@@ -3,7 +3,7 @@ title: Harmony Hybrid
 ---
 
 :::info
-Taro v3.6.8+ 开始支持
+Taro v3.6.24+ 开始支持
 :::
 
 ## 简介
@@ -22,13 +22,167 @@ Taro Harmony Hybrid容器是为让Taro小程序代码可以完整的运行在鸿
 ### H5侧编译运行
 @华为-漆灿
 
+Taro CLI 依赖于 Node.js 环境，所以在你的机器上需要安装 Node.js 环境。请确保已具备较新的 node 环境（>=16.20.0）。当你的机器已经存在了 Node.js 环境，可以通过在终端输入命令 npm i -g `@tarojs/cli` 安装 Taro CLI。安装完毕之后，在终端输入命令 taro，如果出现类似内容就说明安装成功了：
+
+```shell
+👽 Taro v3.6.25
+Usage: taro <command> [options]
+Options:
+  -V, --version       output the version number
+  -h, --help          output usage information
+```
+
+安装好 Taro CLI 之后可以通过 taro init 命令创建一个全新的项目，你可以根据你的项目需求填写各个选项，一个最小版本的 Taro 项目会包括以下文件：
+
+```
+├── babel.config.js             # Babel 配置
+├── .eslintrc.js                # ESLint 配置
+├── config                      # 编译配置目录
+│   ├── dev.js                  # 开发模式配置
+│   ├── index.js                # 默认配置
+│   └── prod.js                 # 生产模式配置
+├── package.json                # Node.js manifest
+├── dist                        # 打包目录
+├── project.config.json         # 小程序项目配置
+├── src # 源码目录
+│   ├── app.config.js           # 全局配置
+│   ├── app.css                 # 全局 CSS
+│   ├── app.js                  # 入口组件
+│   ├── index.html              # H5 入口 HTML
+│   └── pages                   # 页面组件
+│       └── index
+│           ├── index.config.js # 页面配置
+│           ├── index.css       # 页面 CSS
+│           └── index.jsx       # 页面组件，如果是 Vue 项目，此文件为 index.vue
+```
+
+通过 Taro CLI 工具基于`默认模板`创建 Taro 工程，使用如下编译命令生成 harmony-hybrid 平台的 Web 资源：
+
+```shell
+# yarn
+$ yarn build:harmony-hybrid
+# npm script
+$ npm run build:harmony-hybrid
+# pnpm script
+$ pnpm build:harmony-hybrid
+```
+
+生成的产物在 `dist` 目录下
+
 ### 壳工程编译运行
 @华为-漆灿
+
+Taro `harmony-hybrid` 平台产物需要结合鸿蒙壳工程一起编译运行才能实现完整的功能。`@hybrid/web-container` 三方库模块提供了鸿蒙 `TaroWebContainer` 等组件和 API，支持开发者快速构建运行环境。鸿蒙壳工程使用 `@hybrid/web-container` 模块的方式如下：
+
+- 使用DevEco Studio开发工具（ >= 5.0.3.100 ）新建应用工程，选择Empty Ability模板，API >= 11, 其他配置使用默认值。
+- 在 `entry/oh-package.json5` 文件中添加 `@hybrid/web-container` 模块的依赖并点击Sync进行同步：
+```json
+{
+  "license": "ISC",
+  "devDependencies": {},
+  "name": "entry",
+  "description": "演示如何使用TaroWebContainer组件",
+  "version": "1.0.0",
+  "dependencies": {
+    "@hybrid/web-container": "2.0.0-rc.1"
+  }
+}
+```
+- 使用 `@hybrid/web-container`
+```typescript
+import { TaroWebContainer } from '@hybrid/web-container';
+```
+具体使用方式请参考下个章节：集成到现有鸿蒙工程
+
+- 最后点击菜单 `Build` -- `Rebuild Project` 编译项目。
 
 ## 集成到现有鸿蒙工程
 
 ### 简单集成（TaroWebContainer）
 @华为-漆灿
+
+`TaroWebContainer` 组件提供加载单页面 Web 应用能力，并提供部分 Taro API 鸿蒙版本。
+
+**使用方法：**
+```typescript
+// entry/src/main/ets/pages/Index.ets
+import Want from '@ohos.app.ability.Want';
+import Url from '@ohos.url';
+import { TaroWebContainer, InjectObject, HostPageState, TaroWebController, Logger, LoggerLevel, wbLogger } from '@hybrid/web-container';
+const SAMPLE_INDEX_TAG = 'SampleIndex';
+@Component
+struct TaroMpharmonySample {
+  @State pageState: HostPageState = HostPageState.PageInit;
+  @State taroWebController: TaroWebController = new TaroWebController();
+  // 用户可以自定义对象注入到Web环境中，使用native.sayHello格式进行调用
+  nativeObj: InjectObject = {
+    sayHello: () => console.log('Hello World'),
+  }
+  onBackPress() {
+    if (this.taroWebController.accessBackward()) {
+      this.taroWebController.backward();
+      return true;
+    }
+    return false;
+  }
+  aboutToAppear() {
+    Logger.setLogLevel(LoggerLevel.LOG_DEBUG);
+  }
+  onPageShow() {
+    this.pageState = HostPageState.PageOnShow;
+  }
+  onPageHide() {
+    this.pageState = HostPageState.PageOnHide;
+  }
+  webUrl(): string {
+    // 开发阶段可以把网站静态资源文件放置到src/main/resources/rawfile/目录下
+    // 生产环境下可以把部分网页静态资源放置到web服务器, 这里填写实际的网站地址url
+    return 'resource://rawfile/index.html';
+  }
+  webUrlPrefix() {
+    try {
+        const url = Url.URL.parseURL(this.webUrl());
+        return `${url.protocol}//${url.host}/`;
+    } catch (err) {
+        wbLogger.error(SAMPLE_INDEX_TAG, `Invalid webUrl: ${this.webUrl()}`);
+        return '';
+    }
+  }
+  build() {
+    Column() {
+      TaroWebContainer({
+        pageState: this.pageState, // 页面状态同步到组件
+        webUrl: this.webUrl(), // 初始Url
+        webUrlPrefix: this.webUrlPrefix(),
+        useCache: true,
+        taroWebController: this.taroWebController,
+        isFullScreen: true, // 是否全屏显示
+        injectObj: this.nativeObj, // 注入对象
+      })
+        .width('100%')
+        .height('100%')
+    }
+  }
+}
+```
+
+**构造参数说明：**
+
+| 参数名称              | 类型                | 描述                                                    | 必填                    |
+|-------------------|-------------------|-------------------------------------------------------|-----------------------|
+| taroWebController | TaroWebController | TaroWebContainer组件的控制器                                | 是                     |
+| webUrl            | string            | 资源入口url                                               | 是                     |
+| webUrlPrefix      | string            | 资源入口url的前缀，一般是 `${webUrl.protocol}://${webUrl.host}/` | 是                     |
+| pageState         | HostPageState     | 传递页面状态                                                | 是                     |
+| useCache          | boolean           | 是否优先使用应用内置的Web资源                                      | 否，默认值： true           |
+| want              | Want              | 传递EntryAbility中`onCreate`和`onNewWant`保存的want信息        | 否，默认值： { }            |
+| isFullScreen      | boolean           | 是否全屏显示应用                                              | 否，默认值： true           |
+| injectObj         | ESObject          | 注入ets对象到Web环境                                         | 否：默认值：undefined       |
+| showCapsule       | boolean           | 是否显示胶囊按钮                                              | 否：默认值：true            |
+| capsulePage       | string            | 点击胶囊按钮跳转的页面                                           | 否：默认值：`pages/Capsule` |
+| enableWebDebug    | boolean           | [开启Web调试功能][Web调试devtools配置]                          | 否：默认值：true            |
+| navigationInitVisible | boolean       | 控制导航栏初始显示状态                                          | 否：默认值：true            |
+
 
 ### 多容器和容器共用集成（TaroHybrid）
 @58-刘阳 Done
@@ -308,6 +462,178 @@ nativeUpdater.update(new NativeApiPair("youMethodName1",["param1",123],"myField"
 ### 同层渲染
 @华为-漆灿
 
+`@hybrid/web-container` 提供 `sameLayerManager.registerNativeComponentBuilders` 方法来注册同层渲染组件。
+
+**参数说明：**
+
+| 参数名称       | 类型                                               | 描述                  | 必填                |
+|---------------|----------------------------------------------------|----------------------|---------------------|
+| componentName | string | 对应embed标签type属性，去掉 `native/` 前缀                         | 是                  |
+| builder       | (...args: ESObject[]) => void | 使用 `@Builder` 注解的原生组件builder函数   | 是                  |
+
+
+**使用方法：**
+- 壳工程中，注册自定义组件：
+
+```typescript
+import { sameLayerManager } from '@hybrid/web-container'
+
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
+    sameLayerManager.registerNativeComponentBuilders('hos-video', NativeVideoBuilder)
+  }
+  // ...
+}
+
+```
+- Video 自定义组件实现参考
+
+```typescript
+import { sameLayerManager } from '@hybrid/web-container';
+
+@Observed
+export class VideoParams {
+  width: number // 组件宽度
+  height: number // 组件高度
+  componentId: string // 组件ID
+  src: string // 要播放视频的资源地址
+  controls?: boolean // 是否显示播放控件
+  muted?: boolean // 是否静音
+  loop?: boolean
+  autoPlay?: boolean
+  onPlay?: (res?: string) => void
+  onPause?: (res?: string) => void
+
+  constructor() {
+    this.width = 0;
+    this.height = 0;
+    this.componentId = '';
+    this.src = '';
+  }
+}
+
+@Component
+export struct NativeVideo {
+  @ObjectLink params: VideoParams
+  videoController: VideoController = new VideoController();
+
+  build() {
+    Column() {
+      Video({
+        src: this.params.src,
+        controller: this.videoController
+      })
+        .objectFit(ImageFit.Fill)
+        .autoPlay(this.params.autoPlay ?? true)
+        .muted(this.params.muted ?? false)
+        .loop(this.params.loop ?? false)
+        .controls(this.params.controls ?? true)
+        .onClick((event) => {
+          console.log('NativeEmbed video onClick.')
+        })
+        .onStart(() => {
+          console.log('NativeEmbed video onPlay.', this.params.height)
+          const callJsOnPlay: Function | undefined = (sameLayerManager.getSameLayerArgs(this.params.componentId) as VideoParams)?.onPlay
+          callJsOnPlay && callJsOnPlay('Native Video playing.')
+        })
+        .onPause(() => {
+          console.log('NativeEmbed video onPause.')
+          const callJsOnPause: Function | undefined = (sameLayerManager.getSameLayerArgs(this.params.componentId) as VideoParams)?.onPause
+          callJsOnPause && callJsOnPause('Native Video paused.')
+        })
+    }
+    .width(this.params.width)
+    .height(this.params.height)
+  }
+}
+
+@Builder
+export function NativeVideoBuilder(params: VideoParams) {
+  NativeVideo({ params: params })
+    .backgroundColor(Color.Green)
+}
+
+```
+
+- 前端代码中，使用 `react` 框架实现的代码如下：
+```typescript
+import React from 'react'
+import classNames from 'classnames'
+
+import './index.scss'
+
+let videoId = 0
+
+interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+  src: string
+  controls?: boolean
+  autoplay?: boolean
+  loop?: boolean
+  muted?: boolean
+  onPlay?: (res: any) => void
+  onPause?: (res: any) => void
+}
+
+export default class HosVideo extends React.Component<IProps> {
+  private componentId: string
+
+  constructor (props: IProps | Readonly<IProps>) {
+    super(props)
+    this.componentId = `video_${videoId++}`
+  }
+
+  componentDidMount () {
+    this.transferVideoProps()
+  }
+
+  componentDidUpdate (_prevProps: IProps, _prevState: any) {
+    // 组件更新时重新传输数据
+    this.transferVideoProps()
+  }  
+
+  transferVideoProps () {
+    // 同层渲染video组件数据
+    const {  
+      src,  
+      controls,  
+      autoplay,  
+      loop,  
+      muted,  
+      onPlay,  
+      onPause  
+    } = this.props 
+  
+    const properties = {
+      componentId: this.componentId,
+      src: src,
+      controls: controls,
+      autoPlay: autoplay,
+      loop: loop,
+      muted: muted,
+      onPlay: onPlay,
+      onPause: onPause
+    }
+  
+    // @ts-ignore  调用JSB方法传递原生组件数据
+    window.JSBridge && window.JSBridge.transferSameLayerArgs(properties)
+  }
+
+  render () {
+    const {
+      style,
+      className
+    } = this.props
+
+    return (
+      <div style={style} className={className ? className : classNames('taro-video-container')}>
+        <embed className='taro-video-video' id={this.componentId} type='native/hos-video'/>
+      </div>
+    )
+  } 
+}
+```
+
+
 ## FAQ
 
 ### 原生导航条影响Fixed布局
@@ -325,5 +651,4 @@ window.navigationHeight
 
 当存在原生导航栏时，fixed布局需要添加一个top值，其值为window.navigationHeight
 
-
-
+[Web调试devtools配置]: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/web/web-debugging-with-devtools.md
