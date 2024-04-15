@@ -606,6 +606,7 @@ export default native
 参数说明：
 
 isAsync：如果参数option中定义了回调方法则为true，否则为false
+
 autoRelease：如果option中有回调方法且回调方法可能会调用多次则设置为false，否则就为true
 
 ##### 方法调用
