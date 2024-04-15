@@ -136,7 +136,7 @@ export default {
 ```ts
 import { defineConfig } from '@tarojs/cli'
 
-export default defineConfig(async (mergin, { command, mode }) => {
+export default defineConfig(async (merge, { command, mode }) => {
   const data = await asyncFunction()
   return {
     // Taro 配置
@@ -151,8 +151,8 @@ export default defineConfig(async (mergin, { command, mode }) => {
 ```ts
 import { defineConfig } from '@tarojs/cli'
 
-export default defineConfig((mergin, { command, mode }) => {
-  // mergin 为webpack-mergin, 兼容以前的配置
+export default defineConfig((merge, { command, mode }) => {
+  // merge 为 webpack-merge, 兼容以前的配置
   // 假如执行的命令为: "taro build --type weapp --mode test"
   // 则 command 的值为 build, mode 的值为 test
   if (mode === 'development') {
