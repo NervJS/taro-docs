@@ -305,7 +305,94 @@ static onBack(taroWebController: TaroWebController): boolean {
 @58-张志新
 
 ### 扩展原生Api
-@58-孔校军
+
+当Taro API不满足业务需求时，可以扩展原生API，实现小程序端调用原生功能。先由原生部分实现JSBridge方法，再由小程序部分注册该方法并调用。
+
+#### 原生部分
+
+##### 定义InjectObject
+
+示例代码如下：
+
+```typescript
+
+interface LoginOptions {
+  username: string
+  password: string
+  success: (t: string | null | undefined) => void
+  error: (error: BusinessError<LoginResultBean>) => void
+}
+
+export const nativeObj:InjectObject = {
+  customLogin:(options: LoginOptions) => {
+    // 登录...
+    options.success("xxx")
+  }
+}
+```
+
+##### 初始化注入InjectObject
+
+```typescript
+TaroHybridManager.init({
+        uiAbilityContex: this.context,
+        domain: 'https://xxx.xxx.com',  // 注意：此处不添加/结尾
+        injectNativeMethod: (uiAbilityContext: common.UIAbilityContext) => {
+          return nativeObj
+        }
+      })
+```
+
+##### 注意事项
+
+1. 扩展的方法中只能定义一个参数，上面的例子中我们定义LoginOptions接口来封装全部参数。
+2. 扩展的方法参数中只要最上层可以包含方法，嵌套的对象中不能包含方法，上面的例子中LoginOptions中包含了success和error方法，如果把success和error方法放到一个单独的Callback interface中就不可行了。
+
+#### 小程序部分
+
+##### 方法声明
+
+通过@window.MethodChannel.jsBridgeMode装饰器声明方法，具体代码如下：
+
+```typescript
+// @proxyClassSign('')
+class NativeApi {
+
+  // @ts-ignore
+  @window.MethodChannel.jsBridgeMode({ isAsync: true, autoRelease: true })
+  customLogin (option: any) {
+    return option//这里固定返回option即可
+  }
+}
+
+const native = new NativeApi()
+
+export default native
+```
+
+参数说明：
+
+isAsync：如果参数option中定义了回调方法则为true，否则为false
+autoRelease：如果option中有回调方法且回调方法可能会调用多次则设置为false，否则就为true
+
+##### 方法调用
+
+```typescript
+
+import { native } from './NativeApi';
+
+native.customLogin({
+  username: 'xxx',
+  password: 'xxx',
+  success: () => {
+    console.log('Login success!')
+  },
+  error: (e) => {
+    console.error('Login error.', e)
+  }
+})
+
+```
 
 ### 鸿蒙一多适配指导
 
