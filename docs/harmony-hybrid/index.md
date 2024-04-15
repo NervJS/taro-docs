@@ -547,7 +547,7 @@ nativeUpdater.update(new NativeApiPair("youMethodName1",["param1",123],"myField"
 @华为-漆灿
 
 ### 同层渲染
-@华为-漆灿
+预计后续530支持
 
 `@hybrid/web-container` 提供 `sameLayerManager.registerNativeComponentBuilders` 方法来注册同层渲染组件。
 
