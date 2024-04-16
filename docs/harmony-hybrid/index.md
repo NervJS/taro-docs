@@ -7,8 +7,6 @@ Taro v3.6.24+ 开始支持
 :::
 
 ## 简介
-@华为-漆灿
-@58-刘阳 Done
 
 Taro Harmony Hybrid容器是为让Taro小程序代码可以完整的运行在鸿蒙单内核系统里，在Taro H5平台的基础上，基于原生壳工程的jsbridge能力，扩展H5平台不支持的小程序Api能力，让Taro小程序0成本运行在鸿蒙系统。
 
@@ -20,7 +18,6 @@ Taro Harmony Hybrid容器是为让Taro小程序代码可以完整的运行在鸿
 ## 快速编译运行
 
 ### H5侧编译运行
-@华为-漆灿
 
 Taro CLI 依赖于 Node.js 环境，所以在你的机器上需要安装 Node.js 环境。请确保已具备较新的 node 环境（>=16.20.0）。当你的机器已经存在了 Node.js 环境，可以通过在终端输入命令 npm i -g `@tarojs/cli` 安装 Taro CLI。安装完毕之后，在终端输入命令 taro，如果出现类似内容就说明安装成功了：
 
@@ -185,7 +182,6 @@ struct TaroMpharmonySample {
 
 
 ### 多容器和容器共用集成（TaroHybrid）
-@58-刘阳 Done
 
 **使用方法：**
 ```typescript
@@ -269,7 +265,6 @@ struct TaroHybridPage {
 ## 进阶教程
 
 ### 混合路由
-@58-刘阳 Done
 
 在原生与TaroHybrid混合鸿蒙应用中，如果使用了容器共用，用户的路由栈会比较复杂，当在Taro Hybrid页面时，用户使用原生的物理返回时，需要区分是Web容器的返回，还是原生的返回。
 
@@ -675,7 +670,6 @@ native.customLogin({
 ### 鸿蒙一多适配指导
 
 #### 鸿蒙折叠屏适配指导
-@58-刘阳 Done
 
 默认情况下，设计尺寸是750px，Taro适配不同手机分辨率的方式是等比缩放，在鸿蒙折叠屏展开的状态下，等比放大的效果不满足华为应用商店上架要求。
 
@@ -711,7 +705,6 @@ export default defineConfig(async (merge, { command, mode }) => {
 
 
 ### 沉浸式适配指导
-@58-刘阳 Done
 
 [鸿蒙官方适配指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides-V5/arkts-develop-apply-immersive-effects-0000001820435461-V5#section231547103814)提供了两个种方案：窗口全屏布局方案 及 组件安全区方案
 
@@ -1002,7 +995,6 @@ export default class HosVideo extends React.Component<IProps> {
 ## FAQ
 
 ### 原生导航条影响Fixed布局
-@58-刘阳：Done
 
 **原因：** Web容器与原生导航栏之间是层叠布局，为了不影响H5页面的内容展示，Taro Harmony给每个Page设置了一个padding-top值，其值来自原生注入的一个变量
 
