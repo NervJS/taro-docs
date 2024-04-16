@@ -10,7 +10,7 @@ title: 单步调测配置
 
 ### 1. 安装 Node.js
 
-建议安装 `14.20` 及以上版本，官方下载地址：[Node.js](https://nodejs.org/dist/v12.14.0/node-v12.14.0-x64.msi 'node.js')
+建议安装 `16.20.0` 及以上版本，官方下载地址：[Node.js](https://nodejs.org/dist/v16.20.0/node-v16.20.0-x64.msi 'node.js')
 
 ### 2. 安装 VSCode
 

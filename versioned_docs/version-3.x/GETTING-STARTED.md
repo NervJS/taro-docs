@@ -4,7 +4,7 @@ title: 安装及使用
 
 ## 安装
 
-Taro 项目基于 node，请确保已具备较新的 node 环境（>=12.0.0），推荐使用 node 版本管理工具 [nvm](https://github.com/creationix/nvm) 来管理 node，这样不仅可以很方便地切换 node 版本，而且全局安装时候也不用加 sudo 了。
+Taro 项目基于 node，请确保已具备较新的 node 环境（>=16.20.0），推荐使用 node 版本管理工具 [nvm](https://github.com/creationix/nvm) 来管理 node，这样不仅可以很方便地切换 node 版本，而且全局安装时候也不用加 sudo 了。
 
 ### CLI 工具安装
 
@@ -611,6 +611,49 @@ $ npx taro build --type h5
 > Taro v3.2+ 开始支持
 
 请参考 [React Native 端开发流程](./react-native)
+
+### Harmony-hybrid
+
+> Taro v3.6.24+ 开始支持
+
+#### 编译命令
+
+```bash
+# yarn
+$ yarn dev:harmony-hybrid
+$ yarn build:harmony-hybrid
+
+# npm script
+$ npm run dev:harmony-hybrid
+$ npm run build:harmony-hybrid
+
+# 仅限全局安装
+$ taro build --type harmony-hybrid --watch
+$ taro build --type harmony-hybrid
+
+# npx 用户也可以使用
+$ npx taro build --type harmony-hybrid --watch
+$ npx taro build --type harmony-hybrid
+```
+
+#### DevEco Studio 鸿蒙应用开发工具
+
+下载并使用 DeEco Studio NEXT Developer Preview1（通过 [HarmonyOS NEXT 开发者预览版 Beta 招募](https://developer.huawei.com/consumer/cn/activityDetail/harmonyos-next-preview/) 申请获的）新建应用工程，并进行如下配置：
+
+- 在 `oh-package.json5` 文件中配置 `dependencies`, 引入 `@hybrid/web-container` 模块。
+- 在 `src/main/module.json5` 文件中增加权限配置，如：
+
+```js
+{
+  requestPermissions: [
+    {
+      name: 'ohos.permission.INTERNET',
+    },
+  ]
+}
+```
+
+- 把 Taro 项目目录下的 `dist` 目录的编译产物复制到鸿蒙应用的 `src/main/resources/rawfile` 目录下，编译运行鸿蒙应用进行开发调试。
 
 ## 渐进式入门教程
 

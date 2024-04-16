@@ -120,7 +120,7 @@ export default class PageView extends Component {
 | licenseUrl | `string` |  | 否 | DRM 获取加密信息 url，仅 is-drm 为 true 时生效 |
 | posterSize | `string` |  | 否 | 当 poster 高宽比跟视频高宽不匹配时，如何显示 poster，设置规则同 background-size 一致。 |
 | showThinProgressBar | `string` |  | 否 | 当底部工具条隐藏时，是否显示细进度条（controls=false 时设置无效）。 |
-| mobilenetHintType | `string` |  | 否 | 移动网络提醒样式。<br /><br />0 - 不提醒<br />1 - tip 提醒<br />2 - 阻塞提醒(无消耗流量大小)<br />3 - 阻塞提醒(有消耗流量大小提醒) |
+| mobilenetHintType | `number` |  | 否 | 移动网络提醒样式。<br /><br />0 - 不提醒<br />1 - tip 提醒<br />2 - 阻塞提醒(无消耗流量大小)<br />3 - 阻塞提醒(有消耗流量大小提醒) |
 | floatingMode | `string` |  | 否 | 浮窗设置。暂时不支持全局浮窗。<br />可选值：<br /><br />none：无浮窗。<br />page：页面内浮窗。 |
 | showNoWifiTip | `string` |  | 否 | 非 wifi 环境下是否显示继续播放浮层 |
 | showLockBtn | `string` |  | 否 | 全屏模式下，是否显示锁屏按钮 |
@@ -242,7 +242,7 @@ export default class PageView extends Component {
 | VideoProps.onPause | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.onEnded | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.onTimeUpdate | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.onFullscreenChange |  |  |  |  |  |  | ✔️ | ✔️ |  |
+| VideoProps.onFullscreenChange |  |  | ✔️ |  |  |  | ✔️ | ✔️ |  |
 | VideoProps.onWaiting | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
 | VideoProps.onError | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
 | VideoProps.onProgress | ✔️ |  |  | ✔️ | ✔️ |  | ✔️ |  |  |
@@ -311,6 +311,15 @@ playBtnPosition 的合法值
 | --- | --- | --- |
 | currentTime | `number` | 当前时间 |
 | duration | `number` | 持续时间 |
+| userPlayDuration | `number` | 用户实际观看时长 |
+| videoDuration | `number` | 视频总时长 |
+
+#### API 支持度
+
+| API | 微信小程序 | 支付宝小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| onTimeUpdateEventDetail.userPlayDuration |  | ✔️ |  |  |  |
+| onTimeUpdateEventDetail.videoDuration |  | ✔️ |  |  |  |
 
 ### onFullscreenChangeEventDetail
 

@@ -15,21 +15,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Cache pnpm modules and build
-        uses: actions/cache@v3
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
         with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-types
-          restore-keys: |
-            ${{ runner.os }}-
-
-      - name: Installation Dependencies
-        uses: pnpm/action-setup@v2
+          node-version: 20
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
         with:
-          version: 7
+          version: 8
           run_install: |
             - recursive: true
               args: [--frozen-lockfile, --strict-peer-dependencies]
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Cache pnpm modules and build
+        uses: actions/cache@v3
+        with:
+          path: |
+            ${{ env.STORE_PATH }}
+            build/taro-docs
+          key: ${{ runner.os }}-pnpm-store-types
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Push changes
         id: auto-commit-action

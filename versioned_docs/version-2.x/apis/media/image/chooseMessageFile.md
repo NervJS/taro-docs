@@ -193,7 +193,7 @@ Taro.chooseMessageFile({
   type: 'image',
   success: function (res) {
     // tempFilePath可以作为img标签的src属性显示图片
-    const tempFilePaths = res.tempFilePaths
+    const tempFilePaths = res.tempFiles
   }
 })
 ```

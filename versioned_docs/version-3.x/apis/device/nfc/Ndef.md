@@ -186,9 +186,9 @@ Ndef 标签
 
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
-| uris | `string[]` | 是 | uri 数组 |
-| texts | `string[]` | 是 | text 数组 |
-| records | `record[]` | 是 | 二进制对象数组, 需要指明 id, type 以及 payload (均为 ArrayBuffer 类型) |
+| uris | `string[]` | 否 | uri 数组 |
+| texts | `string[]` | 否 | text 数组 |
+| records | `record[]` | 否 | 二进制对象数组, 需要指明 id, type 以及 payload (均为 ArrayBuffer 类型) |
 | complete | `(res: TaroGeneral.NFCError) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | fail | `(res: TaroGeneral.NFCError) => void` | 否 | 接口调用失败的回调函数 |
 | success | `(res: TaroGeneral.NFCError) => void` | 否 | 接口调用成功的回调函数 |

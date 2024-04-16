@@ -10,9 +10,11 @@ declare module './index' {
      */
     navigationBarBackgroundColor?: string
     /** 导航栏标题颜色，仅支持 black/white
+     * 当 app.json 中配置 darkmode 为 true 时可通过变量的形式配置
+     * @see: https://developers.weixin.qq.com/miniprogram/dev/framework/ability/darkmode.html
      * @default: "white"
      */
-    navigationBarTextStyle?: 'white' | 'black'
+    navigationBarTextStyle?: 'white' | 'black' | string
     /** 导航栏标题文字内容 */
     navigationBarTitleText?: string
     /** 导航栏样式，仅支持以下值：
@@ -31,9 +33,11 @@ declare module './index' {
      */
     backgroundColor?: string
     /** 下拉背景字体、loading 图的样式，仅支持 dark/light
+     * 当 app.json 中配置 darkmode 为 true 时可通过变量的形式配置
+     * @see: https://developers.weixin.qq.com/miniprogram/dev/framework/ability/darkmode.html
      * @default: "dark"
      */
-    backgroundTextStyle?: 'dark' | 'light'
+    backgroundTextStyle?: 'dark' | 'light' | string
     /** 顶部窗口的背景色，仅 iOS 支持
      * @default: "#ffffff"
      */
@@ -175,6 +179,12 @@ declare module './index' {
      * @default false
      */
     enableShareTimeline?: boolean
+    /**
+     * 页面是否需要使用 \<page-meta\> 和 \<navigation-bar\> 组件
+     * @default false
+     * @support weapp, alipay
+     */
+    enablePageMeta?: boolean
     /** 页面自定义组件配置
      * @see https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/
      */
@@ -363,16 +373,41 @@ declare module './index' {
 
   interface RenderOptions {
     skyline: {
-      /**
-       * 开启默认Block布局
+      /** 开启默认Block布局
        * @see https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/skyline/wxss.html#%E5%BC%80%E5%90%AF%E9%BB%98%E8%AE%A4Block%E5%B8%83%E5%B1%80
+       * @supported weapp
        */
       defaultDisplayBlock?: boolean
-      /**
-       * 关闭 Skyline AB 实验
+      /** 关闭 Skyline AB 实验
        * @see https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/skyline/migration/release.html#%E5%8F%91%E5%B8%83%E4%B8%8A%E7%BA%BF
+       * @supported weapp
        */
       disableABTest?: boolean
+      /** 基础库最低版本
+       * @supported weapp
+       */
+      sdkVersionBegin?: string
+      /** 基础库最高版本
+       * @supported weapp
+       */
+      sdkVersionEnd?: string
+      /** iOS 微信最低版本
+       * @supported weapp
+       */
+      iosVersionBegin?: string
+      /** iOS 微信最高版本
+       * @supported weapp
+       */
+      iosVersionEnd?: string
+      /** 安卓微信最低版本
+       * @supported weapp
+       */
+      androidVersionBegin?: string
+      /** 安卓微信最高版本
+       * @supported weapp
+       */
+      androidVersionEnd?: string
+      [key: string]: unknown
     }
   }
 

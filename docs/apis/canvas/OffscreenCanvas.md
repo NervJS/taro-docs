@@ -11,6 +11,11 @@ sidebar_label: OffscreenCanvas
 
 ## 方法
 
+| 参数 | 类型 | 说明 |
+| --- | --- | --- |
+| width | `number` | 画布宽度 |
+| height | `number` | 画布高度 |
+
 ### createImage
 
 创建一个图片对象。支持在 2D Canvas 和 WebGL Canvas 下使用, 但不支持混用 2D 和 WebGL 的方法
@@ -31,22 +36,22 @@ sidebar_label: OffscreenCanvas
 
 > 当前仅支持获取 WebGL 绘图上下文
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/canvas/OffscreenCanvas.getContext.html)
 
 ```tsx
-(contextType: string) => RenderingContext
+(contextType: "webgl" | "2d") => RenderingContext
 ```
 
 | 参数 | 类型 |
 | --- | --- |
-| contextType | `string` |
+| contextType | "webgl" or "2d" |
 
 ## API 支持度
 
-| API | 微信小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: |
-| OffscreenCanvas | ✔️ |  |  |  |
-| OffscreenCanvas.createImage | ✔️ |  |  |  |
-| OffscreenCanvas.getContext | ✔️ |  |  |  |
+| API | 微信小程序 | 抖音小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| OffscreenCanvas | ✔️ |  |  |  |  |
+| OffscreenCanvas.createImage | ✔️ |  |  |  |  |
+| OffscreenCanvas.getContext | ✔️ | ✔️ |  |  |  |

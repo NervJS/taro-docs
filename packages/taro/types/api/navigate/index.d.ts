@@ -17,6 +17,8 @@ declare module '../../index' {
       verify?: keyof Verify
       /** 不 reLaunch 目标小程序，直接打开目标跳转的小程序退后台时的页面，需满足以下条件：1. 目标跳转的小程序生命周期未被销毁；2. 且目标当次启动的path、query、apiCategory与上次启动相同。默认值为 false 。 */
       noRelaunchIfPathUnchanged?: boolean
+      /** 打开的小程序是否支持全屏 */
+      allowFullScreen?: boolean
       /** 接口调用成功的回调函数 */
       success?: (res: TaroGeneral.CallbackResult) => void
       /** 接口调用失败的回调函数 */
@@ -239,7 +241,7 @@ declare module '../../index' {
      * **关于调试**
      * - 在开发者工具上调用此 API 并不会真实的跳转到另外的小程序，但是开发者工具会校验本次调用跳转是否成功。[详情](https://developers.weixin.qq.com/miniprogram/dev/devtools/different.html#跳转小程序调试支持)
      * - 开发者工具上支持被跳转的小程序处理接收参数的调试。[详情](https://developers.weixin.qq.com/miniprogram/dev/devtools/different.html#跳转小程序调试支持)
-     * @supported weapp, tt
+     * @supported weapp, tt, harmony_hybrid
      * @example
      * ```tsx
      * Taro.navigateToMiniProgram({

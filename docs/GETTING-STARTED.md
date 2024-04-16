@@ -2,31 +2,54 @@
 title: 安装及使用
 ---
 
+import TabItem from '@theme/TabItem'
+import Tabs from '@theme/Tabs'
+
 ## 安装
 
-Taro 项目基于 node，请确保已具备较新的 node 环境（>=12.0.0），推荐使用 node 版本管理工具 [nvm](https://github.com/creationix/nvm) 来管理 node，这样不仅可以很方便地切换 node 版本，而且全局安装时候也不用加 sudo 了。
+Taro 项目基于 node，请确保已具备较新的 node 环境（>=16.20.0），推荐使用 node 版本管理工具 [nvm](https://github.com/creationix/nvm) 来管理 node，这样不仅可以很方便地切换 node 版本，而且全局安装时候也不用加 sudo 了。
 
 ### CLI 工具安装
 
 首先，你需要使用 npm 或者 yarn 全局安装 `@tarojs/cli`，或者直接使用 [npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b):
 
+<Tabs
+defaultValue="npm"
+values={[
+{label: 'npm', value: 'npm'},
+{label: 'yarn', value: 'yarn'},
+{label: 'pnpm', value: 'pnpm'}
+]}>
+<TabItem value="npm">
+
 ```bash
 # 使用 npm 安装 CLI
 $ npm install -g @tarojs/cli
-
-# OR 使用 yarn 安装 CLI
-$ yarn global add @tarojs/cli
-
-# OR 安装了 cnpm，使用 cnpm 安装 CLI
-$ cnpm install -g @tarojs/cli
 ```
 
-:::caution 请注意
-值得一提的是，如果安装过程出现`sass`相关的安装错误，请在安装 [mirror-config-china](https://www.npmjs.com/package/mirror-config-china) 后重试。
+</TabItem>
+
+<TabItem value="yarn">
 
 ```bash
-$ npm install -g mirror-config-china
+# 使用 yarn 安装 CLI
+$ yarn global add @tarojs/cli
 ```
+
+</TabItem>
+
+<TabItem value="pnpm">
+
+```bash
+# 使用 pnpm 安装 CLI
+$ pnpm install -g @tarojs/cli
+```
+
+</TabItem>
+</Tabs>
+
+:::caution 请注意
+由于 Taro 部分能力使用 Rust 开发，在 Windows 上，请确保安装了 Microsoft Visual C++ Redistributable。请查看：https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist
 
 :::
 
@@ -60,22 +83,49 @@ $ npx @tarojs/cli init myApp
 
 在创建完项目之后，Taro 会默认开始安装项目所需要的依赖，安装使用的工具按照 yarn > cnpm > npm 顺序进行检测。一般来说，依赖安装会比较顺利，但某些情况下可能会安装失败，这时候你可以在项目目录下自己使用安装命令进行安装：
 
+<Tabs
+defaultValue="npm"
+values={[
+{label: 'npm', value: 'npm'},
+{label: 'yarn', value: 'yarn'},
+{label: 'pnpm', value: 'pnpm'}
+]}>
+<TabItem value="npm">
+
+```bash
+# 进入项目根目录
+$ cd myApp
+
+# 使用 npm 安装依赖
+$ npm install
+```
+
+</TabItem>
+
+<TabItem value="yarn">
+
 ```bash
 # 进入项目根目录
 $ cd myApp
 
 # 使用 yarn 安装依赖
 $ yarn
-
-# OR 使用 npm 安装依赖
-$ npm install
-
-# OR 使用 pnpm 安装依赖
-$ pnpm install
-
-# OR 使用 cnpm 安装依赖
-$ cnpm install
 ```
+
+</TabItem>
+
+<TabItem value="pnpm">
+
+```bash
+# 进入项目根目录
+$ cd myApp
+
+# 使用 pnpm 安装依赖
+$ pnpm install
+```
+
+</TabItem>
+</Tabs>
 
 ## 编译运行
 
@@ -611,6 +661,49 @@ $ npx taro build --type h5
 > Taro v3.2+ 开始支持
 
 请参考 [React Native 端开发流程](./react-native)
+
+### Harmony-hybrid
+
+> Taro v3.6.24+ 开始支持
+
+#### 编译命令
+
+```bash
+# yarn
+$ yarn dev:harmony-hybrid
+$ yarn build:harmony-hybrid
+
+# npm script
+$ npm run dev:harmony-hybrid
+$ npm run build:harmony-hybrid
+
+# 仅限全局安装
+$ taro build --type harmony-hybrid --watch
+$ taro build --type harmony-hybrid
+
+# npx 用户也可以使用
+$ npx taro build --type harmony-hybrid --watch
+$ npx taro build --type harmony-hybrid
+```
+
+#### DevEco Studio 鸿蒙应用开发工具
+
+下载并使用 DeEco Studio NEXT Developer Preview1（通过 [HarmonyOS NEXT 开发者预览版 Beta 招募](https://developer.huawei.com/consumer/cn/activityDetail/harmonyos-next-preview/) 申请获的）新建应用工程，并进行如下配置：
+
+- 在 `oh-package.json5` 文件中配置 `dependencies`, 引入 `@hybrid/web-container` 模块。
+- 在 `src/main/module.json5` 文件中增加权限配置，如：
+
+```js
+{
+  requestPermissions: [
+    {
+      name: 'ohos.permission.INTERNET',
+    },
+  ]
+}
+```
+
+- 把 Taro 项目目录下的 `dist` 目录的编译产物复制到鸿蒙应用的 `src/main/resources/rawfile` 目录下，编译运行鸿蒙应用进行开发调试。
 
 ## 渐进式入门教程
 

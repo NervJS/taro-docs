@@ -7,24 +7,55 @@
 
 // See https://docusaurus.io/docs/site-config.html for all the possible
 // site configuration options.
+const uniqueCommitId = require('unique-commit-id')
 const versions = require('./versions.json')
 const path = require('path')
 
+const BASE_DOMAIN = process.env.BASE || 'taro'
 const url = {
-  zone: 'https://docs.taro.zone',
   jd: 'https://taro-docs.jd.com',
-  taro: 'https://nervjs.github.io'
+  taro: 'https://nervjs.github.io',
+  zone: 'https://docs.taro.zone',
 }
 const baseUrl = {
+  jd: '/',
+  taro: '/taro-docs/',
   zone: '/',
-  jd: '/taro/',
-  taro: '/taro-docs/'
 }
-const BASE_DOMAIN = process.env.BASE || 'taro'
+const imgBaseUrl = {
+  jd: `//storage.360buyimg.com/pubfree-bucket/taro-docs/${uniqueCommitId.latest()}/img`,
+  taro: 'img',
+  zone: 'img',
+}
+const SCOPE_PLUGIN = {
+  jd: [
+    async function runtimeMainPlugin () {
+      return {
+        name: 'runtime-main-plugin',
+        /* 其他生命周期 API */
+        configureWebpack (_, isServer) {
+          if (!isServer) {
+            return {
+              optimization: {
+                runtimeChunk: {
+                  // Note: 修改入口名，OSS 不支持默认的 ～ 符号
+                  name: entrypoint => `runtime-${entrypoint.name}`,
+                }
+              },
+              output: {
+                publicPath: `//storage.360buyimg.com/pubfree-bucket/taro-docs/${uniqueCommitId.latest()}/`
+              }
+            }
+          }
+        },
+      }
+    }
+  ]
+}
 
 const siteConfig = {
   title: 'Taro 文档' /* title for your website */,
-  tagline: 'Taro 是一个开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv 等框架来开发微信/京东/百度/支付宝/字节跳动/ QQ 小程序/H5/React Native 等应用。',
+  tagline: 'Taro 是一个开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv 等框架来开发微信/京东/百度/支付宝/字节跳动/QQ 小程序/H5/React Native 等应用。',
   url: url[BASE_DOMAIN], /* your website url */
   baseUrl: baseUrl[BASE_DOMAIN], /* base url for your project */
   onBrokenLinks: 'warn',
@@ -46,7 +77,7 @@ const siteConfig = {
           lastVersion: '3.x',
           versions: {
             current: {
-              label: '下个版本',
+              label: '4.x',
             }
           }
         },
@@ -118,8 +149,8 @@ const siteConfig = {
       title: 'Taro',
       logo: {
         alt: 'Taro logo',
-        src: 'img/logo-taro.png',
-        srcDark: 'img/logo-taro.png'
+        src: `${imgBaseUrl[BASE_DOMAIN]}/logo-taro.png`,
+        srcDark: `${imgBaseUrl[BASE_DOMAIN]}/logo-taro.png`
       },
       items: [
         {
@@ -168,18 +199,18 @@ const siteConfig = {
           label: '博客',
           position: 'left',
         },
-        {href: 'https://github.com/NervJS/taro/issues', label: '问题反馈', position: 'left'},
-        {href: 'https://deco-preview.jd.com?from=taro-docs', label: '设计稿生成代码', position: 'left'},
+        { href: 'https://github.com/NervJS/taro/issues', label: '问题反馈', position: 'left' },
+        { href: 'https://deco-preview.jd.com?from=taro-docs', label: '设计稿生成代码', position: 'left' },
         {
           label: '生态系统',
           position: 'right',
           items:[
-            {href: 'https://github.com/NervJS/taro/discussions', label: '论坛'},
-            {href: 'https://taro-ext.jd.com', label: '物料市场'},
-            {to: 'showcase', label: '案例'},
-            {href: 'https://nutui.jd.com/#/', label: 'NutUI'},
-            {href: 'https://taro-ui.jd.com', label: 'Taro UI'},
-            {href: 'https://taro.jd.com/jdmp/index.html', label: '京东小程序'},
+            { href: 'https://github.com/NervJS/taro/discussions', label: '论坛' },
+            { href: 'https://taro-ext.jd.com', label: '物料市场' },
+            { to: 'showcase', label: '案例' },
+            { href: 'https://nutui.jd.com/#/', label: 'NutUI' },
+            { href: 'https://taro-ui.jd.com', label: 'Taro UI' },
+            { href: 'https://taro.jd.com/jdmp/index.html', label: '京东小程序' },
           ]
         },
         {
@@ -250,7 +281,7 @@ const siteConfig = {
           {
             tagName: 'link',
             rel: 'icon',
-            href: 'img/taroLogo180.png',
+            href: 'img/taro-logo_180.png',
           },
           {
             tagName: 'link',
@@ -275,18 +306,18 @@ const siteConfig = {
           {
             tagName: 'link',
             rel: 'apple-touch-icon',
-            href: 'img/taroLogo180.png',
+            href: 'img/taro-logo_180.png',
           },
           {
             tagName: 'link',
             rel: 'mask-icon',
-            href: 'img/taroLogo180.png',
+            href: 'img/taro-logo_180.png',
             color: 'rgb(62, 204, 94)',
           },
           {
             tagName: 'meta',
             name: 'msapplication-TileImage',
-            content: 'img/taroLogo180.png',
+            content: 'img/taro-logo_180.png',
           },
           {
             tagName: 'meta',
@@ -316,6 +347,10 @@ const siteConfig = {
       },
     }),
   },
+}
+
+if (SCOPE_PLUGIN[BASE_DOMAIN]) {
+  siteConfig.plugins = siteConfig.plugins.concat(SCOPE_PLUGIN[BASE_DOMAIN])
 }
 
 module.exports = siteConfig

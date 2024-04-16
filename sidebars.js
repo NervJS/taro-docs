@@ -69,7 +69,7 @@ module.exports = {
       {
         label: 'React Native',
         type: 'category',
-        items: ['react-native', 'react-native-remind'],
+        items: ['react-native', 'react-native-remind','react-native-harmony'],
       },
       'harmony',
       'harmony-hybrid/index'
@@ -681,6 +681,10 @@ module.exports = {
       'apis/storage/createBufferURL',
       'apis/storage/clearStorageSync',
       'apis/storage/clearStorage',
+      'apis/storage/batchSetStorageSync',
+      'apis/storage/batchSetStorage',
+      'apis/storage/batchGetStorageSync',
+      'apis/storage/batchGetStorage',
       {
         'label': '周期性更新',
         'type': 'category',
@@ -704,7 +708,8 @@ module.exports = {
       'apis/data-analysis/reportMonitor',
       'apis/data-analysis/reportEvent',
       'apis/data-analysis/reportAnalytics',
-      'apis/data-analysis/getExptInfoSync'
+      'apis/data-analysis/getExptInfoSync',
+      'apis/data-analysis/getCommonConfig',
     ],
     '画布': [
       'apis/canvas/createOffscreenCanvas',
@@ -999,6 +1004,8 @@ module.exports = {
         'items': [
           'apis/open-api/subscribe-message/requestSubscribeMessage',
           'apis/open-api/subscribe-message/requestSubscribeDeviceMessage',
+          'apis/open-api/subscribe-message/subscribeService',
+          'apis/open-api/subscribe-message/unsubscribeMessage',
         ]
       },
       {
@@ -1073,7 +1080,16 @@ module.exports = {
         'label': '微信客服',
         'type': 'category',
         'items': [
-          'apis/open-api/customer-service/openCustomerServiceChat'
+          'apis/open-api/customer-service/openCustomerServiceChat',
+        ]
+      },
+      {
+        'label': '微信表情',
+        'type': 'category',
+        'items': [
+          'apis/open-api/sticker/openStickerSetView',
+          'apis/open-api/sticker/openStickerIPView',
+          'apis/open-api/sticker/openSingleStickerView',
         ]
       },
     ],
@@ -1414,9 +1430,52 @@ module.exports = {
       'apis/alipay/tradePay',
     ],
     'QQ': [
+      'apis/qq/addRecentColorSign',
+      'apis/qq/applyAddToMyApps',
+      'apis/qq/getGuildInfo',
+      'apis/qq/getQQRunData',
+      'apis/qq/isAddedToMyApps',
       'apis/qq/openQzonePublish',
+      'apis/qq/setCustomDress',
+      'apis/qq/setOfficialDress',
+      'apis/qq/updateQQApp',
     ],
     'Swan': [
+      {
+        'label': '书架',
+        'type': 'category',
+        'items': [
+          'apis/swan/bookshelf/insertBookshelf',
+          'apis/swan/bookshelf/deleteBookshelf',
+          'apis/swan/bookshelf/queryBookshelf',
+          'apis/swan/bookshelf/updateBookshelfReadTime',
+          'apis/swan/bookshelf/navigateToBookshelf',
+        ]
+      },
+      {
+        'label': '小程序包 / 分包预下载',
+        'type': 'category',
+        'items': [
+          'apis/swan/download-package/downloadPackage',
+          'apis/swan/download-package/downloadPackages',
+          'apis/swan/download-package/loadSubPackage',
+        ]
+      },
+      {
+        'label': '百度收银台支付',
+        'type': 'category',
+        'items': [
+          'apis/swan/pay/requestPolymerPayment',
+          'apis/swan/pay/getOptimalPriceInfo',
+        ]
+      },
+      'apis/swan/getFavorStatus',
+      'apis/swan/getSystemRiskInfo',
+      'apis/swan/getTopStatus',
+      'apis/swan/openBdboxWebview',
+      'apis/swan/setDocumentTitle',
+      'apis/swan/setMetaDescription',
+      'apis/swan/setMetaKeywords',
       'apis/swan/setPageInfo',
     ],
   }

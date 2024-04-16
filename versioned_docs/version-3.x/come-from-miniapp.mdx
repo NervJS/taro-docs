@@ -89,7 +89,7 @@ Taro v3.6.3+ 推荐使用以下方式获取：
 <Tabs
   defaultValue="React"
   values={[
-    {label:  <ReactIcon />, value: 'React'},
+    {label: <ReactIcon />, value: 'React'},
     {label: <VueIcon />, value: 'Vue'}
   ]}>
 <TabItem value="React">
@@ -142,7 +142,7 @@ Taro v3.6.2 及以下版本可以通过以下方式获取（需要对应小程�
 <Tabs
   defaultValue="React"
   values={[
-    {label:  <ReactIcon />, value: 'React'},
+    {label: <ReactIcon />, value: 'React'},
     {label: <VueIcon />, value: 'Vue'}
   ]}>
 <TabItem value="React">
@@ -186,3 +186,13 @@ const scope = page.selectComponent('#demo')
 
 - [React dataset](./react-overall#dataset)
 - [Vue dataset](./vue-overall#dataset)
+
+## wxs
+
+:::info
+Taro v3.6.25 开始支持。目前只支持在 Taro React 小程序中使用，暂不支持 Taro Vue，暂不支持在其他端使用。
+:::
+
+Taro 支持使用各类小程序的视图层脚步语言，如微信小程序的 `wxs`、支付宝小程序的 `sjs`、京东小程序的 `jds`、头条小程序的 `sjs` 等，详情请看：
+
+- [使用 WXS](./optimized#使用-wxs)

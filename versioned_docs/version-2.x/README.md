@@ -139,7 +139,7 @@ Taro 已经投入了我们的生产环境中使用，业界也在广泛地使用
 
 更多文章教程、开源项目等，请参考：[awesome-taro](https://github.com/NervJS/awesome-taro)
 
-掘金小册：[Taro 多端开发实现原理与实战](https://juejin.im/book/5b73a131f265da28065fb1cd?referrer=5ba228f16fb9a05d3251492d)
+掘金小册：[Taro 多端开发实现原理与实战](https://juejin.im/book/5b73a131f265da28065fb1cd?referrer=5ba228f16fb9a05d3251492d) (已下架，仅购买用户可阅)
 
 ## 开发交流
 

@@ -64,8 +64,8 @@ class App extends Components {
 | soundMode | `keyof soundMode` | `"speaker"` | 否 | 声音输出方式 |
 | autoPauseIfNavigate | `boolean` | `true` | 否 | 当跳转到本小程序的其他页面时，是否自动暂停本页面的实时音视频播放 |
 | pictureInPictureMode | "" or "push" or "pop" or ("push" or "pop")[] |  | 否 | 设置小窗模式： push, pop，空字符串或通过数组形式设置多种模式（如： ["push", "pop"]） |
-| autoPauseIfOpenNative | `string` |  | 否 | 当跳转到其它微信原生页面时，是否自动暂停本页面的实时音视频播放 |
-| referrerPolicy | "origin" or "no-referrer" |  | 否 | 格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本； |
+| autoPauseIfOpenNative | `boolean` | `true` | 否 | 当跳转到其它微信原生页面时，是否自动暂停本页面的实时音视频播放 |
+| referrerPolicy | "origin" or "no-referrer" | `'no-referrer'` | 否 | 格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html ，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本； |
 | signature | `string` |  | 否 | 设置署名水印 |
 | enableMetadata | `string` |  | 否 | 是否回调metadata |
 | id | `string` |  | 否 | live-player 属性的唯一标志符 |
@@ -79,8 +79,8 @@ class App extends Components {
 | onLeavePictureInPicture | `CommonEventFunction` |  | 否 | 播放器退出小窗 |
 | onError | `CommonEventFunction` |  | 否 | 播放错误事件 |
 | onMetaDataChange | `CommonEventFunction` |  | 否 | metadata通知，detail = {info} |
-| onCastingUserSelect | `CommonEventFunction` |  | 否 | 用户选择投屏设备时触发 detail = { state: "success"/"fail" } |
-| onCastingStateChange | `CommonEventFunction` |  | 否 | 投屏成功/失败时触发 detail = { type, state: "success"/"fail" } |
+| onCastingUserSelect | CommonEventFunction<{ state: "success" or "fail"; }> |  | 否 | 用户选择投屏设备时触发 detail = { state: "success"/"fail" } |
+| onCastingStateChange | CommonEventFunction<{ type: any; state: "success" or "fail"; }> |  | 否 | 投屏成功/失败时触发 detail = { type, state: "success"/"fail" } |
 | onCastingInterrupt | `CommonEventFunction` |  | 否 | 投屏被中断时触发 |
 
 ### API 支持度

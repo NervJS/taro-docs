@@ -3,7 +3,8 @@ title: 鸿蒙 & OpenHarmony
 ---
 
 :::info
-Taro v3.5+ 开始支持
+Taro v3.5+ 开始支持。
+**当前 JS UI 版本的鸿蒙适配已停止更新**，Taro 4.0.0-beta.x 开始支持 Harmony ArkUI，推荐开发者升级 Taro 并根据新的[鸿蒙适配文档](/docs/4.x/harmony)进行鸿蒙应用的开发。
 :::
 
 随着鸿蒙系统的日渐完善，众多应用厂商都期待着把自家应用移植到鸿蒙平台上。借助 Taro，可以实现快速开发鸿蒙应用、把小程序快速转换为鸿蒙应用等功能。
@@ -70,9 +71,9 @@ API 也是一样，两者的 API 有部分交集，可用法、功能上也有�
 
 ### 1. 安装、配置 DevEco Studio
 
-（1）登录  [HarmonysOS 应用开发门户](https://link.juejin.cn/?target=https%3A%2F%2Fdeveloper.harmonyos.com%2Fcn%2Fhome)，点击右上角注册按钮，注册开发者帐号。
+（1）登录  [HarmonysOS 应用开发门户](https://developer.harmonyos.com/cn/home)，点击右上角注册按钮，注册开发者帐号。
 
-（2）进入  [HUAWEI DevEco Studio 产品页](https://link.juejin.cn/?target=https%3A%2F%2Fdeveloper.harmonyos.com%2Fcn%2Fdevelop%2Fdeveco-studio)，登录华为开发者账号后下载 DevEco Studio 安装包并进行安装。
+（2）进入  [HUAWEI DevEco Studio 产品页](https://developer.harmonyos.com/cn/develop/deveco-studio)，登录华为开发者账号后下载 DevEco Studio 安装包并进行安装。
 
 （3）启动 DevEco Studio，根据工具引导下载 HarmonyOS SDK。
 

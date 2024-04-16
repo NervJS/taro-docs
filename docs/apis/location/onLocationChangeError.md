@@ -35,6 +35,7 @@ sidebar_label: onLocationChangeError
 
 ### CallbackResult
 
-| 参数 | 类型 | 说明 |
-| --- | --- | --- |
-| errCode | `number` | 错误码 |
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| errCode | `number` | 是 | 错误码 |
+| errMsg | `string` | 否 | 错误信息<br />API 支持度: tt<br />tt: 最低支持版本 2.48.0 |

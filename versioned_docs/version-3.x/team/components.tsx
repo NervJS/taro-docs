@@ -1,8 +1,8 @@
 import Link from '@docusaurus/Link'
 import { QueryDatabaseResponse } from '@notionhq/client/build/src/api-endpoints'
 import members from '@site/static/data/contributors.json'
-import o2logo from '@site/static/img/o2logo@2x.png'
-import taro from '@site/static/img/taroLogo180.png'
+import o2logo from '@site/static/img/o2logo.png'
+import taro from '@site/static/img/taro-logo_180.png'
 import React from 'react'
 
 interface ITeam {

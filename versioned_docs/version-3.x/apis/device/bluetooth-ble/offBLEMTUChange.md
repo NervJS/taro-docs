@@ -12,7 +12,7 @@ sidebar_label: offBLEMTUChange
 ## 类型
 
 ```tsx
-(callback: Callback) => void
+(callback?: Callback) => void
 ```
 
 ## 参数

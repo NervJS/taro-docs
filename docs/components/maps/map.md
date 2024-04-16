@@ -105,7 +105,7 @@ export default {
 | minScale | `number` | `3` | 否 | 最小缩放级别 3-20 |
 | maxScale | `number` | `20` | 否 | 最大缩放级别 3-20 |
 | markers | `marker[]` |  | 否 | 标记点 |
-| covers | `any[]` |  | 否 | 标记点 |
+| covers | `any[]` |  | 否 | **即将移除，请使用 markers**<br />**不推荐使用** |
 | polyline | `polyline[]` |  | 否 | 路线 |
 | circles | `circle[]` |  | 否 | 圆 |
 | controls | `control[]` |  | 否 | 控件（即将废弃，建议使用 cover-view 代替）<br />**不推荐使用** |
@@ -145,8 +145,14 @@ export default {
 | onUpdated | `CommonEventFunction` |  | 否 | 在地图渲染更新完成时触发 |
 | onRegionChange | CommonEventFunction<onRegionEventDetail<"begin"> or onRegionEventDetail<"end">> |  | 否 | 视野发生变化时触发 |
 | onPoiTap | `CommonEventFunction<onPoiTapEventDetail>` |  | 否 | 点击地图poi点时触发，e.detail = {name, longitude, latitude} |
-| onCallOutTap | `CommonEventFunction` |  | 否 | 点击标记点对应的气泡时触发e.detail = {markerId} |
-| onAnchorPointTap | `CommonEventFunction` |  | 否 | 点击定位标时触发，e.detail = {longitude, latitude} |
+| onPolylineTap | `CommonEventFunction<onPolylineTapEventDetail>` |  | 否 | 点击地图路线时触发，e.detail = {longitude, latitude} |
+| onAbilitySuccess | `CommonEventFunction<onAbilityEventDetail>` |  | 否 | 地图能力生效时触发，e.detail = {ability, errCode, errMsg} |
+| onAbilityFailed | `CommonEventFunction<onAbilityEventDetail>` |  | 否 | 地图能力失败时触发，e.detail = {ability, errCode, errMsg} |
+| onAuthSuccess | `CommonEventFunction<{ errCode: number; errMsg: string; }>` |  | 否 | 地图鉴权结果成功时触发，e.detail = {errCode, errMsg} |
+| onInterpolatePoint | `CommonEventFunction<onInterpolatePointEventDetail>` |  | 否 | MapContext.moveAlong 插值动画时触发。e.detail = {markerId, longitude, latitude, animationStatus: "interpolating" or "complete"} |
+| onError | `CommonEventFunction<point>` |  | 是 | 组件错误时触发，例如创建或鉴权失败，e.detail = {longitude, latitude} |
+| onCallOutTap | `CommonEventFunction<onCalloutTapEventDetail>` |  | 否 | 点击标记点对应的气泡时触发e.detail = {markerId} |
+| onAnchorPointTap | `CommonEventFunction<point>` |  | 否 | 点击定位标时触发，e.detail = {longitude, latitude} |
 | onPanelTap | `CommonEventFunction<{ panelId: any; layoutId: any; }>` |  | 否 | 点击 panel 时触发。 |
 | onInitComplete | `CommonEventFunction` |  | 否 | 地图初始化完成即将开始渲染第一帧时触发。 |
 
@@ -200,6 +206,12 @@ export default {
 | MapProps.onUpdated | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
 | MapProps.onRegionChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
 | MapProps.onPoiTap | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
+| MapProps.onPolylineTap | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
+| MapProps.onAbilitySuccess | ✔️ |  |  |  |  |  |  |  |  |
+| MapProps.onAbilityFailed | ✔️ |  |  |  |  |  |  |  |  |
+| MapProps.onAuthSuccess | ✔️ |  |  |  |  |  |  |  |  |
+| MapProps.onInterpolatePoint | ✔️ |  |  |  |  |  |  |  |  |
+| MapProps.onError | ✔️ |  |  |  |  |  |  |  |  |
 | MapProps.onCallOutTap | ✔️ | ✔️ |  | ✔️ |  | ✔️ |  |  |  |
 | MapProps.onAnchorPointTap | ✔️ |  |  | ✔️ |  |  |  |  |  |
 | MapProps.onPanelTap |  |  | ✔️ |  |  |  |  |  |  |
@@ -456,3 +468,28 @@ marker 上的气泡 label
 | name | `string` |
 | longitude | `number` |
 | latitude | `number` |
+
+### onPolylineTapEventDetail
+
+| 参数 | 类型 |
+| --- | --- |
+| polylineId | `number` |
+| longitude | `number` |
+| latitude | `number` |
+
+### onAbilityEventDetail
+
+| 参数 | 类型 |
+| --- | --- |
+| ability | `string` |
+| errCode | `number` |
+| errMsg | `string` |
+
+### onInterpolatePointEventDetail
+
+| 参数 | 类型 |
+| --- | --- |
+| markerId | `number` |
+| longitude | `number` |
+| latitude | `number` |
+| animationStatus | "interpolating" or "complete" |

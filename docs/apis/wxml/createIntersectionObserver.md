@@ -35,5 +35,5 @@ sidebar_label: createIntersectionObserver
 ## 示例代码
 
 ```tsx
-const observer = Taro.createIntersectionObserver(this, { thresholds: [0], observeAll: true })
+const observer = Taro.createIntersectionObserver(this, { thresholds: [0], observeAll: true })
 ```
