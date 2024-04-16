@@ -301,9 +301,53 @@ static onBack(taroWebController: TaroWebController): boolean {
   }
 ```
 
-### 小程序内置及热更新 (待完善)
- 待完善
-#### 方案简介
+### 小程序内置及热更新
+#### 内置及热更新的使用方式
+##### 小程序内置规则
+在业务较为复杂的场景时，项目通常分为多个`bundle`,内置到应用时遵循以下目录结构规则：
+```
+├──rawfile                          # 应用rawfile目录
+│   └──spa                          # 多bundle内置目录,支持配置 
+│       ├──spa_main@100000          # 小程序1的bundle
+│       │   └──spa                  # 一级目录
+│       │        └──main            # 二级目录
+│       │             ├──js         # js目录
+│       │             ├──css        # css目录
+│       │             ├──static     # 静态资源目录
+│       │             └──index.html # 首页文件
+│       ├──spa_new@100000           # 小程序2的bundle
+│       │   └──spa                  # 一级目录
+│       │        └──new             # 二级目录
+│       │            ├──js          # js目录
+│       │            ├──css         # css目录
+│       │            ├──static      # 静态资源目录
+│       │            └──index.html  # 首页文件
+```
+以上目录结构的解释说明  
+1. rawfile目录下的spa，为多bundle的内置目录，容器会在此目录下读取bundle加载，支持以下方式配置（该目录要与配置一致）：
+```typescript
+GlobalThis.getInstance().setRawFile('spa')
+```
+2. bundle包名称：`一级目录`+`_`+`二级目录`+`@`+`VersionCode`,例如：spa_main@100000，以`@`符分割为两部分：  
+2.1 `@`符分前置: 为bundle的打包目录层级，一般为index.html(首页文件)的path路径，用下划线`_`分割,作用是为内置文件路径拦截匹配查找；  
+2.2 VersionCode: 为当前bundle版本号，作用为版本控制及磁盘热更新
+##### 小程序磁盘缓存
+1. 读取磁盘缓存，磁盘更新操作入口（如下），读取应用磁盘`${context.filesDir}/update`下bundle缓存版本信息:
+```typescript
+LocalUpdateManager.updateMiniOnLaunch()
+```
+2. 内置更新缓存至磁盘，若磁盘缓存bundle版本 < rawfile内置版本，则将内置bundle更新至磁盘,具体实现参见以下方法：
+```
+LocalUpdateManager.updateAllMini()
+```
+3. 更新至磁盘的bundle在容器加载时会被自动查找加载；
+4. 磁盘缓存默认开启，支持以下方式关闭：
+```typescript
+GlobalThis.getInstance().setDiskUpdateEnable(false)
+```
+##### 热更新 
+开发中。。。 
+#### 整体方案简介
 
 动态下开发台吗，在不发布新版本的情况下修复`bug`和发布新功能，绕开应用商店的审核机制，避免长时间审核以及多次被拒绝造成的成本问题，缩短用户取得新版本的流程，改善用户体验。
 
