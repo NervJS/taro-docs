@@ -815,7 +815,209 @@ nativeUpdater.update(new NativeApiPair("youMethodName1",["param1",123],"myField"
 
 
 ### Taro.request请求方式选择（原生/js）
-@华为-漆灿
+
+#### 一、Taro.request 原生实现（native桥接）代码位置：taro/packages/taro-platform-harmony-hybrid/src/api/apis/network/request/index.ts
+
+```typescript
+
+let task!: Taro.RequestTask<any>
+  const result: ReturnType<typeof Taro.request> = new Promise((resolve, reject) => {
+    const upperMethod = method ? method.toUpperCase() : method
+    const taskID = native.request({
+      url,
+      method: upperMethod,
+      ...otherOptions,
+      success: (res: any) => {
+        isFunction(success) && success(res)
+        isFunction(complete) && complete(res)
+        resolve(res)
+      },
+      fail: (res: any) => {
+        isFunction(fail) && fail(res)
+        isFunction(complete) && complete(res)
+        reject(res)
+      },
+    })
+    task = judgeUseAxios ? taskID : NativeRequest.getRequestTask(taskID)
+  }) as any
+```
+
+#### 二、Taro.request js实现（axios）代码位置：taro/packages/taro-platform-harmony-hybrid/src/api/apis/request.ts
+
+```typescript
+
+this.httpRequest = axios.create({
+      responseType: responseType || 'text',
+      headers: headers,
+      timeout: timeout || 2000,
+    })
+
+    // 请求拦截器
+    this.httpRequest.interceptors.request.use(
+      (config) => {
+        if (config.enableCache === false) {
+          return config
+        }
+        // 处理缓存
+        const cacheData = localStorage.getItem(config.url)
+        if (cacheData !== null) {
+          let result = cacheData
+          if (dataType === 'json') {
+            result = JSON.parse(cacheData)
+          }
+          source.cancel('cache has useful data!!')
+          return Promise.resolve({ result })
+        }
+        return config
+      },
+      (error) => {
+        console.error('error: ', error)
+      }
+    )
+
+    // 响应拦截器
+    this.httpRequest.interceptors.response.use(
+      (response) => {
+        // 缓存数据
+        if (response.config.enableCache === false) {
+          localStorage.setItem(response.config.url, JSON.stringify(response.data))
+        }
+        callbackManager.headersReceived.trigger({
+          header: response.headers
+        })
+        return response
+      },
+      (error) => {
+        console.error('error: ', error)
+      }
+    )
+
+    if (!object) {
+      console.error('request error: params illegal')
+      return
+    }
+
+    let isFormUrlEncoded = false
+    for (const key in headers) {
+      if (key.toLowerCase() === 'content-type') {
+        if (headers[key].toLowerCase().includes('application/x-www-form-urlencoded')) {
+          isFormUrlEncoded = true
+        }
+        break
+      }
+    }
+
+    // data为Object类型时，属性的值类型如果是number, request请求时信息会丢失. 故将data转成string类型进行规避
+    if (data && (isFormUrlEncoded || ['GET', 'OPTIONS', 'DELETE', 'TRACE', 'CONNECT'].includes(method))) {
+      const dataArray = []
+      for (const key in data) {
+        // @ts-ignore
+        dataArray.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      }
+      data = dataArray.join('&')
+    }
+
+    // header的属性的值类型如果是number, request请求时信息会丢失. 故将各个属性转成string类型
+    if (headers) {
+      for (const key in headers) {
+        headers[key] = `${headers[key]}`
+      }
+    }
+
+    this.httpRequest({
+      method: method,
+      url: url,
+      CancelToken: source.token,
+      enableCache: enableCache || false,
+    })
+      .then((response) => {
+        if (success && !this.abortFlag) {
+          let result = response.result
+          if (response.config.responseType === 'text') {
+            if (dataType === 'text') {
+              result = response.data
+            } else if (dataType === 'json') {
+              result = JSON.parse(response.data)
+            } else if (dataType === 'base64') {
+              const encodeData = encodeURIComponent(response.data)
+              result = btoa(encodeData)
+            } else if (dataType === 'arraybuffer') {
+              result = new TextEncoder().encode(response.data).buffer
+            } else {
+              console.error('Unsupported dataType!!')
+            }
+          } else if (response.config.responseType === 'arraybuffer') {
+            result = response.data
+          } else {
+            console.error('Unsupported dataType!!: ', response.config.responseType)
+          }
+          const res = {
+            data: result,
+            statusCode: response.status,
+            header: response.headers,
+            cookies: response.cookies ? [response.cookies] : [],
+            errMsg: 'request:ok',
+          }
+          this.result = res
+          success(res)
+        }
+      })
+      .catch((err) => {
+        console.error('request error: ' + JSON.stringify(err))
+        if (fail && !this.abortFlag) {
+          // eslint-disable-next-line no-console
+          const res = { errMsg: errMsgMap.has(err.code) ? errMsgMap.get(err.code) : `${JSON.stringify(err)}` }
+          this.result = res
+          fail(res)
+        }
+      })
+      .finally(() => {
+        if (complete && !this.abortFlag) {
+          complete(this.result)
+        }
+        if (this.httpRequest) {
+          source.cancel('requestTask cancelled by the user!')
+        }
+      })
+```
+
+#### 三、原生、js方式转换实现（proxy代理）代码位置：taro/packages/taro-platform-harmony-hybrid/src/api/apis/NativeApi.ts
+
+```typescript
+
+class HybridProxy {
+  private readonly useAxios: boolean
+  private readonly useOsChannel: boolean
+  private readonly cacheProxy: any
+  private readonly requestApi = 'request'
+
+  constructor (useAxios: boolean, useOsChannel: boolean, nativeApi: NativeApi) {
+    this.useAxios = useAxios
+    this.useOsChannel = useOsChannel
+    this.cacheProxy = new Proxy(nativeApi, new CacheStorageProxy(nativeApi))
+  }
+
+  get (_target: any, prop: string) {
+    return (...args: any) => {
+      if (this.useAxios && prop === this.requestApi) {
+        judgeUseAxios = this.useAxios
+        // @ts-ignore
+        return new RequestTask(...args)
+      }
+      if (this.useOsChannel && osChannelApi.hasOwnProperty(prop)) {
+        return osChannelApi[prop](...args)
+      }
+      return this.cacheProxy[prop](...args)
+    }
+  }
+}
+
+const nativeApi = new NativeApi()
+const native = new Proxy(nativeApi, new HybridProxy(false, false, nativeApi)) // 第一个false是默认走jsb，true是走纯js， 第二个false是不走osChannel
+export default native
+```
+#### 注意
+1、转换需要手动修改 const native = new Proxy(nativeApi, new HybridProxy(false, false, nativeApi)) 中 new HybridProxy的第一个参数，改为false为原生实现，若改为true，则为js实现。
 
 ### 同层渲染
 预计后续530支持
