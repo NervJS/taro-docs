@@ -71,7 +71,8 @@ module.exports = {
         type: 'category',
         items: ['react-native', 'react-native-remind','react-native-harmony'],
       },
-      'harmony'
+      'harmony',
+      'harmony-hybrid/index'
     ],
     进阶指南: [
       'config-detail',
