@@ -95,7 +95,7 @@ module.exports = function (merge) {
 :::info
 Taro v3.6.9 开始支持
 
-Taro v4.0.0 之后支持范型，可以传入编译器类型 'webpack4 | 'webpack5 |  'vite'
+Taro v4.0.0 之后支持范型，可以传入编译器类型 'webpack4 | 'webpack5 | 'vite'
 
 react native 暂不支持
 :::
@@ -131,7 +131,7 @@ export default {
 ```ts
 import { defineConfig } from '@tarojs/cli'
 
-export default defineConfig(async (mergin, { command, mode }) => {
+export default defineConfig(async (merge, { command, mode }) => {
   const data = await asyncFunction()
   return {
     // Taro 配置
@@ -146,8 +146,8 @@ export default defineConfig(async (mergin, { command, mode }) => {
 ```ts
 import { defineConfig } from '@tarojs/cli'
 
-export default defineConfig((mergin, { command, mode }) => {
-  // mergin 为webpack-mergin, 兼容以前的配置
+export default defineConfig((merge, { command, mode }) => {
+  // merge 为 webpack-merge, 兼容以前的配置
   // 假如执行的命令为: "taro build --type weapp --mode test"
   // 则 command 的值为 build, mode 的值为 test
   if (mode === 'development') {
