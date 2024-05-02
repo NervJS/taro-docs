@@ -197,6 +197,7 @@ typeof ScrollViewProps
 | refresherBackground | `string` | `'#FFF'` | 否 | 设置自定义下拉刷新区域背景颜色 |
 | refresherTriggered | `boolean` | `false` | 否 | 设置当前下拉刷新状态，true 表示下拉刷新已经被触发，false 表示下拉刷新未被触发 |
 | enhanced | `boolean` | `false` | 否 | 启用 scroll-view 增强特性 |
+| usingSticky | `boolean` | `false` | 否 | 使 scroll-view 下的 position sticky 特性生效，否则滚动一屏后 sticky 元素会被隐藏 |
 | bounces | `boolean` | `true` | 否 | iOS 下 scroll-view 边界弹性控制 (同时开启 enhanced 属性后生效) |
 | showScrollbar | `boolean` | `true` | 否 | 滚动条显隐控制 (同时开启 enhanced 属性后生效) |
 | pagingEnabled | `boolean` | `false` | 否 | 分页滑动效果 (同时开启 enhanced 属性后生效) |
@@ -207,7 +208,7 @@ typeof ScrollViewProps
 | disableUpperScroll | `string` |  | 否 | 发生滚动前，对滚动方向进行判断，当方向是底部/右边时，如果值为 always 将始终禁止滚动，如果值为 out-of-bounds 且当前已经滚动到底部/右边，禁止滚动。 |
 | ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
 | enablePassive | `boolean` | `false` | 否 | 开启 passive 特性，能优化一定的滚动性能 |
-| type | "list" or "custom" | `'list'` | 否 | 渲染模式<br />list - 列表模式。只会渲染在屏节点，会根据直接子节点是否在屏来按需渲染，若只有一个直接子节点则性能会退化<br />custom - 自定义模式。只会渲染在屏节点，子节点可以是 sticky-section list-view grid-view 等组件 |
+| type | "list" or "custom" or "nested" | `'list'` | 否 | 渲染模式<br />list - 列表模式。只会渲染在屏节点，会根据直接子节点是否在屏来按需渲染，若只有一个直接子节点则性能会退化<br />custom - 自定义模式。只会渲染在屏节点，子节点可以是 sticky-section list-view grid-view 等组件<br />nested - 嵌套模式。用于处理父子 scroll-view 间的嵌套滚动，子节点可以是 nested-scroll-header nested-scroll-body 组件或自定义 refresher |
 | reverse | `boolean` | `false` | 否 | 是否反向滚动。一般初始滚动位置是在顶部，反向滚动则是在底部。 |
 | clip | `boolean` | `true` | 否 | 是否对溢出进行裁剪，默认开启 |
 | cacheExtent | `number` |  | 否 | 指定视口外渲染区域的距离，默认情况下视口外节点不渲染。指定 cache-extent 可优化滚动体验和加载速度，但会提高内存占用且影响首屏速度，可按需启用。 |
@@ -262,6 +263,7 @@ typeof ScrollViewProps
 | ScrollViewProps.refresherBackground | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.refresherTriggered | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.enhanced | ✔️ | ✔️ |  |  |  |  |  |  |  |
+| ScrollViewProps.usingSticky | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.bounces | ✔️ | ✔️ |  |  |  |  |  |  |  |
 | ScrollViewProps.showScrollbar | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.pagingEnabled | ✔️ |  |  |  |  |  |  |  |  |

@@ -119,6 +119,7 @@ export default {
 | space | `keyof TSpace` |  | 否 | 显示连续空格 |
 | decode | `boolean` | `false` | 否 | 是否解码 |
 | numberOfLines | `number` |  | 否 | 多行省略，值须大于等于 1，表现同 css 的 -webkit-line-clamp 属性一致。 |
+| overflow | `keyof Overflow` | `'visible'` | 否 | 文本溢出处理 |
 | maxLines | `number` |  | 否 | 限制文本最大行数 |
 
 ### API 支持度
@@ -130,6 +131,7 @@ export default {
 | TextProps.space | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
 | TextProps.decode | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | (默认解码，不支持设置) |  |  |
 | TextProps.numberOfLines |  |  | ✔️ |  |  |  |  |  |  |
+| TextProps.overflow |  |  |  |  |  |  |  |  |  |
 | TextProps.maxLines | ✔️ |  |  |  |  |  |  |  |  |
 
 ### TSpace
@@ -141,3 +143,12 @@ space 的合法值
 | ensp | 中文字符空格一半大小 |
 | emsp | 中文字符空格大小 |
 | nbsp | 根据字体设置的空格大小 |
+
+### Overflow
+
+| 参数 | 说明 |
+| --- | --- |
+| clip | 修剪文本 |
+| fade | 淡出 |
+| ellipsis | 显示省略号 |
+| visible | 文本不截断 |

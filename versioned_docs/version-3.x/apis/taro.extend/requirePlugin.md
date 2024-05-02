@@ -1,5 +1,5 @@
 ---
-title: Taro.requirePlugin(pluginName)
+title: requirePlugin
 sidebar_label: requirePlugin
 ---
 
@@ -10,7 +10,7 @@ sidebar_label: requirePlugin
 ## 类型
 
 ```tsx
-(pluginName: string) => any
+{ (pluginName: string): any; (pluginName: string, success?: (mod: any) => any, error?: (e: { mod: any; errMsg: string; }) => any): any; async?: (pluginName: string) => Promise<any>; }
 ```
 
 ## 参数
