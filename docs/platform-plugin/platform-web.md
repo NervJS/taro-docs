@@ -217,7 +217,7 @@ export default H5
   }
 ```
 
-虽然对 API 修改很容易，但是如果新增的 API 却不能通过 `Taro.newAPI` 的形式来使用，为此我们需要在插件打包时需要借助 exportNameOnly 插件输出当前插件支持的 API 列表。
+虽然对 API 修改很容易，但是新增的 API 却不能通过 `Taro.newAPI` 的形式来使用，为此我们需要在插件打包时需要借助 exportNameOnly 插件输出当前插件支持的 API 列表。
 
 ```js title="rollup.config.js"
 import exportNameOnly from '@tarojs/plugin-platform-h5/build/rollup-plugin-export-name-only'
