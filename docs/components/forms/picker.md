@@ -5,7 +5,7 @@ sidebar_label: Picker
 
 从底部弹起的滚动选择器
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/picker.html)
 
@@ -173,12 +173,12 @@ export default class PagePicker extends Component {
 
 ### API 支持度
 
-| API | 微信小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: |
-| PickerStandardProps.headerText | ✔️ |  |  |  |
-| PickerStandardProps.mode | ✔️ | ✔️ | ✔️ |  |
-| PickerStandardProps.disabled | ✔️ | ✔️ | ✔️ |  |
-| PickerStandardProps.onCancel | ✔️ | ✔️ | ✔️ |  |
+| API | 微信小程序 | H5 | React Native | Harmony | Harmony hybrid |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| PickerStandardProps.headerText | ✔️ |  |  |  |  |
+| PickerStandardProps.mode | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerStandardProps.disabled | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerStandardProps.onCancel | ✔️ | ✔️ | ✔️ |  | ✔️ |
 
 ### Mode
 
@@ -217,16 +217,16 @@ export default class PagePicker extends Component {
 
 ### API 支持度
 
-| API | 微信小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: |
-| PickerSelectorProps.range | ✔️ | ✔️ | ✔️ |  |
-| PickerSelectorProps.rangeKey | ✔️ | ✔️ | ✔️ |  |
-| PickerSelectorProps.value | ✔️ | ✔️ | ✔️ |  |
-| PickerSelectorProps.defaultValue | ✔️ | ✔️ | ✔️ |  |
-| PickerSelectorProps.itemStyle |  |  | ✔️ |  |
-| PickerSelectorProps.indicatorStyle |  |  | ✔️ |  |
-| PickerSelectorProps.onChange | ✔️ | ✔️ | ✔️ |  |
-| PickerSelectorProps.textProps |  | ✔️ |  |  |
+| API | 微信小程序 | H5 | React Native | Harmony | Harmony hybrid |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| PickerSelectorProps.range | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerSelectorProps.rangeKey | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerSelectorProps.value | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerSelectorProps.defaultValue | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerSelectorProps.itemStyle |  |  | ✔️ |  |  |
+| PickerSelectorProps.indicatorStyle |  |  | ✔️ |  |  |
+| PickerSelectorProps.onChange | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerSelectorProps.textProps |  | ✔️ |  |  | ✔️ |
 
 ### ChangeEventDetail
 
@@ -251,15 +251,15 @@ export default class PagePicker extends Component {
 
 ### API 支持度
 
-| API | 微信小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: |
-| PickerMultiSelectorProps.range | ✔️ | ✔️ | ✔️ |  |
-| PickerMultiSelectorProps.rangeKey | ✔️ | ✔️ | ✔️ |  |
-| PickerMultiSelectorProps.value | ✔️ | ✔️ | ✔️ |  |
-| PickerMultiSelectorProps.itemStyle |  |  | ✔️ |  |
-| PickerMultiSelectorProps.indicatorStyle |  |  | ✔️ |  |
-| PickerMultiSelectorProps.onChange | ✔️ | ✔️ | ✔️ |  |
-| PickerMultiSelectorProps.onColumnChange | ✔️ | ✔️ | ✔️ |  |
+| API | 微信小程序 | H5 | React Native | Harmony | Harmony hybrid |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| PickerMultiSelectorProps.range | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerMultiSelectorProps.rangeKey | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerMultiSelectorProps.value | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerMultiSelectorProps.itemStyle |  |  | ✔️ |  |  |
+| PickerMultiSelectorProps.indicatorStyle |  |  | ✔️ |  |  |
+| PickerMultiSelectorProps.onChange | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerMultiSelectorProps.onColumnChange | ✔️ | ✔️ | ✔️ |  | ✔️ |
 
 ### ChangeEventDetail
 
@@ -289,13 +289,13 @@ export default class PagePicker extends Component {
 
 ### API 支持度
 
-| API | 微信小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: |
-| PickerTimeProps.value | ✔️ | ✔️ | ✔️ |  |
-| PickerTimeProps.defaultValue | ✔️ | ✔️ | ✔️ |  |
-| PickerTimeProps.start | ✔️ | ✔️ | ✔️ |  |
-| PickerTimeProps.end | ✔️ | ✔️ | ✔️ |  |
-| PickerTimeProps.onChange | ✔️ | ✔️ | ✔️ |  |
+| API | 微信小程序 | H5 | React Native | Harmony | Harmony hybrid |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| PickerTimeProps.value | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerTimeProps.defaultValue | ✔️ | ✔️ | ✔️ |  |  |
+| PickerTimeProps.start | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerTimeProps.end | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerTimeProps.onChange | ✔️ | ✔️ | ✔️ |  | ✔️ |
 
 ### ChangeEventDetail
 
@@ -319,14 +319,14 @@ export default class PagePicker extends Component {
 
 ### API 支持度
 
-| API | 微信小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: |
-| PickerDateProps.value | ✔️ | ✔️ | ✔️ |  |
-| PickerDateProps.defaultValue | ✔️ | ✔️ | ✔️ |  |
-| PickerDateProps.start | ✔️ | ✔️ | ✔️ |  |
-| PickerDateProps.end | ✔️ | ✔️ | ✔️ |  |
-| PickerDateProps.fields | ✔️ | ✔️ | ✔️ |  |
-| PickerDateProps.onChange | ✔️ | ✔️ | ✔️ |  |
+| API | 微信小程序 | H5 | React Native | Harmony | Harmony hybrid |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| PickerDateProps.value | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerDateProps.defaultValue | ✔️ | ✔️ | ✔️ |  |  |
+| PickerDateProps.start | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerDateProps.end | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerDateProps.fields | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerDateProps.onChange | ✔️ | ✔️ | ✔️ |  | ✔️ |
 
 ### Fields
 
@@ -358,14 +358,14 @@ export default class PagePicker extends Component {
 
 ### API 支持度
 
-| API | 微信小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: |
-| PickerRegionProps.value | ✔️ | ✔️ | ✔️ |  |
-| PickerRegionProps.defaultValue | ✔️ | ✔️ | ✔️ |  |
-| PickerRegionProps.customItem | ✔️ | ✔️ | ✔️ |  |
-| PickerRegionProps.level | ✔️ |  |  |  |
-| PickerRegionProps.regionData |  |  | ✔️ |  |
-| PickerRegionProps.onChange | ✔️ | ✔️ | ✔️ |  |
+| API | 微信小程序 | H5 | React Native | Harmony | Harmony hybrid |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| PickerRegionProps.value | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerRegionProps.defaultValue | ✔️ | ✔️ | ✔️ |  |  |
+| PickerRegionProps.customItem | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerRegionProps.level | ✔️ |  |  |  |  |
+| PickerRegionProps.regionData |  |  | ✔️ |  |  |
+| PickerRegionProps.onChange | ✔️ | ✔️ | ✔️ |  | ✔️ |
 
 ### ChangeEventDetail
 

@@ -5,7 +5,7 @@ sidebar_label: Video
 
 视频。相关api：Taro.createVideoContext
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/video.html)
 
@@ -175,106 +175,106 @@ export default class PageView extends Component {
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| VideoProps.src | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.duration | ✔️ |  | ✔️ |  | ✔️ |  | ✔️ | ✔️ |  |
-| VideoProps.controls | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.danmuList | ✔️ | ✔️ |  |  | ✔️ |  | ✔️ |  |  |
-| VideoProps.danmuBtn | ✔️ | ✔️ |  |  | ✔️ |  | ✔️ |  |  |
-| VideoProps.enableDanmu | ✔️ | ✔️ |  |  | ✔️ |  | ✔️ |  |  |
-| VideoProps.autoplay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.loop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.muted | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.initialTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.pageGesture | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
-| VideoProps.direction | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
-| VideoProps.showProgress | ✔️ | ✔️ |  |  | ✔️ |  | ✔️ |  |  |
-| VideoProps.showFullscreenBtn | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
-| VideoProps.showPlayBtn | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
-| VideoProps.showCenterPlayBtn | ✔️ | ✔️ | ✔️ |  | ✔️ |  | ✔️ | ✔️ |  |
-| VideoProps.enableProgressGesture | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
-| VideoProps.objectFit | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| VideoProps.poster | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.showMuteBtn | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
-| VideoProps.title | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
-| VideoProps.playBtnPosition | ✔️ |  |  | ✔️ | ✔️ |  |  |  |  |
-| VideoProps.enablePlayGesture | ✔️ | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |  |
-| VideoProps.autoPauseIfNavigate | ✔️ |  |  |  | ✔️ |  |  |  |  |
-| VideoProps.autoPauseIfOpenNative | ✔️ |  |  |  | ✔️ |  |  |  |  |
-| VideoProps.vslideGesture | ✔️ | ✔️ |  | ✔️ |  |  | ✔️ |  |  |
-| VideoProps.vslideGestureInFullscreen | ✔️ | ✔️ |  | ✔️ |  |  | ✔️ |  |  |
-| VideoProps.adUnitId | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.posterForCrawler | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.showCastingButton | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.pictureInPictureMode | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.enableAutoRotation | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.showScreenLockButton | ✔️ |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.showSnapshotButton | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.showBackgroundPlaybackButton | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.backgroundPoster | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.nativeProps |  |  |  |  |  |  | ✔️ |  |  |
-| VideoProps.showBottomProgress | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.pictureInPictureShowProgress | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.referrerPolicy | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.isDrm | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.provisionUrl | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.certificateUrl | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.licenseUrl | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.posterSize |  |  | ✔️ |  |  |  |  |  |  |
-| VideoProps.showThinProgressBar |  |  | ✔️ |  |  |  |  |  |  |
-| VideoProps.mobilenetHintType |  |  | ✔️ |  |  | ✔️ |  |  |  |
-| VideoProps.floatingMode |  |  | ✔️ |  |  |  |  |  |  |
-| VideoProps.showNoWifiTip |  | ✔️ |  |  |  |  |  |  |  |
-| VideoProps.showLockBtn |  | ✔️ |  |  |  |  |  |  |  |
-| VideoProps.showRateBtn |  | ✔️ |  |  |  |  |  |  |  |
-| VideoProps.showVslideBtnInFullscreen |  | ✔️ |  |  |  |  |  |  |  |
-| VideoProps.silentPlay |  | ✔️ |  |  |  |  |  |  |  |
-| VideoProps.preRollUnitId |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.postRollUnitId |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.showPlaybackRateBtn |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.enablePlayInBackground |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.signature |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.preferredPeakBitRate | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.isLive | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.definition |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.onPlay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.onPause | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.onEnded | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.onTimeUpdate | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.onFullscreenChange |  |  | ✔️ |  |  |  | ✔️ | ✔️ |  |
-| VideoProps.onWaiting | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
-| VideoProps.onError | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| VideoProps.onProgress | ✔️ |  |  | ✔️ | ✔️ |  | ✔️ |  |  |
-| VideoProps.onLoadedMetaData | ✔️ | ✔️ |  | ✔️ |  | ✔️ |  | ✔️ |  |
-| VideoProps.onEnterPictureInPicture | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.onLeavePictureInPicture | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.onSeekComplete | ✔️ |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.onFullScreenChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| VideoProps.onControlsToggle | ✔️ | ✔️ |  |  |  |  |  |  |  |
-| VideoProps.onLoading |  |  | ✔️ |  |  |  |  |  |  |
-| VideoProps.onTap |  |  | ✔️ |  |  |  |  |  |  |
-| VideoProps.onUserAction |  |  | ✔️ |  |  |  |  |  |  |
-| VideoProps.onStop |  |  | ✔️ |  |  |  |  |  |  |
-| VideoProps.onRenderStart |  |  | ✔️ |  |  |  |  |  |  |
-| VideoProps.onAdStart |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.onAdEnded |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.onAdClose |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.onAdError |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.onPlayBackRateChange |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.onMuteChange |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.onControlTap |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.onEnterBackground |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.onCloseBackground |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.onLeaveBackground |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.onLoadedData |  |  |  |  |  | ✔️ |  |  |  |
-| VideoProps.onLoadStart |  |  |  |  |  | ✔️ |  |  |  |
-| VideoProps.onSeeked |  |  |  |  |  | ✔️ |  |  |  |
-| VideoProps.onSeeking |  |  |  |  |  | ✔️ |  |  |  |
-| VideoProps.onAdLoad |  |  |  | ✔️ |  |  |  |  |  |
-| VideoProps.onCastingUserSelect | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.onCastingStateChange | ✔️ |  |  |  |  |  |  |  |  |
-| VideoProps.onCastingInterrupt | ✔️ |  |  |  |  |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| VideoProps.src | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.duration | ✔️ |  | ✔️ |  | ✔️ |  | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.controls | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.danmuList | ✔️ | ✔️ |  |  | ✔️ |  | ✔️ |  |  | ✔️ |
+| VideoProps.danmuBtn | ✔️ | ✔️ |  |  | ✔️ |  | ✔️ |  |  | ✔️ |
+| VideoProps.enableDanmu | ✔️ | ✔️ |  |  | ✔️ |  | ✔️ |  |  | ✔️ |
+| VideoProps.autoplay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.loop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.muted | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.initialTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.pageGesture | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |  |
+| VideoProps.direction | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
+| VideoProps.showProgress | ✔️ | ✔️ |  |  | ✔️ |  | ✔️ |  |  | ✔️ |
+| VideoProps.showFullscreenBtn | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  | ✔️ |
+| VideoProps.showPlayBtn | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  | ✔️ |
+| VideoProps.showCenterPlayBtn | ✔️ | ✔️ | ✔️ |  | ✔️ |  | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.enableProgressGesture | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  | ✔️ |
+| VideoProps.objectFit | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| VideoProps.poster | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.showMuteBtn | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  | ✔️ |
+| VideoProps.title | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |  |
+| VideoProps.playBtnPosition | ✔️ |  |  | ✔️ | ✔️ |  |  |  |  |  |
+| VideoProps.enablePlayGesture | ✔️ | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |  | ✔️ |
+| VideoProps.autoPauseIfNavigate | ✔️ |  |  |  | ✔️ |  |  |  |  |  |
+| VideoProps.autoPauseIfOpenNative | ✔️ |  |  |  | ✔️ |  |  |  |  |  |
+| VideoProps.vslideGesture | ✔️ | ✔️ |  | ✔️ |  |  | ✔️ |  |  | ✔️ |
+| VideoProps.vslideGestureInFullscreen | ✔️ | ✔️ |  | ✔️ |  |  | ✔️ |  |  | ✔️ |
+| VideoProps.adUnitId | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.posterForCrawler | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.showCastingButton | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.pictureInPictureMode | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.enableAutoRotation | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.showScreenLockButton | ✔️ |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.showSnapshotButton | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.showBackgroundPlaybackButton | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.backgroundPoster | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.nativeProps |  |  |  |  |  |  | ✔️ |  |  | ✔️ |
+| VideoProps.showBottomProgress | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.pictureInPictureShowProgress | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.referrerPolicy | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.isDrm | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.provisionUrl | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.certificateUrl | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.licenseUrl | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.posterSize |  |  | ✔️ |  |  |  |  |  |  |  |
+| VideoProps.showThinProgressBar |  |  | ✔️ |  |  |  |  |  |  |  |
+| VideoProps.mobilenetHintType |  |  | ✔️ |  |  | ✔️ |  |  |  |  |
+| VideoProps.floatingMode |  |  | ✔️ |  |  |  |  |  |  |  |
+| VideoProps.showNoWifiTip |  | ✔️ |  |  |  |  |  |  |  |  |
+| VideoProps.showLockBtn |  | ✔️ |  |  |  |  |  |  |  |  |
+| VideoProps.showRateBtn |  | ✔️ |  |  |  |  |  |  |  |  |
+| VideoProps.showVslideBtnInFullscreen |  | ✔️ |  |  |  |  |  |  |  |  |
+| VideoProps.silentPlay |  | ✔️ |  |  |  |  |  |  |  |  |
+| VideoProps.preRollUnitId |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.postRollUnitId |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.showPlaybackRateBtn |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.enablePlayInBackground |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.signature |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.preferredPeakBitRate | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.isLive | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.definition |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.onPlay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.onPause | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.onEnded | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.onTimeUpdate | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.onFullscreenChange |  |  | ✔️ |  |  |  | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.onWaiting | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| VideoProps.onError | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.onProgress | ✔️ |  |  | ✔️ | ✔️ |  | ✔️ |  |  | ✔️ |
+| VideoProps.onLoadedMetaData | ✔️ | ✔️ |  | ✔️ |  | ✔️ |  | ✔️ |  |  |
+| VideoProps.onEnterPictureInPicture | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.onLeavePictureInPicture | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.onSeekComplete | ✔️ |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.onFullScreenChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| VideoProps.onControlsToggle | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
+| VideoProps.onLoading |  |  | ✔️ |  |  |  |  |  |  |  |
+| VideoProps.onTap |  |  | ✔️ |  |  |  |  |  |  |  |
+| VideoProps.onUserAction |  |  | ✔️ |  |  |  |  |  |  |  |
+| VideoProps.onStop |  |  | ✔️ |  |  |  |  |  |  |  |
+| VideoProps.onRenderStart |  |  | ✔️ |  |  |  |  |  |  |  |
+| VideoProps.onAdStart |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.onAdEnded |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.onAdClose |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.onAdError |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.onPlayBackRateChange |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.onMuteChange |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.onControlTap |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.onEnterBackground |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.onCloseBackground |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.onLeaveBackground |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.onLoadedData |  |  |  |  |  | ✔️ |  |  |  |  |
+| VideoProps.onLoadStart |  |  |  |  |  | ✔️ |  |  |  |  |
+| VideoProps.onSeeked |  |  |  |  |  | ✔️ |  |  |  |  |
+| VideoProps.onSeeking |  |  |  |  |  | ✔️ |  |  |  |  |
+| VideoProps.onAdLoad |  |  |  | ✔️ |  |  |  |  |  |  |
+| VideoProps.onCastingUserSelect | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.onCastingStateChange | ✔️ |  |  |  |  |  |  |  |  |  |
+| VideoProps.onCastingInterrupt | ✔️ |  |  |  |  |  |  |  |  |  |
 
 ### direction
 

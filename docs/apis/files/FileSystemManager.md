@@ -5,7 +5,7 @@ sidebar_label: FileSystemManager
 
 文件管理器，可通过 [Taro.getFileSystemManager](./getFileSystemManager) 获取。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.html)
 
@@ -15,7 +15,7 @@ sidebar_label: FileSystemManager
 
 判断文件/目录是否存在
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.access.html)
 
@@ -210,7 +210,7 @@ sidebar_label: FileSystemManager
 
 获取该小程序下的 `本地临时文件` 或 `本地缓存文件` 信息
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.getFileInfo.html)
 
@@ -387,7 +387,7 @@ sidebar_label: FileSystemManager
 
 读取本地文件内容
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.readFile.html)
 
@@ -403,7 +403,7 @@ sidebar_label: FileSystemManager
 
 [FileSystemManager.readFile](#readfile) 的同步版本
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/file/FileSystemManager.readFileSync.html)
 
@@ -1390,51 +1390,51 @@ FailCallbackResult | SuccessCallbackResult
 
 ## API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| FileSystemManager | ✔️ |  |  | ✔️ |  |  |  |  |  |
-| FileSystemManager.access | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.accessSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.appendFile | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.appendFileSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.close | ✔️ |  |  |  |  |  |  |  |  |
-| FileSystemManager.closeSync | ✔️ |  |  |  |  |  |  |  |  |
-| FileSystemManager.copyFile | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.copyFileSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.fstat | ✔️ |  |  |  |  |  |  |  |  |
-| FileSystemManager.fstatSync | ✔️ |  |  |  |  |  |  |  |  |
-| FileSystemManager.ftruncate | ✔️ |  |  |  |  |  |  |  |  |
-| FileSystemManager.ftruncateSync | ✔️ |  |  |  |  |  |  |  |  |
-| FileSystemManager.getFileInfo | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.getSavedFileList | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.mkdir | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.mkdirSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.open | ✔️ |  |  |  |  |  |  |  |  |
-| FileSystemManager.openSync | ✔️ |  |  |  |  |  |  |  |  |
-| FileSystemManager.read | ✔️ |  |  |  |  |  |  |  |  |
-| FileSystemManager.readCompressedFile | ✔️ |  |  |  |  |  |  |  |  |
-| FileSystemManager.readCompressedFileSync | ✔️ |  |  |  |  |  |  |  |  |
-| FileSystemManager.readdir | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.readdirSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.readFile | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.readFileSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.readSync | ✔️ |  |  |  |  |  |  |  |  |
-| FileSystemManager.readZipEntry | ✔️ |  |  |  |  |  |  |  |  |
-| FileSystemManager.removeSavedFile | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.rename | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.renameSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.rmdir | ✔️ |  |  | ✔️ |  |  |  |  |  |
-| FileSystemManager.rmdirSync | ✔️ |  |  | ✔️ |  |  |  |  |  |
-| FileSystemManager.saveFile | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.saveFileSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.stat | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.statSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.truncate | ✔️ |  |  | ✔️ |  |  |  |  |  |
-| FileSystemManager.truncateSync | ✔️ |  |  | ✔️ |  |  |  |  |  |
-| FileSystemManager.unlink | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.unlinkSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.unzip | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.write | ✔️ |  |  |  |  |  |  |  |  |
-| FileSystemManager.writeFile | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.writeFileSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| FileSystemManager.writeSync | ✔️ |  |  |  |  |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| FileSystemManager | ✔️ |  |  | ✔️ |  |  |  |  |  | ✔️ |
+| FileSystemManager.access | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  | ✔️ |
+| FileSystemManager.accessSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.appendFile | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.appendFileSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.close | ✔️ |  |  |  |  |  |  |  |  |  |
+| FileSystemManager.closeSync | ✔️ |  |  |  |  |  |  |  |  |  |
+| FileSystemManager.copyFile | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.copyFileSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.fstat | ✔️ |  |  |  |  |  |  |  |  |  |
+| FileSystemManager.fstatSync | ✔️ |  |  |  |  |  |  |  |  |  |
+| FileSystemManager.ftruncate | ✔️ |  |  |  |  |  |  |  |  |  |
+| FileSystemManager.ftruncateSync | ✔️ |  |  |  |  |  |  |  |  |  |
+| FileSystemManager.getFileInfo | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  | ✔️ |
+| FileSystemManager.getSavedFileList | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.mkdir | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.mkdirSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.open | ✔️ |  |  |  |  |  |  |  |  |  |
+| FileSystemManager.openSync | ✔️ |  |  |  |  |  |  |  |  |  |
+| FileSystemManager.read | ✔️ |  |  |  |  |  |  |  |  |  |
+| FileSystemManager.readCompressedFile | ✔️ |  |  |  |  |  |  |  |  |  |
+| FileSystemManager.readCompressedFileSync | ✔️ |  |  |  |  |  |  |  |  |  |
+| FileSystemManager.readdir | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.readdirSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.readFile | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  | ✔️ |
+| FileSystemManager.readFileSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  | ✔️ |
+| FileSystemManager.readSync | ✔️ |  |  |  |  |  |  |  |  |  |
+| FileSystemManager.readZipEntry | ✔️ |  |  |  |  |  |  |  |  |  |
+| FileSystemManager.removeSavedFile | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.rename | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.renameSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.rmdir | ✔️ |  |  | ✔️ |  |  |  |  |  |  |
+| FileSystemManager.rmdirSync | ✔️ |  |  | ✔️ |  |  |  |  |  |  |
+| FileSystemManager.saveFile | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.saveFileSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.stat | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.statSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.truncate | ✔️ |  |  | ✔️ |  |  |  |  |  |  |
+| FileSystemManager.truncateSync | ✔️ |  |  | ✔️ |  |  |  |  |  |  |
+| FileSystemManager.unlink | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.unlinkSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.unzip | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.write | ✔️ |  |  |  |  |  |  |  |  |  |
+| FileSystemManager.writeFile | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.writeFileSync | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| FileSystemManager.writeSync | ✔️ |  |  |  |  |  |  |  |  |  |
