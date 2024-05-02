@@ -5,7 +5,7 @@ sidebar_label: Button
 
 按钮
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/button.html)
 
@@ -239,62 +239,62 @@ export default {
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| ButtonProps.size | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ButtonProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ButtonProps.plain | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ButtonProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ButtonProps.loading | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ButtonProps.formType | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| ButtonProps.openType | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| ButtonProps.hoverClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(支持 hoverStyle 属性，但框架未支持 hoverClass) |  |
-| ButtonProps.hoverStyle |  |  |  |  |  |  |  | ✔️ |  |
-| ButtonProps.hoverStopPropagation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| ButtonProps.hoverStartTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ButtonProps.hoverStayTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| ButtonProps.lang | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |
-| ButtonProps.sessionFrom | ✔️ | ✔️ |  |  |  |  |  |  |  |
-| ButtonProps.sendMessageTitle | ✔️ | ✔️ |  |  |  |  |  |  |  |
-| ButtonProps.sendMessagePath | ✔️ | ✔️ |  |  |  |  |  |  |  |
-| ButtonProps.sendMessageImg | ✔️ | ✔️ |  |  |  |  |  |  |  |
-| ButtonProps.appParameter | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |
-| ButtonProps.scope |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.showMessageCard | ✔️ | ✔️ |  |  |  |  |  |  |  |
-| ButtonProps.publicId |  |  | ✔️ |  | ✔️ |  |  |  |  |
-| ButtonProps.templateId |  | ✔️ |  |  |  |  |  |  |  |
-| ButtonProps.subscribeId |  | ✔️ |  |  |  |  |  |  |  |
-| ButtonProps.groupId |  |  |  | ✔️(通过创建聊天群、查询群信息获取) | ✔️(打开群资料卡时，传递的群号) |  |  |  |  |
-| ButtonProps.guildId |  |  |  |  | ✔️ |  |  |  |  |
-| ButtonProps.shareType |  |  |  |  | ✔️ |  |  |  |  |
-| ButtonProps.shareMode |  |  |  |  | ✔️ |  |  |  |  |
-| ButtonProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |
-| ButtonProps.openId |  |  |  |  | ✔️ |  |  |  |  |
-| ButtonProps.shareMessageFriendInfo |  |  |  |  | ✔️ |  |  |  |  |
-| ButtonProps.shareMessageTitle |  |  |  |  | ✔️ |  |  |  |  |
-| ButtonProps.shareMessageImg |  |  |  |  | ✔️ |  |  |  |  |
-| ButtonProps.dataAwemeId |  |  |  | ✔️ |  |  |  |  |  |
-| ButtonProps.dataIsHalfPage |  |  |  | ✔️ |  |  |  |  |  |
-| ButtonProps.onGetUserInfo | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |
-| ButtonProps.onGetAuthorize |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.onContact | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
-| ButtonProps.onGetPhoneNumber | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |  |
-| ButtonProps.onGetRealTimePhoneNumber | ✔️ |  |  |  |  |  |  |  |  |
-| ButtonProps.onError | ✔️ |  | ✔️ |  | ✔️ | ✔️ |  |  |  |
-| ButtonProps.onOpenSetting | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |
-| ButtonProps.onLaunchApp | ✔️ |  |  |  | ✔️ |  |  |  |  |
-| ButtonProps.onChooseAvatar | ✔️ |  |  |  |  |  |  |  |  |
-| ButtonProps.onAgreePrivacyAuthorization | ✔️ |  |  |  |  |  |  |  |  |
-| ButtonProps.onTap |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.onFollowLifestyle |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.onChooseAddress |  | ✔️ |  |  |  |  |  |  |  |
-| ButtonProps.onChooseInvoiceTitle |  | ✔️ |  |  |  |  |  |  |  |
-| ButtonProps.onLogin |  | ✔️ |  |  |  |  |  |  |  |
-| ButtonProps.onSubscribe |  | ✔️ |  |  |  |  |  |  |  |
-| ButtonProps.onAddFriend |  |  |  |  | ✔️ |  |  |  |  |
-| ButtonProps.onAddGroupApp |  |  |  |  | ✔️ |  |  |  |  |
-| ButtonProps.onOpenAwemeUserProfile |  |  |  | ✔️ |  |  |  |  |  |
-| ButtonProps.onJoinGroup |  |  |  | ✔️ |  |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| ButtonProps.size | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| ButtonProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| ButtonProps.plain | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| ButtonProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| ButtonProps.loading | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| ButtonProps.formType | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.openType | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.hoverClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(支持 hoverStyle 属性，但框架未支持 hoverClass) |  | ✔️ |
+| ButtonProps.hoverStyle |  |  |  |  |  |  |  | ✔️ |  |  |
+| ButtonProps.hoverStopPropagation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.hoverStartTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| ButtonProps.hoverStayTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| ButtonProps.lang | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.sessionFrom | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.sendMessageTitle | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.sendMessagePath | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.sendMessageImg | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.appParameter | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.scope |  |  | ✔️ |  |  |  |  |  |  |  |
+| ButtonProps.showMessageCard | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.publicId |  |  | ✔️ |  | ✔️ |  |  |  |  |  |
+| ButtonProps.templateId |  | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.subscribeId |  | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.groupId |  |  |  | ✔️(通过创建聊天群、查询群信息获取) | ✔️(打开群资料卡时，传递的群号) |  |  |  |  |  |
+| ButtonProps.guildId |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.shareType |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.shareMode |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.openId |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.shareMessageFriendInfo |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.shareMessageTitle |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.shareMessageImg |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.dataAwemeId |  |  |  | ✔️ |  |  |  |  |  |  |
+| ButtonProps.dataIsHalfPage |  |  |  | ✔️ |  |  |  |  |  |  |
+| ButtonProps.onGetUserInfo | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.onGetAuthorize |  |  | ✔️ |  |  |  |  |  |  |  |
+| ButtonProps.onContact | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.onGetPhoneNumber | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |  |  |
+| ButtonProps.onGetRealTimePhoneNumber | ✔️ |  |  |  |  |  |  |  |  |  |
+| ButtonProps.onError | ✔️ |  | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.onOpenSetting | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.onLaunchApp | ✔️ |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.onChooseAvatar | ✔️ |  |  |  |  |  |  |  |  |  |
+| ButtonProps.onAgreePrivacyAuthorization | ✔️ |  |  |  |  |  |  |  |  |  |
+| ButtonProps.onTap |  |  | ✔️ |  |  |  |  |  |  |  |
+| ButtonProps.onFollowLifestyle |  |  | ✔️ |  |  |  |  |  |  |  |
+| ButtonProps.onChooseAddress |  | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.onChooseInvoiceTitle |  | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.onLogin |  | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.onSubscribe |  | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.onAddFriend |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.onAddGroupApp |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.onOpenAwemeUserProfile |  |  |  | ✔️ |  |  |  |  |  |  |
+| ButtonProps.onJoinGroup |  |  |  | ✔️ |  |  |  |  |  |  |
 
 ### Size
 

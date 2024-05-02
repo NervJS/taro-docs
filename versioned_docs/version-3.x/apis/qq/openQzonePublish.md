@@ -4,23 +4,6 @@ sidebar_label: openQzonePublish
 ---
 
 此接口可打开手Q说说发表界面，并将文字内容和图片/视频内容传递到手Q说说发表界面。
-```tsx
-Taro.openQzonePublish({
-  footnote: '使用同款滤镜',
-  path: 'pages/index/index',
-  text: '我爱中国',
-  media: [
-    {
-      type: 'photo',
-      path: 'qqfile://1.png'
-    },
-    {
-      type: 'video',
-      path: 'qqfile://2.mp4'
-    }
-  ]
-})
-```
 
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
@@ -58,4 +41,24 @@ Taro.openQzonePublish({
 
 ```tsx
 "photo" | "video"
+```
+
+## 示例代码
+
+```tsx
+Taro.openQzonePublish({
+  footnote: '使用同款滤镜',
+  path: 'pages/index/index',
+  text: '我爱中国',
+  media: [
+    {
+      type: 'photo',
+      path: 'qqfile://1.png'
+    },
+    {
+      type: 'video',
+      path: 'qqfile://2.mp4'
+    }
+  ]
+})
 ```

@@ -5,7 +5,7 @@ sidebar_label: MovableView
 
 可移动的视图容器，在页面中可以拖拽滑动。movable-view 必须在 movable-area 组件中，并且必须是直接子节点，否则不能移动。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/movable-view.html)
 
@@ -82,35 +82,35 @@ class App extends Components {
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MovableViewProps.direction | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| MovableViewProps.inertia | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| MovableViewProps.outOfBounds | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| MovableViewProps.x | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| MovableViewProps.y | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| MovableViewProps.damping | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| MovableViewProps.friction | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| MovableViewProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |
-| MovableViewProps.scale | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| MovableViewProps.scaleMin | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| MovableViewProps.scaleMax | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| MovableViewProps.scaleValue | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| MovableViewProps.animation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| MovableViewProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MovableViewProps.onChangeEnd |  |  | ✔️ |  |  |  |  |  |
-| MovableViewProps.onDragStart |  |  |  |  |  |  | ✔️ |  |
-| MovableViewProps.onDragEnd |  |  |  |  |  |  | ✔️ |  |
-| MovableViewProps.onScale | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |
-| MovableViewProps.onTouchStart |  |  | ✔️ |  |  |  |  |  |
-| MovableViewProps.onTouchMove |  |  | ✔️ |  |  |  |  |  |
-| MovableViewProps.onTouchEnd |  |  | ✔️ |  |  | ✔️(此事件的触发顺序会因为当前事件机制引起组件内外注册的事件执行顺序不正常，外部注册的事件可能会优先于内部执行，如需保证执行顺序一致，需要在回调函数中包裹 setTimeout 临时处理) |  |  |
-| MovableViewProps.onTouchCancel |  |  | ✔️ |  |  |  |  |  |
-| MovableViewProps.onHTouchMove | ✔️ | ✔️ |  | ✔️ |  | ✔️ |  |  |
-| MovableViewProps.onVTouchMove | ✔️ | ✔️ |  | ✔️ |  | ✔️ |  |  |
-| MovableViewProps.catchTouchStart |  |  | ✔️ |  |  |  |  |  |
-| MovableViewProps.catchTouchMove |  |  | ✔️ |  |  |  |  |  |
-| MovableViewProps.catchTouchEnd |  |  | ✔️ |  |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | H5 | React Native | Harmony | Harmony hybrid |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| MovableViewProps.direction | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| MovableViewProps.inertia | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| MovableViewProps.outOfBounds | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| MovableViewProps.x | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| MovableViewProps.y | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| MovableViewProps.damping | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| MovableViewProps.friction | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| MovableViewProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| MovableViewProps.scale | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| MovableViewProps.scaleMin | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| MovableViewProps.scaleMax | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| MovableViewProps.scaleValue | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| MovableViewProps.animation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| MovableViewProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| MovableViewProps.onChangeEnd |  |  | ✔️ |  |  |  |  |  |  |
+| MovableViewProps.onDragStart |  |  |  |  |  |  | ✔️ |  |  |
+| MovableViewProps.onDragEnd |  |  |  |  |  |  | ✔️ |  |  |
+| MovableViewProps.onScale | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| MovableViewProps.onTouchStart |  |  | ✔️ |  |  |  |  |  |  |
+| MovableViewProps.onTouchMove |  |  | ✔️ |  |  |  |  |  |  |
+| MovableViewProps.onTouchEnd |  |  | ✔️ |  |  | ✔️(此事件的触发顺序会因为当前事件机制引起组件内外注册的事件执行顺序不正常，外部注册的事件可能会优先于内部执行，如需保证执行顺序一致，需要在回调函数中包裹 setTimeout 临时处理) |  |  | ✔️ |
+| MovableViewProps.onTouchCancel |  |  | ✔️ |  |  |  |  |  |  |
+| MovableViewProps.onHTouchMove | ✔️ | ✔️ |  | ✔️ |  | ✔️ |  |  | ✔️ |
+| MovableViewProps.onVTouchMove | ✔️ | ✔️ |  | ✔️ |  | ✔️ |  |  | ✔️ |
+| MovableViewProps.catchTouchStart |  |  | ✔️ |  |  |  |  |  |  |
+| MovableViewProps.catchTouchMove |  |  | ✔️ |  |  |  |  |  |  |
+| MovableViewProps.catchTouchEnd |  |  | ✔️ |  |  |  |  |  |  |
 
 ### TChangeSource
 
