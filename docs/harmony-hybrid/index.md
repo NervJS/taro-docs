@@ -774,36 +774,47 @@ taro的NativeApi，是taro暴露给鸿蒙实现的原生方法。使得Taro具�
 
 #### 使用方法
 ```typescript
-const pair: NativeApiPair = {
-  // 申明使用缓存的方法名
-  method: "YouMethodName",
-  // 申明使用缓存的方法入参
-  args: ["param1",123]
-}
-// 1.注册需要使用缓存的api
-nativeCacheManager.register({
-  method: pair.method,
-  args: pair.args,
-  updater: (context: common.UIAbilityContext | null, cListener: NativeDataChangeListener | null) => {
-    // 2.监听数据变化
-    XXXLitener.on((hasChange)=>{
-      if (hasChange) {
-        // 3.并在合适的时机更新数据
-        cListener?.change(pair.method, pair.args)
-      }
-    })
+// 1、创建NativeRegister的实现类
+class XXXRegister implements NativeRegister {
+  private pair: NativeApiPair = {
+    // 申明使用缓存的方法名
+    method: "YouMethodName",
+    // 申明使用缓存的方法入参
+    args: ["param1",123]
   }
-})
+  private TAG = this.pair.method
+
+  method: string;
+  args: any[];
+  updater: (context: common.UIAbilityContext | null, listener: NativeDataChangeListener | null) => void;
+
+  constructor() {
+    this.method = this.pair.method
+    this.args = this.pair.args
+    this.updater = (context: common.UIAbilityContext | null, listener: NativeDataChangeListener | null) => {
+      // 监听数据变化
+      XXXLitener.on((hasChange)=>{
+        if (hasChange) {
+          // 并在合适的时机更新数据
+          cListener?.change(pair.method, pair.args)
+        }
+      })
+    }
+  }
+}
+
+// 2、执行注册(参数为数组，可传入多个Register)
+nativeCacheManager.register([new XXXRegister(),])
 ```
 
 nativeCacheManager是taro内部提供的api，支持注册、解注册等操作。
 ```typescript
 // 注册缓存Api
-public register(r: NativeRegister)
+public register(r: NativeRegister[])
 ```
 ```typescript
 // 接触注册缓存Api
-public unregister(r: NativeRegister)
+public unregister(r: NativeRegister[])
 ```
 
 #### 注意
