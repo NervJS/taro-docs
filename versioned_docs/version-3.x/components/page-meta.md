@@ -110,18 +110,21 @@ function Index () {
 
 ### onResizeEventDetail
 
-| 参数 | 类型 | 说明 |
-| --- | --- | --- |
-| size | `resizeType` | 窗口尺寸 |
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| deviceOrientation | "portrait" or "landscape" | 否 | 设备方向 |
+| size | `resizeType` | 是 | 窗口尺寸 |
 
 ### resizeType
 
 窗口尺寸类型
 
-| 参数 | 类型 | 说明 |
-| --- | --- | --- |
-| windowWidth | `number` | 窗口宽度 |
-| windowHeight | `number` | 窗口高度 |
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| windowWidth | `number` | 是 | 窗口宽度 |
+| windowHeight | `number` | 是 | 窗口高度 |
+| screenWidth | `number` | 否 | 屏幕宽度 |
+| screenHeight | `number` | 否 | 屏幕高度 |
 
 ### onScrollEventDetail
 

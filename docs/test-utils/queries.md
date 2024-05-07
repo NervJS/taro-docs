@@ -30,7 +30,7 @@ function querySelector(selectors: string): HTMLElement
 用法：
 
 ```js
-const btns = testUtils.querySelectorAll('.btns')
+const btns = testUtils.queries.querySelectorAll('.btns')
 ```
 
 ### querySelectorAll
@@ -48,7 +48,7 @@ function querySelectorAll(selectors: string): HTMLElement[]
 用法：
 
 ```js
-const btns = testUtils.querySelectorAll('.btns')
+const btns = testUtils.queries.querySelectorAll('.btns')
 ```
 
 ### waitForQuerySelector
@@ -67,7 +67,7 @@ async function waitForQuerySelector(selectors: string, params?: TParams): Promis
 用法：
 
 ```js
-const btn = await testUtils.waitForQuerySelector('.async-btn')
+const btn = await testUtils.queries.waitForQuerySelector('.async-btn')
 ```
 
 ### waitForQuerySelectorAll
@@ -86,7 +86,7 @@ async function waitForQuerySelectorAll(selectors: string, params?: TParams): Pro
 用法：
 
 ```js
-const btns = await testUtils.waitForQuerySelectorAll('.async-btns')
+const btns = await testUtils.queries.waitForQuerySelectorAll('.async-btns')
 ```
 
 ## 按照文本查询
@@ -108,7 +108,7 @@ function queryByText(text: string, selector?: string): HTMLElement
 
 ```js
 // <Text>Hello World!!!</Text>
-const textView = testUtils.queryByText('Hello World')
+const textView = testUtils.queries.queryByText('Hello World')
 ```
 
 ### queryByTextAll
@@ -129,7 +129,7 @@ function queryAllByText(text: string, selector?: string): HTMLElement[]
 ```js
 // <Text>Hello World!!</Text>
 // <View>Hello World!!!</View>
-const textViews = testUtils.queryAllByText('Hello World')
+const textViews = testUtils.queries.queryAllByText('Hello World')
 ```
 
 ### waitForQueryByText
@@ -150,7 +150,7 @@ async function waitForQueryByText(text: string, selector?: string, params?: TWai
 
 ```js
 // <Text>Hello World!!!</Text>
-const textView = async testUtils.waitForQueryByText("Hello World");
+const textView = async testUtils.queries.waitForQueryByText("Hello World");
 ```
 
 ### waitForQueryAllByText
@@ -172,7 +172,7 @@ async function waitForQueryAllByText(text: string, selector?: string, params?: T
 ```js
 // <Text>Hello World!!</Text>
 // <View>Hello World!!!</View>
-const textViews = async testUtils.waitForQueryAllByText("Hello World");
+const textViews = async testUtils.queries.waitForQueryAllByText("Hello World");
 ```
 
 ## 按照 Placeholder 查询
@@ -193,7 +193,7 @@ function queryByPlaceholder(text: string): HTMLElement
 
 ```js
 // <input placeholder="hello" />
-const input = testUtils.queryByPlaceholder('hello')
+const input = testUtils.queries.queryByPlaceholder('hello')
 ```
 
 ### queryAllByPlaceholder
@@ -213,7 +213,7 @@ function queryAllByPlaceholder(text: string): HTMLElement[]
 ```js
 // <input placeholder="hello" />
 // <input placeholder="hello" />
-const inputs = testUtils.queryAllByPlaceholder('hello')
+const inputs = testUtils.queries.queryAllByPlaceholder('hello')
 ```
 
 ### waitForQueryByPlaceholder
@@ -233,7 +233,7 @@ async function waitForQueryByPlaceholder(text: string, params?: TParams): Promis
 
 ```js
 // <input placeholder="async-placeholde" />
-const input = await testUtils.waitForQueryByPlaceholder('async-placeholder')
+const input = await testUtils.queries.waitForQueryByPlaceholder('async-placeholder')
 ```
 
 ### waitForQueryAllByPlaceholder
@@ -254,7 +254,7 @@ async function waitForQueryAllByPlaceholder(text: string, params?: TParams): Pro
 ```js
 // <input placeholder="async-placeholde" />
 // <input placeholder="async-placeholde" />
-const inputs = await testUtils.waitForQueryAllByPlaceholder('async-placeholder')
+const inputs = await testUtils.queries.waitForQueryAllByPlaceholder('async-placeholder')
 ```
 
 ## 按照属性查询
@@ -276,7 +276,7 @@ function queryByAttribute(attr: string, value: any): HTMLElement
 
 ```js
 // <div key="value" />
-const view = testUtils.queryByAttribute('key', 'value')
+const view = testUtils.queries.queryByAttribute('key', 'value')
 ```
 
 ### queryAllByAttribute
@@ -297,7 +297,7 @@ function queryAllByAttribute(attr: string, value: any): HTMLElement[]
 ```js
 // <div key="value" />
 // <div key="value" />
-const view = testUtils.queryAllByAttribute('key', 'value')
+const view = testUtils.queries.queryAllByAttribute('key', 'value')
 ```
 
 ### waitForQueryByAttribute
@@ -318,7 +318,7 @@ async function waitForQueryByAttribute(attr: string, value: string, params?: TPa
 
 ```js
 // <div key="value" />
-const view = await testUtils.waitForQueryByAttribute('key', 'value')
+const view = await testUtils.queries.waitForQueryByAttribute('key', 'value')
 ```
 
 ### waitForQueryAllByAttribute
@@ -340,5 +340,5 @@ async function waitForQueryAllByAttribute(attr: string, value: string, params?: 
 ```js
 // <div key="value" />
 // <div key="value" />
-const inputs = await testUtils.waitForQueryAllByAttribute('key', 'value')
+const inputs = await testUtils.queries.waitForQueryAllByAttribute('key', 'value')
 ```

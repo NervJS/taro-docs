@@ -43,3 +43,16 @@ sidebar_label: getDeviceVoIPList
 | model_id | `string` | 设备型号 id。通过微信公众平台注册设备获得。（仅单台设备时） |
 | group_id | `string` | 设备组的唯一标识 id（仅设备组时） |
 | status | `number` | 设备（组）授权状态。0：未授权；1：已授权 |
+
+## 示例代码
+
+```tsx
+Taro.getDeviceVoIPList({
+  success(res) {
+    console.log(res)
+  },
+  fail(res) {
+    console.log(res)
+  }
+})
+```

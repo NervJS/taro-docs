@@ -16,3 +16,13 @@ ComponentType<ListViewProps>
 ```
 
 ## ListViewProps
+
+| 参数 | 类型 | 默认值 | 必填 | 说明 |
+| --- | --- | :---: | :---: | --- |
+| padding | `[number, number, number, number]` | `[0, 0, 0, 0]` | 否 | 长度为 4 的数组，按 top、right、bottom、left 顺序指定内边距 |
+
+### API 支持度
+
+| API | 微信小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: |
+| ListViewProps.padding | ✔️ |  |  |  |

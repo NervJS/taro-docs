@@ -45,7 +45,7 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 
 播放
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 ```tsx
 () => void
@@ -65,7 +65,7 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 
 停止
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 ```tsx
 () => void
@@ -113,7 +113,7 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 
 音频播放事件
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 ```tsx
 (callback?: OnPlayCallback) => void
@@ -141,7 +141,7 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 
 音频停止事件
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 ```tsx
 (callback?: OnStopCallback) => void
@@ -155,7 +155,7 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 
 音频自然播放结束事件
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 ```tsx
 (callback?: OnEndedCallback) => void
@@ -183,7 +183,7 @@ InnerAudioContext 实例，可通过 [Taro.createInnerAudioContext](./createInne
 
 音频播放错误事件
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 ```tsx
 (callback?: OnErrorCallback) => void
@@ -531,30 +531,30 @@ innerAudioContext.onError((res) => {
 
 ## API 支持度
 
-| API | 微信小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: |
-| InnerAudioContext.play | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.pause | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.stop | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.seek | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.destroy | ✔️ | ✔️ |  |  |
-| InnerAudioContext.onCanplay | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.onPlay | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.onPause | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.onStop | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.onEnded | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.onTimeUpdate | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.onError | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.onWaiting | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.onSeeking | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.onSeeked | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.offCanplay | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.offPlay | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.offPause | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.offStop | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.offEnded | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.offTimeUpdate | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.offError | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.offWaiting | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.offSeeking | ✔️ | ✔️ | ✔️ |  |
-| InnerAudioContext.offSeeked | ✔️ | ✔️ | ✔️ |  |
+| API | 微信小程序 | H5 | React Native | Harmony | Harmony hybrid |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| InnerAudioContext.play | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InnerAudioContext.pause | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.stop | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InnerAudioContext.seek | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.destroy | ✔️ | ✔️ |  |  |  |
+| InnerAudioContext.onCanplay | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.onPlay | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InnerAudioContext.onPause | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.onStop | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InnerAudioContext.onEnded | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InnerAudioContext.onTimeUpdate | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.onError | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InnerAudioContext.onWaiting | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.onSeeking | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.onSeeked | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.offCanplay | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.offPlay | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.offPause | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.offStop | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.offEnded | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.offTimeUpdate | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.offError | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.offWaiting | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.offSeeking | ✔️ | ✔️ | ✔️ |  |  |
+| InnerAudioContext.offSeeked | ✔️ | ✔️ | ✔️ |  |  |

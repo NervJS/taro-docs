@@ -49,13 +49,6 @@ const config = {
       autoprefixer: {
         enable: true,
       },
-      // 小程序端样式引用本地资源内联配置
-      url: {
-        enable: true,
-        config: {
-          limit: 10240,
-        },
-      },
       cssModules: {
         enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
         config: {
@@ -136,7 +129,7 @@ export default {
 ```ts
 import { defineConfig } from '@tarojs/cli'
 
-export default defineConfig(async (mergin, { command, mode }) => {
+export default defineConfig(async (merge, { command, mode }) => {
   const data = await asyncFunction()
   return {
     // Taro 配置
@@ -151,8 +144,8 @@ export default defineConfig(async (mergin, { command, mode }) => {
 ```ts
 import { defineConfig } from '@tarojs/cli'
 
-export default defineConfig((mergin, { command, mode }) => {
-  // mergin 为webpack-mergin, 兼容以前的配置
+export default defineConfig((merge, { command, mode }) => {
+  // merge 为 webpack-merge, 兼容以前的配置
   // 假如执行的命令为: "taro build --type weapp --mode test"
   // 则 command 的值为 build, mode 的值为 test
   if (mode === 'development') {

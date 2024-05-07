@@ -16,7 +16,7 @@ sidebar_label: Image
 | src | `string` | 图片的 URL |
 | height | `number` | 图片的真实高度 |
 | width | `number` | 图片的真实宽度 |
-| referrerPolicy | `string` | origin: 发送完整的referrer; no-referrer: 不发送。<br /><br />格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本 |
+| referrerPolicy | `string` | origin: 发送完整的referrer; no-referrer: 不发送。<br /><br />格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本<br />API 支持度: weapp |
 | onerror | `(...args: any[]) => any` | 图片加载发生错误后触发的回调函数 |
 | onload | `(...args: any[]) => any` | 图片加载完成后触发的回调函数 |
 
@@ -25,3 +25,4 @@ sidebar_label: Image
 | API | 微信小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: |
 | Image | ✔️ |  |  |  |
+| Image.referrerPolicy | ✔️ |  |  |  |
