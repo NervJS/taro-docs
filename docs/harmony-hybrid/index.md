@@ -768,58 +768,8 @@ padding-bottom: env( safe-area-inset-bottom);
 
 ### 性能优化：同步调用走缓存
 taro的NativeApi，是taro暴露给鸿蒙实现的原生方法。使得Taro具备调用原生的能力。
-
-对于NativeApi中的同步方法，每次调用都要执行原生代码逻辑，频繁调用必然导致系统开销增加和耗时增加。所以taro内部对同步方法增加了缓存机制。比如"getSystemSetting"、"getWindowInfo"等。
-如果应用层想扩展，对额外的同步方法使用缓存机制以提高执行效率，则可以通过如下方式扩展需要使用缓存的方法：
-
-#### 使用方法
-```typescript
-// 1、创建NativeRegister的实现类
-class XXXRegister implements NativeRegister {
-  private pair: NativeApiPair = {
-    // 申明使用缓存的方法名
-    method: "YouMethodName",
-    // 申明使用缓存的方法入参
-    args: ["param1",123]
-  }
-  private TAG = this.pair.method
-
-  method: string;
-  args: any[];
-  updater: (context: common.UIAbilityContext | null, listener: NativeDataChangeListener | null) => void;
-
-  constructor() {
-    this.method = this.pair.method
-    this.args = this.pair.args
-    this.updater = (context: common.UIAbilityContext | null, listener: NativeDataChangeListener | null) => {
-      // 监听数据变化
-      XXXLitener.on((hasChange)=>{
-        if (hasChange) {
-          // 并在合适的时机更新数据
-          cListener?.change(pair.method, pair.args)
-        }
-      })
-    }
-  }
-}
-
-// 2、执行注册(参数为数组，可传入多个Register)
-nativeCacheManager.register([new XXXRegister(),])
-```
-
-nativeCacheManager是taro内部提供的api，支持注册、解注册等操作。
-```typescript
-// 注册缓存Api
-public register(r: NativeRegister[])
-```
-```typescript
-// 接触注册缓存Api
-public unregister(r: NativeRegister[])
-```
-
-#### 注意
-1. 使用缓存机制的方法，必须是同步方法。
-2. 使用缓存机制的方法，在数据发生变化时必须及时更新缓存，并且对数据发生变化的场景做全方位覆盖。否则会带来获取到的数据不是最新的问题
+对于NativeApi中的同步方法，每次调用都要执行原生代码逻辑，频繁调用必然导致系统开销增加和耗时增加。
+所以taro内部对同步方法增加了缓存机制。比如"getSystemSetting"、"getWindowInfo"等。该缓存机制，也有效地提升了Api的执行效率。
 
 ### Taro.request请求方式选择（原生/js）
 

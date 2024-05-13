@@ -768,51 +768,8 @@ padding-bottom: env( safe-area-inset-bottom);
 
 ### 性能优化：同步调用走缓存
 taro的NativeApi，是taro暴露给鸿蒙实现的原生方法。使得Taro具备调用原生的能力。
-
-对于NativeApi中的同步方法，每次调用都要执行原生代码逻辑，频繁调用必然导致系统开销增加和耗时增加。所以taro内部对同步方法增加了缓存机制。比如"getSystemSetting"、"getWindowInfo"等。
-如果应用层想扩展，对额外的同步方法使用缓存机制以提高执行效率，则可以通过如下步骤扩展使用缓存的方法：
-
-#### 明确使用缓存的方法名
-```
-let list = new ArrayList<string>();
-list.add("youMethodName1")
-list.add("youMethodName2")
-
-TaroHybridManager.setCacheSyncMethods(list)
-```
-
-list是一个方法名的列表，用于标识哪些NativeApi中的方法使用缓存。这里的youMethodName1、youMethodName2为要使用缓存的方法名。
-
-#### 监听数据变化更新缓存
-同步方法使用缓存机制可以极大加快api响应速度，但是需要及时更新缓存中的数据。开发者需要在合适的时机监听数据变化，并通过如下方法更新数据
-
-
-```
-nativeUpdater.update(p: NativeApiPair, v?: any)
-```
-举例说明：
-
-1. youMethodName1方法执行全量数据更新（无入参的情况）：
-
-```
-nativeUpdater.update(new NativeApiPair("YouMethodName1",[]))
-```
-
-
-2. youMethodName1方法执行全量数据更新（有入参的情况）：
-
-```
-nativeUpdater.update(new NativeApiPair("youMethodName1",["param1",123]))
-```
-3. youMethodName1方法执行局部数据更新（仅更新其中某个字段：myField）：
-
-```
-nativeUpdater.update(new NativeApiPair("youMethodName1",["param1",123],"myField"),"newData")
-```
-#### 注意
-1. 使用缓存机制的方法，必须是同步方法。
-2. 使用缓存机制的方法，在数据发生变化时必须及时更新缓存，并且对数据发生变化的场景做全方位覆盖。否则会带来获取到的数据不是最新的问题。
-
+对于NativeApi中的同步方法，每次调用都要执行原生代码逻辑，频繁调用必然导致系统开销增加和耗时增加。
+所以taro内部对同步方法增加了缓存机制。比如"getSystemSetting"、"getWindowInfo"等。该缓存机制，也有效地提升了Api的执行效率。
 
 ### Taro.request请求方式选择（原生/js）
 
