@@ -33,13 +33,14 @@ sidebar_label: getUserProfile
 
 ### Option
 
-| 参数 | 类型 | 必填 | 说明 |
-| --- | --- | :---: | --- |
-| lang | `keyof Language` | 否 | 显示用户信息的语言 |
-| desc | `string` | 是 | 声明获取用户个人信息后的用途，不超过30个字符 |
-| success | `(result: SuccessCallbackResult) => void` | 否 | 接口调用成功的回调函数 |
-| fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
-| complete | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+| 参数 | 类型 | 默认值 | 必填 | 说明 |
+| --- | --- | :---: | :---: | --- |
+| lang | `keyof Language` |  | 否 | 显示用户信息的语言 |
+| desc | `string` |  | 是 | 声明获取用户个人信息后的用途，不超过30个字符 |
+| force | `boolean` | `false` | 否 | 当宿主未登录时，是否强制拉起登录框<br />API 支持度: tt |
+| success | `(result: SuccessCallbackResult) => void` |  | 否 | 接口调用成功的回调函数 |
+| fail | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用失败的回调函数 |
+| complete | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 
 ### SuccessCallbackResult
 

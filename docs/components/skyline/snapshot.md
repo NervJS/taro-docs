@@ -3,7 +3,7 @@ title: Snapshot
 sidebar_label: Snapshot
 ---
 
-截图组件。
+截图组件
 支持将其子节点的渲染结果导出成图片，该组件需配合 snapshot 接口使用。 目前仅在 Skyline 渲染引擎 下支持。
 
 支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
@@ -18,6 +18,12 @@ ComponentType<SnapshotProps>
 
 ## SnapshotProps
 
-| 参数 | 类型 |
-| --- | --- |
-| id | `string` |
+| 参数 | 类型 | 默认值 | 说明 |
+| --- | --- | :---: | --- |
+| mode | "view" or "picture" | `'view'<br /><br />可选值:<br />- view: 以真实节点渲染<br />- picture: 对子节点生成的内容截图渲染` | 渲染模式 |
+
+### API 支持度
+
+| API | 微信小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: |
+| SnapshotProps.mode | ✔️ |  |  |  |

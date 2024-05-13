@@ -32,14 +32,15 @@ sidebar_label: getChannelsLiveNoticeInfo
 
 ### SuccessCallbackResult
 
-| 参数 | 类型 | 说明 |
-| --- | --- | --- |
-| nonceId | `string` | 预告 nonceId |
-| status | `number` | 预告状态：0可用 1取消 2已用 |
-| startTime | `string` | 开始时间 |
-| headUrl | `string` | 直播封面 |
-| nickname | `string` | 视频号昵称 |
-| reservable | `boolean` | 是否可预约 |
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| nonceId | `string` | 是 | 预告 nonceId |
+| status | `number` | 是 | 预告状态：0可用 1取消 2已用 |
+| startTime | `string` | 是 | 开始时间 |
+| headUrl | `string` | 是 | 直播封面 |
+| nickname | `string` | 是 | 视频号昵称 |
+| reservable | `boolean` | 是 | 是否可预约 |
+| otherInfos | `string[]` | 否 | 除最近的一条预告信息外，其他的预告信息列表（注意：每次最多返回按时间戳增序排列的15个预告信息，其中时间最近的那个预告信息会在接口其他的返回参数中展示，其余的预告信息会在该字段中展示）。 |
 
 ### Status
 

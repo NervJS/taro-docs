@@ -19,11 +19,12 @@ ComponentType<GridViewProps>
 
 | 参数 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | :---: | :---: | --- |
-| type | `string` | `"aligned"` | 是 | 布局方式。masonry - 瀑布流，根据子元素高度自动布局。  aligned - 每行高度由同一行中最大高度子节点决定。 |
+| type | "aligned" or "masonry" | `"aligned"<br /><br />可选值:<br />- aligned: 每行高度由同一行中最大高度子节点决定<br />- masonry: 瀑布流，根据子元素高度自动布局` | 是 | 布局方式 |
 | crossAxisCount | `number` | `2` | 否 | 交叉轴元素数量 |
 | mainAxisGap | `number` | `0` | 否 | 主轴方向间隔 |
 | crossAxisGap | `number` | `0` | 否 | 交叉轴方向间隔 |
 | maxCrossAxisExtent | `number` | `0` | 否 | 交叉轴元素最大范围 |
+| padding | `[number, number, number, number]` | `[0, 0, 0, 0]` | 否 | 长度为 4 的数组，按 top、right、bottom、left 顺序指定内边距 |
 
 ### API 支持度
 
@@ -34,3 +35,4 @@ ComponentType<GridViewProps>
 | GridViewProps.mainAxisGap | ✔️ |  |  |  |
 | GridViewProps.crossAxisGap | ✔️ |  |  |  |
 | GridViewProps.maxCrossAxisExtent | ✔️ |  |  |  |
+| GridViewProps.padding | ✔️ |  |  |  |
