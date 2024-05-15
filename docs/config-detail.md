@@ -1506,8 +1506,12 @@ module.exports = {
     router: {
       customRoutes: {
         // "页面路径": "自定义路由"
+        // 相当于转发，Taro.navigateTo({url: '/index'})，落地页的url为'/index'，页面内容为'/pages/index/index'
         '/pages/index/index': '/index',
         '/pages/detail/index': ['/detail'], // 可以通过数组为页面配置多个自定义路由
+        // "自定义路由": "页面路径"
+        // 相当于重定向，Taro.navigateTo({url: '/index'})，落地页的url为'/pages/index/index'，页面内容为'/pages/index/index'
+        '/index': '/pages/index/index',
       },
     },
   },
