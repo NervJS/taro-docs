@@ -197,7 +197,6 @@ typeof ScrollViewProps
 | refresherBackground | `string` | `'#FFF'` | 否 | 设置自定义下拉刷新区域背景颜色 |
 | refresherTriggered | `boolean` | `false` | 否 | 设置当前下拉刷新状态，true 表示下拉刷新已经被触发，false 表示下拉刷新未被触发 |
 | enhanced | `boolean` | `false` | 否 | 启用 scroll-view 增强特性 |
-| usingSticky | `boolean` | `false` | 否 | 使 scroll-view 下的 position sticky 特性生效，否则滚动一屏后 sticky 元素会被隐藏 |
 | bounces | `boolean` | `true` | 否 | iOS 下 scroll-view 边界弹性控制 (同时开启 enhanced 属性后生效) |
 | showScrollbar | `boolean` | `true` | 否 | 滚动条显隐控制 (同时开启 enhanced 属性后生效) |
 | pagingEnabled | `boolean` | `false` | 否 | 分页滑动效果 (同时开启 enhanced 属性后生效) |
@@ -263,7 +262,6 @@ typeof ScrollViewProps
 | ScrollViewProps.refresherBackground | ✔️ |  |  |  |  |  |  |  |  |  |
 | ScrollViewProps.refresherTriggered | ✔️ |  |  |  |  |  |  |  |  |  |
 | ScrollViewProps.enhanced | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
-| ScrollViewProps.usingSticky | ✔️ |  |  |  |  |  |  |  |  |  |
 | ScrollViewProps.bounces | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.showScrollbar | ✔️ |  |  |  |  |  |  |  |  |  |
 | ScrollViewProps.pagingEnabled | ✔️ |  |  |  |  |  |  |  |  |  |
