@@ -93,7 +93,7 @@
       {
         "label": "性能优化",
         "type": "category",
-        "items": ["optimized", "prerender", "virtual-list", "virtual-waterfall"]
+        "items": ["optimized", "complier-mode", "prerender", "virtual-list", "virtual-waterfall"]
       },
       {
         "label": "编译优化",
