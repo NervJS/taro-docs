@@ -67,7 +67,6 @@ $ pnpm build:harmony-hybrid
 生成的产物在 `dist` 目录下
 
 ### 壳工程编译运行
-@华为-漆灿
 
 Taro `harmony-hybrid` 平台产物需要结合鸿蒙壳工程一起编译运行才能实现完整的功能。`@hybrid/web-container` 三方库模块提供了鸿蒙 `TaroWebContainer` 等组件和 API，支持开发者快速构建运行环境。鸿蒙壳工程使用 `@hybrid/web-container` 模块的方式如下：
 
@@ -96,7 +95,6 @@ import { TaroWebContainer } from '@hybrid/web-container';
 ## 集成到现有鸿蒙工程
 
 ### 简单集成（TaroWebContainer）
-@华为-漆灿
 
 `TaroWebContainer` 组件提供加载单页面 Web 应用能力，并提供部分 Taro API 鸿蒙版本。
 
@@ -764,7 +762,6 @@ padding-bottom: env( safe-area-inset-bottom);
 
 
 ### 访问控制权限二次弹窗指导
-@华为-漆灿
 
 ### 性能优化：同步调用走缓存
 taro的NativeApi，是taro暴露给鸿蒙实现的原生方法。使得Taro具备调用原生的能力。
