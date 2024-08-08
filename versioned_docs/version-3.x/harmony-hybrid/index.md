@@ -66,6 +66,8 @@ $ pnpm build:harmony-hybrid
 
 生成的产物在 `dist` 目录下
 
+开发可参考项目：[mini-program-example](https://github.com/NervJS/taro/tree/3.x/examples/mini-program-example)
+
 ### 壳工程编译运行
 
 Taro `harmony-hybrid` 平台产物需要结合鸿蒙壳工程一起编译运行才能实现完整的功能。`@hybrid/web-container` 三方库模块提供了鸿蒙 `TaroWebContainer` 等组件和 API，支持开发者快速构建运行环境。鸿蒙壳工程使用 `@hybrid/web-container` 模块的方式如下：
