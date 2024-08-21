@@ -1210,3 +1210,25 @@ window.navigationHeight
 当存在原生导航栏时，fixed布局需要添加一个top值，其值为window.navigationHeight
 
 [Web调试devtools配置]: https://gitee.com/openharmony/docs/blob/master/zh-cn/application-dev/web/web-debugging-with-devtools.md
+
+### 页面跳转后发现顶部多了一个css样式
+
+**F:** 在打开Taro项目后，从pageA页面跳转到其他页面 ，发现跳转后页面增加了一个css样式，影响了页面的顶部布局样式。css设置示例如下：
+
+```css
+.taro_router .taro_page.taro_navigation_page{
+    padding-top:100px;
+}
+```
+
+**Q:** 这个问题是由taro的router机制造成；在pageA的index.scss中为`.taro_router .taro_page.taro_navigation_page`选择器设置某些样式后，当pageA页面被触发加载一次后，该样式生效并作用于全局，成为一个全局样式，影响所有页面；
+
+如果希望页面不受`.taro_router .taro_page.taro_navigation_page`选择器样式影响，可以在页面的配置文件index.config.js文件中将navigationStyle属性值设置为custom，这样配置后，该页面不在受到navigation公共样式的影响，示例如下：
+
+```javascript
+export default {
+    navigationStyle:"custom"
+}
+```
+
+不推荐使用`.taro_router .taro_page.taro_navigation_page`选择器设置样式
