@@ -41,16 +41,16 @@ Options:
 ├── package.json                # Node.js manifest
 ├── dist                        # 打包目录
 ├── project.config.json         # 小程序项目配置
-├── src # 源码目录
-│   ├── app.config.js           # 全局配置
-│   ├── app.css                 # 全局 CSS
-│   ├── app.js                  # 入口组件
-│   ├── index.html              # H5 入口 HTML
-│   └── pages                   # 页面组件
-│       └── index
-│           ├── index.config.js # 页面配置
-│           ├── index.css       # 页面 CSS
-│           └── index.jsx       # 页面组件，如果是 Vue 项目，此文件为 index.vue
+└── src # 源码目录
+    ├── app.config.js           # 全局配置
+    ├── app.css                 # 全局 CSS
+    ├── app.js                  # 入口组件
+    ├── index.html              # H5 入口 HTML
+    └── pages                   # 页面组件
+        └── index
+            ├── index.config.js # 页面配置
+            ├── index.css       # 页面 CSS
+            └── index.jsx       # 页面组件，如果是 Vue 项目，此文件为 index.vue
 ```
 
 通过 Taro CLI 工具基于`默认模板`创建 Taro 工程，使用如下编译命令生成 harmony-hybrid 平台的 Web 资源：
@@ -260,7 +260,7 @@ struct TaroHybridPage {
 1. 多容器的判断依据：html的Path路径为判断依赖，相同则共用，不同则新建载体页
 2. 容器共用的思路：通过鸿蒙的NodeContainer + NodeController实现
 3. 注意：
-   1. 容器共用存在一个问题：相邻两个原生Page之间如何共用容器，页面切换动画时，会有一个页面白屏，进入和退出时都会出现，尽量避免相邻两个原生Page之间共用容器。
+   1. 容器共用存在一个问题：相邻两个原生Page之间如果共用容器，页面切换动画时，会有一个页面白屏，进入和退出时都会出现，尽量避免相邻两个原生Page之间共用容器。
 
 ## 进阶教程
 
@@ -301,22 +301,22 @@ static onBack(taroWebController: TaroWebController): boolean {
 ##### 小程序内置规则
 在业务较为复杂的场景时，项目通常分为多个`bundle`,内置到应用时遵循以下目录结构规则：
 ```
-├──rawfile                          # 应用rawfile目录
-│   └──spa                          # 多bundle内置目录,支持配置 
-│       ├──spa_main@100000          # 小程序1的bundle
-│       │   └──spa                  # 一级目录
-│       │        └──main            # 二级目录
-│       │             ├──js         # js目录
-│       │             ├──css        # css目录
-│       │             ├──static     # 静态资源目录
-│       │             └──index.html # 首页文件
-│       ├──spa_new@100000           # 小程序2的bundle
-│       │   └──spa                  # 一级目录
-│       │        └──new             # 二级目录
-│       │            ├──js          # js目录
-│       │            ├──css         # css目录
-│       │            ├──static      # 静态资源目录
-│       │            └──index.html  # 首页文件
+└──rawfile                          # 应用rawfile目录
+    └──spa                          # 多bundle内置目录,支持配置 
+        ├──spa_main@100000          # 小程序1的bundle
+        │   └──spa                  # 一级目录
+        │        └──main            # 二级目录
+        │             ├──js         # js目录
+        │             ├──css        # css目录
+        │             ├──static     # 静态资源目录
+        │             └──index.html # 首页文件
+        └──spa_new@100000           # 小程序2的bundle
+            └──spa                  # 一级目录
+                 └──new             # 二级目录
+                     ├──js          # js目录
+                     ├──css         # css目录
+                     ├──static      # 静态资源目录
+                     └──index.html  # 首页文件
 ```
 以上目录结构的解释说明  
 1. rawfile目录下的spa，为多bundle的内置目录，容器会在此目录下读取bundle加载，支持以下方式配置（该目录要与配置一致）：
@@ -332,7 +332,7 @@ GlobalThis.getInstance().setRawFile('spa')
 LocalUpdateManager.updateMiniOnLaunch()
 ```
 2. 内置更新缓存至磁盘，若磁盘缓存bundle版本 < rawfile内置版本，则将内置bundle更新至磁盘,具体实现参见以下方法：
-```
+```typescript
 LocalUpdateManager.updateAllMini()
 ```
 3. 更新至磁盘的bundle在容器加载时会被自动查找加载；
@@ -341,7 +341,7 @@ LocalUpdateManager.updateAllMini()
 GlobalThis.getInstance().setDiskUpdateEnable(false)
 ```
 ##### 热更新 
-开发中。。。 
+目前正在开发阶段，暂不支持。
 #### 整体方案简介
 
 动态下开发台吗，在不发布新版本的情况下修复`bug`和发布新功能，绕开应用商店的审核机制，避免长时间审核以及多次被拒绝造成的成本问题，缩短用户取得新版本的流程，改善用户体验。
@@ -366,7 +366,7 @@ if (lastVerInfo?.diskCachePath) { // 走本地缓存
  }
 ```
 
-##### 入口函数--`updateMiniOnLaunch`
+##### 2、入口函数--`updateMiniOnLaunch`
 
 入口函数`updateMiniOnLaunch`接收一个`context`，首先初始化了基类`UpdateManager`，然后获取了`rawfile`目录下的文件内容，并传入到了`updateAllMini`中进行逻辑处理。
 
@@ -386,7 +386,7 @@ updateMiniOnLaunch(context: AppContext.UIAbilityContext) {
 
 
 
-##### 1、获取`rawfile`文件信息--`getMiniRawList`
+##### 3、获取`rawfile`文件信息--`getMiniRawList`
 
 从全局存储中拿出初始化时存储的`rawfile`文件名，根据该文件名称，获取该文件夹下所有的文件信息。
 
@@ -397,7 +397,7 @@ getRawMiniList(context: common.Context): Array<string>{
 }
 ```
 
-##### 2、更新所有的资源包信息---`updateAllMini`
+##### 4、更新所有的资源包信息---`updateAllMini`
 
 该函数接收一个`context`和`rawfile`文件信息，返回一个`Promise`对象。通过`rawfile`文件信息，构建`LocalVersionInfo`实例对象，该对象存储了对应文件的版本号、业务标识`biz`， 以及`rawfile`路径，将其存储到`UpdateConfig`单例的`Map`对象中，这样在资源拦截时可以从该`Map`中通过相应的业务标识获取到对应资源的信息。`rawfile`目录下的资源可能不是最新的，需要与本地缓存进行对比，如果本地缓存中没有任何资源，则需要将`rawfile`的资源复制到本地沙箱相应位置中，这样可以通过字节码优化，能提高性能。由于`rawfile`文件复制到了沙箱，这样沙箱资源一直都是最新的，所以需要更新存储在`UpdateConfig`单例的`Map`对象的资源信息。
 
@@ -772,7 +772,7 @@ taro的NativeApi，是taro暴露给鸿蒙实现的原生方法。使得Taro具�
 如果应用层想扩展，对额外的同步方法使用缓存机制以提高执行效率，则可以通过如下步骤扩展使用缓存的方法：
 
 #### 明确使用缓存的方法名
-```
+```typescript
 let list = new ArrayList<string>();
 list.add("youMethodName1")
 list.add("youMethodName2")
@@ -786,26 +786,26 @@ list是一个方法名的列表，用于标识哪些NativeApi中的方法使用�
 同步方法使用缓存机制可以极大加快api响应速度，但是需要及时更新缓存中的数据。开发者需要在合适的时机监听数据变化，并通过如下方法更新数据
 
 
-```
+```typescript
 nativeUpdater.update(p: NativeApiPair, v?: any)
 ```
 举例说明：
 
 1. youMethodName1方法执行全量数据更新（无入参的情况）：
 
-```
+```typescript
 nativeUpdater.update(new NativeApiPair("YouMethodName1",[]))
 ```
 
 
 2. youMethodName1方法执行全量数据更新（有入参的情况）：
 
-```
+```typescript
 nativeUpdater.update(new NativeApiPair("youMethodName1",["param1",123]))
 ```
 3. youMethodName1方法执行局部数据更新（仅更新其中某个字段：myField）：
 
-```
+```typescript
 nativeUpdater.update(new NativeApiPair("youMethodName1",["param1",123],"myField"),"newData")
 ```
 #### 注意
