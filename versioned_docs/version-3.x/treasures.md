@@ -270,7 +270,7 @@ Taro UI 的 Vue 实现。
 
 Taroify 是移动端组件库 Vant 的 Taro 版本，两者基于相同的视觉规范，提供一致的 API 接口，助力开发者快速搭建小程序应用。
 
-@tangzhi 出品。【[物料详情](https://taroify.gitee.io/taroify.com/introduce/)】【[Gitee](https://gitee.com/mallfoundry/taroify)】
+[@Taroify](https://github.com/mallfoundry) 出品。【[物料详情](https://taroify.github.io/taroify.com/introduce/)】【[Github](https://github.com/mallfoundry/taroify)】
 
 <img src="https://storage.360buyimg.com/cjj-pub-images/WX20210705-155124.png" width="250px" />
 
