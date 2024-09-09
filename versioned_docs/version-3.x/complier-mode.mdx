@@ -1,0 +1,359 @@
+---
+title: 半编译模式
+---
+
+:::info
+Taro v3.6.23 开始支持，目前只支持 **React**，暂不支持 Vue。底层实现原理请参考 [RFC 文档](https://github.com/NervJS/taro/discussions/14708)。
+:::
+
+在节点数量增多到一定量级时，Taro3 的渲染性能会大幅下降，出现白屏时间长、交互延时等问题。经排查发现是目前 Taro 的 `<template>` 模板语法所造成的，为此我们参考 Taro 1/2 的思路，提供了 **CompileMode** 渲染模式。`CompileMode` 适合长列表 Item 这类会被重复渲染多次的组件使用，在长列表场景能提升 **30%** 以上的首开速度，同时能有效减少节点过多时产生的交互延时问题。CompileMode 可以说是应对复杂页面性能优化的“银弹”。
+
+## 使用方法
+
+首先在 Taro 编译配置中开启使用半编译模式：
+
+```js title="config/index.js"
+const config = {
+  mini: {
+    experimental: {
+      compileMode: true
+    }
+  }
+  // ...
+}
+```
+
+然后只需要给 Taro 基础组件添加 `compileMode` 属性，该组件及其 children 将会被编译为单独的小程序模板：
+
+```jsx
+function GoodsItem () {
+  return (
+    <View compileMode>
+      ...
+    </View>
+  )
+}
+```
+
+更为详细的用法请看 [详细用法](#详细用法)
+
+## 常见问题
+
+### 1. 编译出的模板文件会增加包体积
+
+半编译模式使用了空间来换时间，编译出模板会令包体积增大。增加的文件大小视 JSX 写法而定，可以在编译后的页面目录下找到对应的模板文件，如 `pages/index/index.jsx` 编译出的模板位置在 `dist/pages/index/index-templates.wxml`。因此开发者应权衡后使用。
+
+### 2. 只能优化部分语法
+
+编译阶段只能识别、优化部分语法，不支持的语法会自动回退到 Taro3 默认的渲染模式，具体支持的语法可以查阅 [RFC 文档](https://github.com/NervJS/taro/discussions/14708)。
+
+有一种常见语法需要注意：编译阶段只能识别 Taro 基础组件，而 React、Vue 组件的渲染会自动回退到旧的渲染模式。如果这些 React、Vue 组件也需要使用半编译模式，需要在组件内部再次添加 `compileMode` 属性：
+
+```jsx
+function Index () {
+  return (
+    <View compileMode>
+      <Text>Hello</Text> {/* 能被编译阶段识别 */}
+      <Foo /> {/*会自动回退到 Taro3 默认的渲染模式*/}
+    </View>
+  )
+}
+
+function Foo () {
+  return (
+    // 如果希望 Foo 组件也使用半编译模式，需要在 Foo 组件内部再次添加 compileMode 属性
+    <View compileMode>
+      ...
+    </View>
+  )
+}
+
+```
+
+## 详细用法
+### 条件表达式 + 自定义组件
+通过状态来控制展示哪一个自定义组件的场景在业务中是很常见的，比如以下场景
+```jsx
+export default function Index () {
+  const [show, setShow] = useState(true)
+
+  return (
+    <View compileMode>
+      <Button onClick={()=>setShow(!show)}>toggle show</Button>
+      <View>
+        {
+          show ? <Item/> : null
+        }
+      </View>
+    </View>
+  )
+}
+
+function Item () {
+  return (
+    <View compileMode>
+      item
+    </View>
+  )
+}
+```
+正常来说，上面这段代码是没问题的，但是由于 compileMode 得在编译的时候，给元素加上 compileIf 的属性，所以必须是一个确切的标签，所以以上写法暂不支持。后续计划设法把这个属性直接写入在 template 节点上，以支持以上写法。现阶段，先用以下的降级方法：
+```jsx
+export default function Index () {
+  const [show, setShow] = useState(true)
+
+  return (
+    <View compileMode>
+      <Button onClick={()=>setShow(!show)}>toggle show</Button>
+      <View>
+        <Item show={show}/>
+      </View>
+    </View>
+  )
+}
+
+function Item (props) {
+  const { show } = props
+  return (
+    show 
+    ?
+    <View compileMode>
+      item
+    </View>
+    : null
+  )
+}
+```
+即把组件的展示，放到子组件中去进行判断。
+
+### 使用 jsx 变量
+直接使用 jsx 变量，在半编译的情况下是会，如以下代码：
+```jsx
+export default function Index () {
+
+  const item = (<View>item</View>)
+  return (
+    <View compileMode>
+      <View>
+        {item}
+      </View>
+    </View>
+  )
+}
+```
+要改为 render 开头的渲染函数，如下：
+```jsx
+export default function Index () {
+
+  const renderItem = () => <View>item</View>
+  return (
+    <View compileMode>
+      <View>
+        {renderItem()}
+      </View>
+    </View>
+  )
+}
+```
+不过这种写法，并不会把 `renderItem` 的返回值直接打入模版里面，所以这种写法对性能会有一定的消耗。
+
+### 表单驱动 jsx 元素
+这个场景下，其实就是 「使用 jsx 变量」 的一个延伸，如以下代码：
+```jsx
+export default function Index () {
+
+  const itemMap = {
+    a: <View compileMode>itemA</View>,
+    b: <View compileMode>itemB</View>,
+    c: <View compileMode>itemC</View>
+  }
+  return (
+    <View compileMode>
+      {itemMap.a}
+      {itemMap.b}
+      {itemMap.c}
+    </View>
+  )
+}
+```
+需要改为以下写法：
+```jsx
+export default function Index () {
+  const itemMap = {
+    renderA: ()=> <View compileMode>itemA</View>,
+    renderB: ()=> <View compileMode>itemB</View>,
+    renderC: ()=> <View compileMode>itemC</View>
+  }
+  return (
+    <View compileMode>
+      <View>
+      {itemMap.renderA()}
+      {itemMap.renderB()}
+      {itemMap.renderC()}
+      </View>
+    </View>
+  )
+}
+```
+
+## 最佳实践
+总的来说，要最大限度的发挥半编译模式的优势，就是要把尽量把静态节点，尽可能的写到同一个 jsx 里面去。自我检查的最简单的方式就是看看编译后的模版数量是否足够少，每个模版是否包含了足够多节点。
+如果一个 template 只是包含了少数节点，那其实无法带来很大的提升。如以下代码：
+```jsx
+import { View, Image, Text } from '@tarojs/components'
+
+const dataList = [
+  {
+      src: "https://media.tiffany.cn/is/image/Tiffany/EcomBrowseM/35189432_1009333_ED.jpg?defaultImage=NoImageAvailableInternal",
+      title: "这是标题1",
+      subTitle: "这是子标题1",
+      tag: ["标签1", "标签2", "标签3"],
+      des: "这是描述1",
+      subDes:'这是子描述1',
+      prices: {
+          normal: {
+              int: '86',
+              float: '88'
+          },
+          line: 100
+      }
+  },
+  {
+      src: "https://media.tiffany.cn/is/image/Tiffany/EcomBrowseM/62866950_989218_ED.jpg?defaultImage=NoImageAvailableInternal",
+      title: "这是标题2",
+      subTitle: "这是子标题2",
+      tag: ["标签1", "标签2", "标签3"],
+      des: "这是描述2",
+      subDes:'这是子描述2',
+      prices: {
+          normal: {
+              int: '60',
+              float: '70'
+          },
+          line: 100
+      }
+  },
+  {
+      src: "https://media.tiffany.cn/is/image/Tiffany/EcomBrowseM/62507586_989743_ED_M.jpg?defaultImage=NoImageAvailableInternal",
+      title: "这是标题3",
+      subTitle: "这是子标题3",
+      tag: ["标签1", "标签2", "标签3"],
+      des: "这是描述3",
+      subDes:'这是子描述3',
+      prices: {
+          normal: {
+              int: '85',
+              float: '10'
+          },
+          line: 100
+      }
+  },
+  {
+      src: "https://media.tiffany.cn/is/image/Tiffany/EcomBrowseM/33263465_997778_ED.jpg?defaultImage=NoImageAvailableInternal",
+      title: "这是标题4",
+      subTitle: "这是子标题4",
+      tag: ["标签1", "标签2", "标签3"],
+      des: "这是描述4",
+      subDes:'这是子描述4',
+      prices: {
+          normal: {
+              int: '8',
+              float: '88'
+          },
+          line: 100
+      }
+  },
+  {
+      src: "https://media.tiffany.cn/is/image/Tiffany/EcomBrowseM/60957401_1023440_ED.jpg?defaultImage=NoImageAvailableInternal",
+      title: "这是标题5",
+      subTitle: "这是子标题5",
+      tag: ["标签1", "标签2", "标签3"],
+      des: "这是描述5",
+      subDes:'这是子描述5',
+      prices: {
+          normal: {
+              int: '77',
+              float: '88'
+          },
+          line: 100
+      }
+  }
+]
+
+
+export default function Index () {
+  return (
+    <View>
+      {
+        new Array(100).fill(0).map((_, index)=><Item key={index} itemIndex = {index}/>)
+      }
+    </View>
+  )
+}
+
+const Item = (props) =>{
+  const { itemIndex } = props
+  const selectIndex = itemIndex % 5
+  const data = dataList[selectIndex]
+  return (
+      <View compileMode>
+          <View className='item-body-wrap' >
+              <View className='image-wrap'>
+                  <Image src={data.src} mode='aspectFill' className='image-wrap' />
+              </View>
+              <View className='body-left'>
+                  <View className='title-wrap'>
+                      <View className='title'>
+                          {data.title}
+                      </View>
+                      <View className='sub-title'>
+                          {data.subTitle}
+                      </View>
+                  </View>
+
+                  <View className='des-wrap'>
+                      <View className='des'>
+                          {data.des}
+                      </View>
+                      <View className='sub-des'>
+                          {data.subDes}
+                      </View>
+                  </View>
+
+                  <View className='tag-wrap'>
+                  {
+                      data.tag.map((e, index)=><View key={index} className='tag'>
+                          {e}
+                      </View>)
+                  }
+                  </View>
+                  <View className='price-wrap'>
+                      <View className='price-normal'>
+                          <Text className='price-normal-int'>{data.prices.normal.int}</Text>
+                          <Text className='price-normal-float'>.{data.prices.normal.float}</Text>
+                      </View>
+                      <View className='price-line'>
+                          {data.prices.line}
+                      </View>
+
+                  </View>
+                  <View className='add'>
+                      <Image src='https://img12.360buyimg.com/imagetools/jfs/t1/169993/8/27041/5311/61b1b219E03cffee0/778c223bd7677925.png' mode='aspectFill' className='add-image' />
+                  </View>
+                  <View className='level1'>
+                      <View className='level2'>
+                          <View className='level3'>
+                              <View className='level4'>
+                                  <View className='level5'>
+                                      搞一个嵌套五层的浮动元素
+                                  </View>
+                              </View>
+                          </View>
+                      </View>
+                  </View>
+              </View>
+          </View>
+      </View>
+  )
+}
+```
