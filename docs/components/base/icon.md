@@ -77,7 +77,7 @@ export default class PageView extends Component {
 | 参数 | 类型 | 默认值 | 必填 | 说明 |
 | --- | --- | :---: | :---: | --- |
 | type | `keyof TIconType` |  | 是 | icon 的类型 |
-| size | `string` | `23` | 否 | icon 的大小，单位px |
+| size | `number` | `23` | 否 | icon 的大小，单位px |
 | color | `string` |  | 否 | icon 的颜色，同 css 的 color |
 | ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
 
@@ -85,9 +85,9 @@ export default class PageView extends Component {
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| IconProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| IconProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | IconProps.size | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| IconProps.color | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| IconProps.color | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | IconProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |  |
 
 ### TIconType
