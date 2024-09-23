@@ -607,9 +607,9 @@ Alternatively, you can manually install the appropriate version of the CLI, modi
 
 ```bash
 # Use the Taro upgrade command to update the CLI version to the latest version
-$ taro update self [version number]
+$ taro update self 
 # Use the Taro upgrade command to update the CLI version to the specified version
-$ taro update self
+$ taro update self [version number]
 # Use the Taro upgrade command to upgrade project dependencies to a version consistent with @tarojs/cli
 $ taro update project
 # Use the Taro upgrade command to upgrade project dependencies to the specified version
