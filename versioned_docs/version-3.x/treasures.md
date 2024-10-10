@@ -232,6 +232,22 @@ Taro 小程序脚手架。 特性： 封装 api、redux 优雅集成、生成海
 
 ---
 
+### duxui
+
+`React`
+
+支持多端开发的 React 组件库
+
+@duxapp 出品。【[官网](https://duxapp.cn)】【[Github](https://github.com/duxapp/duxui)】
+
+<img src="https://duxapp.cn/img/web.png" width="700px" />
+
+|        | 微信 | 京东 | 阿里系 | 百度 | 头条 | H5  | RN  |
+| :----: | :--: | :--: | :----: | :--: | :--: | :-: | :-: |
+| 支持度 |  ✔️  |      |        |      |      | ✔️  | ✔️  |
+
+---
+
 ### taro-ui-vue
 
 `Vue`
@@ -674,7 +690,7 @@ Taro3 集成图表库 @visactor/vchart。
 
 |        | 微信 | 阿里系 | 百度 | 头条 | H5  | RN  |
 | :----: | :--: | :----: | :--: | :--: | :-: | :-: |
-| 支持度 |  ✔️  |      |      |  ✔️    |  ✔️   |     |
+| 支持度 |  ✔️  |        |      |  ✔️  | ✔️  |     |
 
 ---
 
@@ -787,6 +803,22 @@ Taro 小程序路由库/自动生成带参数类型提示的路由方法/允许�
 ---
 
 ## 其它
+
+---
+
+### 移动端页面编辑器
+
+`React`
+
+一个简单易用，方便扩展和集成的移动端页面编辑器。
+
+@duxapp 出品。【[官网](http://duxapp.cn/docs/app/design/start)】【[Github](https://github.com/duxapp/design)】
+
+<img src="https://duxapp.cn/img/design.png" width="700px" />
+
+|        | 微信 | 阿里系 | 百度 | 头条 | H5  | RN  |
+| :----: | :--: | :----: | :--: | :--: | :-: | :-: |
+| 支持度 |  ✔️  |        |      |      | ✔️  | ✔️  |
 
 ---
 
