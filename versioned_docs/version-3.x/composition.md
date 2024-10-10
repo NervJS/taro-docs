@@ -11,7 +11,9 @@ title: 更多资源
 - [Taro UI Vue3](https://b2nil.github.io/taro-ui-vue3/)
 - [Taro UI Vue](https://github.com/psaren/taro-ui-vue)
 - [基于 Taro + Taro-ui + Typescript + redux 开发的网易云音乐小程序](https://github.com/lsqy/taro-music)
-- [Taro Design 开源页面设计器](https://github.com/ShaoGongBra/taro-design)
+- [duxapp 兼容多端的模块化开发框架](https://duxapp.cn/)
+- [Taro 移动端页面设计器](https://github.com/duxapp/design)
+- [duxui 兼容 RN 的多端 UI 库](https://github.com/duxapp/duxui)
 
 ### Taro2
 
@@ -68,6 +70,9 @@ title: 更多资源
 - [Taro 多端开发的正确姿势：打造三端统一的网易严选（小程序、H5、React Native）](https://juejin.im/post/5c6a151f518825625e4ac830)
 - [Taro 与 Redux 结合使用教程](https://github.com/imageslr/taro-library#%E5%BC%95%E5%85%A5-redux)
 - [微信小程序开发之影分身术](https://juejin.im/post/5c788d28e51d4560a82be8d2)
+- [用 duxapp 快速完成项目](https://duxapp.cn/blog/quick-prject)
+- [Taro 使用模块化开发，以提升开发效率](https://duxapp.cn/blog/intro)
+- [duxapp 对 RN 端开发进行了哪些改动，如何提升开发效率](https://duxapp.cn/blog/react-native)
 
 ## 视频教程
 
