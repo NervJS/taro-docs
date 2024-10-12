@@ -94,6 +94,7 @@ module.exports = {
         type: 'category',
         items: [
           'optimized',
+          'complier-mode',
           'prerender',
           'virtual-list',
           'virtual-waterfall',
