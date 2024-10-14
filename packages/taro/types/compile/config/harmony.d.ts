@@ -1,21 +1,68 @@
+import type { OutputOptions as RollupOutputOptions } from 'rollup'
 import type Webpack from 'webpack'
 import type Chain from 'webpack-chain'
+
 import type { IOption, IPostcssOption, IUrlLoaderOption } from './util'
-import type { OutputOptions as RollupOutputOptions } from 'rollup'
-import type { Compiler, CompilerTypes, CompilerWebpackTypes } from '../compiler'
+import type { CompilerTypes, CompilerWebpackTypes } from '../compiler'
 import type { OutputExt } from './project'
 
-interface Runtime {
-  enableInnerHTML?: boolean
-  enableSizeAPIs?: boolean
-  enableAdjacentHTML?: boolean
-  enableTemplateContent?: boolean
-  enableCloneNode?: boolean
-  enableContains?: boolean
-  enableMutationObserver?: boolean
+export interface IHarmonyRouterConfig {
+  /** 配置自定义路由 */
+  customRoutes?: IOption
 }
 
-export interface IMiniAppConfig<T extends CompilerTypes = CompilerWebpackTypes> {
+export interface IHarmonyConfig<T extends CompilerTypes = 'vite'> {
+  /** Harmony 项目地址 */
+  projectPath: string
+
+  /** hap 名
+   * @default "entry"
+   */
+  hapName?: string
+
+  /** 应用名称
+   * @default "default"
+   */
+  name?: string
+
+  /** oh-package.json 配置 */
+  ohPackage?: {
+    dependencies?: { [name: string]: string }
+    devDependencies?: { [name: string]: string }
+    main?: string
+    [k: string]: any
+  }
+
+  /** ohpm-cli
+   * @default "~/Library/Huawei/ohpm/bin/ohpm"
+   */
+  ohpm?: string
+
+  /** 核心依赖前缀
+   * @description 用于告诉编译内容如何解析核心依赖，传入时将直接使用依赖前缀，同时不会为工程导入核心依赖
+   */
+  chorePackagePrefix?: string
+
+  /** 用于告诉 Taro 编译器需要抽取的公共文件 */
+  commonChunks?: string[] | ((commonChunks: string[]) => string[])
+
+  /** Harmony 编译过程的相关配置 */
+  compile?: {
+    exclude?: any[]
+    include?: any[]
+    filter?: (filename: string) => boolean
+  }
+
+  /** 用于配置半编译模式下的选项 */
+  compileModeSetting?: {
+    componentReplace?: {
+      [key: string]: {
+        current_init: string
+        dependency_define: string
+      }
+    }
+  }
+
   /** 用于控制是否生成 js、css 对应的 sourceMap (默认值：watch 模式下为 true，否则为 false) */
   enableSourceMap?: boolean
 
@@ -25,33 +72,25 @@ export interface IMiniAppConfig<T extends CompilerTypes = CompilerWebpackTypes> 
   /** 指定 React 框架相关的代码是否使用开发环境（未压缩）代码，默认使用生产环境（压缩后）代码 */
   debugReact?: boolean
 
-  /** 是否跳过第三方依赖 usingComponent 的处理，默认为自动处理第三方依赖的自定义组件 */
-  skipProcessUsingComponents?: boolean
-
-  /** 压缩小程序 xml 文件的相关配置 */
-  minifyXML?: {
-    /** 是否合并 xml 文件中的空格 (默认false) */
-    collapseWhitespace?: boolean
-  }
-
   /**
    * 自定义 Webpack 配置
    * @param chain  [webpackChain](https://github.com/neutrinojs/webpack-chain) 对象
    * @param webpack webpack 实例
-   * @param PARSE_AST_TYPE 小程序编译时的文件类型集合
-   * @returns
    */
-  webpackChain?: (chain: Chain, webpack: typeof Webpack, PARSE_AST_TYPE: any) => void
+  webpackChain?: (chain: Chain, webpack: typeof Webpack) => void
 
   /** webpack 编译模式下，可用于修改、拓展 Webpack 的 output 选项，配置项参考[官方文档](https://webpack.js.org/configuration/output/)
-  * vite 编译模式下，用于修改、扩展 rollup 的 output，目前仅适配 chunkFileNames 和 assetFileNames 两个配置，修改其他配置请使用 vite 插件进行修改。配置想参考[官方文档](https://rollupjs.org/configuration-options/)
-  */
+   * vite 编译模式下，用于修改、扩展 rollup 的 output，目前仅适配 chunkFileNames 和 assetFileNames 两个配置，修改其他配置请使用 vite 插件进行修改。配置想参考[官方文档](https://rollupjs.org/configuration-options/)
+   */
   output?: T extends 'vite'
-    ? Pick<RollupOutputOptions, 'chunkFileNames'>  & OutputExt
+    ? Pick<RollupOutputOptions, 'chunkFileNames'> & OutputExt
     : Webpack.Configuration['output'] & OutputExt
 
+  /** 路由相关的配置 */
+  router?: IHarmonyRouterConfig
+
   /** 配置 postcss 相关插件 */
-  postcss?: IPostcssOption<'mini'>
+  postcss?: IPostcssOption<'harmony'>
 
   /** [css-loader](https://github.com/webpack-contrib/css-loader) 的附加配置 */
   cssLoaderOption?: IOption
@@ -76,42 +115,4 @@ export interface IMiniAppConfig<T extends CompilerTypes = CompilerWebpackTypes> 
 
   /** [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) 的附加配置 */
   miniCssExtractPluginOption?: IOption
-
-  /** 用于告诉 Taro 编译器需要抽取的公共文件 */
-  commonChunks?: string[] | ((commonChunks: string[]) => string[])
-
-  /** 为某些页面单独指定需要引用的公共文件 */
-  addChunkPages?: (pages: Map<string, string[]>, pagesNames?: string[]) => void
-
-  /** 优化主包的体积大小 */
-  optimizeMainPackage?: {
-    enable?: boolean
-    exclude?: any[]
-  }
-
-  /** 小程序编译过程的相关配置 */
-  compile?: {
-    exclude?: (string | RegExp)[]
-    include?: (string | RegExp)[]
-    filter?: (filename: string) => boolean
-  }
-
-  /** 插件内部使用 */
-  runtime?: Runtime
-
-  /** 使用的编译工具。可选值：webpack5、vite */
-  compiler?: Compiler<T>
-
-  /** 体验式功能 */
-  experimental?: {
-    /** 是否开启编译模式 */
-    compileMode?: boolean | string
-  }
-}
-
-export interface IMiniFilesConfig {
-  [configName: string]: {
-    content: any
-    path: string
-  }
 }

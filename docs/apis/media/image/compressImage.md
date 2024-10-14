@@ -30,7 +30,7 @@ sidebar_label: compressImage
 | fail | `(res: TaroGeneral.CallbackResult) => void` | 否 | 接口调用失败的回调函数 |
 | quality | `number` | 否 | 压缩质量，范围0～100，数值越小，质量越低，压缩率越高（仅对jpg有效）。 |
 | compressedWidth | `number` | 否 | 压缩后图片的宽度，单位为px，若不填写则默认以 compressedHeight 为准等比缩放。 |
-| compressHeight | `number` | 否 | 压缩后图片的高度，单位为px，若不填写则默认以 compressedWidth 为准等比缩放。 |
+| compressedHeight | `number` | 否 | 压缩后图片的高度，单位为px，若不填写则默认以 compressedWidth 为准等比缩放。 |
 | success | `(result: SuccessCallbackResult) => void` | 否 | 接口调用成功的回调函数 |
 
 ### SuccessCallbackResult

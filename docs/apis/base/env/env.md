@@ -10,5 +10,5 @@ sidebar_label: env
 ## 类型
 
 ```tsx
-{ [key: string]: string; FRAMEWORK: "react" | "preact" | "nerv" | "vue" | "vue3"; TARO_ENV: "weapp" | "h5" | "rn" | "swan" | "alipay" | "tt" | "qq" | "jd" | "quickapp"; USER_DATA_PATH?: string; }
+{ [key: string]: string; FRAMEWORK: "react" | "preact" | "solid" | "vue3"; TARO_ENV: "weapp" | "h5" | "rn" | "swan" | "alipay" | "tt" | "qq" | "jd" | "quickapp"; USER_DATA_PATH?: string; }
 ```

@@ -170,15 +170,17 @@ export default class PagePicker extends Component {
 | mode | `keyof Mode` | `"selector"` | 否 | 选择器类型，默认是普通选择器 |
 | disabled | `boolean` | `false` | 否 | 是否禁用 |
 | onCancel | `CommonEventFunction` |  | 否 | 取消选择或点遮罩层收起 picker 时触发 |
+| textProps | `PickerText` |  | 否 | 用于替换组件内部文本 |
 
 ### API 支持度
 
 | API | 微信小程序 | H5 | React Native | Harmony | Harmony hybrid |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | PickerStandardProps.headerText | ✔️ |  |  |  |  |
-| PickerStandardProps.mode | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerStandardProps.mode | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | PickerStandardProps.disabled | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| PickerStandardProps.onCancel | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerStandardProps.onCancel | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| PickerStandardProps.textProps |  | ✔️ |  | ✔️ | ✔️ |
 
 ### Mode
 
@@ -213,20 +215,18 @@ export default class PagePicker extends Component {
 | itemStyle | `StyleProp<TextStyle>` | `{}` | 否 | mode为 selector 或 multiSelector 时 itemStyle 有效 |
 | indicatorStyle | `StyleProp<ViewStyle>` | `{}` | 否 | mode为 selector 或 multiSelector 时 indicatorStyle 有效 |
 | onChange | `CommonEventFunction<ChangeEventDetail>` |  | 否 | value 改变时触发 change 事件 |
-| textProps | `PickerText` |  | 否 | 用于替换组件内部文本 |
 
 ### API 支持度
 
 | API | 微信小程序 | H5 | React Native | Harmony | Harmony hybrid |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| PickerSelectorProps.range | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| PickerSelectorProps.rangeKey | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| PickerSelectorProps.value | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerSelectorProps.range | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| PickerSelectorProps.rangeKey | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| PickerSelectorProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | PickerSelectorProps.defaultValue | ✔️ | ✔️ | ✔️ |  | ✔️ |
 | PickerSelectorProps.itemStyle |  |  | ✔️ |  |  |
 | PickerSelectorProps.indicatorStyle |  |  | ✔️ |  |  |
-| PickerSelectorProps.onChange | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| PickerSelectorProps.textProps |  | ✔️ |  |  | ✔️ |
+| PickerSelectorProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 
 ### ChangeEventDetail
 
@@ -253,13 +253,13 @@ export default class PagePicker extends Component {
 
 | API | 微信小程序 | H5 | React Native | Harmony | Harmony hybrid |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| PickerMultiSelectorProps.range | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| PickerMultiSelectorProps.rangeKey | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| PickerMultiSelectorProps.value | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerMultiSelectorProps.range | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| PickerMultiSelectorProps.rangeKey | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| PickerMultiSelectorProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | PickerMultiSelectorProps.itemStyle |  |  | ✔️ |  |  |
 | PickerMultiSelectorProps.indicatorStyle |  |  | ✔️ |  |  |
-| PickerMultiSelectorProps.onChange | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| PickerMultiSelectorProps.onColumnChange | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerMultiSelectorProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| PickerMultiSelectorProps.onColumnChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 
 ### ChangeEventDetail
 
@@ -291,11 +291,11 @@ export default class PagePicker extends Component {
 
 | API | 微信小程序 | H5 | React Native | Harmony | Harmony hybrid |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| PickerTimeProps.value | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerTimeProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | PickerTimeProps.defaultValue | ✔️ | ✔️ | ✔️ |  |  |
-| PickerTimeProps.start | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| PickerTimeProps.end | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| PickerTimeProps.onChange | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerTimeProps.start | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| PickerTimeProps.end | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| PickerTimeProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 
 ### ChangeEventDetail
 
@@ -321,12 +321,12 @@ export default class PagePicker extends Component {
 
 | API | 微信小程序 | H5 | React Native | Harmony | Harmony hybrid |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| PickerDateProps.value | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerDateProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | PickerDateProps.defaultValue | ✔️ | ✔️ | ✔️ |  |  |
-| PickerDateProps.start | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| PickerDateProps.end | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerDateProps.start | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| PickerDateProps.end | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | PickerDateProps.fields | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| PickerDateProps.onChange | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| PickerDateProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 
 ### Fields
 
@@ -382,6 +382,7 @@ export default class PagePicker extends Component {
 | value | `string` | 是 |
 | code | `string` | 是 |
 | postcode | `string` | 否 |
+| children | `RegionData[]` | 否 |
 
 ### Level
 

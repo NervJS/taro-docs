@@ -117,6 +117,7 @@ class App extends Component {
 | disableTouchmove | `string` | `false` | 否 | 是否停止响应用户 touchmove 操作 |
 | scrollWithAnimation | `boolean` | `true` | 否 | 改变 current 时使用动画过渡 |
 | cacheExtent | `number` | `0` | 否 | 缓存区域大小，值为 1 表示提前渲染上下各一屏区域（swiper 容器大小） |
+| effectsProps | `Record<string, any>` |  | 否 | swiper11 相关的动效参数，具体见文档 https://swiperjs.com/swiper-api#parameters |
 | onChange | `CommonEventFunction<onChangeEventDetail>` |  | 否 | current 改变时会触发 change 事件 |
 | onTransition | `CommonEventFunction<onTransitionEventDetail>` |  | 否 | swiper-item 的位置发生改变时会触发 transition 事件 |
 | onAnimationFinish | `CommonEventFunction<onChangeEventDetail>` |  | 否 | 动画结束时会触发 animationfinish 事件 |
@@ -126,16 +127,16 @@ class App extends Component {
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| SwiperProps.indicatorDots | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| SwiperProps.indicatorColor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| SwiperProps.indicatorActiveColor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| SwiperProps.autoplay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| SwiperProps.current | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| SwiperProps.indicatorDots | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| SwiperProps.indicatorColor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| SwiperProps.indicatorActiveColor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| SwiperProps.autoplay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| SwiperProps.current | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | SwiperProps.currentItemId | (deprecated) | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
-| SwiperProps.interval | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| SwiperProps.duration | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| SwiperProps.interval | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| SwiperProps.duration | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |
 | SwiperProps.circular | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| SwiperProps.vertical | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| SwiperProps.vertical | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | SwiperProps.previousMargin | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
 | SwiperProps.nextMargin | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
 | SwiperProps.snapToEdge | ✔️ |  | ✔️ |  |  |  |  |  |  |  |
@@ -157,7 +158,8 @@ class App extends Component {
 | SwiperProps.disableTouchmove |  | ✔️ |  |  |  |  |  |  |  |  |
 | SwiperProps.scrollWithAnimation | ✔️ |  |  |  |  |  |  |  |  |  |
 | SwiperProps.cacheExtent | ✔️ |  |  |  |  |  |  |  |  |  |
-| SwiperProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| SwiperProps.effectsProps |  |  |  |  |  |  | ✔️ |  |  |  |
+| SwiperProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | SwiperProps.onTransition | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
 | SwiperProps.onAnimationFinish | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
 | SwiperProps.onAnimationEnd |  |  | ✔️ |  |  |  |  |  |  |  |
