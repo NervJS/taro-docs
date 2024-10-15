@@ -270,7 +270,7 @@ Taro UI component library rewritten in Vue 3.0.
 
 Taroify is the Taro version of the mobile component library Vant. Both are based on the same visual specification and provide a consistent API interface to help developers quickly build mini program.
 
-@tangzhi【[Material details](https://taroify.gitee.io/taroify.com/introduce/)】【[Gitee](https://gitee.com/mallfoundry/taroify)】
+@Taroify【[Material details](https://taroify.github.io/taroify.com/introduce/)】【[Github](https://github.com/mallfoundry/taroify)】
 
 <img src="https://storage.360buyimg.com/cjj-pub-images/WX20210705-155124.png" width="250px" />
 
