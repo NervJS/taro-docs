@@ -4,13 +4,13 @@ title: 项目配置
 
 各类小程序平台均有自己的项目配置文件，例如：
 
-- 微信小程序，[project.config.json](https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html?search-key=%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE)
+- 微信小程序，[project.config.json](https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html)
 - 百度小程序，[project.swan.json](https://smartprogram.baidu.com/docs/develop/devtools/projectconfig/)
-- 抖音小程序，[project.config.json](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/framework/basic-reference/catalog-structure)
+- 抖音小程序，[project.config.json](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/framework/general-configuration/#%E9%A1%B9%E7%9B%AE%E9%85%8D%E7%BD%AE)
 - QQ 小程序，project.config.json
-- 支付宝小程序，[mini.project.json](https://opendocs.alipay.com/mini/framework/project)
+- 支付宝小程序，[mini.project.json](https://opendocs.alipay.com/mini/03dbc3)
 - 京东小程序，暂无发现
-- 飞书小程序，[project.config.json](https://open.feishu.cn/document/uYjL24iN/uEzMzUjLxMzM14SMzMTN/gadget-project-configuration?from=taro)
+- 飞书小程序，[project.config.json](https://open.feishu.cn/document/tools-and-resources/development-tools/development-of-gadget-in-tools/gadget-project-configuration)
 
 为了能够适配不同小程序平台的配置文件不同的情况，Taro 支持为各个小程序平台添加各自的项目配置文件。
 
