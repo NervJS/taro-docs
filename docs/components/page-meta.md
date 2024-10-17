@@ -11,7 +11,7 @@ Taro v3.6.19 开始支持
 开发者需要在页面配置里添加：`enablePageMeta: true`
 :::
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/page-meta.html)
 
@@ -94,14 +94,14 @@ function Index () {
 | API | 微信小程序 | 支付宝小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | PageMetaProps.backgroundTextStyle | ✔️ |  |  |  |  |
-| PageMetaProps.backgroundColor | ✔️ | ✔️ |  |  |  |
-| PageMetaProps.backgroundColorTop | ✔️ | ✔️ |  |  |  |
-| PageMetaProps.backgroundColorBottom | ✔️ | ✔️ |  |  |  |
-| PageMetaProps.scrollTop | ✔️ | ✔️ |  |  |  |
-| PageMetaProps.scrollDuration | ✔️ | ✔️ |  |  |  |
+| PageMetaProps.backgroundColor | ✔️ | ✔️ |  |  | ✔️ |
+| PageMetaProps.backgroundColorTop | ✔️ | ✔️ |  |  | ✔️ |
+| PageMetaProps.backgroundColorBottom | ✔️ | ✔️ |  |  | ✔️ |
+| PageMetaProps.scrollTop | ✔️ | ✔️ |  |  | ✔️ |
+| PageMetaProps.scrollDuration | ✔️ | ✔️ |  |  | ✔️ |
 | PageMetaProps.pageStyle | ✔️ | ✔️ |  |  |  |
 | PageMetaProps.rootFontSize | ✔️ | ✔️ |  |  |  |
-| PageMetaProps.rootBackgroundColor | ✔️ | ✔️ |  |  |  |
+| PageMetaProps.rootBackgroundColor | ✔️ | ✔️ |  |  | ✔️ |
 | PageMetaProps.pageFontSize | ✔️ | ✔️ |  |  |  |
 | PageMetaProps.pageOrientation | ✔️ |  |  |  |  |
 | PageMetaProps.onResize | ✔️ |  |  |  |  |

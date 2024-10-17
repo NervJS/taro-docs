@@ -36,9 +36,9 @@ ComponentType<NavigationBarProps>
 
 | API | 微信小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: |
-| NavigationBarProps.title | ✔️ |  |  |  |
-| NavigationBarProps.loading | ✔️ |  |  |  |
-| NavigationBarProps.frontColor | ✔️ |  |  |  |
-| NavigationBarProps.backgroundColor | ✔️ |  |  |  |
+| NavigationBarProps.title | ✔️ |  |  | ✔️ |
+| NavigationBarProps.loading | ✔️ |  |  | ✔️ |
+| NavigationBarProps.frontColor | ✔️ |  |  | ✔️ |
+| NavigationBarProps.backgroundColor | ✔️ |  |  | ✔️ |
 | NavigationBarProps.colorAnimationDuration | ✔️ |  |  |  |
 | NavigationBarProps.colorAnimationTimingFunc | ✔️ |  |  |  |
