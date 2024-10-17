@@ -14,7 +14,7 @@ title: 项目配置
 
 为了能够适配不同小程序平台的配置文件不同的情况，Taro 支持为各个小程序平台添加各自的项目配置文件。
 
-通过 Taro 模板创建的项目都会默认拥有 `project.config.json` 这一项目配置文件，这个文件 **只能用于微信小程序**，若要兼容到其他小程序平台，请按如下对应规则来增加相应平台的配置文件，其配置与各自小程序平台要求的一致：
+通过 Taro 模板创建的项目都会默认拥有 `project.config.json` 这一项目配置文件，这个文件**只能用于微信小程序**，若要兼容到其他小程序平台，请按如下对应规则来增加相应平台的配置文件，其配置与各自小程序平台要求的一致：
 
 | 小程序平台   | 添加配置文件        |
 | ------------ | ------------------- |
@@ -26,6 +26,6 @@ title: 项目配置
 | 飞书小程序   | project.lark.json   |
 
 :::caution 注意
-飞书小程序从[插件](https://www.npmjs.com/package/@tarojs/plugin-platform-lark)1.0.2 版本开始，配置文件修改为`project.lark.json`，之前版本为`project.tt.json`。
+飞书小程序从[插件](https://www.npmjs.com/package/@tarojs/plugin-platform-lark) 1.0.2 版本开始，配置文件修改为 `project.lark.json`，之前版本为 `project.tt.json`。
 推荐升级[飞书插件](https://www.npmjs.com/package/@tarojs/plugin-platform-lark)到最新版，避免使用 Taro 同时开发抖音小程序和飞书小程序配置文件 appId 冲突的问题。
 :::
