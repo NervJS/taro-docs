@@ -185,11 +185,11 @@ export default {
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| RadioProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| RadioProps.checked | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| RadioProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| RadioProps.color | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
+| RadioProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| RadioProps.checked | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| RadioProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| RadioProps.color | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
 | RadioProps.name |  |  |  |  |  |  | ✔️ |  | ✔️ | ✔️ |
 | RadioProps.nativeProps |  |  |  |  |  |  | ✔️ |  |  | ✔️ |
 | RadioProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |  |
-| RadioProps.onChange |  |  |  |  |  |  | ✔️ | ✔️ |  | ✔️ |
+| RadioProps.onChange |  |  |  |  |  |  | ✔️ | ✔️ | ✔️ | ✔️ |
