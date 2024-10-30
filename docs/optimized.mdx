@@ -12,6 +12,27 @@ Taro 3 为了兼容 React、Vue 等 Web 开发框架，在运行时对浏览器�
 
 详情请看[半编译模式](./complier-mode)。
 
+## 模版不使用 XS
+:::info
+`4.0.7` 开始支持
+:::info
+
+模版的拼接使用 xs，会有时间上的损耗，如果要追求极致的性能，可以禁用在模版中使用 xs，但这会导致包体积变大。
+用法：
+
+在 Taro 编译配置中禁用模版 xs：
+
+```js title="config/index.js"
+const config = {
+  mini: {
+    experimental: {
+      useXsForTemplate: false
+    }
+  }
+  // ...
+}
+```
+
 ## 使用 WXS
 
 :::info
