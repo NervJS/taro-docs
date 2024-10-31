@@ -127,7 +127,7 @@ function Item (props) {
 即把组件的展示，放到子组件中去进行判断。
 
 ### 使用 jsx 变量
-直接使用 jsx 变量，在半编译的情况下是会，如以下代码：
+直接使用 jsx 变量，在半编译的情况下是会报错，如以下代码：
 ```jsx
 export default function Index () {
 
@@ -196,164 +196,438 @@ export default function Index () {
 }
 ```
 
+## 半编译预处理
+:::info
+`4.0.7` 开始支持
+:::info
+
+允许在组件中自定义的以 `render` 开头的函数，来实现组件内部的模块化能力。
+### 使用方法
+1. 函数必须是 `render` 开头
+2. 函数 `return` 的第一个标签必须带上 `compileMode="subRenderFn"` 属性
+
+### 限制
+1. `render` 开头的函数暂不支持拥有自己的作用域代码
+2. 传递给 `render` 开头的函数的参数，现阶段必须是一个变量
+
+### 例子
+```jsx
+const ComponentA = (props) => {
+    const { data1, data2 } = props
+    const renderXxxx = (props1, props2, ...) => { 
+        //1. 这里暂不支持编码，涉及到作用域的问题
+        return (
+            //return 的第一个标签必须带上 compileMode="subRenderFn" 属性
+            <View compileMode="subRenderFn">
+                {props1}
+                {props2}
+                 ...
+            </View>
+        )
+    }
+    
+    return (
+        <View compileMode>
+            // 2. props 暂时只支持传递变量，涉及到变量替换的问题
+            {renderXxxx(data1, data2)}
+        </View>
+    )
+}
+```
+
+
 ## 最佳实践
 总的来说，要最大限度的发挥半编译模式的优势，就是要把尽量把静态节点，尽可能的写到同一个 jsx 里面去。自我检查的最简单的方式就是看看编译后的模版数量是否足够少，每个模版是否包含了足够多节点。
-如果一个 template 只是包含了少数节点，那其实无法带来很大的提升。如以下代码：
+如果一个 template 只是包含了少数节点，那其实无法带来很大的提升。可以结合半编译预处理，使用组件内的 `render` 开头的函数，进行模块化拆分 如以下代码：
 ```jsx
-import { View, Image, Text } from '@tarojs/components'
+import { View, Image, Text } from "@tarojs/components";
+
+import './index.scss'
 
 const dataList = [
-  {
-      src: "https://media.tiffany.cn/is/image/Tiffany/EcomBrowseM/35189432_1009333_ED.jpg?defaultImage=NoImageAvailableInternal",
-      title: "这是标题1",
-      subTitle: "这是子标题1",
-      tag: ["标签1", "标签2", "标签3"],
-      des: "这是描述1",
-      subDes:'这是子描述1',
-      prices: {
-          normal: {
-              int: '86',
-              float: '88'
-          },
-          line: 100
-      }
-  },
-  {
-      src: "https://media.tiffany.cn/is/image/Tiffany/EcomBrowseM/62866950_989218_ED.jpg?defaultImage=NoImageAvailableInternal",
-      title: "这是标题2",
-      subTitle: "这是子标题2",
-      tag: ["标签1", "标签2", "标签3"],
-      des: "这是描述2",
-      subDes:'这是子描述2',
-      prices: {
-          normal: {
-              int: '60',
-              float: '70'
-          },
-          line: 100
-      }
-  },
-  {
-      src: "https://media.tiffany.cn/is/image/Tiffany/EcomBrowseM/62507586_989743_ED_M.jpg?defaultImage=NoImageAvailableInternal",
-      title: "这是标题3",
-      subTitle: "这是子标题3",
-      tag: ["标签1", "标签2", "标签3"],
-      des: "这是描述3",
-      subDes:'这是子描述3',
-      prices: {
-          normal: {
-              int: '85',
-              float: '10'
-          },
-          line: 100
-      }
-  },
-  {
-      src: "https://media.tiffany.cn/is/image/Tiffany/EcomBrowseM/33263465_997778_ED.jpg?defaultImage=NoImageAvailableInternal",
-      title: "这是标题4",
-      subTitle: "这是子标题4",
-      tag: ["标签1", "标签2", "标签3"],
-      des: "这是描述4",
-      subDes:'这是子描述4',
-      prices: {
-          normal: {
-              int: '8',
-              float: '88'
-          },
-          line: 100
-      }
-  },
-  {
-      src: "https://media.tiffany.cn/is/image/Tiffany/EcomBrowseM/60957401_1023440_ED.jpg?defaultImage=NoImageAvailableInternal",
-      title: "这是标题5",
-      subTitle: "这是子标题5",
-      tag: ["标签1", "标签2", "标签3"],
-      des: "这是描述5",
-      subDes:'这是子描述5',
-      prices: {
-          normal: {
-              int: '77',
-              float: '88'
-          },
-          line: 100
-      }
-  }
+    {
+        src: "https://media.tiffany.cn/is/image/Tiffany/EcomBrowseM/35189432_1009333_ED.jpg?defaultImage=NoImageAvailableInternal",
+        title: "这是标题1",
+        subTitle: "这是子标题1",
+        tag:[
+            {
+                name: "标签1",
+                type: 1
+            },
+            {
+                name: "标签2",
+                type: 2
+            },
+            {
+                name: "标签3",
+                type: 3
+            }
+        ],
+        des: "这是描述1",
+        subDes:'这是子描述1',
+        prices: {
+            normal: {
+                int: '86',
+                float: '88'
+            },
+            line: 100
+        }
+    },
+    {
+        src: "https://media.tiffany.cn/is/image/Tiffany/EcomBrowseM/62866950_989218_ED.jpg?defaultImage=NoImageAvailableInternal",
+        title: "这是标题2",
+        subTitle: "这是子标题2",
+         tag:[
+            {
+                name: "标签1",
+                type: 1
+            },
+            {
+                name: "标签2",
+                type: 2
+            },
+            {
+                name: "标签3",
+                type: 3
+            }
+        ],
+        tagType: 2,
+        des: "这是描述2",
+        subDes:'这是子描述2',
+        prices: {
+            normal: {
+                int: '60',
+                float: '70'
+            },
+            line: 100
+        }
+    },
+    {
+        src: "https://media.tiffany.cn/is/image/Tiffany/EcomBrowseM/62507586_989743_ED_M.jpg?defaultImage=NoImageAvailableInternal",
+        title: "这是标题3",
+        subTitle: "这是子标题3",
+         tag:[
+            {
+                name: "标签1",
+                type: 1
+            },
+            {
+                name: "标签2",
+                type: 2
+            },
+            {
+                name: "标签3",
+                type: 3
+            }
+        ],
+        des: "这是描述3",
+        subDes:'这是子描述3',
+        prices: {
+            normal: {
+                int: '85',
+                float: '10'
+            },
+            line: 100
+        }
+    },
+    {
+        src: "https://media.tiffany.cn/is/image/Tiffany/EcomBrowseM/33263465_997778_ED.jpg?defaultImage=NoImageAvailableInternal",
+        title: "这是标题4",
+        subTitle: "这是子标题4",
+         tag:[
+            {
+                name: "标签1",
+                type: 1
+            },
+            {
+                name: "标签2",
+                type: 2
+            },
+            {
+                name: "标签3",
+                type: 3
+            }
+        ],
+        des: "这是描述4",
+        subDes:'这是子描述4',
+        prices: {
+            normal: {
+                int: '8',
+                float: '88'
+            },
+            line: 100
+        }
+    },
+    {
+        src: "https://media.tiffany.cn/is/image/Tiffany/EcomBrowseM/60957401_1023440_ED.jpg?defaultImage=NoImageAvailableInternal",
+        title: "这是标题5",
+        subTitle: "这是子标题5",
+        tag:[
+            {
+                name: "标签1",
+                type: 1
+            },
+            {
+                name: "标签2",
+                type: 2
+            },
+            {
+                name: "标签3",
+                type: 3
+            }
+        ],
+        des: "这是描述5",
+        subDes:'这是子描述5',
+        prices: {
+            normal: {
+                int: '77',
+                float: '88'
+            },
+            line: 100
+        }
+    }
 ]
 
 
-export default function Index () {
-  return (
-    <View>
-      {
-        new Array(100).fill(0).map((_, index)=><Item key={index} itemIndex = {index}/>)
-      }
-    </View>
-  )
+const Item = (props) =>{
+    const { itemIndex } = props
+    const sectionIndex = itemIndex % 5
+    const data = dataList[sectionIndex]
+    const { tag, src, title, subTitle, des, subDes, prices } = data
+
+    const renderCard = ()=> {
+        return (
+            <View className='item-body-wrap' compileMode="subRenderFn">
+            {renderImage()}
+            {renderContent()}
+        </View>
+        )
+    }
+    const renderImage = ()=> {
+        return (
+            <View className='image-wrap' compileMode="subRenderFn">
+                <Image src={src} mode='aspectFill' className='image-wrap' />
+            </View>
+        )
+    }
+
+    const renderContent = () =>{
+        return (
+            <View className='body-left'compileMode="subRenderFn">
+                {renderTitle()}
+                {renderDes()}
+                {renderTags(tag)}
+                {renderPrices()}
+                {renderBtn()}
+            </View>
+        )
+
+    }
+
+    const renderTitle = () =>{
+        return (
+            <View className='title-wrap' compileMode="subRenderFn">
+                <View className='title'>
+                    {title}
+                </View>
+                <View className='sub-title'>
+                    {subTitle}
+                </View>
+            </View>
+        )
+    }
+
+
+    const renderDes = () => {
+        return (
+            <View className='des-wrap' compileMode="subRenderFn">
+                <View className='des'>
+                    {des}
+                </View>
+                <View className='sub-des'>
+                    {subDes}
+                </View>
+            </View>
+        )
+    }
+
+    const renderPrices = () =>{
+        return (
+            <View className='price-wrap' compileMode="subRenderFn">
+                <View className='price-normal'>
+                    <Text className='price-normal-int'>{prices.normal.int}</Text>
+                    <Text className='price-normal-float'>.{prices.normal.float}</Text>
+                </View>
+                <View className='price-line'>
+                    {prices.line}
+                </View>
+            </View>
+        )
+    }
+
+    const renderTag1 = (tag, key)=>{
+        return <View compileMode="subRenderFn" className="tag1" key={key}>{tag}</View>
+    }
+    const renderTag2 = (tag, key)=>{
+        return <View compileMode="subRenderFn" className="tag2" key={key}>{tag}</View>
+    }
+    const renderTag3 = (tag, key)=>{
+        return <View compileMode="subRenderFn" className="tag3" key={key}>{tag}</View>
+    }
+
+    const renderTags = (tags)=>{
+        return (<View className="tag-wrap" compileMode="subRenderFn">
+            {
+                tags.map((e, index)=>{
+                    const { name, type } = e
+                    return (
+                        <>
+                            {
+                                type === 1 ? renderTag1(name, index) :
+                                type === 2 ? renderTag2(name, index) :
+                                type === 3 ? renderTag3(name, index) : null
+                            }
+                        </>
+                    )
+                })
+            }
+        </View>)
+    }
+
+    const renderBtn = ()=>{
+        return (
+            <View className='add' compileMode="subRenderFn">
+                <Image src='https://img12.360buyimg.com/imagetools/jfs/t1/169993/8/27041/5311/61b1b219E03cffee0/778c223bd7677925.png' mode='aspectFill' className='add-image' />
+            </View>
+        )
+    }
+
+    return (
+        <View key={`s${sectionIndex}i${itemIndex}`} compileMode>
+           {renderCard()}
+        </View>
+    )
+    
 }
 
-const Item = (props) =>{
-  const { itemIndex } = props
-  const selectIndex = itemIndex % 5
-  const data = dataList[selectIndex]
-  return (
-      <View compileMode>
-          <View className='item-body-wrap' >
-              <View className='image-wrap'>
-                  <Image src={data.src} mode='aspectFill' className='image-wrap' />
-              </View>
-              <View className='body-left'>
-                  <View className='title-wrap'>
-                      <View className='title'>
-                          {data.title}
-                      </View>
-                      <View className='sub-title'>
-                          {data.subTitle}
-                      </View>
-                  </View>
+export default Item 
+```
 
-                  <View className='des-wrap'>
-                      <View className='des'>
-                          {data.des}
-                      </View>
-                      <View className='sub-des'>
-                          {data.subDes}
-                      </View>
-                  </View>
+```css
+.item {
+    &-header{
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        border: 1px red solid;
+        z-index: 10;
+        box-sizing: border-box;
+    }
+    &-body{
+        display: flex;
+        align-items: center;
+        border: 1px red solid;
+        box-sizing: border-box;
+        &-wrap {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            .image-wrap {
+                width: 70px;
+                height: 70px;
+            }
 
-                  <View className='tag-wrap'>
-                  {
-                      data.tag.map((e, index)=><View key={index} className='tag'>
-                          {e}
-                      </View>)
-                  }
-                  </View>
-                  <View className='price-wrap'>
-                      <View className='price-normal'>
-                          <Text className='price-normal-int'>{data.prices.normal.int}</Text>
-                          <Text className='price-normal-float'>.{data.prices.normal.float}</Text>
-                      </View>
-                      <View className='price-line'>
-                          {data.prices.line}
-                      </View>
+            .body-left {
+                flex: 1;
+                position: relative;
+                margin-left: 20px;
+                .title-wrap {
+                    display: flex;
+                    align-items: center;
+                    .sub-title {
+                        font-size: 14px;
+                        color: gray;
+                        margin-left: 5px;
+                    }
+                    .title {
+                        font-size: 20px;
+                    }
+                }
+                
+                .des-wrap {
+                    display: flex;
+                    .sub-des {
+                        margin-left: 4px;
+                        font-size: 12px;
+                        color: gray;
+                    }
+                    .des {
+                        font-size: 16px;
+                    }
+                }
 
-                  </View>
-                  <View className='add'>
-                      <Image src='https://img12.360buyimg.com/imagetools/jfs/t1/169993/8/27041/5311/61b1b219E03cffee0/778c223bd7677925.png' mode='aspectFill' className='add-image' />
-                  </View>
-                  <View className='level1'>
-                      <View className='level2'>
-                          <View className='level3'>
-                              <View className='level4'>
-                                  <View className='level5'>
-                                      搞一个嵌套五层的浮动元素
-                                  </View>
-                              </View>
-                          </View>
-                      </View>
-                  </View>
-              </View>
-          </View>
-      </View>
-  )
+
+                .tag-wrap {
+                    .tag1 {
+                        border: 1px gray solid;
+                        border-radius: 1px;
+                        margin-right: 2px;
+                        font-size: 12px;
+                    }
+                    .tag2 {
+                        border: 1px red dashed;
+                        border-radius: 1px;
+                        margin-right: 2px;
+                        font-size: 12px;
+                    }
+                    .tag3 {
+                        border: 1px green solid;
+                        border-radius: 1px;
+                        margin-right: 2px;
+                        font-size: 12px;
+                    }
+                    display: flex;
+                }
+                .price {
+                    &-wrap{
+                        display: flex;
+                        align-items: flex-end;
+                    }
+
+                    &-normal {
+                        color: red;
+                        display: flex;
+                        align-items: flex-end;
+                        &-int{
+                            line-height: 12px;
+                            font-size: 12px;
+                        }
+                        &-float{
+                            line-height: 10px;
+                            font-size: 10px;
+                        }   
+                    }
+                    &-line {
+                        line-height: 10px;
+                        font-size: 10px;
+                        color: gray;
+                        text-decoration: line-through;
+                    }
+                }
+                .add {
+                    position: absolute;
+                    right: 5px;
+                    bottom: 5px;
+                    .add-image{
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+            }
+        }
+    }
 }
 ```
