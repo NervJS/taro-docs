@@ -121,7 +121,7 @@ class App extends Component {
 | onTransition | `CommonEventFunction<onTransitionEventDetail>` |  | 否 | swiper-item 的位置发生改变时会触发 transition 事件 |
 | onAnimationFinish | `CommonEventFunction<onChangeEventDetail>` |  | 否 | 动画结束时会触发 animationfinish 事件 |
 | onAnimationEnd | `CommonEventFunction<onCommonEventDetail>` |  | 否 | 动画结束时会触发 animationEnd 事件 |
-
+| effectsProps | `TEffectsProps` | | 否 | [swiperjs](https://swiperjs.com/swiper-api#param-effect) 动效相关的属性
 ### API 支持度
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
@@ -161,6 +161,7 @@ class App extends Component {
 | SwiperProps.onTransition | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
 | SwiperProps.onAnimationFinish | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
 | SwiperProps.onAnimationEnd |  |  | ✔️ |  |  |  |  |  |  |  |
+| SwiperProps.effectsProps |  |  | |  |  |  | ✔️ |  |  |  |
 
 ### TChangeSource
 
@@ -205,3 +206,15 @@ class App extends Component {
 | --- | --- | --- |
 | dx | `number` | X 坐标 |
 | dy | `number` | Y 坐标 |
+
+### TEffectsProps
+
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| effect | `string` | 是 | 可以是 'fade', 'cube', 'coverflow', 'flip', 'creative' 或 'cards' |
+| coverflowEffect | `object` | 否 | effect 为 'coverflow' 时的额外参数，详见 [swiperjs coverflow](https://swiperjs.com/swiper-api#param-coverflowEffect) |
+| creativeEffect | `object` | 否 | effect 为 'creative' 时的额外参数，详见 [swiperjs creative](https://swiperjs.com/swiper-api#param-creativeEffect)  |
+| cardsEffect | `object` | 否 | effect 为 'cards' 时的额外参数，详见 [swiperjs cards](https://swiperjs.com/swiper-api#param-cardsEffect)  |
+| fadeEffect | `object` | 否 | effect 为 'fade' 时的额外参数，详见 [swiperjs fade](https://swiperjs.com/swiper-api#param-fadeEffect)  |
+| flipEffect | `object` | 否 | effect 为 'flip' 时的额外参数，详见 [swiperjs flip](https://swiperjs.com/swiper-api#param-flipEffect)  |
+| cubeEffect | `object` | 否 | effect 为 'cube' 时的额外参数，详见 [swiperjs cube](https://swiperjs.com/swiper-api#param-cubeEffect)  |
