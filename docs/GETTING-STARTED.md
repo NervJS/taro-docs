@@ -49,7 +49,7 @@ $ pnpm install -g @tarojs/cli
 </Tabs>
 
 :::caution 请注意
-由于 Taro 部分能力使用 Rust 开发，在 Windows 上，请确保安装了 Microsoft Visual C++ Redistributable。请查看：https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist
+由于 Taro 部分能力使用 Rust 开发，在 Windows 上，请确保安装了 Microsoft Visual C++ Redistributable。请查看：<https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist>
 
 :::
 
@@ -70,13 +70,13 @@ npm info @tarojs/cli
 使用命令创建模板项目：
 
 ```bash
-$ taro init myApp
+taro init myApp
 ```
 
 npm 5.2+ 也可在不全局安装的情况下使用 npx 创建模板项目：
 
 ```bash
-$ npx @tarojs/cli init myApp
+npx @tarojs/cli init myApp
 ```
 
 ![taro init myApp command screenshot](https://img30.360buyimg.com/ling/jfs/t1/121270/15/15083/672721/5f89357dEf36b7fe2/ecb98df1436cd3d5.jpg)
@@ -201,7 +201,7 @@ $ NODE_ENV=production taro build --type swan --watch # Bash
 
 #### 小程序开发者工具
 
-下载并打开[百度开发者工具](https://smartprogram.baidu.com/docs/develop/devtools/show_sur/)，并确保已经设置了小程序项目配置文件 [project.swan.json](./project-config)。然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
+下载并打开[百度开发者工具](https://smartprogram.baidu.com/docs/develop/devtools/history)，并确保已经设置了小程序项目配置文件 [project.swan.json](./project-config)。然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
 
 需要注意开发者工具的项目设置：
 
@@ -237,7 +237,7 @@ $ NODE_ENV=production taro build --type alipay --watch # Bash
 
 #### 小程序开发者工具
 
-下载并打开[支付宝小程序开发者工具](https://docs.alipay.com/mini/developer/getting-started/)，然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
+下载并打开[支付宝小程序开发者工具](https://opendocs.alipay.com/mini/ide/download)，然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
 
 需要注意开发者工具的项目设置：
 
@@ -309,7 +309,7 @@ $ NODE_ENV=production taro build --type qq --watch # Bash
 
 #### 小程序开发者工具
 
-下载并打开 [QQ 小程序开发者工具](https://q.qq.com/wiki/#_4-%E7%BC%96%E7%A0%81%E5%BC%80%E5%8F%91%E5%B0%8F%E7%A8%8B%E5%BA%8F)，然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
+下载并打开 [QQ 小程序开发者工具](https://q.qq.com/wiki/tools/devtool/)，然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
 
 需要注意开发者工具的项目设置：
 
@@ -345,7 +345,7 @@ $ NODE_ENV=production taro build --type jd --watch # Bash
 
 #### 小程序开发者工具
 
-下载并打开京东小程序开发者工具（前往https://mp.jd.com 注册，申请成功后将会获得开发者工具），然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
+下载并打开[京东小程序开发者工具](https://mp-docs.jd.com/doc/dev/devtools/1591)，然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
 
 需要注意开发者工具的项目设置：
 
@@ -566,7 +566,7 @@ $ NODE_ENV=production taro build --type lark --watch # Bash
 
 #### 小程序开发者工具
 
-[飞书小程序](https://open.feishu.cn/document/uYjL24iN/uMjNzUjLzYzM14yM2MTN?from=taro)能运行在飞书客户端上，且一套代码多端运行(包括 PC 端和移动端)。你需要下载并打开[飞书小程序开发者工具](https://open.feishu.cn/document/uYjL24iN/ucDOzYjL3gzM24yN4MjN?from=taro)，并确保已经设置了小程序项目配置文件。然后选择项目根目录下 `dist` 目录进行预览。
+[飞书小程序](https://open.feishu.cn/document/uYjL24iN/uMjNzUjLzYzM14yM2MTN?from=taro)能运行在飞书客户端上，且一套代码多端运行(包括 PC 端和移动端)。你需要下载并打开[飞书小程序开发者工具](https://open.feishu.cn/document/tools-and-resources/development-tools/overview-of-ide)，并确保已经设置了小程序项目配置文件。然后选择项目根目录下 `dist` 目录进行预览。
 
 需要注意开发者工具的项目配置
 
@@ -632,7 +632,7 @@ $ NODE_ENV=production taro build --type kwai --watch # Bash
 
 #### 小程序开发者工具
 
-下载并打开[快手小程序开发者工具](https://mp.kuaishou.com/docs/develop/guide/introduction.html)，然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
+下载并打开[快手小程序开发者工具](https://mp.kuaishou.com/docs/develop/developerTools/downloadPath.html)，然后选择项目根目录下 `dist` 目录（根目录 `config` 中的 `outputRoot` 设置的目录）进行预览。
 
 ### H5
 
@@ -688,7 +688,7 @@ $ npx taro build --type harmony-hybrid
 
 #### DevEco Studio 鸿蒙应用开发工具
 
-下载并使用 DeEco Studio NEXT Developer Preview1（通过 [HarmonyOS NEXT 开发者预览版 Beta 招募](https://developer.huawei.com/consumer/cn/activityDetail/harmonyos-next-preview/) 申请获的）新建应用工程，并进行如下配置：
+下载并使用 DeEco Studio NEXT Developer Preview1（通过 [HarmonyOS NEXT 开发者预览版 Beta 招募](https://developer.huawei.com/consumer/cn/activityDetail/harmonyos-next-preview/) 申请获得）新建应用工程，并进行如下配置：
 
 - 在 `oh-package.json5` 文件中配置 `dependencies`, 引入 `@hybrid/web-container` 模块。
 - 在 `src/main/module.json5` 文件中增加权限配置，如：
