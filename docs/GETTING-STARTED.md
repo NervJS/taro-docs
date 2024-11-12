@@ -49,7 +49,7 @@ $ pnpm install -g @tarojs/cli
 </Tabs>
 
 :::caution 请注意
-由于 Taro 部分能力使用 Rust 开发，在 Windows 上，请确保安装了 Microsoft Visual C++ Redistributable。请查看：<https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist>
+由于 Taro 部分能力使用 Rust 开发，在 Windows 上，请确保安装了 Microsoft Visual C++ Redistributable。请查看：https://docs.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist
 
 :::
 
@@ -70,13 +70,13 @@ npm info @tarojs/cli
 使用命令创建模板项目：
 
 ```bash
-taro init myApp
+$ taro init myApp
 ```
 
 npm 5.2+ 也可在不全局安装的情况下使用 npx 创建模板项目：
 
 ```bash
-npx @tarojs/cli init myApp
+$ npx @tarojs/cli init myApp
 ```
 
 ![taro init myApp command screenshot](https://img30.360buyimg.com/ling/jfs/t1/121270/15/15083/672721/5f89357dEf36b7fe2/ecb98df1436cd3d5.jpg)
