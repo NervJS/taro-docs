@@ -87,9 +87,9 @@ module.exports = {
 在你的项目入口文件里引入 `tailwindcss`，比如 `taro app` 的 `app.scss`
 
 ```scss title="app.scss"
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@use 'tailwindcss/base' as *;
+@use 'tailwindcss/components' as *;
+@use 'tailwindcss/utilities' as *;
 // 不使用 sass 就这么写
 // @tailwind base;
 // @tailwind components;
