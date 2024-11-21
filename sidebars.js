@@ -63,7 +63,15 @@ module.exports = {
       {
         label: '小程序',
         type: 'category',
-        items: ['come-from-miniapp', 'wxcloudbase', 'miniprogram-plugin', 'independent-subpackage', 'custom-tabbar', 'mini-troubleshooting']
+        items: [
+          'come-from-miniapp',
+          'wxcloudbase',
+          'miniprogram-plugin',
+          'independent-subpackage',
+          'custom-tabbar',
+          'skyline',
+          'mini-troubleshooting'
+        ]
       },
       'h5',
       {
