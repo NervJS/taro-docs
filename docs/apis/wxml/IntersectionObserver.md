@@ -102,13 +102,14 @@ Taro.createIntersectionObserver().relativeToViewport({bottom: 100}).observe('.ta
 
 ### ObserveCallbackResult
 
-| 参数 | 类型 | 说明 |
-| --- | --- | --- |
-| boundingClientRect | `BoundingClientRectResult` | 目标边界 |
-| intersectionRatio | `number` | 相交比例 |
-| intersectionRect | `IntersectionRectResult` | 相交区域的边界 |
-| relativeRect | `RelativeRectResult` | 参照区域的边界 |
-| time | `number` | 相交检测时的时间戳 |
+| 参数 | 类型 | 必填 | 说明 |
+| --- | --- | :---: | --- |
+| errMsg | `string` | 否 | 错误信息，会在找不到对应元素时返回<br />API 支持度: harmony |
+| boundingClientRect | `BoundingClientRectResult` | 否 | 目标边界 |
+| intersectionRatio | `number` | 否 | 相交比例 |
+| intersectionRect | `IntersectionRectResult` | 否 | 相交区域的边界 |
+| relativeRect | `RelativeRectResult` | 否 | 参照区域的边界 |
+| time | `number` | 否 | 相交检测时的时间戳 |
 
 ### RelativeRectResult
 
