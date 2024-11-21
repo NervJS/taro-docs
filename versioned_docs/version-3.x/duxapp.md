@@ -12,7 +12,8 @@ title: 使用模块化项目开发框架
 
 - 需要注意的是 duxapp 框架虽然是基于 Taro 开发的，但是他不能使用在你现有的项目中，因为 duxapp 对 Taro 的结构做了许多修改，你需要通过 duxapp 提供的 CLI 创建项目，而不是使用 Taro 的 CLI
 - 这篇文档仅介绍 duxapp 框架的特性，要使用 duxapp 框架请查看完整文档[duxapp.cn](http://duxapp.cn)
-  :::
+
+:::
 
 ## 什么是模块化
 
