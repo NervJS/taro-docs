@@ -67,7 +67,7 @@ export default class PageView extends Component {
 | value | `string` |  | 否 | 输入框的内容 |
 | defaultValue | `string` |  | 否 | 设置 React 非受控输入框的初始内容 |
 | placeholder | `string` |  | 否 | 输入框为空时占位符 |
-| placeholderStyle | `string` |  | 否 | 指定 placeholder 的样式 |
+| placeholderStyle | `string` |  | 否 | 指定 placeholder 的样式<br />需传入对象，格式为 { fontSize: number, fontWeight: string, color: string } |
 | placeholderClass | `string` | `"textarea-placeholder"` | 否 | 指定 placeholder 的样式类 |
 | disabled | `boolean` | `false` | 否 | 是否禁用 |
 | maxlength | `number` | `140` | 否 | 最大输入长度，设置为 -1 的时候不限制最大长度 |
@@ -97,15 +97,19 @@ export default class PageView extends Component {
 | onInput | `CommonEventFunction<onInputEventDetail>` |  | 否 | 当键盘输入时，触发 input 事件<br /><br />**onInput 处理函数的返回值并不会反映到 textarea 上** |
 | onConfirm | `CommonEventFunction<onConfirmEventDetail>` |  | 否 | 点击完成时， 触发 confirm 事件 |
 | onKeyboardHeightChange | `CommonEventFunction<onKeyboardHeightChangeEventDetail>` |  | 否 | 键盘高度发生变化的时候触发此事件 |
+| onSelectionChange | `CommonEventFunction` |  | 否 | 选区改变事件, {selectionStart, selectionEnd} |
+| onKeyboardCompositionStart | `CommonEventFunction` |  | 否 | 输入法开始新的输入时触发 （仅当输入法支持时触发） |
+| onKeyboardCompositionUpdate | `CommonEventFunction` |  | 否 | 输入法输入字符时触发（仅当输入法支持时触发） |
+| onKeyboardCompositionEnd | `CommonEventFunction` |  | 否 | 输入法输入结束时触发（仅当输入法支持时触发） |
 
 ### API 支持度
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| TextareaProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| TextareaProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | TextareaProps.defaultValue | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| TextareaProps.placeholder | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| TextareaProps.placeholderStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| TextareaProps.placeholder | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| TextareaProps.placeholderStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |
 | TextareaProps.placeholderClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
 | TextareaProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
 | TextareaProps.maxlength | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
@@ -129,12 +133,16 @@ export default class PageView extends Component {
 | TextareaProps.controlled |  |  | ✔️ |  |  |  |  |  |  |  |
 | TextareaProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |  |
 | TextareaProps.adjustKeyboardTo | ✔️ |  |  |  |  |  |  |  |  |  |
-| TextareaProps.onFocus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| TextareaProps.onBlur | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| TextareaProps.onFocus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| TextareaProps.onBlur | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | TextareaProps.onLineChange | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
-| TextareaProps.onInput | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| TextareaProps.onInput | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | TextareaProps.onConfirm | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| TextareaProps.onKeyboardHeightChange | ✔️ |  |  | ✔️ |  |  |  |  |  |  |
+| TextareaProps.onKeyboardHeightChange | ✔️ |  |  | ✔️ |  |  |  |  | ✔️ |  |
+| TextareaProps.onSelectionChange | ✔️ |  |  |  |  |  |  |  |  |  |
+| TextareaProps.onKeyboardCompositionStart | ✔️ |  |  |  |  |  |  |  |  |  |
+| TextareaProps.onKeyboardCompositionUpdate | ✔️ |  |  |  |  |  |  |  |  |  |
+| TextareaProps.onKeyboardCompositionEnd | ✔️ |  |  |  |  |  |  |  |  |  |
 
 ### onFocusEventDetail
 

@@ -63,7 +63,15 @@ module.exports = {
       {
         label: '小程序',
         type: 'category',
-        items: ['come-from-miniapp', 'wxcloudbase', 'miniprogram-plugin', 'independent-subpackage', 'custom-tabbar', 'mini-troubleshooting']
+        items: [
+          'come-from-miniapp',
+          'wxcloudbase',
+          'miniprogram-plugin',
+          'independent-subpackage',
+          'custom-tabbar',
+          'skyline',
+          'mini-troubleshooting'
+        ]
       },
       'h5',
       {
@@ -234,6 +242,18 @@ module.exports = {
       'components/forms/textarea'
     ],
     'Skyline': [
+      {
+        '手势系统': [
+          'components/gesture/double-tap-gesture-handler',
+          'components/gesture/force-press-gesture-handler',
+          'components/gesture/horizontal-drag-gesture-handler',
+          'components/gesture/long-press-gesture-handler',
+          'components/gesture/pan-gesture-handler',
+          'components/gesture/scale-gesture-handler',
+          'components/gesture/tap-gesture-handler',
+          'components/gesture/vertical-drag-gesture-handler',
+        ],
+      },
       'components/skyline/draggable-sheet',
       'components/skyline/grid-builder',
       'components/skyline/grid-view',
@@ -467,6 +487,7 @@ module.exports = {
       'apis/route/navigateTo',
       'apis/route/navigateBack',
       'apis/route/EventChannel',
+      'apis/route/router',
     ],
     '跳转': [
       'apis/navigate/openBusinessView',
@@ -595,6 +616,13 @@ module.exports = {
           'apis/ui/window/onWindowResize',
           'apis/ui/window/offWindowResize',
           'apis/ui/window/checkIsPictureInPictureActive',
+        ]
+      },
+      {
+        'label': 'worklet动画',
+        'type': 'category',
+        'items': [
+          'apis/skyline/worklet',
         ]
       },
     ],
@@ -1428,6 +1456,7 @@ module.exports = {
       'apis/ad/RewardedVideoAd',
     ],
     'Skyline': [
+      'apis/skyline/DraggableSheetContext',
       'apis/skyline/Snapshot',
     ],
     '云开发': [

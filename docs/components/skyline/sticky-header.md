@@ -5,7 +5,7 @@ sidebar_label: StickyHeader
 
 吸顶布局容器，仅支持作为 scroll-view 自定义模式下的直接子节点或 sticky-section 组件直接子节点。仅 Skyline 支持。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/sticky-header.html)
 
@@ -21,6 +21,7 @@ ComponentType<StickyHeaderProps>
 | --- | --- | :---: | :---: | --- |
 | offsetTop | `number` | `0` | 否 | 吸顶时与顶部的距(px) |
 | padding | `[number, number, number, number]` | `[0, 0, 0, 0]` | 否 | 长度为 4 的数组，按 top、right、bottom、left 顺序指定内边距 |
+| onStickOnTopChange | `CommonEventFunction` |  | 否 | 吸顶状态变化事件，仅支持非 worklet 的组件方法作为回调。event.detail = { isStickOnTop }，当 sticky-header 吸顶时为 true，否则为 false。<br />version: >=3.6.2 |
 
 ### API 支持度
 
@@ -28,3 +29,4 @@ ComponentType<StickyHeaderProps>
 | :---: | :---: | :---: | :---: | :---: |
 | StickyHeaderProps.offsetTop | ✔️ |  |  |  |
 | StickyHeaderProps.padding | ✔️ |  |  |  |
+| StickyHeaderProps.onStickOnTopChange | ✔️ |  |  |  |

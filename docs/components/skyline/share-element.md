@@ -237,8 +237,8 @@ button {
 | transitionOnGesture | `boolean` | `false` | 否 | 手势返回时是否进行动画 |
 | shuttleOnPush | "from" or "to" | `"to"` | 否 | 指定 push 阶段的飞跃物 |
 | shuttleOnPop | `string` | `"to"` | 否 | 指定 pop 阶段的飞跃物 |
-| rectTweenType | "materialRectArc" or "materialRectCenterArc" or "linear" or "elasticIn" or "elasticOut" or "elasticInOut" or "bounceIn" or "bounceOut" or "bounceInOut" or "cubic-bezier(x1," | `"materialRectArc"` | 否 | 动画插值曲线 |
-| onFrame | `string` |  | 否 | 动画帧回调 |
+| rectTweenType | "materialRectArc" or "materialRectCenterArc" or "linear" or "elasticIn" or "elasticOut" or "elasticInOut" or "bounceIn" or "bounceOut" or "bounceInOut" or "cubic-bezier(x1, y1, x2, y2)" | `"materialRectArc"` | 否 | 动画插值曲线 |
+| onFrameWorklet | `string` |  | 否 | 动画帧回调 |
 
 ### API 支持度
 
@@ -254,4 +254,4 @@ button {
 | ShareElementProps.shuttleOnPush | ✔️ |  |  |  |  |
 | ShareElementProps.shuttleOnPop | ✔️ |  |  |  |  |
 | ShareElementProps.rectTweenType | ✔️ |  |  |  |  |
-| ShareElementProps.onFrame | ✔️ |  |  |  |  |
+| ShareElementProps.onFrameWorklet | ✔️ |  |  |  |  |

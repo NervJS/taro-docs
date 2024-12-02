@@ -7,7 +7,7 @@ title: 贡献指南
 ### 1. 环境准备
 
 :::note
-需要安装 [Node.js 16](https://nodejs.org/en/)（建议安装 `16.20.0` 及以上版本）及 [pnpm 7](https://pnpm.io/zh/installation)
+需要安装 [Node.js](https://nodejs.org/en/)（`18` 及以上版本）及 [pnpm 9](https://pnpm.io/zh/installation)
 
 各版本 pnpm 与各版本 Node.js 之间的支持情况见 [pnpm 兼容性](https://pnpm.io/zh/installation#%E5%85%BC%E5%AE%B9%E6%80%A7)
 :::
@@ -36,7 +36,16 @@ Taro 由一系列子 npm 包组成，整体项目组织基于 **pnpm workspace**
 $ pnpm --filter [package-name] run dev
 ```
 
-开发过程中，一般会使用 **link** 的方式把需要调试的包软链到一个测试项目中，然后便可进行断点调试。开发者可以根据测试项目的包管理器以及自己的喜好选择使用 [npm link](https://docs.npmjs.com/cli/v7/commands/npm-link) 或 [yarn link](https://yarnpkg.com/cli/link)（推荐）或 [pnpm link](https://pnpm.io/zh/cli/link) 。
+开发过程中，一般会使用 **link** 的方式把需要调试的包软链到一个测试项目中，然后便可进行断点调试。开发者可以根据测试项目的包管理器以及自己的喜好选择使用 `内置命令` 或 [npm link](https://docs.npmjs.com/cli/v7/commands/npm-link) 或 [yarn link](https://yarnpkg.com/cli/link)（推荐）或 [pnpm link](https://pnpm.io/zh/cli/link) 。
+
+**使用 `内置命令` 的具体示例如下：**
+
+```bash
+$ pnpm run debug --projectPath /Users/taro/testapp --packages @tarojs/shared,@tarojs/runtime
+```
+
+1. 此命令会自动 `link` 并启动编译 `packages` 参数中的 npm 包
+2. 增加`--unlink`参数可批量 unlink
 
 **使用 `yarn link` 的具体示例如下：**
 

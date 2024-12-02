@@ -115,27 +115,41 @@ class App extends Component {
 | adjustHeight | "first" or "current" or "highest" or "none" |  | 否 | 自动以指定滑块的高度为整个容器的高度。当 vertical 为 true 时，默认不调整。可选值为： |
 | adjustVerticalHeight | `string` |  | 否 | vertical 为 true 时强制使 adjust-height 生效。 |
 | disableTouchmove | `string` | `false` | 否 | 是否停止响应用户 touchmove 操作 |
-| scrollWithAnimation | `boolean` | `true` | 否 | 改变 current 时使用动画过渡 |
-| cacheExtent | `number` | `0` | 否 | 缓存区域大小，值为 1 表示提前渲染上下各一屏区域（swiper 容器大小） |
+| effectsProps | `Record<string, any>` |  | 否 | swiper11 相关的动效参数，具体见文档 https://swiperjs.com/swiper-api#parameters |
 | onChange | `CommonEventFunction<onChangeEventDetail>` |  | 否 | current 改变时会触发 change 事件 |
 | onTransition | `CommonEventFunction<onTransitionEventDetail>` |  | 否 | swiper-item 的位置发生改变时会触发 transition 事件 |
 | onAnimationFinish | `CommonEventFunction<onChangeEventDetail>` |  | 否 | 动画结束时会触发 animationfinish 事件 |
 | onAnimationEnd | `CommonEventFunction<onCommonEventDetail>` |  | 否 | 动画结束时会触发 animationEnd 事件 |
-| effectsProps | `TEffectsProps` | | 否 | [swiperjs](https://swiperjs.com/swiper-api#param-effect) 动效相关的属性
+| layoutType | "normal" or "stackLeft" or "stackRight" or "tinder" or "transformer" | `normal` | 否 | 渲染模式 |
+| transformerType | "scaleAndFade" or "accordion" or "threeD" or "zoomIn" or "zoomOut" or "deepthPage" | `scaleAndFade` | 否 | layout-type 为 transformer 时指定动画类型 |
+| indicatorType | "normal" or "worm" or "wormThin" or "wormUnderground" or "wormThinUnderground" or "expand" or "jump" or "jumpWithOffset" or "scroll" or "scrollFixedCenter" or "slide" or "slideUnderground" or "scale" or "swap" or "swapYRotation" or "color" | `normal` | 否 | 指示点动画类型 |
+| indicatorMargin | `number` | `10` | 否 | 指示点四周边距 |
+| indicatorSpacing | `number` | `4` | 否 | 指示点间距 |
+| indicatorRadius | `number` | `4` | 否 | 指示点圆角大小 |
+| indicatorWidth | `number` | `8` | 否 | 指示点宽度 |
+| indicatorHeight | `number` | `8` | 否 | 指示点高度 |
+| indicatorAlignment | string or [number, number] | `auto` | 否 | 指示点的相对位置 |
+| indicatorOffset | `[number, number]` | `[0, 0]` | 否 | 指示点位置的偏移量 |
+| scrollWithAnimation | `boolean` | `true` | 否 | 改变 current 时使用动画过渡 |
+| cacheExtent | `number` | `0` | 否 | 缓存区域大小，值为 1 表示提前渲染上下各一屏区域（swiper 容器大小） |
+| onScrollStartWorklet | `string` |  | 否 | 滑动开始时触发，仅支持 worklet 作为回调。event.detail = {dx: dx, dy: dy} |
+| onScrollUpdateWorklet | `string` |  | 否 | 滑动位置更新时触发，仅支持 worklet 作为回调。event.detail = {dx: dx, dy: dy} |
+| onScrollEndWorklet | `string` |  | 否 | 滑动结束时触发，仅支持 worklet 作为回调。event.detail = {dx: dx, dy: dy} |
+
 ### API 支持度
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| SwiperProps.indicatorDots | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| SwiperProps.indicatorColor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| SwiperProps.indicatorActiveColor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| SwiperProps.autoplay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| SwiperProps.current | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| SwiperProps.indicatorDots | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| SwiperProps.indicatorColor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| SwiperProps.indicatorActiveColor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| SwiperProps.autoplay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| SwiperProps.current | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | SwiperProps.currentItemId | (deprecated) | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
-| SwiperProps.interval | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| SwiperProps.duration | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| SwiperProps.interval | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| SwiperProps.duration | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |
 | SwiperProps.circular | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| SwiperProps.vertical | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| SwiperProps.vertical | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | SwiperProps.previousMargin | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
 | SwiperProps.nextMargin | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
 | SwiperProps.snapToEdge | ✔️ |  | ✔️ |  |  |  |  |  |  |  |
@@ -155,13 +169,26 @@ class App extends Component {
 | SwiperProps.adjustHeight |  |  | ✔️ |  |  |  |  |  |  |  |
 | SwiperProps.adjustVerticalHeight |  |  | ✔️ |  |  |  |  |  |  |  |
 | SwiperProps.disableTouchmove |  | ✔️ |  |  |  |  |  |  |  |  |
-| SwiperProps.scrollWithAnimation | ✔️ |  |  |  |  |  |  |  |  |  |
-| SwiperProps.cacheExtent | ✔️ |  |  |  |  |  |  |  |  |  |
-| SwiperProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| SwiperProps.effectsProps |  |  |  |  |  |  | ✔️ |  |  |  |
+| SwiperProps.onChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | SwiperProps.onTransition | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
 | SwiperProps.onAnimationFinish | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
 | SwiperProps.onAnimationEnd |  |  | ✔️ |  |  |  |  |  |  |  |
-| SwiperProps.effectsProps |  |  | |  |  |  | ✔️ |  |  |  |
+| SwiperProps.layoutType | ✔️ |  |  |  |  |  |  |  |  |  |
+| SwiperProps.transformerType | ✔️ |  |  |  |  |  |  |  |  |  |
+| SwiperProps.indicatorType | ✔️ |  |  |  |  |  |  |  |  |  |
+| SwiperProps.indicatorMargin | ✔️ |  |  |  |  |  |  |  |  |  |
+| SwiperProps.indicatorSpacing | ✔️ |  |  |  |  |  |  |  |  |  |
+| SwiperProps.indicatorRadius | ✔️ |  |  |  |  |  |  |  |  |  |
+| SwiperProps.indicatorWidth | ✔️ |  |  |  |  |  |  |  |  |  |
+| SwiperProps.indicatorHeight | ✔️ |  |  |  |  |  |  |  |  |  |
+| SwiperProps.indicatorAlignment | ✔️ |  |  |  |  |  |  |  |  |  |
+| SwiperProps.indicatorOffset | ✔️ |  |  |  |  |  |  |  |  |  |
+| SwiperProps.scrollWithAnimation | ✔️ |  |  |  |  |  |  |  |  |  |
+| SwiperProps.cacheExtent | ✔️ |  |  |  |  |  |  |  |  |  |
+| SwiperProps.onScrollStartWorklet | ✔️ |  |  |  |  |  |  |  |  |  |
+| SwiperProps.onScrollUpdateWorklet | ✔️ |  |  |  |  |  |  |  |  |  |
+| SwiperProps.onScrollEndWorklet | ✔️ |  |  |  |  |  |  |  |  |  |
 
 ### TChangeSource
 
@@ -206,15 +233,3 @@ class App extends Component {
 | --- | --- | --- |
 | dx | `number` | X 坐标 |
 | dy | `number` | Y 坐标 |
-
-### TEffectsProps
-
-| 参数 | 类型 | 必填 | 说明 |
-| --- | --- | :---: | --- |
-| effect | `string` | 是 | 可以是 'fade', 'cube', 'coverflow', 'flip', 'creative' 或 'cards' |
-| coverflowEffect | `object` | 否 | effect 为 'coverflow' 时的额外参数，详见 [swiperjs coverflow](https://swiperjs.com/swiper-api#param-coverflowEffect) |
-| creativeEffect | `object` | 否 | effect 为 'creative' 时的额外参数，详见 [swiperjs creative](https://swiperjs.com/swiper-api#param-creativeEffect)  |
-| cardsEffect | `object` | 否 | effect 为 'cards' 时的额外参数，详见 [swiperjs cards](https://swiperjs.com/swiper-api#param-cardsEffect)  |
-| fadeEffect | `object` | 否 | effect 为 'fade' 时的额外参数，详见 [swiperjs fade](https://swiperjs.com/swiper-api#param-fadeEffect)  |
-| flipEffect | `object` | 否 | effect 为 'flip' 时的额外参数，详见 [swiperjs flip](https://swiperjs.com/swiper-api#param-flipEffect)  |
-| cubeEffect | `object` | 否 | effect 为 'cube' 时的额外参数，详见 [swiperjs cube](https://swiperjs.com/swiper-api#param-cubeEffect)  |
