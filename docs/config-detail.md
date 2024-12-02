@@ -505,7 +505,6 @@ module.exports = {
 :::info
 Taro v3.5 开始支持。
 
-
 Taro v4.0.0 开始支持 `vite` 值。
 :::
 
@@ -531,7 +530,7 @@ Taro v4.0.0 开始支持 `vite` 值。
 
 webpack 编译过程中的错误类型主要如下两类：1、致命的 wepback 错误（配置出错等）2、编译错误（缺失的 module，语法错误等）
 
-0：表示发生“1、致命的webpack错误（配置出错等）”情况时，返回非 0 的退出码结束进程。
+0：表示发生“1、致命的 webpack 错误（配置出错等）”情况时，返回非 0 的退出码结束进程。
 1：表示发生“1、致命的 wepback 错误（配置出错等）2、编译错误（缺失的 module，语法错误等）”情况时，返回非 0 的退出码结束进程。
 
 ### compiler.prebundle
@@ -754,9 +753,27 @@ module.exports = {
 
 `array`
 
-配置额外**需要经过 Taro 编译的文件**，使用方式与 [mini.compile.exclude](./config-detail#minicompileexclude) 一致，同 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude)。
+配置额外**需要经过 Taro 编译的文件**，使用方式与 [mini.compile.exclude](./config-detail#minicompileexclude) 一致，同 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude)。例如 Taro 默认不编译 `node_modules` 中的文件，可以通过这个配置让 Taro 编译 `node_modules` 中的文件。
 
-例如 Taro 默认不编译 `node_modules` 中的文件，可以通过这个配置让 Taro 编译 `node_modules` 中的文件。
+默认值包括 Taro 项目源码目录 src 以及 Taro 相关的 node_modules。如需将 Taro 项目作为 monorepo 项目的子包，则要自行配置 include 以编译其他子包的文件，示例：
+
+```js title='config/index.js'
+export default {
+  // ...
+  mini: {
+    // ...
+    compile: {
+      include: [path.resolve(__dirname, '../../package')],
+    },
+  },
+  h5: {
+    // ...
+    compile: {
+      include: [path.resolve(__dirname, '../../package')],
+    },
+  },
+}
+```
 
 ### mini.webpackChain
 
@@ -1279,10 +1296,9 @@ module.exports = {
 
 `object`
 
-可用于修改、拓展 Webpack 的 **output** 选项，配置项参考[webpack官方文档](https://webpack.js.org/configuration/output/)。
+可用于修改、拓展 Webpack 的 **output** 选项，配置项参考[webpack 官方文档](https://webpack.js.org/configuration/output/)。
 
 vite 编译环境下用于修改、扩展 rollup 的 output，目前仅适配 chunkFileNames 和 assetFileNames 两个配置，修改其他配置请使用 vite 插件进行修改。配置想参考[官方文档](https://rollupjs.org/configuration-options/)
-
 
 ```js
 module.exports = {
@@ -1743,9 +1759,27 @@ Web 编译过程的相关配置。
 
 `array`
 
-配置额外**需要经过 Taro 编译的文件**，使用方式与 [mini.compile.exclude](./config-detail#minicompileexclude) 一致，同 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude)。
+配置额外**需要经过 Taro 编译的文件**，使用方式与 [mini.compile.exclude](./config-detail#minicompileexclude) 一致，同 [Rule.include](https://webpack.js.org/configuration/module/#ruleinclude)。例如 Taro 默认不编译 `node_modules` 中的文件，可以通过这个配置让 Taro 编译 `node_modules` 中的文件。
 
-例如 Taro 默认不编译 `node_modules` 中的文件，可以通过这个配置让 Taro 编译 `node_modules` 中的文件。
+默认值包括 Taro 项目源码目录 src 以及 Taro 相关的 node_modules。如需将 Taro 项目作为 monorepo 项目的子包，则要自行配置 include 以编译其他子包的文件，示例：
+
+```js title='config/index.js'
+export default {
+  // ...
+  mini: {
+    // ...
+    compile: {
+      include: [path.resolve(__dirname, '../../package')],
+    },
+  },
+  h5: {
+    // ...
+    compile: {
+      include: [path.resolve(__dirname, '../../package')],
+    },
+  },
+}
+```
 
 ### h5.htmlPluginOption
 
