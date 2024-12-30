@@ -110,6 +110,10 @@ const siteConfig = {
       searchParameters: {
         // facetFilters: [`version: ${versions[0]}`],
       },
+      replaceSearchResultPathname: {
+        from: '/next/',
+        to: '/',
+      },
     },
     announcementBar: {
       id: 'support_us', // Any value that will identify this message.
