@@ -18,9 +18,11 @@ title: 环境判断
 
 `ENV_TYPE.QUICKAPP` 快应用环境
 
-`ENV_TYPE.QQ` QQ小程序 环境
+`ENV_TYPE.QQ` QQ小程序环境
 
-`ENV_TYPE.JD` 京东小程序 环境
+`ENV_TYPE.JD` 京东小程序环境
+
+`ENV_TYPE.HARMONYHYBRID` 鸿蒙混合开发环境
 
 ## Taro.getEnv()
 
