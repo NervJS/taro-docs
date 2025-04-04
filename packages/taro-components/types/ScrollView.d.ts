@@ -3,13 +3,13 @@ import { BaseEventOrigFunction, CommonEventFunction, StandardProps } from './com
 interface ScrollViewProps extends StandardProps {
   /** 允许横向滚动
    * @default false
-   * @supported weapp, alipay, swan, tt, qq, jd, h5, rn, harmony_hybrid
+   * @supported weapp, alipay, swan, tt, qq, jd, h5, rn, harmony, harmony_hybrid
    * @rn 二选一
    */
   scrollX?: boolean
   /** 允许纵向滚动
    * @default false
-   * @supported weapp, alipay, swan, tt, qq, jd, h5, rn, harmony_hybrid
+   * @supported weapp, alipay, swan, tt, qq, jd, h5, rn, harmony, harmony_hybrid
    * @rn 二选一
    */
   scrollY?: boolean
@@ -96,7 +96,7 @@ interface ScrollViewProps extends StandardProps {
    */
   bounces?: boolean
   /** 滚动条显隐控制 (同时开启 enhanced 属性后生效)
-   * @supported weapp
+   * @supported weapp, harmony
    * @default true
    */
   showScrollbar?: boolean
@@ -140,10 +140,18 @@ interface ScrollViewProps extends StandardProps {
    * list - 列表模式。只会渲染在屏节点，会根据直接子节点是否在屏来按需渲染，若只有一个直接子节点则性能会退化
    * custom - 自定义模式。只会渲染在屏节点，子节点可以是 sticky-section list-view grid-view 等组件
    * nested - 嵌套模式。用于处理父子 scroll-view 间的嵌套滚动，子节点可以是 nested-scroll-header nested-scroll-body 组件或自定义 refresher
-   * @supported weapp
+   * @supported weapp, harmony
    * @default 'list'
    */
   type?: 'list' | 'custom' | 'nested'
+  /** 关联的滚动容器
+   * draggable-sheet	  - 关联 draggable-sheet 组件	3.2.0
+   * nested-scroll-view	- 关联 type=nested 嵌套模式	3.2.0
+   * pop-gesture	      - 关联 页面手势返回 3.4.0
+   * @supported weapp
+   * @default ''
+   */
+  associativeContainer?: 'draggable-sheet' | 'nested-scroll-view' | 'pop-gesture'
   /** 是否反向滚动。一般初始滚动位置是在顶部，反向滚动则是在底部。
    * @supported weapp
    * @default false
@@ -226,7 +234,7 @@ interface ScrollViewProps extends StandardProps {
    */
   onScrollToLower?: CommonEventFunction
   /** 滚动时触发
-   * @supported weapp, alipay, swan, tt, qq, jd, h5, rn, harmony_hybrid
+   * @supported weapp, alipay, swan, tt, qq, jd, h5, rn, harmony, harmony_hybrid
    */
   onScroll?: BaseEventOrigFunction<ScrollViewProps.onScrollDetail>
   /** 滚动开始事件
@@ -289,6 +297,22 @@ interface ScrollViewProps extends StandardProps {
    * @supported alipay
    */
   onTouchCancel?: CommonEventFunction
+  /** 同 bindscrollstart，但仅支持 worklet 作为回调
+   * @supported weapp
+   */
+  onScrollStartWorklet?: string
+  /** 同 bindscroll ，但仅支持 worklet 作为回调
+   * @supported weapp
+   */
+  onScrollUpdateWorklet?: string
+  /** 同 bindscrollend，但仅支持 worklet 作为回调
+   * @supported weapp
+   */
+  onScrollEndWorklet?: string
+  /** 指定手指抬起时做惯性滚动的初速度。(velocity: number) => number
+   * @supported weapp
+   */
+  adjustDecelerationVelocityWorklet?: string
 }
 declare namespace ScrollViewProps {
   interface onScrollDetail {

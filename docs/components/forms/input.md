@@ -96,6 +96,7 @@ class App extends Component {
 | confirmType | `keyof ConfirmType` | `done` | 否 | 设置键盘右下角按钮的文字，仅在type='text'时生效 |
 | confirmHold | `boolean` | `false` | 否 | 点击键盘右下角按钮时是否保持键盘不收起 |
 | cursor | `number` |  | 否 | 指定focus时的光标位置 |
+| cursorColor | `string` |  | 否 | 光标颜色。iOS 下的格式为十六进制颜色值 #000000，安卓下的只支持 default 和 green，Skyline 下无限制 |
 | selectionStart | `number` | `-1` | 否 | 光标起始位置，自动聚集时有效，需与selection-end搭配使用 |
 | selectionEnd | `number` | `-1` | 否 | 光标结束位置，自动聚集时有效，需与selection-start搭配使用 |
 | adjustPosition | `boolean` | `true` | 否 | 键盘弹起时，是否自动上推页面 |
@@ -120,30 +121,36 @@ class App extends Component {
 | onConfirm | `CommonEventFunction<inputValueEventDetail>` |  | 否 | 点击完成按钮时触发 |
 | onKeyboardHeightChange | `CommonEventFunction<onKeyboardHeightChangeEventDetail>` |  | 否 | 键盘高度发生变化的时候触发此事件 |
 | onNickNameReview | `CommonEventFunction` |  | 否 | 用户昵称审核完毕后触发，仅在 type 为 "nickname" 时有效，event.detail = { pass, timeout } |
+| onSelectionChange | `CommonEventFunction` |  | 否 | 选区改变事件, {selectionStart, selectionEnd} |
+| onKeyboardCompositionStart | `CommonEventFunction` |  | 否 | 输入法开始新的输入时触发 （仅当输入法支持时触发） |
+| onKeyboardCompositionUpdate | `CommonEventFunction` |  | 否 | 输入法输入字符时触发（仅当输入法支持时触发） |
+| onKeyboardCompositionEnd | `CommonEventFunction` |  | 否 | 输入法输入结束时触发（仅当输入法支持时触发） |
+| onKeyoardHeightChangeWorklet | `string` |  | 否 | 键盘高度变化时触发。event.detail = {height: height, pageBottomPadding: pageBottomPadding}； height: 键盘高度，pageBottomPadding: 页面上推高度 |
 
 ### API 支持度
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| InputProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InputProps.value | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | InputProps.defaultValue | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| InputProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| InputProps.password | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| InputProps.placeholder | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| InputProps.placeholderStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
+| InputProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| InputProps.password | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| InputProps.placeholder | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| InputProps.placeholderStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
 | InputProps.placeholderClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
-| InputProps.placeholderTextColor |  |  |  |  |  |  |  | ✔️ |  |  |
+| InputProps.placeholderTextColor |  |  |  |  |  |  |  | ✔️ | ✔️ |  |
 | InputProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| InputProps.maxlength | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| InputProps.maxlength | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | InputProps.cursorSpacing | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
 | InputProps.autoFocus | ✔️ |  |  |  | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
 | InputProps.focus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| InputProps.confirmType | ✔️ | ✔️ | ✔️(confirm-type 与 enableNative 属性冲突，若希望 confirm-type 生效，enableNative 不能设定为 false，而且不能设定 always-system) | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
+| InputProps.confirmType | ✔️ | ✔️ | ✔️(confirm-type 与 enableNative 属性冲突，若希望 confirm-type 生效，enableNative 不能设定为 false，而且不能设定 always-system) | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
 | InputProps.confirmHold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
-| InputProps.cursor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
+| InputProps.cursor | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
+| InputProps.cursorColor | ✔️ |  |  |  |  |  |  |  |  |  |
 | InputProps.selectionStart | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
 | InputProps.selectionEnd | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |
-| InputProps.adjustPosition | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| InputProps.adjustPosition | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |
 | InputProps.holdKeyboard | ✔️ |  |  | ✔️ |  |  |  |  |  |  |
 | InputProps.alwaysEmbed | ✔️ |  |  |  |  |  |  |  |  |  |
 | InputProps.safePasswordCertPath | ✔️ |  |  |  |  |  |  |  |  |  |
@@ -159,12 +166,17 @@ class App extends Component {
 | InputProps.alwaysSystem |  |  | ✔️ |  |  |  |  |  |  |  |
 | InputProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |  |
 | InputProps.clueType |  |  |  | ✔️ |  |  |  |  |  |  |
-| InputProps.onInput | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| InputProps.onFocus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| InputProps.onBlur | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| InputProps.onConfirm | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| InputProps.onKeyboardHeightChange | ✔️ |  |  | ✔️ | ✔️ |  |  |  |  |  |
+| InputProps.onInput | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| InputProps.onFocus | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| InputProps.onBlur | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| InputProps.onConfirm | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| InputProps.onKeyboardHeightChange | ✔️ |  |  | ✔️ | ✔️ |  |  |  | ✔️ |  |
 | InputProps.onNickNameReview | ✔️ |  |  |  |  |  |  |  |  |  |
+| InputProps.onSelectionChange | ✔️ |  |  |  |  |  |  |  |  |  |
+| InputProps.onKeyboardCompositionStart | ✔️ |  |  |  |  |  |  |  |  |  |
+| InputProps.onKeyboardCompositionUpdate | ✔️ |  |  |  |  |  |  |  |  |  |
+| InputProps.onKeyboardCompositionEnd | ✔️ |  |  |  |  |  |  |  |  |  |
+| InputProps.onKeyoardHeightChangeWorklet | ✔️ |  |  |  |  |  |  |  |  |  |
 
 ### Type
 

@@ -18,7 +18,7 @@ function Version () {
   const context = useDocusaurusContext()
   const { siteConfig = {} } = context
   const latestVersion = versions[0]
-  const taroNextVersions = versions.filter(version => version.startsWith('3'))
+  const taroNextVersions = versions.filter(version => version.startsWith('5'))
   const pastVersions = versions.filter((version) => version !== latestVersion && !taroNextVersions.includes(version))
   const repoUrl = `https://github.com/${siteConfig.organizationName}/${siteConfig.projectName}`
   return (
@@ -40,7 +40,7 @@ function Version () {
                   </Link>
                 </td>
                 <td>
-                  <a href={`${repoUrl}/releases/tag/v${latestVersion}`}>
+                  <a href={`${repoUrl}/releases`}>
                     更新日志
                   </a>
                 </td>
@@ -48,7 +48,7 @@ function Version () {
             </tbody>
           </table>
         </div>
-        <div className="margin-bottom--lg">
+        {/* <div className="margin-bottom--lg">
           <h3 id="next">最新进度 (未发布版本)</h3>
           <p>你能够在这里看到最新的文档和未发布的代码。</p>
           <table>
@@ -66,7 +66,7 @@ function Version () {
               </tr>
             </tbody>
           </table>
-        </div>
+        </div> */}
         {/* {taroNextVersions.length > 0 && (
           <div className="margin-bottom--lg">
             <h3 id="archive">Taro Next</h3>

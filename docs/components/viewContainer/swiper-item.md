@@ -94,6 +94,6 @@ class App extends Component {
 
 | API | 微信小程序 | 百度小程序 | 抖音小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| SwiperItemProps.itemId | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| SwiperItemProps.itemId | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | SwiperItemProps.skipHiddenItemLayout | ✔️ |  |  |  |  |  |  |  |
 | SwiperItemProps.deep |  |  |  |  | ✔️ |  |  |  |

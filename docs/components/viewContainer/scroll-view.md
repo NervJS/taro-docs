@@ -209,6 +209,7 @@ typeof ScrollViewProps
 | ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
 | enablePassive | `boolean` | `false` | 否 | 开启 passive 特性，能优化一定的滚动性能 |
 | type | "list" or "custom" or "nested" | `'list'` | 否 | 渲染模式<br />list - 列表模式。只会渲染在屏节点，会根据直接子节点是否在屏来按需渲染，若只有一个直接子节点则性能会退化<br />custom - 自定义模式。只会渲染在屏节点，子节点可以是 sticky-section list-view grid-view 等组件<br />nested - 嵌套模式。用于处理父子 scroll-view 间的嵌套滚动，子节点可以是 nested-scroll-header nested-scroll-body 组件或自定义 refresher |
+| associativeContainer | "draggable-sheet" or "nested-scroll-view" or "pop-gesture" | `''` | 否 | 关联的滚动容器<br />draggable-sheet	  - 关联 draggable-sheet 组件	3.2.0<br />nested-scroll-view	- 关联 type=nested 嵌套模式	3.2.0<br />pop-gesture	      - 关联 页面手势返回 3.4.0 |
 | reverse | `boolean` | `false` | 否 | 是否反向滚动。一般初始滚动位置是在顶部，反向滚动则是在底部。 |
 | clip | `boolean` | `true` | 否 | 是否对溢出进行裁剪，默认开启 |
 | cacheExtent | `number` |  | 否 | 指定视口外渲染区域的距离，默认情况下视口外节点不渲染。指定 cache-extent 可优化滚动体验和加载速度，但会提高内存占用且影响首屏速度，可按需启用。 |
@@ -241,13 +242,17 @@ typeof ScrollViewProps
 | onTouchMove | `CommonEventFunction` |  | 否 | 触摸后移动。 |
 | onTouchEnd | `CommonEventFunction` |  | 否 | 触摸动作结束。 |
 | onTouchCancel | `CommonEventFunction` |  | 否 | 触摸动作被打断，如来电提醒、弹窗。 |
+| onScrollStartWorklet | `string` |  | 否 | 同 bindscrollstart，但仅支持 worklet 作为回调 |
+| onScrollUpdateWorklet | `string` |  | 否 | 同 bindscroll ，但仅支持 worklet 作为回调 |
+| onScrollEndWorklet | `string` |  | 否 | 同 bindscrollend，但仅支持 worklet 作为回调 |
+| adjustDecelerationVelocityWorklet | `string` |  | 否 | 指定手指抬起时做惯性滚动的初速度。(velocity: number) => number |
 
 ### API 支持度
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| ScrollViewProps.scrollX | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(二选一) |  | ✔️ |
-| ScrollViewProps.scrollY | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(二选一) |  | ✔️ |
+| ScrollViewProps.scrollX | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(二选一) | ✔️ | ✔️ |
+| ScrollViewProps.scrollY | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(二选一) | ✔️ | ✔️ |
 | ScrollViewProps.upperThreshold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
 | ScrollViewProps.lowerThreshold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
 | ScrollViewProps.scrollTop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
@@ -265,7 +270,7 @@ typeof ScrollViewProps
 | ScrollViewProps.enhanced | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
 | ScrollViewProps.usingSticky | ✔️ |  |  |  |  |  |  |  |  |  |
 | ScrollViewProps.bounces | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
-| ScrollViewProps.showScrollbar | ✔️ |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.showScrollbar | ✔️ |  |  |  |  |  |  |  | ✔️ |  |
 | ScrollViewProps.pagingEnabled | ✔️ |  |  |  |  |  |  |  |  |  |
 | ScrollViewProps.fastDeceleration | ✔️ |  |  |  |  |  |  |  |  |  |
 | ScrollViewProps.scrollAnimationDuration |  |  | ✔️ |  |  |  |  |  |  |  |
@@ -274,7 +279,8 @@ typeof ScrollViewProps
 | ScrollViewProps.disableUpperScroll |  |  | ✔️ |  |  |  |  |  |  |  |
 | ScrollViewProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |  |
 | ScrollViewProps.enablePassive | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.type | ✔️ |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.type | ✔️ |  |  |  |  |  |  |  | ✔️ |  |
+| ScrollViewProps.associativeContainer | ✔️ |  |  |  |  |  |  |  |  |  |
 | ScrollViewProps.reverse | ✔️ |  |  |  |  |  |  |  |  |  |
 | ScrollViewProps.clip | ✔️ |  |  |  |  |  |  |  |  |  |
 | ScrollViewProps.cacheExtent | ✔️ |  |  |  |  |  |  |  |  |  |
@@ -291,7 +297,7 @@ typeof ScrollViewProps
 | ScrollViewProps.refresherTwoLevelPinned | ✔️ |  |  |  |  |  |  |  |  |  |
 | ScrollViewProps.onScrollToUpper | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
 | ScrollViewProps.onScrollToLower | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| ScrollViewProps.onScroll | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| ScrollViewProps.onScroll | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | ScrollViewProps.onScrollStart | ✔️ |  |  |  |  |  |  |  |  |  |
 | ScrollViewProps.onScrollEnd | ✔️ |  |  |  |  |  |  |  |  |  |
 | ScrollViewProps.onRefresherPulling | ✔️ |  |  |  |  |  |  |  |  |  |
@@ -307,6 +313,10 @@ typeof ScrollViewProps
 | ScrollViewProps.onTouchMove |  |  | ✔️ |  |  |  |  |  |  |  |
 | ScrollViewProps.onTouchEnd |  |  | ✔️ |  |  |  |  |  |  |  |
 | ScrollViewProps.onTouchCancel |  |  | ✔️ |  |  |  |  |  |  |  |
+| ScrollViewProps.onScrollStartWorklet | ✔️ |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onScrollUpdateWorklet | ✔️ |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onScrollEndWorklet | ✔️ |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.adjustDecelerationVelocityWorklet | ✔️ |  |  |  |  |  |  |  |  |  |
 
 | 参数 | 类型 |
 | --- | --- |

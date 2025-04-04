@@ -27,6 +27,7 @@ ComponentType<DraggableSheetProps>
 | maxChildSize | `number` | `1.0` | 否 | 最大时占父容器的比例 |
 | snap | `boolean` | `false` | 否 | 拖拽后是否自动对齐关键点 |
 | snapSizes | `any[]` | `[]` | 否 | 拖拽后对齐的关键点，无需包含最小和最大值 |
+| onSizeUpdateWorklet | `string` |  | 否 | 尺寸发生变化时触发，仅支持 worklet 作为回调。event = {pixels, size} |
 
 ### API 支持度
 
@@ -37,3 +38,4 @@ ComponentType<DraggableSheetProps>
 | DraggableSheetProps.maxChildSize | ✔️ |  |  |  |
 | DraggableSheetProps.snap | ✔️ |  |  |  |
 | DraggableSheetProps.snapSizes | ✔️ |  |  |  |
+| DraggableSheetProps.onSizeUpdateWorklet | ✔️ |  |  |  |

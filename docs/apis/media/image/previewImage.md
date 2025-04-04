@@ -26,7 +26,7 @@ sidebar_label: previewImage
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
 | urls | `string[]` | 是 | 需要预览的图片链接列表。 |
-| current | string or number | 否 | 微信端为当前显示图片的链接，支付宝端为当前显示图片的索引值 |
+| current | string or number | 否 | 当前显示图片的http链接 |
 | enablesavephoto | `boolean` | 否 | 是否支持长按下载图片<br />API 支持度: alipay 基础库: 1.13.0 |
 | enableShowPhotoDownload | `boolean` | 否 | 是否在右下角显示下载入口<br />API 支持度: alipay 基础库: 1.13.0 |
 | showmenu | `boolean` | 否 | <br />API 支持度: weapp 最低版本：2.13.0。是否显示长按菜单，默认值：true |

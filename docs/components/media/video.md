@@ -177,15 +177,15 @@ export default class PageView extends Component {
 
 | API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| VideoProps.src | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| VideoProps.duration | ✔️ |  | ✔️ |  | ✔️ |  | ✔️ | ✔️ |  | ✔️ |
-| VideoProps.controls | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.src | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| VideoProps.duration | ✔️ |  | ✔️ |  | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ |
+| VideoProps.controls | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | VideoProps.danmuList | ✔️ | ✔️ |  |  | ✔️ |  | ✔️ |  |  | ✔️ |
 | VideoProps.danmuBtn | ✔️ | ✔️ |  |  | ✔️ |  | ✔️ |  |  | ✔️ |
 | VideoProps.enableDanmu | ✔️ | ✔️ |  |  | ✔️ |  | ✔️ |  |  | ✔️ |
-| VideoProps.autoplay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| VideoProps.loop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| VideoProps.muted | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.autoplay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| VideoProps.loop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| VideoProps.muted | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | VideoProps.initialTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
 | VideoProps.pageGesture | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |  |
 | VideoProps.direction | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
@@ -194,7 +194,7 @@ export default class PageView extends Component {
 | VideoProps.showPlayBtn | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  | ✔️ |
 | VideoProps.showCenterPlayBtn | ✔️ | ✔️ | ✔️ |  | ✔️ |  | ✔️ | ✔️ |  | ✔️ |
 | VideoProps.enableProgressGesture | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  | ✔️ |
-| VideoProps.objectFit | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| VideoProps.objectFit | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |
 | VideoProps.poster | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
 | VideoProps.showMuteBtn | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  | ✔️ |
 | VideoProps.title | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |  |
@@ -238,15 +238,15 @@ export default class PageView extends Component {
 | VideoProps.preferredPeakBitRate | ✔️ |  |  |  |  |  |  |  |  |  |
 | VideoProps.isLive | ✔️ |  |  |  |  |  |  |  |  |  |
 | VideoProps.definition |  |  |  | ✔️ |  |  |  |  |  |  |
-| VideoProps.onPlay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| VideoProps.onPause | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| VideoProps.onEnded | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| VideoProps.onTimeUpdate | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| VideoProps.onFullscreenChange |  |  | ✔️ |  |  |  | ✔️ | ✔️ |  | ✔️ |
+| VideoProps.onPlay | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| VideoProps.onPause | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| VideoProps.onEnded | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| VideoProps.onTimeUpdate | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| VideoProps.onFullscreenChange |  |  | ✔️ |  |  |  | ✔️ | ✔️ | ✔️ | ✔️ |
 | VideoProps.onWaiting | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
 | VideoProps.onError | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| VideoProps.onProgress | ✔️ |  |  | ✔️ | ✔️ |  | ✔️ |  |  | ✔️ |
-| VideoProps.onLoadedMetaData | ✔️ | ✔️ |  | ✔️ |  | ✔️ |  | ✔️ |  |  |
+| VideoProps.onProgress | ✔️ |  |  | ✔️ | ✔️ |  | ✔️ |  | ✔️ | ✔️ |
+| VideoProps.onLoadedMetaData | ✔️ | ✔️ |  | ✔️ |  | ✔️ |  | ✔️ | ✔️ |  |
 | VideoProps.onEnterPictureInPicture | ✔️ |  |  |  |  |  |  |  |  |  |
 | VideoProps.onLeavePictureInPicture | ✔️ |  |  |  |  |  |  |  |  |  |
 | VideoProps.onSeekComplete | ✔️ |  |  | ✔️ |  |  |  |  |  |  |
@@ -269,8 +269,8 @@ export default class PageView extends Component {
 | VideoProps.onLeaveBackground |  |  |  | ✔️ |  |  |  |  |  |  |
 | VideoProps.onLoadedData |  |  |  |  |  | ✔️ |  |  |  |  |
 | VideoProps.onLoadStart |  |  |  |  |  | ✔️ |  |  |  |  |
-| VideoProps.onSeeked |  |  |  |  |  | ✔️ |  |  |  |  |
-| VideoProps.onSeeking |  |  |  |  |  | ✔️ |  |  |  |  |
+| VideoProps.onSeeked |  |  |  |  |  | ✔️ |  |  | ✔️ |  |
+| VideoProps.onSeeking |  |  |  |  |  | ✔️ |  |  | ✔️ |  |
 | VideoProps.onAdLoad |  |  |  | ✔️ |  |  |  |  |  |  |
 | VideoProps.onCastingUserSelect | ✔️ |  |  |  |  |  |  |  |  |  |
 | VideoProps.onCastingStateChange | ✔️ |  |  |  |  |  |  |  |  |  |

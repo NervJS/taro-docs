@@ -74,7 +74,7 @@ const siteConfig = {
           // sidebars file relative to website dir.
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/nervjs/taro-docs/edit/master/',
-          lastVersion: '3.x',
+          lastVersion: 'current',
           versions: {
             current: {
               label: '4.x',
@@ -109,6 +109,10 @@ const siteConfig = {
       indexName: 'taro-zone',
       searchParameters: {
         // facetFilters: [`version: ${versions[0]}`],
+      },
+      replaceSearchResultPathname: {
+        from: '/next/',
+        to: '/',
       },
     },
     announcementBar: {
