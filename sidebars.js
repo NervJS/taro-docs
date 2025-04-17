@@ -82,7 +82,7 @@ module.exports = {
       {
         label: '鸿蒙 & OpenHarmony',
         type: 'category',
-        items: ['harmony/index', 'harmony/c-api', 'harmony/hybrid', 'harmony/lazy/index', 'harmony/lazy/reuse'],
+        items: ['harmony/index', 'harmony/c-api', 'harmony/hybrid', 'harmony/c-api-css', 'harmony/lazy/index', 'harmony/lazy/reuse'],
       },
     ],
     进阶指南: [
