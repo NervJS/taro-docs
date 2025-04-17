@@ -1,12 +1,12 @@
 ---
-title: Harmony C-API 方案
+title: Taro 鸿蒙插件安装和使用
 ---
 
 :::info
 Taro v4.1.0+ 开始支持
 :::
 
-在 ETS 方案基础上，Taro 适配 Harmony 朝着 C-API 方案过度升级，实现了对纯血鸿蒙的完全适配。
+本章节会介绍如何使用 Taro For Harmony 插件，实现 Taro 项目打包纯血鸿蒙应用的能力。
 
 ## 快速开始
 
