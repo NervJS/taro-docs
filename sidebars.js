@@ -77,12 +77,17 @@ module.exports = {
       {
         label: 'React Native',
         type: 'category',
-        items: ['react-native', 'react-native-remind','react-native-harmony'],
+        items: ['react-native', 'react-native-remind'],
       },
       {
         label: '鸿蒙 & OpenHarmony',
         type: 'category',
-        items: ['harmony/index', 'harmony/c-api', 'harmony/hybrid', 'harmony/c-api-css', 'harmony/lazy/index', 'harmony/lazy/reuse'],
+        items: ['harmony/index', 'harmony/c-api', 'harmony/c-api-css', 'harmony/lazy/index', 'harmony/lazy/reuse', 'harmony/troubleshooting'],
+      },
+      {
+        label: 'OpenHarmony 更多方案',
+        type: 'category',
+        items: ['react-native-harmony', 'harmony/hybrid'],
       },
     ],
     进阶指南: [
