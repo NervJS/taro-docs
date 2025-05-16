@@ -234,9 +234,39 @@ baosiqing:
 
 xuanzebin:
   name: xuanzebin
-  title: Taro 贡献者
+  title: Taro 技术委员会成员、Taro Harmony 工作组 Owner
   url: https://github.com/xuanzebin
   image_url: https://avatars.githubusercontent.com/u/38971117?v=4
+
+azu:
+  name: heiazu
+  title: Taro 技术委员会成员
+  url: https://github.com/heiazu
+  image_url: https://avatars.githubusercontent.com/u/47267778?v=4
+
+atao:
+  name: yoturg
+  title: Taro 技术委员会成员
+  url: https://github.com/yoturg
+  image_url: https://avatars.githubusercontent.com/u/24827103?v=4
+
+hexiao:
+  name: HeXiao
+  title: Taro 贡献者
+  url: https://github.com/helele90
+  image_url: https://avatars.githubusercontent.com/u/4125469?v=4
+
+learnNG:
+  name: learnNG
+  title: Taro 贡献者
+  url: https://github.com/learrn
+  image_url: https://avatars.githubusercontent.com/u/13703452?v=4
+
+liubb:
+  name: Emma
+  title: Taro 贡献者
+  url: https://github.com/liubb0516
+  image_url: https://avatars.githubusercontent.com/u/106364053?v=4
 
 topeertoo:
   name: topeertoo
