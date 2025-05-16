@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktaro_docs=self.webpackChunktaro_docs||[]).push([[76871],{42522:a=>{a.exports=JSON.parse('{"label":"harmony","permalink":"/taro-docs/en/blog/tags/harmony","allTagsPath":"/taro-docs/en/blog/tags","count":8}')}}]);
