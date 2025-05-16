@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktaro_docs=self.webpackChunktaro_docs||[]).push([[52634],{77316:(t,e,c)=>{c.r(e),c.d(e,{default:()=>n});var s=c(45926),o=c(64477),r=c(37953);const n=function(){const t=(0,o.A)("/docs/");return r.createElement(s.rd,{to:t})}}}]);

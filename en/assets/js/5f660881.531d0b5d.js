@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktaro_docs=self.webpackChunktaro_docs||[]).push([[27019],{37430:function(o){o.exports=JSON.parse('{"permalink":"/taro-docs/en/blog/tags/v-2","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

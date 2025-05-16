@@ -1,51 +1,20 @@
 "use strict";
 (self["webpackChunktaro_docs"] = self["webpackChunktaro_docs"] || []).push([["src_sw_js"],{
 
-/***/ "./src/sw.js":
-/*!*******************!*\
-  !*** ./src/sw.js ***!
-  \*******************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ swCustom)
-/* harmony export */ });
-/* harmony import */ var workbox_routing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! workbox-routing */ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/index.mjs");
-/* harmony import */ var workbox_strategies__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! workbox-strategies */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/index.mjs");
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-function swCustom(params) {
-  if (params.debug) {
-    console.log('[Docusaurus-PWA][SW]: running swCustom code', params);
-  } // Cache responses from external resources
-
-
-  (0,workbox_routing__WEBPACK_IMPORTED_MODULE_0__.registerRoute)(context => [/graph\.facebook\.com\/.*\/picture/, /netlify\.com\/img/, /avatars1\.githubusercontent/].some(regex => context.url.href.match(regex)), new workbox_strategies__WEBPACK_IMPORTED_MODULE_1__.StaleWhileRevalidate());
-}
-
-/***/ }),
-
-/***/ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/NavigationRoute.js":
-/*!*********************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/NavigationRoute.js ***!
-  \*********************************************************************************************************************/
+/***/ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/NavigationRoute.js":
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/NavigationRoute.js ***!
+  \**************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   NavigationRoute: () => (/* binding */ NavigationRoute)
 /* harmony export */ });
-/* harmony import */ var workbox_core_private_assert_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! workbox-core/_private/assert.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/assert.js");
-/* harmony import */ var workbox_core_private_logger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! workbox-core/_private/logger.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/logger.js");
-/* harmony import */ var _Route_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Route.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/Route.js");
-/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/_version.js");
+/* harmony import */ var workbox_core_private_assert_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! workbox-core/_private/assert.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/assert.js");
+/* harmony import */ var workbox_core_private_logger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! workbox-core/_private/logger.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/logger.js");
+/* harmony import */ var _Route_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Route.js */ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/Route.js");
+/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/_version.js");
 /* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_version_js__WEBPACK_IMPORTED_MODULE_3__);
 /*
   Copyright 2018 Google LLC
@@ -161,10 +130,10 @@ class NavigationRoute extends _Route_js__WEBPACK_IMPORTED_MODULE_2__.Route {
 
 /***/ }),
 
-/***/ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/index.js":
-/*!***********************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/index.js ***!
-  \***********************************************************************************************************/
+/***/ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/index.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/index.js ***!
+  \****************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -177,14 +146,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setCatchHandler: () => (/* reexport safe */ _setCatchHandler_js__WEBPACK_IMPORTED_MODULE_5__.setCatchHandler),
 /* harmony export */   setDefaultHandler: () => (/* reexport safe */ _setDefaultHandler_js__WEBPACK_IMPORTED_MODULE_6__.setDefaultHandler)
 /* harmony export */ });
-/* harmony import */ var _NavigationRoute_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NavigationRoute.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/NavigationRoute.js");
-/* harmony import */ var _RegExpRoute_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RegExpRoute.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/RegExpRoute.js");
-/* harmony import */ var _registerRoute_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./registerRoute.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/registerRoute.js");
-/* harmony import */ var _Route_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Route.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/Route.js");
-/* harmony import */ var _Router_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Router.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/Router.js");
-/* harmony import */ var _setCatchHandler_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./setCatchHandler.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/setCatchHandler.js");
-/* harmony import */ var _setDefaultHandler_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./setDefaultHandler.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/setDefaultHandler.js");
-/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/_version.js");
+/* harmony import */ var _NavigationRoute_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NavigationRoute.js */ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/NavigationRoute.js");
+/* harmony import */ var _RegExpRoute_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RegExpRoute.js */ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/RegExpRoute.js");
+/* harmony import */ var _registerRoute_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./registerRoute.js */ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/registerRoute.js");
+/* harmony import */ var _Route_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Route.js */ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/Route.js");
+/* harmony import */ var _Router_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Router.js */ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/Router.js");
+/* harmony import */ var _setCatchHandler_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./setCatchHandler.js */ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/setCatchHandler.js");
+/* harmony import */ var _setDefaultHandler_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./setDefaultHandler.js */ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/setDefaultHandler.js");
+/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/_version.js");
 /* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_version_js__WEBPACK_IMPORTED_MODULE_7__);
 /*
   Copyright 2018 Google LLC
@@ -209,18 +178,39 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/setCatchHandler.js":
-/*!*********************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/setCatchHandler.js ***!
-  \*********************************************************************************************************************/
+/***/ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/index.mjs":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/index.mjs ***!
+  \*****************************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   NavigationRoute: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.NavigationRoute),
+/* harmony export */   RegExpRoute: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.RegExpRoute),
+/* harmony export */   Route: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.Route),
+/* harmony export */   Router: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.Router),
+/* harmony export */   registerRoute: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.registerRoute),
+/* harmony export */   setCatchHandler: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.setCatchHandler),
+/* harmony export */   setDefaultHandler: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.setDefaultHandler)
+/* harmony export */ });
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/index.js");
+
+
+/***/ }),
+
+/***/ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/setCatchHandler.js":
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/setCatchHandler.js ***!
+  \**************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setCatchHandler: () => (/* binding */ setCatchHandler)
 /* harmony export */ });
-/* harmony import */ var _utils_getOrCreateDefaultRouter_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/getOrCreateDefaultRouter.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/utils/getOrCreateDefaultRouter.js");
-/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/_version.js");
+/* harmony import */ var _utils_getOrCreateDefaultRouter_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/getOrCreateDefaultRouter.js */ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/utils/getOrCreateDefaultRouter.js");
+/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/_version.js");
 /* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_version_js__WEBPACK_IMPORTED_MODULE_1__);
 /*
   Copyright 2019 Google LLC
@@ -249,18 +239,18 @@ function setCatchHandler(handler) {
 
 /***/ }),
 
-/***/ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/setDefaultHandler.js":
-/*!***********************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/setDefaultHandler.js ***!
-  \***********************************************************************************************************************/
+/***/ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/setDefaultHandler.js":
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/setDefaultHandler.js ***!
+  \****************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setDefaultHandler: () => (/* binding */ setDefaultHandler)
 /* harmony export */ });
-/* harmony import */ var _utils_getOrCreateDefaultRouter_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/getOrCreateDefaultRouter.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/utils/getOrCreateDefaultRouter.js");
-/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/_version.js");
+/* harmony import */ var _utils_getOrCreateDefaultRouter_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/getOrCreateDefaultRouter.js */ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/utils/getOrCreateDefaultRouter.js");
+/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/_version.js");
 /* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_version_js__WEBPACK_IMPORTED_MODULE_1__);
 /*
   Copyright 2019 Google LLC
@@ -292,22 +282,22 @@ function setDefaultHandler(handler) {
 
 /***/ }),
 
-/***/ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/CacheFirst.js":
-/*!**********************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/CacheFirst.js ***!
-  \**********************************************************************************************************************/
+/***/ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/CacheFirst.js":
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/CacheFirst.js ***!
+  \***************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   CacheFirst: () => (/* binding */ CacheFirst)
 /* harmony export */ });
-/* harmony import */ var workbox_core_private_assert_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! workbox-core/_private/assert.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/assert.js");
-/* harmony import */ var workbox_core_private_logger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! workbox-core/_private/logger.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/logger.js");
-/* harmony import */ var workbox_core_private_WorkboxError_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! workbox-core/_private/WorkboxError.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/WorkboxError.js");
-/* harmony import */ var _Strategy_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Strategy.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/Strategy.js");
-/* harmony import */ var _utils_messages_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/messages.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/utils/messages.js");
-/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/_version.js");
+/* harmony import */ var workbox_core_private_assert_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! workbox-core/_private/assert.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/assert.js");
+/* harmony import */ var workbox_core_private_logger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! workbox-core/_private/logger.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/logger.js");
+/* harmony import */ var workbox_core_private_WorkboxError_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! workbox-core/_private/WorkboxError.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/WorkboxError.js");
+/* harmony import */ var _Strategy_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Strategy.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/Strategy.js");
+/* harmony import */ var _utils_messages_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/messages.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/utils/messages.js");
+/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/_version.js");
 /* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_version_js__WEBPACK_IMPORTED_MODULE_5__);
 /*
   Copyright 2018 Google LLC
@@ -402,22 +392,22 @@ class CacheFirst extends _Strategy_js__WEBPACK_IMPORTED_MODULE_3__.Strategy {
 
 /***/ }),
 
-/***/ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/CacheOnly.js":
-/*!*********************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/CacheOnly.js ***!
-  \*********************************************************************************************************************/
+/***/ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/CacheOnly.js":
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/CacheOnly.js ***!
+  \**************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   CacheOnly: () => (/* binding */ CacheOnly)
 /* harmony export */ });
-/* harmony import */ var workbox_core_private_assert_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! workbox-core/_private/assert.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/assert.js");
-/* harmony import */ var workbox_core_private_logger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! workbox-core/_private/logger.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/logger.js");
-/* harmony import */ var workbox_core_private_WorkboxError_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! workbox-core/_private/WorkboxError.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/WorkboxError.js");
-/* harmony import */ var _Strategy_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Strategy.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/Strategy.js");
-/* harmony import */ var _utils_messages_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/messages.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/utils/messages.js");
-/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/_version.js");
+/* harmony import */ var workbox_core_private_assert_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! workbox-core/_private/assert.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/assert.js");
+/* harmony import */ var workbox_core_private_logger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! workbox-core/_private/logger.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/logger.js");
+/* harmony import */ var workbox_core_private_WorkboxError_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! workbox-core/_private/WorkboxError.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/WorkboxError.js");
+/* harmony import */ var _Strategy_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Strategy.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/Strategy.js");
+/* harmony import */ var _utils_messages_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/messages.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/utils/messages.js");
+/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/_version.js");
 /* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_version_js__WEBPACK_IMPORTED_MODULE_5__);
 /*
   Copyright 2018 Google LLC
@@ -484,23 +474,23 @@ class CacheOnly extends _Strategy_js__WEBPACK_IMPORTED_MODULE_3__.Strategy {
 
 /***/ }),
 
-/***/ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/NetworkFirst.js":
-/*!************************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/NetworkFirst.js ***!
-  \************************************************************************************************************************/
+/***/ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/NetworkFirst.js":
+/*!*****************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/NetworkFirst.js ***!
+  \*****************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   NetworkFirst: () => (/* binding */ NetworkFirst)
 /* harmony export */ });
-/* harmony import */ var workbox_core_private_assert_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! workbox-core/_private/assert.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/assert.js");
-/* harmony import */ var workbox_core_private_logger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! workbox-core/_private/logger.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/logger.js");
-/* harmony import */ var workbox_core_private_WorkboxError_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! workbox-core/_private/WorkboxError.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/WorkboxError.js");
-/* harmony import */ var _plugins_cacheOkAndOpaquePlugin_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./plugins/cacheOkAndOpaquePlugin.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/plugins/cacheOkAndOpaquePlugin.js");
-/* harmony import */ var _Strategy_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Strategy.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/Strategy.js");
-/* harmony import */ var _utils_messages_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/messages.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/utils/messages.js");
-/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/_version.js");
+/* harmony import */ var workbox_core_private_assert_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! workbox-core/_private/assert.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/assert.js");
+/* harmony import */ var workbox_core_private_logger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! workbox-core/_private/logger.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/logger.js");
+/* harmony import */ var workbox_core_private_WorkboxError_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! workbox-core/_private/WorkboxError.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/WorkboxError.js");
+/* harmony import */ var _plugins_cacheOkAndOpaquePlugin_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./plugins/cacheOkAndOpaquePlugin.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/plugins/cacheOkAndOpaquePlugin.js");
+/* harmony import */ var _Strategy_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Strategy.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/Strategy.js");
+/* harmony import */ var _utils_messages_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/messages.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/utils/messages.js");
+/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/_version.js");
 /* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_version_js__WEBPACK_IMPORTED_MODULE_6__);
 /*
   Copyright 2018 Google LLC
@@ -703,23 +693,23 @@ class NetworkFirst extends _Strategy_js__WEBPACK_IMPORTED_MODULE_4__.Strategy {
 
 /***/ }),
 
-/***/ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/NetworkOnly.js":
-/*!***********************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/NetworkOnly.js ***!
-  \***********************************************************************************************************************/
+/***/ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/NetworkOnly.js":
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/NetworkOnly.js ***!
+  \****************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   NetworkOnly: () => (/* binding */ NetworkOnly)
 /* harmony export */ });
-/* harmony import */ var workbox_core_private_assert_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! workbox-core/_private/assert.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/assert.js");
-/* harmony import */ var workbox_core_private_logger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! workbox-core/_private/logger.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/logger.js");
-/* harmony import */ var workbox_core_private_timeout_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! workbox-core/_private/timeout.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/timeout.js");
-/* harmony import */ var workbox_core_private_WorkboxError_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! workbox-core/_private/WorkboxError.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/WorkboxError.js");
-/* harmony import */ var _Strategy_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Strategy.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/Strategy.js");
-/* harmony import */ var _utils_messages_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/messages.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/utils/messages.js");
-/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/_version.js");
+/* harmony import */ var workbox_core_private_assert_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! workbox-core/_private/assert.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/assert.js");
+/* harmony import */ var workbox_core_private_logger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! workbox-core/_private/logger.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/logger.js");
+/* harmony import */ var workbox_core_private_timeout_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! workbox-core/_private/timeout.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/timeout.js");
+/* harmony import */ var workbox_core_private_WorkboxError_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! workbox-core/_private/WorkboxError.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/WorkboxError.js");
+/* harmony import */ var _Strategy_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Strategy.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/Strategy.js");
+/* harmony import */ var _utils_messages_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/messages.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/utils/messages.js");
+/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/_version.js");
 /* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_version_js__WEBPACK_IMPORTED_MODULE_6__);
 /*
   Copyright 2018 Google LLC
@@ -823,23 +813,23 @@ class NetworkOnly extends _Strategy_js__WEBPACK_IMPORTED_MODULE_4__.Strategy {
 
 /***/ }),
 
-/***/ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/StaleWhileRevalidate.js":
-/*!********************************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/StaleWhileRevalidate.js ***!
-  \********************************************************************************************************************************/
+/***/ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/StaleWhileRevalidate.js":
+/*!*************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/StaleWhileRevalidate.js ***!
+  \*************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   StaleWhileRevalidate: () => (/* binding */ StaleWhileRevalidate)
 /* harmony export */ });
-/* harmony import */ var workbox_core_private_assert_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! workbox-core/_private/assert.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/assert.js");
-/* harmony import */ var workbox_core_private_logger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! workbox-core/_private/logger.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/logger.js");
-/* harmony import */ var workbox_core_private_WorkboxError_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! workbox-core/_private/WorkboxError.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/WorkboxError.js");
-/* harmony import */ var _plugins_cacheOkAndOpaquePlugin_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./plugins/cacheOkAndOpaquePlugin.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/plugins/cacheOkAndOpaquePlugin.js");
-/* harmony import */ var _Strategy_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Strategy.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/Strategy.js");
-/* harmony import */ var _utils_messages_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/messages.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/utils/messages.js");
-/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/_version.js");
+/* harmony import */ var workbox_core_private_assert_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! workbox-core/_private/assert.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/assert.js");
+/* harmony import */ var workbox_core_private_logger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! workbox-core/_private/logger.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/logger.js");
+/* harmony import */ var workbox_core_private_WorkboxError_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! workbox-core/_private/WorkboxError.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/WorkboxError.js");
+/* harmony import */ var _plugins_cacheOkAndOpaquePlugin_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./plugins/cacheOkAndOpaquePlugin.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/plugins/cacheOkAndOpaquePlugin.js");
+/* harmony import */ var _Strategy_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Strategy.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/Strategy.js");
+/* harmony import */ var _utils_messages_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/messages.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/utils/messages.js");
+/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/_version.js");
 /* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_version_js__WEBPACK_IMPORTED_MODULE_6__);
 /*
   Copyright 2018 Google LLC
@@ -963,10 +953,10 @@ class StaleWhileRevalidate extends _Strategy_js__WEBPACK_IMPORTED_MODULE_4__.Str
 
 /***/ }),
 
-/***/ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/index.js":
-/*!*****************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/index.js ***!
-  \*****************************************************************************************************************/
+/***/ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/index.js":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/index.js ***!
+  \**********************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -979,14 +969,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   Strategy: () => (/* reexport safe */ _Strategy_js__WEBPACK_IMPORTED_MODULE_5__.Strategy),
 /* harmony export */   StrategyHandler: () => (/* reexport safe */ _StrategyHandler_js__WEBPACK_IMPORTED_MODULE_6__.StrategyHandler)
 /* harmony export */ });
-/* harmony import */ var _CacheFirst_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CacheFirst.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/CacheFirst.js");
-/* harmony import */ var _CacheOnly_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CacheOnly.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/CacheOnly.js");
-/* harmony import */ var _NetworkFirst_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NetworkFirst.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/NetworkFirst.js");
-/* harmony import */ var _NetworkOnly_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./NetworkOnly.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/NetworkOnly.js");
-/* harmony import */ var _StaleWhileRevalidate_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./StaleWhileRevalidate.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/StaleWhileRevalidate.js");
-/* harmony import */ var _Strategy_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Strategy.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/Strategy.js");
-/* harmony import */ var _StrategyHandler_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./StrategyHandler.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/StrategyHandler.js");
-/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/_version.js");
+/* harmony import */ var _CacheFirst_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CacheFirst.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/CacheFirst.js");
+/* harmony import */ var _CacheOnly_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CacheOnly.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/CacheOnly.js");
+/* harmony import */ var _NetworkFirst_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NetworkFirst.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/NetworkFirst.js");
+/* harmony import */ var _NetworkOnly_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./NetworkOnly.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/NetworkOnly.js");
+/* harmony import */ var _StaleWhileRevalidate_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./StaleWhileRevalidate.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/StaleWhileRevalidate.js");
+/* harmony import */ var _Strategy_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Strategy.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/Strategy.js");
+/* harmony import */ var _StrategyHandler_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./StrategyHandler.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/StrategyHandler.js");
+/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./_version.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/_version.js");
 /* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_version_js__WEBPACK_IMPORTED_MODULE_7__);
 /*
   Copyright 2018 Google LLC
@@ -1014,17 +1004,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/plugins/cacheOkAndOpaquePlugin.js":
-/*!******************************************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/plugins/cacheOkAndOpaquePlugin.js ***!
-  \******************************************************************************************************************************************/
+/***/ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/index.mjs":
+/*!***********************************************************************************************!*\
+  !*** ./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/index.mjs ***!
+  \***********************************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CacheFirst: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.CacheFirst),
+/* harmony export */   CacheOnly: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.CacheOnly),
+/* harmony export */   NetworkFirst: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.NetworkFirst),
+/* harmony export */   NetworkOnly: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.NetworkOnly),
+/* harmony export */   StaleWhileRevalidate: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.StaleWhileRevalidate),
+/* harmony export */   Strategy: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.Strategy),
+/* harmony export */   StrategyHandler: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.StrategyHandler)
+/* harmony export */ });
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/index.js");
+
+
+/***/ }),
+
+/***/ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/plugins/cacheOkAndOpaquePlugin.js":
+/*!***********************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/plugins/cacheOkAndOpaquePlugin.js ***!
+  \***********************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   cacheOkAndOpaquePlugin: () => (/* binding */ cacheOkAndOpaquePlugin)
 /* harmony export */ });
-/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_version.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/_version.js");
+/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_version.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/_version.js");
 /* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_version_js__WEBPACK_IMPORTED_MODULE_0__);
 /*
   Copyright 2018 Google LLC
@@ -1056,19 +1067,19 @@ const cacheOkAndOpaquePlugin = {
 
 /***/ }),
 
-/***/ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/utils/messages.js":
-/*!**************************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/utils/messages.js ***!
-  \**************************************************************************************************************************/
+/***/ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/utils/messages.js":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/utils/messages.js ***!
+  \*******************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   messages: () => (/* binding */ messages)
 /* harmony export */ });
-/* harmony import */ var workbox_core_private_logger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! workbox-core/_private/logger.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/logger.js");
-/* harmony import */ var workbox_core_private_getFriendlyURL_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! workbox-core/_private/getFriendlyURL.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-core@6.6.1/node_modules/workbox-core/_private/getFriendlyURL.js");
-/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_version.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/_version.js");
+/* harmony import */ var workbox_core_private_logger_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! workbox-core/_private/logger.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/logger.js");
+/* harmony import */ var workbox_core_private_getFriendlyURL_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! workbox-core/_private/getFriendlyURL.js */ "./node_modules/.pnpm/workbox-core@6.6.0/node_modules/workbox-core/_private/getFriendlyURL.js");
+/* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_version.js */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/_version.js");
 /* harmony import */ var _version_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_version_js__WEBPACK_IMPORTED_MODULE_2__);
 /*
   Copyright 2018 Google LLC
@@ -1094,45 +1105,35 @@ const messages = {
 
 /***/ }),
 
-/***/ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/index.mjs":
-/*!************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/index.mjs ***!
-  \************************************************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+/***/ "./src/sw.js":
+/*!*******************!*\
+  !*** ./src/sw.js ***!
+  \*******************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   NavigationRoute: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.NavigationRoute),
-/* harmony export */   RegExpRoute: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.RegExpRoute),
-/* harmony export */   Route: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.Route),
-/* harmony export */   Router: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.Router),
-/* harmony export */   registerRoute: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.registerRoute),
-/* harmony export */   setCatchHandler: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.setCatchHandler),
-/* harmony export */   setDefaultHandler: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.setDefaultHandler)
+/* harmony export */   "default": () => (/* binding */ swCustom)
 /* harmony export */ });
-/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-routing@6.6.1/node_modules/workbox-routing/index.js");
+/* harmony import */ var workbox_routing__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! workbox-routing */ "./node_modules/.pnpm/workbox-routing@6.6.0/node_modules/workbox-routing/index.mjs");
+/* harmony import */ var workbox_strategies__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! workbox-strategies */ "./node_modules/.pnpm/workbox-strategies@6.6.0/node_modules/workbox-strategies/index.mjs");
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
 
-/***/ }),
 
-/***/ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/index.mjs":
-/*!******************************************************************************************************************!*\
-  !*** ./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/index.mjs ***!
-  \******************************************************************************************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+function swCustom(params) {
+  if (params.debug) {
+    console.log('[Docusaurus-PWA][SW]: running swCustom code', params);
+  }
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   CacheFirst: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.CacheFirst),
-/* harmony export */   CacheOnly: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.CacheOnly),
-/* harmony export */   NetworkFirst: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.NetworkFirst),
-/* harmony export */   NetworkOnly: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.NetworkOnly),
-/* harmony export */   StaleWhileRevalidate: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.StaleWhileRevalidate),
-/* harmony export */   Strategy: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.Strategy),
-/* harmony export */   StrategyHandler: () => (/* reexport safe */ _index_js__WEBPACK_IMPORTED_MODULE_0__.StrategyHandler)
-/* harmony export */ });
-/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./node_modules/.pnpm/registry.npmjs.org+workbox-strategies@6.6.1/node_modules/workbox-strategies/index.js");
-
+  // Cache responses from external resources
+  (0,workbox_routing__WEBPACK_IMPORTED_MODULE_0__.registerRoute)(context => [/graph\.facebook\.com\/.*\/picture/, /netlify\.com\/img/, /avatars1\.githubusercontent/].some(regex => context.url.href.match(regex)), new workbox_strategies__WEBPACK_IMPORTED_MODULE_1__.StaleWhileRevalidate());
+}
 
 /***/ })
 
