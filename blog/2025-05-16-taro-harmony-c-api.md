@@ -15,13 +15,13 @@ description: '在过去的一年中，Taro 经历了显著的蜕变，Taro For H
 
 ![JD Harmony](https://img13.360buyimg.com/img/jfs/t1/235448/38/25755/201048/66d7d844F0baea79b/adfe087ce5348c30.png)
 
-今天，我们正式开源 Taro For Harmony C-API 版本，这次版本的发布，将带来更丰富的样式适配、更高效的渲染性能、更全面的组件支持，让开发者以 Web 范式的方式来开发出媲美原生鸿蒙性能的应用，为鸿蒙应用生态的丰富注入强大的动力。
+今天，我们正式开源 Taro on Harmony C-API 版本，这次版本的发布，将带来更丰富的样式适配、更高效的渲染性能、更全面的组件支持，让开发者以 Web 范式的方式来开发出媲美原生鸿蒙性能的应用，为鸿蒙应用生态的丰富注入强大的动力。
 
 ![JD Harmony APP](https://storage.360buyimg.com/aotu-team/zakary-blog/2025-05-16/pic_hd.jpg)
 
 ## 整体技术架构
 
-Taro For Harmony 技术方案支持开发者使用 React DSL 来开发纯血鸿蒙应用，整体架构可以简单分为三层：
+Taro on Harmony 技术方案支持开发者使用 React DSL 来开发纯血鸿蒙应用，整体架构可以简单分为三层：
 
 ![Taro Harmony React](https://storage.360buyimg.com/aotu-team/zakary-blog/2025-05-16/img3.png)
 
@@ -41,7 +41,7 @@ Taro For Harmony 技术方案支持开发者使用 React DSL 来开发纯血鸿�
 
 #### 常用组件和 API 支持
 
-在 C-API 版本的 Taro For Harmony 中，我们不仅完整支持了 React 18+，另外支持了 View、Text、Image、Video 等近 33 个 Taro 组件，对于常用的 API，如 getSystemInfo、getStorage 等也是在 C-API 版本中得到了完整的支持，而且针对逻辑较为复杂的 API 如：createSelectorQuery 以及 createIntersectionObserver，我们将这些 API 在 C++ 侧进行了重新的实现，大幅提升了他们的执行性能。
+在 C-API 版本的 Taro on Harmony 中，我们不仅完整支持了 React 18+，另外支持了 View、Text、Image、Video 等近 33 个 Taro 组件，对于常用的 API，如 getSystemInfo、getStorage 等也是在 C-API 版本中得到了完整的支持，而且针对逻辑较为复杂的 API 如：createSelectorQuery 以及 createIntersectionObserver，我们将这些 API 在 C++ 侧进行了重新的实现，大幅提升了他们的执行性能。
 
 #### 常用样式支持
 
@@ -104,7 +104,7 @@ import path from 'path'
 
 const config = {
   // ...
-  plugin: ['@tarojs/plugin-platform-harmony-cpp'],
+  plugins: ['@tarojs/plugin-platform-harmony-cpp'],
   harmony: {
     // 当前仅支持使用 Vite 编译鸿蒙应用
     compiler: 'vite',
@@ -138,8 +138,8 @@ export default {
 
 ## 总结与展望
 
-Taro For Harmony C-API 版本经历了京东鸿蒙 APP 的实践，综合性能、生态以及开发体验来讲，毫无疑问已经成为了开发鸿蒙应用的最佳框架选型之一。
+Taro on Harmony C-API 版本经历了京东鸿蒙 APP 的实践，综合性能、生态以及开发体验来讲，毫无疑问已经成为了开发鸿蒙应用的最佳框架选型之一。
 
-当下，我们也仍然在不断完善着鸿蒙的适配方案，基于当前的 Taro For Harmony C-API 方案，我们会进行多线程的架构升级以及 React 的 C++ 化，进一步提升 Taro 在鸿蒙端侧的性能，并极大地降低应用的丢帧率，整体进展也已经处于验证和测试阶段。
+当下，我们也仍然在不断完善着鸿蒙的适配方案，基于当前的 Taro on Harmony C-API 方案，我们会进行多线程的架构升级以及 React 的 C++ 化，进一步提升 Taro 在鸿蒙端侧的性能，并极大地降低应用的丢帧率，整体进展也已经处于验证和测试阶段。
 
-也欢迎大家一起参与 Taro For Harmony 的共建，你们的每一个建议，每一次提交，都是推进 Taro 继续往前走最大的动力。
+也欢迎大家一起参与 Taro on Harmony 的共建，你们的每一个建议，每一次提交，都是推进 Taro 继续往前走最大的动力。
