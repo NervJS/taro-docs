@@ -27,7 +27,7 @@ sidebar_label: canvasPutImageData
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
 | canvasId | `string` | 是 | 画布标识，传入 [canvas](/docs/components/canvas) 组件的 canvas-id 属性。 |
-| data | `Uint8ClampedArray` | 是 | 图像像素点数据，一维数组，每四项表示一个像素点的 rgba |
+| data | `Uint8ClampedArray<ArrayBufferLike>` | 是 | 图像像素点数据，一维数组，每四项表示一个像素点的 rgba |
 | height | `number` | 是 | 源图像数据矩形区域的高度 |
 | width | `number` | 是 | 源图像数据矩形区域的宽度 |
 | x | `number` | 是 | 源图像数据在目标画布中的位置偏移量（x 轴方向的偏移量） |

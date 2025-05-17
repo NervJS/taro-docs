@@ -536,6 +536,7 @@ const r = await c1.callContainer({
 
 | 参数 | 类型 | 必填 | 说明 |
 | --- | --- | :---: | --- |
+| config | `{ env: string; }` | 否 |  |
 | path | `string` | 是 | 服务路径 |
 | method | string or number or symbol | 否 | HTTP请求方法，默认 GET |
 | data | `P` | 否 | 请求数据 |
