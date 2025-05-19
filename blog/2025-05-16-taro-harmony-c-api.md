@@ -9,15 +9,17 @@ Taro 是由京东发起并维护的开放式跨端跨框架解决方案，支持
 
 ## Taro x 纯血鸿蒙
 
-在过去的一年中，Taro 经历了显著的蜕变，Taro For Harmony 方案完成从 ArkTS 方案到 C-API 方案的升级，成功实现了对纯血鸿蒙的完全适配，扩展了 Taro 的兼容平台家族，实现了对 H5、小程序、RN、原生鸿蒙多端的统一开发。
+在过去的一年中，Taro 经历了显著的蜕变，Taro on Harmony 方案完成从 ArkTS 方案到 C-API 方案的升级，成功实现了对纯血鸿蒙的完全适配，扩展了 Taro 的兼容平台家族，实现了对 H5、小程序、RN、原生鸿蒙多端的统一开发。
 
 ![Taro X HarmonyOS](https://s3.cn-north-1.jdcloud-oss.com/shendengbucket1/2024-09-26-21-35NaN6T9eOyiqx9Z6.png)
 
-去年 9 月，京东 APP 纯血鸿蒙 在鸿蒙应用商城正式上线，APP 中核心购物链路，如首页、搜索、商详、购物车、订单、结算和我京等页面，都是通过 Taro On Harmony C-API 版本进行开发，并且一上线就获得了华为的 S 级应用认证。
+去年 9 月，京东 APP 纯血鸿蒙 在鸿蒙应用商城正式上线，APP 中核心购物链路，如首页、搜索、商详、购物车、订单、结算和我京等页面，都是通过 Taro on Harmony C-API 版本进行开发，并且一上线就获得了华为的 S 级应用认证。
 
 ![JD Harmony](https://img13.360buyimg.com/img/jfs/t1/235448/38/25755/201048/66d7d844F0baea79b/adfe087ce5348c30.png)
 
 今天，我们正式开源 Taro on Harmony C-API 版本，这次版本的发布，将带来更丰富的样式适配、更高效的渲染性能、更全面的组件支持，让开发者以 Web 范式的方式来开发出媲美原生鸿蒙性能的应用，为鸿蒙应用生态的丰富注入强大的动力。
+
+对于开发者来说，Taro on Harmony 技术方案为开发者提供了显著优势：显著降低鸿蒙应用开发门槛，让开发者能够运用熟悉的 Web 技术栈快速构建纯血鸿蒙应用。同时，基于鸿蒙 CAPI 构建的高性能渲染管线，在保证开发高效率的同时实现了与原生应用媲美的性能表现。更重要的是，开发者可以充分复用现有研发生态，将存量 Taro 项目快速适配迁移至鸿蒙平台，大幅加速业务在鸿蒙生态的布局与上架进程。
 
 ![JD Harmony APP](https://storage.360buyimg.com/aotu-team/zakary-blog/2025-05-16/pic_hd.jpg)
 
