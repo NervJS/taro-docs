@@ -142,6 +142,10 @@ Taro 编译分为 `dev` 和 `build` 模式：
 #### 编译命令
 
 ```bash
+# pnpm
+$ pnpm dev:weapp
+$ pnpm build:weapp
+
 # yarn
 $ yarn dev:weapp
 $ yarn build:weapp
@@ -178,6 +182,10 @@ $ NODE_ENV=production taro build --type weapp --watch # Bash
 #### 编译命令
 
 ```bash
+# pnpm
+$ pnpm dev:swan
+$ pnpm build:swan
+
 # yarn
 $ yarn dev:swan
 $ yarn build:swan
@@ -214,6 +222,10 @@ $ NODE_ENV=production taro build --type swan --watch # Bash
 #### 编译命令
 
 ```bash
+# pnpm
+$ pnpm dev:alipay
+$ pnpm build:alipay
+
 # yarn
 $ yarn dev:alipay
 $ yarn build:alipay
@@ -250,6 +262,10 @@ $ NODE_ENV=production taro build --type alipay --watch # Bash
 #### 编译命令
 
 ```bash
+# pnpm
+$ pnpm dev:tt
+$ pnpm build:tt
+
 # yarn
 $ yarn dev:tt
 $ yarn build:tt
@@ -286,6 +302,10 @@ $ NODE_ENV=production taro build --type tt --watch # Bash
 #### 编译命令
 
 ```bash
+# pnpm
+$ pnpm dev:qq
+$ pnpm build:qq
+
 # yarn
 $ yarn dev:qq
 $ yarn build:qq
@@ -322,6 +342,10 @@ $ NODE_ENV=production taro build --type qq --watch # Bash
 #### 编译命令
 
 ```bash
+# pnpm
+$ pnpm dev:jd
+$ pnpm build:jd
+
 # yarn
 $ yarn dev:jd
 $ yarn build:jd
@@ -384,6 +408,10 @@ config = {
 #### 编译命令
 
 ```bash
+# pnpm
+$ pnpm dev:qywx
+$ pnpm build:qywx
+
 # yarn
 $ yarn dev:qywx
 $ yarn build:qywx
@@ -441,6 +469,10 @@ config = {
 #### 编译命令
 
 ```bash
+# pnpm
+$ pnpm dev:dd
+$ pnpm build:dd
+
 # yarn
 $ yarn dev:dd
 $ yarn build:dd
@@ -492,6 +524,10 @@ config = {
 #### 编译命令
 
 ```bash
+# pnpm
+$ pnpm dev:iot
+$ pnpm build:iot
+
 # yarn
 $ yarn dev:iot
 $ yarn build:iot
@@ -543,6 +579,10 @@ config = {
 #### 编译命令
 
 ```bash
+# pnpm
+$ pnpm dev:lark
+$ pnpm build:lark
+
 # yarn
 $ yarn dev:lark
 $ yarn build:lark
@@ -609,6 +649,10 @@ config = {
 #### 编译命令
 
 ```bash
+# pnpm
+$ pnpm dev:kwai
+$ pnpm build:kwai
+
 # yarn
 $ yarn dev:kwai
 $ yarn build:kwai
@@ -639,6 +683,10 @@ $ NODE_ENV=production taro build --type kwai --watch # Bash
 #### 编译命令
 
 ```bash
+# pnpm
+$ pnpm dev:h5
+$ pnpm build:h5
+
 # yarn
 $ yarn dev:h5
 $ yarn build:h5
@@ -749,6 +797,8 @@ $ taro update project [版本号]
 $ npm install -g @tarojs/cli@1.3.9
 # OR 使用 yarn 安装 CLI
 $ yarn global add @tarojs/cli@1.3.9
+# OR 使用 pnpm 安装 CLI
+$ pnpm add -g @tarojs/cli@1.3.9
 # OR 安装了 cnpm，使用 cnpm 安装 CLI
 $ cnpm install -g @tarojs/cli@1.3.9
 ```
