@@ -2,8 +2,10 @@
 title: Taro on Harmony C-API 版本正式开源
 authors: [xuanzebin, TJ, azu, atao]
 tags: [v4, harmony]
-description: '在过去的一年中，Taro 经历了显著的蜕变，Taro For Harmony 方案完成从 ArkTS 方案到 C-API 方案的升级，成功实现了对纯血鸿蒙的完全适配，扩展了 Taro 的兼容平台家族，实现了对 H5、小程序、RN、原生鸿蒙多端的统一开发。'
+description: 'Taro 是由京东发起并维护的开放式跨端跨框架解决方案，支持以 Web 的开发范式来实现小程序、H5、原生 APP 的跨端统一开发，从 18 年开源至今，在 GitHub 已累计获得 36,000+ Stars。'
 ---
+
+Taro 是由京东发起并维护的开放式跨端跨框架解决方案，支持以 Web 的开发范式来实现小程序、H5、原生 APP 的跨端统一开发，从 18 年开源至今，在 GitHub 已累计获得 36,000+ Stars。
 
 ## Taro x 纯血鸿蒙
 
@@ -84,6 +86,12 @@ Taro 的组件和 API 是以小程序作为基准来进行设计的，因此在�
 ![Taro Harmony CAPI Hybrid](https://storage.360buyimg.com/aotu-team/zakary-blog/2025-05-16/img9.png)
 
 ## 使用教程
+
+## 项目开源地址
+
+Taro 本地开源地址：https://github.com/NervJS/taro
+
+Taro 鸿蒙 C-API 开源地址：https://github.com/NervJS/taro-harmony-capi-library
 
 ### 安装和使用
 
