@@ -13,8 +13,8 @@ sidebar_label: VKCamera
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| viewMatrix | `Float32Array` | 视图矩阵 |
-| intrinsics | `Float32Array` | 相机内参，只有 v2 版本支持 |
+| viewMatrix | `Float32Array<ArrayBufferLike>` | 视图矩阵 |
+| intrinsics | `Float32Array<ArrayBufferLike>` | 相机内参，只有 v2 版本支持 |
 
 ### getProjectionMatrix
 
@@ -25,7 +25,7 @@ sidebar_label: VKCamera
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKCamera.getProjectionMatrix.html)
 
 ```tsx
-(near: number, far: number) => Float32Array
+(near: number, far: number) => Float32Array<ArrayBufferLike>
 ```
 
 | 参数 | 类型 | 说明 |
