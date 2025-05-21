@@ -49,7 +49,7 @@ sidebar_label: request
 | referrerStrategy | `keyof ReferrerStrategy` | `"querystring"` | 否 | referer 策略，用于控制当前请求 header 对象中 referer 字段格式。该参数默认值可通过 app.json 中的配置进行修改。<br />API 支持度: alipay 支付宝: 10.3.50+ APPX: 2.8.7 开发者工具: 3.5.1<br />[参考地址](https://opendocs.alipay.com/mini/api/owycmh#referrerStrategy%20%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E) |
 | success | `(result: SuccessCallbackResult<T>) => void` |  | 否 | 接口调用成功的回调函数 |
 | fail | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用失败的回调函数 |
-| complete | `(res: Partial<SuccessCallbackResult> & TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
+| complete | `(res: any) => void` |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
 | jsonp | string or boolean | `false` | 否 | 设置是否使用 jsonp 方式获取数据<br />API 支持度: h5 |
 | jsonpCache | `RequestCache` |  | 否 | 设置 jsonp 请求 url 是否需要被缓存<br />API 支持度: h5 |
 | mode | `keyof CorsMode` | `"same-origin"` | 否 | 设置是否允许跨域请求<br />API 支持度: h5 |
