@@ -658,3 +658,35 @@ export default {
   animation: false,
 }
 ```
+
+## ASCF 元服务支持的属性
+
+### ASCF支持的全局参数
+
+这些配置需在项目的入口配置文件（如 app.config.js）中声明，以实现对ASCF元服务的适配。
+
+| 属性          | 类型    | 必填 | 默认值 | 说明                               |
+| :------------ | :------ | :--- | :----- | :--------------------------------- |
+| ascfAppId     | String  | 是   | 无     | ASCF元服务的唯一应用标识，需在ASCF开发者平台申请后填写。     |
+| serviceType   | String  | 是   | 无     | 元服务类型，可选值：miniprogram（小程序式元服务）、webapp（轻应用式元服务）。                   |
+| enableAuth    | Boolean | 否   | false  | 是否开启ASCF的全局用户鉴权功能，需配合ASCF的API使用。 |
+| apiBaseUrl    | String  | 否   | 无     | ASCF后端API的统一请求地址，用于元服务与服务器的通信。 |
+
+#### 代码示例
+
+```js title="app.config.js"
+export default {
+  pages: ['pages/index/index'],
+  window: {
+    navigationBarTitleText: 'Taro Demo',
+  },
+
+  ascf: {
+    ascfAppId: 'ASCF_123456',      
+    serviceType: 'miniprogram',    
+    enableAuth: true,              
+    apiBaseUrl: 'https://api.ascf.com', 
+  },
+};
+```
+
