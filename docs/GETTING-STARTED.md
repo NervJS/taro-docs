@@ -789,6 +789,9 @@ $ npx taro build --type ascf
 $ set NODE_ENV=production && taro build --type ascf --watch # CMD
 $ NODE_ENV=production taro build --type ascf --watch # Bash
 
+
+```
+
 开发者工具
 
 工具准备：
@@ -877,3 +880,4 @@ $ pnpm add -g @tarojs/cli@1.3.9
 # OR 安装了 cnpm，使用 cnpm 安装 CLI
 $ cnpm install -g @tarojs/cli@1.3.9
 ```
+
