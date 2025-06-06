@@ -789,6 +789,7 @@ $ npx taro build --type ascf
 $ set NODE_ENV=production && taro build --type ascf --watch # CMD
 $ NODE_ENV=production taro build --type ascf --watch # Bash
 
+
 ```
 
 开发者工具
@@ -828,7 +829,6 @@ manifest.json（元服务描述文件）
 在鸿蒙开发者工具中运行项目，确保：
 页面渲染正常，无白屏或报错。
 声明的权限（如定位、相机）可正常触发弹窗申请。
-
 
 
 ## 渐进式入门教程
