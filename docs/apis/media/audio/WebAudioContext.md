@@ -187,13 +187,13 @@ const waveNode = audioContext.createPeriodicWave(real, imag, {disableNormalizati
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.createPeriodicWave.html)
 
 ```tsx
-(real: Float32Array, imag: Float32Array, constraints: Constraints) => PeriodicWave
+(real: Float32Array<ArrayBufferLike>, imag: Float32Array<ArrayBufferLike>, constraints: Constraints) => PeriodicWave
 ```
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| real | `Float32Array` | 一组余弦项(传统上是A项) |
-| imag | `Float32Array` | 一组余弦项(传统上是A项) |
+| real | `Float32Array<ArrayBufferLike>` | 一组余弦项(传统上是A项) |
+| imag | `Float32Array<ArrayBufferLike>` | 一组余弦项(传统上是A项) |
 | constraints | `Constraints` | 一个字典对象，它指定是否应该禁用规范化(默认启用规范化) |
 
 ### createBiquadFilter
@@ -373,8 +373,14 @@ const myArrayBuffer = audioCtx.createBuffer(channels, frameCount, audioCtx.sampl
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/WebAudioContext.decodeAudioData.html)
 
 ```tsx
-() => AudioBuffer
+(audioData: ArrayBuffer, successCallback: (buffer: AudioBuffer) => void, errorCallback: (error: any) => void) => Promise<AudioBuffer>
 ```
+
+| 参数 | 类型 |
+| --- | --- |
+| audioData | `ArrayBuffer` |
+| successCallback | `(buffer: AudioBuffer) => void` |
+| errorCallback | `(error: any) => void` |
 
 #### 示例代码
 
