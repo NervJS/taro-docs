@@ -618,7 +618,7 @@ hitTest 检测结果
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| transform | `Float32Array` | 包含位置、旋转、放缩信息的矩阵，以列为主序 |
+| transform | `Float32Array<ArrayBufferLike>` | 包含位置、旋转、放缩信息的矩阵，以列为主序 |
 
 ### IStartStatus
 

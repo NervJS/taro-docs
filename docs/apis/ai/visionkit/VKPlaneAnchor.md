@@ -15,7 +15,7 @@ sidebar_label: VKPlaneAnchor
 | --- | --- | --- |
 | id | `number` | 唯一标识 |
 | type | `0` | 类型 |
-| transform | `Float32Array` | 包含位置、旋转、放缩信息的矩阵，以列为主序 |
+| transform | `Float32Array<ArrayBufferLike>` | 包含位置、旋转、放缩信息的矩阵，以列为主序 |
 | size | `ISize` | 尺寸 |
 | alignment | `number` | 方向 |
 
