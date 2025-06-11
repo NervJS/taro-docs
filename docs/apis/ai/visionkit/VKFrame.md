@@ -60,7 +60,7 @@ vision kit 会话对象
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/ai/visionkit/VKFrame.getDisplayTransform.html)
 
 ```tsx
-() => Float32Array
+() => Float32Array<ArrayBufferLike>
 ```
 
 ## 参数

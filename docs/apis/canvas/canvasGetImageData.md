@@ -39,7 +39,7 @@ sidebar_label: canvasGetImageData
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| data | `Uint8ClampedArray` | 图像像素点数据，一维数组，每四项表示一个像素点的 rgba |
+| data | `Uint8ClampedArray<ArrayBufferLike>` | 图像像素点数据，一维数组，每四项表示一个像素点的 rgba |
 | height | `number` | 图像数据矩形的高度 |
 | width | `number` | 图像数据矩形的宽度 |
 | errMsg | `string` | 调用结果 |
