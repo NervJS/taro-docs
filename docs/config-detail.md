@@ -1548,6 +1548,15 @@ customRoutes: {
 
 原路由失效会导致开发环境中，首次打开页面错误；如果自定义路由配置为 `'/'` 则会导致跳转错误，可以通过配置 [`entryPagePath`](/docs/app-config#entrypagepath) 修复该问题，3.5.2+ 版本可忽略该问题。
 :::
+#### h5.router.enhanceAnimation
+
+`boolean`
+
+默认值：`false`。
+
+页面过渡动画增强。
+
+浏览器不支持 `:has()` 选择器时，设置 `false` 避免页面白屏。如支持，可设置 `true`，增强过渡动画效果。
 
 ### h5.enableSourceMap
 
