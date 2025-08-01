@@ -88,6 +88,7 @@ class App extends Component {
 | placeholderStyle | `string` |  | 否 | 指定 placeholder 的样式 |
 | placeholderClass | `string` | `"input-placeholder"` | 否 | 指定 placeholder 的样式类 |
 | placeholderTextColor | `string` |  | 否 | 指定 placeholder 的文本颜色 |
+| readonly | `boolean` | `false` | 否 | 是否只读 |
 | disabled | `boolean` | `false` | 否 | 是否禁用 |
 | maxlength | `number` | `140` | 否 | 最大输入长度，设置为 -1 的时候不限制最大长度 |
 | cursorSpacing | `number` | `0` | 否 | 指定光标与键盘的距离，单位 px 。取 input 距离底部的距离和 cursor-spacing 指定的距离的最小值作为光标与键盘的距离 |
@@ -139,6 +140,7 @@ class App extends Component {
 | InputProps.placeholderStyle | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |
 | InputProps.placeholderClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
 | InputProps.placeholderTextColor |  |  |  |  |  |  |  | ✔️ | ✔️ |  |
+| InputProps.readonly |  |  |  |  |  |  | ✔️ |  |  |  |
 | InputProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
 | InputProps.maxlength | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
 | InputProps.cursorSpacing | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
