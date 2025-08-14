@@ -79,7 +79,7 @@ Prerender 的所有配置选项都是选填的，就多数情况而言只需要�
 和所有技术一样，Prerender 并不是银弹，使用 Prerender 之后将会有以下的 trade-offs 或限制：
 
 - 页面打包的体积会增加。Prerender 本质是一种以空间换时间的技术，体积增加的多寡取决于预渲染 wxml 的数量。
-- 在 Taro 运行时把真实 DOM 和事件挂载之前（这个过程在服务端渲染被称之为 `hydrate`），预渲染的页面不会相应任何操作。
+- 在 Taro 运行时把真实 DOM 和事件挂载之前（这个过程在服务端渲染被称之为 `hydrate`），预渲染的页面不会响应任何操作。
 - Prerender 不会执行例如 `componentDidMount()`(React)/`ready()`(Vue) 这样的生命周期，这点和服务端渲染一致。如果有处理数据的需求，可以把生命周期提前到 `static getDerivedStateFromProps()`(React) 或 `created()`(Vue)。
 
 ## 进阶说明和使用
