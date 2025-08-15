@@ -757,7 +757,6 @@ $ npx taro build --type harmony-hybrid
 
 若需将 Taro 代码编译为 ASCF 元服务，需在编译命令中指定平台参数为 `ascf`，并确保满足以下条件：  
 - 代码中需包含 ASCF 元服务编译条件：`"ascf"`（需在项目配置中声明）。  
-- 配置文件 `project.ascf.json` 需存在于项目根目录。  
 
 示例命令：  
 ```bash
@@ -799,16 +798,6 @@ $ NODE_ENV=production taro build --type ascf --watch # Bash
 导入项目：
 打开鸿蒙开发者工具，选择 导入项目。
 选择项目根目录下的 dist/ascf 目录（需确保已通过编译命令生成）。
-配置校验：
-确认项目中存在 project.ascf.json 文件（元服务专属配置）。
-检查配置文件字段是否符合规范（如 minPlatformVersion、permissions 等）。
-注意事项
-
-在开发者工具中需设置：
-
-关闭 ES6 转 ES5 功能（开启可能导致语法错误）。
-关闭 上传代码时样式自动补全（开启可能引发样式异常）。
-关闭 代码压缩上传（开启可能影响调试信息）。
 
 格式说明
 
@@ -817,19 +806,15 @@ $ NODE_ENV=production taro build --type ascf --watch # Bash
 支持 dev:ascf（开发模式）和 build:ascf（生产模式）。
 开发者工具：
 明确指向编译后的 dist/ascf 目录，与微信小程序的 dist 目录逻辑一致。
-强调 project.ascf.json 为必需配置文件（类比 project.swan.json）。
-注意事项：
-与其他小程序保持完全一致的关闭选项，避免开发者混淆。
 
 效果验证
 
 执行编译命令后，检查 dist/ascf 目录是否包含以下文件：
-manifest.json（元服务描述文件）
+app.json（元服务描述文件）
 页面代码及资源文件
-在鸿蒙开发者工具中运行项目，确保：
-页面渲染正常，无白屏或报错。
-声明的权限（如定位、相机）可正常触发弹窗申请。
 
+参考鸿蒙元服务ASCF项目[开发环境搭建指南](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/ascf-development-process) 搭建好环境后，创建ASCF元服务项目，将dist/ascf替换ascf/ascf_src目录内容，然后调试运行。
+如果运行有异常，可以参考[调试指南](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/debug-ascf-code)解决。
 
 ## 渐进式入门教程
 
