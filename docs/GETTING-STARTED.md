@@ -794,27 +794,18 @@ $ NODE_ENV=production taro build --type ascf --watch # Bash
 开发者工具
 
 工具准备：
-下载并安装 鸿蒙开发者工具，确保已配置ASCF元服务开发环境。
-导入项目：
-打开鸿蒙开发者工具，选择 导入项目。
-选择项目根目录下的 dist/ascf 目录（需确保已通过编译命令生成）。
+下载并安装 鸿蒙元服务ASCF项目[开发环境搭建指南](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/ascf-development-process)，确保已配置ASCF元服务开发环境。
 
-格式说明
+在taro项目根目录下创建ascf-project目录，并使用工具在该目录下创建ASCF元服务项目。
+
+修改taro项目下config/index.{js,ts}配置文件，编译ASCF项目情况下将 outputRoot: 'dist/ascf' 修改为 outputRoot: process.env.TARO_ENV === 'ascf' ? 'ascf-project/ascf/ascf_src' : 'dist',
 
 编译命令：
 使用 --type ascf 指定平台类型，与其他小程序（如 --type weapp）格式统一。
 支持 dev:ascf（开发模式）和 build:ascf（生产模式）。
-开发者工具：
-明确指向编译后的 dist/ascf 目录，与微信小程序的 dist 目录逻辑一致。
 
-效果验证
-
-执行编译命令后，检查 dist/ascf 目录是否包含以下文件：
-app.json（元服务描述文件）
-页面代码及资源文件
-
-参考鸿蒙元服务ASCF项目[开发环境搭建指南](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/ascf-development-process) 搭建好环境后，创建ASCF元服务项目，将dist/ascf替换ascf/ascf_src目录内容，然后调试运行。
-如果运行有异常，可以参考[调试指南](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/debug-ascf-code)解决。
+调试运行：
+编译后文件在ascf-project/ascf/ascf_src目录下。参考鸿蒙元服务ASCF项目[开发流程](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/ascf-development-process) 调试运行ascf-project项目。如果运行有异常，可以参考[调试指南](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/debug-ascf-code)解决。
 
 ## 渐进式入门教程
 
