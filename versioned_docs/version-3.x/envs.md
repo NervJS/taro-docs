@@ -12,7 +12,7 @@ Taro 在编译时提供了一些内置的环境变量来帮助用户做一些特
 
 用于判断当前的编译平台类型。
 
-取值：`weapp` / `swan` / `alipay` / `tt` / `qq` / `jd` / `h5` / `rn`
+取值：`weapp` / `swan` / `alipay` / `tt` / `qq` / `jd` / `h5` / `rn` / `ascf`
 
 可以通过这个变量来区分不同环境，从而使用不同的逻辑。在编译阶段，**会移除不属于当前编译类型的代码，只保留当前编译类型下的代码**，例如：
 
@@ -73,22 +73,18 @@ if (TARO_ENV === 'weapp') {
 
 ### 组件文件中跨平台支持
 
-为了方便大家书写样式跨端的组件代码，目前在.vue文件template模板内容中支持条件编译的特性。
+为了方便大家书写样式跨端的组件代码，目前在.vue 文件 template 模板内容中支持条件编译的特性。
 
 指定平台保留样式：
 
 ```vue
-/*  #ifdef  %PLATFORM%  */
-模板代码
-/*  #endif  */
+/* #ifdef %PLATFORM% */ 模板代码 /* #endif */
 ```
 
 指定平台剔除样式：
 
 ```vue
-/*  #ifndef  %PLATFORM%  */
-模板代码
-/*  #endif  */
+/* #ifndef %PLATFORM% */ 模板代码 /* #endif */
 ```
 
 其中 `PLATFORM` 的取值与 `process.env.TARO_ENV` 保持一致
@@ -96,9 +92,7 @@ if (TARO_ENV === 'weapp') {
 例如，希望某段模板内容只在 **微信小程序中** 生效，可以如下写法
 
 ```vue
-/*  #ifdef weapp  */
-模板代码
-/*  #endif  */
+/* #ifdef weapp */ 模板代码 /* #endif */
 ```
 
 如果是多个平台，之间可以使用空格隔开。
