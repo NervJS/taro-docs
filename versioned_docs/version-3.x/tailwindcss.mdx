@@ -11,17 +11,25 @@ import TabItem from '@theme/TabItem';
 
 所以，熟悉 `Tailwind CSS` 之后，可以大幅度的加快我们应用的开发速度，提升代码的可维护性，接下来让我们看看如何在 `tarojs` 应用中使用它吧。
 
-## 1. 安装与配置 tailwindcss
+:::info
+本篇文章是 `tailwindcss@3.x` 集成 `tarojs` 的教程
 
-首先我们要把 `tailwindcss` 安装和配置好。这里我们参考 `tailwindcss` 官网中，`postcss` 的使用方式进行安装 ([参考链接](https://tailwindcss.com/docs/installation/using-postcss))：
+由于目前小程序兼容的 `CSS` 版本较浏览器低，所以推荐使用 `tailwindcss@3.x` 来生成更低版本的 `CSS` 代码，来兼容更多的移动端设备
 
-### 1. 使用包管理器安装 `tailwindcss`
+如果你需要使用 `tailwindcss@4.x` 或者查看最新版本的文档，请访问 [`weapp-tailwindcss` 官方网站](https://tw.icebreaker.top/)
+:::
+
+## 1. 安装与配置 tailwindcss@3
+
+首先我们要把 `tailwindcss` 安装和配置好。这里我们参考 `tailwindcss` 官网中，`postcss` 的使用方式进行安装 ([参考链接](https://v3.tailwindcss.com/docs/installation/using-postcss))
+
+### 1. 使用包管理器安装 `tailwindcss@3`
 
 <Tabs>
   <TabItem label="npm" value="npm">
 
 ```bash
-npm i -D tailwindcss postcss autoprefixer
+npm i -D tailwindcss@3 postcss autoprefixer
 # 初始化 tailwind.config.js 文件
 npx tailwindcss init
 ```
@@ -30,7 +38,7 @@ npx tailwindcss init
   <TabItem label="yarn" value="yarn">
 
 ```bash
-yarn add -D tailwindcss postcss autoprefixer
+yarn add -D tailwindcss@3 postcss autoprefixer
 # 初始化 tailwind.config.js 文件
 npx tailwindcss init
 ```
@@ -39,7 +47,7 @@ npx tailwindcss init
   <TabItem label="pnpm" value="pnpm">
 
 ```bash
-pnpm i -D tailwindcss postcss autoprefixer
+pnpm i -D tailwindcss@3 postcss autoprefixer
 # 初始化 tailwind.config.js 文件
 npx tailwindcss init
 ```
@@ -65,7 +73,7 @@ module.exports = {
 
 ### 3. 配置 `tailwind.config.js`
 
-`tailwind.config.js` 是 `tailwindcss` 的配置文件，我们可以在里面配置 `tailwindcss` 的各种行为。[全量配置项](https://tailwindcss.com/docs/configuration)
+`tailwind.config.js` 是 `tailwindcss` 的配置文件，我们可以在里面配置 `tailwindcss` 的各种行为。[v3全量配置项](https://v3.tailwindcss.com/docs/configuration)
 
 ```js title="tailwind.config.js"
 /** @type {import('tailwindcss').Config} */
@@ -87,10 +95,17 @@ module.exports = {
 在你的项目入口文件里引入 `tailwindcss`，比如 `taro app` 的 `app.scss`
 
 ```scss title="app.scss"
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-// 不使用 sass 就这么写
+// sass 版本1.25+ 使用 @use
+@use 'tailwindcss/base' as *;
+@use 'tailwindcss/components' as *;
+@use 'tailwindcss/utilities' as *;
+
+// 老版本的 scss
+// @import 'tailwindcss/base';
+// @import 'tailwindcss/components';
+// @import 'tailwindcss/utilities';
+
+// 通用写法
 // @tailwind base;
 // @tailwind components;
 // @tailwind utilities;
@@ -141,15 +156,15 @@ pnpm i -D weapp-tailwindcss
 }
 ```
 
-添加这段脚本的用途是，每次安装包后，都会自动执行一遍 `weapp-tw patch` 这个脚本，给本地的 `tailwindcss` 打上小程序支持补丁。
+添加这段脚本的用途是，每次安装包后，都会自动执行一遍 `weapp-tw patch` 这个脚本，给本地的 `tailwindcss` 打上小程序支持补丁。[详细作用](https://tw.icebreaker.top/docs/quick-start/this-plugin)
 
 ### 配置你的 `tarojs` 应用
 
 > 这个配置同时支持 `tarojs` 的 `react` / `preact` / `vue2` / `vue3` 等等所有框架
 
-在项目的配置文件 `config/index.js` 中注册:
+在项目的配置文件 `config/index.ts` 中注册:
 
-```js title="config/index.js"
+```js title="config/index.ts"
 const { UnifiedWebpackPluginV5 } = require('weapp-tailwindcss/webpack')
 // 文件是 ts 则为
 // import { UnifiedWebpackPluginV5 } from 'weapp-tailwindcss/webpack'
@@ -162,7 +177,6 @@ const { UnifiedWebpackPluginV5 } = require('weapp-tailwindcss/webpack')
           install: {
             plugin: UnifiedWebpackPluginV5,
             args: [{
-              appType: 'taro',
               // 下面个配置，会开启 rem -> rpx 的转化
               rem2rpx: true
             }]
