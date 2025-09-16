@@ -705,6 +705,64 @@ $ npx taro build --type harmony-hybrid
 
 - 把 Taro 项目目录下的 `dist` 目录的编译产物复制到鸿蒙应用的 `src/main/resources/rawfile` 目录下，编译运行鸿蒙应用进行开发调试。
 
+### ASCF 元服务
+
+> Taro v3.6.38+ 开始支持
+
+若需将 Taro 代码编译为 ASCF 元服务，需在编译命令中指定平台参数为 `ascf`，并确保满足以下条件：
+
+- 代码中需包含 ASCF 元服务编译条件：`"ascf"`（需在项目配置中声明）。
+
+示例命令：
+
+```bash
+taro build --type ascf
+
+#### 编译命令
+
+# pnpm
+$ pnpm dev:ascf
+$ pnpm build:ascf
+
+# yarn
+$ yarn dev:ascf
+$ yarn build:ascf
+
+# npm script
+$ npm run dev:ascf
+$ npm run build:ascf
+
+# 仅限全局安装
+$ taro build --type ascf --watch
+$ taro build --type ascf
+
+# npx 用户也可以使用
+$ npx taro build --type ascf --watch
+$ npx taro build --type ascf
+
+# watch 同时开启压缩
+$ set NODE_ENV=production && taro build --type ascf --watch # CMD
+$ NODE_ENV=production taro build --type ascf --watch # Bash
+
+
+```
+
+开发者工具
+
+工具准备：
+下载并安装 鸿蒙元服务 ASCF 项目[开发环境搭建指南](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/ascf-development-process)，确保已配置 ASCF 元服务开发环境。
+
+在 taro 项目根目录下创建 ascf-project 目录，并使用工具在该目录下创建 ASCF 元服务项目。
+
+修改 taro 项目下 config/index.{js,ts}配置文件，编译 ASCF 项目情况下将 outputRoot: 'dist/ascf' 修改为 outputRoot: process.env.TARO_ENV === 'ascf' ? 'ascf-project/ascf/ascf_src' : 'dist'。
+
+编译命令：
+使用 --type ascf 指定平台类型，与其他小程序（如 --type weapp）格式统一。
+支持 dev:ascf（开发模式）和 build:ascf（生产模式）。
+
+调试运行：
+编译后文件在 ascf-project/ascf/ascf_src 目录下。参考鸿蒙元服务 ASCF 项目[开发流程](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/ascf-development-process) 调试运行 ascf-project 项目。如果运行有异常，可以参考[调试指南](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/debug-ascf-code)解决。
+
 ## 渐进式入门教程
 
 我们提供了一个由浅入深的实战教程，请参考[《教程》](./guide)。
