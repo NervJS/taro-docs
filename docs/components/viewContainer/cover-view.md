@@ -119,6 +119,8 @@ class App extends Components {
 | onTouchMove | `CommonEventFunction` |  | 否 | 触摸后移动。 |
 | onTouchEnd | `CommonEventFunction` |  | 否 | 触摸动作结束。 |
 | onTouchCancel | `CommonEventFunction` |  | 否 | 触摸动作被打断，如来电提醒、弹窗。 |
+| markerId | `number` |  | 否 | 标记点 ID<br />description: 用于地图组件的标记点识别<br />example: <CoverView markerId={123} /> |
+| slot | `string` |  | 否 | 插槽名称<br />description: 用于组件间的内容分发<br />example: <CoverView slot="header" /> |
 
 ### API 支持度
 
@@ -150,3 +152,5 @@ class App extends Components {
 | CoverViewProps.onTouchMove |  |  | ✔️ |  |  |  |  |  |
 | CoverViewProps.onTouchEnd |  |  | ✔️ |  |  |  |  |  |
 | CoverViewProps.onTouchCancel |  |  | ✔️ |  |  |  |  |  |
+| CoverViewProps.markerId | ✔️ |  |  |  |  |  |  |  |
+| CoverViewProps.slot | ✔️ |  |  |  |  |  |  |  |
