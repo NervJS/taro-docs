@@ -713,12 +713,11 @@ $ npx taro build --type harmony-hybrid
 
 - 代码中需包含 ASCF 元服务编译条件：`"ascf"`（需在项目配置中声明）。
 
-示例命令：
+
+#### 编译命令
 
 ```bash
 taro build --type ascf
-
-#### 编译命令
 
 # pnpm
 $ pnpm dev:ascf
@@ -744,10 +743,9 @@ $ npx taro build --type ascf
 $ set NODE_ENV=production && taro build --type ascf --watch # CMD
 $ NODE_ENV=production taro build --type ascf --watch # Bash
 
-
 ```
 
-开发者工具
+#### 开发者工具
 
 工具准备：
 下载并安装 鸿蒙元服务 ASCF 项目[开发环境搭建指南](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/ascf-development-process)，确保已配置 ASCF 元服务开发环境。
@@ -762,6 +760,41 @@ $ NODE_ENV=production taro build --type ascf --watch # Bash
 
 调试运行：
 编译后文件在 ascf-project/ascf/ascf_src 目录下。参考鸿蒙元服务 ASCF 项目[开发流程](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/ascf-development-process) 调试运行 ascf-project 项目。如果运行有异常，可以参考[调试指南](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/debug-ascf-code)解决。
+
+#### 适配问题
+
+- ASCF的app.json配置还不支持theme变量，需要适配修改为具体的值：
+```javascript
+{
+  window: {
+    backgroundColorTop: '@bgColorTop',
+    backgroundColorBottom: '@bgColorBottom',
+    backgroundTextStyle: '@bgTxtStyle',
+    navigationBarBackgroundColor: '@navBgColor',
+    navigationBarTitleText: 'ascf',
+    navigationBarTextStyle: '@navTxtStyle'
+  }
+}
+```
+改为：
+
+```javascript
+const theme = require('./theme.json');
+const $t = (key) => process.env.TARO_ENV === 'ascf' ? theme.light[key.replace('@', '')] : key;
+
+defineAppConfig({
+  {
+    window: {
+      backgroundColorTop: $t('@bgColorTop'),
+      backgroundColorBottom: $t('@bgColorBottom'),
+      backgroundTextStyle: $t('@bgTxtStyle'),
+      navigationBarBackgroundColor: $t('@navBgColor'),
+      navigationBarTitleText: 'ascf',
+      navigationBarTextStyle: $t('@navTxtStyle')
+    }
+  }
+})
+```
 
 ## 渐进式入门教程
 
