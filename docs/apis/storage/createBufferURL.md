@@ -12,7 +12,7 @@ sidebar_label: createBufferURL
 ## 类型
 
 ```tsx
-(buffer: TypedArray | ArrayBuffer) => void
+(buffer: TypedArray | ArrayBuffer) => string
 ```
 
 ## 参数

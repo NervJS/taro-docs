@@ -27,7 +27,7 @@ AudioBuffer 接口表示存在内存里的一段短小的音频资源，利用 [
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioBuffer.getChannelData.html)
 
 ```tsx
-(channel: number) => Float32Array
+(channel: number) => Float32Array<ArrayBufferLike>
 ```
 
 | 参数 | 类型 |
@@ -86,12 +86,12 @@ for (let channel = 0; channel < channels; channel++) {
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/media/audio/AudioBuffer.copyToChannel.html)
 
 ```tsx
-(source: Float32Array, channelNumber: number, startInChannel: number) => void
+(source: Float32Array<ArrayBufferLike>, channelNumber: number, startInChannel: number) => void
 ```
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
-| source | `Float32Array` | 需要复制的源数组 |
+| source | `Float32Array<ArrayBufferLike>` | 需要复制的源数组 |
 | channelNumber | `number` | 需要复制到的目的通道号 |
 | startInChannel | `number` | 复制偏移数据量 |
 
