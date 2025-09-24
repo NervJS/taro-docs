@@ -26,4 +26,4 @@ sidebar_label: getCurrentInstance
 | onHide | `string` | 是 |  |
 | onShow | `string` | 是 |  |
 | preloadData | `Record<any, any>` | 否 |  |
-| rnNavigationRef | `React.RefObject<any>` | 否 | RN 私有对象navigationRef，用于使用底层接口控制路由 |
+| rnNavigationRef | `React.RefObject<any>` | 否 | RN 私有对象 navigationRef，用于使用底层接口控制路由 |
