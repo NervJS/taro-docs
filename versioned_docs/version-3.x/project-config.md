@@ -11,6 +11,7 @@ title: 项目配置
 - 支付宝小程序，[mini.project.json](https://opendocs.alipay.com/mini/framework/project)
 - 京东小程序，暂无发现
 - 飞书小程序，[project.config.json](https://open.feishu.cn/document/uYjL24iN/uEzMzUjLxMzM14SMzMTN/gadget-project-configuration?from=taro)
+- ASCF元服务，[ascf.config.json](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/project-json-config)
 
 为了能够适配不同小程序平台的配置文件不同的情况，Taro 支持为各个小程序平台添加各自的项目配置文件。
 
@@ -24,6 +25,7 @@ title: 项目配置
 | QQ 小程序    | project.qq.json     |
 | 支付宝小程序 | project.alipay.json |
 | 飞书小程序   | project.lark.json   |
+| ASCF元服务  | ascf.config.json    |
 
 :::caution 注意
 飞书小程序从[插件](https://www.npmjs.com/package/@tarojs/plugin-platform-lark)1.0.2 版本开始，配置文件修改为`project.lark.json`，之前版本为`project.tt.json`。
