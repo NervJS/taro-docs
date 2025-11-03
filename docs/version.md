@@ -2,7 +2,7 @@
 title: Taro 版本说明
 ---
 
-当前 Taro 已进入 3.x 时代，相较于 Taro 1/2 编译时架构，Taro 3 采用了重运行时的架构，让开发者可以获得完整的 React / Vue 等框架的开发体验。具体原理请参考 [《小程序跨框架开发的探索与实践》](https://mp.weixin.qq.com/s?__biz=MzU3NDkzMTI3MA==&mid=2247483770&idx=1&sn=ba2cdea5256e1c4e7bb513aa4c837834)。
+当前 Taro 已进入 4.x 时代，相较于 Taro 1/2 编译时架构，Taro 3 采用了重运行时的架构，让开发者可以获得完整的 React / Vue 等框架的开发体验。具体原理请参考 [《小程序跨框架开发的探索与实践》](https://mp.weixin.qq.com/s?__biz=MzU3NDkzMTI3MA==&mid=2247483770&idx=1&sn=ba2cdea5256e1c4e7bb513aa4c837834)。
 
 ### 最新版本
 
@@ -13,6 +13,18 @@ title: Taro 版本说明
 ```bash
 npm info @tarojs/cli
 ```
+
+### Taro 3.6
+
+Taro 3.6 的主要改动是增强跨端能力支持
+
+详情请参考 [《Taro v3.6 Reach 正式发布》](/blog/2023-02-01-Taro-3.6)。
+
+### Taro 3.5
+
+Taro 3.5 的主要改动是支持使用 Webpack5 进行编译提速，支持 pnpm 包管理工具，H5 端支持多页应用模式。
+
+详情请参考 [《Taro v3.5 正式发布：开发体验提升》](/blog/2022-07-26-Taro-3.5)。
 
 ### Taro 3.4
 
