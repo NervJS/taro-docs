@@ -713,7 +713,6 @@ $ npx taro build --type harmony-hybrid
 
 - 代码中需包含 ASCF 元服务编译条件：`"ascf"`（需在项目配置中声明）。
 
-
 #### 编译命令
 
 ```bash
@@ -750,6 +749,8 @@ $ NODE_ENV=production taro build --type ascf --watch # Bash
 工具准备：
 下载并安装 鸿蒙元服务 ASCF 项目[开发环境搭建指南](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/ascf-development-process)，确保已配置 ASCF 元服务开发环境。
 
+#### 现有项目
+
 在 taro 项目根目录下创建 ascf-project 目录，并使用工具在该目录下创建 ASCF 元服务项目。
 
 修改 taro 项目下 config/index.{js,ts}配置文件，编译 ASCF 项目情况下将 outputRoot: 'dist/ascf' 修改为 outputRoot: process.env.TARO_ENV === 'ascf' ? 'ascf-project/ascf/ascf_src' : 'dist'。
@@ -758,12 +759,18 @@ $ NODE_ENV=production taro build --type ascf --watch # Bash
 使用 --type ascf 指定平台类型，与其他小程序（如 --type weapp）格式统一。
 支持 dev:ascf（开发模式）和 build:ascf（生产模式）。
 
-调试运行：
+#### 新建项目
+
+使用 taro init 进行项目初始化时，模板源选择`Gitee或者Github` -> `ascf`。项目初始化完成后，后续操作可查看[README.md](https://gitee.com/o2team/taro-project-templates/blob/v4.0/ascf/README.md)。
+
+#### 调试运行
+
 编译后文件在 ascf-project/ascf/ascf_src 目录下。参考鸿蒙元服务 ASCF 项目[开发流程](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/ascf-development-process) 调试运行 ascf-project 项目。如果运行有异常，可以参考[调试指南](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/debug-ascf-code)解决。
 
 #### 适配问题
 
-- ASCF的app.json配置还不支持theme变量，需要适配修改为具体的值：
+- ASCF 的 app.json 配置还不支持 theme 变量，需要适配修改为具体的值：
+
 ```javascript
 {
   window: {
@@ -776,6 +783,7 @@ $ NODE_ENV=production taro build --type ascf --watch # Bash
   }
 }
 ```
+
 改为：
 
 ```javascript

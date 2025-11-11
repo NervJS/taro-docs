@@ -26,6 +26,7 @@ title: 目录结构
     ├── project.tt.json             抖音小程序项目配置 project.tt.json
     ├── project.swan.json           百度小程序项目配置 project.swan.json
     ├── project.qq.json             QQ 小程序项目配置 project.qq.json
+    ├── ascf.config.json            ASCF元服务项目配置 ascf.config.json
     |
     ├── babel.config.js             Babel 配置
     ├── tsconfig.json               TypeScript 配置

@@ -91,19 +91,19 @@ export default {
 
 #### 各端支持程度如下
 
-| 属性                         | 微信                                | 百度                       | 字节跳动 | 支付宝 | H5  | RN  |
-| ---------------------------- | ----------------------------------- | -------------------------- | -------- | ------ | --- | --- |
-| navigationBarBackgroundColor | ✔️                                  | ✔️                         | ✔️       | ✔️     | ✔️  | ✔️  |
-| navigationBarTextStyle       | ✔️                                  | ✔️                         | ✔️       | ✘      | ✔️  | ✔️  |
-| navigationBarTitleText       | ✔️                                  | ✔️                         | ✔️       | ✔️     | ✔️  | ✔️  |
-| navigationStyle              | ✔️（微信客户端 6.6.0）              | ✔️（百度 App 版本 11.1.0） | ✔️       | ✘      | ✘   | ✘   |
-| backgroundColor              | ✔️                                  | ✔️                         | ✔️       | ✘      | ✘   | ✘   |
-| backgroundTextStyle          | ✔️                                  | ✔️                         | ✔️       | ✘      | ✘   | ✘   |
-| backgroundColorTop           | ✔️（微信客户端 6.5.16）             | ✘                          | ✔️       | ✘      | ✘   | ✘   |
-| backgroundColorBottom        | ✔️（微信客户端 6.5.16）             | ✘                          | ✔️       | ✘      | ✘   | ✘   |
-| enablePullDownRefresh        | ✔️                                  | ✔️                         | ✔️       | ✔️     | ✘   | ✘   |
-| onReachBottomDistance        | ✔️                                  | ✔️                         | ✔️       | ✘      | ✘   | ✘   |
-| pageOrientation              | ✔️ 2.4.0 (auto) / 2.5.0 (landscape) | ✘                          | ✘        | ✘      | ✘   | ✘   |
+| 属性                         | 微信                                | 百度                       | 字节跳动 | 支付宝 | H5  | RN  | ASCF 元服务 |
+| ---------------------------- | ----------------------------------- | -------------------------- | -------- | ------ | --- | --- | ----------- |
+| navigationBarBackgroundColor | ✔️                                  | ✔️                         | ✔️       | ✔️     | ✔️  | ✔️  | ✔️          |
+| navigationBarTextStyle       | ✔️                                  | ✔️                         | ✔️       | ✘      | ✔️  | ✔️  | ✔️          |
+| navigationBarTitleText       | ✔️                                  | ✔️                         | ✔️       | ✔️     | ✔️  | ✔️  | ✔️          |
+| navigationStyle              | ✔️（微信客户端 6.6.0）              | ✔️（百度 App 版本 11.1.0） | ✔️       | ✘      | ✘   | ✘   | ✔️          |
+| backgroundColor              | ✔️                                  | ✔️                         | ✔️       | ✘      | ✘   | ✘   | ✔️          |
+| backgroundTextStyle          | ✔️                                  | ✔️                         | ✔️       | ✘      | ✘   | ✘   | ✘           |
+| backgroundColorTop           | ✔️（微信客户端 6.5.16）             | ✘                          | ✔️       | ✘      | ✘   | ✘   | ✘           |
+| backgroundColorBottom        | ✔️（微信客户端 6.5.16）             | ✘                          | ✔️       | ✘      | ✘   | ✘   | ✘           |
+| enablePullDownRefresh        | ✔️                                  | ✔️                         | ✔️       | ✔️     | ✘   | ✘   | ✔️          |
+| onReachBottomDistance        | ✔️                                  | ✔️                         | ✔️       | ✘      | ✘   | ✘   | ✘           |
+| pageOrientation              | ✔️ 2.4.0 (auto) / 2.5.0 (landscape) | ✘                          | ✘        | ✘      | ✘   | ✘   | ✘           |
 
 #### 代码示例
 
@@ -147,15 +147,15 @@ export default {
 
 #### 各端支持程度如下
 
-| 属性            | 微信                    | 百度 | 字节跳动 | 支付宝 | H5  | RN  |
-| --------------- | ----------------------- | ---- | -------- | ------ | --- | --- |
-| color           | ✔️                      | ✔️   | ✔️       | ✔️     | ✔️  | ✔️  |
-| selectedColor   | ✔️                      | ✔️   | ✔️       | ✔️     | ✔️  | ✔️  |
-| backgroundColor | ✔️                      | ✔️   | ✔️       | ✔️     | ✔️  | ✔️  |
-| borderStyle     | ✔️                      | ✔️   | ✔️       | ✘      | ✔️  | ✔️  |
-| list            | ✔️                      | ✔️   | ✔️       | ✔️     | ✔️  | ✔️  |
-| position        | ✔️                      | ✘    | ✔️       | ✘      | ✘   | ✘   |
-| custom          | ✔️（基础库 2.5.0 以上） | ✘    | ✘        | ✘      | ✘   | ✘   |
+| 属性            | 微信                    | 百度 | 字节跳动 | 支付宝 | H5  | RN  | ASCF 元服务 |
+| --------------- | ----------------------- | ---- | -------- | ------ | --- | --- | ----------- |
+| color           | ✔️                      | ✔️   | ✔️       | ✔️     | ✔️  | ✔️  | ✔️          |
+| selectedColor   | ✔️                      | ✔️   | ✔️       | ✔️     | ✔️  | ✔️  | ✔️          |
+| backgroundColor | ✔️                      | ✔️   | ✔️       | ✔️     | ✔️  | ✔️  | ✔️          |
+| borderStyle     | ✔️                      | ✔️   | ✔️       | ✘      | ✔️  | ✔️  | ✔️          |
+| list            | ✔️                      | ✔️   | ✔️       | ✔️     | ✔️  | ✔️  | ✔️          |
+| position        | ✔️                      | ✘    | ✔️       | ✘      | ✘   | ✘   | ✘           |
+| custom          | ✔️（基础库 2.5.0 以上） | ✘    | ✘        | ✘      | ✘   | ✘   | ✔️          |
 
 ### subPackages
 
@@ -199,7 +199,7 @@ export default {
 
 ### permission
 
-支持情况： <img src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/>
+支持情况： <img src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/ascf.png').default} className="icon_platform" width="25px"/>
 
 小程序[接口权限](https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/authorize.html)相关设置。字段类型为 `Object`，结构为：
 
@@ -230,7 +230,7 @@ export default {
 
 ### requiredBackgroundModes
 
-支持情况：<img src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/>
+支持情况：<img src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/ascf.png').default} className="icon_platform" width="25px"/>
 
 申明需要后台运行的能力，类型为数组。目前支持以下项目：
 
@@ -260,7 +260,7 @@ export default {
 
 ### entryPagePath
 
-支持情况：<img src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/>
+支持情况：<img src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img src={require('@site/static/img/platform/ascf.png').default} className="icon_platform" width="25px"/>
 
 指定小程序的默认启动路径（首页），常见情景是从微信聊天列表页下拉启动、小程序列表启动等。如果不填，将默认为 `pages` 列表的第一项。不支持带页面路径参数。
 
@@ -661,31 +661,40 @@ export default {
 
 ## ASCF 元服务支持的属性
 
-### ASCF 支持的全局参数
+只在 ASCF 元服务中支持的属性。<img src={require('@site/static/img/platform/ascf.png').default} className="icon_platform" width="25px"/>
 
-这些配置需在项目的入口配置文件（如 app.config.js）中声明，以实现对 ASCF 元服务的适配。
+| 属性                                  | 类型   | 描述                       |
+| :------------------------------------ | :----- | :------------------------- |
+| [usingComponents](#usingcomponents-1) | Object | 全局自定义组件配置         |
+| [resolveAlias](#resolveAlias)         | Object | 微信消息用小程序打开       |
+| [lazyCodeLoading](#lazycodeloading-1) | String | 配置自定义组件代码按需注入 |
 
-| 属性        | 类型    | 必填 | 默认值 | 说明                                                                          |
-| :---------- | :------ | :--- | :----- | :---------------------------------------------------------------------------- |
-| ascfAppId   | String  | 是   | 无     | ASCF 元服务的唯一应用标识，需在 ASCF 开发者平台申请后填写。                   |
-| serviceType | String  | 是   | 无     | 元服务类型，可选值：miniprogram（小程序式元服务）、webapp（轻应用式元服务）。 |
-| enableAuth  | Boolean | 否   | false  | 是否开启 ASCF 的全局用户鉴权功能，需配合 ASCF 的 API 使用。                   |
-| apiBaseUrl  | String  | 否   | 无     | ASCF 后端 API 的统一请求地址，用于元服务与服务器的通信。                      |
+### usingComponents
+
+在此处声明的自定义组件视为全局自定义组件，在 ASCF 元服务内的页面或自定义组件中可以直接使用而无需再声明。
+
+### lazyCodeLoading
+
+> 配置自定义组件代码按需注入，目前仅支持"requiredComponents"。起始版本：1.0.13。依赖关系：ASCF Toolkit 版本 ≥1.0.6
+
+在元服务启动的过程中，代码注入是一个主要的耗时环节。注入代码量的大小与内存占用与注入耗时正相关。
+
+利用“按需注入”和“用时注入”的特性，可以优化代码注入环节的耗时和内存占用。
+
+更多详见[按需注入和用时注入](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/on-demand-render-time-injection)。
 
 #### 代码示例
 
 ```js title="app.config.js"
 export default {
-  pages: ['pages/index/index'],
-  window: {
-    navigationBarTitleText: 'Taro Demo',
-  },
-
-  ascf: {
-    ascfAppId: 'ASCF_123456',
-    serviceType: 'miniprogram',
-    enableAuth: true,
-    apiBaseUrl: 'https://api.ascf.com',
-  },
+  lazyCodeLoading: 'requiredComponents',
 }
 ```
+
+### resolveAlias
+
+resolveAlias 配置项可用于自定义模块路径的映射规则。
+
+配置完成后，它会对 require 中的模块路径按照所设定的映射规则进行匹配，进而转换为对应的配置路径。
+
+更多详见[resolveAlias](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/appjson-global-config#section13041254111110)。
