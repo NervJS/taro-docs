@@ -9,7 +9,7 @@ Tips:
 H5 中 ScrollView 组件是通过一个高度（或宽度）固定的容器内部滚动来实现的，因此务必正确的设置容器的高度。例如: 如果 ScrollView 的高度将 body 撑开，就会同时存在两个滚动条（body 下的滚动条，以及 ScrollView 的滚动条）。
 微信小程序 中 ScrollView 组件如果设置 scrollX 横向滚动时，并且子元素为多个时（单个子元素时设置固定宽度则可以正常横向滚动），需要通过 WXSS 设置 `white-space: nowrap` 来保证元素不换行，并对 ScrollView 内部元素设置 `display: inline-block` 来使其能够横向滚动。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="ASCF元服务" src={require('@site/static/img/platform/ascf.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/scroll-view.html)
 
@@ -244,69 +244,69 @@ typeof ScrollViewProps
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| ScrollViewProps.scrollX | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(二选一) |  | ✔️ |
-| ScrollViewProps.scrollY | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(二选一) |  | ✔️ |
-| ScrollViewProps.upperThreshold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| ScrollViewProps.lowerThreshold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| ScrollViewProps.scrollTop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| ScrollViewProps.scrollLeft | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| ScrollViewProps.scrollIntoView | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
-| ScrollViewProps.scrollWithAnimation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| ScrollViewProps.enableBackToTop | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |  |
-| ScrollViewProps.enableFlex | ✔️ |  |  |  |  | ✔️ |  |  |  |  |
-| ScrollViewProps.scrollAnchoring | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.refresherEnabled | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.refresherThreshold | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.refresherDefaultStyle | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.refresherBackground | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.refresherTriggered | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.enhanced | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
-| ScrollViewProps.usingSticky | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.bounces | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
-| ScrollViewProps.showScrollbar | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.pagingEnabled | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.fastDeceleration | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.scrollAnimationDuration |  |  | ✔️ |  |  |  |  |  |  |  |
-| ScrollViewProps.trapScroll |  |  | ✔️ |  |  |  |  |  |  |  |
-| ScrollViewProps.disableLowerScroll |  |  | ✔️ |  |  |  |  |  |  |  |
-| ScrollViewProps.disableUpperScroll |  |  | ✔️ |  |  |  |  |  |  |  |
-| ScrollViewProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |  |
-| ScrollViewProps.enablePassive | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.type | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.reverse | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.clip | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.cacheExtent | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.minDragDistance | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.padding | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.scrollIntoViewWithinExtent | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.scrollIntoViewAlignment | ✔️ |  |  |  |  |  | ✔️ |  |  | ✔️ |
-| ScrollViewProps.refresherTwoLevelEnabled | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.refresherTwoLevelTriggered | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.refresherTwoLevelThreshold | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.refresherTwoLevelCloseThreshold | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.refresherTwoLevelScrollEnabled | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.refresherBallisticRefreshEnabled | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.refresherTwoLevelPinned | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.onScrollToUpper | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| ScrollViewProps.onScrollToLower | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| ScrollViewProps.onScroll | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
-| ScrollViewProps.onScrollStart | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.onScrollEnd | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.onRefresherPulling | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.onRefresherRefresh | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.onRefresherRestore | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.onRefresherAbort | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.onRefresherWillRefresh | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.onRefresherStatusChange | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.onDragStart | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.onDragging | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.onDragEnd | ✔️ |  |  |  |  |  |  |  |  |  |
-| ScrollViewProps.onTouchStart |  |  | ✔️ |  |  |  |  |  |  |  |
-| ScrollViewProps.onTouchMove |  |  | ✔️ |  |  |  |  |  |  |  |
-| ScrollViewProps.onTouchEnd |  |  | ✔️ |  |  |  |  |  |  |  |
-| ScrollViewProps.onTouchCancel |  |  | ✔️ |  |  |  |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid | ASCF元服务 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| ScrollViewProps.scrollX | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(二选一) |  | ✔️ | ✔️ |
+| ScrollViewProps.scrollY | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(二选一) |  | ✔️ | ✔️ |
+| ScrollViewProps.upperThreshold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |
+| ScrollViewProps.lowerThreshold | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |
+| ScrollViewProps.scrollTop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |
+| ScrollViewProps.scrollLeft | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |
+| ScrollViewProps.scrollIntoView | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ | ✔️ |
+| ScrollViewProps.scrollWithAnimation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |
+| ScrollViewProps.enableBackToTop | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  | ✔️ |  |  |  |
+| ScrollViewProps.enableFlex | ✔️ |  |  |  |  | ✔️ |  |  |  |  |  |
+| ScrollViewProps.scrollAnchoring | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.refresherEnabled | ✔️ |  |  |  |  |  |  |  |  |  | ✔️ |
+| ScrollViewProps.refresherThreshold | ✔️ |  |  |  |  |  |  |  |  |  | ✔️ |
+| ScrollViewProps.refresherDefaultStyle | ✔️ |  |  |  |  |  |  |  |  |  | ✔️ |
+| ScrollViewProps.refresherBackground | ✔️ |  |  |  |  |  |  |  |  |  | ✔️ |
+| ScrollViewProps.refresherTriggered | ✔️ |  |  |  |  |  |  |  |  |  | ✔️ |
+| ScrollViewProps.enhanced | ✔️ | ✔️ |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.usingSticky | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.bounces | ✔️ | ✔️ |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.showScrollbar | ✔️ |  |  |  |  |  |  |  |  |  | ✔️ |
+| ScrollViewProps.pagingEnabled | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.fastDeceleration | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.scrollAnimationDuration |  |  | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.trapScroll |  |  | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.disableLowerScroll |  |  | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.disableUpperScroll |  |  | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |  |  |
+| ScrollViewProps.enablePassive | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.type | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.reverse | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.clip | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.cacheExtent | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.minDragDistance | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.padding | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.scrollIntoViewWithinExtent | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.scrollIntoViewAlignment | ✔️ |  |  |  |  |  | ✔️ |  |  | ✔️ |  |
+| ScrollViewProps.refresherTwoLevelEnabled | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.refresherTwoLevelTriggered | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.refresherTwoLevelThreshold | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.refresherTwoLevelCloseThreshold | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.refresherTwoLevelScrollEnabled | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.refresherBallisticRefreshEnabled | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.refresherTwoLevelPinned | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onScrollToUpper | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |
+| ScrollViewProps.onScrollToLower | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |
+| ScrollViewProps.onScroll | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |
+| ScrollViewProps.onScrollStart | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onScrollEnd | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onRefresherPulling | ✔️ |  |  |  |  |  |  |  |  |  | ✔️ |
+| ScrollViewProps.onRefresherRefresh | ✔️ |  |  |  |  |  |  |  |  |  | ✔️ |
+| ScrollViewProps.onRefresherRestore | ✔️ |  |  |  |  |  |  |  |  |  | ✔️ |
+| ScrollViewProps.onRefresherAbort | ✔️ |  |  |  |  |  |  |  |  |  | ✔️ |
+| ScrollViewProps.onRefresherWillRefresh | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onRefresherStatusChange | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onDragStart | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onDragging | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onDragEnd | ✔️ |  |  |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onTouchStart |  |  | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onTouchMove |  |  | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onTouchEnd |  |  | ✔️ |  |  |  |  |  |  |  |  |
+| ScrollViewProps.onTouchCancel |  |  | ✔️ |  |  |  |  |  |  |  |  |
 
 | 参数 | 类型 |
 | --- | --- |
