@@ -5,7 +5,7 @@ sidebar_label: CoverView
 
 覆盖在原生组件之上的文本视图。可覆盖的原生组件包括 map、video、canvas、camera、live-player、live-pusher 只支持嵌套 cover-view、cover-image，可在 cover-view 中使用 button。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="ASCF元服务" src={require('@site/static/img/platform/ascf.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/cover-view.html)
 
@@ -122,31 +122,31 @@ class App extends Components {
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| CoverViewProps.scrollTop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| CoverViewProps.fixedTop |  | ✔️ |  |  |  |  |  |  |
-| CoverViewProps.fixedRight |  | ✔️ |  |  |  |  |  |  |
-| CoverViewProps.fixedBottom |  | ✔️ |  |  |  |  |  |  |
-| CoverViewProps.fixedLeft |  | ✔️ |  |  |  |  |  |  |
-| CoverViewProps.ariaRole |  |  |  | ✔️ |  |  |  |  |
-| CoverViewProps.ariaLabel |  |  |  | ✔️ |  |  |  |  |
-| CoverViewProps.scrollX |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.scrollY |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.upperThreshold |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.lowerThreshold |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.scrollLeft |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.scrollIntoView |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.scrollWithAnimation |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.scrollAnimationDuration |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.enableBackToTop |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.trapScroll |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.disableLowerScroll |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.disableUpperScroll |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.onScrollToUpper |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.onScrollToLower |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.onScroll |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.onTouchStart |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.onTouchMove |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.onTouchEnd |  |  | ✔️ |  |  |  |  |  |
-| CoverViewProps.onTouchCancel |  |  | ✔️ |  |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | ASCF元服务 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| CoverViewProps.scrollTop | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| CoverViewProps.fixedTop |  | ✔️ |  |  |  |  |  |  |  |
+| CoverViewProps.fixedRight |  | ✔️ |  |  |  |  |  |  |  |
+| CoverViewProps.fixedBottom |  | ✔️ |  |  |  |  |  |  |  |
+| CoverViewProps.fixedLeft |  | ✔️ |  |  |  |  |  |  |  |
+| CoverViewProps.ariaRole |  |  |  | ✔️ |  |  |  |  |  |
+| CoverViewProps.ariaLabel |  |  |  | ✔️ |  |  |  |  |  |
+| CoverViewProps.scrollX |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.scrollY |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.upperThreshold |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.lowerThreshold |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.scrollLeft |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.scrollIntoView |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.scrollWithAnimation |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.scrollAnimationDuration |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.enableBackToTop |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.trapScroll |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.disableLowerScroll |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.disableUpperScroll |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.onScrollToUpper |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.onScrollToLower |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.onScroll |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.onTouchStart |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.onTouchMove |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.onTouchEnd |  |  | ✔️ |  |  |  |  |  |  |
+| CoverViewProps.onTouchCancel |  |  | ✔️ |  |  |  |  |  |  |
