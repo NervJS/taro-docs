@@ -15,7 +15,7 @@ sidebar_label: Editor
 
 *编辑器内支持部分 HTML 标签和内联样式，不支持 **class** 和 **id***
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="ASCF元服务" src={require('@site/static/img/platform/ascf.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/editor.html)
 
@@ -114,17 +114,17 @@ class App extends Components {
 
 ### API 支持度
 
-| API | 微信小程序 | 京东小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| EditorProps.readOnly | ✔️ | ✔️ |  |  |  |
-| EditorProps.placeholder | ✔️ | ✔️ |  |  |  |
-| EditorProps.showImgSize | ✔️ | ✔️ |  |  |  |
-| EditorProps.showImgToolbar | ✔️ | ✔️ |  |  |  |
-| EditorProps.showImgResize | ✔️ | ✔️ |  |  |  |
-| EditorProps.onReady | ✔️ | ✔️ |  |  |  |
-| EditorProps.onFocus | ✔️ | ✔️ |  |  |  |
-| EditorProps.onBlur | ✔️ | ✔️ |  |  |  |
-| EditorProps.onInput | ✔️ | ✔️ |  |  |  |
-| EditorProps.onStatusChange | ✔️ | ✔️ |  |  |  |
+| API | 微信小程序 | 京东小程序 | H5 | React Native | Harmony | ASCF元服务 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| EditorProps.readOnly | ✔️ | ✔️ |  |  |  |  |
+| EditorProps.placeholder | ✔️ | ✔️ |  |  |  |  |
+| EditorProps.showImgSize | ✔️ | ✔️ |  |  |  |  |
+| EditorProps.showImgToolbar | ✔️ | ✔️ |  |  |  |  |
+| EditorProps.showImgResize | ✔️ | ✔️ |  |  |  |  |
+| EditorProps.onReady | ✔️ | ✔️ |  |  |  |  |
+| EditorProps.onFocus | ✔️ | ✔️ |  |  |  |  |
+| EditorProps.onBlur | ✔️ | ✔️ |  |  |  |  |
+| EditorProps.onInput | ✔️ | ✔️ |  |  |  |  |
+| EditorProps.onStatusChange | ✔️ | ✔️ |  |  |  |  |
 
 ### editorEventDetail

@@ -5,7 +5,7 @@ sidebar_label: Map
 
 地图。相关api Taro.createMapContext。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="ASCF元服务" src={require('@site/static/img/platform/ascf.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/map.html#map)
 
@@ -158,64 +158,64 @@ export default {
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| MapProps.longitude | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.latitude | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.scale | ✔️ | ✔️(取值范围为4-21) | ✔️(取值范围为5-18) | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.minScale | ✔️ |  |  | ✔️ |  |  |  |  |  |
-| MapProps.maxScale | ✔️ |  |  | ✔️ |  |  |  |  |  |
-| MapProps.markers | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.covers | ✔️ |  |  |  |  |  |  |  |  |
-| MapProps.polyline | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.circles | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.controls | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |  |  |
-| MapProps.includePoints | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.showLocation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.polygons | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
-| MapProps.subkey | ✔️ |  |  |  | ✔️ |  |  |  |  |
-| MapProps.layerStyle | ✔️ |  |  |  | ✔️ |  |  |  |  |
-| MapProps.rotate | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
-| MapProps.skew | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
-| MapProps.showCompass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
-| MapProps.showScale | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
-| MapProps.enableOverlooking | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
-| MapProps.enableZoom | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
-| MapProps.enableScroll | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
-| MapProps.enableRotate | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
-| MapProps.enableSatellite | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
-| MapProps.enableTraffic | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
-| MapProps.setting | ✔️ |  | ✔️ |  | ✔️ |  |  |  |  |
-| MapProps.includePadding |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.groundOverlays |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.tileOverlay |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.enablePoi | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
-| MapProps.enableBuilding | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
-| MapProps.polygon |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.customMapStyle |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.panels |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.theme |  |  |  |  |  | ✔️ |  |  |  |
-| MapProps.optimize |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.enableAutoMaxOverlooking | ✔️ |  |  |  |  |  |  |  |  |
-| MapProps.enable3D | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
-| MapProps.onTap | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.onMarkerTap | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.onLabelTap | ✔️ |  |  | ✔️ |  |  |  |  |  |
-| MapProps.onControlTap | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |  |  |
-| MapProps.onCalloutTap |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.onUpdated | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
-| MapProps.onRegionChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |
-| MapProps.onPoiTap | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
-| MapProps.onPolylineTap | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
-| MapProps.onAbilitySuccess | ✔️ |  |  |  |  |  |  |  |  |
-| MapProps.onAbilityFailed | ✔️ |  |  |  |  |  |  |  |  |
-| MapProps.onAuthSuccess | ✔️ |  |  |  |  |  |  |  |  |
-| MapProps.onInterpolatePoint | ✔️ |  |  |  |  |  |  |  |  |
-| MapProps.onError | ✔️ |  |  |  |  |  |  |  |  |
-| MapProps.onCallOutTap | ✔️ | ✔️ |  | ✔️ |  | ✔️ |  |  |  |
-| MapProps.onAnchorPointTap | ✔️ |  |  | ✔️ |  |  |  |  |  |
-| MapProps.onPanelTap |  |  | ✔️ |  |  |  |  |  |  |
-| MapProps.onInitComplete |  |  | ✔️ |  |  |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | ASCF元服务 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| MapProps.longitude | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  | ✔️ |
+| MapProps.latitude | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  | ✔️ |
+| MapProps.scale | ✔️ | ✔️(取值范围为4-21) | ✔️(取值范围为5-18) | ✔️ | ✔️ | ✔️ |  |  |  | ✔️ |
+| MapProps.minScale | ✔️ |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.maxScale | ✔️ |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.markers | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  | ✔️ |
+| MapProps.covers | ✔️ |  |  |  |  |  |  |  |  |  |
+| MapProps.polyline | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  | ✔️ |
+| MapProps.circles | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  | ✔️ |
+| MapProps.controls | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
+| MapProps.includePoints | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| MapProps.showLocation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  | ✔️ |
+| MapProps.polygons | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.subkey | ✔️ |  |  |  | ✔️ |  |  |  |  |  |
+| MapProps.layerStyle | ✔️ |  |  |  | ✔️ |  |  |  |  |  |
+| MapProps.rotate | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.skew | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.showCompass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.showScale | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.enableOverlooking | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.enableZoom | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.enableScroll | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.enableRotate | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.enableSatellite | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.enableTraffic | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.setting | ✔️ |  | ✔️ |  | ✔️ |  |  |  |  |  |
+| MapProps.includePadding |  |  | ✔️ |  |  |  |  |  |  |  |
+| MapProps.groundOverlays |  |  | ✔️ |  |  |  |  |  |  |  |
+| MapProps.tileOverlay |  |  | ✔️ |  |  |  |  |  |  |  |
+| MapProps.enablePoi | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |  |
+| MapProps.enableBuilding | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |  |
+| MapProps.polygon |  |  | ✔️ |  |  |  |  |  |  |  |
+| MapProps.customMapStyle |  |  | ✔️ |  |  |  |  |  |  |  |
+| MapProps.panels |  |  | ✔️ |  |  |  |  |  |  |  |
+| MapProps.theme |  |  |  |  |  | ✔️ |  |  |  |  |
+| MapProps.optimize |  |  | ✔️ |  |  |  |  |  |  |  |
+| MapProps.enableAutoMaxOverlooking | ✔️ |  |  |  |  |  |  |  |  |  |
+| MapProps.enable3D | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
+| MapProps.onTap | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  | ✔️ |
+| MapProps.onMarkerTap | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  | ✔️ |
+| MapProps.onLabelTap | ✔️ |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.onControlTap | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |
+| MapProps.onCalloutTap |  |  | ✔️ |  |  |  |  |  |  | ✔️ |
+| MapProps.onUpdated | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  | ✔️ |
+| MapProps.onRegionChange | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  | ✔️ |
+| MapProps.onPoiTap | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |  |
+| MapProps.onPolylineTap | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |  |
+| MapProps.onAbilitySuccess | ✔️ |  |  |  |  |  |  |  |  |  |
+| MapProps.onAbilityFailed | ✔️ |  |  |  |  |  |  |  |  |  |
+| MapProps.onAuthSuccess | ✔️ |  |  |  |  |  |  |  |  |  |
+| MapProps.onInterpolatePoint | ✔️ |  |  |  |  |  |  |  |  |  |
+| MapProps.onError | ✔️ |  |  |  |  |  |  |  |  |  |
+| MapProps.onCallOutTap | ✔️ | ✔️ |  | ✔️ |  | ✔️ |  |  |  | ✔️ |
+| MapProps.onAnchorPointTap | ✔️ |  |  | ✔️ |  |  |  |  |  |  |
+| MapProps.onPanelTap |  |  | ✔️ |  |  |  |  |  |  |  |
+| MapProps.onInitComplete |  |  | ✔️ |  |  |  |  |  |  |  |
 
 ### marker
 
