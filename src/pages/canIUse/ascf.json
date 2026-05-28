@@ -299,6 +299,35 @@
       }
     },
     {
+      "key": "cover-view",
+      "value": {
+        "title": "cover-view",
+        "type": "object",
+        "properties": {
+          "hover-class": {
+            "description": "指定按下去的样式类。当 hover-class=\"none\" 时，没有点击态效果。",
+            "type": "string"
+          },
+          "hover-start-time": {
+            "description": "按住后多久出现点击态，单位毫秒。",
+            "defaultValue": "50",
+            "type": "number"
+          },
+          "hover-stay-time": {
+            "description": "手指松开后点击态保留时间，单位毫秒。",
+            "defaultValue": "400",
+            "type": "number"
+          },
+          "hover-stop-propagation": {
+            "description": "指定是否阻止本节点的祖先节点出现点击态。",
+            "defaultValue": "false",
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
       "key": "icon",
       "value": {
         "title": "icon",
@@ -1037,6 +1066,39 @@
       "key": "image",
       "value": {
         "title": "image",
+        "type": "object",
+        "properties": {
+          "src": {
+            "description": "图片资源地址。支持线上资源和本地资源，支持png，jpg，jpeg，gif，svg，bmp，webp。",
+            "type": "string"
+          },
+          "mode": {
+            "description": "图片裁剪、缩放的模式。详细内容参见“mode合法值说明”。",
+            "defaultValue": "scaleToFill",
+            "type": "string"
+          },
+          "onError": {
+            "description": "当错误发生时触发，event.detail = {errMsg}。",
+            "tsType": "() => void"
+          },
+          "onLoad": {
+            "description": "当图片载入完毕时触发，event.detail = {height, width}。",
+            "tsType": "() => void"
+          },
+          "lazy-load": {
+            "description": "图片懒加载，在进入视区时才开始加载。起始版本： 1.0.9",
+            "defaultValue": "false",
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false,
+        "required": ["src"]
+      }
+    },
+    {
+      "key": "cover-image",
+      "value": {
+        "title": "cover-image",
         "type": "object",
         "properties": {
           "src": {
