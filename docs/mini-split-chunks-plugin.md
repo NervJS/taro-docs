@@ -6,7 +6,7 @@ title: 智能提取分包依赖
 
 ### SplitChunks 默认配置
 
-> 可通过 [mini.commonChunks](/docs/next/config-detail#minicommonchunks) 配置进行修改。
+> 可通过 [mini.commonChunks](/docs/config-detail#minicommonchunks) 配置进行修改。
 
 ```json title="SplitChunks 默认配置"
 {
@@ -73,7 +73,7 @@ $ taro update project [版本号]
 
 2 修改配置文件
 
-通过配置 [mini.optimizeMainPackage.enable](/docs/next/config-detail#minioptimizemainpackage) 为 true，即可开启智能提取分包依赖插件。
+通过配置 [mini.optimizeMainPackage.enable](/docs/config-detail#minioptimizemainpackage) 为 true，即可开启智能提取分包依赖插件。
 
 ```js title="开启智能提取分包依赖"
 // config/index.js
