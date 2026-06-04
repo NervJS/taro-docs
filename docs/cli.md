@@ -51,7 +51,7 @@ Taro Doctor 就像一个医生一样，可以诊断项目的依赖、设置、�
 
 ### 快速创建新页面
 
-Taro create --name [页面名称] --dir [路径] --subpkg [分包路径]  能够在当前项目的指定目录下快速生成新的页面文件，并填充基础代码，是一个提高开发效率的利器。
+taro create --name [页面名称] --dir [路径] --subpkg [分包路径]  能够在当前项目的指定目录下快速生成新的页面文件，并填充基础代码，是一个提高开发效率的利器。
 
 > taro 会尝试同步修改 `app.config.js` 配置文件中的 `pages` 或者 `subPackages` 字段。
 
@@ -62,7 +62,7 @@ Taro create --name [页面名称] --dir [路径] --subpkg [分包路径]  能够
 ```bash
 taro create newPage --dir pages/mydir
 ```
-那么会在 `/project/root/src/pages/mydir` 目录下生成新的页面，并且在 `app.config.js` 中自动补齐 `pages` 字段。
+那么会在 `/project/root/src/pages/mydir` 目录下生成一个名为newPage的页面，并且在 `app.config.js` 中自动补齐 `pages` 字段。
 
 执行下面命令创建分包页面：
 ```bash
