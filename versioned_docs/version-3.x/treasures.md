@@ -344,6 +344,22 @@ Tard 是一套基于 Taro 框架开发的多端 React UI 组件库。
 
 ---
 
+### Ambilight
+
+`React`
+
+React Mono Components
+
+【[Github](https://github.com/pesce-salato/ambilight-taro-ui)】
+
+<img src="https://cdn.salted-fish.org/ambilight-taro/demo/qr-wechat.png" width="250px" />
+
+|        | 微信 | 阿里系 | 百度 | 头条 | H5  | RN  |
+| :----: | :--: | :----: | :--: | :--: | :-: | :-: |
+| 支持度 |  ✔️  |      |    |    |     |     |
+
+---
+
 ## 插件
 
 ---
