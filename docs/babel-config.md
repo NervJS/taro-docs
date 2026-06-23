@@ -34,7 +34,7 @@ module.exports = {
 
 - `@babel/plugin-transform-runtime`
 - `@babel/plugin-proposal-decorators`
-- `@babel/plugin-proposal-class-properties`
+- `@babel/plugin-transform-class-properties`
 - `babel-plugin-dynamic-import-node`（小程序环境）
 
 #### 2. React
@@ -166,7 +166,7 @@ import 'core-js/modules/es.string.pad-end'
 
 **默认值**：`false`
 
-同时是 `@babel/preset-env`、`@babel/plugin-proposal-class-properties` 的 `loose` 配置项。
+同时是 `@babel/preset-env`、`@babel/plugin-transform-class-properties` 的 `loose` 配置项。
 
 ### debug
 
