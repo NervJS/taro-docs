@@ -90,7 +90,7 @@ export default class PageView extends Component {
 | showCount | `boolean` | `true` | 否 | 是否渲染字数统计功能（是否删除默认计数器/是否显示字数统计）。 |
 | controlled | `boolean` | `false` | 否 | 是否为受控组件。为 true 时，value 内容会完全受 setData 控制。 |
 | ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
-| adjustKeyboardTo | `boolean` | `false` | 否 | 键盘对齐位置 |
+| adjustKeyboardTo | "cursor" or "bottom" | `cursor` | 否 | 键盘对齐位置 |
 | onFocus | `CommonEventFunction<onFocusEventDetail>` |  | 否 | 输入框聚焦时触发 |
 | onBlur | `CommonEventFunction<onBlurEventDetail>` |  | 否 | 输入框失去焦点时触发 |
 | onLineChange | `CommonEventFunction<onLineChangeEventDetail>` |  | 否 | 输入框行数变化时调用 |
