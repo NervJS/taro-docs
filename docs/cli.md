@@ -56,7 +56,7 @@ Taro create --name [页面名称] --dir [路径] --subpkg [分包路径]  能够
 > taro 会尝试同步修改 `app.config.js` 配置文件中的 `pages` 或者 `subPackages` 字段。
 
 #### 例子
-假设当前当前跟路径为 `/project/root`。
+假设当前当前根路径为 `/project/root`。
 
 执行下面命令创建主包页面：
 ```bash
