@@ -106,19 +106,6 @@ declare module '../../index' {
     }
   }
 
-  namespace batchSetStorageSync {
-    interface Option {
-      /** [{ key, value }] */
-      kvList: kv[]
-    }
-    interface kv {
-      /** key 本地缓存中指定的 key */
-      key: string
-      /** data 需要存储的内容。只支持原生类型、Date、及能够通过JSON.stringify序列化的对象。*/
-      value: any
-    }
-  }
-
   namespace batchSetStorage {
     interface Option {
       /** [{ key, value }] */
@@ -310,7 +297,7 @@ declare module '../../index' {
     createBufferURL(
       /** 需要存入内存的二进制数据 */
       buffer: ArrayBuffer | TypedArray
-    ): void
+    ): string
 
     /** Taro.clearStorage 的同步版本
      * @supported weapp, alipay, swan, jd, qq, tt, h5, harmony_hybrid
@@ -327,7 +314,7 @@ declare module '../../index' {
     clearStorageSync(): void
 
     /** 清理本地数据缓存
-     * @supported weapp, alipay, swan, jd, qq, tt, h5, rn, harmony, harmony_hybrid
+     * @supported weapp, alipay, swan, jd, qq, tt, h5, rn, harmony_hybrid
      * @example
      * ```tsx
      * Taro.clearStorage()
@@ -348,7 +335,12 @@ declare module '../../index' {
      * ```
      * @see https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.batchGetStorageSync.html
      */
-    batchSetStorageSync(option: batchSetStorageSync.Option): void
+    batchSetStorageSync(option: {
+      /** key 本地缓存中指定的 key */
+      key: string
+      /** data 需要存储的内容。只支持原生类型、Date、及能够通过JSON.stringify序列化的对象。*/
+      value: any
+    }[]): void
 
     /** 将数据批量存储在本地缓存中指定的 key 中。会覆盖掉原来该 key 对应的内容。
      * 除非用户主动删除或因存储空间原因被系统清理，否则数据都一直可用。
