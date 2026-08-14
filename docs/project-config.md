@@ -8,7 +8,7 @@ title: 项目配置
 - 百度小程序，[project.swan.json](https://smartprogram.baidu.com/docs/develop/devtools/projectconfig/)
 - 抖音小程序，[project.config.json](https://developer.open-douyin.com/docs/resource/zh-CN/mini-app/develop/framework/basic-reference/catalog-structure)
 - QQ 小程序，project.config.json
-- 支付宝小程序，[mini.project.json](https://opendocs.alipay.com/mini/framework/project)
+- 支付宝小程序，[mini.project.json](https://opendocs.alipay.com/mini/03dbc3)
 - 京东小程序，暂无发现
 - 飞书小程序，[project.config.json](https://open.feishu.cn/document/uYjL24iN/uEzMzUjLxMzM14SMzMTN/gadget-project-configuration?from=taro)
 - ASCF元服务，[ascf.config.json](https://developer.huawei.com/consumer/cn/doc/atomic-ascf/project-json-config)
@@ -23,7 +23,7 @@ title: 项目配置
 | 百度小程序   | project.swan.json   |
 | 抖音小程序   | project.tt.json     |
 | QQ 小程序    | project.qq.json     |
-| 支付宝小程序 | project.alipay.json |
+| 支付宝小程序 |  mini.project.json   |
 | 飞书小程序   | project.lark.json   |
 | ASCF元服务  | ascf.config.json    |
 
