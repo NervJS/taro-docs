@@ -1,0 +1,74 @@
+# Taro 文档
+
+> Taro 是一个开放式跨端跨框架解决方案，支持使用 React、Vue 等框架开发微信、京东、百度、支付宝、字节跳动、QQ 等小程序，以及 H5、React Native、Harmony 等应用。
+
+默认使用当前 4.x 文档。实现跨端功能时，请同时检查目标平台的支持说明、组件差异和 API 兼容性；旧版本行为请从版本页面进入对应文档。
+
+## 快速开始
+
+- [Taro 介绍](./docs/): 了解 Taro 的定位、特性、框架支持和目标平台。
+- [安装及使用](./docs/GETTING-STARTED): 安装 CLI、创建项目并运行第一个 Taro 应用。
+- [渐进式入门教程](./docs/guide): 通过完整示例学习项目开发、优化和多端适配。
+- [目录结构](./docs/folder): 理解配置、源码和编译产物的默认目录布局。
+- [版本说明](./docs/version): 查看当前版本、历史版本和升级入口。
+
+## 核心配置
+
+- [编译配置](./docs/config): 了解开发、生产和通用编译配置的组织方式。
+- [编译配置详情](./docs/config-detail): 查询编译器、设备尺寸、路径和插件等完整配置项。
+- [全局配置](./docs/app-config): 配置页面列表、窗口、TabBar 和平台能力。
+- [页面配置](./docs/page-config): 配置单个页面的导航栏、下拉刷新和渲染行为。
+- [环境变量](./docs/env-mode-config): 管理不同环境和模式下的构建配置。
+
+## 框架与渲染
+
+- [React 概述](./docs/react-overall): 了解 Taro React 的入口、页面、组件和 API 使用方式。
+- [React 入口组件](./docs/react-entry): 定义应用入口、生命周期和全局状态。
+- [React 页面组件](./docs/react-page): 定义页面生命周期、路由参数和渲染逻辑。
+- [Hooks](./docs/hooks): 查询 Taro 提供的页面、路由和小程序生命周期 Hooks。
+- [Vue 概述](./docs/vue-overall): 了解 Taro Vue/Vue3 的入口、页面和内置组件约定。
+- [Vue 入口组件](./docs/vue-entry): 定义 Vue 应用入口及生命周期。
+- [Vue 页面组件](./docs/vue-page): 定义 Vue 页面、路由参数和页面生命周期。
+
+## 组件与 API
+
+- [组件库说明](./docs/components-desc): 了解标准组件、框架差异和 H5 组件实现。
+- [组件公共属性](./docs/components/common): 查询组件通用属性和跨平台支持情况。
+- [事件系统](./docs/components/event): 了解组件事件对象、冒泡和事件绑定规则。
+- [API 概述](./docs/apis/about/desc): 了解 Taro API 的调用方式、Promise 化和平台差异。
+- [API 列表](./docs/apis/): 浏览基础、路由、网络、媒体、设备等 API 分类。
+- [Taro.request](./docs/apis/network/request): 查询网络请求参数、返回值、任务对象和平台支持。
+- [跨端请求库](./docs/request): 使用 plugin-http 和 axios 等 Web 请求库开发多端应用。
+
+## 平台与跨端
+
+- [H5](./docs/h5): 查看 Web 端兼容性、路由、组件和构建注意事项。
+- [React Native](./docs/react-native): 查看 RN 环境准备、运行方式和跨端开发流程。
+- [Harmony](./docs/harmony/): 查看鸿蒙应用的环境准备、项目结构和调试流程。
+- [Harmony Hybrid](./docs/harmony/hybrid): 使用 Taro 开发鸿蒙原生与 H5 混合应用。
+- [端平台插件](./docs/platform-plugin/): 了解微信、支付宝、抖音、京东及自定义平台插件。
+- [跨平台开发](./docs/envs): 使用环境变量、多端文件和统一接口适配平台差异。
+
+## 构建与工程化
+
+- [插件系统](./docs/plugin): 了解官方插件、社区插件和插件接入方式。
+- [自定义插件](./docs/plugin-custom): 使用插件 API 扩展命令、构建钩子和配置。
+- [小程序持续集成](./docs/plugin-mini-ci): 自动打开、预览和上传多平台小程序。
+- [依赖预编译](./docs/prebundle): 配置开发阶段依赖预构建与缓存。
+- [编译优化](./docs/compile-optimized): 优化构建速度、包体积和运行性能。
+- [Tailwind CSS](./docs/tailwindcss): 在 Taro 多端项目中集成 Tailwind CSS。
+- [测试工具](./docs/test-utils/): 使用 Taro 测试工具渲染组件并触发交互。
+
+## 排障与贡献
+
+- [调试配置](./docs/debug-config): 调试编译过程、运行时代码和本地包。
+- [小程序常见问题](./docs/mini-troubleshooting): 排查编译、样式、组件和运行时问题。
+- [Taroize 常见问题](./docs/taroize-troubleshooting): 排查原生小程序转 Taro 的问题。
+- [贡献形式](./docs/CONTRIBUTING): 了解问题反馈、文档、代码和社区贡献方式。
+- [贡献指南](./docs/CONTRIBUTING-GUIDE): 查看环境、代码风格、测试和 Pull Request 要求。
+
+## Optional
+
+- [Taro GitHub 仓库](https://github.com/NervJS/taro): 查看源码、Issue、Pull Request 和发布记录。
+- [Taro 文档仓库](https://github.com/NervJS/taro-docs): 查看与改进本站文档源码。
+- [Taro 讨论区](https://github.com/NervJS/taro/discussions): 搜索社区讨论、功能建议和使用经验。

@@ -64,6 +64,15 @@ const siteConfig = {
   favicon: require.resolve('./static/img/favicon.ico'),
   organizationName: 'nervjs',
   projectName: 'taro',
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'describedby',
+        href: `${baseUrl[BASE_DOMAIN]}llms.txt`,
+      },
+    },
+  ],
 
   presets: [
     [
