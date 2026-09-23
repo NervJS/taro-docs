@@ -5,7 +5,7 @@ sidebar_label: uploadFile
 
 将本地资源上传到服务器。客户端发起一个 HTTPS POST 请求，其中 `content-type` 为 `multipart/form-data`。使用前请注意阅读[相关说明](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/network.html)。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="ASCF元服务" src={require('@site/static/img/platform/ascf.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/api/network/upload/wx.uploadFile.html)
 
@@ -31,6 +31,9 @@ sidebar_label: uploadFile
 | header | `TaroGeneral.IAnyObject` |  | 否 | HTTP 请求 Header，Header 中不能设置 Referer |
 | formData | `TaroGeneral.IAnyObject` |  | 否 | HTTP 请求中其他额外的 form data |
 | timeout | `number` |  | 否 | 超时时间，单位为毫秒 |
+| enableProfile | `boolean` | `true` | 否 | 是否开启 profile。开启后可在接口回调的 res.profile 中查看性能调试信息<br />API 支持度: weapp |
+| enableHttp2 | `boolean` | `false` | 否 | 是否开启 http2<br />API 支持度: weapp |
+| enableQuic | `boolean` | `false` | 否 | 是否开启 Quic/h3 协议<br />API 支持度: weapp |
 | fileName | `string` |  | 否 | 上传的文件名<br />API 支持度: h5 |
 | withCredentials | `boolean` | `true` | 否 | 是否应使用传出凭据 (cookie) 发送此请求<br />API 支持度: h5 |
 | complete | `(res: TaroGeneral.CallbackResult) => void` |  | 否 | 接口调用结束的回调函数（调用成功、失败都会执行） |
@@ -46,6 +49,7 @@ sidebar_label: uploadFile
 | errMsg | `string` | 是 | 调用结果 |
 | header | `TaroGeneral.IAnyObject` | 否 | 开发者服务器返回的 HTTP Response Header<br />API 支持度: weapp<br />weapp: 非官方文档标注属性 |
 | cookies | `string[]` | 否 | cookies<br />API 支持度: weapp<br />weapp: 非官方文档标注属性 |
+| profile | `TaroGeneral.IAnyObject` | 否 | 网络请求过程中一些调试信息<br />API 支持度: weapp<br />[参考地址](https://developers.weixin.qq.com/miniprogram/dev/framework/performance/network.html) |
 
 ## 示例代码
 
