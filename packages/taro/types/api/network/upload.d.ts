@@ -15,6 +15,21 @@ declare module '../../index' {
       formData?: TaroGeneral.IAnyObject
       /** 超时时间，单位为毫秒 */
       timeout?: number
+      /** 是否开启 profile。开启后可在接口回调的 res.profile 中查看性能调试信息
+       * @default true
+       * @supported weapp
+       */
+      enableProfile?: boolean
+      /** 是否开启 http2
+       * @default false
+       * @supported weapp
+       */
+      enableHttp2?: boolean
+      /** 是否开启 Quic/h3 协议
+       * @default false
+       * @supported weapp
+       */
+      enableQuic?: boolean
       /** 上传的文件名
        * @supported h5
        */
@@ -52,6 +67,11 @@ declare module '../../index' {
        * @weapp 非官方文档标注属性
        */
       cookies?: string[]
+      /** 网络请求过程中一些调试信息
+       * @supported weapp
+       * @see https://developers.weixin.qq.com/miniprogram/dev/framework/performance/network.html
+       */
+      profile?: TaroGeneral.IAnyObject
     }
   }
 
@@ -152,7 +172,7 @@ declare module '../../index' {
 
   interface TaroStatic {
     /** 将本地资源上传到服务器。客户端发起一个 HTTPS POST 请求，其中 `content-type` 为 `multipart/form-data`。使用前请注意阅读[相关说明](https://developers.weixin.qq.com/miniprogram/dev/framework/ability/network.html)。
-     * @supported weapp, swan, alipay, h5, rn, tt, harmony_hybrid
+     * @supported weapp, swan, alipay, h5, rn, tt, harmony_hybrid, harmony
      * @example
      * ```tsx
      * Taro.chooseImage({

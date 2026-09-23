@@ -5,7 +5,7 @@ sidebar_label: Button
 
 按钮
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="ASCF元服务" src={require('@site/static/img/platform/ascf.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="抖音小程序" src={require('@site/static/img/platform/tt.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/button.html)
 
@@ -190,6 +190,11 @@ export default {
 | formType | `keyof FormType` |  | 否 | 用于 `<form/>` 组件，点击分别会触发 `<form/>` 组件的 submit/reset 事件 |
 | openType | `OpenType` |  | 否 | 微信开放能力 |
 | hoverClass | `string` | `button-hover` | 否 | 指定按下去的样式类。当 `hover-class="none"` 时，没有点击态效果 |
+| appBundleName | `string` | `none` | 否 | open-type=launchApp时有效，表示待启动Ability所在的应用Bundle名称。 |
+| appModuleName | `string` | `none` | 否 | open-type=launchApp时有效，表示待启动Ability所属的模块名称。 |
+| appAbilityName | `string` | `none` | 否 | open-type=launchApp时有效，表示待启动Ability名称。 |
+| appParameters | `Object` | `none` | 否 | open-type=launchApp时有效，表示启动Ability时的自定义参数。 |
+| activityType | `string` | `none` | 否 | open-type=liveActivity时有效，表示子场景ID，当open-type=liveActivity时，该参数必填。 |
 | hoverStyle | `StyleProp<ViewStyle>` | `none` | 否 | 由于 RN 不支持 hoverClass，故 RN 端的 Button 组件实现了 `hoverStyle`属性，写法和 style 类似，只不过 `hoverStyle` 的样式是指定按下去的样式。 |
 | hoverStopPropagation | `boolean` | `false` | 否 | 指定是否阻止本节点的祖先节点出现点击态 |
 | hoverStartTime | `number` | `20` | 否 | 按住后多久出现点击态，单位毫秒 |
@@ -220,6 +225,8 @@ export default {
 | onGetAuthorize | `CommonEventFunction` |  | 否 | 支付宝获取会员基础信息授权回调<br /><br />生效时机：`open-type="getAuthorize"` |
 | onContact | `CommonEventFunction<onContactEventDetail>` |  | 否 | 客服消息回调<br /><br />生效时机：`open-type="contact"` |
 | onGetPhoneNumber | `CommonEventFunction<onGetPhoneNumberEventDetail>` |  | 否 | 获取用户手机号回调<br /><br />生效时机：`open-type="getPhoneNumber"` |
+| onGetPhoneNumberAndRiskLevel | `CommonEventFunction<onGetPhoneNumberAndRiskLevelEventDetail>` |  | 否 | 获取手机号和风险等级的回调<br /><br />生效时机：`open-type="getPhoneNumberAndRiskLevel"` |
+| onCreateLiveActivity | `CommonEventFunction<onCreateLiveActivityEventDetail>` |  | 否 | 获取服务动态授权码的回调<br /><br />生效时机：`open-type="liveActivity"` |
 | onGetRealTimePhoneNumber | `CommonEventFunction<onGetRealTimePhoneNumberEventDetail>` |  | 否 | 手机号实时验证回调，`open-type="getRealtimePhoneNumber"` 时有效 |
 | onError | `CommonEventFunction` |  | 否 | 当使用开放能力时，发生错误的回调<br /><br />生效时机：`open-type="launchApp"` |
 | onOpenSetting | `CommonEventFunction<onOpenSettingEventDetail>` |  | 否 | 在打开授权设置页后回调<br /><br />生效时机：`open-type="openSetting"` |
@@ -239,62 +246,69 @@ export default {
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid | ASCF元服务 |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| ButtonProps.size | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |
-| ButtonProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| ButtonProps.plain | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| ButtonProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| ButtonProps.loading | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
-| ButtonProps.formType | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  | ✔️ |
-| ButtonProps.openType | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  | ✔️ |
-| ButtonProps.hoverClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(支持 hoverStyle 属性，但框架未支持 hoverClass) |  | ✔️ | ✔️ |
-| ButtonProps.hoverStyle |  |  |  |  |  |  |  | ✔️ |  |  |  |
-| ButtonProps.hoverStopPropagation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  | ✔️ |
-| ButtonProps.hoverStartTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |
-| ButtonProps.hoverStayTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |
-| ButtonProps.lang | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |  |  |
-| ButtonProps.sessionFrom | ✔️ | ✔️ |  |  |  |  |  |  |  |  |  |
-| ButtonProps.sendMessageTitle | ✔️ | ✔️ |  |  |  |  |  |  |  |  |  |
-| ButtonProps.sendMessagePath | ✔️ | ✔️ |  |  |  |  |  |  |  |  |  |
-| ButtonProps.sendMessageImg | ✔️ | ✔️ |  |  |  |  |  |  |  |  |  |
-| ButtonProps.appParameter | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |  | ✔️ |
-| ButtonProps.scope |  |  | ✔️ |  |  |  |  |  |  |  |  |
-| ButtonProps.showMessageCard | ✔️ | ✔️ |  |  |  |  |  |  |  |  |  |
-| ButtonProps.publicId |  |  | ✔️ |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.templateId |  | ✔️ |  |  |  |  |  |  |  |  |  |
-| ButtonProps.subscribeId |  | ✔️ |  |  |  |  |  |  |  |  |  |
-| ButtonProps.groupId |  |  |  | ✔️(通过创建聊天群、查询群信息获取) | ✔️(打开群资料卡时，传递的群号) |  |  |  |  |  |  |
-| ButtonProps.guildId |  |  |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.shareType |  |  |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.shareMode |  |  |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.openId |  |  |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.shareMessageFriendInfo |  |  |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.shareMessageTitle |  |  |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.shareMessageImg |  |  |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.dataAwemeId |  |  |  | ✔️ |  |  |  |  |  |  |  |
-| ButtonProps.dataIsHalfPage |  |  |  | ✔️ |  |  |  |  |  |  |  |
-| ButtonProps.onGetUserInfo | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |  |
-| ButtonProps.onGetAuthorize |  |  | ✔️ |  |  |  |  |  |  |  |  |
-| ButtonProps.onContact | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.onGetPhoneNumber | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |  |  |  |
-| ButtonProps.onGetRealTimePhoneNumber | ✔️ |  |  |  |  |  |  |  |  |  |  |
-| ButtonProps.onError | ✔️ |  | ✔️ |  | ✔️ | ✔️ |  |  |  |  | ✔️ |
-| ButtonProps.onOpenSetting | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  | ✔️ |
-| ButtonProps.onLaunchApp | ✔️ |  |  |  | ✔️ |  |  |  |  |  | ✔️ |
-| ButtonProps.onChooseAvatar | ✔️ |  |  |  |  |  |  |  |  |  |  |
-| ButtonProps.onAgreePrivacyAuthorization | ✔️ |  |  |  |  |  |  |  |  |  |  |
-| ButtonProps.onTap |  |  | ✔️ |  |  |  |  |  |  |  |  |
-| ButtonProps.onFollowLifestyle |  |  | ✔️ |  |  |  |  |  |  |  |  |
-| ButtonProps.onChooseAddress |  | ✔️ |  |  |  |  |  |  |  |  |  |
-| ButtonProps.onChooseInvoiceTitle |  | ✔️ |  |  |  |  |  |  |  |  |  |
-| ButtonProps.onLogin |  | ✔️ |  |  |  |  |  |  |  |  |  |
-| ButtonProps.onSubscribe |  | ✔️ |  |  |  |  |  |  |  |  |  |
-| ButtonProps.onAddFriend |  |  |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.onAddGroupApp |  |  |  |  | ✔️ |  |  |  |  |  |  |
-| ButtonProps.onOpenAwemeUserProfile |  |  |  | ✔️ |  |  |  |  |  |  |  |
-| ButtonProps.onJoinGroup |  |  |  | ✔️ |  |  |  |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | 抖音小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| ButtonProps.size | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| ButtonProps.type | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| ButtonProps.plain | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| ButtonProps.disabled | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| ButtonProps.loading | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |
+| ButtonProps.formType | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |
+| ButtonProps.openType | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.hoverClass | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️(支持 hoverStyle 属性，但框架未支持 hoverClass) |  | ✔️ |
+| ButtonProps.appBundleName |  |  |  |  |  |  |  |  |  |  |
+| ButtonProps.appModuleName |  |  |  |  |  |  |  |  |  |  |
+| ButtonProps.appAbilityName |  |  |  |  |  |  |  |  |  |  |
+| ButtonProps.appParameters |  |  |  |  |  |  |  |  |  |  |
+| ButtonProps.activityType |  |  |  |  |  |  |  |  |  |  |
+| ButtonProps.hoverStyle |  |  |  |  |  |  |  | ✔️ |  |  |
+| ButtonProps.hoverStopPropagation | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.hoverStartTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| ButtonProps.hoverStayTime | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |
+| ButtonProps.lang | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.sessionFrom | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.sendMessageTitle | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.sendMessagePath | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.sendMessageImg | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.appParameter | ✔️ |  |  |  | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.scope |  |  | ✔️ |  |  |  |  |  |  |  |
+| ButtonProps.showMessageCard | ✔️ | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.publicId |  |  | ✔️ |  | ✔️ |  |  |  |  |  |
+| ButtonProps.templateId |  | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.subscribeId |  | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.groupId |  |  |  | ✔️(通过创建聊天群、查询群信息获取) | ✔️(打开群资料卡时，传递的群号) |  |  |  |  |  |
+| ButtonProps.guildId |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.shareType |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.shareMode |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.ariaLabel |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.openId |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.shareMessageFriendInfo |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.shareMessageTitle |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.shareMessageImg |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.dataAwemeId |  |  |  | ✔️ |  |  |  |  |  |  |
+| ButtonProps.dataIsHalfPage |  |  |  | ✔️ |  |  |  |  |  |  |
+| ButtonProps.onGetUserInfo | ✔️ | ✔️ | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.onGetAuthorize |  |  | ✔️ |  |  |  |  |  |  |  |
+| ButtonProps.onContact | ✔️ | ✔️ |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.onGetPhoneNumber | ✔️ | ✔️ | ✔️ | ✔️ |  | ✔️ |  |  |  |  |
+| ButtonProps.onGetPhoneNumberAndRiskLevel |  |  |  |  |  |  |  |  |  |  |
+| ButtonProps.onCreateLiveActivity |  |  |  |  |  |  |  |  |  |  |
+| ButtonProps.onGetRealTimePhoneNumber | ✔️ |  |  |  |  |  |  |  |  |  |
+| ButtonProps.onError | ✔️ |  | ✔️ |  | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.onOpenSetting | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  |  |  |
+| ButtonProps.onLaunchApp | ✔️ |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.onChooseAvatar | ✔️ |  |  |  |  |  |  |  |  |  |
+| ButtonProps.onAgreePrivacyAuthorization | ✔️ |  |  |  |  |  |  |  |  |  |
+| ButtonProps.onTap |  |  | ✔️ |  |  |  |  |  |  |  |
+| ButtonProps.onFollowLifestyle |  |  | ✔️ |  |  |  |  |  |  |  |
+| ButtonProps.onChooseAddress |  | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.onChooseInvoiceTitle |  | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.onLogin |  | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.onSubscribe |  | ✔️ |  |  |  |  |  |  |  |  |
+| ButtonProps.onAddFriend |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.onAddGroupApp |  |  |  |  | ✔️ |  |  |  |  |  |
+| ButtonProps.onOpenAwemeUserProfile |  |  |  | ✔️ |  |  |  |  |  |  |
+| ButtonProps.onJoinGroup |  |  |  | ✔️ |  |  |  |  |  |  |
 
 ### Size
 
@@ -334,6 +348,7 @@ open-type 的合法值
 
 | 参数 | 类型 | 说明 |
 | --- | --- | --- |
+| ascf | `{ getPhoneNumber: any; openSetting: any; launchApp: any; share: any; liveActivity: any; getPhoneNumberAndRiskLevel: any; }` |  |
 | weapp | { contact: any; share: any; getPhoneNumber: any; getRealtimePhoneNumber: any; getUserInfo: any; launchApp: any; openSetting: any; feedback: any; chooseAvatar: any; agreePrivacyAuthorization: any; "getPhoneNumberoragreePrivacyAuthorization": any; "getRealtimePhoneNumberoragreePrivacyAuthorization": any; "getUserInfoorag... |  |
 | alipay | `{ share: any; getAuthorize: any; contactShare: any; lifestyle: any; }` | 支付宝小程序专属的 open-type 合法值<br />[参考地址](https://opendocs.alipay.com/mini/component/button) |
 | qq | `{ share: any; getUserInfo: any; launchApp: any; openSetting: any; feedback: any; openGroupProfile: any; addFriend: any; addColorSign: any; openPublicProfile: any; addGroupApp: any; shareMessageToFriend: any; }` | QQ 小程序专属的 open-type 合法值<br />[参考地址](https://q.qq.com/wiki/develop/miniprogram/component/form/button.html) |
@@ -394,6 +409,18 @@ lang 的合法值
 | API | 微信小程序 | 支付宝小程序 | H5 | React Native | Harmony |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | onGetPhoneNumberEventDetail.sign |  | ✔️ |  |  |  |
+
+### onGetPhoneNumberAndRiskLevelEventDetail
+
+| 参数 | 类型 |
+| --- | --- |
+| code | `string` |
+
+### onCreateLiveActivityEventDetail
+
+| 参数 | 类型 |
+| --- | --- |
+| code | `string` |
 
 ### onGetRealTimePhoneNumberEventDetail
 
