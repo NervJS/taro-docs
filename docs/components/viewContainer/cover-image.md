@@ -5,7 +5,7 @@ sidebar_label: CoverImage
 
 覆盖在原生组件之上的图片视图。可覆盖的原生组件同cover-view，支持嵌套在cover-view里。
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="ASCF元服务" src={require('@site/static/img/platform/ascf.png').default} className="icon_platform" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="百度小程序" src={require('@site/static/img/platform/swan.png').default} className="icon_platform" width="25px"/> <img title="支付宝小程序" src={require('@site/static/img/platform/alipay.png').default} className="icon_platform" width="25px"/> <img title="QQ 小程序" src={require('@site/static/img/platform/qq.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony hybrid" src={require('@site/static/img/platform/harmonyHybrid.png').default} className="icon_platform" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/cover-image.html)
 
@@ -90,32 +90,55 @@ class App extends Components {
 
 ## CoverImageProps
 
-| 参数 | 类型 | 必填 | 说明 |
-| --- | --- | :---: | --- |
-| src | `string` | 是 | 图标路径，支持临时路径、网络地址、云文件ID。暂不支持base64格式。 |
-| referrerPolicy | "origin" or "no-referrer" | 否 | 格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本； |
-| fixedTop | `string` | 否 | 设置与容器顶部的固定距离，效果相当于在 CSS 中设置 position: fixed 和 top 值，该属性优先级高于 fixed-bottom，CSS 设置的 position、top、bottom 值 |
-| fixedRight | `string` | 否 | 设置与容器右侧的固定距离，效果相当于在 CSS 中设置 position: fixed 和 right 值，该属性优先级高于 CSS 设置的 position、left、right 值 |
-| fixedBottom | `string` | 否 | 设置与容器底部的固定距离，效果相当于在 CSS 中设置 position: fixed 和 bottom 值，该属性优先级高于 CSS 设置的 position、top、bottom 值 |
-| fixedLeft | `string` | 否 | 设置与容器左侧的固定距离，效果相当于在 CSS 中设置 position: fixed 和 left 值，该属性优先级高于 fixed-right，CSS 设置的 position、left、right 值 |
-| ariaRole | `string` | 否 | 无障碍访问，（角色）标识元素的作用 |
-| ariaLabel | `string` | 否 | 无障碍访问，（属性）元素的额外描述 |
-| onLoad | `CommonEventFunction` | 否 | 图片加载成功时触发 |
-| onError | `CommonEventFunction` | 否 | 图片加载失败时触发 |
-| onTap | `CommonEventFunction` | 否 | 点击事件回调。 |
+| 参数 | 类型 | 默认值 | 必填 | 说明 |
+| --- | --- | :---: | :---: | --- |
+| src | `string` |  | 是 | 图标路径，支持临时路径、网络地址、云文件ID。暂不支持base64格式。 |
+| mode | `keyof Mode` | `"scaleToFill"` | 否 | 图片裁剪、缩放的模式 |
+| referrerPolicy | "origin" or "no-referrer" |  | 否 | 格式固定为 https://servicewechat.com/{appid}/{version}/page-frame.html，其中 {appid} 为小程序的 appid，{version} 为小程序的版本号，版本号为 0 表示为开发版、体验版以及审核版本，版本号为 devtools 表示为开发者工具，其余为正式版本； |
+| fixedTop | `string` |  | 否 | 设置与容器顶部的固定距离，效果相当于在 CSS 中设置 position: fixed 和 top 值，该属性优先级高于 fixed-bottom，CSS 设置的 position、top、bottom 值 |
+| fixedRight | `string` |  | 否 | 设置与容器右侧的固定距离，效果相当于在 CSS 中设置 position: fixed 和 right 值，该属性优先级高于 CSS 设置的 position、left、right 值 |
+| fixedBottom | `string` |  | 否 | 设置与容器底部的固定距离，效果相当于在 CSS 中设置 position: fixed 和 bottom 值，该属性优先级高于 CSS 设置的 position、top、bottom 值 |
+| fixedLeft | `string` |  | 否 | 设置与容器左侧的固定距离，效果相当于在 CSS 中设置 position: fixed 和 left 值，该属性优先级高于 fixed-right，CSS 设置的 position、left、right 值 |
+| ariaRole | `string` |  | 否 | 无障碍访问，（角色）标识元素的作用 |
+| ariaLabel | `string` |  | 否 | 无障碍访问，（属性）元素的额外描述 |
+| onLoad | `CommonEventFunction` |  | 否 | 图片加载成功时触发 |
+| onError | `CommonEventFunction` |  | 否 | 图片加载失败时触发 |
+| onTap | `CommonEventFunction` |  | 否 | 点击事件回调。 |
 
 ### API 支持度
 
-| API | 微信小程序 | 百度小程序 | 支付宝小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid | ASCF元服务 |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| CoverImageProps.src | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |
-| CoverImageProps.referrerPolicy | ✔️ |  |  |  |  |  |  |  |  |  |
-| CoverImageProps.fixedTop |  | ✔️ |  |  |  |  |  |  |  |  |
-| CoverImageProps.fixedRight |  | ✔️ |  |  |  |  |  |  |  |  |
-| CoverImageProps.fixedBottom |  | ✔️ |  |  |  |  |  |  |  |  |
-| CoverImageProps.fixedLeft |  | ✔️ |  |  |  |  |  |  |  |  |
-| CoverImageProps.ariaRole |  |  |  | ✔️ |  |  |  |  |  |  |
-| CoverImageProps.ariaLabel |  |  |  | ✔️ |  |  |  |  |  |  |
-| CoverImageProps.onLoad | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |
-| CoverImageProps.onError | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  | ✔️ |  |
-| CoverImageProps.onTap |  |  | ✔️ |  |  |  |  |  |  |  |
+| API | 微信小程序 | 百度小程序 | 支付宝小程序 | QQ 小程序 | 京东小程序 | H5 | React Native | Harmony | Harmony hybrid |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| CoverImageProps.src | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| CoverImageProps.mode |  |  |  |  |  |  |  |  |  |
+| CoverImageProps.referrerPolicy | ✔️ |  |  |  |  |  |  |  |  |
+| CoverImageProps.fixedTop |  | ✔️ |  |  |  |  |  |  |  |
+| CoverImageProps.fixedRight |  | ✔️ |  |  |  |  |  |  |  |
+| CoverImageProps.fixedBottom |  | ✔️ |  |  |  |  |  |  |  |
+| CoverImageProps.fixedLeft |  | ✔️ |  |  |  |  |  |  |  |
+| CoverImageProps.ariaRole |  |  |  | ✔️ |  |  |  |  |  |
+| CoverImageProps.ariaLabel |  |  |  | ✔️ |  |  |  |  |  |
+| CoverImageProps.onLoad | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| CoverImageProps.onError | ✔️ | ✔️ |  | ✔️ | ✔️ | ✔️ |  |  | ✔️ |
+| CoverImageProps.onTap |  |  | ✔️ |  |  |  |  |  |  |
+
+### Mode
+
+mode 的合法值
+
+| 参数 | 说明 |
+| --- | --- |
+| scaleToFill | 缩放模式，不保持纵横比缩放图片，使图片的宽高完全拉伸至填满 image 元素 |
+| aspectFit | 缩放模式，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来。 |
+| aspectFill | 缩放模式，保持纵横比缩放图片，只保证图片的短边能完全显示出来。也就是说，图片通常只在水平或垂直方向是完整的，另一个方向将会发生截取。 |
+| widthFix | 缩放模式，宽度不变，高度自动变化，保持原图宽高比不变 |
+| heightFix | 缩放模式，高度不变，宽度自动变化，保持原图宽高比不变 |
+| top | 裁剪模式，不缩放图片，只显示图片的顶部区域 |
+| bottom | 裁剪模式，不缩放图片，只显示图片的底部区域 |
+| center | 裁剪模式，不缩放图片，只显示图片的中间区域 |
+| left | 裁剪模式，不缩放图片，只显示图片的左边区域 |
+| right | 裁剪模式，不缩放图片，只显示图片的右边区域 |
+| top left | 裁剪模式，不缩放图片，只显示图片的左上边区域 |
+| top right | 裁剪模式，不缩放图片，只显示图片的右上边区域 |
+| bottom left | 裁剪模式，不缩放图片，只显示图片的左下边区域 |
+| bottom right | 裁剪模式，不缩放图片，只显示图片的右下边区域 |
