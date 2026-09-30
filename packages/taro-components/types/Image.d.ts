@@ -2,12 +2,12 @@ import { ComponentType, ImgHTMLAttributes } from 'react'
 import { StandardProps, CommonEventFunction } from './common'
 interface ImageProps extends StandardProps {
   /** 图片资源地址
-   * @supported weapp, alipay, swan, tt, qq, jd, h5, rn, harmony, harmony_hybrid
+   * @supported weapp, alipay, swan, tt, qq, jd, h5, rn, harmony, harmony_hybrid, ascf
    */
   src: string
   /** 图片裁剪、缩放的模式
    * @default "scaleToFill"
-   * @supported weapp, alipay, swan, tt, qq, jd, h5, rn, harmony, harmony_hybrid
+   * @supported weapp, alipay, swan, tt, qq, jd, h5, rn, harmony, harmony_hybrid, ascf
    * @rn 部分支持 scaleToFill, aspectFit, aspectFill, widthFix
    * @harmony 部分支持 scaleToFill, aspectFit, aspectFill, widthFix, heightFix
    */
@@ -24,7 +24,7 @@ interface ImageProps extends StandardProps {
   svg?: boolean
   /** 图片懒加载。只针对 page 与 scroll-view 下的 image 有效
    * @default false
-   * @supported weapp, alipay, swan, tt, qq, h5, harmony_hybrid
+   * @supported weapp, alipay, swan, tt, qq, h5, harmony_hybrid, ascf
    */
   lazyLoad?: boolean
   /** 开启长按图片显示识别小程序码菜单
@@ -41,6 +41,12 @@ interface ImageProps extends StandardProps {
    * @supported h5, harmony_hybrid
    */
   nativeProps?: Record<string, unknown>
+  /**
+   * H5 / WebComponents 为 true 时关闭默认占位，`taro-image-core` 外层宽高均为 `auto`（默认 false 仍为 320×240）。
+   * @default false
+   * @supported h5, harmony_hybrid
+   */
+  disableDefaultSize?: boolean
   /** 默认图片地址，若设置默认图片地址，会先显示默认图片，等 src 对应的图片加载成功后，再渲染对应的图片。
    * @supported alipay
    */
@@ -67,11 +73,11 @@ interface ImageProps extends StandardProps {
    */
   fadeIn?: boolean
   /** 当错误发生时，发布到 AppService 的事件名，事件对象
-   * @supported weapp, alipay, swan, tt, qq, jd, h5, rn, harmony_hybrid
+   * @supported weapp, alipay, swan, tt, qq, jd, h5, rn, harmony_hybrid, ascf
    */
   onError?: CommonEventFunction<ImageProps.onErrorEventDetail>
   /** 当图片载入完毕时，发布到 AppService 的事件名，事件对象
-   * @supported weapp, alipay, swan, tt, qq, jd, h5, rn, harmony_hybrid
+   * @supported weapp, alipay, swan, tt, qq, jd, h5, rn, harmony_hybrid, ascf
    */
   onLoad?: CommonEventFunction<ImageProps.onLoadEventDetail>
   /** 点击图片时触发。
@@ -130,7 +136,7 @@ declare namespace ImageProps {
  *
  * **Note:** 为实现小程序的 `mode` 特性，在 H5 组件中使用一个 `div` 容器来对内部的 `img` 进行展示区域的裁剪，因此请勿使用元素选择器来重置 `img` 的样式！
  * @classification media
- * @supported weapp, alipay, swan, tt, qq, jd, h5, rn, harmony, harmony_hybrid
+ * @supported weapp, alipay, swan, tt, qq, jd, h5, rn, harmony, harmony_hybrid, ascf
  * @example_react
  * ```tsx
  * export default class PageView extends Component {
