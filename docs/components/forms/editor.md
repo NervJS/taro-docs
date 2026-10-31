@@ -15,7 +15,7 @@ sidebar_label: Editor
 
 *编辑器内支持部分 HTML 标签和内联样式，不支持 **class** 和 **id***
 
-支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="ASCF元服务" src={require('@site/static/img/platform/ascf.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
+支持情况：<img title="微信小程序" src={require('@site/static/img/platform/weapp.png').default} className="icon_platform" width="25px"/> <img title="京东小程序" src={require('@site/static/img/platform/jd.png').default} className="icon_platform" width="25px"/> <img title="H5" src={require('@site/static/img/platform/h5.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="React Native" src={require('@site/static/img/platform/rn.png').default} className="icon_platform icon_platform--not-support" width="25px"/> <img title="Harmony" src={require('@site/static/img/platform/harmony.png').default} className="icon_platform icon_platform--not-support" width="25px"/>
 
 > [参考文档](https://developers.weixin.qq.com/miniprogram/dev/component/editor.html)
 
@@ -106,6 +106,9 @@ class App extends Components {
 | showImgSize | `boolean` | `false` | 否 | 点击图片时显示图片大小控件 |
 | showImgToolbar | `boolean` | `false` | 否 | 点击图片时显示工具栏控件 |
 | showImgResize | `boolean` | `false` | 否 | 点击图片时显示修改尺寸控件 |
+| enableFormats | `string[]` |  | 否 | 编辑器允许的名单内的格式。 |
+| enterkeyhint | "send" or "search" or "next" or "previous" or "go" or "done" or "enter" |  | 否 | 点击编辑器拉起输入法后，输入法键盘右下角文字类型。 |
+| confirmHold | `boolean` |  | 否 | 点击键盘回车键时是否保持键盘不收起。 |
 | onReady | `CommonEventFunction` |  | 否 | 编辑器初始化完成时触发 |
 | onFocus | `CommonEventFunction<editorEventDetail>` |  | 否 | 编辑器聚焦时触发 |
 | onBlur | `CommonEventFunction<editorEventDetail>` |  | 否 | 编辑器失去焦点时触发<br />detail = { html, text, delta } |
@@ -114,17 +117,20 @@ class App extends Components {
 
 ### API 支持度
 
-| API | 微信小程序 | 京东小程序 | H5 | React Native | Harmony | ASCF元服务 |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| EditorProps.readOnly | ✔️ | ✔️ |  |  |  |  |
-| EditorProps.placeholder | ✔️ | ✔️ |  |  |  |  |
-| EditorProps.showImgSize | ✔️ | ✔️ |  |  |  |  |
-| EditorProps.showImgToolbar | ✔️ | ✔️ |  |  |  |  |
-| EditorProps.showImgResize | ✔️ | ✔️ |  |  |  |  |
-| EditorProps.onReady | ✔️ | ✔️ |  |  |  |  |
-| EditorProps.onFocus | ✔️ | ✔️ |  |  |  |  |
-| EditorProps.onBlur | ✔️ | ✔️ |  |  |  |  |
-| EditorProps.onInput | ✔️ | ✔️ |  |  |  |  |
-| EditorProps.onStatusChange | ✔️ | ✔️ |  |  |  |  |
+| API | 微信小程序 | 京东小程序 | H5 | React Native | Harmony |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| EditorProps.readOnly | ✔️ | ✔️ |  |  |  |
+| EditorProps.placeholder | ✔️ | ✔️ |  |  |  |
+| EditorProps.showImgSize | ✔️ | ✔️ |  |  |  |
+| EditorProps.showImgToolbar | ✔️ | ✔️ |  |  |  |
+| EditorProps.showImgResize | ✔️ | ✔️ |  |  |  |
+| EditorProps.enableFormats |  |  |  |  |  |
+| EditorProps.enterkeyhint |  |  |  |  |  |
+| EditorProps.confirmHold |  |  |  |  |  |
+| EditorProps.onReady | ✔️ | ✔️ |  |  |  |
+| EditorProps.onFocus | ✔️ | ✔️ |  |  |  |
+| EditorProps.onBlur | ✔️ | ✔️ |  |  |  |
+| EditorProps.onInput | ✔️ | ✔️ |  |  |  |
+| EditorProps.onStatusChange | ✔️ | ✔️ |  |  |  |
 
 ### editorEventDetail
