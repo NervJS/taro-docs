@@ -14,17 +14,24 @@ declare module '../../index' {
     | Float64Array
 
   namespace setStorage {
+    interface Result extends TaroGeneral.CallbackResult {
+      /** 是否执行成功
+       * @supported alipay
+       */
+      success?: boolean
+    }
+
     interface Option {
       /** 需要存储的内容。只支持原生类型、Date、及能够通过`JSON.stringify`序列化的对象。 */
       data: any
       /** 本地缓存中指定的 key */
       key: string
       /** 接口调用结束的回调函数（调用成功、失败都会执行） */
-      complete?: (res: TaroGeneral.CallbackResult) => void
+      complete?: (res: Result) => void
       /** 接口调用失败的回调函数 */
-      fail?: (res: TaroGeneral.CallbackResult) => void
+      fail?: (res: Result) => void
       /** 接口调用成功的回调函数 */
-      success?: (res: TaroGeneral.CallbackResult) => void
+      success?: (res: Result) => void
     }
   }
 
@@ -106,19 +113,6 @@ declare module '../../index' {
     }
   }
 
-  namespace batchSetStorageSync {
-    interface Option {
-      /** [{ key, value }] */
-      kvList: kv[]
-    }
-    interface kv {
-      /** key 本地缓存中指定的 key */
-      key: string
-      /** data 需要存储的内容。只支持原生类型、Date、及能够通过JSON.stringify序列化的对象。*/
-      value: any
-    }
-  }
-
   namespace batchSetStorage {
     interface Option {
       /** [{ key, value }] */
@@ -192,7 +186,7 @@ declare module '../../index' {
      * ```
      * @see https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.setStorage.html
      */
-    setStorage(option: setStorage.Option): Promise<TaroGeneral.CallbackResult>
+    setStorage(option: setStorage.Option): Promise<setStorage.Result>
 
     /** 根据 URL 销毁存在内存中的数据
      * @supported weapp
@@ -310,7 +304,7 @@ declare module '../../index' {
     createBufferURL(
       /** 需要存入内存的二进制数据 */
       buffer: ArrayBuffer | TypedArray
-    ): void
+    ): string
 
     /** Taro.clearStorage 的同步版本
      * @supported weapp, alipay, swan, jd, qq, tt, h5, harmony_hybrid
@@ -327,7 +321,7 @@ declare module '../../index' {
     clearStorageSync(): void
 
     /** 清理本地数据缓存
-     * @supported weapp, alipay, swan, jd, qq, tt, h5, rn, harmony, harmony_hybrid
+     * @supported weapp, alipay, swan, jd, qq, tt, h5, rn, harmony_hybrid
      * @example
      * ```tsx
      * Taro.clearStorage()
@@ -348,7 +342,12 @@ declare module '../../index' {
      * ```
      * @see https://developers.weixin.qq.com/miniprogram/dev/api/storage/wx.batchGetStorageSync.html
      */
-    batchSetStorageSync(option: batchSetStorageSync.Option): void
+    batchSetStorageSync(option: {
+      /** key 本地缓存中指定的 key */
+      key: string
+      /** data 需要存储的内容。只支持原生类型、Date、及能够通过JSON.stringify序列化的对象。*/
+      value: any
+    }[]): void
 
     /** 将数据批量存储在本地缓存中指定的 key 中。会覆盖掉原来该 key 对应的内容。
      * 除非用户主动删除或因存储空间原因被系统清理，否则数据都一直可用。
