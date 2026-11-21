@@ -2,7 +2,7 @@ import Taro from '../../index'
 
 declare module '../../index' {
   namespace request {
-    interface Option<T = any, U extends string | TaroGeneral.IAnyObject | ArrayBuffer = any | any> {
+    interface Option<T = any, U = any> {
       /** 开发者服务器接口地址 */
       url: string
       /** 请求的参数 */
@@ -25,6 +25,11 @@ declare module '../../index' {
       dataType?: keyof DataType | string
       /** 响应的数据类型 */
       responseType?: keyof ResponseType
+      /**
+       * 使用高性能模式。从基础库 v3.5.0 开始在 Android 端默认开启，其他端暂不生效。该模式下有更优的网络性能表现。
+       * @default true
+       * */
+      useHighPerformanceMode?: boolean
       /** 开启 http2
        * @default false
        * @supported weapp
@@ -145,8 +150,7 @@ declare module '../../index' {
       storeCheck?(): boolean
     }
 
-    interface SuccessCallbackResult<T extends string | TaroGeneral.IAnyObject | ArrayBuffer = any | any>
-      extends TaroGeneral.CallbackResult {
+    interface SuccessCallbackResult<T = any> extends TaroGeneral.CallbackResult {
       /** 开发者服务器返回的数据 */
       data: T
       /** 开发者服务器返回的 HTTP Response Header */
@@ -372,6 +376,11 @@ declare module '../../index' {
         data: ArrayBuffer
       }
     }
+  }
+
+  /** @ignore */
+  interface RequestParams<T = any> extends request.Option<T, any> {
+    [propName: string]: any
   }
 
   /** @ignore */
