@@ -336,7 +336,8 @@ declare module '../../index' {
     saveImageToPhotosAlbum(option: saveImageToPhotosAlbum.Option): Promise<TaroGeneral.CallbackResult>
 
     /** 预览图片和视频。
-     * @supported weapp
+     * H5 使用浏览器原生媒体控件，暂不支持小程序长按菜单和 referrerPolicy。
+     * @supported weapp, h5
      * @example
      * ```tsx
      * Taro.previewMedia({
@@ -400,7 +401,8 @@ declare module '../../index' {
     editImage(option: editImage.Option): Promise<editImage.SuccessCallbackResult>
 
     /** 压缩图片接口，可选压缩质量
-     * @supported weapp, tt, rn
+     * @supported weapp, tt, h5, rn
+     * @h5 支持 JPEG 和静态 PNG。使用完返回的 Blob URL 后可调用 URL.revokeObjectURL 释放。
      * @example
      * ```tsx
      * Taro.compressImage({
